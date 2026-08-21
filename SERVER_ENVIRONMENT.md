@@ -19,7 +19,7 @@
 ### MySQL
 
 - 使用 Ubuntu 官方仓库提供的 MySQL 8.4.10。
-- 通过独立配置文件 `/etc/mysql/mysql.conf.d/ari.cnf` 设置 `bind-address = 0.0.0.0`，让经典协议监听公网 IPv4 的 `3306` 端口。
+- 通过后加载的独立配置文件 `/etc/mysql/mysql.conf.d/zz-ari.cnf` 设置 `bind-address = 0.0.0.0`，让经典协议监听公网 IPv4 的 `3306` 端口。
 - 保持 MySQL X Protocol 不向公网开放。
 - `root@localhost` 与 `root@%` 使用用户指定的同一密码。
 - `root@%` 具有完整管理权限及授权权限，使用 MySQL 8.4 默认的 `caching_sha2_password` 认证插件。
@@ -65,7 +65,7 @@
 - 安装前刷新 APT 元数据；任一包安装失败即停止，不继续写服务配置。
 - 写入配置前保留被替换文件的副本；优先新增独立配置文件，避免修改发行版原文件。
 - 每次重启服务前先运行语法检查：Nginx 使用 `nginx -t`，systemd 使用 `systemd-analyze verify`。
-- 若 MySQL 公网配置导致启动失败，移除 `ari.cnf` 后恢复原监听设置并重新启动。
+- 若 MySQL 公网配置导致启动失败，移除 `zz-ari.cnf` 后恢复原监听设置并重新启动。
 - 若健康检查服务失败，保留 MySQL 与 Nginx 安装，只停用 `ari-smoke.service` 和对应 Nginx 站点以便诊断。
 
 ## 验收标准
