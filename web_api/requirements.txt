@@ -1,0 +1,3 @@
+# 与服务器 /opt/ari/.venv 已验证的版本对齐（Python 3.14 / ARM64）
+fastapi==0.141.1
+uvicorn==0.52.4

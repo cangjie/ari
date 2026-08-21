@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>ari · GPS 定位测试</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --fg: #16181d;
+    --muted: #6b7280;
+    --line: #e3e6ea;
+    --accent: #2563eb;
+    --accent-fg: #ffffff;
+    --ok: #15803d;
+    --warn: #b45309;
+    --err: #b91c1c;
+    --warn-bg: #fef6e7;
+    --err-bg: #fdecec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --fg: #e8eaed;
+      --muted: #9aa1ac;
+      --line: #262b34;
+      --accent: #3b82f6;
+      --accent-fg: #ffffff;
+      --ok: #4ade80;
+      --warn: #fbbf24;
+      --err: #f87171;
+      --warn-bg: #2a2113;
+      --err-bg: #2b1616;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 34rem; margin: 0 auto; }
+  h1 { font-size: 1.25rem; margin: .25rem 0 1rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: .75rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* 触摸目标不小于 44px，手机上才好按 */
+  button {
+    width: 100%;
+    min-height: 3rem;
+    font-size: 1.0625rem;
+    font-family: inherit;
+    border: 1px solid var(--line);
+    border-radius: .625rem;
+    background: var(--card);
+    color: var(--fg);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  button.primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: transparent;
+    font-weight: 600;
+  }
+  button:disabled { opacity: .5; cursor: default; }
+  button + button { margin-top: .5rem; }
+
+  dl { margin: 0; display: grid; grid-template-columns: 6.5rem 1fr; gap: .5rem .75rem; }
+  dt { color: var(--muted); font-size: .875rem; }
+  dd {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    word-break: break-all;
+  }
+
+  .banner { border-radius: .625rem; padding: .75rem 1rem; margin-bottom: 1rem; font-size: .9375rem; }
+  .banner.warn { background: var(--warn-bg); color: var(--warn); border: 1px solid currentColor; }
+  .banner.err  { background: var(--err-bg);  color: var(--err);  border: 1px solid currentColor; }
+  .banner strong { display: block; margin-bottom: .25rem; }
+  .banner code { font-size: .875em; word-break: break-all; }
+
+  .status { font-size: .875rem; color: var(--muted); margin-bottom: .75rem; }
+  .status .dot { display: inline-block; width: .5rem; height: .5rem; border-radius: 50%; background: var(--muted); margin-right: .375rem; vertical-align: baseline; }
+  .status.live .dot { background: var(--ok); }
+  .hidden { display: none; }
+  footer { color: var(--muted); font-size: .8125rem; text-align: center; margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>GPS 定位测试</h1>
+
+  <!-- 安全上下文警告：HTTP 下 Geolocation 被浏览器直接禁用，
+       必须显式告诉用户，否则表现为「按了没反应」，极难排查 -->
+  <div id="insecure-banner" class="banner warn hidden">
+    <strong>当前不是安全上下文，定位不可用</strong>
+    浏览器只在 HTTPS（或 localhost）下开放定位。现在的地址是
+    <code id="origin-text"></code>，权限弹窗不会出现。
+  </div>
+
+  <div id="unsupported-banner" class="banner err hidden">
+    <strong>此浏览器不支持 Geolocation</strong>
+    没有 <code>navigator.geolocation</code>。
+  </div>
+
+  <p id="status" class="status"><span class="dot"></span><span id="status-text">待定位</span></p>
+
+  <div class="card">
+    <button id="locate" class="primary" type="button">获取定位</button>
+    <button id="watch" type="button">开始持续追踪</button>
+  </div>
+
+  <div id="error" class="banner err hidden"></div>
+
+  <div id="result" class="card hidden">
+    <dl>
+      <dt>纬度</dt><dd id="lat">—</dd>
+      <dt>经度</dt><dd id="lon">—</dd>
+      <dt>精度</dt><dd id="acc">—</dd>
+      <dt>海拔</dt><dd id="alt">—</dd>
+      <dt>方向</dt><dd id="heading">—</dd>
+      <dt>速度</dt><dd id="speed">—</dd>
+      <dt>时间</dt><dd id="time">—</dd>
+      <dt>更新次数</dt><dd id="count">0</dd>
+    </dl>
+    <button id="copy" type="button" style="margin-top:1rem">复制经纬度</button>
+  </div>
+
+  <footer>ari web_api · 静态页面自检</footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  var locateBtn = $("locate");
+  var watchBtn = $("watch");
+  var copyBtn = $("copy");
+  var resultCard = $("result");
+  var errorBox = $("error");
+  var statusEl = $("status");
+  var statusText = $("status-text");
+
+  var watchId = null;
+  var updateCount = 0;
+  var lastCoords = null;
+
+  var GEO_OPTIONS = {
+    enableHighAccuracy: true,  // 手机上强制走 GPS 而非基站/WiFi 粗定位
+    timeout: 15000,
+    maximumAge: 0              // 不接受缓存位置，每次都重新测
+  };
+
+  function setStatus(text, live) {
+    statusText.textContent = text;
+    statusEl.classList.toggle("live", Boolean(live));
+  }
+
+  function showError(message) {
+    errorBox.innerHTML = "";
+    var strong = document.createElement("strong");
+    strong.textContent = "定位失败";
+    errorBox.appendChild(strong);
+    errorBox.appendChild(document.createTextNode(message));
+    errorBox.classList.remove("hidden");
+  }
+
+  function clearError() {
+    errorBox.classList.add("hidden");
+  }
+
+  function num(value, digits, unit) {
+    if (value === null || value === undefined || Number.isNaN(value)) return "—";
+    return value.toFixed(digits) + (unit || "");
+  }
+
+  function render(position) {
+    var c = position.coords;
+    lastCoords = c;
+    updateCount += 1;
+
+    $("lat").textContent = c.latitude.toFixed(6) + "°";
+    $("lon").textContent = c.longitude.toFixed(6) + "°";
+    $("acc").textContent = num(c.accuracy, 1, " m");
+    $("alt").textContent = c.altitude === null
+      ? "—"
+      : num(c.altitude, 1, " m") + " (±" + num(c.altitudeAccuracy, 1, " m") + ")";
+    $("heading").textContent = c.heading === null ? "—" : num(c.heading, 1, "°");
+    $("speed").textContent = c.speed === null ? "—" : num(c.speed, 2, " m/s");
+    $("time").textContent = new Date(position.timestamp).toLocaleString("zh-CN");
+    $("count").textContent = String(updateCount);
+
+    resultCard.classList.remove("hidden");
+    clearError();
+  }
+
+  // 把 PositionError 的数字码翻译成能直接指导下一步动作的说明
+  function describe(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        return "：权限被拒绝。请在浏览器或系统设置里允许本站访问位置，然后重试。";
+      case error.POSITION_UNAVAILABLE:
+        return "：拿不到位置。室内或地下常见，换到窗边或室外再试。";
+      case error.TIMEOUT:
+        return "：超时（" + GEO_OPTIONS.timeout / 1000 + " 秒）。信号弱时首次定位会更慢，可再试一次。";
+      default:
+        return "：" + (error.message || "未知错误");
+    }
+  }
+
+  function onError(error) {
+    setStatus("定位失败", false);
+    showError(describe(error));
+    stopWatch();
+  }
+
+  function locateOnce() {
+    clearError();
+    setStatus("正在定位…", false);
+    locateBtn.disabled = true;
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        locateBtn.disabled = false;
+        setStatus("已定位", false);
+        render(position);
+      },
+      function (error) {
+        locateBtn.disabled = false;
+        onError(error);
+      },
+      GEO_OPTIONS
+    );
+  }
+
+  function startWatch() {
+    clearError();
+    setStatus("持续追踪中…", true);
+    watchBtn.textContent = "停止持续追踪";
+    watchId = navigator.geolocation.watchPosition(render, onError, GEO_OPTIONS);
+  }
+
+  function stopWatch() {
+    if (watchId === null) return;
+    navigator.geolocation.clearWatch(watchId);
+    watchId = null;
+    watchBtn.textContent = "开始持续追踪";
+    setStatus("已停止追踪", false);
+  }
+
+  // navigator.clipboard 同样要安全上下文，HTTP 下必须回退
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
+      area.setSelectionRange(0, text.length);
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      document.body.removeChild(area);
+      ok ? resolve() : reject(new Error("copy failed"));
+    });
+  }
+
+  locateBtn.addEventListener("click", locateOnce);
+
+  watchBtn.addEventListener("click", function () {
+    watchId === null ? startWatch() : stopWatch();
+  });
+
+  copyBtn.addEventListener("click", function () {
+    if (!lastCoords) return;
+    var text = lastCoords.latitude.toFixed(6) + "," + lastCoords.longitude.toFixed(6);
+    copyText(text).then(
+      function () {
+        copyBtn.textContent = "已复制 " + text;
+        setTimeout(function () { copyBtn.textContent = "复制经纬度"; }, 2000);
+      },
+      function () {
+        copyBtn.textContent = "复制失败，请长按选择";
+        setTimeout(function () { copyBtn.textContent = "复制经纬度"; }, 2000);
+      }
+    );
+  });
+
+  // —— 启动自检 ——
+  if (!("geolocation" in navigator)) {
+    $("unsupported-banner").classList.remove("hidden");
+    locateBtn.disabled = true;
+    watchBtn.disabled = true;
+    setStatus("不可用", false);
+  } else if (!window.isSecureContext) {
+    $("origin-text").textContent = window.location.origin;
+    $("insecure-banner").classList.remove("hidden");
+    locateBtn.disabled = true;
+    watchBtn.disabled = true;
+    setStatus("不可用（需 HTTPS）", false);
+  }
+})();
+</script>
+</body>
+</html>

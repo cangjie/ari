@@ -5,12 +5,22 @@
 # Python
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .venv/
 venv/
 
 # 环境与密钥
 .env
 .env.*
+
+# 证书与私钥 —— 绝不进仓库
+*.zip
+*.key
+*.pem
+*.crt
+*.csr
+*.p12
+*.pfx
 
 # macOS
 .DS_Store
