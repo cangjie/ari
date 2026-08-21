@@ -4,6 +4,13 @@
 
 ---
 
+## 2026-08-21 12:05 · copilot
+**做了什么** — 排查服务器 `ubuntu@44.207.251.65` 无法通过 SSH 克隆 GitHub 仓库的问题；确认服务器使用 `~/.ssh/id_ed25519`，其指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，并在 `cangjie/ari` 配置 Deploy key。最终验证 GitHub SSH 认证成功，`git ls-remote git@github.com:cangjie/ari.git HEAD` 返回提交 `0b09cb7`。
+**下一步** — 继续等待产品定位、目标用户与客户端范围明确，再设计正式项目目录并替换临时 smoke 服务。
+**未决** — MySQL 公网 `root@%` 且未强制 TLS 仍需在正式业务上线前重新评估。
+
+---
+
 ## 2026-08-21 10:21 · codex
 **做了什么** — 完整验证了 Codex 的 `start-work` 流程；在 AWS Ubuntu 26.04 ARM64 主机 `44.207.251.65` 上搭建服务器基础环境：MySQL 8.4.10 公网监听 `3306` 并启用 `root@%`，Python 3.14 独立虚拟环境运行 FastAPI 0.141.1 / Uvicorn 0.52.4，systemd 管理健康检查服务，Nginx 在公网 `8000` 反代到回环 `8001`，`80` 保持空闲。用红绿测试验证 `/health`，并从外部完成 HTTP 200、3306 TCP 与 `root@%` 认证验收；设计、计划和实际部署记录已写入仓库根目录。
 

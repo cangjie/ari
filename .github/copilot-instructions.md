@@ -39,6 +39,7 @@
 - Python 虚拟环境：`/opt/ari/.venv`
 - 临时健康检查：`/opt/ari/smoke`；它只用于验证环境，不代表正式服务端目录设计
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
+- GitHub Deploy key：服务器 `ubuntu` 使用 `~/.ssh/id_ed25519`，指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，已验证可访问 `cangjie/ari`
 - 详细设计、实施计划与实际部署记录分别见 `SERVER_ENVIRONMENT.md`、`SERVER_ENVIRONMENT_PLAN.md`、`SERVER_ENVIRONMENT_REPORT.md`
 
 ---
