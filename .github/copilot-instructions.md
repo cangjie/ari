@@ -19,7 +19,27 @@
 
 ## 技术选型
 
-待定。（仓库中有 PyCharm 的 Python 3.12 SDK 配置，但那只是 IDE 默认值，不构成技术决策。）
+服务端基础栈已确定：
+
+- Python 3.14 + FastAPI，Uvicorn 作为 ASGI 服务
+- MySQL 8.4
+- Nginx 反向代理
+- systemd 管理服务进程
+
+客户端技术选型仍待产品定位与客户端范围确定后再决定。
+
+### 服务器环境
+
+- AWS 主机：`44.207.251.65`
+- 系统：Ubuntu 26.04，ARM64（aarch64）
+- SSH：`ubuntu@44.207.251.65`
+- 公网入口：MySQL `3306`、Nginx 环境验证 `8000`；`80` 保持空闲
+- 本机入口：Uvicorn `127.0.0.1:8001`、MySQL X Protocol `127.0.0.1:33060`
+- 服务：`mysql`、`nginx`、`ari-smoke` 均由 systemd 管理并开机启动
+- Python 虚拟环境：`/opt/ari/.venv`
+- 临时健康检查：`/opt/ari/smoke`；它只用于验证环境，不代表正式服务端目录设计
+- MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
+- 详细设计、实施计划与实际部署记录分别见 `SERVER_ENVIRONMENT.md`、`SERVER_ENVIRONMENT_PLAN.md`、`SERVER_ENVIRONMENT_REPORT.md`
 
 ---
 
@@ -97,6 +117,9 @@ end-work(<工具名>): <一句话概括本次工作>
 | `.github/copilot-instructions.md` | 上者的逐字副本。**全部** Copilot 界面都自动读取（JetBrains / Visual Studio / Xcode 不读 `AGENTS.md`） |
 | `CLAUDE.md` | 一行 import，指向 `AGENTS.md` |
 | `PROGRESS.md` | 进展时间线，倒序追加 |
+| `SERVER_ENVIRONMENT.md` | 服务器基础环境设计与验收标准 |
+| `SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
+| `SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
 | `.github/prompts/*.prompt.md` | Copilot 的两个命令入口 |
