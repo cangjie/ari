@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-08-21 15:16 · claude
+**做了什么** — 新建 `web_api/` FastAPI 应用（`/health` + `static/` 挂载到根路径，4 条 pytest 全绿），写了手机端 GPS 定位测试页 `static/index.html`，显式检测 `window.isSecureContext` 避免静默失败。域名 `ari.goldenma.xyz` 与 TrustAsia 证书就位后完成 HTTPS 部署：`/home/ubuntu` 放宽到 `755`、服务器 `git pull`、证书装入 `/etc/ssl/ari/`（私钥 `600`）、新增 `ari-web-api.service`（`ari` 用户跑 uvicorn `127.0.0.1:8002`）、Nginx `443` 反代加 `80` 跳转。外部验收全通：HTTPS 200/HTTP2、TLS 校验 0、80 跳 301。`ari-smoke` 保留在 8000 未动。
+
+**下一步** — 用户在手机上实测 GPS 定位能否出坐标；确认后可考虑退役 `ari-smoke`，并把手动证书换成 Let's Encrypt + certbot 自动续期。
+
+**未决** —
+- ari 的产品定位、目标用户与客户端范围仍未确定，客户端子目录因此还不能设计。
+- TLS 证书 2026-11-19 到期且无自动续期，到期前必须处理，否则站点直接不可用。
+- MySQL 公网 `root@%` 且未强制 TLS 仍需在正式业务上线前重新评估。
+
+---
+
 ## 2026-08-21 12:05 · copilot
 **做了什么** — 排查服务器 `ubuntu@44.207.251.65` 无法通过 SSH 克隆 GitHub 仓库的问题；确认服务器使用 `~/.ssh/id_ed25519`，其指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，并在 `cangjie/ari` 配置 Deploy key。最终验证 GitHub SSH 认证成功，`git ls-remote git@github.com:cangjie/ari.git HEAD` 返回提交 `0b09cb7`。
 **下一步** — 继续等待产品定位、目标用户与客户端范围明确，再设计正式项目目录并替换临时 smoke 服务。

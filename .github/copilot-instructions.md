@@ -12,10 +12,17 @@
 
 **ari** —— 产品定位尚未确定，见 `PROGRESS.md` 的未决项。
 
-本仓库是 monorepo 根目录，将包含一个服务端子项目和多个客户端子项目。子项目的目录划分待产品定位明确后另行设计，现在不要擅自创建子目录。
+本仓库是 monorepo 根目录，将包含一个服务端子项目和多个客户端子项目。
 
 - 仓库：`git@github.com:cangjie/ari.git`
 - 主分支：`master`
+
+### 子目录
+
+- `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `WEB_API.md`
+- 客户端子目录尚未创建，待产品定位与客户端范围明确后再定
+
+**子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。
 
 ## 技术选型
 
@@ -33,14 +40,19 @@
 - AWS 主机：`44.207.251.65`
 - 系统：Ubuntu 26.04，ARM64（aarch64）
 - SSH：`ubuntu@44.207.251.65`
-- 公网入口：MySQL `3306`、Nginx 环境验证 `8000`；`80` 保持空闲
-- 本机入口：Uvicorn `127.0.0.1:8001`、MySQL X Protocol `127.0.0.1:33060`
-- 服务：`mysql`、`nginx`、`ari-smoke` 均由 systemd 管理并开机启动
-- Python 虚拟环境：`/opt/ari/.venv`
-- 临时健康检查：`/opt/ari/smoke`；它只用于验证环境，不代表正式服务端目录设计
+- 域名：`ari.goldenma.xyz`，A 记录指向 `44.207.251.65`
+- 公网入口：HTTPS `443`（web_api 正式入口）、HTTP `80`（301 跳转到 443）、MySQL `3306`、Nginx 环境验证 `8000`
+- 本机入口：Uvicorn `127.0.0.1:8002`（web_api）、`127.0.0.1:8001`（smoke）、MySQL X Protocol `127.0.0.1:33060`
+- 服务：`mysql`、`nginx`、`ari-web-api`、`ari-smoke` 均由 systemd 管理并开机启动
+- 代码：仓库 clone 在 `/home/ubuntu/ari`，属主 `ubuntu`；服务以 `ari` 用户运行，对代码**只读**
+- `/home/ubuntu` 权限为 `755`，否则 `ari` 用户穿不进去读不到代码
+- 部署方式：`cd /home/ubuntu/ari && git pull --ff-only` + `sudo systemctl restart ari-web-api`
+- Python 虚拟环境：`/opt/ari/.venv`（Python 3.14），web_api 与 smoke 共用
+- TLS 证书：`/etc/ssl/ari/`，TrustAsia 手动签发，**2026-11-19 到期且无自动续期**
+- 临时健康检查：`/opt/ari/smoke`，仍在 8000 上跑，作为环境自检对照；web_api 稳定后可退役
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
 - GitHub Deploy key：服务器 `ubuntu` 使用 `~/.ssh/id_ed25519`，指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，已验证可访问 `cangjie/ari`
-- 详细设计、实施计划与实际部署记录分别见 `SERVER_ENVIRONMENT.md`、`SERVER_ENVIRONMENT_PLAN.md`、`SERVER_ENVIRONMENT_REPORT.md`
+- 基础环境的设计、实施计划与部署记录见 `SERVER_ENVIRONMENT.md`、`SERVER_ENVIRONMENT_PLAN.md`、`SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `WEB_API.md`
 
 ---
 
@@ -107,6 +119,8 @@ end-work(<工具名>): <一句话概括本次工作>
 - **不要手工编辑 `.github/copilot-instructions.md`。** 改 `AGENTS.md`，由收工流程同步过去。
 - **memory 是单向的**：memory 目录 → 仓库。开工流程**不**反向写 memory 目录。仓库是权威源，memory 只是本地缓存；双向同步只会制造重复和冲突。
 - **上下文必须随仓库走。** 任何项目上下文都不要只留在会话里，也不要写到仓库外的位置。
+- **证书、私钥、密码绝不进仓库。** `.gitignore` 已挡掉 `*.key` `*.pem` `*.crt` `*.zip` 等后缀，但提交前仍要查一遍暂存区。私钥传服务器用管道直写并原子设权限，不在 `/tmp` 留副本。
+- **浏览器的定位、剪贴板等 API 只在安全上下文可用**（HTTPS 或 `localhost`）。公网入口必须是 HTTPS，裸 IP 的 HTTP 一律拿不到定位。
 
 ---
 
@@ -121,6 +135,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `SERVER_ENVIRONMENT.md` | 服务器基础环境设计与验收标准 |
 | `SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
 | `SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
+| `WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
+| `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
 | `.github/prompts/*.prompt.md` | Copilot 的两个命令入口 |
