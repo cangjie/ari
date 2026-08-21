@@ -18,6 +18,7 @@
 - Uvicorn must listen only on `127.0.0.1:8001`.
 - Nginx must listen on public port `8000`, proxy to Uvicorn, and leave port `80` unused.
 - Do not create a server-side source directory in this repository; `/opt/ari/smoke` is temporary deployment-only validation code.
+- Record the executed installation process, final versions, effective configuration, and acceptance evidence in root-level `SERVER_ENVIRONMENT_REPORT.md`; never include the MySQL password.
 - Stop immediately if package installation, syntax validation, service startup, or a required acceptance check fails.
 
 ---
@@ -358,6 +359,7 @@ Expected: Nginx active/enabled, port 8000 listening, no port 80 listener, and `{
 **Files:**
 - Read only: remote service state, listeners, account metadata, and dependency lock
 - Test externally: public FastAPI endpoint and MySQL TCP/authentication
+- Create locally: `SERVER_ENVIRONMENT_REPORT.md`
 
 **Interfaces:**
 - Consumes: all services configured in Tasks 1–5 and AWS security-group rules managed by the user
@@ -398,6 +400,24 @@ SELECT CURRENT_USER(), VERSION();
 
 Expected: `CURRENT_USER()` is `root@%` and the version begins with `8.4`.
 
-- [ ] **Step 5: Review requirements against the spec**
+- [ ] **Step 5: Record the executed installation and final configuration**
+
+Create root-level `SERVER_ENVIRONMENT_REPORT.md` containing:
+
+- deployment timestamp and target host;
+- every package and Python dependency version actually installed;
+- the commands and file paths used for installation and configuration;
+- final MySQL, systemd, and Nginx configuration with the password omitted;
+- service states, listeners, internal/external health checks, and MySQL authentication evidence;
+- any AWS security-group check that remains an external dependency.
+
+Run `git diff --check`, confirm the password is absent, then commit the report and the checked-off plan with:
+
+```bash
+git add SERVER_ENVIRONMENT_REPORT.md SERVER_ENVIRONMENT_PLAN.md
+git commit -m "ops: record server environment deployment"
+```
+
+- [ ] **Step 6: Review requirements against the spec**
 
 Re-read `SERVER_ENVIRONMENT.md` and compare all seven acceptance criteria with fresh output from Steps 1–4. Report any unmet criterion explicitly; do not claim completion if an AWS security-group dependency remains.
