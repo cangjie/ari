@@ -18,7 +18,7 @@
 
 ### MySQL
 
-- 使用 Ubuntu 官方仓库提供的 MySQL 8.4.9。
+- 使用 Ubuntu 官方仓库提供的 MySQL 8.4.10。
 - 通过独立配置文件 `/etc/mysql/mysql.conf.d/ari.cnf` 设置 `bind-address = 0.0.0.0`，让经典协议监听公网 IPv4 的 `3306` 端口。
 - 保持 MySQL X Protocol 不向公网开放。
 - `root@localhost` 与 `root@%` 使用用户指定的同一密码。
@@ -73,7 +73,7 @@
 以下检查必须全部通过：
 
 1. `mysql`、`nginx`、`ari-smoke` 均处于 `active` 且已设为开机启动。
-2. MySQL 版本为 Ubuntu 仓库的 8.4.9，监听 `0.0.0.0:3306`。
+2. MySQL 版本为 Ubuntu 仓库的 8.4.10，监听 `0.0.0.0:3306`。
 3. `root@localhost` 与 `root@%` 均存在，使用 `caching_sha2_password`，且指定密码可认证。
 4. Uvicorn 仅监听 `127.0.0.1:8001`。
 5. Nginx 监听 `0.0.0.0:8000`，不占用 `80` 端口。

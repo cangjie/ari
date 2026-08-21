@@ -6,7 +6,7 @@
 
 **Architecture:** Ubuntu manages MySQL and Nginx as native services. A dedicated `ari` account runs a Python 3.14 virtual environment under `/opt/ari`; systemd keeps a minimal FastAPI health service on loopback port 8001, and Nginx exposes it on public port 8000.
 
-**Tech Stack:** Ubuntu 26.04 ARM64, MySQL 8.4.9, Python 3.14, FastAPI, Uvicorn, pytest, systemd, Nginx 1.28.
+**Tech Stack:** Ubuntu 26.04 ARM64, MySQL 8.4.10, Python 3.14, FastAPI, Uvicorn, pytest, systemd, Nginx 1.28.
 
 **Spec:** `SERVER_ENVIRONMENT.md`
 
@@ -49,7 +49,7 @@ ssh ubuntu@44.207.251.65 \
   'apt-cache policy mysql-server nginx python3-pip python3-venv'
 ```
 
-Expected: install candidates exist; MySQL candidate is `8.4.9-0ubuntu0.26.04.1`.
+Expected: install candidates exist; MySQL candidate is `8.4.10-0ubuntu0.26.04.1`.
 
 - [ ] **Step 3: Install packages non-interactively**
 
@@ -67,7 +67,7 @@ ssh ubuntu@44.207.251.65 \
   'mysql --version; nginx -v; python3 --version; python3 -m pip --version; systemctl is-active mysql; systemctl is-active nginx'
 ```
 
-Expected: MySQL 8.4.9, Nginx 1.28.x, Python 3.14.x, pip available, and both services active.
+Expected: MySQL 8.4.10, Nginx 1.28.x, Python 3.14.x, pip available, and both services active.
 
 ### Task 2: Configure MySQL networking and root accounts
 
