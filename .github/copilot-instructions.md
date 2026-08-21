@@ -1,0 +1,102 @@
+# ari — AI 协作约定
+
+> **本文件与 `.github/copilot-instructions.md` 是同一份内容的两个副本，逐字相同。**
+> 事实源是 `AGENTS.md`；`.github/copilot-instructions.md` 由收工流程自动复制生成。
+> 要修改规则，请改 `AGENTS.md`，**不要**改 `.github/copilot-instructions.md`。
+
+本文件是本仓库所有 AI 编码工具的唯一事实源。Claude Code、GitHub Copilot、OpenAI Codex 共用这一套规则，行为必须一致。
+
+---
+
+## 项目
+
+**ari** —— 产品定位尚未确定，见 `PROGRESS.md` 的未决项。
+
+本仓库是 monorepo 根目录，将包含一个服务端子项目和多个客户端子项目。子项目的目录划分待产品定位明确后另行设计，现在不要擅自创建子目录。
+
+- 仓库：`git@github.com:cangjie/ari.git`
+- 主分支：`master`
+
+## 技术选型
+
+待定。（仓库中有 PyCharm 的 Python 3.12 SDK 配置，但那只是 IDE 默认值，不构成技术决策。）
+
+---
+
+## 工作流程
+
+两个流程。三个工具的行为必须完全一致。
+
+### 开工流程（start-work）
+
+调用：Claude Code `/start-work`，Copilot `/start-work`，Codex `$start-work`，或直接说「开工」。
+
+1. `git pull --ff-only`。失败就**停下来报告**，不要自动 merge 或 rebase —— 拉不动说明有未推送的本地提交或远端分歧，需要人看一眼。
+2. 读 `AGENTS.md` 全文（若尚未在上下文中）。
+3. 读 `PROGRESS.md` 顶部最近 3 条。
+4. 跑 `git log --oneline -10` 和 `git status`，与 PROGRESS 的记载对照，看有没有未被记录的改动。
+5. 校验 `.github/copilot-instructions.md` 与 `AGENTS.md` 是否逐字一致（`cmp -s AGENTS.md .github/copilot-instructions.md`）。不一致就报告 —— 说明上次收工没走完。
+6. 向用户汇报三句话：项目现状 → 上次做到哪、是哪个工具做的 → 建议的下一步。**然后等用户决定做什么，不要自行开工。**
+
+### 收工流程（end-work）
+
+调用：Claude Code `/end-work`，Copilot `/end-work`，Codex `$end-work`，或直接说「收工」。
+
+> **归档目标不随执行者变化。** 无论由哪个工具执行，写入目标恒定为下列四项。
+> 唯一允许的差异在**输入**侧：若当前环境提供持久 memory 目录（目前只有 Claude Code 有），额外把其中的长期事实并入 `AGENTS.md`；没有就只从本次会话提取。**输出恒定不变。**
+
+1. 从本次会话提取：做了什么、下一步、未决问题。
+2. 若当前环境有持久 memory 目录，读取其中的 memory 文件，把属于长期事实的内容并入 `AGENTS.md`。没有则跳过。
+3. 更新 `AGENTS.md` —— **就地修订，不是追加**。长期事实会被推翻（选型换了、决策改了），必须改写原处，不要越堆越多。
+4. 在 `PROGRESS.md` **顶部**插入本次条目，格式见下。
+5. 把 `AGENTS.md` 逐字复制到 `.github/copilot-instructions.md`：`cp AGENTS.md .github/copilot-instructions.md`。
+6. `git add -A`，按下方格式提交，`git push`。
+7. 汇报提交了什么。
+
+若本次会话没有任何实质改动，只汇报，不产生空提交。
+
+### PROGRESS.md 条目格式
+
+新条目插在**文件顶部**（倒序）。这样开工只需读文件头部固定几条，攒到几百条也不会拖慢。
+
+```markdown
+## YYYY-MM-DD HH:MM · <工具名>
+**做了什么** — …
+**下一步** — …
+**未决** — …
+```
+
+`<工具名>` 取 `claude` / `copilot` / `codex`。
+
+这一栏在接力时能解释痕迹：比如上一棒是 `copilot`，它没有 memory 目录，那么某些判断只会落在 `PROGRESS.md` 里而不在 `AGENTS.md` 里 —— 知道执行者是谁，就知道该去哪找。
+
+### 提交信息格式
+
+```
+end-work(<工具名>): <一句话概括本次工作>
+```
+
+让工具接力在 `git log` 里直接可见。
+
+---
+
+## 硬性约定
+
+- **`.claude/`、`.agents/`、`.github/` 必须提交进仓库，绝不能加进 `.gitignore`。** 这三个目录装着两个流程在各工具下的入口。一旦被忽略，换台电脑 clone 下来命令就消失了，而且**不会报错**，只是静默地不存在。
+- **不要手工编辑 `.github/copilot-instructions.md`。** 改 `AGENTS.md`，由收工流程同步过去。
+- **memory 是单向的**：memory 目录 → 仓库。开工流程**不**反向写 memory 目录。仓库是权威源，memory 只是本地缓存；双向同步只会制造重复和冲突。
+- **上下文必须随仓库走。** 任何项目上下文都不要只留在会话里，也不要写到仓库外的位置。
+
+---
+
+## 文件地图
+
+| 文件 | 作用 |
+|---|---|
+| `AGENTS.md` | 事实源。Codex、Claude Code、VS Code Copilot 自动读取 |
+| `.github/copilot-instructions.md` | 上者的逐字副本。**全部** Copilot 界面都自动读取（JetBrains / Visual Studio / Xcode 不读 `AGENTS.md`） |
+| `CLAUDE.md` | 一行 import，指向 `AGENTS.md` |
+| `PROGRESS.md` | 进展时间线，倒序追加 |
+| `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
+| `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
+| `.github/prompts/*.prompt.md` | Copilot 的两个命令入口 |
