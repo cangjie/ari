@@ -1,0 +1,380 @@
+# 故宫评级理由的原子短语词表：原子<TAB>英文
+# 由 translate_reasons.py 读取，拼回完整理由。改这里等于改全部含该原子的理由。
+常规展品	Standard exhibit
+无题记的常见造像/俑	Common statue or tomb figure without inscription
+汉代画像石/砖	Han dynasty pictorial stone or brick
+带造像题记	Bears a dedicatory inscription
+成组造像中的单件	Single piece from a group of statues
+盆景（馆内三十余件同族）	Tray landscape (over thirty of the same family in the museum)
+唐三彩	Tang sancai
+佛前成套供器	Complete set of Buddhist altar vessels
+石湾窑陶塑	Shiwan ware ceramic sculpture
+小件首饰（同族密集）	Small jewellery item (dense family of similar pieces)
+德化窑白瓷	Dehua ware white porcelain
+金玉嵌宝	Gold and jade inlaid with gems
+仿古礼器造型	Archaistic ritual vessel form
+斗彩	Doucai
+鼻烟壶（馆内十件同族）	Snuff bottle (ten of the same family in the museum)
+八旗盔甲成套	Complete set of Eight Banners armour
+点翠	Kingfisher-feather inlay
+瓷枕	Porcelain pillow
+镂雕	Openwork carving
+堆塑/塑贴	Applied relief modelling
+地方名窑标本	Specimen of a notable regional kiln
+外销纹章瓷	Export armorial porcelain
+带款识或铭文	Bears a reign mark or inscription
+汝窑淡天青釉盘（同型）	Ru ware pale sky-blue glazed dish (same type)
+釉里红（烧成难度高）	Underglaze red (very difficult to fire)
+高温铜红釉	High-fired copper-red glaze
+唐代白瓷名窑	Notable Tang dynasty white-porcelain kiln
+成对/成套件	Part of a pair or set
+磁州窑白地黑花	Cizhou ware black-on-white decoration
+金银累丝	Gold and silver filigree
+钧窑花盆托（同族）	Jun ware flowerpot stand (same family)
+龙泉窑青瓷	Longquan ware celadon
+剔划花	Carved and incised decoration
+定窑（宋五大名窑）	Ding ware (one of the Five Great Kilns of the Song)
+宜兴紫砂	Yixing zisha stoneware
+新石器彩陶	Neolithic painted pottery
+未加工宝石标本	Unworked gemstone specimen
+珍珠地划花	Incised decoration on a pearl ground
+素三彩	Susancai
+绞胎	Marbled body
+耀州窑刻印花青瓷	Yaozhou ware carved and moulded celadon
+越窑青瓷	Yue ware celadon
+钧窑（宋五大名窑）	Jun ware (one of the Five Great Kilns of the Song)
+长沙窑釉下彩	Changsha ware underglaze painting
+『尚均』款田黄石布袋和尚像，田黄材质加清初名匠周尚均款，材料与款识双稀缺	Tianhuang stone Budai figure marked "Shangjun"; tianhuang stone plus the mark of the early Qing master Zhou Shangjun — rare in both material and signature
+『文南』款铜佛像，带匠款	Bronze Buddha marked "Wennan"; bears a craftsman's signature
+『李秀』款寿山石罗汉像，名匠款	Shoushan stone arhat marked "Li Xiu"; signed by a noted master
+『玉璇』款寿山石伏虎罗汉像，名匠款	Shoushan stone tiger-taming arhat marked "Yuxuan"; signed by a noted master
+『玉璇』款寿山石罗汉像（同款第三例）	Shoushan stone arhat marked "Yuxuan" (third example of this signature)
+『玉璇』款寿山石罗汉像，杨玉璇为清初寿山石雕宗师，传世确认款作品极少	Shoushan stone arhat marked "Yuxuan"; Yang Yuxuan was the founding master of early Qing Shoushan carving and confirmed signed works are extremely few
+『石叟』款铜佛像，石叟为明末嵌银丝铜器名家，款作稀少	Bronze Buddha marked "Shisou"; Shisou was a late Ming master of silver-inlaid bronze and signed works are scarce
+『石叟』款铜观音像	Bronze Guanyin marked "Shisou"
+『魏汝奋』款寿山石罗汉像，清初名匠款	Shoushan stone arhat marked "Wei Rufen"; signed by an early Qing master
+万历款紫地素三彩折枝花果云龙纹盘，素三彩官款器	Wanli-marked aubergine-ground susancai dish with floral sprays and cloud-and-dragon design; susancai with an imperial reign mark
+三国吴青釉堆塑楼阁人物鸟兽谷仓罐，早期青瓷堆塑巅峰，同类完整器罕见	Three Kingdoms Wu green-glazed granary jar with applied pavilions, figures, birds and beasts; the summit of early celadon applied modelling, complete examples are rare
+三彩琉璃文殊像，明代琉璃造像成组之一	Sancai glazed-pottery Manjusri; one of a Ming group of glazed statues
+三彩琉璃普贤像，与文殊成对	Sancai glazed-pottery Samantabhadra; a pair with the Manjusri
+三彩琉璃罗汉像	Sancai glazed-pottery arhat
+三彩琉璃观音像	Sancai glazed-pottery Guanyin
+三彩胡人骑驼俑，唐三彩题材与造型俱佳	Sancai figure of a Sogdian riding a camel; excellent Tang sancai in both subject and modelling
+三彩镇墓兽	Sancai tomb guardian beast
+东梢间大炕（原状陈列场景）	Large kang in the east side bay (period room setting)
+东珠朝珠，东珠为皇帝专用，等级最高的朝珠	Court necklace of Manchurian pearls; Manchurian pearls were reserved for the emperor, the highest grade of court necklace
+东配殿御座房（原状陈列场景）	Throne room in the east side hall (period room setting)
+临汝窑青釉模印缠枝菊纹碗，民窑仿汝制品，与汝官窑不同层级	Linru ware celadon bowl with moulded scrolling chrysanthemums; a folk-kiln imitation of Ru ware, of a different order from Ru official ware
+乾隆帝御用大阅甲，大阅典礼专用铠甲，与《大阅图》可对读，武备馆等级最高的一件	Grand Review armour of the Qianlong Emperor; ceremonial armour for the Grand Review, readable against the "Grand Review" scroll — the highest-ranking piece in the Armoury
+乾隆帝御用盔，与大阅甲配套的头盔	Helmet of the Qianlong Emperor; matches the Grand Review armour
+乾隆帝御用索伦长鈚箭	Solon long-blade arrow of the Qianlong Emperor
+乾隆帝御用马鞍（同型六副之一）	Saddle of the Qianlong Emperor (one of six of the same type)
+乾隆帝御用马鞭	Riding crop of the Qianlong Emperor
+五彩团海水云龙纹瓜棱罐	Wucai lobed jar with roundels of dragons above waves
+仿古铜彩牺耳尊，瓷仿青铜	Archaistic bronze-imitation ox-handled zun; porcelain imitating bronze
+仿朱漆釉菊花式盖碗，瓷仿漆器	Covered bowl in chrysanthemum form imitating vermilion lacquer; porcelain imitating lacquer
+仿竹编漆器金彩五福捧寿纹捧盒，瓷仿他材质	Round box with gold-painted "five bats and longevity" design imitating woven bamboo and lacquer; porcelain imitating other materials
+仿黑鲨鱼皮釉嵌钟表葫芦式壁瓶，瓷嵌钟表，跨门类孤品	Gourd-shaped wall vase glazed to imitate black shagreen and set with a clock; porcelain inset with clockwork, a cross-genre unicum
+体和殿款黄釉暗刻花长方花盆，慈禧专用堂名款	Yellow-glazed rectangular jardinière with incised flowers and a Tihe Hall mark; hall mark reserved for the Empress Dowager Cixi
+像生瓷山形笔架	Porcelain brush rest in the form of a mountain, in trompe-l'oeil ware
+元卵白釉	Yuan luanbai glaze
+元蓝釉描金匜，蓝釉描金保存完好者罕见	Yuan blue-glazed yi with gold painting; blue glaze with gold painting rarely survives in good condition
+元蓝釉白龙纹折沿盏托，元代高温蓝釉留白龙纹传世仅数件	Yuan blue-glazed cup stand with a white dragon reserved on the flange; only a handful of Yuan high-fired blue-glaze pieces with reserved dragons survive
+元釉里红地留白刻云龙纹四系扁壶，早期釉里红成功器少见	Yuan flattened flask with four lugs, carved with clouds and dragons reserved on an underglaze-red ground; successful early underglaze red is uncommon
+元釉里红地留白刻兔纹玉壶春瓶	Yuan yuhuchun vase carved with a hare reserved on an underglaze-red ground
+元釉里红转把高足杯	Yuan underglaze-red stem cup with a revolving stem
+元青花『满池娇』图菱花口折沿盘，元代典型题材，文献可对读	Yuan blue-and-white foliate-rim dish with the "Full Pond of Charm" design; a characteristic Yuan subject corroborated by texts
+元青花地留白飞凤麒麟穿莲花图菱花口盘	Yuan blue-and-white foliate-rim dish with phoenix and qilin among lotus reserved in white
+元青花海水龙纹八方梅瓶，元青花大器	Yuan blue-and-white octagonal meiping with dragons above waves; a large Yuan blue-and-white vessel
+元青花釉里红镂雕怪石花卉图盖罐，青花与釉里红同施一器且镂雕，元瓷工艺极限，传世极罕	Yuan covered jar with openwork rockery and flowers in blue and underglaze red; blue and underglaze red on one body together with openwork carving — the technical limit of Yuan porcelain and exceedingly rare
+北朝青釉塑贴飞天团龙纹六系莲花尊，北朝青瓷体量与装饰的极限之作，国宝级	Northern Dynasties celadon lotus zun with six lugs and applied flying apsaras and dragon roundels; the outer limit of Northern Dynasties celadon in both scale and ornament, of national-treasure rank
+北齐黄釉模印胡人乐舞图扁瓶，丝路胡风入瓷的标志物，同类传世极少	Northern Qi yellow-glazed flask with moulded Sogdian musicians and dancers; a marker of Silk Road foreign styles entering ceramics, very few comparable pieces survive
+卵白釉『太禧』铭盘，太禧宗禋院祭器款，比枢府款更罕	Luanbai-glazed dish with a "Taixi" mark; a sacrificial-vessel mark of the Taixi Zongyin Court, rarer than the Shufu mark
+卵白釉『枢府』铭盘，元代官府用瓷款识标准器	Luanbai-glazed dish with a "Shufu" mark; the standard reference for Yuan government-ware marks
+原始瓷戳印兽头鼎，原始瓷早期造型标本	Proto-porcelain ding with stamped animal masks; a specimen of early proto-porcelain form
+原始瓷（早期标本）	Proto-porcelain (early specimen)
+史前/商代白陶	Prehistoric or Shang white pottery
+各种釉彩大瓶（瓷母），一器集十余种釉彩，乾隆御窑技术总汇，独一无二，公众认知度全馆最高	Vase of assorted glazes ("mother of porcelain"); more than ten glaze types on a single vessel, the technical compendium of the Qianlong imperial kiln, unique and the best known object in the museum
+吉州窑	Jizhou ware
+吉州窑黑釉剔花折枝梅纹梅瓶	Jizhou ware meiping with black glaze and carved plum sprays
+吉州窑黑釉剪纸贴花凤纹碗，独有工艺	Jizhou ware bowl with a paper-cut phoenix in black glaze; a technique unique to Jizhou
+吉州窑黑釉剪纸贴花折枝梅纹碗，剪纸贴花为吉州窑独有工艺	Jizhou ware bowl with a paper-cut plum spray in black glaze; paper-cut appliqué is a technique unique to Jizhou
+哥窑八方杯	Ge ware octagonal cup
+哥窑双耳鬲式炉，哥窑仿古器代表	Ge ware li-form censer with two handles; representative of Ge ware archaistic vessels
+哥窑海棠式花盆	Ge ware jardinière in begonia form
+哥窑灰青釉弦纹瓶	Ge ware bottle with bowstring bands in grey-green glaze
+哥窑灰青釉碗	Ge ware bowl in grey-green glaze
+哥窑灰青釉胆式瓶，哥窑瓶类罕见	Ge ware gall-bladder vase in grey-green glaze; vase forms in Ge ware are rare
+哥窑灰青釉葵花式洗	Ge ware washer in mallow form, grey-green glaze
+哥窑灰青釉贯耳瓶	Ge ware vase with tubular handles, grey-green glaze
+哥窑灰青釉贯耳瓶（同型）	Ge ware vase with tubular handles, grey-green glaze (same type)
+哥窑灰青釉鱼耳簋式炉，哥窑最负盛名的器物，金丝铁线的教科书标本	Ge ware gui-form censer with fish handles, grey-green glaze; the most celebrated Ge ware object and the textbook example of "golden threads and iron wires"
+哥窑米黄釉葵口盘	Ge ware foliate dish in buff glaze
+哥窑米黄釉葵花式洗，米黄釉为哥窑另一釉色系	Ge ware washer in mallow form, buff glaze; buff is Ge ware's other glaze family
+哥窑菊花式盘	Ge ware dish in chrysanthemum form
+哥窑葵花式盘	Ge ware dish in mallow form
+唐三彩马，三彩标志器型但馆内同型多件	Tang sancai horse; the emblematic sancai form, but many of the same type are held here
+唐英仿官釉水丞，督陶官唐英名下作品，传世带唐英关联者极少	Tang Ying's imitation Guan-glaze water pot; made under the kiln superintendent Tang Ying, whose attributable works barely survive
+商代白陶刻饕餮纹罐，商白陶存世极少，工艺史节点	Shang white pottery jar carved with taotie masks; Shang white pottery survives in tiny numbers and marks a milestone in craft history
+商白陶刻几何纹瓿，商白陶存世极少	Shang white pottery bu carved with geometric design; Shang white pottery survives in tiny numbers
+商白陶刻回纹簋，商白陶存世极少	Shang white pottery gui carved with key-fret; Shang white pottery survives in tiny numbers
+嘉庆帝御用马鞍（同型六副之一）	Saddle of the Jiaqing Emperor (one of six of the same type)
+嘉靖五彩鱼藻图盖罐，明五彩代表作，同型传世少	Jiajing wucai covered jar with fish and waterweed; a masterwork of Ming wucai, few of the type survive
+大汶口白陶鬶，史前白陶稀见品类	Dawenkou white pottery gui; a rare category of prehistoric white pottery
+天然木舟牙雕仙人景，天然材与雕刻结合	Ivory carving of immortals on a natural driftwood base; natural material combined with carving
+太后卧室（原状陈列场景，非单件文物）	Bedchamber of the Empress Dowager (period room setting, not a single object)
+夹纻金漆佛像，夹纻（脱胎）工艺费工且易损，传世少	Buddha in gilt lacquer on hemp-cloth core; the dry-lacquer technique is laborious and fragile, few survive
+夹纻金漆女官像，夹纻工艺且为女官题材，罕见	Female official in gilt lacquer on hemp-cloth core; dry-lacquer technique and an unusual subject
+姚举造铁罗汉像，铁铸造像少见	Iron arhat cast by Yao Ju; cast-iron statuary is uncommon
+官窑粉青釉弦纹瓶，南宋官窑传世名品，釉色与开片的标准器	Guan ware bottle with bowstring bands in pale blue-green glaze; a celebrated Southern Song Guan piece and the standard for its glaze and crackle
+官窑粉青釉弦纹盘口穿带瓶，南宋官窑仿古礼器造型代表	Guan ware pilgrim vase with dish mouth and bowstring bands, pale blue-green glaze; representative of Southern Song Guan archaistic ritual forms
+官窑粉青釉折沿洗（同型）	Guan ware washer with flanged rim, pale blue-green glaze (same type)
+官窑粉青釉折沿洗，南宋官窑文房器	Guan ware washer with flanged rim, pale blue-green glaze; a Southern Song Guan scholar's object
+官窑粉青釉洗	Guan ware washer in pale blue-green glaze
+官窑粉青釉盏托	Guan ware cup stand in pale blue-green glaze
+官窑粉青釉盘	Guan ware dish in pale blue-green glaze
+官窑粉青釉葵口盘	Guan ware foliate dish in pale blue-green glaze
+官窑粉青釉葵口碗	Guan ware foliate bowl in pale blue-green glaze
+官窑粉青釉长方花盆，南宋官窑陈设器罕见	Guan ware rectangular jardinière in pale blue-green glaze; display vessels in Southern Song Guan ware are rare
+定窑『官』字铭水丞，贡瓷款识	Ding ware water pot with a "Guan" mark; a tribute-ware mark
+定窑刻莲瓣纹『官』字铭盖罐，贡瓷款识	Ding ware covered jar with carved lotus petals and a "Guan" mark; a tribute-ware mark
+定窑刻蟠螭纹直颈瓶	Ding ware straight-necked vase carved with coiled chi dragons
+定窑剔划化妆土花鸟图腰圆枕	Ding ware oval pillow with birds and flowers carved through the slip
+定窑弦纹三足樽式炉	Ding ware zun-form tripod censer with bowstring bands
+定窑白釉『官』字铭碗，晚唐五代定窑贡瓷款识标准器	Ding ware bowl in white glaze with a "Guan" mark; the standard reference for late Tang and Five Dynasties Ding tribute marks
+定窑白釉『易定』铭碗，『易定』款传世极少，断代基准	Ding ware bowl in white glaze with a "Yiding" mark; "Yiding" marks barely survive and serve as a dating benchmark
+定窑白釉刻缠枝牡丹纹梅瓶，定窑刻花大器	Ding ware meiping in white glaze carved with scrolling peonies; a large carved Ding vessel
+定窑白釉孩儿枕，宋代瓷塑的顶点，传世同类仅数件，故宫本件为公众认知度最高者	Ding ware boy-shaped pillow in white glaze; the summit of Song ceramic sculpture, only a few of the type survive and this is the best known
+定窑白釉穿带瓜棱瓶	Ding ware lobed vase with pierced lugs, white glaze
+定窑酱釉盖碗，紫定品类	Ding ware covered bowl in brown glaze; the "purple Ding" category
+宜兴窑紫砂泥绘烹茶图题乾隆御制诗茶壶，御制诗紫砂，跨材质孤品级	Yixing zisha teapot with a slip-painted tea-brewing scene and an inscribed Qianlong imperial poem; imperial verse on zisha, a cross-material unicum
+宜兴窑紫砂泥绘题乾隆御制诗六方执壶	Yixing zisha hexagonal ewer with slip painting and an inscribed Qianlong imperial poem
+宣德祭蓝釉白花鱼藻图盘，蓝釉留白工艺	Xuande sacrificial-blue dish with fish and waterweed reserved in white; blue glaze with reserved decoration
+宣德鲜红釉带盖僧帽壶，宣德红釉且器盖俱全者罕见	Xuande bright-red glazed monk's cap ewer with cover; Xuande red glaze surviving complete with its cover is rare
+宣德鲜红釉葵花式洗	Xuande bright-red glazed washer in mallow form
+寿康宫外景（建筑外景照片式条目，非文物）	Exterior of the Shoukang Palace (a photographic entry for the building, not an object)
+崇庆皇太后八旬万寿图，纪实性宫廷绘画，人物与场景可考	Eightieth Birthday of Empress Dowager Chongqing; documentary court painting whose figures and setting can be identified
+巩县窑三彩绞胎长方枕，唐代绞胎	Gongxian ware rectangular pillow in marbled sancai; Tang marbled ware
+帝王御用	Imperial use
+广彩开光花卉人物图折沿盆，广彩外销代表	Guangcai basin with flowers and figures in reserved panels; representative of Guangcai export ware
+广彩徽章折枝花纹盘，纹章瓷	Guangcai dish with an armorial and floral sprays; armorial porcelain
+康熙帝御用合苞哨箭	Whistling arrow with closed head, used by the Kangxi Emperor
+康熙帝御用马鞍（同型六副之一）	Saddle of the Kangxi Emperor (one of six of the same type)
+康熙釉里三色	Kangxi underglaze three-colour
+建窑黑釉兔毫盏（同型）	Jian ware hare's-fur tea bowl in black glaze (same type)
+建窑黑釉兔毫盏，宋代斗茶文化标志器	Jian ware hare's-fur tea bowl in black glaze; the emblematic vessel of Song tea-contest culture
+建窑黑釉茶盏	Jian ware black-glazed tea bowl
+当阳峪窑白釉绞胎罐，绞胎工艺代表	Dangyangyu ware marbled jar with white glaze; representative of the marbled technique
+彩漆嵌铜活鼓字盘二套钟	Polychrome lacquer clock with an inlaid revolving character dial and two chimes
+彩漆描金自开门群仙祝寿楼阁式钟，广钟大型自开门活动场景钟	Polychrome lacquer and gold clock in pavilion form with self-opening doors and immortals offering birthday wishes; a large Canton clock with self-opening doors and animated scene
+戏台遗址（建筑遗迹，非可移动文物）	Chengsua doucai stem cup with lotus roundels
+戏台遗址（重复条目）	Chenghua doucai dish with lingzhi sprays
+成化斗彩团莲纹高足杯	Chenghua doucai cup with floral sprays
+成化斗彩折枝灵芝纹盘	Chenghua doucai cup with auspicious clouds; Chenghua doucai stands at the summit of Ming porcelain in both price and prestige
+成化斗彩折枝花纹杯	Doucai conical bowl with bamboo and phoenix wrapping the rim (one of a pair); the pair survives complete
+成化斗彩灵云纹杯，成化斗彩为明瓷价格与声望之巅	Doucai conical bowl with bamboo and phoenix wrapping the rim (the other of the pair)
+斗彩过墙竹凤图斗笠碗（一对），成对完整	Site of the theatre stage (architectural remains, not a movable object)
+斗彩过墙竹凤图斗笠碗（成对之另一件）	Site of the theatre stage (duplicate entry)
+昙晏等造石佛像，纪年造像题记	Stone Buddha made by Tan Yan and others; a dated dedicatory inscription
+景德镇窑青白釉双狮枕	Jingdezhen ware pillow with twin lions in qingbai glaze
+景德镇窑青白釉注壶、温碗成套，青白瓷酒器组合罕见	Jingdezhen ware qingbai ewer with warming bowl as a set; qingbai wine-vessel sets are rare
+木楼转人塔式乐钟	Pagoda-form musical clock with revolving figures on a wooden tower
+木牛角桦皮弓	Bow of wood, horn and birch bark
+木雕彩绘旃檀佛像，旃檀瑞像粉本传承	Painted wood sandalwood-image Buddha; transmits the Udayana icon prototype
+木雕彩绘贴金大势至像	Painted and gilded wood Mahasthamaprapta
+木雕彩绘贴金观音像，宋元木雕观音代表	Painted and gilded wood Guanyin; representative of Song–Yuan wooden Guanyin figures
+木雕金漆宗喀巴像，格鲁派祖师像	Gilt-lacquered wood figure of Tsongkhapa; founder of the Gelug school
+正殿屏风宝座（成组陈设，作为场景计）	Throne and screen in the main hall (a grouped setting, counted as a scene)
+水晶雕兕觥，水晶大件仿古器	Rock-crystal archaistic rhyton; a large archaistic vessel in rock crystal
+水晶雕天鸡尊	Rock-crystal zun in the form of a mythical bird
+永乐特有釉色	Glaze colour peculiar to the Yongle reign
+永乐甜白釉带盖僧帽壶，甜白釉代表器型	Yongle sweet-white monk's cap ewer with cover; the emblematic form for sweet-white glaze
+永乐翠青釉三系盖罐，翠青釉为永乐独有釉色，传世少	Yongle covered jar with three lugs in kingfisher-green glaze; a glaze exclusive to the Yongle reign, few survive
+永乐青花缠枝茶花纹天球瓶，永宣大器代表	Yongle blue-and-white globular vase with scrolling camellia; representative of large Yongle–Xuande vessels
+永乐青花缠枝莲纹压手杯（狮球心），同为压手杯传世稀品	Yongle blue-and-white "palm-supporting" cup with scrolling lotus (lion-and-ball centre); another rare surviving palm-supporting cup
+永乐青花缠枝莲纹压手杯（葵花心），永乐压手杯传世极罕，故宫为主要藏地，明青花断代基准器	Yongle blue-and-white "palm-supporting" cup with scrolling lotus (mallow-flower centre); Yongle palm-supporting cups barely survive, the Palace Museum holds the main group, and it is the dating benchmark for Ming blue-and-white
+汉灰陶博山炉，汉代典型器	Han grey pottery boshan censer; a characteristic Han vessel
+汉灰陶鸭尊，汉代陶塑造型标本	Han grey pottery duck-shaped zun; a specimen of Han ceramic modelling
+汝窑三足樽式炉承盘，与樽式炉配套，成组存世极罕	Ru ware stand for a zun-form tripod censer; matches the censer, and the pairing barely survives
+汝窑淡天青釉弦纹三足樽式炉，仿汉铜樽造型，传世汝窑中的孤品级器型	Ru ware zun-form tripod censer with bowstring bands in pale sky-blue glaze; archaising a Han bronze zun, a unicum form among surviving Ru ware
+汝窑淡天青釉盘，传世汝窑总量不足百件，本器为盘类代表	Ru ware dish in pale sky-blue glaze; fewer than a hundred pieces of Ru ware survive worldwide and this represents the dish form
+汝窑淡天青釉碗，传世汝窑碗形器屈指可数，稀缺度居全馆之首	Ru ware bowl in pale sky-blue glaze; surviving Ru bowls can be counted on the fingers, the scarcest object in the museum
+泥塑彩绘关羽像	Painted clay figure of Guan Yu
+泥塑彩绘雍正像，帝王写实塑像传世极罕，人物身份明确	Painted clay figure of the Yongzheng Emperor; realistic imperial portrait sculpture barely survives and the sitter is securely identified
+洋瓷雕飞天人钟	Clock with a foreign-porcelain carved apsara figure
+洒蓝地五彩魁星点斗图笔筒，洒蓝地五彩少见	Powder-blue-ground wucai brush pot with Kuixing pointing at the Dipper; wucai on powder blue is uncommon
+淡黄地珐琅彩兰石图题诗句碗	Falangcai bowl with orchids and rock and an inscribed couplet on a pale yellow ground
+淡黄地粉彩锦上添花镂空干支字象耳转心瓶，转心加干支纪年镂空，罕见	Famille-rose revolving vase with elephant handles, openwork sexagenary characters and brocade ground; revolving structure plus openwork cyclical dating, a rarity
+漳州窑青花开光花鸟图盘，漳州窑外销标本	Zhangzhou ware blue-and-white dish with birds and flowers in reserved panels; a specimen of Zhangzhou export ware
+点翠嵌珍珠宝石金龙凤冠，后妃冠服的最高形制代表	Gold phoenix-and-dragon crown with kingfisher feather, pearls and gems; representative of the highest form of imperial consort regalia
+猫睛石（宝石标本）	Cat's eye (gemstone specimen)
+玉柄金桃皮鞘寒锋腰刀，清宫御制刀剑定制系列之一	Waist sabre with jade hilt and gold-flecked peach-bark scabbard; one of the imperially commissioned Qing court sword series
+珊瑚狮子，珊瑚大件圆雕	Coral lion; a large coral carving in the round
+珐琅彩怪石花卉图题诗句瓶	Falangcai vase with rockery, flowers and an inscribed couplet
+珐琅彩松竹梅纹题诗句橄榄瓶，珐琅彩瓶类少于碗盘	Falangcai olive-shaped vase with pine, bamboo and plum and an inscribed couplet; falangcai vases are scarcer than bowls and dishes
+珐琅彩梅花月季图题诗句碗	Falangcai bowl with plum and China rose and an inscribed couplet
+珐琅彩花卉图胆式瓶，晚期珐琅彩	Falangcai gall-bladder vase with flowers; late falangcai
+珐琅彩锦鸡牡丹图题诗句碗	Falangcai bowl with golden pheasant and peony and an inscribed couplet
+珐花镂空孔雀牡丹图绣墩，珐花大器传世少	Fahua garden seat with openwork peacocks and peonies; large fahua vessels rarely survive
+琥珀刻乾隆御题诗鼻烟壶，御题诗鼻烟壶	Amber snuff bottle carved with a Qianlong imperial poem; snuff bottle bearing an imperial verse
+瓷仿他材质	Porcelain imitating other materials
+田黄三连印，乾隆田黄石三印以链相连，材质与雕工俱为极致，公众认知度极高	Three linked tianhuang seals; Qianlong's three tianhuang seals joined by carved chains, superlative in both material and carving, and very widely known
+田黄石雕伏虎罗汉，田黄大件圆雕	Tianhuang stone tiger-taming arhat; a large tianhuang carving in the round
+田黄石雕狮钮方章料，田黄材质	Tianhuang seal blank with a lion knop; tianhuang material
+登封窑白釉珍珠地刻划虎纹瓶，珍珠地划花代表作	Dengfeng ware vase with an incised tiger on a pearl ground, white glaze; the exemplar of pearl-ground incising
+白地素三彩锥拱缠枝莲纹梅瓶	Meiping with openwork-style incised scrolling lotus on a white susancai ground
+白玉错金嵌宝石碗，痕都斯坦风格错金嵌宝	White jade bowl with gold inlay and gem settings; Hindustan-style gold inlay and gem setting
+白玉雕桐荫仕女图山子，以制碗掏膛的余料巧雕成景，构思独一无二，乾隆御题	White jade mountain with a lady beneath a paulownia; carved from the core left over from hollowing a bowl, unique in conception, with a Qianlong imperial inscription
+白釉『丁道刚作瓶大好』铭执壶，带工匠自铭，唐代白瓷断代基准	White-glazed ewer inscribed "Ding Daogang made this fine vase"; bears the potter's own inscription and dates Tang white porcelain
+白釉塑贴鲜红蟠螭蒜头瓶，两色釉复合工艺	White-glazed garlic-head vase with applied bright-red coiled chi dragons; a composite two-colour glaze technique
+皇太极御用马鞍，清初开国期遗物，比乾隆朝同类稀缺	Saddle of Hong Taiji; a relic of the Qing founding period, scarcer than Qianlong-era equivalents
+皇帝吉礼随侍鈚箭	Blade arrow carried in imperial auspicious rites
+皇帝御用成鈚箭，御用箭矢，同类多支	Imperial finished blade arrow; an imperial arrow, many of the type
+皮盔缨，甲胄配件	Leather helmet plume; an armour fitting
+石太子像	Stone figure of a prince
+石男女拥抱像，题材在中国古代石刻中极罕见	Stone figures of an embracing man and woman; an extremely rare subject in early Chinese stone carving
+石造像碑（第二例）	Stone votive stele (second example)
+石造像碑，多面造像碑形制完整者少	Stone votive stele; complete multi-faced steles are uncommon
+碧玉嵌白玉穿花龙纹圆盒	Green jade round box with white jade dragons among flowers
+碧玉御笔前后哨鹿赋册，玉册加御笔文章	Green jade album of the imperial rhapsody on the deer hunt; a jade album carrying an imperially brushed text
+碧玉雕采玉图山子，题材直接表现采玉劳作，史料性强	Green jade mountain depicting jade gathering; the subject directly shows jade-mining labour and is rich in documentary value
+碧玉龙纽『武功十全之宝』，乾隆自述十全武功的宝玺，政治史坐标	Green jade seal with dragon knop, "Treasure of the Ten Complete Martial Feats"; Qianlong's seal proclaiming his ten campaigns, a landmark of political history
+磁州窑白地黑花『镇宅』铭八方枕，带铭文民俗标本	Cizhou ware octagonal pillow with black-on-white "guard the house" inscription; an inscribed folk specimen
+磁州窑白地黑花题诗句如意头枕，瓷上书法	Cizhou ware ruyi-head pillow with black-on-white inscribed verse; calligraphy on porcelain
+磁州窑白地黑花马戏图八方枕	Cizhou ware octagonal pillow with black-on-white circus scene
+祖母绿宝石（宝石标本）	Emerald (gemstone specimen)
+祭蓝地描金夹白地粉彩题乾隆帝御制诗瓶，御制诗器	Vase with gold-painted sacrificial blue and famille-rose panels on white, inscribed with a Qianlong imperial poem; an imperial-verse vessel
+祭蓝釉金彩牛犊纹双系尊，蓝釉描金保存者少	Sacrificial-blue zun with two lugs and gold-painted calves; blue glaze with gold painting rarely survives
+米色釉布袋和尚像	Buff-glazed figure of Budai
+粉彩九桃结树图天球瓶，同为过枝桃经典	Famille-rose globular vase with nine peaches on the branch; another classic of the wrapped-peach design
+粉彩像生瓷海螺，像生瓷	Famille-rose trompe-l'oeil conch shell; trompe-l'oeil porcelain
+粉彩八桃结树图天球瓶，雍正粉彩过枝桃花的经典	Famille-rose globular vase with eight peaches on the branch; the classic of Yongzheng famille-rose wrapped-peach design
+粉彩制瓷图葵口碗，以瓷绘制瓷工序，工艺自述题材罕见	Famille-rose foliate bowl depicting porcelain manufacture; porcelain painted with the stages of porcelain making, a rare self-referential subject
+粉彩塑雕像生果品蟹盘，像生瓷仿真极致	Famille-rose dish of modelled trompe-l'oeil fruit and crabs; the extreme of trompe-l'oeil realism in porcelain
+粉彩婴戏图双联瓶	Famille-rose twin vase with boys at play
+粉彩御窑厂图螭耳瓶，图绘御窑厂全景，史料价值高	Famille-rose vase with chi-dragon handles depicting the imperial kiln; a panoramic view of the imperial kiln, high documentary value
+粉彩描金书函式金钟笼，造型独特	Famille-rose gold-painted birdcage in the form of a book box; an unusual form
+粉彩描金徽章纹托盘，外销纹章瓷	Famille-rose gold-painted armorial tray; export armorial porcelain
+粉彩过枝桃树图盘，过枝技法	Famille-rose dish with a peach tree wrapping the rim; the wrapped-design technique
+粉彩钟馗醉酒像，清代瓷塑人物	Famille-rose figure of a drunken Zhong Kui; Qing figural porcelain sculpture
+粉彩镂空暗八仙纹双耳转心瓶，转心瓶传世稀少，结构复杂	Famille-rose revolving vase with two handles and openwork Eight Immortals emblems; revolving vases rarely survive and the structure is complex
+素三彩锥拱海水蟾蜍纹三足洗	Susancai tripod washer with waves and toads in openwork-style relief
+紫檀嵌玉座蜜蜡珊瑚仙人乘凤景，多材质复合盆景	Tray landscape of immortals riding a phoenix in beeswax and coral on a zitan stand; a composite multi-material tray landscape
+紫檀木边嵌玉石明皇试马图挂屏，有明确画意母题	Hanging screen with a zitan frame inlaid with jade depicting Emperor Ming trying a horse; carries a definite pictorial motif
+紫檀重檐楼阁式嵌珐琅更钟，清宫造办处自制更钟，中国化报时制度的实物，本土制钟代表	Zitan double-eaved pavilion clock inlaid with cloisonné; a night-watch clock made by the Qing palace workshops, the physical evidence of a sinicised timekeeping system and the exemplar of native clockmaking
+翠雕太平有象纹磬，翡翠大件加吉语题材，陈设重器	Jadeite chime carved with an elephant for "great peace"; a large jadeite piece with an auspicious rebus, a major display object
+翠雕白菜式花插，翡翠俏色白菜为流行题材	Jadeite flower holder in the form of a cabbage; the coloured-jade cabbage is a popular subject
+翠雕鹤鹿人物图山子，翡翠山子	Jadeite mountain with cranes, deer and figures; a jadeite mountain carving
+耀州窑天青釉刻莲瓣纹罐，耀州天青釉少见	Yaozhou ware jar with carved lotus petals in sky-blue glaze; sky-blue glaze is uncommon at Yaozhou
+耀州窑天青釉塑贴摩羯纹花形碗	Yaozhou ware foliate bowl with applied makara in sky-blue glaze
+耀州窑青釉刻坤牛望月图碗，耀州刻花叙事题材罕见	Yaozhou ware bowl carved with an ox gazing at the moon, celadon glaze; narrative subjects in Yaozhou carving are rare
+耀州窑青釉药王像，耀州窑瓷塑罕见	Yaozhou ware figure of the Medicine King, celadon glaze; ceramic sculpture from Yaozhou is rare
+胭脂红地开光珐琅彩牡丹纹杯	Falangcai cup with peonies in a reserved panel on a rouge-red ground
+胭脂红地珐琅彩山水花鸟图碗	Falangcai bowl with landscape, birds and flowers on a rouge-red ground
+胭脂红彩山水图题诗句小瓶	Small vase with a rouge-red landscape and an inscribed couplet
+胭脂红蓝地轧道粉彩折枝西洋花纹双联瓶，轧道洋彩与双联结构	Twin vase with famille-rose Western floral sprays on an incised rouge-red and blue ground; incised yangcai combined with a twin structure
+芗他君祠堂石柱，带纪年题记的汉代祠堂建筑构件，史料价值高	Stone pillar from the shrine of Xiang Tajun; a dated Han shrine building member of high documentary value
+荆轲刺秦王门楣画像石，汉画像石叙事题材名品，构图为美术史常引图版	Pictorial stone of Jing Ke's attempt on the King of Qin; a celebrated narrative Han pictorial stone whose composition is a standard art-historical illustration
+蒋元裕造米色釉布袋和尚像，带匠款	Buff-glazed Budai made by Jiang Yuanyu; bears the maker's mark
+蓝地珐琅彩缠枝牡丹纹碗	Falangcai bowl with scrolling peonies on a blue ground
+蓝地粉彩开光山水图转颈瓶，转颈结构	Famille-rose swivel-neck vase with landscape panels on a blue ground; swivel-neck construction
+蓝料彩山水图题诗句碗，蓝料彩单色画意	Bowl with a blue-enamel landscape and an inscribed couplet; monochrome pictorial work in blue enamel
+西村窑青白釉凤首壶	Xicun ware qingbai ewer with a phoenix-head spout
+西村窑青白釉褐斑刻凤纹碗，广东外销窑口标本	Xicun ware bowl with brown-splashed carved phoenix, qingbai glaze; a specimen of the Guangdong export kilns
+豇豆红釉凸刻菊瓣纹瓶，豇豆红烧成难度极高，康熙独有	Peachbloom vase with carved chrysanthemum petals; peachbloom was extremely difficult to fire and is exclusive to the Kangxi reign
+越窑秘色瓷八棱净瓶，与法门寺地宫同型，秘色瓷标准器	Yue ware octagonal secret-colour bottle; the same type as the Famen Temple crypt finds, the reference standard for secret-colour ware
+越窑秘色瓷净瓶，秘色瓷法门寺出土前长期只见文献，传世确认品极稀	Yue ware secret-colour bottle; before the Famen Temple excavation secret-colour ware was known only from texts, and confirmed survivals are exceedingly scarce
+越窑秘色瓷执壶，秘色瓷传世确认品	Yue ware secret-colour ewer; a confirmed surviving secret-colour piece
+越窑秘色瓷菱花口盘，秘色瓷传世确认品	Yue ware secret-colour foliate dish; a confirmed surviving secret-colour piece
+轧道洋彩	Incised yangcai
+邢窑白釉褐彩子母狮塑像，邢窑塑像罕见	Xing ware figure of a lioness and cub with brown decoration on white glaze; figural sculpture from Xing ware is rare
+郎窑红釉琵琶尊	Langyao red-glazed pipa-shaped zun
+郎窑红釉观音瓶，郎窑红为清代仿宣德红釉的巅峰，成品率极低	Langyao red-glazed Guanyin vase; langyao red was the summit of Qing attempts at Xuande red glaze and its success rate was minute
+郭葆昌制粉彩仕女图瓶	Famille-rose vase with a beauty, made by Guo Baochang
+郭葆昌制粉彩萱草图瓶，民国『居仁堂』系统	Famille-rose vase with day lilies, made by Guo Baochang; from the Republican "Juren Tang" series
+醴陵窑釉下五彩菊花图梅瓶，近代民族瓷业代表，非清宫体系	Liling ware meiping with underglaze five-colour chrysanthemums; representative of the modern Chinese ceramic industry and outside the Qing court system
+釉里三色山水人物图笔筒	Underglaze three-colour brush pot with a landscape and figures
+釉里三色花鸟图花觚，釉里三色为康熙独创	Underglaze three-colour gu-form vase with birds and flowers; underglaze three-colour was a Kangxi innovation
+金交龙钮『奉天之宝』玺，清二十五宝之一，国家最高等级印信	Gold seal with interlaced-dragon knop, "Treasure of the Mandate of Heaven"; one of the Twenty-Five Imperial Seals and the highest grade of state seal
+金嵌珍珠天球仪，金质天文仪器，兼具科技史意义	Gold celestial globe set with pearls; a gold astronomical instrument of significance to the history of science
+金嵌珍珠皇后冬朝冠，皇后朝冠定制品	Gold winter court crown of an empress set with pearls; a bespoke empress's court crown
+金爵杯，金质礼器	Gold jue cup; a gold ritual vessel
+金瓯永固杯，清帝元旦开笔典礼专用，寓意疆土永固，传世仅数件，珍宝馆头号国宝	Gold cup of Eternal Stability; used exclusively at the emperor's New Year first-writing ceremony, symbolising a permanent realm, only a few survive — the foremost treasure of the Treasure Gallery
+金甪端形香熏	Gold incense burner in the form of a luduan
+金累丝万年如意，金累丝工艺代表	Gold filigree ruyi sceptre for eternal years; representative of gold filigree work
+金累丝嵌松石坛城，坛城立体金作罕见	Gold filigree mandala inset with turquoise; three-dimensional mandalas in gold are rare
+金累丝嵌珍珠宝石覆钵式塔，藏传佛教金器	Gold filigree stupa set with pearls and gems; Tibetan Buddhist goldwork
+金胎掐丝珐琅嵌画珐琅人物图葫芦式执壶，两种珐琅工艺同施金胎	Gourd-shaped ewer on a gold body with cloisonné and painted-enamel figure panels; two enamel techniques on one gold body
+金胎画珐琅开光西洋人物图执壶，金胎画珐琅，中西合璧	Ewer on a gold body with painted enamel Western figures in reserved panels; painted enamel on gold, a East-West hybrid
+金胎绿珐琅嵌红宝石高足盖碗	Gold stem bowl with green enamel and ruby settings
+金錾云龙纹提炉	Gold portable censer engraved with clouds and dragons
+金镂空大吉葫芦式香熏	Gold gourd-shaped censer with openwork "great fortune" characters
+金镶枷楠香木嵌寿字手镯，沉香材质	Gold bracelet inset with agarwood and longevity characters; agarwood material
+钧窑天蓝釉六方花盆	Jun ware hexagonal jardinière in sky-blue glaze
+钧窑天蓝釉板沿洗	Jun ware washer with flanged rim, sky-blue glaze
+钧窑天蓝釉紫红斑带盖梅瓶	Jun ware covered meiping with purple-red splashes on sky-blue glaze
+钧窑天蓝釉紫红斑折沿盘	Jun ware dish with flanged rim, purple-red splashes on sky-blue glaze
+钧窑天蓝釉紫红斑花式杯	Jun ware foliate cup with purple-red splashes on sky-blue glaze
+钧窑天蓝釉长方花盆托	Jun ware rectangular flowerpot stand in sky-blue glaze
+钧窑天蓝釉鼓钉花盆托	Jun ware drum-nail flowerpot stand in sky-blue glaze
+钧窑月白釉出戟尊，仿商周铜尊造型，官钧陈设器中最重要的器型之一	Jun ware zun with flanges in moon-white glaze; archaising a Shang–Zhou bronze zun, one of the most important forms among official Jun display vessels
+钧窑月白釉渣斗式花盆	Jun ware jardinière in zhadou form, moon-white glaze
+钧窑月白釉玉壶春瓶	Jun ware yuhuchun vase in moon-white glaze
+钧窑玫瑰紫釉仰钟式花盆	Jun ware bell-shaped jardinière in rose-purple glaze
+钧窑玫瑰紫釉海棠式花盆	Jun ware jardinière in begonia form, rose-purple glaze
+钧窑玫瑰紫釉菱花式花盆	Jun ware jardinière in water-chestnut-flower form, rose-purple glaze
+钧窑玫瑰紫釉葵花式花盆，官钧花器代表，窑变釉色标准器	Jun ware jardinière in mallow form, rose-purple glaze; representative of official Jun flower vessels and the reference standard for transmutation glaze
+钧窑玫瑰紫釉长方花盆	Jun ware rectangular jardinière in rose-purple glaze
+钻石（宝石标本）	Diamond (gemstone specimen)
+铁柄鲨鱼皮鞘辅德剑，清宫御制剑定制系列之一	Fude sword with iron hilt and shagreen scabbard; one of the imperially commissioned Qing court sword series
+铜热气球式钟，以热气球为造型，反映早期航空题材	Bronze clock in the form of a hot-air balloon; shaped as a balloon, reflecting an early aviation subject
+铜轮船模型表，轮船造型	Bronze watch in the form of a steamship; steamship form
+铜鎏金千手千眼观音像，多臂造像结构复杂，同类完整者少	Gilt-bronze thousand-armed, thousand-eyed Guanyin; multi-armed images are structurally complex and complete examples are uncommon
+铜镀金七政仪表，天文仪器与钟表合体，科技史价值	Gilt-bronze orrery watch; an astronomical instrument combined with a timepiece, valuable for the history of science
+铜镀金写字人钟，机械人偶可执笔写字，故宫钟表馆头号名品，机械复杂度居首	Gilt-bronze writing automaton clock; the mechanical figure holds a brush and writes, the foremost piece in the Palace Museum Clock Gallery and the most mechanically complex
+铜镀金嵌珐琅转花鸟音水法钟，水法（仿水流）机构	Gilt-bronze clock with cloisonné, revolving flowers, birdsong and a waterfall effect; incorporates a "water effect" mechanism simulating flowing water
+铜镀金珐琅群仙祝寿楼阁式钟	Gilt-bronze cloisonné pavilion clock with immortals offering birthday wishes
+铜镀金象拉战车钟，活动场景钟	Gilt-bronze clock with an elephant drawing a chariot; an animated-scene clock
+铜镀金转花自鸣过枝雀笼钟，雀笼与钟结合，活动机构复杂	Gilt-bronze birdcage clock with revolving flowers, self-striking movement and birds on branches; birdcage combined with clock, mechanically complex
+银鎏金六世班禅像，乾隆为六世班禅所制肖像式造像，宗教史与政治史双重坐标，孤品	Silver-gilt image of the Sixth Panchen Lama; a portrait image made by Qianlong for the Sixth Panchen Lama, a landmark of both religious and political history, unique
+镶青金石金约，后妃首服定制件	Jinyue collar inset with lapis lazuli; a bespoke consort's headdress fitting
+长沙窑褐斑模印贴花椰枣纹执壶，唐代外销与异域纹样标本	Changsha ware ewer with brown-splashed moulded date-palm design; a specimen of Tang export ware and foreign ornament
+长沙窑青釉彩绘花鸟图执壶，釉下彩绘的开端	Changsha ware ewer with painted birds and flowers, celadon glaze; the beginning of underglaze painting
+长治窑白地黑彩虎枕	Changzhi ware tiger pillow with black-on-white decoration
+长治窑白釉红绿彩鱼衔花纹碗，红绿彩早期标本	Changzhi ware bowl with a fish holding a flower in red and green on white glaze; an early specimen of red-and-green enamel
+陶彩绘舞马，舞马题材与唐代文献互证	Painted pottery dancing horse; the dancing-horse subject corroborates Tang texts
+陶昆仑奴俑，唐代外来人物形象	Pottery Kunlun slave figure; a foreign figure type of the Tang
+陶黄釉大食人俑，唐代外来人物形象	Yellow-glazed pottery figure of a Tazi; a foreign figure type of the Tang
+雍正帝御用马鞍（同型六副之一）	Saddle of the Yongzheng Emperor (one of six of the same type)
+青玉雕会昌九老图山子，大型玉山子叙事题材代表	Blue-green jade mountain of the Nine Elders of Huichang; representative of narrative subjects on large jade mountains
+青玉雕秋山行旅图山子	Blue-green jade mountain with travellers in autumn hills
+青花折枝花纹如意耳扁壶，永宣仿西亚金属器造型	Blue-and-white flattened flask with ruyi handles and floral sprays; a Yongle–Xuande form imitating West Asian metalwork
+青花波斯文『天顺年』铭三足筒式炉，明代『空白期』带纪年款青花极少，断代坐标	Blue-and-white tripod cylindrical censer with a Persian inscription and "Tianshun year" mark; dated blue-and-white from the Ming "interregnum" is very scarce, and this is a dating anchor
+青花海水刻白龙纹扁壶，刻白龙配青花海水，工艺复合	Blue-and-white flattened flask with a white dragon carved above waves; carved white dragon combined with blue waves, a composite technique
+青花缠枝花纹阿拉伯文无当尊，伊斯兰造型影响标本	Blue-and-white wudang zun with scrolling flowers and an Arabic inscription; a specimen of Islamic formal influence
+青花缠枝莲纹宝月壶，永宣外来器型	Blue-and-white moon flask with scrolling lotus; a foreign form of the Yongle–Xuande period
+青花蓝查体梵文出戟盖罐，藏传佛教题材官窑器	Blue-and-white covered jar with flanges and Lanydza Sanskrit; an imperial vessel with Tibetan Buddhist subject matter
+青花釉里红松竹梅图竹叶藏诗梅瓶，纹中藏诗，构思巧	Blue-and-white and underglaze-red meiping with pine, bamboo and plum concealing a poem in the leaves; a poem hidden within the ornament, ingeniously conceived
+青花釉里红题《圣主得贤臣颂》笔筒，长篇御笔书法入瓷	Blue-and-white and underglaze-red brush pot inscribed with the "Ode to a Wise Sovereign Obtaining Worthy Ministers"; a long passage of imperial calligraphy transferred to porcelain
+青花题『万寿尊赋』笔筒	Blue-and-white brush pot inscribed with the "Rhapsody on the Longevity Zun"
+青花题『前赤壁赋』笔筒	Blue-and-white brush pot inscribed with the "Former Ode on the Red Cliff"
+青釉堆塑楼阁人物谷仓罐，同类第二例	Celadon granary jar with applied pavilions and figures; a second example of the type
+青釉塑贴人物纹凤首龙柄壶，隋唐过渡期名品	Celadon ewer with a phoenix-head spout, dragon handle and applied figures; a celebrated piece of the Sui–Tang transition
+青金石雕松泉人物图山子	Lapis lazuli mountain with pines, springs and figures
+韩子思造石思惟像，带造像人题记的北朝思惟像	Stone pensive bodhisattva made by Han Zisi; a Northern Dynasties pensive image with a donor inscription
+顺治帝御用马鞍（同型六副之一）	Saddle of the Shunzhi Emperor (one of six of the same type)
+马家窑彩陶旋涡纹壶，新石器彩陶代表纹样	Majiayao painted pottery jar with a whirlpool design; the representative motif of Neolithic painted pottery
+鲁山窑花釉腰鼓，唐代花釉代表器，与文献『鲁山花瓷』互证，传世孤例级	Lushan ware waist drum in splashed glaze; the representative Tang splashed-glaze vessel, corroborating the texts on "Lushan splashed ware", of unique surviving rank
+鹿哨，行围用具	Deer whistle; a hunting implement
+黄地珐琅彩开光花卉纹碗	Falangcai bowl with flowers in reserved panels on a yellow ground
+黄地珐琅彩开光西洋人物图绶带耳葫芦扁瓶，珐琅彩中西合璧代表，北京故宫珐琅彩藏量有限	Gourd-shaped flattened flask with ribbon handles and falangcai Western figures in reserved panels on a yellow ground; representative of East-West hybrid falangcai, and the Palace Museum's falangcai holdings are limited
+黄地珐琅彩石榴花图题诗句杯，诗书画印一体的珐琅彩范式	Falangcai cup with pomegranate flowers and an inscribed couplet on a yellow ground; the falangcai paradigm uniting poetry, calligraphy, painting and seal
+黄地青花缠枝花纹交泰转心瓶，交泰结构上下互套可转动，乾隆御窑炫技孤品	Blue-and-white revolving vase with scrolling flowers on a yellow ground, interlocking construction; the interlocking upper and lower sections rotate — a Qianlong imperial-kiln virtuoso unicum
+黄玉雕佛手式花插，黄玉材质	Yellow jade flower holder in the form of a Buddha's-hand citron; yellow jade material
+黄玉雕象驮宝瓶，黄玉材质稀少	Yellow jade elephant bearing a vase; yellow jade is a scarce material
+黄玉雕骆驼	Yellow jade camel
+黄玉雕鱼龙式花插	Yellow jade flower holder in the form of a fish-dragon
+黄花梨雕龙大柜，黄花梨大件家具	Large huanghuali cabinet carved with dragons; a large piece of huanghuali furniture
+龙泉窑粉青釉纸槌瓶，南宋龙泉粉青釉标准器	Longquan ware mallet vase in pale blue-green glaze; the reference standard for Southern Song Longquan pale blue-green glaze
+龙泉窑青釉琮式瓶，仿玉琮造型	Longquan ware cong-form vase in celadon glaze; imitating the form of a jade cong
+龙泉窑青釉露胎八仙人物图八方梅瓶	Longquan ware octagonal meiping with unglazed relief figures of the Eight Immortals, celadon glaze

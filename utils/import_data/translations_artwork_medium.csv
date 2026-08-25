@@ -1,0 +1,174 @@
+# 门类 / 材质 / 媒材
+#
+# key        —— 原文，去重键，须与源 Excel 逐字一致，不要改
+# zh / en    —— 两个语种的文本；原文那一侧已填好，另一侧待译
+# confidence —— 官方 / AI / 存疑，只描述「译出来的那一半」
+#                官方 = 通行的既定译名（Louvre = 卢浮宫）
+#                AI   = 机器翻译，正常可用
+#                存疑 = 拿不准，优先人工复核（grep 存疑 即可捞出）
+#
+# 本文件由 make_translation_skeleton.py 生成与增量更新，可直接手工编辑。
+kind,key,zh,en,confidence
+artwork_medium,Alabaster,雪花石膏,Alabaster,AI
+artwork_medium,Albumen Photograph,蛋白照片,Albumen Photograph,AI
+artwork_medium,Armor / Metal,甲胄／金属,Armor / Metal,AI
+artwork_medium,Armor Mixed‑Media,甲胄（综合材质）,Armor Mixed‑Media,AI
+artwork_medium,Art Glass,艺术玻璃,Art Glass,AI
+artwork_medium,Art‑Glass,艺术玻璃,Art‑Glass,AI
+artwork_medium,Bamboo Craft,竹工艺,Bamboo Craft,AI
+artwork_medium,Bamboo‑Paper Fan,竹骨纸扇,Bamboo‑Paper Fan,AI
+artwork_medium,Black Stone Sculpture,黑石雕刻,Black Stone Sculpture,AI
+artwork_medium,Brass Artifact,黄铜器,Brass Artifact,AI
+artwork_medium,Brass Inlaid Metalwork,黄铜错嵌金工,Brass Inlaid Metalwork,AI
+artwork_medium,Brass Metal,黄铜,Brass Metal,AI
+artwork_medium,Brass Metalwork,黄铜金工,Brass Metalwork,AI
+artwork_medium,Brass with Silver Inlay,黄铜错银,Brass with Silver Inlay,AI
+artwork_medium,Brass‑Enamel,铜胎珐琅,Brass‑Enamel,AI
+artwork_medium,Brass‑Glass Scientific Instrument,铜玻璃科学仪器,Brass‑Glass Scientific Instrument,AI
+artwork_medium,Brass‑Iron Metalwork,铜铁金工,Brass‑Iron Metalwork,AI
+artwork_medium,Bronze,青铜,Bronze,AI
+artwork_medium,Bronze Metalwork,青铜金工,Bronze Metalwork,AI
+artwork_medium,Bronze Sculpture,青铜雕塑,Bronze Sculpture,AI
+artwork_medium,Bronze with Gold Inlay,青铜错金,Bronze with Gold Inlay,AI
+artwork_medium,Carved Ivory,象牙雕,Carved Ivory,AI
+artwork_medium,Carved Wood,木雕,Carved Wood,AI
+artwork_medium,Carved Wood Container,木雕容器,Carved Wood Container,AI
+artwork_medium,Carved Wood Folk Object,木雕民俗器物,Carved Wood Folk Object,AI
+artwork_medium,Carved Wood Fragment,木雕残件,Carved Wood Fragment,AI
+artwork_medium,Carved Wood Sculpture,木雕造像,Carved Wood Sculpture,AI
+artwork_medium,Carved Wood Vessel,木雕器皿,Carved Wood Vessel,AI
+artwork_medium,Carved Wood Weapon,木雕兵器,Carved Wood Weapon,AI
+artwork_medium,Cast Brass,铸黄铜,Cast Brass,AI
+artwork_medium,Cast Iron,铸铁,Cast Iron,AI
+artwork_medium,Ceramic,陶瓷,Ceramic,AI
+artwork_medium,Charcoal,炭笔,Charcoal,AI
+artwork_medium,Charcoal on Paper,纸本炭笔,Charcoal on Paper,AI
+artwork_medium,Embroidery Textile,刺绣织物,Embroidery Textile,AI
+artwork_medium,Engraved Brass Scientific Instrument,刻纹黄铜科学仪器,Engraved Brass Scientific Instrument,AI
+artwork_medium,Engraved Walrus Ivory,海象牙刻,Engraved Walrus Ivory,AI
+artwork_medium,Engraved Whale Tooth,鲸齿刻,Engraved Whale Tooth,AI
+artwork_medium,Engraved Whalebone,鲸骨刻,Engraved Whalebone,AI
+artwork_medium,Etching,蚀刻版画,Etching,AI
+artwork_medium,Etching on Paper,纸本蚀刻版画,Etching on Paper,AI
+artwork_medium,Faience,费昂斯釉陶,Faience,AI
+artwork_medium,Feather‑Textile Fragment,羽毛织物残片,Feather‑Textile Fragment,AI
+artwork_medium,Glass,玻璃,Glass,AI
+artwork_medium,Glass Vessel,玻璃器皿,Glass Vessel,AI
+artwork_medium,Glazed Ceramic,釉陶,Glazed Ceramic,AI
+artwork_medium,Glazed Ceramic Tile,釉面陶砖,Glazed Ceramic Tile,AI
+artwork_medium,Glazed Pottery,釉陶器,Glazed Pottery,AI
+artwork_medium,Gold Metal,金,Gold Metal,AI
+artwork_medium,Gouache on Board,板上水粉,Gouache on Board,AI
+artwork_medium,Gouache on Paper,纸本水粉,Gouache on Paper,AI
+artwork_medium,Granite Sculpture,花岗岩雕刻,Granite Sculpture,AI
+artwork_medium,Graphite on Paper,纸本石墨,Graphite on Paper,AI
+artwork_medium,Hand‑Colored Lithograph,手工上色石版画,Hand‑Colored Lithograph,AI
+artwork_medium,Historic Wooden Architecture,木构古建筑,Historic Wooden Architecture,AI
+artwork_medium,Ink on Paper,纸本水墨,Ink on Paper,AI
+artwork_medium,Ink on Silk,绢本水墨,Ink on Silk,AI
+artwork_medium,Ink‑Color on Paper,纸本设色,Ink‑Color on Paper,AI
+artwork_medium,Ink‑Color on Silk,绢本设色,Ink‑Color on Silk,AI
+artwork_medium,Ink‑Watercolor,水墨淡彩,Ink‑Watercolor,AI
+artwork_medium,Ink‑color on Silk,绢本设色,Ink‑color on Silk,AI
+artwork_medium,Inlaid Wood,镶嵌木作,Inlaid Wood,AI
+artwork_medium,Inlaid Wood Furniture,镶嵌木家具,Inlaid Wood Furniture,AI
+artwork_medium,Iron Metalwork,铁工艺,Iron Metalwork,AI
+artwork_medium,Ivory,象牙,Ivory,AI
+artwork_medium,Ivory‑Paper Fan,象牙纸扇,Ivory‑Paper Fan,AI
+artwork_medium,Lacquered Wood,漆木,Lacquered Wood,AI
+artwork_medium,Lacquered Wood Furniture,漆木家具,Lacquered Wood Furniture,AI
+artwork_medium,Lacquered Wood Transport Object,漆木交通器具,Lacquered Wood Transport Object,AI
+artwork_medium,Lacquerware,漆器,Lacquerware,AI
+artwork_medium,Lead & Steel,铅与钢,Lead & Steel,AI
+artwork_medium,Lead Metal Object,铅器,Lead Metal Object,AI
+artwork_medium,Limestone,石灰岩,Limestone,AI
+artwork_medium,Limestone Sarcophagus,石灰岩石棺,Limestone Sarcophagus,AI
+artwork_medium,Limestone Sculpture,石灰岩雕刻,Limestone Sculpture,AI
+artwork_medium,Lithograph,石版画,Lithograph,AI
+artwork_medium,Manuscript Paper,手稿纸本,Manuscript Paper,AI
+artwork_medium,Marble,大理石,Marble,AI
+artwork_medium,Marble Sculpture,大理石雕,Marble Sculpture,AI
+artwork_medium,Metal Cut‑out Sculpture,金属剪影雕塑,Metal Cut‑out Sculpture,AI
+artwork_medium,Metal Helmet Armor,金属头盔,Metal Helmet Armor,AI
+artwork_medium,Metal‑Glass Household Object,金属玻璃家用器物,Metal‑Glass Household Object,AI
+artwork_medium,Miniature on Ivory,象牙细密画,Miniature on Ivory,AI
+artwork_medium,Mixed‑Media,综合材质,Mixed‑Media,AI
+artwork_medium,Mixed‑Media Furniture‑Sculpture,综合材质家具雕塑,Mixed‑Media Furniture‑Sculpture,AI
+artwork_medium,Mixed‑Media Video Sculpture,综合材质影像雕塑,Mixed‑Media Video Sculpture,AI
+artwork_medium,Mosaic,马赛克镶嵌,Mosaic,AI
+artwork_medium,Mural Fragment,壁画残片,Mural Fragment,AI
+artwork_medium,Needlework Textile,针绣织物,Needlework Textile,AI
+artwork_medium,Nephrite Jade Weapon,软玉兵器,Nephrite Jade Weapon,AI
+artwork_medium,Nephrite Stone Tool,软玉石器,Nephrite Stone Tool,AI
+artwork_medium,Oil Painting,油画,Oil Painting,AI
+artwork_medium,Oil Sketch,油画草稿,Oil Sketch,AI
+artwork_medium,Oil on Canvas,布面油画,Oil on Canvas,AI
+artwork_medium,Oil on Oak Panel,橡木板油画,Oil on Oak Panel,AI
+artwork_medium,Oil on Panel,木板油画,Oil on Panel,AI
+artwork_medium,Opaque Watercolor on Paper,纸本不透明水彩,Opaque Watercolor on Paper,AI
+artwork_medium,Painted Clay Sculpture,彩绘泥塑,Painted Clay Sculpture,AI
+artwork_medium,Painted Fan,彩绘扇,Painted Fan,AI
+artwork_medium,Painted Metal Sculpture,彩绘金属雕塑,Painted Metal Sculpture,AI
+artwork_medium,Painted Pottery,彩陶,Painted Pottery,AI
+artwork_medium,Painted Wood,彩绘木作,Painted Wood,AI
+artwork_medium,Painted Wood Folk Sculpture,彩绘木雕民俗造像,Painted Wood Folk Sculpture,AI
+artwork_medium,Painted Wood Fragment,彩绘木残件,Painted Wood Fragment,AI
+artwork_medium,Painted Wood Furniture,彩绘木家具,Painted Wood Furniture,AI
+artwork_medium,Painted Wood Mask,彩绘木面具,Painted Wood Mask,AI
+artwork_medium,Painted Wood Sign,彩绘木招牌,Painted Wood Sign,AI
+artwork_medium,Pastel on Paper,纸本色粉,Pastel on Paper,AI
+artwork_medium,Pewter Metalwork,锡镴金工,Pewter Metalwork,AI
+artwork_medium,Photograph,摄影,Photograph,AI
+artwork_medium,Plant‑Fiber Textile,植物纤维织物,Plant‑Fiber Textile,AI
+artwork_medium,Plaster Sculpture,石膏雕塑,Plaster Sculpture,AI
+artwork_medium,Porcelain,瓷器,Porcelain,AI
+artwork_medium,Porcelain‑Stoneware,瓷与炻器,Porcelain‑Stoneware,AI
+artwork_medium,Print on Paper,纸本版画,Print on Paper,AI
+artwork_medium,Reverse Glass Painting,玻璃背画,Reverse Glass Painting,AI
+artwork_medium,Sandstone,砂岩,Sandstone,AI
+artwork_medium,Sandstone Sculpture,砂岩雕刻,Sandstone Sculpture,AI
+artwork_medium,Schist Sculpture,片岩雕刻,Schist Sculpture,AI
+artwork_medium,Screen Painting,屏风画,Screen Painting,AI
+artwork_medium,Shell‑Fiber Jewelry,贝壳纤维首饰,Shell‑Fiber Jewelry,AI
+artwork_medium,Silk Handscroll,绢本手卷,Silk Handscroll,AI
+artwork_medium,Silk Hanging Scroll,绢本立轴,Silk Hanging Scroll,AI
+artwork_medium,Silk Scroll,绢本卷轴,Silk Scroll,AI
+artwork_medium,Silk Textile,丝织物,Silk Textile,AI
+artwork_medium,Silver,银,Silver,AI
+artwork_medium,Silver Metalwork,银器,Silver Metalwork,AI
+artwork_medium,Silver Vessel,银器皿,Silver Vessel,AI
+artwork_medium,Stained‑Glass,彩色玻璃,Stained‑Glass,AI
+artwork_medium,Stained‑Glass & Metal,彩色玻璃与金属,Stained‑Glass & Metal,AI
+artwork_medium,Stone Epigraphy,石刻铭文,Stone Epigraphy,AI
+artwork_medium,Stone Ornament,石饰件,Stone Ornament,AI
+artwork_medium,Stone Relief,石浮雕,Stone Relief,AI
+artwork_medium,Stone Sculpture,石雕,Stone Sculpture,AI
+artwork_medium,Stone Tool,石器,Stone Tool,AI
+artwork_medium,Stoneware,炻器,Stoneware,AI
+artwork_medium,Stoneware Ceramic,炻质陶瓷,Stoneware Ceramic,AI
+artwork_medium,Stoneware‑Porcelain,炻器与瓷,Stoneware‑Porcelain,AI
+artwork_medium,Stone‑Wood Tool,石木工具,Stone‑Wood Tool,AI
+artwork_medium,Tapestry,挂毯,Tapestry,AI
+artwork_medium,Tempera on Panel,木板蛋彩,Tempera on Panel,AI
+artwork_medium,Terracotta,陶土,Terracotta,AI
+artwork_medium,Terracotta Sculpture,陶塑,Terracotta Sculpture,AI
+artwork_medium,Textile,织物,Textile,AI
+artwork_medium,Watercolor,水彩,Watercolor,AI
+artwork_medium,Watercolor on Paper,纸本水彩,Watercolor on Paper,AI
+artwork_medium,Watercolor‑Ink,水彩水墨,Watercolor‑Ink,AI
+artwork_medium,Watercolor‑Ink on Paper,纸本水彩水墨,Watercolor‑Ink on Paper,AI
+artwork_medium,Whalebone,鲸骨,Whalebone,AI
+artwork_medium,Wood,木,Wood,AI
+artwork_medium,Wood / Musical Instrument,木／乐器,Wood / Musical Instrument,AI
+artwork_medium,Wood Architectural Carving,木构建筑雕刻,Wood Architectural Carving,AI
+artwork_medium,Wood Architectural Ornament,木构建筑饰件,Wood Architectural Ornament,AI
+artwork_medium,Wood Carving,木雕,Wood Carving,AI
+artwork_medium,Wood Fragment,木残件,Wood Fragment,AI
+artwork_medium,Wood Furniture,木家具,Wood Furniture,AI
+artwork_medium,Wood Gilded Lacquer Sculpture,木胎金漆造像,Wood Gilded Lacquer Sculpture,AI
+artwork_medium,Wood Sculpture,木雕塑,Wood Sculpture,AI
+artwork_medium,Wood Ship‑Model,木船模,Wood Ship‑Model,AI
+artwork_medium,Woodblock Print,木刻版画,Woodblock Print,AI
+artwork_medium,Woodcut,木刻,Woodcut,AI
+artwork_medium,Wood‑Brass Tool,木铜工具,Wood‑Brass Tool,AI
+artwork_medium,Wood‑Glass,木与玻璃,Wood‑Glass,AI

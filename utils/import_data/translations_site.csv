@@ -1,0 +1,835 @@
+# 文化点位名称
+#
+# key        —— 原文，去重键，须与源 Excel 逐字一致，不要改
+# zh / en    —— 两个语种的文本；原文那一侧已填好，另一侧待译
+# confidence —— 官方 / AI / 存疑，只描述「译出来的那一半」
+#                官方 = 通行的既定译名（Louvre = 卢浮宫）
+#                AI   = 机器翻译，正常可用
+#                存疑 = 拿不准，优先人工复核（grep 存疑 即可捞出）
+#
+# 本文件由 make_translation_skeleton.py 生成与增量更新，可直接手工编辑。
+kind,key,zh,en,confidence
+site_name,9/11 Memorial & Museum,9·11 纪念馆与博物馆,9/11 Memorial & Museum,官方
+site_name,ABBA The Museum,ABBA 博物馆,ABBA The Museum,官方
+site_name,ARoS Aarhus Art Museum,ARoS 奥胡斯美术馆,ARoS Aarhus Art Museum,官方
+site_name,Acropolis Museum,卫城博物馆,Acropolis Museum,官方
+site_name,Albertina,阿尔贝蒂娜博物馆,Albertina,官方
+site_name,Alte Nationalgalerie,老国家美术馆,Alte Nationalgalerie,官方
+site_name,Alte Pinakothek,老绘画陈列馆,Alte Pinakothek,官方
+site_name,American Museum of Natural History,美国自然历史博物馆,American Museum of Natural History,官方
+site_name,Andy Warhol Museum,安迪·沃霍尔博物馆,Andy Warhol Museum,官方
+site_name,Anne Frank House,安妮·弗兰克之家,Anne Frank House,官方
+site_name,Apartheid Museum,种族隔离博物馆,Apartheid Museum,官方
+site_name,Art Gallery of New South Wales,新南威尔士美术馆,Art Gallery of New South Wales,官方
+site_name,Art Gallery of Ontario,安大略美术馆,Art Gallery of Ontario,官方
+site_name,Art Institute of Chicago,芝加哥艺术博物馆,Art Institute of Chicago,官方
+site_name,Ashmolean Museum,阿什莫林博物馆,Ashmolean Museum,官方
+site_name,Asian Art Museum,亚洲艺术博物馆,Asian Art Museum,官方
+site_name,Asian Civilisations Museum,亚洲文明博物馆,Asian Civilisations Museum,官方
+site_name,Ateneum,阿黛浓美术馆,Ateneum,官方
+site_name,Auckland Art Gallery,奥克兰美术馆,Auckland Art Gallery,官方
+site_name,Bardo National Museum,巴尔多国家博物馆,Bardo National Museum,官方
+site_name,Barnes Foundation,巴恩斯基金会,Barnes Foundation,官方
+site_name,Bauhaus-Archiv / Museum für Gestaltung,包豪斯档案馆／设计博物馆,Bauhaus-Archiv / Museum für Gestaltung,官方
+site_name,Beatles Story,披头士故事馆,Beatles Story,AI
+site_name,Bode Museum,博德博物馆,Bode Museum,官方
+site_name,Boijmans Van Beuningen,博伊曼斯·范伯宁恩美术馆,Boijmans Van Beuningen,官方
+site_name,British Museum,大英博物馆,British Museum,官方
+site_name,Brooklyn Museum,布鲁克林博物馆,Brooklyn Museum,官方
+site_name,Burrell Collection,布雷尔收藏馆,Burrell Collection,官方
+site_name,CaixaForum Madrid,马德里 CaixaForum 艺术中心,CaixaForum Madrid,AI
+site_name,California Academy of Sciences,加州科学院,California Academy of Sciences,官方
+site_name,Calouste Gulbenkian Museum,卡洛斯特·古尔本基安博物馆,Calouste Gulbenkian Museum,官方
+site_name,Capitoline Museums,卡比托利欧博物馆,Capitoline Museums,官方
+site_name,Carnegie Museum of Art,卡内基美术馆,Carnegie Museum of Art,官方
+site_name,Centro Cultural Banco do Brasil,巴西银行文化中心,Centro Cultural Banco do Brasil,官方
+site_name,Chihuly Garden and Glass,奇胡利玻璃艺术园,Chihuly Garden and Glass,AI
+site_name,Churchill War Rooms,丘吉尔战时指挥部,Churchill War Rooms,官方
+site_name,Cité des Sciences et de l'Industrie,巴黎科学与工业城,Cité des Sciences et de l'Industrie,官方
+site_name,Cleveland Museum of Art,克利夫兰艺术博物馆,Cleveland Museum of Art,官方
+site_name,DDR Museum,民主德国博物馆,DDR Museum,官方
+site_name,Dalí Theatre-Museum,达利戏剧博物馆,Dalí Theatre-Museum,官方
+site_name,Detroit Institute of Arts,底特律美术馆,Detroit Institute of Arts,官方
+site_name,Deutsches Museum,德意志博物馆,Deutsches Museum,官方
+site_name,Doge's Palace,总督宫,Doge's Palace,官方
+site_name,Donald W. Reynolds Center,唐纳德·W·雷诺兹中心,Donald W. Reynolds Center,AI
+site_name,EMP / MoPOP – Museum of Pop Culture,流行文化博物馆（MoPOP）,EMP / MoPOP – Museum of Pop Culture,官方
+site_name,Edo-Tokyo Museum / Edo-Tokyo Open Air Architectural Museum,江户东京博物馆／江户东京建筑园,Edo-Tokyo Museum / Edo-Tokyo Open Air Architectural Museum,官方
+site_name,Egyptian Museum,埃及博物馆,Egyptian Museum,官方
+site_name,Etihad Museum,联邦博物馆,Etihad Museum,AI
+site_name,Exploratorium,探索馆,Exploratorium,官方
+site_name,Field Museum of Natural History,菲尔德自然史博物馆,Field Museum of Natural History,官方
+site_name,Fitzwilliam Museum,菲茨威廉博物馆,Fitzwilliam Museum,官方
+site_name,Frans Hals Museum,弗兰斯·哈尔斯博物馆,Frans Hals Museum,官方
+site_name,Frederik Meijer Gardens & Sculpture Park,弗雷德里克·梅耶尔花园与雕塑公园,Frederik Meijer Gardens & Sculpture Park,AI
+site_name,Frick Collection,弗里克收藏馆,Frick Collection,官方
+site_name,Frida Kahlo Museum (Casa Azul),弗里达·卡罗博物馆（蓝屋）,Frida Kahlo Museum (Casa Azul),官方
+site_name,GES-2 (Moscow),GES-2 文化中心（莫斯科）,GES-2 (Moscow),AI
+site_name,Galleria dell'Accademia,学院美术馆,Galleria dell'Accademia,官方
+site_name,Getty Center,盖蒂中心,Getty Center,官方
+site_name,Glasgow School of Art / Mackintosh,格拉斯哥艺术学院／麦金托什楼,Glasgow School of Art / Mackintosh,AI
+site_name,Glyptothek,古代雕塑展览馆,Glyptothek,官方
+site_name,Grand Egyptian Museum,大埃及博物馆,Grand Egyptian Museum,官方
+site_name,Guggenheim Museum Bilbao,毕尔巴鄂古根海姆博物馆,Guggenheim Museum Bilbao,官方
+site_name,Gyeongju National Museum,庆州国立博物馆,Gyeongju National Museum,官方
+site_name,Hagia Eirene & Istanbul Archaeology Museums,圣伊莲娜教堂与伊斯坦布尔考古博物馆,Hagia Eirene & Istanbul Archaeology Museums,AI
+site_name,Hagia Sophia Grand Mosque & Museum,圣索菲亚大清真寺与博物馆,Hagia Sophia Grand Mosque & Museum,官方
+site_name,Hiroshima Peace Memorial Museum,广岛和平纪念资料馆,Hiroshima Peace Memorial Museum,官方
+site_name,Hong Kong Heritage Museum,香港文化博物馆,Hong Kong Heritage Museum,官方
+site_name,Hong Kong Museum of Art,香港艺术馆,Hong Kong Museum of Art,官方
+site_name,Hong Kong Palace Museum,香港故宫文化博物馆,Hong Kong Palace Museum,官方
+site_name,"Huntington Library, Art Museum and Botanical Gardens",亨廷顿图书馆、艺术博物馆与植物园,"Huntington Library, Art Museum and Botanical Gardens",官方
+site_name,Imperial War Museum,帝国战争博物馆,Imperial War Museum,官方
+site_name,Israel Museum,以色列博物馆,Israel Museum,官方
+site_name,Istanbul Modern,伊斯坦布尔现代艺术博物馆,Istanbul Modern,官方
+site_name,Iziko South African Museum,伊齐科南非博物馆,Iziko South African Museum,AI
+site_name,J. Paul Getty Museum (Getty Center),J·保罗·盖蒂博物馆（盖蒂中心）,J. Paul Getty Museum (Getty Center),官方
+site_name,Jewish Museum Berlin,柏林犹太博物馆,Jewish Museum Berlin,官方
+site_name,Joan Miró Foundation,胡安·米罗基金会,Joan Miró Foundation,官方
+site_name,Kelvingrove Art Gallery and Museum,凯尔文格罗夫美术馆与博物馆,Kelvingrove Art Gallery and Museum,官方
+site_name,Kiasma Museum of Contemporary Art,奇亚斯玛当代艺术博物馆,Kiasma Museum of Contemporary Art,官方
+site_name,Kunsthistorisches Museum,艺术史博物馆,Kunsthistorisches Museum,官方
+site_name,Kyoto National Museum,京都国立博物馆,Kyoto National Museum,官方
+site_name,Lenbachhaus,伦巴赫美术馆,Lenbachhaus,官方
+site_name,Los Angeles County Museum of Art,洛杉矶郡立美术馆,Los Angeles County Museum of Art,官方
+site_name,Louis Vuitton Foundation,路易威登基金会,Louis Vuitton Foundation,官方
+site_name,Louisiana Museum of Modern Art,路易斯安那现代艺术博物馆,Louisiana Museum of Modern Art,官方
+site_name,Louvre,卢浮宫,Louvre,官方
+site_name,Louvre Abu Dhabi,阿布扎比卢浮宫,Louvre Abu Dhabi,官方
+site_name,M+,M+ 视觉文化博物馆,M+,官方
+site_name,MALBA – Museo de Arte Latinoamericano de Buenos Aires,MALBA 布宜诺斯艾利斯拉丁美洲艺术博物馆,MALBA – Museo de Arte Latinoamericano de Buenos Aires,官方
+site_name,MAXXI – National Museum of 21st Century Arts,MAXXI 二十一世纪国立当代艺术馆,MAXXI – National Museum of 21st Century Arts,官方
+site_name,MUDAM – Musée d'Art Moderne Grand-Duc Jean,MUDAM 让大公现代艺术博物馆,MUDAM – Musée d'Art Moderne Grand-Duc Jean,官方
+site_name,MUSE – Museo delle Scienze,MUSE 科学博物馆,MUSE – Museo delle Scienze,官方
+site_name,Mauritshuis,莫瑞泰斯皇家美术馆,Mauritshuis,官方
+site_name,Memorial and Museum Auschwitz-Birkenau,奥斯威辛-比克瑙纪念馆与博物馆,Memorial and Museum Auschwitz-Birkenau,官方
+site_name,Menil Collection,梅尼尔收藏馆,Menil Collection,官方
+site_name,Metropolitan Museum of Art,大都会艺术博物馆,Metropolitan Museum of Art,官方
+site_name,MoMA PS1,MoMA PS1 当代艺术中心,MoMA PS1,官方
+site_name,Moderna Museet,现代美术馆,Moderna Museet,官方
+site_name,Mori Art Museum,森美术馆,Mori Art Museum,官方
+site_name,Moscow Kremlin Museums,莫斯科克里姆林宫博物馆,Moscow Kremlin Museums,官方
+site_name,Munch Museum (MUNCH),蒙克博物馆,Munch Museum (MUNCH),官方
+site_name,Museo Egizio,都灵埃及博物馆,Museo Egizio,官方
+site_name,Museo Nacional de Antropología,国立人类学博物馆,Museo Nacional de Antropología,官方
+site_name,Museo Reina Sofía,索菲亚王后国家艺术中心博物馆,Museo Reina Sofía,官方
+site_name,Museo Soumaya,索玛雅博物馆,Museo Soumaya,官方
+site_name,Museo del Prado,普拉多博物馆,Museo del Prado,官方
+site_name,Museu Nacional d'Art de Catalunya (MNAC),加泰罗尼亚国家艺术博物馆,Museu Nacional d'Art de Catalunya (MNAC),官方
+site_name,Museu Nacional de Arte Antiga,国立古代艺术博物馆,Museu Nacional de Arte Antiga,官方
+site_name,Museu Picasso,毕加索博物馆（巴塞罗那）,Museu Picasso,官方
+site_name,Museum of Anthropology UBC,不列颠哥伦比亚大学人类学博物馆,Museum of Anthropology UBC,官方
+site_name,Museum of Contemporary Art Australia,澳大利亚当代艺术博物馆,Museum of Contemporary Art Australia,官方
+site_name,Museum of European and Mediterranean Civilisations (MUCEM),欧洲与地中海文明博物馆,Museum of European and Mediterranean Civilisations (MUCEM),官方
+site_name,"Museum of Fine Arts, Bilbao",毕尔巴鄂美术馆,"Museum of Fine Arts, Bilbao",官方
+site_name,"Museum of Fine Arts, Boston",波士顿美术馆,"Museum of Fine Arts, Boston",官方
+site_name,"Museum of Fine Arts, Houston",休斯顿美术馆,"Museum of Fine Arts, Houston",官方
+site_name,Museum of Islamic Art,伊斯兰艺术博物馆,Museum of Islamic Art,官方
+site_name,Museum of London / London Museum,伦敦博物馆,Museum of London / London Museum,官方
+site_name,Museum of Modern Art,现代艺术博物馆,Museum of Modern Art,官方
+site_name,Museum of New Zealand Te Papa Tongarewa,新西兰蒂帕帕国家博物馆,Museum of New Zealand Te Papa Tongarewa,官方
+site_name,Museum of Old and New Art (MONA),古今艺术博物馆,Museum of Old and New Art (MONA),官方
+site_name,Museum of Science and Industry,科学与工业博物馆,Museum of Science and Industry,官方
+site_name,Museum of the Future,未来博物馆,Museum of the Future,官方
+site_name,Musée Carnavalet,卡纳瓦莱博物馆,Musée Carnavalet,官方
+site_name,Musée Magritte,马格利特博物馆,Musée Magritte,官方
+site_name,Musée Marmottan Monet,马摩丹莫奈博物馆,Musée Marmottan Monet,官方
+site_name,Musée Rodin,罗丹博物馆,Musée Rodin,官方
+site_name,Musée d'Orsay,奥赛博物馆,Musée d'Orsay,官方
+site_name,Musée de l'Orangerie,橘园美术馆,Musée de l'Orangerie,官方
+site_name,Musée du quai Branly,凯布朗利博物馆,Musée du quai Branly,官方
+site_name,NGV International (National Gallery of Victoria),维多利亚国立美术馆国际馆,NGV International (National Gallery of Victoria),官方
+site_name,Nara National Museum,奈良国立博物馆,Nara National Museum,官方
+site_name,"National Art Center, Tokyo",国立新美术馆,"National Art Center, Tokyo",官方
+site_name,National Folk Museum of Korea,韩国国立民俗博物馆,National Folk Museum of Korea,官方
+site_name,National Gallery,英国国家美术馆,National Gallery,官方
+site_name,National Gallery Singapore,新加坡国家美术馆,National Gallery Singapore,官方
+site_name,National Gallery of Art,美国国家美术馆,National Gallery of Art,官方
+site_name,National Gallery of Canada,加拿大国家美术馆,National Gallery of Canada,官方
+site_name,National Gallery of Ireland,爱尔兰国家美术馆,National Gallery of Ireland,官方
+site_name,National Gallery of Victoria (NGV),维多利亚国立美术馆,National Gallery of Victoria (NGV),官方
+site_name,National Maritime Museum,国家海事博物馆,National Maritime Museum,官方
+site_name,National Museum in Kraków,克拉科夫国家博物馆,National Museum in Kraków,官方
+site_name,National Museum of African American Music,美国非裔音乐国家博物馆,National Museum of African American Music,AI
+site_name,National Museum of African-American History and Culture,美国非裔历史与文化国家博物馆,National Museum of African-American History and Culture,官方
+site_name,National Museum of Anthropology (Mexico),国立人类学博物馆（墨西哥）,National Museum of Anthropology (Mexico),官方
+site_name,National Museum of Anthropology – Lisbon (Museu Nacional de Arqueologia),里斯本国家考古博物馆,National Museum of Anthropology – Lisbon (Museu Nacional de Arqueologia),官方
+site_name,"National Museum of Art, Architecture and Design",国家艺术、建筑与设计博物馆,"National Museum of Art, Architecture and Design",官方
+site_name,National Museum of China,中国国家博物馆,National Museum of China,官方
+site_name,National Museum of History,国立历史博物馆,National Museum of History,官方
+site_name,National Museum of Iraq,伊拉克国家博物馆,National Museum of Iraq,官方
+site_name,National Museum of Korea,韩国国立中央博物馆,National Museum of Korea,官方
+site_name,National Museum of Modern and Contemporary Art (Seoul branch),国立现代美术馆（首尔馆）,National Museum of Modern and Contemporary Art (Seoul branch),官方
+site_name,National Museum of Qatar,卡塔尔国家博物馆,National Museum of Qatar,官方
+site_name,National Museum of Scotland,苏格兰国家博物馆,National Museum of Scotland,官方
+site_name,National Museum of Singapore,新加坡国家博物馆,National Museum of Singapore,官方
+site_name,National Museum of Warsaw,华沙国家博物馆,National Museum of Warsaw,官方
+site_name,"National Museum of Western Art, Tokyo",国立西洋美术馆,"National Museum of Western Art, Tokyo",官方
+site_name,National Palace Museum,台北故宫博物院,National Palace Museum,官方
+site_name,National Portrait Gallery,国家肖像馆,National Portrait Gallery,官方
+site_name,Nationalmuseum,瑞典国立博物馆,Nationalmuseum,官方
+site_name,Natural History Museum,自然历史博物馆,Natural History Museum,官方
+site_name,Naturalis Biodiversity Center,荷兰自然生物多样性中心,Naturalis Biodiversity Center,官方
+site_name,Neues Museum,新博物馆,Neues Museum,官方
+site_name,Nezu Museum,根津美术馆,Nezu Museum,官方
+site_name,Nobel Prize Museum,诺贝尔奖博物馆,Nobel Prize Museum,官方
+site_name,Palace Museum (Forbidden City),故宫博物院（紫禁城）,Palace Museum (Forbidden City),官方
+site_name,Palacio de Bellas Artes,美术宫,Palacio de Bellas Artes,官方
+site_name,Palais de Tokyo,东京宫,Palais de Tokyo,官方
+site_name,Palazzo Grassi,格拉西宫,Palazzo Grassi,官方
+site_name,Palazzo Pitti,皮蒂宫,Palazzo Pitti,官方
+site_name,"Palazzo Reale, Milan",米兰王宫,"Palazzo Reale, Milan",官方
+site_name,Peggy Guggenheim Collection,佩姬·古根海姆收藏馆,Peggy Guggenheim Collection,官方
+site_name,Pera Museum,佩拉博物馆,Pera Museum,官方
+site_name,Pergamon Museum,佩加蒙博物馆,Pergamon Museum,官方
+site_name,Petersen Automotive Museum,彼得森汽车博物馆,Petersen Automotive Museum,官方
+site_name,Petit Palais,小皇宫,Petit Palais,官方
+site_name,Philadelphia Museum of Art,费城艺术博物馆,Philadelphia Museum of Art,官方
+site_name,Picasso Museum (Musée Picasso Paris),毕加索博物馆（巴黎）,Picasso Museum (Musée Picasso Paris),官方
+site_name,Picasso Museum Barcelona,巴塞罗那毕加索博物馆,Picasso Museum Barcelona,官方
+site_name,Pinacoteca di Brera,布雷拉画廊,Pinacoteca di Brera,官方
+site_name,Pinacoteca do Estado de São Paulo,圣保罗州立美术馆,Pinacoteca do Estado de São Paulo,官方
+site_name,Pinakothek der Moderne,现代绘画陈列馆,Pinakothek der Moderne,官方
+site_name,Pompeii Archaeological Park (and Museum),庞贝考古公园（及博物馆）,Pompeii Archaeological Park (and Museum),官方
+site_name,Pompidou Center,蓬皮杜中心,Pompidou Center,官方
+site_name,Powerhouse Museum / Powerhouse Ultimo,动力博物馆,Powerhouse Museum / Powerhouse Ultimo,官方
+site_name,Punta della Dogana,海关角美术馆,Punta della Dogana,官方
+site_name,Pushkin Museum,普希金造型艺术博物馆,Pushkin Museum,官方
+site_name,Queensland Art Gallery & GOMA,昆士兰美术馆与现代艺术馆,Queensland Art Gallery & GOMA,官方
+site_name,Rijksmuseum,荷兰国立博物馆,Rijksmuseum,官方
+site_name,"Royal Castle, Warsaw",华沙王宫,"Royal Castle, Warsaw",官方
+site_name,Royal Observatory Greenwich,格林尼治皇家天文台,Royal Observatory Greenwich,官方
+site_name,Royal Ontario Museum,皇家安大略博物馆,Royal Ontario Museum,官方
+site_name,SFMOMA,旧金山现代艺术博物馆,SFMOMA,官方
+site_name,Sagrada Família Museum,圣家堂博物馆,Sagrada Família Museum,官方
+site_name,Schloss Charlottenburg,夏洛滕堡宫,Schloss Charlottenburg,官方
+site_name,Science Museum,科学博物馆,Science Museum,官方
+site_name,Scottish National Gallery,苏格兰国家美术馆,Scottish National Gallery,官方
+site_name,Shanghai Museum,上海博物馆,Shanghai Museum,官方
+site_name,Shanghai Museum East (opened 2024),上海博物馆东馆（2024年开放）,Shanghai Museum East (opened 2024),官方
+site_name,Shanghai Museum on People's Square,上海博物馆人民广场馆,Shanghai Museum on People's Square,官方
+site_name,Sharjah Museum of Islamic Civilization,沙迦伊斯兰文明博物馆,Sharjah Museum of Islamic Civilization,官方
+site_name,Singapore ArtScience Museum,新加坡艺术科学博物馆,Singapore ArtScience Museum,官方
+site_name,Sir John Soane's Museum,约翰·索恩爵士博物馆,Sir John Soane's Museum,官方
+site_name,Skansen,斯堪森露天博物馆,Skansen,官方
+site_name,Smithsonian National Air and Space Museum,史密森尼国家航空航天博物馆,Smithsonian National Air and Space Museum,官方
+site_name,Smithsonian National Museum of American History,史密森尼美国国家历史博物馆,Smithsonian National Museum of American History,官方
+site_name,Smithsonian National Museum of Natural History,史密森尼国家自然历史博物馆,Smithsonian National Museum of Natural History,官方
+site_name,Smithsonian National Zoo (& Conservation),史密森尼国家动物园（及保护生物学研究所）,Smithsonian National Zoo (& Conservation),官方
+site_name,Solomon R. Guggenheim Museum,所罗门·R·古根海姆博物馆,Solomon R. Guggenheim Museum,官方
+site_name,Somerset House,萨默塞特宫,Somerset House,官方
+site_name,State Hermitage Museum,埃尔米塔什博物馆（冬宫）,State Hermitage Museum,官方
+site_name,State Russian Museum,俄罗斯国家博物馆,State Russian Museum,官方
+site_name,Stedelijk Museum Amsterdam,阿姆斯特丹市立博物馆,Stedelijk Museum Amsterdam,官方
+site_name,Sumida Hokusai Museum,墨田北斋美术馆,Sumida Hokusai Museum,官方
+site_name,Suzhou Museum,苏州博物馆,Suzhou Museum,官方
+site_name,São Paulo Museum of Art,圣保罗艺术博物馆,São Paulo Museum of Art,官方
+site_name,Tai Kwun – Centre for Heritage and Arts,大馆——古迹及艺术馆,Tai Kwun – Centre for Heritage and Arts,官方
+site_name,Tate Britain,泰特不列颠美术馆,Tate Britain,官方
+site_name,Tate Liverpool,泰特利物浦美术馆,Tate Liverpool,官方
+site_name,Tate Modern,泰特现代美术馆,Tate Modern,官方
+site_name,Te Papa Wai – Ulster Museum,阿尔斯特博物馆,Te Papa Wai – Ulster Museum,存疑
+site_name,Tehran Museum of Contemporary Art,德黑兰当代艺术博物馆,Tehran Museum of Contemporary Art,官方
+site_name,Tel Aviv Museum of Art,特拉维夫艺术博物馆,Tel Aviv Museum of Art,官方
+site_name,The Broad,布罗德美术馆,The Broad,官方
+site_name,Thyssen-Bornemisza Museum,提森-博内米萨博物馆,Thyssen-Bornemisza Museum,官方
+site_name,Tokyo Metropolitan Art Museum,东京都美术馆,Tokyo Metropolitan Art Museum,官方
+site_name,Tokyo National Museum,东京国立博物馆,Tokyo National Museum,官方
+site_name,Topkapi Palace Museum,托普卡帕宫博物馆,Topkapi Palace Museum,官方
+site_name,Topography of Terror,恐怖地形图纪念馆,Topography of Terror,官方
+site_name,Tower of London,伦敦塔,Tower of London,官方
+site_name,Tretyakov Gallery,特列季亚科夫画廊,Tretyakov Gallery,官方
+site_name,Uffizi Gallery,乌菲齐美术馆,Uffizi Gallery,官方
+site_name,United States Holocaust Memorial Museum,美国大屠杀纪念馆,United States Holocaust Memorial Museum,官方
+site_name,Upper Belvedere,上美景宫,Upper Belvedere,官方
+site_name,Van Gogh Museum,梵高博物馆,Van Gogh Museum,官方
+site_name,Vasa Museum,瓦萨沉船博物馆,Vasa Museum,官方
+site_name,Vatican Museums,梵蒂冈博物馆,Vatican Museums,官方
+site_name,Victoria and Albert Museum,维多利亚与艾尔伯特博物馆,Victoria and Albert Museum,官方
+site_name,Vigeland Park (Vigeland Museum),维格兰雕塑公园（维格兰博物馆）,Vigeland Park (Vigeland Museum),官方
+site_name,Viking Ship Museum,维京船博物馆,Viking Ship Museum,官方
+site_name,Villa Borghese (Galleria Borghese),博尔盖塞美术馆,Villa Borghese (Galleria Borghese),官方
+site_name,Walker Art Gallery,沃克美术馆,Walker Art Gallery,官方
+site_name,Wallace Collection,华莱士收藏馆,Wallace Collection,官方
+site_name,Wawel Castle,瓦维尔城堡,Wawel Castle,官方
+site_name,Whitney Museum,惠特尼美国艺术博物馆,Whitney Museum,官方
+site_name,Yad Vashem,亚德韦谢姆大屠杀纪念馆,Yad Vashem,官方
+site_name,Yves Saint Laurent Museum,伊夫·圣罗兰博物馆,Yves Saint Laurent Museum,官方
+site_name,Zeitz Museum of Contemporary Art Africa (Zeitz MOCAA),蔡茨非洲当代艺术博物馆,Zeitz Museum of Contemporary Art Africa (Zeitz MOCAA),官方
+site_name,teamLab Planets TOKYO,teamLab Planets 东京,teamLab Planets TOKYO,官方
+site_name,三一圣谢尔盖大修道院,三一圣谢尔盖大修道院,Trinity Lavra of St. Sergius,官方
+site_name,三坊七巷历史街区,三坊七巷历史街区,Three Lanes and Seven Alleys Historic District,官方
+site_name,三星堆博物馆,三星堆博物馆,Sanxingdui Museum,官方
+site_name,不丹国家博物馆（塔宗）,不丹国家博物馆（塔宗）,National Museum of Bhutan (Ta Dzong),官方
+site_name,不丹国家纺织博物馆,不丹国家纺织博物馆,National Textile Museum of Bhutan,官方
+site_name,丝绸交易厅,丝绸交易厅,La Lonja de la Seda (Silk Exchange),官方
+site_name,中国文字博物馆,中国文字博物馆,National Museum of Chinese Writing,官方
+site_name,中央大街建筑群,中央大街建筑群,"Central Street Historic Architecture, Harbin",AI
+site_name,丹布勒金寺石窟,丹布勒金寺石窟,Golden Temple of Dambulla,官方
+site_name,丹麦国家博物馆,丹麦国家博物馆,National Museum of Denmark,官方
+site_name,丽江古城,丽江古城,Old Town of Lijiang,官方
+site_name,乌克兰国家历史博物馆,乌克兰国家历史博物馆,National Museum of the History of Ukraine,官方
+site_name,乌兹别克斯坦国家历史博物馆,乌兹别克斯坦国家历史博物馆,State Museum of History of Uzbekistan,官方
+site_name,乔治亚·欧姬芙博物馆,乔治亚·欧姬芙博物馆,Georgia O'Keeffe Museum,官方
+site_name,九州国立博物馆,九州国立博物馆,Kyushu National Museum,官方
+site_name,也门国家博物馆,也门国家博物馆,National Museum of Yemen,官方
+site_name,二里头夏都遗址博物馆,二里头夏都遗址博物馆,Erlitou Xia Capital Site Museum,官方
+site_name,云冈研究院（云冈石窟）,云冈研究院（云冈石窟）,Yungang Research Institute (Yungang Grottoes),官方
+site_name,云南省博物馆,云南省博物馆,Yunnan Provincial Museum,官方
+site_name,五台山佛教建筑群（佛光寺 · 南禅寺）,五台山佛教建筑群（佛光寺 · 南禅寺）,Mount Wutai Buddhist Architecture (Foguang Temple · Nanchan Temple),官方
+site_name,五大道近代建筑群,五大道近代建筑群,Wudadao Modern Architecture Complex,AI
+site_name,亚兹德历史城区,亚兹德历史城区,Historic City of Yazd,官方
+site_name,亚历山大图书馆,亚历山大图书馆,Bibliotheca Alexandrina,官方
+site_name,亚琛主教座堂,亚琛主教座堂,Aachen Cathedral,官方
+site_name,亚美尼亚历史博物馆,亚美尼亚历史博物馆,History Museum of Armenia,官方
+site_name,交河故城,交河故城,Jiaohe Ruins,官方
+site_name,仓库城,仓库城,Speicherstadt,官方
+site_name,仓敷美观地区,仓敷美观地区,Kurashiki Bikan Historical Quarter,官方
+site_name,以弗所考古遗址（塞尔苏斯图书馆）,以弗所考古遗址（塞尔苏斯图书馆）,Ephesus Archaeological Site (Library of Celsus),官方
+site_name,伊拉克利翁考古博物馆,伊拉克利翁考古博物馆,Heraklion Archaeological Museum,官方
+site_name,伊斯兰艺术博物馆,伊斯兰艺术博物馆,Museum of Islamic Art,官方
+site_name,伊玛目侯赛因清真寺,伊玛目侯赛因清真寺,Imam Husayn Shrine,官方
+site_name,伊玛目广场（纳格什-贾汗广场）,伊玛目广场（纳格什-贾汗广场）,Naqsh-e Jahan Square (Imam Square),官方
+site_name,伊玛目礼萨圣陵,伊玛目礼萨圣陵,Imam Reza Shrine,官方
+site_name,伊玛目阿里清真寺,伊玛目阿里清真寺,Imam Ali Shrine,官方
+site_name,伊禅卡拉内城,伊禅卡拉内城,Itchan Kala,官方
+site_name,会安古城,会安古城,Hoi An Ancient Town,官方
+site_name,伯尔尼老城,伯尔尼老城,Old City of Bern,官方
+site_name,佛牙寺（达拉达·马利加瓦）,佛牙寺（达拉达·马利加瓦）,Temple of the Sacred Tooth Relic (Sri Dalada Maligawa),官方
+site_name,佩洛里尼奥历史中心,佩洛里尼奥历史中心,Pelourinho Historic Centre,官方
+site_name,佩特拉考古公园,佩特拉考古公园,Petra Archaeological Park,官方
+site_name,保加利亚国家历史博物馆,保加利亚国家历史博物馆,"National Museum of History, Bulgaria",官方
+site_name,保罗·克利中心,保罗·克利中心,Zentrum Paul Klee,官方
+site_name,倭马亚清真寺,倭马亚清真寺,Umayyad Mosque,官方
+site_name,先知清真寺,先知清真寺,Al-Masjid an-Nabawi (Prophet's Mosque),官方
+site_name,先祖之墓,先祖之墓,Cave of the Patriarchs,官方
+site_name,克诺索斯宫遗址,克诺索斯宫遗址,Palace of Knossos,官方
+site_name,克鲁姆洛夫城堡与老城,克鲁姆洛夫城堡与老城,Český Krumlov Castle and Historic Centre,官方
+site_name,全州国立博物馆,全州国立博物馆,Jeonju National Museum,官方
+site_name,全州韩屋村,全州韩屋村,Jeonju Hanok Village,官方
+site_name,兰亭,兰亭,Lanting (Orchid Pavilion),官方
+site_name,兰斯圣母主教座堂,兰斯圣母主教座堂,Reims Cathedral,官方
+site_name,兰纳王国古城,兰纳王国古城,Lanna Kingdom Old City,AI
+site_name,兼六园,兼六园,Kenrokuen Garden,官方
+site_name,内城,内城,Inner City,存疑
+site_name,内姆鲁特山陵墓与巨石头像,内姆鲁特山陵墓与巨石头像,Mount Nemrut Tomb and Colossal Heads,官方
+site_name,内罗毕国家博物馆,内罗毕国家博物馆,Nairobi National Museum,官方
+site_name,内蒙古博物院,内蒙古博物院,Inner Mongolia Museum,官方
+site_name,凡尔赛宫及其园林,凡尔赛宫及其园林,Palace and Park of Versailles,官方
+site_name,凯撒利亚国家公园（罗马港口城市）,凯撒利亚国家公园（罗马港口城市）,Caesarea National Park (Roman Port City),官方
+site_name,凯鲁万大清真寺,凯鲁万大清真寺,Great Mosque of Kairouan,官方
+site_name,利比亚国家博物馆（红堡博物馆）,利比亚国家博物馆（红堡博物馆）,Libya National Museum (Assaraya Alhamra Museum),官方
+site_name,利沃夫历史中心,利沃夫历史中心,Historic Centre of Lviv,官方
+site_name,利马老城,利马老城,Historic Centre of Lima,官方
+site_name,前哥伦布艺术博物馆,前哥伦布艺术博物馆,Museo de Arte Precolombino,官方
+site_name,加尔桥（邻近）,加尔桥（邻近）,Pont du Gard (nearby),官方
+site_name,加德满都谷地,加德满都谷地,Kathmandu Valley,官方
+site_name,加纳国家博物馆,加纳国家博物馆,Ghana National Museum,官方
+site_name,努比亚博物馆,努比亚博物馆,Nubian Museum,官方
+site_name,包豪斯博物馆,包豪斯博物馆,Bauhaus Museum,官方
+site_name,匈牙利国家博物馆,匈牙利国家博物馆,Hungarian National Museum,官方
+site_name,北宋东京城州桥遗址,北宋东京城州桥遗址,Zhouqiao Bridge Site of the Northern Song Eastern Capital,AI
+site_name,北莱茵-威斯特法伦艺术收藏馆(K20 · K21),北莱茵-威斯特法伦艺术收藏馆(K20 · K21),Kunstsammlung Nordrhein-Westfalen (K20 · K21),官方
+site_name,升龙皇城,升龙皇城,Imperial Citadel of Thang Long,官方
+site_name,南京博物院,南京博物院,Nanjing Museum,官方
+site_name,南越王博物院,南越王博物院,Museum of the Nanyue King,官方
+site_name,博亚纳教堂,博亚纳教堂,Boyana Church,官方
+site_name,博洛尼亚市立考古博物馆,博洛尼亚市立考古博物馆,Civic Archaeological Museum of Bologna,官方
+site_name,占族雕刻博物馆,占族雕刻博物馆,Museum of Cham Sculpture,官方
+site_name,卡塔赫纳港口要塞与古迹群,卡塔赫纳港口要塞与古迹群,"Port, Fortresses and Group of Monuments, Cartagena",官方
+site_name,卡尔卡松设防城市,卡尔卡松设防城市,Historic Fortified City of Carcassonne,官方
+site_name,卡朱拉霍神庙群,卡朱拉霍神庙群,Khajuraho Group of Monuments,官方
+site_name,卡瓦尼亚斯救济院（奥罗斯科壁画）,卡瓦尼亚斯救济院（奥罗斯科壁画）,Hospicio Cabañas (Orozco Murals),官方
+site_name,卡纳克神庙,卡纳克神庙,Karnak Temple Complex,官方
+site_name,卢克索博物馆,卢克索博物馆,Luxor Museum,官方
+site_name,卢瓦尔河谷城堡群（舍农索 · 昂布瓦兹）,卢瓦尔河谷城堡群（舍农索 · 昂布瓦兹）,Châteaux of the Loire Valley (Chenonceau · Amboise),官方
+site_name,印加博物馆,印加博物馆,Museo Inka,官方
+site_name,印度博物馆（加尔各答）,印度博物馆（加尔各答）,Indian Museum (Kolkata),官方
+site_name,印度国家博物馆,印度国家博物馆,"National Museum, New Delhi",官方
+site_name,印度尼西亚国家博物馆,印度尼西亚国家博物馆,National Museum of Indonesia,官方
+site_name,厄瓜多尔国家博物馆,厄瓜多尔国家博物馆,National Museum of Ecuador,官方
+site_name,厦门市博物馆,厦门市博物馆,Xiamen Museum,官方
+site_name,古典魏玛建筑群,古典魏玛建筑群,Classical Weimar,官方
+site_name,古奥林匹亚遗址与考古博物馆,古奥林匹亚遗址与考古博物馆,Ancient Olympia and its Archaeological Museum,官方
+site_name,古杰里科遗址（苏丹土丘）,古杰里科遗址（苏丹土丘）,Ancient Jericho (Tell es-Sultan),官方
+site_name,古梅尔夫国家历史文化公园,古梅尔夫国家历史文化公园,"State Historical and Cultural Park ""Ancient Merv""",官方
+site_name,古特伯高塔,古特伯高塔,Qutub Minar,官方
+site_name,吉达历史城区（巴拉德）,吉达历史城区（巴拉德）,Historic Jeddah (Al-Balad),官方
+site_name,名古屋城,名古屋城,Nagoya Castle,官方
+site_name,吐鲁番博物馆,吐鲁番博物馆,Turpan Museum,官方
+site_name,吴哥考古公园（吴哥窟 · 巴戎寺）,吴哥考古公园（吴哥窟 · 巴戎寺）,Angkor Archaeological Park (Angkor Wat · Bayon),官方
+site_name,周原遗址,周原遗址,Zhouyuan Site,官方
+site_name,咸阳博物院,咸阳博物院,Xianyang Museum,官方
+site_name,哈尔施塔特-达赫施泰因文化景观与盐矿,哈尔施塔特-达赫施泰因文化景观与盐矿,Hallstatt-Dachstein Cultural Landscape and Salt Mine,官方
+site_name,哈德良离宫,哈德良离宫,Hadrian's Villa,官方
+site_name,哈瓦那旧城,哈瓦那旧城,Old Havana,官方
+site_name,哥伦比亚国家博物馆,哥伦比亚国家博物馆,National Museum of Colombia,官方
+site_name,哥贝克力石阵,哥贝克力石阵,Göbekli Tepe,官方
+site_name,喀什噶尔老城,喀什噶尔老城,Kashgar Old Town,官方
+site_name,喀山克里姆林宫博物馆保护区,喀山克里姆林宫博物馆保护区,Kazan Kremlin Museum Reserve,官方
+site_name,嘉峪关关城,嘉峪关关城,Jiayuguan Pass Fortress,官方
+site_name,四川博物院,四川博物院,Sichuan Museum,官方
+site_name,四门塔,四门塔,Simen Pagoda,官方
+site_name,固都陶佛塔,固都陶佛塔,Kuthodaw Pagoda,官方
+site_name,国家美术博物馆,国家美术博物馆,National Museum of Fine Arts,存疑
+site_name,国立公州博物馆,国立公州博物馆,Gongju National Museum,官方
+site_name,国立扶余博物馆,国立扶余博物馆,Buyeo National Museum,官方
+site_name,国立罗马艺术博物馆,国立罗马艺术博物馆,National Museum of Roman Art,官方
+site_name,国立考古与民族学博物馆,国立考古与民族学博物馆,National Museum of Archaeology and Ethnology,官方
+site_name,国际红十字博物馆,国际红十字博物馆,International Red Cross and Red Crescent Museum,官方
+site_name,土库曼斯坦国家博物馆,土库曼斯坦国家博物馆,National Museum of Turkmenistan,官方
+site_name,圣地亚哥主教座堂与朝圣之路,圣地亚哥主教座堂与朝圣之路,Santiago de Compostela Cathedral and the Camino,官方
+site_name,圣巴夫主教座堂（根特祭坛画）,圣巴夫主教座堂（根特祭坛画）,Saint Bavo's Cathedral (Ghent Altarpiece),官方
+site_name,圣方济各圣殿（乔托壁画）,圣方济各圣殿（乔托壁画）,Basilica of San Francesco d'Assisi (Giotto Frescoes),官方
+site_name,圣米歇尔山及其海湾,圣米歇尔山及其海湾,Mont-Saint-Michel and its Bay,官方
+site_name,圣索菲亚大教堂,圣索菲亚大教堂,Saint Sophia Cathedral,官方
+site_name,圣胡安老城与埃尔莫罗要塞,圣胡安老城与埃尔莫罗要塞,Old San Juan and Castillo San Felipe del Morro,官方
+site_name,圣诞教堂与朝圣之路,圣诞教堂与朝圣之路,Church of the Nativity and the Pilgrimage Route,官方
+site_name,坎波广场,坎波广场,Piazza del Campo,官方
+site_name,坎特伯雷主教座堂,坎特伯雷主教座堂,Canterbury Cathedral,官方
+site_name,坦桑尼亚国家博物馆,坦桑尼亚国家博物馆,National Museum of Tanzania,官方
+site_name,埃塞俄比亚国家博物馆（露西化石）,埃塞俄比亚国家博物馆（露西化石）,National Museum of Ethiopia (Lucy),官方
+site_name,埃奇米阿津大教堂与兹瓦尔特诺茨遗址,埃奇米阿津大教堂与兹瓦尔特诺茨遗址,Etchmiadzin Cathedral and Zvartnots,官方
+site_name,埃尔杰姆圆形竞技场,埃尔杰姆圆形竞技场,Amphitheatre of El Jem,官方
+site_name,埃尔比勒城堡,埃尔比勒城堡,Erbil Citadel,官方
+site_name,埃斯特庄园,埃斯特庄园,Villa d'Este,官方
+site_name,埃武拉历史中心（戴安娜神庙）,埃武拉历史中心（戴安娜神庙）,Historic Centre of Évora (Roman Temple),官方
+site_name,埃洛拉石窟,埃洛拉石窟,Ellora Caves,官方
+site_name,城市宫殿博物馆,城市宫殿博物馆,City Palace Museum,官方
+site_name,基多老城,基多老城,Historic Centre of Quito,官方
+site_name,塔克西拉考古遗址与博物馆,塔克西拉考古遗址与博物馆,Taxila Archaeological Site and Museum,官方
+site_name,塔尔寺,塔尔寺,Kumbum Monastery,官方
+site_name,塔林老城,塔林老城,Old Town of Tallinn,官方
+site_name,塔銮,塔銮,Pha That Luang,官方
+site_name,塞哥维亚罗马水道桥与阿尔卡萨城堡,塞哥维亚罗马水道桥与阿尔卡萨城堡,Aqueduct of Segovia and the Alcázar,官方
+site_name,塞尔维亚国家博物馆,塞尔维亚国家博物馆,National Museum of Serbia,官方
+site_name,塞尚画室,塞尚画室,Atelier Cézanne,官方
+site_name,塞拉尔维斯博物馆,塞拉尔维斯博物馆,Serralves Museum,官方
+site_name,塞浦路斯博物馆,塞浦路斯博物馆,Cyprus Museum,官方
+site_name,塞维利亚王宫与主教座堂,塞维利亚王宫与主教座堂,Royal Alcázar and Seville Cathedral,官方
+site_name,塞维利亚美术馆,塞维利亚美术馆,Museum of Fine Arts of Seville,官方
+site_name,塞萨洛尼基考古博物馆,塞萨洛尼基考古博物馆,Archaeological Museum of Thessaloniki,官方
+site_name,夏加尔博物馆,夏加尔博物馆,Musée National Marc Chagall,官方
+site_name,多米尼加人博物馆,多米尼加人博物馆,Museo del Hombre Dominicano,官方
+site_name,大不里士历史巴扎建筑群,大不里士历史巴扎建筑群,Tabriz Historic Bazaar Complex,官方
+site_name,大原美术馆,大原美术馆,Ohara Museum of Art,官方
+site_name,大召寺,大召寺,Dazhao Temple,官方
+site_name,大城历史公园,大城历史公园,Ayutthaya Historical Park,官方
+site_name,大津巴布韦国家纪念地,大津巴布韦国家纪念地,Great Zimbabwe National Monument,官方
+site_name,大浦天主堂,大浦天主堂,Oura Church,官方
+site_name,大理市博物馆,大理市博物馆,Dali Museum,官方
+site_name,大皇宫,大皇宫,Grand Palace,官方
+site_name,大莱普提斯考古遗址,大莱普提斯考古遗址,Leptis Magna Archaeological Site,官方
+site_name,大足石刻,大足石刻,Dazu Rock Carvings,官方
+site_name,大金塔,大金塔,Shwedagon Pagoda,官方
+site_name,大阪历史博物馆,大阪历史博物馆,Osaka Museum of History,官方
+site_name,大阪市立美术馆,大阪市立美术馆,Osaka City Museum of Fine Arts,官方
+site_name,大马士革国家博物馆,大马士革国家博物馆,National Museum of Damascus,官方
+site_name,天一阁,天一阁,Tianyige Library,官方
+site_name,天使报喜堂,天使报喜堂,Basilica of the Annunciation,官方
+site_name,天梯山石窟,天梯山石窟,Tiantishan Grottoes,官方
+site_name,天津博物馆,天津博物馆,Tianjin Museum,官方
+site_name,太宰府天满宫,太宰府天满宫,Dazaifu Tenmangu Shrine,官方
+site_name,太阳与月亮金字塔,太阳与月亮金字塔,Pyramids of the Sun and the Moon,官方
+site_name,奇琴伊察,奇琴伊察,Chichen Itza,官方
+site_name,契迪龙寺,契迪龙寺,Wat Chedi Luang,官方
+site_name,奥林达历史中心（邻近）,奥林达历史中心（邻近）,Historic Centre of Olinda (nearby),官方
+site_name,奥赫里德地区文化与自然遗产,奥赫里德地区文化与自然遗产,Natural and Cultural Heritage of the Ohrid Region,官方
+site_name,姆茨赫塔历史建筑群（斯维季茨霍维利教堂）,姆茨赫塔历史建筑群（斯维季茨霍维利教堂）,Historical Monuments of Mtskheta (Svetitskhoveli Cathedral),官方
+site_name,姬路城,姬路城,Himeji Castle,官方
+site_name,威尔士国家博物馆,威尔士国家博物馆,National Museum Wales,官方
+site_name,威廉高地山地公园,威廉高地山地公园,Bergpark Wilhelmshöhe,官方
+site_name,婆罗浮屠,婆罗浮屠,Borobudur,官方
+site_name,孔子博物馆,孔子博物馆,Confucius Museum,官方
+site_name,孔庙孔府孔林,孔庙孔府孔林,"Temple, Cemetery and Mansion of Confucius",官方
+site_name,孟加拉国家博物馆,孟加拉国家博物馆,Bangladesh National Museum,官方
+site_name,宁夏博物馆,宁夏博物馆,Ningxia Museum,官方
+site_name,宁波博物馆,宁波博物馆,Ningbo Museum,官方
+site_name,安塔利亚博物馆,安塔利亚博物馆,Antalya Museum,官方
+site_name,安布希曼加皇家蓝山行宫,安布希曼加皇家蓝山行宫,Royal Hill of Ambohimanga,官方
+site_name,安帕罗博物馆,安帕罗博物馆,Museo Amparo,官方
+site_name,安提瓜危地马拉古城,安提瓜危地马拉古城,Antigua Guatemala,官方
+site_name,安曼城堡山,安曼城堡山,Amman Citadel,官方
+site_name,安纳托利亚文明博物馆,安纳托利亚文明博物馆,Museum of Anatolian Civilizations,官方
+site_name,定林寺址,定林寺址,Jeongnimsa Temple Site,官方
+site_name,宝鸡青铜器博物院,宝鸡青铜器博物院,Baoji Bronzeware Museum,官方
+site_name,富维耶罗马剧场,富维耶罗马剧场,Roman Theatre of Fourvière,官方
+site_name,尚勒乌尔法考古博物馆,尚勒乌尔法考古博物馆,Şanlıurfa Archaeology Museum,官方
+site_name,尧庙,尧庙,Temple of Yao,官方
+site_name,尼姆竞技场,尼姆竞技场,Arena of Nîmes,官方
+site_name,尼尼微遗址,尼尼微遗址,Nineveh,官方
+site_name,尼泊尔国家博物馆,尼泊尔国家博物馆,National Museum of Nepal,官方
+site_name,山东博物馆,山东博物馆,Shandong Museum,官方
+site_name,山西博物院,山西博物院,Shanxi Museum,官方
+site_name,崇圣寺三塔,崇圣寺三塔,Three Pagodas of Chongsheng Temple,官方
+site_name,巨石阵与埃夫伯里巨石遗迹,巨石阵与埃夫伯里巨石遗迹,Stonehenge and Avebury,官方
+site_name,巴勒斯坦博物馆,巴勒斯坦博物馆,Palestinian Museum,官方
+site_name,巴勒贝克罗马神庙群,巴勒贝克罗马神庙群,Baalbek Roman Temples,官方
+site_name,巴厘博物馆,巴厘博物馆,Bali Museum,官方
+site_name,巴基斯坦国家博物馆,巴基斯坦国家博物馆,National Museum of Pakistan,官方
+site_name,巴塞尔美术馆,巴塞尔美术馆,Kunstmuseum Basel,官方
+site_name,巴姆城堡与文化景观,巴姆城堡与文化景观,Bam Citadel and Cultural Landscape,官方
+site_name,巴尔多国家史前与民族学博物馆,巴尔多国家史前与民族学博物馆,Bardo National Museum of Prehistory and Ethnography,官方
+site_name,巴德岗杜巴广场,巴德岗杜巴广场,Bhaktapur Durbar Square,官方
+site_name,巴拿马老城,巴拿马老城,"Casco Viejo, Panama",官方
+site_name,巴斯古城,巴斯古城,City of Bath,官方
+site_name,巴林国家博物馆,巴林国家博物馆,Bahrain National Museum,官方
+site_name,巴比伦考古遗址（伊什塔尔门遗址）,巴比伦考古遗址（伊什塔尔门遗址）,Babylon Archaeological Site (Ishtar Gate),官方
+site_name,巴米扬山谷文化景观与考古遗址,巴米扬山谷文化景观与考古遗址,Cultural Landscape and Archaeological Remains of the Bamiyan Valley,官方
+site_name,布吕根汉萨商馆区,布吕根汉萨商馆区,Bryggen,官方
+site_name,布哈拉历史中心（卡扬宣礼塔 · 萨曼尼陵墓）,布哈拉历史中心（卡扬宣礼塔 · 萨曼尼陵墓）,Historic Centre of Bukhara (Kalyan Minaret · Samanid Mausoleum),官方
+site_name,布尔萨与库马勒克孜克早期奥斯曼建筑,布尔萨与库马勒克孜克早期奥斯曼建筑,Bursa and Cumalıkızık: the Birth of the Ottoman Empire,官方
+site_name,布拉格国家博物馆,布拉格国家博物馆,"National Museum, Prague",官方
+site_name,布拉格城堡,布拉格城堡,Prague Castle,官方
+site_name,布达城堡,布达城堡,Buda Castle,官方
+site_name,布达拉宫历史建筑群,布达拉宫历史建筑群,Historic Ensemble of the Potala Palace,官方
+site_name,布鲁日历史中心,布鲁日历史中心,Historic Centre of Bruges,官方
+site_name,希巴姆老城（沙漠中的曼哈顿）,希巴姆老城（沙漠中的曼哈顿）,Old Walled City of Shibam (Manhattan of the Desert),官方
+site_name,希拉波利斯-棉花堡,希拉波利斯-棉花堡,Hierapolis-Pamukkale,官方
+site_name,希腊罗马博物馆,希腊罗马博物馆,Graeco-Roman Museum,官方
+site_name,帕伦克玛雅古城遗址,帕伦克玛雅古城遗址,Palenque Maya Archaeological Site,官方
+site_name,帕尔米拉古城遗址,帕尔米拉古城遗址,Site of Palmyra,官方
+site_name,帕尔马主教座堂,帕尔马主教座堂,Palma Cathedral,官方
+site_name,帕萨尔加德,帕萨尔加德,Pasargadae,官方
+site_name,帝王谷,帝王谷,Valley of the Kings,官方
+site_name,平遥古城（中国票号博物馆·日昇昌旧址 · 平遥县衙博物馆）,平遥古城（中国票号博物馆·日昇昌旧址 · 平遥县衙博物馆）,Ancient City of Pingyao (Rishengchang Exchange Shop Museum · Pingyao County Government Museum),官方
+site_name,广东省博物馆,广东省博物馆,Guangdong Museum,官方
+site_name,广济桥,广济桥,Guangji Bridge,官方
+site_name,库斯科古城,库斯科古城,Historic Centre of Cusco,官方
+site_name,廷巴克图古城与古手稿,廷巴克图古城与古手稿,Timbuktu and its Ancient Manuscripts,官方
+site_name,开封博物馆,开封博物馆,Kaifeng Museum,官方
+site_name,弗拉基米尔与苏兹达尔白石建筑群,弗拉基米尔与苏兹达尔白石建筑群,White Monuments of Vladimir and Suzdal,官方
+site_name,弗罗茨瓦夫国家博物馆,弗罗茨瓦夫国家博物馆,National Museum in Wrocław,官方
+site_name,张掖大佛寺,张掖大佛寺,Zhangye Giant Buddha Temple,官方
+site_name,徐州博物馆,徐州博物馆,Xuzhou Museum,官方
+site_name,德尔斐考古遗址与博物馆,德尔斐考古遗址与博物馆,Archaeological Site and Museum of Delphi,官方
+site_name,德川美术馆,德川美术馆,Tokugawa Art Museum,官方
+site_name,德拉伊耶,德拉伊耶,Diriyah,官方
+site_name,德累斯顿国家艺术收藏馆（茨温格宫）,德累斯顿国家艺术收藏馆（茨温格宫）,Dresden State Art Collections (Zwinger),官方
+site_name,徽州古建筑群,徽州古建筑群,Huizhou Ancient Architecture Complex,AI
+site_name,恒河沿岸圣城河坛,恒河沿岸圣城河坛,Ghats along the Ganges,官方
+site_name,恩特林登博物馆（伊森海姆祭坛画）,恩特林登博物馆（伊森海姆祭坛画）,Unterlinden Museum (Isenheim Altarpiece),官方
+site_name,恰塔霍裕克新石器遗址,恰塔霍裕克新石器遗址,Neolithic Site of Çatalhöyük,官方
+site_name,惠山古镇,惠山古镇,Huishan Ancient Town,官方
+site_name,戈尔孔达堡,戈尔孔达堡,Golconda Fort,官方
+site_name,戈雷岛,戈雷岛,Island of Gorée,官方
+site_name,战争遗迹博物馆,战争遗迹博物馆,War Remnants Museum,官方
+site_name,戴克里先宫,戴克里先宫,Diocletian's Palace,官方
+site_name,扎什伦布寺,扎什伦布寺,Tashi Lhunpo Monastery,官方
+site_name,扎西却宗,扎西却宗,Tashichho Dzong,官方
+site_name,托莱多古城,托莱多古城,Historic City of Toledo,官方
+site_name,扬州中国大运河博物馆,扬州中国大运河博物馆,Yangzhou China Grand Canal Museum,官方
+site_name,拉利贝拉岩石凿刻教堂群,拉利贝拉岩石凿刻教堂群,Rock-Hewn Churches of Lalibela,官方
+site_name,拉合尔博物馆,拉合尔博物馆,Lahore Museum,官方
+site_name,拉合尔堡与夏利马尔花园,拉合尔堡与夏利马尔花园,Lahore Fort and Shalamar Gardens,官方
+site_name,拉帕努伊国家公园（摩艾石像）,拉帕努伊国家公园（摩艾石像）,Rapa Nui National Park (Moai),官方
+site_name,拉文纳早期基督教建筑与镶嵌画,拉文纳早期基督教建筑与镶嵌画,Early Christian Monuments and Mosaics of Ravenna,官方
+site_name,拉斯科洞窟壁画（国际岩洞艺术中心）,拉斯科洞窟壁画（国际岩洞艺术中心）,Lascaux Cave Paintings (International Centre for Cave Art),官方
+site_name,拉穆古城,拉穆古城,Lamu Old Town,官方
+site_name,拉脱维亚国家历史博物馆,拉脱维亚国家历史博物馆,National History Museum of Latvia,官方
+site_name,拉贾斯坦山堡,拉贾斯坦山堡,Hill Forts of Rajasthan,官方
+site_name,提姆加德罗马城遗址,提姆加德罗马城遗址,Roman Ruins of Timgad,官方
+site_name,提尔考古遗址,提尔考古遗址,Archaeological Site of Tyre,官方
+site_name,摩亨佐达罗考古遗址,摩亨佐达罗考古遗址,Archaeological Ruins at Moenjodaro,官方
+site_name,摩苏尔博物馆,摩苏尔博物馆,Mosul Museum,官方
+site_name,摩诃菩提寺,摩诃菩提寺,Mahabodhi Temple,官方
+site_name,教皇宫与阿维尼翁历史中心,教皇宫与阿维尼翁历史中心,Palais des Papes and Historic Centre of Avignon,官方
+site_name,敦煌研究院（莫高窟）,敦煌研究院（莫高窟）,Dunhuang Academy (Mogao Caves),官方
+site_name,文献展(documenta),文献展(documenta),documenta,官方
+site_name,斯图加特国立美术馆,斯图加特国立美术馆,Staatsgalerie Stuttgart,官方
+site_name,斯洛伐克国家博物馆,斯洛伐克国家博物馆,Slovak National Museum,官方
+site_name,斯洛文尼亚国家博物馆,斯洛文尼亚国家博物馆,National Museum of Slovenia,官方
+site_name,斯特拉斯堡大岛与主教座堂,斯特拉斯堡大岛与主教座堂,Strasbourg Grande Île and Cathedral,官方
+site_name,新嘉士伯艺术博物馆,新嘉士伯艺术博物馆,Ny Carlsberg Glyptotek,官方
+site_name,新奥尔良艺术博物馆,新奥尔良艺术博物馆,New Orleans Museum of Art,官方
+site_name,新疆维吾尔自治区博物馆,新疆维吾尔自治区博物馆,Xinjiang Uygur Autonomous Region Museum,官方
+site_name,施泰德博物馆,施泰德博物馆,Städel Museum,官方
+site_name,无忧宫与波茨坦宫殿园林,无忧宫与波茨坦宫殿园林,Sanssouci Palace and the Parks of Potsdam,官方
+site_name,无锡博物院,无锡博物院,Wuxi Museum,官方
+site_name,日光东照宫与二社一寺,日光东照宫与二社一寺,Nikko Toshogu and the Shrines and Temples of Nikko,官方
+site_name,日耳曼国家博物馆,日耳曼国家博物馆,Germanisches Nationalmuseum,官方
+site_name,早期基督教建筑群,早期基督教建筑群,Early Christian Monuments,存疑
+site_name,昆卡历史中心,昆卡历史中心,Historic Centre of Cuenca,官方
+site_name,昌昌古城,昌昌古城,Chan Chan,官方
+site_name,明孝陵,明孝陵,Ming Xiaoling Mausoleum,官方
+site_name,易卜拉欣清真寺,易卜拉欣清真寺,Ibrahimi Mosque,官方
+site_name,昔兰尼考古遗址,昔兰尼考古遗址,Archaeological Site of Cyrene,官方
+site_name,晋祠,晋祠,Jinci Temple,官方
+site_name,普兰巴南神庙群,普兰巴南神庙群,Prambanan Temple Compounds,官方
+site_name,普埃布拉历史中心,普埃布拉历史中心,Historic Centre of Puebla,官方
+site_name,普罗夫迪夫古城与罗马剧场,普罗夫迪夫古城与罗马剧场,Old Town of Plovdiv and the Roman Theatre,官方
+site_name,景德镇中国陶瓷博物馆,景德镇中国陶瓷博物馆,"China Ceramics Museum, Jingdezhen",官方
+site_name,景德镇御窑博物馆,景德镇御窑博物馆,Jingdezhen Imperial Kiln Museum,官方
+site_name,智利国家美术馆,智利国家美术馆,Chilean National Museum of Fine Arts,官方
+site_name,曼彻斯特美术馆,曼彻斯特美术馆,Manchester Art Gallery,官方
+site_name,曼德勒皇宫,曼德勒皇宫,Mandalay Palace,官方
+site_name,曼谷国家博物馆,曼谷国家博物馆,Bangkok National Museum,官方
+site_name,月亮港历史城区,月亮港历史城区,"Bordeaux, Port of the Moon",官方
+site_name,朝鲜中央历史博物馆,朝鲜中央历史博物馆,Korean Central History Museum,官方
+site_name,杜布罗夫尼克古城与城墙,杜布罗夫尼克古城与城墙,Old City of Dubrovnik and its Walls,官方
+site_name,杰内古城与大清真寺,杰内古城与大清真寺,Old Towns of Djenné and the Great Mosque,官方
+site_name,杰拉什古罗马城遗址,杰拉什古罗马城遗址,Ancient Roman City of Jerash,官方
+site_name,林伽拉神庙,林伽拉神庙,Lingaraja Temple,官方
+site_name,果阿教堂与修道院群（旧果阿）,果阿教堂与修道院群（旧果阿）,Churches and Convents of Goa (Old Goa),官方
+site_name,柏孜克里克千佛洞,柏孜克里克千佛洞,Bezeklik Thousand Buddha Caves,官方
+site_name,查雷维茨要塞,查雷维茨要塞,Tsarevets Fortress,官方
+site_name,柬埔寨国家博物馆,柬埔寨国家博物馆,National Museum of Cambodia,官方
+site_name,柱廊群,柱廊群,Colonnade,存疑
+site_name,格但斯克老城,格但斯克老城,Gdańsk Old Town,官方
+site_name,格列柯博物馆,格列柯博物馆,El Greco Museum,官方
+site_name,格拉内博物馆,格拉内博物馆,Musée Granet,官方
+site_name,格罗宁根博物馆,格罗宁根博物馆,Groninger Museum,官方
+site_name,格雷梅国家公园与岩窟教堂群,格雷梅国家公园与岩窟教堂群,Göreme National Park and the Rock Sites of Cappadocia,官方
+site_name,格鲁吉亚国家博物馆,格鲁吉亚国家博物馆,Georgian National Museum,官方
+site_name,桑奇佛塔,桑奇佛塔,Sanchi Stupa,官方
+site_name,梅克内斯古城,梅克内斯古城,Historic City of Meknes,官方
+site_name,梅夫拉纳博物馆,梅夫拉纳博物馆,Mevlana Museum,官方
+site_name,梅萨维德国家公园（悬崖宫殿）,梅萨维德国家公园（悬崖宫殿）,Mesa Verde National Park (Cliff Palace),官方
+site_name,梅里达考古群,梅里达考古群,Archaeological Ensemble of Mérida,官方
+site_name,梵高足迹,梵高足迹,Van Gogh Trail,AI
+site_name,楚纪南故城,楚纪南故城,Jinan Ancient City of the Chu State,AI
+site_name,槟城乔治市历史城区,槟城乔治市历史城区,"George Town Historic City, Penang",官方
+site_name,檀香山艺术博物馆,檀香山艺术博物馆,Honolulu Museum of Art,官方
+site_name,欧洲团结中心,欧洲团结中心,European Solidarity Centre,官方
+site_name,欧鲁普雷图历史城市（阿莱雅迪纽雕塑）,欧鲁普雷图历史城市（阿莱雅迪纽雕塑）,Historic Town of Ouro Preto (Aleijadinho Sculptures),官方
+site_name,武威市博物馆,武威市博物馆,Wuwei Museum,官方
+site_name,武宁王陵,武宁王陵,Tomb of King Muryeong,官方
+site_name,殖民地威廉斯堡,殖民地威廉斯堡,Colonial Williamsburg,官方
+site_name,殖民城区,殖民城区,Colonial City of Santo Domingo,官方
+site_name,殷墟博物馆,殷墟博物馆,Yinxu Museum,官方
+site_name,比布鲁斯考古遗址,比布鲁斯考古遗址,Archaeological Site of Byblos,官方
+site_name,比莫贝特卡岩画,比莫贝特卡岩画,Rock Shelters of Bhimbetka,官方
+site_name,比萨主教座堂广场（斜塔）,比萨主教座堂广场（斜塔）,"Piazza del Duomo, Pisa (Leaning Tower)",官方
+site_name,水原华城,水原华城,Hwaseong Fortress,官方
+site_name,永乐宫元代壁画,永乐宫元代壁画,Yuan Dynasty Murals of Yongle Palace,官方
+site_name,汉中市博物馆,汉中市博物馆,Hanzhong Museum,官方
+site_name,汉唐帝陵,汉唐帝陵,Han and Tang Imperial Mausoleums,AI
+site_name,汉堡美术馆,汉堡美术馆,Hamburger Kunsthalle,官方
+site_name,汉皮古迹群（维查耶纳伽尔王朝遗址）,汉皮古迹群（维查耶纳伽尔王朝遗址）,Group of Monuments at Hampi (Vijayanagara),官方
+site_name,江西省博物馆,江西省博物馆,Jiangxi Provincial Museum,官方
+site_name,沈阳故宫博物院,沈阳故宫博物院,Mukden Palace Museum,官方
+site_name,沙特国家博物馆,沙特国家博物馆,National Museum of Saudi Arabia,官方
+site_name,沙特尔主教座堂,沙特尔主教座堂,Chartres Cathedral,官方
+site_name,河北博物院（满城汉墓·中山国）,河北博物院（满城汉墓·中山国）,Hebei Museum (Mancheng Han Tombs · State of Zhongshan),官方
+site_name,河南博物院,河南博物院,Henan Museum,官方
+site_name,河回村（韩国历史村落）,河回村（韩国历史村落）,Hahoe Folk Village (Historic Villages of Korea),官方
+site_name,泉州海外交通史博物馆,泉州海外交通史博物馆,Quanzhou Maritime Museum,官方
+site_name,法国区,法国区,French Quarter,官方
+site_name,法塔赫布尔西格里,法塔赫布尔西格里,Fatehpur Sikri,官方
+site_name,法西尔盖比城堡群,法西尔盖比城堡群,Fasil Ghebbi,官方
+site_name,波尔图历史中心,波尔图历史中心,Historic Centre of Porto,官方
+site_name,波托西城与银矿,波托西城与银矿,City of Potosí and its Silver Mines,官方
+site_name,波斯波利斯遗址,波斯波利斯遗址,Persepolis,官方
+site_name,波隆纳鲁沃古城（伽尔寺石雕）,波隆纳鲁沃古城（伽尔寺石雕）,Ancient City of Polonnaruwa (Gal Vihara),官方
+site_name,波黑国家博物馆,波黑国家博物馆,National Museum of Bosnia and Herzegovina,官方
+site_name,泰姬陵,泰姬陵,Taj Mahal,官方
+site_name,洋际运河博物馆,洋际运河博物馆,Panama Canal Museum,存疑
+site_name,洛阳博物馆,洛阳博物馆,Luoyang Museum,官方
+site_name,浙江省博物馆,浙江省博物馆,Zhejiang Provincial Museum,官方
+site_name,海岸角城堡与埃尔米纳城堡,海岸角城堡与埃尔米纳城堡,Cape Coast Castle and Elmina Castle,官方
+site_name,海德堡城堡,海德堡城堡,Heidelberg Castle,官方
+site_name,海昏侯国遗址博物馆,海昏侯国遗址博物馆,Haihunhou Site Museum,官方
+site_name,湖北省博物馆（曾侯乙编钟）,湖北省博物馆（曾侯乙编钟）,Hubei Provincial Museum (Bells of Marquis Yi of Zeng),官方
+site_name,湖南博物院（马王堆汉墓）,湖南博物院（马王堆汉墓）,Hunan Museum (Mawangdui Han Tombs),官方
+site_name,潮州古城,潮州古城,Chaozhou Ancient City,官方
+site_name,澳门博物馆,澳门博物馆,Macao Museum,官方
+site_name,澳门历史城区,澳门历史城区,Historic Centre of Macao,官方
+site_name,爱沙尼亚历史博物馆,爱沙尼亚历史博物馆,Estonian History Museum,官方
+site_name,特奥蒂瓦坎古城（太阳金字塔）,特奥蒂瓦坎古城（太阳金字塔）,Ancient City of Teotihuacan (Pyramid of the Sun),官方
+site_name,特洛伊考古遗址与特洛伊博物馆,特洛伊考古遗址与特洛伊博物馆,Archaeological Site of Troy and the Troy Museum,官方
+site_name,特立尼达城与甘蔗种植园谷地,特立尼达城与甘蔗种植园谷地,Trinidad and the Valley de los Ingenios,官方
+site_name,特莱姆森大清真寺与曼苏拉遗址,特莱姆森大清真寺与曼苏拉遗址,Great Mosque of Tlemcen and Mansourah Ruins,官方
+site_name,特里尔罗马建筑群（尼格拉城门）,特里尔罗马建筑群（尼格拉城门）,Roman Monuments of Trier (Porta Nigra),官方
+site_name,狮子山楚王陵,狮子山楚王陵,Chu King's Tomb at Shizishan,官方
+site_name,狮子岩（锡吉里耶）,狮子岩（锡吉里耶）,Sigiriya (Lion Rock),官方
+site_name,王城区,王城区,Intramuros,官方
+site_name,王宫博物馆,王宫博物馆,Royal Palace Museum,存疑
+site_name,玛雅世界大博物馆,玛雅世界大博物馆,Gran Museo del Mundo Maya,官方
+site_name,玻利维亚国家艺术博物馆,玻利维亚国家艺术博物馆,"National Museum of Art, Bolivia",官方
+site_name,珍珠港纪念馆,珍珠港纪念馆,Pearl Harbor National Memorial,官方
+site_name,琅勃拉邦古城（香通寺）,琅勃拉邦古城（香通寺）,Town of Luang Prabang (Wat Xieng Thong),官方
+site_name,琐罗亚斯德教火庙,琐罗亚斯德教火庙,Zoroastrian Fire Temple,官方
+site_name,琥珀堡,琥珀堡,Amber Fort,官方
+site_name,瑞士国家博物馆,瑞士国家博物馆,Swiss National Museum,官方
+site_name,瓜纳华托历史城镇与矿区,瓜纳华托历史城镇与矿区,Historic Town of Guanajuato and Adjacent Mines,官方
+site_name,瓦伦西亚美术馆,瓦伦西亚美术馆,Museum of Fine Arts of Valencia,官方
+site_name,瓦哈卡历史中心,瓦哈卡历史中心,Historic Centre of Oaxaca,官方
+site_name,瓦尔帕莱索历史城区,瓦尔帕莱索历史城区,Historic Quarter of Valparaíso,官方
+site_name,瓦莱塔城,瓦莱塔城,City of Valletta,官方
+site_name,瓦鲁比利斯罗马遗址,瓦鲁比利斯罗马遗址,Archaeological Site of Volubilis,官方
+site_name,甘肃省博物馆（铜奔马）,甘肃省博物馆（铜奔马）,Gansu Provincial Museum (Bronze Galloping Horse),官方
+site_name,瘦西湖,瘦西湖,Slender West Lake,官方
+site_name,白宫与红宫博物馆（新街）,白宫与红宫博物馆（新街）,White Palace and Red Palace Museum,存疑
+site_name,白沙瓦博物馆（犍陀罗佛教艺术）,白沙瓦博物馆（犍陀罗佛教艺术）,Peshawar Museum (Gandhara Buddhist Art),官方
+site_name,百年厅,百年厅,Centennial Hall,官方
+site_name,皇家美术馆,皇家美术馆,Royal Museums of Fine Arts,存疑
+site_name,石头城,石头城,Stone Town,官方
+site_name,石门栈道,石门栈道,Shimen Plank Road,官方
+site_name,神殿之谷考古区,神殿之谷考古区,Valley of the Temples,官方
+site_name,禁寺（麦加大清真寺）与克尔白,禁寺（麦加大清真寺）与克尔白,Masjid al-Haram and the Kaaba,官方
+site_name,福冈市博物馆（汉委奴国王金印）,福冈市博物馆（汉委奴国王金印）,Fukuoka City Museum (Gold Seal of the King of Na),官方
+site_name,福建博物院,福建博物院,Fujian Museum,官方
+site_name,科伦坡国家博物馆,科伦坡国家博物馆,Colombo National Museum,官方
+site_name,科尔多瓦清真寺-主教座堂,科尔多瓦清真寺-主教座堂,Mosque-Cathedral of Córdoba,官方
+site_name,科托尔自然与文化历史区,科托尔自然与文化历史区,Natural and Culturo-Historical Region of Kotor,官方
+site_name,科潘玛雅遗址与雕刻博物馆,科潘玛雅遗址与雕刻博物馆,Maya Site of Copán and Sculpture Museum,官方
+site_name,科纳克太阳神庙,科纳克太阳神庙,Konark Sun Temple,官方
+site_name,科英布拉大学与乔安娜图书馆,科英布拉大学与乔安娜图书馆,University of Coimbra and the Joanina Library,官方
+site_name,科隆大教堂,科隆大教堂,Cologne Cathedral,官方
+site_name,秘鲁国立考古人类学历史博物馆,秘鲁国立考古人类学历史博物馆,"National Museum of Archaeology, Anthropology and History of Peru",官方
+site_name,秦始皇帝陵博物院（兵马俑）,秦始皇帝陵博物院（兵马俑）,Emperor Qinshihuang's Mausoleum Site Museum (Terracotta Army),官方
+site_name,穆罕默德六世现代与当代艺术博物馆,穆罕默德六世现代与当代艺术博物馆,Mohammed VI Museum of Modern and Contemporary Art,官方
+site_name,立陶宛国家博物馆,立陶宛国家博物馆,National Museum of Lithuania,官方
+site_name,简塔曼塔天文台,简塔曼塔天文台,Jantar Mantar,官方
+site_name,米纳克希·安曼神庙,米纳克希·安曼神庙,Meenakshi Amman Temple,官方
+site_name,米罗基金会,米罗基金会,Fundació Joan Miró,官方
+site_name,素可泰历史公园,素可泰历史公园,Sukhothai Historical Park,官方
+site_name,红山文化遗址,红山文化遗址,Hongshan Culture Site,官方
+site_name,约克大教堂,约克大教堂,York Minster,官方
+site_name,约旦博物馆（死海古卷铜卷）,约旦博物馆（死海古卷铜卷）,The Jordan Museum (Copper Scroll),官方
+site_name,约维克维京中心,约维克维京中心,Jorvik Viking Centre,官方
+site_name,纳斯卡地画,纳斯卡地画,Nazca Lines,官方
+site_name,纳西东巴文化博物院,纳西东巴文化博物院,Naxi Dongba Culture Museum,官方
+site_name,纽伦堡老城,纽伦堡老城,Nuremberg Old Town,官方
+site_name,纽格莱奇墓（博因河谷考古遗址）,纽格莱奇墓（博因河谷考古遗址）,Newgrange (Brú na Bóinne),官方
+site_name,绍兴博物馆,绍兴博物馆,Shaoxing Museum,官方
+site_name,维尔纽斯老城,维尔纽斯老城,Vilnius Old Town,官方
+site_name,维罗纳古城与竞技场,维罗纳古城与竞技场,City of Verona and the Arena,官方
+site_name,缅甸国家博物馆,缅甸国家博物馆,National Museum of Myanmar,官方
+site_name,罗德中世纪古城（骑士团大团长宫）,罗德中世纪古城（骑士团大团长宫）,Medieval City of Rhodes (Palace of the Grand Master),官方
+site_name,罗马尼亚国家历史博物馆,罗马尼亚国家历史博物馆,National Museum of Romanian History,官方
+site_name,罗马浴场博物馆,罗马浴场博物馆,Roman Baths,官方
+site_name,美山圣地,美山圣地,My Son Sanctuary,官方
+site_name,老大学,老大学,Old University,存疑
+site_name,老挝国家博物馆,老挝国家博物馆,Lao National Museum,官方
+site_name,耶稣堡,耶稣堡,Fort Jesus,官方
+site_name,胡安妮塔冰冻少女,胡安妮塔冰冻少女,Mummy Juanita,官方
+site_name,胡马雍陵,胡马雍陵,Humayun's Tomb,官方
+site_name,舍拉废墟,舍拉废墟,Chellah,官方
+site_name,艺术与历史博物馆,艺术与历史博物馆,Museum of Art and History,存疑
+site_name,艾哈迈达巴德历史城区,艾哈迈达巴德历史城区,Historic City of Ahmedabad,官方
+site_name,苏丹国家博物馆,苏丹国家博物馆,National Museum of Sudan,官方
+site_name,苏克雷历史城市,苏克雷历史城市,Historic City of Sucre,官方
+site_name,苏巴克水利文化景观,苏巴克水利文化景观,Cultural Landscape of Bali: the Subak System,官方
+site_name,苏莱曼-图圣山,苏莱曼-图圣山,Sulaiman-Too Sacred Mountain,官方
+site_name,苏黎世美术馆,苏黎世美术馆,Kunsthaus Zürich,官方
+site_name,荆州博物馆,荆州博物馆,Jingzhou Museum,官方
+site_name,莎士比亚故居,莎士比亚故居,Shakespeare's Birthplace,官方
+site_name,莫扎特故居,莫扎特故居,Mozart's Birthplace,官方
+site_name,莫斯塔尔老桥地区,莫斯塔尔老桥地区,Old Bridge Area of Mostar,官方
+site_name,菲律宾国家博物馆群,菲律宾国家博物馆群,National Museum Complex of the Philippines,官方
+site_name,菲莱神庙,菲莱神庙,Philae Temple,官方
+site_name,萨卡拉阶梯金字塔与孟菲斯遗址,萨卡拉阶梯金字塔与孟菲斯遗址,Step Pyramid of Saqqara and Memphis,官方
+site_name,萨尔纳特（鹿野苑）考古博物馆,萨尔纳特（鹿野苑）考古博物馆,Sarnath Archaeological Museum,官方
+site_name,萨尔茨堡老城,萨尔茨堡老城,Historic Centre of Salzburg,官方
+site_name,萨拉尔·忠格博物馆,萨拉尔·忠格博物馆,Salar Jung Museum,官方
+site_name,萨拉曼卡古城与大学,萨拉曼卡古城与大学,Old City of Salamanca and its University,官方
+site_name,萨格勒布考古博物馆,萨格勒布考古博物馆,Archaeological Museum in Zagreb,官方
+site_name,萨那老城,萨那老城,Old City of Sana'a,官方
+site_name,蒂卡尔国家公园,蒂卡尔国家公园,Tikal National Park,官方
+site_name,蒂瓦纳科,蒂瓦纳科,Tiwanaku,官方
+site_name,蒙古国家博物馆,蒙古国家博物馆,National Museum of Mongolia,官方
+site_name,蒙特利尔美术馆,蒙特利尔美术馆,Montreal Museum of Fine Arts,官方
+site_name,蒲甘考古区（阿难陀寺等两千余座佛塔）,蒲甘考古区（阿难陀寺等两千余座佛塔）,"Bagan Archaeological Zone (Ananda Temple and over 2,000 pagodas)",官方
+site_name,蓝毗尼佛陀诞生地（摩耶夫人寺）,蓝毗尼佛陀诞生地（摩耶夫人寺）,"Lumbini, Birthplace of the Buddha (Maya Devi Temple)",官方
+site_name,虎穴寺,虎穴寺,Paro Taktsang (Tiger's Nest),官方
+site_name,西夏陵,西夏陵,Western Xia Imperial Tombs,官方
+site_name,西津渡,西津渡,Xijindu Ancient Ferry,官方
+site_name,西湖文化景观,西湖文化景观,West Lake Cultural Landscape,官方
+site_name,西潘王陵博物馆（皇家陵墓博物馆）,西潘王陵博物馆（皇家陵墓博物馆）,Royal Tombs of Sipán Museum,官方
+site_name,西藏博物馆,西藏博物馆,Tibet Museum,官方
+site_name,西递宏村古村落,西递宏村古村落,Ancient Villages of Xidi and Hongcun,官方
+site_name,诺夫哥罗德历史古迹与周边,诺夫哥罗德历史古迹与周边,Historic Monuments of Novgorod and Surroundings,官方
+site_name,诺曼王宫与帕拉蒂纳礼拜堂,诺曼王宫与帕拉蒂纳礼拜堂,Norman Palace and the Palatine Chapel,官方
+site_name,象岛石窟,象岛石窟,Elephanta Caves,官方
+site_name,贝宁王国遗址（贝宁铜牌原产地）,贝宁王国遗址（贝宁铜牌原产地）,Kingdom of Benin Site (origin of the Benin Bronzes),官方
+site_name,贝耶勒基金会,贝耶勒基金会,Fondation Beyeler,官方
+site_name,贝鲁特国家博物馆,贝鲁特国家博物馆,National Museum of Beirut,官方
+site_name,贾特拉帕蒂·希瓦吉博物馆,贾特拉帕蒂·希瓦吉博物馆,Chhatrapati Shivaji Maharaj Vastu Sangrahalaya,官方
+site_name,赤峰博物馆,赤峰博物馆,Chifeng Museum,官方
+site_name,赫库兰尼姆考古遗址,赫库兰尼姆考古遗址,Archaeological Areas of Herculaneum,官方
+site_name,赫拉特古城与礼拜五清真寺,赫拉特古城与礼拜五清真寺,Old City of Herat and the Friday Mosque,官方
+site_name,越南历史博物馆,越南历史博物馆,Vietnam History Museum,官方
+site_name,越南国家历史博物馆,越南国家历史博物馆,National Museum of Vietnamese History,官方
+site_name,路德维希博物馆,路德维希博物馆,Museum Ludwig,官方
+site_name,辛特拉文化景观（佩纳宫）,辛特拉文化景观（佩纳宫）,Cultural Landscape of Sintra (Pena Palace),官方
+site_name,迈泰奥拉悬空修道院群,迈泰奥拉悬空修道院群,Meteora Monasteries,官方
+site_name,迈锡尼与提林斯考古遗址,迈锡尼与提林斯考古遗址,Archaeological Sites of Mycenae and Tiryns,官方
+site_name,运城博物馆,运城博物馆,Yuncheng Museum,官方
+site_name,迦太基考古遗址,迦太基考古遗址,Archaeological Site of Carthage,官方
+site_name,避暑山庄及周围寺庙（承德博物馆）,避暑山庄及周围寺庙（承德博物馆）,Mountain Resort and its Outlying Temples (Chengde Museum),官方
+site_name,那不勒斯国立考古博物馆,那不勒斯国立考古博物馆,National Archaeological Museum of Naples,官方
+site_name,郑州商城遗址,郑州商城遗址,Zhengzhou Shang City Site,官方
+site_name,里加老城,里加老城,Historic Centre of Riga,官方
+site_name,里昂美术馆,里昂美术馆,Museum of Fine Arts of Lyon,官方
+site_name,重庆中国三峡博物馆,重庆中国三峡博物馆,Chongqing China Three Gorges Museum,官方
+site_name,金奈政府博物馆,金奈政府博物馆,"Government Museum, Chennai",官方
+site_name,金庙（哈曼迪尔·萨希卜）,金庙（哈曼迪尔·萨希卜）,Golden Temple (Harmandir Sahib),官方
+site_name,金沙遗址博物馆,金沙遗址博物馆,Jinsha Site Museum,官方
+site_name,金泽21世纪美术馆,金泽21世纪美术馆,"21st Century Museum of Contemporary Art, Kanazawa",官方
+site_name,锡吉什瓦拉历史中心,锡吉什瓦拉历史中心,Historic Centre of Sighișoara,官方
+site_name,锡拉库萨考古公园与奥尔蒂贾岛,锡拉库萨考古公园与奥尔蒂贾岛,Archaeological Park of Syracuse and Ortigia,官方
+site_name,锡耶纳国家美术馆,锡耶纳国家美术馆,Pinacoteca Nazionale di Siena,官方
+site_name,镇江博物馆,镇江博物馆,Zhenjiang Museum,官方
+site_name,镰仓大佛（高德院）,镰仓大佛（高德院）,Great Buddha of Kamakura (Kotoku-in),官方
+site_name,长崎原爆资料馆,长崎原爆资料馆,Nagasaki Atomic Bomb Museum,官方
+site_name,阿克罗蒂里史前遗址,阿克罗蒂里史前遗址,Prehistoric Site of Akrotiri,官方
+site_name,阿克苏姆方尖碑与考古遗址,阿克苏姆方尖碑与考古遗址,Aksum Obelisks and Archaeological Site,官方
+site_name,阿努拉德普勒圣城遗址,阿努拉德普勒圣城遗址,Sacred City of Anuradhapura,官方
+site_name,阿勒颇古城与城堡,阿勒颇古城与城堡,Ancient City of Aleppo and the Citadel,官方
+site_name,阿卡老城与十字军地下城,阿卡老城与十字军地下城,Old City of Acre and the Crusader Halls,官方
+site_name,阿塞拜疆国家历史博物馆,阿塞拜疆国家历史博物馆,National Museum of History of Azerbaijan,官方
+site_name,阿夫拉西阿卜遗址博物馆,阿夫拉西阿卜遗址博物馆,Afrasiab Museum,官方
+site_name,阿富汗国家博物馆,阿富汗国家博物馆,National Museum of Afghanistan,官方
+site_name,阿尔勒罗马与罗曼式建筑群,阿尔勒罗马与罗曼式建筑群,"Arles, Roman and Romanesque Monuments",官方
+site_name,阿尔卡萨瓦,阿尔卡萨瓦,Alcazaba,官方
+site_name,阿尔及尔卡斯巴,阿尔及尔卡斯巴,Casbah of Algiers,官方
+site_name,阿尔塔米拉洞窟与博物馆,阿尔塔米拉洞窟与博物馆,Cave of Altamira and Museum,官方
+site_name,阿尔班山遗址,阿尔班山遗址,Monte Albán,官方
+site_name,阿尔罕布拉宫与赫内拉利费,阿尔罕布拉宫与赫内拉利费,Alhambra and Generalife,官方
+site_name,阿布辛贝神庙,阿布辛贝神庙,Abu Simbel Temples,官方
+site_name,阿斯潘多斯剧场,阿斯潘多斯剧场,Aspendos Theatre,官方
+site_name,阿旃陀石窟,阿旃陀石窟,Ajanta Caves,官方
+site_name,阿曼国家博物馆,阿曼国家博物馆,National Museum of Oman,官方
+site_name,阿格拉堡,阿格拉堡,Agra Fort,官方
+site_name,阿波美王宫,阿波美王宫,Royal Palaces of Abomey,官方
+site_name,阿维拉城墙与古城,阿维拉城墙与古城,Walls and Old Town of Ávila,官方
+site_name,阿达拉杰阶梯井,阿达拉杰阶梯井,Adalaj Stepwell,官方
+site_name,阿雷基帕历史中心,阿雷基帕历史中心,Historic Centre of Arequipa,官方
+site_name,陕西历史博物馆,陕西历史博物馆,Shaanxi History Museum,官方
+site_name,陶寺遗址,陶寺遗址,Taosi Site,官方
+site_name,陶斯普韦布洛（邻近）,陶斯普韦布洛（邻近）,Taos Pueblo (nearby),官方
+site_name,雷吉斯坦广场,雷吉斯坦广场,Registan Square,官方
+site_name,雷根斯堡老城与石桥,雷根斯堡老城与石桥,Old Town of Regensburg and the Stone Bridge,官方
+site_name,霍加·艾哈迈德·亚萨维陵墓,霍加·艾哈迈德·亚萨维陵墓,Mausoleum of Khoja Ahmed Yasawi,官方
+site_name,青海省博物馆,青海省博物馆,Qinghai Provincial Museum,官方
+site_name,非斯麦地那（卡鲁因大学）,非斯麦地那（卡鲁因大学）,Medina of Fez (University of al-Qarawiyyin),官方
+site_name,顺化皇城与阮朝帝陵,顺化皇城与阮朝帝陵,Imperial City of Hue and the Nguyen Dynasty Tombs,官方
+site_name,香妃墓（阿帕克霍加麻扎）,香妃墓（阿帕克霍加麻扎）,Tomb of Xiangfei (Afaq Khoja Mausoleum),官方
+site_name,马丘比丘,马丘比丘,Machu Picchu,官方
+site_name,马六甲古城（荷兰红屋 · 圣保罗堂）,马六甲古城（荷兰红屋 · 圣保罗堂）,Historic City of Malacca (Stadthuys · St. Paul's Church),官方
+site_name,马其顿博物馆,马其顿博物馆,Museum of Macedonia,官方
+site_name,马哈巴利普兰遗迹群,马哈巴利普兰遗迹群,Group of Monuments at Mahabalipuram,官方
+site_name,马尔丁老城与代尔祖法兰修道院,马尔丁老城与代尔祖法兰修道院,Old City of Mardin and Deyrulzafaran Monastery,官方
+site_name,马拉加毕加索博物馆,马拉加毕加索博物馆,Museo Picasso Málaga,官方
+site_name,马来西亚国家博物馆,马来西亚国家博物馆,National Museum of Malaysia,官方
+site_name,马泰拉石窟民居（萨西区）,马泰拉石窟民居（萨西区）,Sassi di Matera,官方
+site_name,马特纳达兰古籍馆,马特纳达兰古籍馆,Matenadaran,官方
+site_name,马耳他国家考古博物馆,马耳他国家考古博物馆,"National Museum of Archaeology, Malta",官方
+site_name,马莱曼宫殿博物馆,马莱曼宫殿博物馆,Malaeman Palace Museum,存疑
+site_name,马蒂斯博物馆,马蒂斯博物馆,Matisse Museum,官方
+site_name,马蹄寺石窟,马蹄寺石窟,Mati Temple Grottoes,官方
+site_name,马里国家博物馆,马里国家博物馆,National Museum of Mali,官方
+site_name,魁北克古城区,魁北克古城区,Historic District of Old Québec,官方
+site_name,魏晋墓砖壁画,魏晋墓砖壁画,Wei-Jin Tomb Brick Murals,AI
+site_name,鲁本斯故居,鲁本斯故居,Rubens House,官方
+site_name,鹤冈八幡宫,鹤冈八幡宫,Tsurugaoka Hachimangu,官方
+site_name,麦地那·阿萨哈拉,麦地那·阿萨哈拉,Medina Azahara,官方
+site_name,麦积山石窟艺术研究所,麦积山石窟艺术研究所,Maijishan Grottoes Art Research Institute,官方
+site_name,麦罗埃岛考古遗址（努比亚金字塔）,麦罗埃岛考古遗址（努比亚金字塔）,Archaeological Sites of the Island of Meroë (Nubian Pyramids),官方
+site_name,黄金博物馆,黄金博物馆,Gold Museum,官方
+site_name,黑人文明博物馆,黑人文明博物馆,Museum of Black Civilisations,官方
+site_name,黑格拉（玛甸沙勒）考古遗址,黑格拉（玛甸沙勒）考古遗址,Hegra Archaeological Site (Mada'in Salih),官方
+site_name,黑龙江省博物馆,黑龙江省博物馆,Heilongjiang Provincial Museum,官方
+site_name,鼓浪屿历史国际社区,鼓浪屿历史国际社区,"Kulangsu, a Historic International Settlement",官方
+site_name,龙门石窟研究院,龙门石窟研究院,Longmen Grottoes Research Academy,官方

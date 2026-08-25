@@ -1,0 +1,626 @@
+# 城市名与国家名
+#
+# key        —— 原文，去重键，须与源 Excel 逐字一致，不要改
+# zh / en    —— 两个语种的文本；原文那一侧已填好，另一侧待译
+# confidence —— 官方 / AI / 存疑，只描述「译出来的那一半」
+#                官方 = 通行的既定译名（Louvre = 卢浮宫）
+#                AI   = 机器翻译，正常可用
+#                存疑 = 拿不准，优先人工复核（grep 存疑 即可捞出）
+#
+# 本文件由 make_translation_skeleton.py 生成与增量更新，可直接手工编辑。
+kind,key,zh,en,confidence
+city_name,万象,万象,Vientiane,官方
+city_name,上海,上海,Shanghai,官方
+city_name,东京,东京,Tokyo,官方
+city_name,临汾,临汾,Linfen,官方
+city_name,丹布勒,丹布勒,Dambulla,官方
+city_name,丽江,丽江,Lijiang,官方
+city_name,乌代布尔,乌代布尔,Udaipur,官方
+city_name,乌兰巴托,乌兰巴托,Ulaanbaatar,官方
+city_name,乌鲁木齐,乌鲁木齐,Urumqi,官方
+city_name,乔治市,乔治市,George Town,官方
+city_name,亚兹德,亚兹德,Yazd,官方
+city_name,亚历山大,亚历山大,Alexandria,官方
+city_name,亚琛,亚琛,Aachen,官方
+city_name,亚的斯亚贝巴,亚的斯亚贝巴,Addis Ababa,官方
+city_name,京都,京都,Kyoto,官方
+city_name,仓敷,仓敷,Kurashiki,官方
+city_name,仰光,仰光,Yangon,官方
+city_name,伊拉克利翁,伊拉克利翁,Heraklion,官方
+city_name,伊斯坦布尔,伊斯坦布尔,Istanbul,官方
+city_name,伊斯法罕,伊斯法罕,Isfahan,官方
+city_name,休斯顿,休斯顿,Houston,官方
+city_name,会安,会安,Hoi An,官方
+city_name,伦敦,伦敦,London,官方
+city_name,伯利恒,伯利恒,Bethlehem,官方
+city_name,伯尔尼,伯尔尼,Bern,官方
+city_name,佛罗伦萨,佛罗伦萨,Florence,官方
+city_name,克利夫兰,克利夫兰,Cleveland,官方
+city_name,克拉科夫,克拉科夫,Kraków,官方
+city_name,克鲁姆洛夫,克鲁姆洛夫,Český Krumlov,官方
+city_name,全州,全州,Jeonju,官方
+city_name,公州,公州,Gongju,官方
+city_name,兰州,兰州,Lanzhou,官方
+city_name,兰斯,兰斯,Reims,官方
+city_name,内罗毕,内罗毕,Nairobi,官方
+city_name,凡尔赛,凡尔赛,Versailles,官方
+city_name,凯撒利亚,凯撒利亚,Caesarea,官方
+city_name,凯鲁万,凯鲁万,Kairouan,官方
+city_name,利沃夫,利沃夫,Lviv,官方
+city_name,利物浦,利物浦,Liverpool,官方
+city_name,利雅得,利雅得,Riyadh,官方
+city_name,利马,利马,Lima,官方
+city_name,剑桥,剑桥,Cambridge,官方
+city_name,加尔各答,加尔各答,Kolkata,官方
+city_name,加德满都,加德满都,Kathmandu,官方
+city_name,加的夫,加的夫,Cardiff,官方
+city_name,北京,北京,Beijing,官方
+city_name,匹兹堡,匹兹堡,Pittsburgh,官方
+city_name,华沙,华沙,Warsaw,官方
+city_name,华盛顿,华盛顿,"Washington, D.C.",官方
+city_name,卑尔根,卑尔根,Bergen,官方
+city_name,南京,南京,Nanjing,官方
+city_name,南昌,南昌,Nanchang,官方
+city_name,博帕尔,博帕尔,Bhopal,官方
+city_name,博洛尼亚,博洛尼亚,Bologna,官方
+city_name,卡兰巴卡(迈泰奥拉),卡兰巴卡(迈泰奥拉),Kalambaka (Meteora),官方
+city_name,卡塔赫纳,卡塔赫纳,Cartagena,官方
+city_name,卡塞尔,卡塞尔,Kassel,官方
+city_name,卡尔卡松,卡尔卡松,Carcassonne,官方
+city_name,卡尔巴拉,卡尔巴拉,Karbala,官方
+city_name,卡拉奇,卡拉奇,Karachi,官方
+city_name,卡朱拉霍,卡朱拉霍,Khajuraho,官方
+city_name,卢克索,卢克索,Luxor,官方
+city_name,卢布尔雅那,卢布尔雅那,Ljubljana,官方
+city_name,卢森堡市,卢森堡市,Luxembourg City,官方
+city_name,危地马拉城,危地马拉城,Guatemala City,官方
+city_name,厦门,厦门,Xiamen,官方
+city_name,台北,台北,Taipei,官方
+city_name,吉萨,吉萨,Giza,官方
+city_name,吉达,吉达,Jeddah,官方
+city_name,吉隆坡,吉隆坡,Kuala Lumpur,官方
+city_name,名古屋,名古屋,Nagoya,官方
+city_name,吐鲁番,吐鲁番,Turpan,官方
+city_name,呼和浩特,呼和浩特,Hohhot,官方
+city_name,咸阳,咸阳,Xianyang,官方
+city_name,哈勒姆,哈勒姆,Haarlem,官方
+city_name,哈尔施塔特,哈尔施塔特,Hallstatt,官方
+city_name,哈尔滨,哈尔滨,Harbin,官方
+city_name,哈瓦那,哈瓦那,Havana,官方
+city_name,哥本哈根,哥本哈根,Copenhagen,官方
+city_name,喀什,喀什,Kashgar,官方
+city_name,喀土穆,喀土穆,Khartoum,官方
+city_name,喀山,喀山,Kazan,官方
+city_name,喀布尔,喀布尔,Kabul,官方
+city_name,嘉峪关,嘉峪关,Jiayuguan,官方
+city_name,图尔,图尔,Tours,官方
+city_name,圣保罗,圣保罗,São Paulo,官方
+city_name,圣地亚哥,圣地亚哥,Santiago,官方
+city_name,圣地亚哥-德孔波斯特拉,圣地亚哥-德孔波斯特拉,Santiago de Compostela,官方
+city_name,圣多明各,圣多明各,Santo Domingo,官方
+city_name,圣彼得堡,圣彼得堡,Saint Petersburg,官方
+city_name,圣托里尼,圣托里尼,Santorini,官方
+city_name,圣米歇尔山,圣米歇尔山,Mont-Saint-Michel,官方
+city_name,圣胡安,圣胡安,San Juan,官方
+city_name,圣菲,圣菲,Santa Fe,官方
+city_name,圣马力诺(加州),圣马力诺(加州),San Marino (California),官方
+city_name,坎特伯雷,坎特伯雷,Canterbury,官方
+city_name,埃奇米阿津,埃奇米阿津,Etchmiadzin,官方
+city_name,埃尔杰姆,埃尔杰姆,El Jem,官方
+city_name,埃尔比勒,埃尔比勒,Erbil,官方
+city_name,埃尔科拉诺,埃尔科拉诺,Ercolano,官方
+city_name,埃武拉,埃武拉,Évora,官方
+city_name,埃里温,埃里温,Yerevan,官方
+city_name,基多,基多,Quito,官方
+city_name,基辅,基辅,Kyiv,官方
+city_name,塔什干,塔什干,Tashkent,官方
+city_name,塔克西拉,塔克西拉,Taxila,官方
+city_name,塔林,塔林,Tallinn,官方
+city_name,塔那那利佛,塔那那利佛,Antananarivo,官方
+city_name,塞哥维亚,塞哥维亚,Segovia,官方
+city_name,塞尔丘克(以弗所),塞尔丘克(以弗所),Selçuk (Ephesus),官方
+city_name,塞维利亚,塞维利亚,Seville,官方
+city_name,塞萨洛尼基,塞萨洛尼基,Thessaloniki,官方
+city_name,墨尔本,墨尔本,Melbourne,官方
+city_name,墨西哥城,墨西哥城,Mexico City,官方
+city_name,多伦多,多伦多,Toronto,官方
+city_name,多哈,多哈,Doha,官方
+city_name,大不里士,大不里士,Tabriz,官方
+city_name,大同,大同,Datong,官方
+city_name,大城,大城,Ayutthaya,官方
+city_name,大急流城,大急流城,Grand Rapids,官方
+city_name,大特尔诺沃,大特尔诺沃,Veliko Tarnovo,官方
+city_name,大理,大理,Dali,官方
+city_name,大诺夫哥罗德,大诺夫哥罗德,Veliky Novgorod,官方
+city_name,大阪,大阪,Osaka,官方
+city_name,大马士革,大马士革,Damascus,官方
+city_name,天水,天水,Tianshui,官方
+city_name,天津,天津,Tianjin,官方
+city_name,太原,太原,Taiyuan,官方
+city_name,太宰府,太宰府,Dazaifu,官方
+city_name,奇克拉约,奇克拉约,Chiclayo,官方
+city_name,奈良,奈良,Nara,官方
+city_name,奥什,奥什,Osh,官方
+city_name,奥克兰,奥克兰,Auckland,官方
+city_name,奥兰加巴德,奥兰加巴德,Aurangabad,官方
+city_name,奥斯威辛,奥斯威辛,Oświęcim,官方
+city_name,奥斯陆,奥斯陆,Oslo,官方
+city_name,奥林匹亚,奥林匹亚,Olympia,官方
+city_name,奥胡斯,奥胡斯,Aarhus,官方
+city_name,奥赫里德,奥赫里德,Ohrid,官方
+city_name,姆茨赫塔,姆茨赫塔,Mtskheta,官方
+city_name,姬路,姬路,Himeji,官方
+city_name,威尼斯,威尼斯,Venice,官方
+city_name,威廉斯堡,威廉斯堡,Williamsburg,官方
+city_name,孟买,孟买,Mumbai,官方
+city_name,宁波,宁波,Ningbo,官方
+city_name,安东,安东,Andong,官方
+city_name,安加罗阿(复活节岛),安加罗阿(复活节岛),Hanga Roa (Easter Island),官方
+city_name,安卡拉,安卡拉,Ankara,官方
+city_name,安塔利亚,安塔利亚,Antalya,官方
+city_name,安提瓜(危地马拉),安提瓜(危地马拉),Antigua (Guatemala),官方
+city_name,安曼,安曼,Amman,官方
+city_name,安特卫普,安特卫普,Antwerp,官方
+city_name,安阳,安阳,Anyang,官方
+city_name,宝鸡,宝鸡,Baoji,官方
+city_name,尚勒乌尔法,尚勒乌尔法,Şanlıurfa,官方
+city_name,尼姆,尼姆,Nîmes,官方
+city_name,尼斯,尼斯,Nice,官方
+city_name,尼科西亚,尼科西亚,Nicosia,官方
+city_name,岘港,岘港,Da Nang,官方
+city_name,巴伦西亚,巴伦西亚,Valencia,官方
+city_name,巴勒莫,巴勒莫,Palermo,官方
+city_name,巴勒贝克,巴勒贝克,Baalbek,官方
+city_name,巴厘岛(登巴萨),巴厘岛(登巴萨),Bali (Denpasar),官方
+city_name,巴塞尔,巴塞尔,Basel,官方
+city_name,巴塞罗那,巴塞罗那,Barcelona,官方
+city_name,巴姆,巴姆,Bam,官方
+city_name,巴库,巴库,Baku,官方
+city_name,巴德岗,巴德岗,Bhaktapur,官方
+city_name,巴拿马城,巴拿马城,Panama City,官方
+city_name,巴斯,巴斯,Bath,官方
+city_name,巴格达,巴格达,Baghdad,官方
+city_name,巴特纳(提姆加德),巴特纳(提姆加德),Batna (Timgad),官方
+city_name,巴米扬,巴米扬,Bamiyan,官方
+city_name,巴马科,巴马科,Bamako,官方
+city_name,巴黎,巴黎,Paris,官方
+city_name,布加勒斯特,布加勒斯特,Bucharest,官方
+city_name,布哈拉,布哈拉,Bukhara,官方
+city_name,布宜诺斯艾利斯,布宜诺斯艾利斯,Buenos Aires,官方
+city_name,布尔萨,布尔萨,Bursa,官方
+city_name,布巴内什瓦尔,布巴内什瓦尔,Bhubaneswar,官方
+city_name,布拉格,布拉格,Prague,官方
+city_name,布拉迪斯拉发,布拉迪斯拉发,Bratislava,官方
+city_name,布达佩斯,布达佩斯,Budapest,官方
+city_name,布里斯班,布里斯班,Brisbane,官方
+city_name,布鲁塞尔,布鲁塞尔,Brussels,官方
+city_name,布鲁日,布鲁日,Bruges,官方
+city_name,希伯伦,希伯伦,Hebron,官方
+city_name,希巴姆,希巴姆,Shibam,官方
+city_name,希拉(巴比伦),希拉(巴比伦),Hillah (Babylon),官方
+city_name,希瓦,希瓦,Khiva,官方
+city_name,帕伦克,帕伦克,Palenque,官方
+city_name,帕尔米拉,帕尔米拉,Palmyra,官方
+city_name,帕尔马,帕尔马,Palma,官方
+city_name,帕穆卡莱,帕穆卡莱,Pamukkale,官方
+city_name,帕罗,帕罗,Paro,官方
+city_name,平壤,平壤,Pyongyang,官方
+city_name,平遥,平遥,Pingyao,官方
+city_name,广岛,广岛,Hiroshima,官方
+city_name,广州,广州,Guangzhou,官方
+city_name,广汉,广汉,Guanghan,官方
+city_name,庆州,庆州,Gyeongju,官方
+city_name,库斯科,库斯科,Cusco,官方
+city_name,库马西,库马西,Kumasi,官方
+city_name,底特律,底特律,Detroit,官方
+city_name,庞贝,庞贝,Pompeii,官方
+city_name,康提,康提,Kandy,官方
+city_name,廷巴克图,廷巴克图,Timbuktu,官方
+city_name,廷布,廷布,Thimphu,官方
+city_name,开封,开封,Kaifeng,官方
+city_name,开普敦,开普敦,Cape Town,官方
+city_name,开罗,开罗,Cairo,官方
+city_name,弗拉基米尔,弗拉基米尔,Vladimir,官方
+city_name,弗洛雷斯(蒂卡尔),弗洛雷斯(蒂卡尔),Flores (Tikal),官方
+city_name,弗罗茨瓦夫,弗罗茨瓦夫,Wrocław,官方
+city_name,张掖,张掖,Zhangye,官方
+city_name,徐州,徐州,Xuzhou,官方
+city_name,德尔斐,德尔斐,Delphi,官方
+city_name,德累斯顿,德累斯顿,Dresden,官方
+city_name,德罗赫达,德罗赫达,Drogheda,官方
+city_name,德黑兰,德黑兰,Tehran,官方
+city_name,忻州,忻州,Xinzhou,官方
+city_name,恰纳卡莱(特洛伊),恰纳卡莱(特洛伊),Çanakkale (Troy),官方
+city_name,悉尼,悉尼,Sydney,官方
+city_name,惠灵顿,惠灵顿,Wellington,官方
+city_name,慕尼黑,慕尼黑,Munich,官方
+city_name,成都,成都,Chengdu,官方
+city_name,托莱多,托莱多,Toledo,官方
+city_name,扬州,扬州,Yangzhou,官方
+city_name,扶余,扶余,Buyeo,官方
+city_name,承德,承德,Chengde,官方
+city_name,拉利贝拉,拉利贝拉,Lalibela,官方
+city_name,拉合尔,拉合尔,Lahore,官方
+city_name,拉尔卡纳,拉尔卡纳,Larkana,官方
+city_name,拉巴斯,拉巴斯,La Paz,官方
+city_name,拉巴特,拉巴特,Rabat,官方
+city_name,拉文纳,拉文纳,Ravenna,官方
+city_name,拉穆,拉穆,Lamu,官方
+city_name,拉萨,拉萨,Lhasa,官方
+city_name,拉马拉,拉马拉,Ramallah,官方
+city_name,拿撒勒,拿撒勒,Nazareth,官方
+city_name,提尔,提尔,Tyre,官方
+city_name,摩苏尔,摩苏尔,Mosul,官方
+city_name,撒马尔罕,撒马尔罕,Samarkand,官方
+city_name,敦煌,敦煌,Dunhuang,官方
+city_name,斋浦尔,斋浦尔,Jaipur,官方
+city_name,斯图加特,斯图加特,Stuttgart,官方
+city_name,斯德哥尔摩,斯德哥尔摩,Stockholm,官方
+city_name,斯普利特,斯普利特,Split,官方
+city_name,斯特拉斯堡,斯特拉斯堡,Strasbourg,官方
+city_name,斯特拉特福,斯特拉特福,Stratford-upon-Avon,官方
+city_name,斯科普里,斯科普里,Skopje,官方
+city_name,新加坡,新加坡,Singapore,官方
+city_name,新奥尔良,新奥尔良,New Orleans,官方
+city_name,新德里,新德里,New Delhi,官方
+city_name,无锡,无锡,Wuxi,官方
+city_name,日光,日光,Nikko,官方
+city_name,日内瓦,日内瓦,Geneva,官方
+city_name,日喀则,日喀则,Shigatse,官方
+city_name,日惹,日惹,Yogyakarta,官方
+city_name,旧金山,旧金山,San Francisco,官方
+city_name,昆卡(厄瓜多尔),昆卡(厄瓜多尔),Cuenca (Ecuador),官方
+city_name,昆明,昆明,Kunming,官方
+city_name,普埃布拉,普埃布拉,Puebla,官方
+city_name,普罗夫迪夫,普罗夫迪夫,Plovdiv,官方
+city_name,景德镇,景德镇,Jingdezhen,官方
+city_name,暹粒,暹粒,Siem Reap,官方
+city_name,曲阜,曲阜,Qufu,官方
+city_name,曼彻斯特,曼彻斯特,Manchester,官方
+city_name,曼德勒,曼德勒,Mandalay,官方
+city_name,曼谷,曼谷,Bangkok,官方
+city_name,杜塞尔多夫,杜塞尔多夫,Düsseldorf,官方
+city_name,杜布罗夫尼克,杜布罗夫尼克,Dubrovnik,官方
+city_name,杭州,杭州,Hangzhou,官方
+city_name,杰内,杰内,Djenné,官方
+city_name,杰拉什,杰拉什,Jerash,官方
+city_name,杰里科,杰里科,Jericho,官方
+city_name,果阿(帕纳吉),果阿(帕纳吉),Goa (Panaji),官方
+city_name,柏林,柏林,Berlin,官方
+city_name,根特,根特,Ghent,官方
+city_name,格但斯克,格但斯克,Gdańsk,官方
+city_name,格拉斯哥,格拉斯哥,Glasgow,官方
+city_name,格拉纳达,格拉纳达,Granada,官方
+city_name,格雷梅(卡帕多奇亚),格雷梅(卡帕多奇亚),Göreme (Cappadocia),官方
+city_name,桑给巴尔,桑给巴尔,Zanzibar,官方
+city_name,桑蒂利亚纳(阿尔塔米拉),桑蒂利亚纳(阿尔塔米拉),Santillana del Mar (Altamira),官方
+city_name,梅克内斯,梅克内斯,Meknes,官方
+city_name,梅里达(墨西哥),梅里达(墨西哥),Mérida (Mexico),官方
+city_name,梅里达(西班牙),梅里达(西班牙),Mérida (Spain),官方
+city_name,梵蒂冈城,梵蒂冈城,Vatican City,官方
+city_name,檀香山,檀香山,Honolulu,官方
+city_name,欧拉,欧拉,AlUla,官方
+city_name,欧鲁普雷图,欧鲁普雷图,Ouro Preto,官方
+city_name,武威,武威,Wuwei,官方
+city_name,武汉,武汉,Wuhan,官方
+city_name,比布鲁斯,比布鲁斯,Byblos,官方
+city_name,比萨,比萨,Pisa,官方
+city_name,毕尔巴鄂,毕尔巴鄂,Bilbao,官方
+city_name,水原,水原,Suwon,官方
+city_name,汉中,汉中,Hanzhong,官方
+city_name,汉堡,汉堡,Hamburg,官方
+city_name,汉皮,汉皮,Hampi,官方
+city_name,沈阳,沈阳,Shenyang,官方
+city_name,沙哈特(昔兰尼),沙哈特(昔兰尼),Shahhat (Cyrene),官方
+city_name,沙特尔,沙特尔,Chartres,官方
+city_name,沙迦,沙迦,Sharjah,官方
+city_name,河内,河内,Hanoi,官方
+city_name,泉州,泉州,Quanzhou,官方
+city_name,法兰克福,法兰克福,Frankfurt,官方
+city_name,波哥大,波哥大,Bogotá,官方
+city_name,波士顿,波士顿,Boston,官方
+city_name,波尔图,波尔图,Porto,官方
+city_name,波尔多,波尔多,Bordeaux,官方
+city_name,波托西,波托西,Potosí,官方
+city_name,波茨坦,波茨坦,Potsdam,官方
+city_name,波隆纳鲁沃,波隆纳鲁沃,Polonnaruwa,官方
+city_name,洛杉矶,洛杉矶,Los Angeles,官方
+city_name,洛阳,洛阳,Luoyang,官方
+city_name,济南,济南,Jinan,官方
+city_name,海岸角,海岸角,Cape Coast,官方
+city_name,海得拉巴,海得拉巴,Hyderabad,官方
+city_name,海德堡,海德堡,Heidelberg,官方
+city_name,海牙,海牙,The Hague,官方
+city_name,清迈,清迈,Chiang Mai,官方
+city_name,渥太华,渥太华,Ottawa,官方
+city_name,温哥华,温哥华,Vancouver,官方
+city_name,潮州,潮州,Chaozhou,官方
+city_name,澳门,澳门,Macau,官方
+city_name,热那亚,热那亚,Genoa,官方
+city_name,爱丁堡,爱丁堡,Edinburgh,官方
+city_name,牛津,牛津,Oxford,官方
+city_name,特伦托,特伦托,Trento,官方
+city_name,特奥蒂瓦坎,特奥蒂瓦坎,Teotihuacan,官方
+city_name,特拉维夫,特拉维夫,Tel Aviv,官方
+city_name,特立尼达(古巴),特立尼达(古巴),Trinidad (Cuba),官方
+city_name,特莱姆森,特莱姆森,Tlemcen,官方
+city_name,特里尔,特里尔,Trier,官方
+city_name,特鲁希略,特鲁希略,Trujillo,官方
+city_name,琅勃拉邦,琅勃拉邦,Luang Prabang,官方
+city_name,瓜纳华托,瓜纳华托,Guanajuato,官方
+city_name,瓜达拉哈拉,瓜达拉哈拉,Guadalajara,官方
+city_name,瓦哈卡,瓦哈卡,Oaxaca,官方
+city_name,瓦尔帕莱索,瓦尔帕莱索,Valparaíso,官方
+city_name,瓦拉纳西,瓦拉纳西,Varanasi,官方
+city_name,瓦莱塔,瓦莱塔,Valletta,官方
+city_name,瓦迪穆萨(佩特拉),瓦迪穆萨(佩特拉),Wadi Musa (Petra),官方
+city_name,白沙瓦,白沙瓦,Peshawar,官方
+city_name,的黎波里,的黎波里,Tripoli,官方
+city_name,石家庄,石家庄,Shijiazhuang,官方
+city_name,福冈,福冈,Fukuoka,官方
+city_name,福州,福州,Fuzhou,官方
+city_name,科伦坡,科伦坡,Colombo,官方
+city_name,科尔多瓦,科尔多瓦,Córdoba,官方
+city_name,科尔特斯,科尔特斯,Cortés,存疑
+city_name,科尔马,科尔马,Colmar,官方
+city_name,科尼亚,科尼亚,Konya,官方
+city_name,科托尔,科托尔,Kotor,官方
+city_name,科潘,科潘,Copán,官方
+city_name,科英布拉,科英布拉,Coimbra,官方
+city_name,科隆,科隆,Cologne,官方
+city_name,突厥斯坦,突厥斯坦,Turkestan,官方
+city_name,突尼斯城,突尼斯城,Tunis,官方
+city_name,第比利斯,第比利斯,Tbilisi,官方
+city_name,米兰,米兰,Milan,官方
+city_name,素可泰,素可泰,Sukhothai,官方
+city_name,索尔兹伯里,索尔兹伯里,Salisbury,官方
+city_name,索非亚,索非亚,Sofia,官方
+city_name,累西腓,累西腓,Recife,官方
+city_name,约克,约克,York,官方
+city_name,约翰内斯堡,约翰内斯堡,Johannesburg,官方
+city_name,纳什维尔,纳什维尔,Nashville,官方
+city_name,纳夫普利翁,纳夫普利翁,Nafplio,官方
+city_name,纳斯卡,纳斯卡,Nazca,官方
+city_name,纳杰夫,纳杰夫,Najaf,官方
+city_name,纽伦堡,纽伦堡,Nuremberg,官方
+city_name,纽约,纽约,New York,官方
+city_name,绍兴,绍兴,Shaoxing,官方
+city_name,维也纳,维也纳,Vienna,官方
+city_name,维尔纽斯,维尔纽斯,Vilnius,官方
+city_name,维罗纳,维罗纳,Verona,官方
+city_name,罗德岛,罗德岛,Rhodes,官方
+city_name,罗马,罗马,Rome,官方
+city_name,耶路撒冷,耶路撒冷,Jerusalem,官方
+city_name,胡姆勒拜克,胡姆勒拜克,Humlebæk,官方
+city_name,胡姆斯(大莱普提斯),胡姆斯(大莱普提斯),Khoms (Leptis Magna),官方
+city_name,胡志明市,胡志明市,Ho Chi Minh City,官方
+city_name,舍迪(麦罗埃),舍迪(麦罗埃),Shendi (Meroë),官方
+city_name,艾克斯,艾克斯,Aix-en-Provence,官方
+city_name,艾哈迈达巴德,艾哈迈达巴德,Ahmedabad,官方
+city_name,芝加哥,芝加哥,Chicago,官方
+city_name,苏克雷,苏克雷,Sucre,官方
+city_name,苏州,苏州,Suzhou,官方
+city_name,苏黎世,苏黎世,Zurich,官方
+city_name,荆州,荆州,Jingzhou,官方
+city_name,莫斯塔尔,莫斯塔尔,Mostar,官方
+city_name,莫斯科,莫斯科,Moscow,官方
+city_name,莱顿,莱顿,Leiden,官方
+city_name,菩提伽耶,菩提伽耶,Bodh Gaya,官方
+city_name,菲格拉斯,菲格拉斯,Figueres,官方
+city_name,萨卡拉,萨卡拉,Saqqara,官方
+city_name,萨尔瓦多(巴伊亚),萨尔瓦多(巴伊亚),Salvador (Bahia),官方
+city_name,萨尔茨堡,萨尔茨堡,Salzburg,官方
+city_name,萨拉曼卡,萨拉曼卡,Salamanca,官方
+city_name,萨拉热窝,萨拉热窝,Sarajevo,官方
+city_name,萨格勒布,萨格勒布,Zagreb,官方
+city_name,萨那,萨那,Sanaa,官方
+city_name,蒂沃利,蒂沃利,Tivoli,官方
+city_name,蒙巴萨,蒙巴萨,Mombasa,官方
+city_name,蒙特利尔,蒙特利尔,Montreal,官方
+city_name,蒙蒂尼亚克(拉斯科),蒙蒂尼亚克(拉斯科),Montignac (Lascaux),官方
+city_name,蒲甘,蒲甘,Bagan,官方
+city_name,蓝毗尼,蓝毗尼,Lumbini,官方
+city_name,西宁,西宁,Xining,官方
+city_name,西安,西安,Xi'an,官方
+city_name,西雅图,西雅图,Seattle,官方
+city_name,设拉子,设拉子,Shiraz,官方
+city_name,谢尔吉耶夫镇,谢尔吉耶夫镇,Sergiyev Posad,官方
+city_name,贝宁城,贝宁城,Benin City,官方
+city_name,贝尔格莱德,贝尔格莱德,Belgrade,官方
+city_name,贝尔法斯特,贝尔法斯特,Belfast,官方
+city_name,贝鲁特,贝鲁特,Beirut,官方
+city_name,贡德尔,贡德尔,Gondar,官方
+city_name,费城,费城,Philadelphia,官方
+city_name,赤峰,赤峰,Chifeng,官方
+city_name,赫尔辛基,赫尔辛基,Helsinki,官方
+city_name,赫拉特,赫拉特,Herat,官方
+city_name,辛特拉,辛特拉,Sintra,官方
+city_name,达卡,达卡,Dhaka,官方
+city_name,达喀尔,达喀尔,Dakar,官方
+city_name,达累斯萨拉姆,达累斯萨拉姆,Dar es Salaam,官方
+city_name,运城,运城,Yuncheng,官方
+city_name,迦太基,迦太基,Carthage,官方
+city_name,迪拜,迪拜,Dubai,官方
+city_name,那不勒斯,那不勒斯,Naples,官方
+city_name,郑州,郑州,Zhengzhou,官方
+city_name,都柏林,都柏林,Dublin,官方
+city_name,都灵,都灵,Turin,官方
+city_name,里加,里加,Riga,官方
+city_name,里斯本,里斯本,Lisbon,官方
+city_name,里昂,里昂,Lyon,官方
+city_name,里约热内卢,里约热内卢,Rio de Janeiro,官方
+city_name,重庆,重庆,Chongqing,官方
+city_name,金奈,金奈,Chennai,官方
+city_name,金泽,金泽,Kanazawa,官方
+city_name,金边,金边,Phnom Penh,官方
+city_name,银川,银川,Yinchuan,官方
+city_name,锡吉什瓦拉,锡吉什瓦拉,Sighișoara,官方
+city_name,锡拉库萨,锡拉库萨,Syracuse,官方
+city_name,锡耶纳,锡耶纳,Siena,官方
+city_name,镇江,镇江,Zhenjiang,官方
+city_name,镰仓,镰仓,Kamakura,官方
+city_name,长崎,长崎,Nagasaki,官方
+city_name,长沙,长沙,Changsha,官方
+city_name,阿什哈巴德,阿什哈巴德,Ashgabat,官方
+city_name,阿克拉,阿克拉,Accra,官方
+city_name,阿克苏姆,阿克苏姆,Axum,官方
+city_name,阿努拉德普勒,阿努拉德普勒,Anuradhapura,官方
+city_name,阿勒颇,阿勒颇,Aleppo,官方
+city_name,阿卡,阿卡,Acre,官方
+city_name,阿姆利则,阿姆利则,Amritsar,官方
+city_name,阿姆斯特丹,阿姆斯特丹,Amsterdam,官方
+city_name,阿尔勒,阿尔勒,Arles,官方
+city_name,阿尔及尔,阿尔及尔,Algiers,官方
+city_name,阿布扎比,阿布扎比,Abu Dhabi,官方
+city_name,阿德亚曼,阿德亚曼,Adıyaman,官方
+city_name,阿斯旺,阿斯旺,Aswan,官方
+city_name,阿格拉,阿格拉,Agra,官方
+city_name,阿格里真托,阿格里真托,Agrigento,官方
+city_name,阿波美,阿波美,Abomey,官方
+city_name,阿维尼翁,阿维尼翁,Avignon,官方
+city_name,阿维拉,阿维拉,Ávila,官方
+city_name,阿西西,阿西西,Assisi,官方
+city_name,阿雷基帕,阿雷基帕,Arequipa,官方
+city_name,雅典,雅典,Athens,官方
+city_name,雅加达,雅加达,Jakarta,官方
+city_name,雷根斯堡,雷根斯堡,Regensburg,官方
+city_name,霍巴特,霍巴特,Hobart,官方
+city_name,非斯,非斯,Fez,官方
+city_name,顺化,顺化,Hue,官方
+city_name,首尔,首尔,Seoul,官方
+city_name,香港,香港,Hong Kong,官方
+city_name,马什哈德,马什哈德,Mashhad,官方
+city_name,马六甲,马六甲,Malacca,官方
+city_name,马尔丁,马尔丁,Mardin,官方
+city_name,马尼拉,马尼拉,Manila,官方
+city_name,马德里,马德里,Madrid,官方
+city_name,马拉加,马拉加,Málaga,官方
+city_name,马拉喀什,马拉喀什,Marrakesh,官方
+city_name,马斯喀特,马斯喀特,Muscat,官方
+city_name,马斯温戈,马斯温戈,Masvingo,官方
+city_name,马杜赖,马杜赖,Madurai,官方
+city_name,马泰拉,马泰拉,Matera,官方
+city_name,马赛,马赛,Marseille,官方
+city_name,马雷(梅尔夫),马雷(梅尔夫),Mary (Merv),官方
+city_name,魁北克城,魁北克城,Quebec City,官方
+city_name,魏玛,魏玛,Weimar,官方
+city_name,鹿特丹,鹿特丹,Rotterdam,官方
+city_name,麦加,麦加,Mecca,官方
+city_name,麦地那,麦地那,Medina,官方
+city_name,麦纳麦,麦纳麦,Manama,官方
+city_name,黄山,黄山,Huangshan,官方
+country_name,不丹,不丹,Bhutan,官方
+country_name,中国,中国,China,官方
+country_name,中国台湾,中国台湾,"Taiwan, China",官方
+country_name,丹麦,丹麦,Denmark,官方
+country_name,乌克兰,乌克兰,Ukraine,官方
+country_name,乌兹别克斯坦,乌兹别克斯坦,Uzbekistan,官方
+country_name,也门,也门,Yemen,官方
+country_name,亚美尼亚,亚美尼亚,Armenia,官方
+country_name,以色列,以色列,Israel,官方
+country_name,伊拉克,伊拉克,Iraq,官方
+country_name,伊朗,伊朗,Iran,官方
+country_name,俄罗斯,俄罗斯,Russia,官方
+country_name,保加利亚,保加利亚,Bulgaria,官方
+country_name,克罗地亚,克罗地亚,Croatia,官方
+country_name,利比亚,利比亚,Libya,官方
+country_name,加拿大,加拿大,Canada,官方
+country_name,加纳,加纳,Ghana,官方
+country_name,匈牙利,匈牙利,Hungary,官方
+country_name,北马其顿,北马其顿,North Macedonia,官方
+country_name,南非,南非,South Africa,官方
+country_name,卡塔尔,卡塔尔,Qatar,官方
+country_name,卢森堡,卢森堡,Luxembourg,官方
+country_name,印度,印度,India,官方
+country_name,印度尼西亚,印度尼西亚,Indonesia,官方
+country_name,危地马拉,危地马拉,Guatemala,官方
+country_name,厄瓜多尔,厄瓜多尔,Ecuador,官方
+country_name,叙利亚,叙利亚,Syria,官方
+country_name,古巴,古巴,Cuba,官方
+country_name,吉尔吉斯斯坦,吉尔吉斯斯坦,Kyrgyzstan,官方
+country_name,哈萨克斯坦,哈萨克斯坦,Kazakhstan,官方
+country_name,哥伦比亚,哥伦比亚,Colombia,官方
+country_name,土库曼斯坦,土库曼斯坦,Turkmenistan,官方
+country_name,土耳其,土耳其,Türkiye,官方
+country_name,坦桑尼亚,坦桑尼亚,Tanzania,官方
+country_name,埃及,埃及,Egypt,官方
+country_name,埃塞俄比亚,埃塞俄比亚,Ethiopia,官方
+country_name,塞内加尔,塞内加尔,Senegal,官方
+country_name,塞尔维亚,塞尔维亚,Serbia,官方
+country_name,塞浦路斯,塞浦路斯,Cyprus,官方
+country_name,墨西哥,墨西哥,Mexico,官方
+country_name,多米尼加,多米尼加,Dominican Republic,官方
+country_name,奥地利,奥地利,Austria,官方
+country_name,孟加拉国,孟加拉国,Bangladesh,官方
+country_name,尼日利亚,尼日利亚,Nigeria,官方
+country_name,尼泊尔,尼泊尔,Nepal,官方
+country_name,巴勒斯坦,巴勒斯坦,Palestine,官方
+country_name,巴基斯坦,巴基斯坦,Pakistan,官方
+country_name,巴拿马,巴拿马,Panama,官方
+country_name,巴林,巴林,Bahrain,官方
+country_name,巴西,巴西,Brazil,官方
+country_name,希腊,希腊,Greece,官方
+country_name,德国,德国,Germany,官方
+country_name,意大利,意大利,Italy,官方
+country_name,拉脱维亚,拉脱维亚,Latvia,官方
+country_name,挪威,挪威,Norway,官方
+country_name,捷克,捷克,Czechia,官方
+country_name,摩洛哥,摩洛哥,Morocco,官方
+country_name,斯洛伐克,斯洛伐克,Slovakia,官方
+country_name,斯洛文尼亚,斯洛文尼亚,Slovenia,官方
+country_name,斯里兰卡,斯里兰卡,Sri Lanka,官方
+country_name,新加坡,新加坡,Singapore,官方
+country_name,新西兰,新西兰,New Zealand,官方
+country_name,日本,日本,Japan,官方
+country_name,智利,智利,Chile,官方
+country_name,朝鲜,朝鲜,North Korea,官方
+country_name,柬埔寨,柬埔寨,Cambodia,官方
+country_name,格鲁吉亚,格鲁吉亚,Georgia,官方
+country_name,梵蒂冈,梵蒂冈,Vatican City,官方
+country_name,比利时,比利时,Belgium,官方
+country_name,沙特阿拉伯,沙特阿拉伯,Saudi Arabia,官方
+country_name,法国,法国,France,官方
+country_name,波兰,波兰,Poland,官方
+country_name,波多黎各,波多黎各,Puerto Rico,官方
+country_name,波黑,波黑,Bosnia and Herzegovina,官方
+country_name,泰国,泰国,Thailand,官方
+country_name,津巴布韦,津巴布韦,Zimbabwe,官方
+country_name,洪都拉斯,洪都拉斯,Honduras,官方
+country_name,澳大利亚,澳大利亚,Australia,官方
+country_name,爱尔兰,爱尔兰,Ireland,官方
+country_name,爱沙尼亚,爱沙尼亚,Estonia,官方
+country_name,玻利维亚,玻利维亚,Bolivia,官方
+country_name,瑞典,瑞典,Sweden,官方
+country_name,瑞士,瑞士,Switzerland,官方
+country_name,秘鲁,秘鲁,Peru,官方
+country_name,突尼斯,突尼斯,Tunisia,官方
+country_name,立陶宛,立陶宛,Lithuania,官方
+country_name,约旦,约旦,Jordan,官方
+country_name,缅甸,缅甸,Myanmar,官方
+country_name,罗马尼亚,罗马尼亚,Romania,官方
+country_name,美国,美国,United States,官方
+country_name,老挝,老挝,Laos,官方
+country_name,肯尼亚,肯尼亚,Kenya,官方
+country_name,芬兰,芬兰,Finland,官方
+country_name,苏丹,苏丹,Sudan,官方
+country_name,英国,英国,United Kingdom,官方
+country_name,荷兰,荷兰,Netherlands,官方
+country_name,菲律宾,菲律宾,Philippines,官方
+country_name,葡萄牙,葡萄牙,Portugal,官方
+country_name,蒙古,蒙古,Mongolia,官方
+country_name,西班牙,西班牙,Spain,官方
+country_name,贝宁,贝宁,Benin,官方
+country_name,越南,越南,Vietnam,官方
+country_name,阿塞拜疆,阿塞拜疆,Azerbaijan,官方
+country_name,阿富汗,阿富汗,Afghanistan,官方
+country_name,阿尔及利亚,阿尔及利亚,Algeria,官方
+country_name,阿曼,阿曼,Oman,官方
+country_name,阿根廷,阿根廷,Argentina,官方
+country_name,阿联酋,阿联酋,United Arab Emirates,官方
+country_name,韩国,韩国,South Korea,官方
+country_name,马来西亚,马来西亚,Malaysia,官方
+country_name,马耳他,马耳他,Malta,官方
+country_name,马达加斯加,马达加斯加,Madagascar,官方
+country_name,马里,马里,Mali,官方
+country_name,黎巴嫩,黎巴嫩,Lebanon,官方
+country_name,黑山,黑山,Montenegro,官方

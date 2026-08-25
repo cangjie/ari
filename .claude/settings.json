@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(echo \"schema 退出码=$?\")",
+      "Bash(.venv/bin/python import_artworks.py --sqlite /private/tmp/claude-501/-Users-cangjie-Projects-ari/98e570aa-da82-4211-8b9e-b1cb9db8a373/scratchpad/aw.db)",
+      "Bash(python3 -)",
+      "Bash(.venv/bin/python make_translation_skeleton.py --artworks)"
+    ]
+  }
+}
