@@ -594,8 +594,13 @@ def main():
     ap.add_argument("--port", type=int, default=3306)
     ap.add_argument("--user", default="ari")
     ap.add_argument("--password", default=os.environ.get("MYSQL_PASSWORD", ""))
+    ap.add_argument("--password-file",
+                    help="存放密码的文件（建议权限 600），优先于 --password；"
+                         "避免密码出现在命令行与 shell 历史里")
     ap.add_argument("--database", default="ari")
     args = ap.parse_args()
+    if args.password_file:
+        args.password = open(os.path.expanduser(args.password_file)).read().strip("\n")
 
     overrides = load_overrides(args.overrides)
     if overrides:

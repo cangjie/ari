@@ -30,3 +30,6 @@ venv/
 # 下的命令入口。一旦被忽略，换台电脑 clone 下来命令会静默消失：
 #   .claude/   .agents/   .github/
 # ────────────────────────────────────────────────────────────
+
+# 导出的 Excel 是派生文件，可由 export_excel.py 随时从库里重新生成，不入仓库
+utils/import_data/exports/

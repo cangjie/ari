@@ -75,6 +75,18 @@ def truthy(v):
 # ---------------------------------------------------------------- 六个馆的差异
 # cols 里的下标是 0 起的列号；缺的字段就不写。
 # on_view 是一个把源值映射成三态的函数。
+#
+# **带两列 tier 的文件一律取原表的评级列，不取后来重算的那列：**
+#   PEM  Tier=第 0 列      / tier_c=第 1 列        两列  36 条不一致
+#   HAM  Tier=第 3 列      / tier_c=第 4 列        两列  86 条不一致
+#   故宫 原 Tier=第 8 列   / Tier（重评）=第 7 列   两列 828 条不一致
+# 重算列会把一批 S 降级（哈佛的莫高窟 320 窟壁画残片就被降到 B），
+# 用户确认一律以原表评级为准。MFA / 国博 / 首博 只有一列 tier，无从选择。
+#
+# 故宫的两点后果，是已知代价不是 bug：
+#   1. 原 Tier 有 157 条「（原表未评）」，由 tier_of() 归为 NULL（无评级）。
+#   2. 第 9 列不可替代性得分与第 10 列评级理由属于重评那一套，与 tier 不同源。
+#      即「评级理由」解释的是重评结论，未必解释得通原表评级。已向用户说明。
 MUSEUMS = [
     dict(
         key="mfa_boston", name_zh="波士顿美术馆", name_en="Museum of Fine Arts, Boston",
@@ -91,7 +103,8 @@ MUSEUMS = [
         key="pem", name_zh="皮博迪·埃塞克斯博物馆", name_en="Peabody Essex Museum",
         site_key=None,
         file="PEM_带tier_c.xlsx", sheet="All Tiers", header_row=1,
-        cols=dict(tier=1, name_en=2, name_zh=3, gallery=4,
+        # tier 取第 0 列的 Tier 而非第 1 列的 tier_c，与 HAM 同
+        cols=dict(tier=0, name_en=2, name_zh=3, gallery=4,
                   desc_en=5, desc_zh=6, has_image=7, medium=8),
         # 源文件只有 Has Image，没有在展字段 —— 不能拿有没有图去推在展与否
         on_view=lambda r, c: ON_VIEW_UNKNOWN,
@@ -100,7 +113,8 @@ MUSEUMS = [
         key="ham", name_zh="哈佛艺术博物馆", name_en="Harvard Art Museums",
         site_key=None,
         file="ham_带tier_c.xlsx", sheet="All Tiers", header_row=1,
-        cols=dict(name_en=0, name_zh=1, gallery=2, tier=4,
+        # tier 取第 3 列的 Tier 而非第 4 列的 tier_c —— 与 PEM 相反，见下方说明
+        cols=dict(name_en=0, name_zh=1, gallery=2, tier=3,
                   desc_en=5, desc_zh=6, on_view=7, medium=8),
         on_view=lambda r, c: ON_VIEW_YES if truthy(r[c["on_view"]]) else ON_VIEW_NO,
     ),
@@ -116,9 +130,9 @@ MUSEUMS = [
         key="palace", name_zh="故宫博物院", name_en="Palace Museum (Forbidden City)",
         site_key="Palace Museum (Forbidden City)",
         file="故宫在展文物清单_Tier重评.xlsx", sheet="展品清单", header_row=4,
-        # 第 8 列是「Tier（重评）」，第 9 列「原 Tier」按约定不入库
+        # tier 取第 8 列「原 Tier」，第 7 列「Tier（重评）」不入库；理由见上方说明
         cols=dict(seq=0, gallery=1, name_zh=2, desc_zh=3, image_url=4,
-                  on_view=5, official_url=6, tier=7, score=9, reason=10),
+                  on_view=5, official_url=6, tier=8, score=9, reason=10),
         on_view=lambda r, c: ON_VIEW_YES if s(r[c["on_view"]]) else ON_VIEW_UNKNOWN,
         gallery_index="展厅索引",
     ),
@@ -480,8 +494,13 @@ def main():
     ap.add_argument("--port", type=int, default=3306)
     ap.add_argument("--user", default="ari")
     ap.add_argument("--password", default=os.environ.get("MYSQL_PASSWORD", ""))
+    ap.add_argument("--password-file",
+                    help="存放密码的文件（建议权限 600），优先于 --password；"
+                         "避免密码出现在命令行与 shell 历史里")
     ap.add_argument("--database", default="ari")
     args = ap.parse_args()
+    if args.password_file:
+        args.password = open(os.path.expanduser(args.password_file)).read().strip("\n")
 
     print("读取六个馆 …")
     items, galleries = read_all(args.dir)
