@@ -58,4 +58,4 @@ python3 -m venv .venv
 
 ## 部署
 
-见仓库根目录 `WEB_API.md`。
+见 `docs/WEB_API.md`。

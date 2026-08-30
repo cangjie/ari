@@ -1,0 +1,277 @@
+Ariadne 文化遗产参观优先级算法 V3.0
+
+一、算法目标
+
+Tier 衡量的不是一个对象在世界文化史上的绝对排名，而是特定游客在特定博物馆或遗产地中体验它的优先级。
+
+本算法的评级对象不限于馆内展品，也包括建筑、庭院、遗址、园林、文化景观、观景点、仪式路径和遗产地整体。
+
+
+二、评级对象与层级
+
+1. Destination（目的地）
+   示例：故宫、婆罗浮屠、颐和园。
+   比较范围：同一城市或地区的主要景点。
+
+2. Site（遗产地/场馆）
+   示例：故宫建筑群、婆罗浮屠寺庙群。
+   比较范围：同类博物馆或遗产地。
+
+3. Zone（区域）
+   示例：故宫外朝、内廷；颐和园万寿山、昆明湖。
+   比较范围：同一遗产地内部区域。
+
+4. Node（节点）
+   示例：太和殿、佛香阁、主佛塔、重要观景点。
+   比较范围：同一遗产地中的路线候选点。
+
+5. Object（单件对象）
+   示例：绘画、瓷器、雕像、碑刻。
+   比较范围：场馆或节点内部展品。
+
+每个对象必须指定 Tier Context（评级语境/父级范围），只在相应范围内评级。故宫整体是 S，并不意味着故宫里的每座殿、每件文物都是 S。
+
+
+三、七个核心评分维度
+
+所有维度均采用 0—10 分。
+
+1. HS：Historical / Artistic / Heritage Significance
+   历史、艺术与遗产重要性。
+   问题：它在历史、艺术、宗教或文明中的位置有多重要？
+
+2. IU：Institution / Place Identity and Uniqueness
+   本馆或本地身份与不可替代性。
+   问题：如果失去它，这个博物馆或遗产地的身份是否明显受损？
+
+3. VI：Visual / Spatial Impact
+   视觉与空间冲击力。
+   问题：游客现场感受到的尺度、美感、氛围与空间感染力有多强？
+
+4. VA：Visitor Appeal
+   游客体验吸引力。
+   问题：即使不了解背景，普通游客是否仍会觉得惊喜、难忘或值得？
+
+5. CE：Cultural / Educational Value
+   文化、教育与叙事价值。
+   问题：它能否有效解释一个时代、文明、制度、信仰或历史事件？
+
+6. CR：Category Representative Score
+   类别代表性。
+   问题：它是不是本馆或本地同类对象中最值得选出的代表？
+
+7. ER：Ensemble / Relational Value
+   整体关系与景观价值。
+   问题：它与轴线、地形、水体、视线、仪式路径和周围建筑的关系是否重要？
+
+ER 是针对建筑群、园林、考古遗址和世界遗产景观设置的关键维度。
+
+
+四、不同对象类型的权重
+
+核心分数：
+
+Core = 各维度得分 × 对应权重之和
+
+（一）单件展品
+
+HS  20%
+IU  25%
+VI  15%
+VA  15%
+CE  15%
+CR  10%
+ER   0%
+
+（二）建筑或空间节点
+
+HS  15%
+IU  20%
+VI  15%
+VA  15%
+CE  15%
+CR  10%
+ER  10%
+
+（三）遗产地或景观整体
+
+HS  15%
+IU  20%
+VI  15%
+VA  10%
+CE  15%
+CR   5%
+ER  20%
+
+
+五、同类竞争与类别代表性
+
+首先为对象建立 Peer Group（同类组）。
+
+示例：
+
+故宫：宫殿正殿、皇家园林、宋瓷、明清书画。
+颐和园：桥梁、亭阁、宗教建筑、观景点。
+婆罗浮屠：佛塔、浮雕段落、平台、仪式路径节点。
+
+类别代表性计算公式：
+
+CR = 0.5Q + 0.3D + 0.2G
+
+其中：
+
+Q：同类中的品质、历史地位或典范程度。
+D：相对同类对象的独特性与非重复性。
+G：对参观路线或文明叙事的补位价值。
+
+这一机制用于避免“所有宋瓷都升为 A”“所有古建筑都是 S”等评分膨胀。
+
+
+六、Tier 划分
+
+S：Core ≥ 8.5；至少一个核心维度 ≥ 9；并通过 S-ness Test。
+含义：第一次参观不可错过。
+
+A：Core 为 7.2—8.49。
+含义：强烈推荐。
+
+B：Core 为 5.5—7.19。
+含义：值得看，但不是第一次参观的重点。
+
+C：Core < 5.5。
+含义：补充性、专题性或主要面向专业兴趣者的对象。
+
+不为每个场馆规定固定的 S/A/B/C 数量或比例，而采用“绝对门槛 + 场馆语境校准”。
+
+
+七、S-ness Test
+
+每一个 S 必须回答以下三个问题：
+
+1. 如果游客只有两个小时，是否仍应安排它？
+2. 如果游客离开而没有看到它，是否明显可惜？
+3. 如果它从本馆或遗产地消失，其身份是否明显受损？
+
+至少两个问题回答“是”，才能评为 S；否则原则上降为 A。
+
+
+八、Museum / Site Icon Override
+
+某些真正代表博物馆或遗产地身份的对象，可以由专家锁定为 S。
+
+字段：
+
+TierOverride = S
+OverrideReason = 必须填写具体理由
+
+人工修正必须留痕、可审核，不能仅以“很有名”作为理由。
+
+
+九、馆藏 Tier 与实际参观优先级分离
+
+开放状态、路线距离和当天条件不改变对象的 Core 与 Museum/Site Tier，而是影响 VisitScore。
+
+VisitScore = G × clamp（Core + Ma + Mc + Mr，0，10）
+
+其中：
+
+G：开放与可观看门槛。不可观看时为 0，但 Core 和 Tier 保持不变。
+Ma：Audience Modifier，观众修正，范围 −0.5—+0.5。
+Mc：季节、天气、修缮、光线等条件修正。
+Mr：绕路、拥挤、叙事衔接和同类重复等路线修正。
+
+Audience Modifier 可针对以下观众生成：
+
+General Visitor
+Chinese Visitor
+Family
+Kids
+Art Lover
+History Lover
+Architecture Lover
+Religious Heritage Visitor
+
+
+十、路线生成
+
+RouteUtility = VisitScore × AudienceFit ÷（参观时间 + 新增步行时间）
+
+路线生成器在游客总时间限制下，选择效用最高的对象组合，并满足以下约束：
+
+1. 同类对象避免过度重复。
+2. 父级整体与子节点不能重复计算价值。
+3. 保持必要的空间、历史、宗教或叙事顺序。
+4. 考虑预约、开放时间、无障碍、单向通行和临时关闭。
+5. 根据两小时、三小时、半日、全日等时间预算生成不同路线。
+
+
+十一、世界遗产的处理规则
+
+世界遗产身份本身不直接加分，也不自动产生 S。它是 HS、IU 和 ER 的证据来源。
+
+1. 故宫
+   价值不仅来自单栋建筑和馆藏，也来自中央轴线、对称布局、外朝—内廷秩序、院落关系与完整建筑群。因此，故宫整体及关键空间节点的 ER 应得到高分。
+
+2. 婆罗浮屠
+   台层、浮雕、佛塔、佛教宇宙观和行进过程共同形成遗产体验。应分别建立遗产地整体、平台、浮雕段落、主佛塔、仪式路径与观景位置等评级对象。
+
+3. 颐和园
+   核心价值来自山、水、建筑、视线和人工景观的整体组合。昆明湖、万寿山、长廊、桥梁、亭阁和观景序列都可以成为独立评级节点。
+
+对建筑群和文化景观，应重点记录：
+
+Spatial Relationship：空间关系
+Visual Corridor：视线与景观通廊
+Processional Sequence：仪式或游览序列
+Human–Nature Integration：人与自然的结合
+Integrity：完整性
+Authenticity：真实性
+Setting：周边环境与背景
+
+完整性和真实性主要作为遗产价值证据及审核字段，不应简单等同于游客吸引力。
+
+
+十二、数据质量与审核
+
+1. 每个维度必须附评分依据和信息来源。
+2. 每个维度记录 Evidence Confidence（证据可信度）。
+3. 低可信度对象标记为 Preliminary Tier，不直接成为正式 S。
+4. AI 生成 Preliminary Score 和 Suggested Tier。
+5. 专家确认 Final Tier，或填写 Override Reason。
+6. 定期使用不同类型场馆和遗产地进行交叉校准。
+
+建议测试集：
+
+MFA：测试世界级名作密度。
+Harvard Art Museums：测试精品分散型馆藏。
+PEM：测试博物馆独特性。
+故宫：测试同类竞争和多层级建筑群。
+中国国家博物馆：测试文明叙事。
+首都博物馆：测试地方与城市身份。
+婆罗浮屠：测试宗教建筑、仪式路线与景观整体。
+颐和园：测试园林、山水、视线与空间序列。
+
+
+十三、最终定义
+
+Ariadne Tier does not measure an object's absolute importance in world cultural history. It measures how important it is for a particular visitor to experience that object, space or landscape at that particular museum or heritage site.
+
+Ariadne Tier 衡量的不是一个对象在世界文化史上的绝对重要性，而是特定游客在特定博物馆或遗产地中体验该展品、建筑、空间或景观的优先级。
+
+
+参考资料
+
+第一段 ChatGPT 对话：
+https://chatgpt.com/s/t_6a8f8e5925d08191999687174948fbb3
+
+第二段 ChatGPT 对话：
+https://chatgpt.com/s/t_6a90a60255f881919a4b19484a841a25
+
+UNESCO：Imperial Palaces of the Ming and Qing Dynasties in Beijing and Shenyang
+https://whc.unesco.org/en/list/439
+
+UNESCO：Borobudur Temple Compounds
+https://whc.unesco.org/en/list/592
+
+UNESCO：Summer Palace, an Imperial Garden in Beijing
+https://whc.unesco.org/en/list/880

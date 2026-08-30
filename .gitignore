@@ -33,3 +33,14 @@ venv/
 
 # 导出的 Excel 是派生文件，可由 export_excel.py 随时从库里重新生成，不入仓库
 utils/import_data/exports/
+
+# tier_v3.py 的评分中间结果与审阅表。JSONL 是断点续跑用的缓存，CSV 由它生成。
+# 都是派生文件，且重跑要花 API 额度，本地留着即可，不入仓库。
+utils/import_data/tier_v3_out/
+
+# 本地临时虚拟环境（服务器用 /opt/ari/.venv，与此无关）
+.venv_local/
+
+# 外部抓取的缓存（Wikidata SPARQL 结果等）。派生文件，且 WDQS 会限流，
+# 本地留一份复用即可；要更新用 meta_scrape_pem.py --refresh-wikidata
+utils/import_data/meta_cache/

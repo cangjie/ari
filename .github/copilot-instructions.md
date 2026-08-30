@@ -19,8 +19,9 @@
 
 ### 子目录
 
-- `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `WEB_API.md`
+- `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `docs/WEB_API.md`
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
+- `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
 - 客户端子目录尚未创建，待产品定位与客户端范围明确后再定
 
 **子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。
@@ -55,12 +56,13 @@
 - 业务库 `ari`（utf8mb4 / utf8mb4_0900_ai_ci），账号 `ari` 有 `ari`.* 全部权限，`localhost` 与 `%` 两个 host 都建了。密码不进仓库
 - MySQL 8.4 用 `caching_sha2_password`。命令行客户端默认 `ssl-mode=PREFERRED` 可直连；JDBC 之类的客户端首次连接可能要加 `allowPublicKeyRetrieval=true`
 - GitHub Deploy key：服务器 `ubuntu` 使用 `~/.ssh/id_ed25519`，指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，已验证可访问 `cangjie/ari`
-- 基础环境的设计、实施计划与部署记录见 `SERVER_ENVIRONMENT.md`、`SERVER_ENVIRONMENT_PLAN.md`、`SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `WEB_API.md`
+- 基础环境的设计、实施计划与部署记录见 `docs/SERVER_ENVIRONMENT.md`、`docs/SERVER_ENVIRONMENT_PLAN.md`、`docs/SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `docs/WEB_API.md`
 
 ### 数据库设计约定
 
-`ari` 库现有两个数据集，共 11 张表。完整说明见 `utils/import_data/README.md`，
-以下五条是改代码前必须知道的，踩过就知道疼：
+`ari` 库现有 12 张表 + 4 个视图：两个源数据集（城市榜单、六馆展品）之外，
+另有 V3.0 评级、metadata、evidence 三套派生数据。完整说明见 `utils/import_data/README.md`，
+以下八条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -72,12 +74,18 @@ BCP-47 标签 `zh-CN`/`en`）。加语种只是多插行，不动表结构。
 `uk_site_name_city`、`uk_gallery_museum_name` 这类去重约束必须落在 `*_key` 上，
 按国家筛选也走 `country_key` 索引而不必 join。`*_key` 取源数据原值，从不用于展示。
 
-**3. `content` 表按 `kind` 划分所有权，ID 分段隔离。**
+**3. `content` 表按 `kind` 划分所有权，ID 分段隔离。现在是三段。**
 
-| 数据集 | 导入器 | kind | ID 段 |
+| 数据集 | 写入者 | kind | ID 段 |
 |---|---|---|---|
 | 城市/点位榜单 | `import_data.py` | `city_name`…`data_source` | 1 – 999,999 |
 | 六馆展品 | `import_artworks.py` | `museum_name`、`gallery_*`、`artwork_*` | 1,000,000 起 |
+| 展品 metadata | `meta_seed.py` / `meta_lib.py` | `meta_key_name`、`meta_value_text` | 2,000,000 起 |
+
+`content.kind` 是**固定 ENUM**，加 kind 要同时改三处：`schema.sql` 的 ENUM（从零建库）、
+`schema_meta.sql` 的 ALTER（存量库补种）、以及对应写入者的 kind 常量。漏掉任何一处都不
+报错 —— MySQL 报的是 `1265 Data truncated`，不是「未知取值」，第一次撞上很容易误判。
+`content_text.source` 同样是固定 ENUM，只有 `原始/AI翻译/存疑/人工校对` 四个值。
 
 **两个导入器都只删自己名下的 kind。** 早先的版本无条件 `DELETE FROM content`，
 会把另一侧的文本一起删掉；而展品外键是 RESTRICT，真删起来是整个导入直接报错。
@@ -108,13 +116,53 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 什么也没证明；要比的是源文件里你**没选**的那一列，或直接指定列号重跑比对。
 2026-08-28 就是先犯了这个错才漏掉故宫。
 
+**6. tier / metadata / evidence 三套数据都放独立表，不加到 `artwork` 上。**
+
+`import_artworks.py` 第 355 行 `DELETE FROM artwork` 清全表并重置 AUTO_INCREMENT。
+加在 `artwork` 上的列下次重灌就蒸发，且 `artwork.id` 每次重新分配，不能做跨重灌的引用。
+三张表一律用软键 `(museum.key_name, artwork.source_seq)`，**故意不建到 artwork 的外键**
+（硬外键 RESTRICT 会让导入失败，CASCADE 会静默删光）。已实测该键在六馆 8884 行全局唯一。
+
+| 表 | 装什么 | 由谁写 |
+|---|---|---|
+| `artwork_tier_v3` | V3.0 七维分、Core、S-ness、评分依据 | `tier_v3_load.py` |
+| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_*_pem.py` |
+| `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` |
+
+**⚠ 每次跑完 `import_artworks.py`，必须重跑 `tier_v3_load.py --apply-tier`**，
+否则 `artwork.tier` 会退回源文件的原表评级。**不报错，只是数据悄悄变回去。**
+
+`artwork_evidence` 由两个脚本分写不同列，`evidence_score.py` 必须用 UPSERT ——
+早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据一并冲成 NULL，且不报错。
+
+**7. `artwork_meta` 允许同一个键有多个来源的冲突取值，不消解。**
+
+主键含 `source_key`：`(museum_key, source_seq, key_name, source_key, ord)`。
+写入方只清空自己 `source_key` 的旧值。抓取数据彼此矛盾是常态 —— 实例：seq 15 费克肖像的
+馆藏号，PEM 官方是 `100183`，Wikidata 是 `M11043`（`M` 前缀疑为老 Peabody Museum 编号，
+纯数字疑为 Essex Institute 编号，两馆合并而来，未必是错）。谁对谁错交给读取方按
+`source_key` + `confidence` 判断，写入方不挑赢家。若按覆盖写，这类矛盾会永远看不见。
+
+**8. 数据库口令走 `~/.my.cnf`（权限 600），不进命令行。**
+
+所有脚本用 `meta_lib.connect()` 或 `--defaults-file ~/.my.cnf`。**不要用 `--password`** ——
+命令行里的口令会进 shell 历史，也会被权限系统写进 `.claude/settings.json` 的 allow 列表，
+而该文件必须提交进仓库。
+
+---
+
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
 两个导入器都是清空重灌，写在库里的译文重跑一次就没了。
 
-**导出用 `utils/import_data/export_excel.py`**，中英各一套共 14 个文件，落在
+**导出用 `utils/import_data/export_excel.py`**，中英各一套，落在
 `utils/import_data/exports/`（已 gitignore，属派生文件）。整跑约 12 分钟，瓶颈是跨公网
-读 MySQL（预载 `content_text` 22234 行就占 2.5 分钟），不是计算 —— 看着像卡住其实在等网络。
+读 MySQL（预载 `content_text` 两万余行就占 2.5 分钟），不是计算 —— 看着像卡住其实在等网络。
+`--museum pem --artworks-only` 只导一个馆，但预载开销照付，不会按比例变快。
 改完导入器务必重跑导出，否则 Excel 里还是旧评级。
+
+展品文件现含 metadata：主表按键加列，另有「metadata明细」sheet 逐条列出取值与来源。
+注意 `artwork_meta.source` 是纯 VARCHAR 不走内容表，**「零回落」检查照不到它** ——
+英文版曾因此漏出中文，靠 `VALUE_MAPS["meta_source"]` 映射与语种中立的来源串解决。
 
 ---
 
@@ -196,10 +244,12 @@ end-work(<工具名>): <一句话概括本次工作>
 | `.github/copilot-instructions.md` | 上者的逐字副本。**全部** Copilot 界面都自动读取（JetBrains / Visual Studio / Xcode 不读 `AGENTS.md`） |
 | `CLAUDE.md` | 一行 import，指向 `AGENTS.md` |
 | `PROGRESS.md` | 进展时间线，倒序追加 |
-| `SERVER_ENVIRONMENT.md` | 服务器基础环境设计与验收标准 |
-| `SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
-| `SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
-| `WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
+| `docs/SERVER_ENVIRONMENT.md` | 服务器基础环境设计与验收标准 |
+| `docs/SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
+| `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
+| `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
+| `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成**尚未实现**（所需 metadata 全为空） |
+| `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
 | `utils/import_data/README.md` | `ari` 库的建表、导入、多语种机制与已知数据问题 |
 | `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |

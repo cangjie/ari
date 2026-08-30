@@ -17,12 +17,19 @@ ENUM 取值、sheet 名与文件名全部换成对应语种。**六个展品文�
 加语种时这里要一起加。
 
 用法：
-  python export_excel.py --host 44.207.251.65 --user ari \
-      --password-file ~/.ari-dbpass --database ari --out exports
-  python export_excel.py ... --lang en        # 只出英文版
+  # 全量（六馆 + 列表文件，中英两套），约 12 分钟
+  python export_excel.py --defaults-file ~/.my.cnf --out exports
 
-密码优先从 --password-file 读（建议权限 600），其次读环境变量 MYSQL_PASSWORD，
-避免出现在命令行与 shell 历史里。
+  python export_excel.py ... --lang en                      # 只出英文版
+  python export_excel.py ... --museum pem --artworks-only   # 只出 PEM 展品文件
+
+密码优先从 --defaults-file 指定的 MySQL 选项文件读（如 ~/.my.cnf，权限 600），
+其次 --password-file，再次环境变量 MYSQL_PASSWORD。**不要用 --password**：
+命令行里的口令会进 shell 历史，也会被权限系统写进 .claude/settings.json 的
+allow 列表，而该文件必须提交进仓库 —— AGENTS.md 硬性约定。
+
+整跑的瓶颈是跨公网预载 content_text（22234 行约 2.5 分钟），不是计算；
+用 --museum 只导一个馆时这段开销照样要付，别以为会按比例变快。
 
 依赖：openpyxl、PyMySQL
 """
@@ -68,6 +75,14 @@ VALUE_MAPS = {
     "track": {"博物馆": "Museum", "遗址地": "Heritage Site"},
     "on_view": {"在展": "On view", "未在展": "Not on view", "未知": "Unknown"},
     "bool": {"是": "Yes", "否": "No"},
+    # artwork_meta.source 是自由文本不走内容表，所以「零回落」检查照不到它，
+    # 英文版里会原样漏出中文。规则类来源取值有限，按这里映射；
+    # 抓取类来源是 URL 或 wikidata:QID，本身语种中立，不用映射。
+    "meta_source": {
+        "源文件 Category 列": "Source file, Category column",
+        "名称与英文简介解析": "Parsed from name and English description",
+        "名称解析（作者, 作品名）": "Parsed from name (Artist, Title)",
+    },
 }
 
 
@@ -75,6 +90,15 @@ def mapv(kind, value, lang):
     if value is None or lang == ZH:
         return value
     return VALUE_MAPS[kind].get(value, value)
+
+
+def map_meta_source(value, lang):
+    """来源明细的中英映射。抓取来源是 URL / wikidata:QID，语种中立，原样返回。"""
+    if value is None or lang == ZH:
+        return value
+    if value.startswith(("http://", "https://", "wikidata:")):
+        return value
+    return VALUE_MAPS["meta_source"].get(value, value)
 
 
 def tier_delta_text(d, lang):
@@ -125,6 +149,16 @@ ARTWORK_COLUMNS = [
 ]
 
 
+# metadata 明细表的列。主表里每个键只占一格，冲突值会被并排挤在一起；
+# 明细表按「一行一条取值」摊开，来源与可信度逐条可查，谁说了什么一目了然。
+META_DETAIL_COLUMNS = [
+    ("序号", "No."), ("展品名称", "Artwork Name"), ("键", "Key"),
+    ("取值", "Value"), ("来源", "Source"), ("可信度", "Confidence"),
+    ("来源明细", "Source Detail"),
+]
+SHEET_META = {ZH: "metadata明细", EN: "Metadata Detail"}
+
+
 def headers(columns, lang):
     return [c[0] if lang == ZH else c[1] for c in columns]
 
@@ -159,6 +193,21 @@ def write_sheet(ws, cols, rows, lang):
                 continue
             width = max(width, sum(2 if ord(ch) > 127 else 1 for ch in str(v)[:80]))
         ws.column_dimensions[get_column_letter(i)].width = min(max(width + 2, 8), 60)
+
+
+def meta_cell(vals):
+    """把一个键的多条取值压成一格。
+
+    取值一致时只显示一次；不一致时全部保留并标注来源 —— 冲突本身是有用信息
+    （源文件说 pre-contact 而 Wikidata 标 1825 年），不该由导出环节替人挑一个。
+    完整来源与可信度见「metadata明细」sheet。
+    """
+    texts = [t for _, t, _, _ in vals if t]
+    if not texts:
+        return None
+    if len(set(texts)) == 1:
+        return texts[0]
+    return " | ".join(f"{t}[{sk}]" for sk, t, _, _ in vals if t)
 
 
 def safe_name(s):
@@ -245,6 +294,27 @@ class Exporter:
                         r[7], self.t(r[8], lang), r[9], r[10]])
         return out
 
+    def meta_keys(self, lang):
+        """有实际取值的键，按 meta_key.sort_order 排。
+
+        六个展品文件的列集必须一致（见文件头），所以这里取的是**全库**用到的键，
+        而不是当前馆用到的键；某馆没有的留空。
+        """
+        return [(k, self.t(cid, lang)) for k, cid in self.q(
+            "SELECT k.key_name, k.name_cid FROM meta_key k"
+            " WHERE EXISTS (SELECT 1 FROM artwork_meta am WHERE am.key_name = k.key_name)"
+            " ORDER BY k.sort_order")]
+
+    def meta_of(self, museum_key, lang):
+        """{source_seq: {key_name: [(source_key, 文本, 可信度, 来源明细), ...]}}"""
+        out = defaultdict(lambda: defaultdict(list))
+        for seq, key, skey, cid, conf, src in self.q(
+                "SELECT source_seq, key_name, source_key, value_cid, confidence, source"
+                " FROM artwork_meta WHERE museum_key = %s"
+                " ORDER BY source_seq, key_name, source_key, ord", (museum_key,)):
+            out[seq][key].append((skey, self.t(cid, lang), conf, src))
+        return out
+
     def museums(self):
         return self.q("SELECT id, key_name, name_cid FROM museum ORDER BY id")
 
@@ -269,33 +339,53 @@ class Exporter:
         return out
 
 
-def export_one_lang(ex, lang, out_root):
+def export_one_lang(ex, lang, out_root, only=(), artworks_only=False):
+    """only 为空时导全部六馆；非空则只导其中的 key_name。"""
     out = os.path.join(out_root, DIR_NAME[lang])
     os.makedirs(out, exist_ok=True)
     tag = "中文版" if lang == ZH else "English"
     print(f"\n[{tag}] -> {out}")
 
-    wb = openpyxl.Workbook()
-    wb.remove(wb.active)
-    for title, cols, rows in (
-            (SHEET_CITY[lang], CITY_COLUMNS, ex.cities(lang)),
-            (SHEET_SITE[lang], SITE_COLUMNS, ex.sites(lang)),
-            (SHEET_CHANGE[lang], CHANGE_COLUMNS, ex.changes(lang))):
-        write_sheet(wb.create_sheet(title), cols, rows, lang)
-        print(f"    {title:26} {len(rows):>5} 行")
-    wb.save(os.path.join(out, LIST_FILE[lang] + ".xlsx"))
-    print(f"    -> {LIST_FILE[lang]}.xlsx")
+    if not artworks_only:
+        wb = openpyxl.Workbook()
+        wb.remove(wb.active)
+        for title, cols, rows in (
+                (SHEET_CITY[lang], CITY_COLUMNS, ex.cities(lang)),
+                (SHEET_SITE[lang], SITE_COLUMNS, ex.sites(lang)),
+                (SHEET_CHANGE[lang], CHANGE_COLUMNS, ex.changes(lang))):
+            write_sheet(wb.create_sheet(title), cols, rows, lang)
+            print(f"    {title:26} {len(rows):>5} 行")
+        wb.save(os.path.join(out, LIST_FILE[lang] + ".xlsx"))
+        print(f"    -> {LIST_FILE[lang]}.xlsx")
+
+    mkeys = ex.meta_keys(lang)
+    meta_cols = ARTWORK_COLUMNS + [(lab, lab) for _, lab in mkeys]
 
     for mid, key, name_cid in ex.museums():
+        if only and key not in only:
+            continue
         title = ex.t(name_cid, lang) or key
         by_tier = ex.artworks(mid, lang)
+        meta = ex.meta_of(key, lang)
         wb = openpyxl.Workbook()
         wb.remove(wb.active)
         counts = []
+        detail = []
         for sheet in TIER_SHEETS[lang]:
-            rows = by_tier.get(sheet, [])
-            write_sheet(wb.create_sheet(sheet), ARTWORK_COLUMNS, rows, lang)
+            rows = []
+            for r in by_tier.get(sheet, []):
+                seq = r[1]                       # ARTWORK_COLUMNS 第 2 列是序号
+                mm = meta.get(seq, {})
+                rows.append(r + [meta_cell(mm.get(k, [])) for k, _ in mkeys])
+                for k, klab in mkeys:
+                    for skey, txt, conf, src in mm.get(k, []):
+                        detail.append([seq, r[3], klab, txt, skey, conf,
+                                       map_meta_source(src, lang)])
+            write_sheet(wb.create_sheet(sheet), meta_cols, rows, lang)
             counts.append(f"{sheet} {len(rows)}")
+        detail.sort(key=lambda x: (x[0], x[2], x[4]))
+        write_sheet(wb.create_sheet(SHEET_META[lang]), META_DETAIL_COLUMNS, detail, lang)
+        counts.append(f"{SHEET_META[lang]} {len(detail)}")
         fn = safe_name(ARTWORK_FILE_PREFIX[lang] + title) + ".xlsx"
         wb.save(os.path.join(out, fn))
         print(f"    {title[:28]:30} {' / '.join(counts):40} -> {fn}")
@@ -311,22 +401,44 @@ def main():
     ap.add_argument("--database", default="ari")
     ap.add_argument("--out", default="exports")
     ap.add_argument("--lang", choices=["zh-CN", "en", "both"], default="both")
+    ap.add_argument("--defaults-file",
+                    help="MySQL 选项文件（如 ~/.my.cnf，权限 600），"
+                         "连接参数与口令都从中读取，命令行里不出现密码")
+    ap.add_argument("--museum", default="",
+                    help="只导这些馆的展品文件，逗号分隔的 museum.key_name，"
+                         "如 pem 或 pem,ham；默认全部六馆")
+    ap.add_argument("--artworks-only", action="store_true",
+                    help="跳过「城市与博物馆遗产地列表」文件，只出展品文件")
     args = ap.parse_args()
 
-    pw = args.password
-    if args.password_file:
-        pw = open(os.path.expanduser(args.password_file)).read().strip("\n")
-    if not pw:
-        sys.exit("没有密码：用 --password-file 或环境变量 MYSQL_PASSWORD")
-
     import pymysql
-    conn = pymysql.connect(host=args.host, port=args.port, user=args.user,
-                           password=pw, database=args.database, charset="utf8mb4")
+    if args.defaults_file:
+        # 优先走选项文件：口令不进命令行，也不进 shell 历史与权限系统的 allow 列表
+        conn = pymysql.connect(
+            read_default_file=os.path.expanduser(args.defaults_file),
+            charset="utf8mb4")
+    else:
+        pw = args.password
+        if args.password_file:
+            pw = open(os.path.expanduser(args.password_file)).read().strip("\n")
+        if not pw:
+            sys.exit("没有密码：用 --defaults-file、--password-file "
+                     "或环境变量 MYSQL_PASSWORD")
+        conn = pymysql.connect(host=args.host, port=args.port, user=args.user,
+                               password=pw, database=args.database,
+                               charset="utf8mb4")
     ex = Exporter(conn)
     print(f"多语种文本已载入 {len(ex.text)} 条")
 
+    only = [k.strip() for k in args.museum.split(",") if k.strip()]
+    if only:
+        known = {k for _, k, _ in ex.museums()}
+        unknown = set(only) - known
+        if unknown:
+            sys.exit(f"未知的馆标识 {sorted(unknown)}；可用：{sorted(known)}")
+
     for lang in (LANGS if args.lang == "both" else [args.lang]):
-        export_one_lang(ex, lang, args.out)
+        export_one_lang(ex, lang, args.out, only, args.artworks_only)
 
     if ex.fallbacks:
         print(f"\n[warn] {ex.fallbacks} 处取不到目标语种，已回落到另一语种 —— "

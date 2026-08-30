@@ -42,13 +42,17 @@ SET FOREIGN_KEY_CHECKS = 1;
 -- kind 同时划分「内容归谁所有」：两个导入器各管一批 kind，各自只删自己那批，
 -- 并在互不重叠的ID段里显式分配ID，因此任一侧单独重跑都不会动到另一侧。
 --   import_data.py     城市/点位榜单   前 7 种    ID 1 – 999,999
---   import_artworks.py 六馆展品        后 7 种    ID 1,000,000 起
+--   import_artworks.py 六馆展品        中 7 种    ID 1,000,000 起
+--   meta_seed.py       展品 metadata   meta_* 2 种 ID 2,000,000 起
+-- 加 kind 要同时改三处：本 ENUM、schema_meta.sql 的 ALTER（供已建好的库补种）、
+-- 以及对应导入器的 CONTENT_KINDS。漏掉任何一处都不报错，只是静默失效。
 CREATE TABLE content (
   id   INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '内容ID，由导入器按数据集分段显式分配',
   kind ENUM('city_name','country_name','site_name','tier_reason',
             'change_reason','collection_type','data_source',
             'museum_name','gallery_name','gallery_theme',
-            'artwork_name','artwork_description','artwork_medium','artwork_tier_reason')
+            'artwork_name','artwork_description','artwork_medium','artwork_tier_reason',
+            'meta_key_name','meta_value_text')
        NOT NULL COMMENT '内容归类：既便于按类清点未译项，也界定两个导入器各自的清空范围',
 
   PRIMARY KEY (id),
