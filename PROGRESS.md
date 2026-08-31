@@ -4,6 +4,62 @@
 
 ---
 
+## 2026-08-31 22:45 · claude
+**做了什么** — 一轮完整的 PEM 元数据质量审计。目标不是改评级，是判断「支撑当前 Tier 的证据够不够」。
+**全程一列 tier 没动**：`audit_load.py` 写入前后各拍一次 `artwork.tier` 与 `artwork_tier_v3` 快照，
+不一致即整体回滚，且故意不提供 `--apply-tier` 开关。
+
+（1）**库结构**。`schema_audit.sql` 给 `artwork_evidence` 加 16 个审计列
+（`tier_confidence`、`potential_tier_low`、`tier_review_flag`、`completeness_src`、
+`completeness_detail`、`inference_only_survives`、中英成对的缺失证据/研究问题/复核原因等），
+给 `artwork_meta` 加 `evidence_type`(FACT/INFERENCE) 与 `source_quality`。
+**改用 ALTER 而非 DROP 重建** —— 查库发现表里有仓库脚本复现不出来的数据，重建会静默丢掉。
+
+（2）**审计管线**。`audit_meta.py`（三阶段 + JSONL 断点续跑）→ `audit_load.py`（写库）。
+阶段一全量 196 件：12 项完备度逐项判 full/partial/none/na（**`na` 从分母剔除，不适用不扣分**）、
+Tier 可信度、潜在 Tier 区间、具体到可执行的缺失证据与研究问题。
+阶段二 S+A 共 55 件六问深审。阶段三 117 条 `sig_*` 逐条判 FACT/INFERENCE。
+
+**审计者改用 OpenAI `gpt-5.6-sol`（effort=xhigh），刻意与打分者 `claude-opus-5` 不同源**，
+以切断一部分「自己审自己」的偏差。两个脚本分落两家 SDK，不做统一抽象层。
+型号不写死（`--model`/`OPENAI_MODEL`），key 走 `~/.openai_key`（脚本校验权限须 600）。
+
+（3）**抓全 PEM 官网 18 个栏目页**，219 条官方编目记录逐字存进 `pem_official_data.py`。
+`meta_fill_official_pem.py` 做严格匹配 + 写库，译文落 `translations_pem_official.csv`。
+匹配器通过**非循环校验**：独立跑出的结果与先前人工核实的馆藏号 13/13 一致、0 冲突。
+
+（4）**修掉两个真 bug**。① `best_source_tier` 对 seq 2/5/6/7/9 是过时的（官网抓取后没回头改），
+改由 `evidence_score.py` 按库里实际来源重算，`LEAST` 只升不降；这个 bug 是冒烟时模型自己指出来的。
+② `evidence_score.py` 不再覆盖已审计行（靠 `completeness_src` 分辨所有权）。
+
+（5）**导出**。展品 sheet 加 12 个审计列，metadata 明细加「证据类型/来源质量」，
+新增「元数据审计汇总」sheet（汇总指标 + Top 20 研究优先级 + Top 10 可能变级，只列不改）。
+中文版曾漏出 `medium`/`audit` 原始 token —— `VALUE_MAPS` 假设「库存中文→映射英文」，
+审计 ENUM 方向相反，另建了 `ENUM_MAPS`。英文版 9123 个文本单元格 0 个含中文。
+
+**审计结论** — 完备度中位 35.5（规则口径 1.1，两套口径量的不是一回事）；
+Tier 可信度 high 0 / medium 3 / low 193；**55 件 S/A 全部通不过「去掉未验证推断后是否仍成立」**；
+117 条 significance 判断里 115 条被判 INFERENCE/weak，只有 2 条够 FACT（都指向库战神像 E12071，
+且与官网抓取独立吻合）。
+
+**最重要的发现不是分数低，是 179/196（91%）根本无法与 PEM 官方藏品对应上。**
+源数据的名称是描述性转写而非编目题名，指不到具体藏品。这批的低完备度里有一大部分
+是「对象身份不可核验」而非「资料薄」，两者补救方式完全不同。
+
+**下一步** — 三选一：① 按 Top 20 的研究问题实际去查资料，把结果回填后重跑审计
+（这是管线设计的正常闭环）；② 先解决对象身份问题 —— 91% 对不上号的情况下，
+补资料的投入产出很差；③ 把管线推广到其余五馆（`museum_context.py` 里补语境即可），
+但推广前先确认那五馆的源数据名称是不是真实标识符。
+
+**未决** —
+- `tier_review_flag` 标了 196/196，`potential_tier_range` 有 129 件给 C–A，**两列都没有区分度**，
+  当不了筛选工具。不算错（证据确实普遍不足），但下一轮需要收紧判据或换设计。
+- 因此「Top 10 可能变级」退化成 Top 20 的前十名（排序键饱和），信息量低于预期。
+- `tier_v3_out/` 仍在 `.gitignore` 里 —— 那批 V3 评分现在只存在于数据库，脚本复现不出来，
+  与本轮的教训相悖。是否比照 `audit_out/` 改为入仓库，待定。
+- `source_key='incollect'` 的 4 条仍无脚本可复现。
+- 来源等级闸门（Tier 4 不足以单独支撑 S）仍未启用，现在 180/196 是 Tier 4，一启用会一刀切。
+
 ## 2026-08-30 13:10 · claude
 **做了什么** — 五件事，主线是「让 tier 评级建立在证据上，而不是凭一段 description 打分」。
 

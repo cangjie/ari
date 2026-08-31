@@ -411,3 +411,124 @@ ENUM 取值、sheet 名与文件名换语种。
 取不到目标语种时脚本会回落到另一语种并**计数报警**，跑完打印
 `[warn] N 处取不到目标语种`。当前应为「零回落」—— 出现非零就说明库里有缺译，
 去查 `content_text`，不要当成正常现象放过。
+
+---
+
+## 十二、评级、metadata、evidence、审计：四套派生数据
+
+两个源数据集（城市榜单、六馆展品）之外，`ari` 库另有四套**派生**数据。
+它们都不写进 `artwork`，各占独立表 —— 因为 `import_artworks.py` 第 355 行
+`DELETE FROM artwork` 会清全表并重置 AUTO_INCREMENT，加在 `artwork` 上的列
+下次重灌就蒸发，`artwork.id` 也不能做跨重灌的引用。四张表一律用软键
+`(museum.key_name, artwork.source_seq)`，**故意不建到 artwork 的外键**
+（硬外键 RESTRICT 会让导入失败，CASCADE 会静默删光）。
+
+| 表 | 装什么 | 由谁写 | 建表 |
+|---|---|---|---|
+| `artwork_tier_v3` | V3.0 七维分、Core、S-ness、评分依据 | `tier_v3.py` → `tier_v3_load.py` | `schema_tier_v3.sql` |
+| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_*_pem.py` | `schema_meta.sql` |
+| `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` | `schema_evidence.sql` |
+| 同上（审计列） | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_meta.py` → `audit_load.py` | `schema_audit.sql` |
+
+### 跑动顺序
+
+顺序不能乱，每一步都依赖上一步的产物：
+
+```bash
+# 1 评级：三阶段打分 -> JSONL -> 写库。--apply-tier 才会刷 artwork.tier
+python3 tier_v3.py      --museum pem --out-dir ./tier_v3_out
+python3 tier_v3_load.py --museum pem --apply-tier
+
+# 2 metadata：先灌键字典，再填取值（meta_seed 只跑一次，artwork_meta 非空时它会拒绝运行）
+python3 meta_seed.py ; python3 meta_seed_layer2.py
+python3 meta_fill_pem.py ; python3 meta_scrape_pem.py
+
+# 3 evidence：score 建行，fill 只 UPDATE 不 INSERT，顺序反了会静默丢数据
+python3 evidence_score.py --museum pem
+python3 evidence_fill.py  --museum pem
+
+# 4 审计：三阶段判定 -> JSONL -> 写库。**不改任何 tier**
+python3 audit_meta.py --museum pem --model <型号>
+python3 audit_load.py --museum pem --dry-run
+python3 audit_load.py --museum pem
+
+# 5 导出
+python3 export_excel.py --defaults-file ~/.my.cnf --museum pem --artworks-only
+```
+
+### 四个会静默出错的地方
+
+**1. 跑完 `import_artworks.py` 必须重跑 `tier_v3_load.py --apply-tier`。**
+否则 `artwork.tier` 退回源文件的原表评级。不报错，数据悄悄变回去。
+
+**2. `evidence_fill.py` 只 UPDATE 不 INSERT。** 必须先跑 `evidence_score.py`
+建行，否则 packet 的可信度与缺失证据全部丢失，也不报错。
+
+**3. 同一张表多个写入者，职责必须互斥。** `artwork_evidence` 现在有三个写入者，
+各写各的列：
+
+| 列 | 归谁 |
+|---|---|
+| `conf_hs`…`conf_er`、`missing_evidence`、`best_source_tier` | `evidence_fill.py` |
+| `completeness`(rule 口径)、`potential_ceiling`、`boundary_prox`、`research_priority`、`is_preliminary` | `evidence_score.py` |
+| `completeness`(audit 口径)、`completeness_src`、`completeness_detail`、`tier_confidence`、`potential_tier_low`、`tier_review_flag`、`review_reason*`、`missing_evidence*`、`top_missing*`、`research_question*`、`inference_only_survives`、`audit_notes*`、`audited_by`、`audit_round` | `audit_load.py` |
+
+`completeness` 等四列由两个脚本共写，靠 `completeness_src` 分辨所有权：
+写成 `audit` 的行 `evidence_score.py` 一律跳过。**这条是有教训的** ——
+`evidence_score.py` 早先用先删后插，把 `evidence_fill.py` 刚写的列一并冲成 NULL，
+不报错，只是下次查询时全变 NULL。
+
+**4. 两个 completeness 不是一个东西，别混着看。**
+
+| 口径 | 算法 | PEM 实测 |
+|---|---|---|
+| `rule` | 八个桶里 key 在不在 `artwork_meta`，纯填充率 | 中位 **1.1**/100 |
+| `audit` | 12 项逐项判 full/partial/none/na，na 从分母剔除 | 见导出的审计汇总 |
+
+规则版量的是「字段填了多少」，审计版量的是「资料够不够支撑判断」。
+1.1 的含义是「196 件里绝大多数只有 `object_form` 一个键」，不是「这批东西没价值」。
+
+### 元数据质量审计（`audit_meta.py` / `audit_load.py`）
+
+审的问题是「**支撑当前 Tier 的证据够不够**」，不是「这件东西该是几级」。
+
+- **一列 tier 都不改。** `audit_load.py` 写入前后各拍一次 `artwork.tier` 与
+  `artwork_tier_v3` 的快照，不一致就整体回滚。它**故意不提供** `--apply-tier`
+  之类的开关：审计发现证据不足时该做的是标 `tier_review_flag` 交给人看，
+  不是自己动手改级。
+- **`tier_confidence` 与 `artwork_tier_v3.confidence` 是两回事。** 后者是打分那一刻
+  打分者对自己手上证据的可信度；前者是审计者对「当前这个 Tier 结论」的信心。
+  **low 不等于该降级**：允许「S — Low Confidence」（可能真是 S，但证据撑不起），
+  也允许「B — High Confidence」（资料够了，它就是 B）。两者都不触发自动升降级。
+- **潜在 Tier 区间**写成「下界–上界」，差的那端在前：`B–S` 读作「最差 B，
+  最好可能到 S」。两端相同表示资料已足以钉死这一级。
+- **`artwork_meta` 的 `evidence_type` / `source_quality`** 逐条区分「这是外部事实」
+  与「这是 Ariadne/AI 的推断」。在这之前，源文件里的事实和模型写的 significance
+  判断在导出表里长得一模一样。判 FACT 必须指得出真实来源 —— `audit_load.py` 里
+  有硬检查：来源若仍写着 `Evidence Packet …` 就直接报错退出，因为
+  **Evidence Packet 是信息容器，不是信息来源**。
+- 非 `evidence` 来源按 `source_key` **确定性回填**，不花 API，规则表在
+  `audit_load.py` 的 `SOURCE_RULES`。遇到没登记过的 `source_key` 会报错退出，
+  不猜 —— 猜一个来源的性质，等于替读表的人下他自己该下的判断。
+
+**审计者用 OpenAI，评分者用 Anthropic，这是刻意的。** V3.0 那批分是
+`claude-opus-5` 打的，换一家的模型来审，「审计者即打分者」的同源偏差被切断了一部分。
+这仍不是独立第三方审计（喂进去的证据本身就是那轮打分的产物）。型号写进
+`artwork_evidence.audited_by`，与 `artwork_tier_v3.scored_by` 对照即可看清是否同源。
+
+型号不写死：`--model` 优先，其次环境变量 `OPENAI_MODEL`，都没有就报错退出。
+key 从 `~/.openai_key`（权限须 600）读，脚本会检查权限；`OPENAI_API_KEY` 存在时优先用它。
+**同 MySQL 口令一样，key 绝不进命令行。**
+
+### 导出里的审计产物
+
+展品 sheet 在固有 13 列之后、动态 metadata 列之前插入 12 个审计列；
+`metadata明细` sheet 加「证据类型」「来源质量」两列；另有一个
+`元数据审计汇总 / Metadata Audit Summary` sheet，含三块：审计汇总指标、
+Top 20 最该优先研究、Top 10 最可能变级（**只列不改**）。没审过的馆也照建这个
+sheet，与五个 tier sheet 同样的道理。
+
+审计文本（缺失证据、研究问题、复核原因等）**成对存 `xx` / `xx_en` 两列，
+不走 `content` 表** —— 它们是审计轨迹不是展示文本，逐轮重写，灌进内容表既删不掉
+（外键 RESTRICT）又要新增 kind。代价是「零回落」检查照不到它们，
+所以 `audit_load.py` 里有中英成对齐全的校验，缺一边直接拒绝写入。

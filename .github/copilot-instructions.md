@@ -61,8 +61,8 @@
 ### 数据库设计约定
 
 `ari` 库现有 12 张表 + 4 个视图：两个源数据集（城市榜单、六馆展品）之外，
-另有 V3.0 评级、metadata、evidence 三套派生数据。完整说明见 `utils/import_data/README.md`，
-以下八条是改代码前必须知道的，踩过就知道疼：
+另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据。
+完整说明见 `utils/import_data/README.md`，以下九条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -116,11 +116,11 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 什么也没证明；要比的是源文件里你**没选**的那一列，或直接指定列号重跑比对。
 2026-08-28 就是先犯了这个错才漏掉故宫。
 
-**6. tier / metadata / evidence 三套数据都放独立表，不加到 `artwork` 上。**
+**6. tier / metadata / evidence / 审计四套数据都放独立表，不加到 `artwork` 上。**
 
 `import_artworks.py` 第 355 行 `DELETE FROM artwork` 清全表并重置 AUTO_INCREMENT。
 加在 `artwork` 上的列下次重灌就蒸发，且 `artwork.id` 每次重新分配，不能做跨重灌的引用。
-三张表一律用软键 `(museum.key_name, artwork.source_seq)`，**故意不建到 artwork 的外键**
+这几张表一律用软键 `(museum.key_name, artwork.source_seq)`，**故意不建到 artwork 的外键**
 （硬外键 RESTRICT 会让导入失败，CASCADE 会静默删光）。已实测该键在六馆 8884 行全局唯一。
 
 | 表 | 装什么 | 由谁写 |
@@ -128,12 +128,20 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 | `artwork_tier_v3` | V3.0 七维分、Core、S-ness、评分依据 | `tier_v3_load.py` |
 | `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_*_pem.py` |
 | `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` |
+| `artwork_evidence` 的审计列 | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_load.py` |
 
 **⚠ 每次跑完 `import_artworks.py`，必须重跑 `tier_v3_load.py --apply-tier`**，
 否则 `artwork.tier` 会退回源文件的原表评级。**不报错，只是数据悄悄变回去。**
 
-`artwork_evidence` 由两个脚本分写不同列，`evidence_score.py` 必须用 UPSERT ——
-早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据一并冲成 NULL，且不报错。
+`artwork_evidence` 现在有**三个**写入者分写不同列，职责必须互斥，`evidence_score.py`
+必须用 UPSERT —— 早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据
+一并冲成 NULL，且不报错。`completeness` 等四列由 `evidence_score.py` 与 `audit_load.py`
+共写，靠 `completeness_src` 分辨所有权：写成 `audit` 的行 `evidence_score.py` 一律跳过。
+
+**两个 completeness 不是一个东西**：`rule` 口径是「八个桶里 key 在不在 `artwork_meta`」
+的纯填充率（PEM 中位 1.1/100，含义是「多数件只有 `object_form` 一个键」，
+不是「这批东西没价值」）；`audit` 口径是 12 项逐项判 full/partial/none/na、
+na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 
 **7. `artwork_meta` 允许同一个键有多个来源的冲突取值，不消解。**
 
@@ -148,6 +156,57 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 所有脚本用 `meta_lib.connect()` 或 `--defaults-file ~/.my.cnf`。**不要用 `--password`** ——
 命令行里的口令会进 shell 历史，也会被权限系统写进 `.claude/settings.json` 的 allow 列表，
 而该文件必须提交进仓库。
+
+**9. 元数据质量审计只审证据，绝不改 tier。**
+
+`audit_meta.py`（判定）→ `audit_load.py`（写库）。审的问题是「支撑当前 Tier 的证据
+够不够」，不是「这件东西该是几级」。`audit_load.py` 写入前后各拍一次 `artwork.tier`
+与 `artwork_tier_v3` 的快照，不一致就整体回滚，且**故意不提供** `--apply-tier`
+之类的开关。发现证据不足时该做的是标 `tier_review_flag` 交给人看。
+
+- `tier_confidence`（审计者对当前 Tier 结论的信心）与 `artwork_tier_v3.confidence`
+  （打分那一刻打分者对手上证据的可信度）**是两回事**。**low 不等于该降级**：
+  允许「S — Low Confidence」，也允许「B — High Confidence」，两者都不触发自动升降级。
+- 潜在 Tier 区间写成「下界–上界」，差的那端在前：`B–S` 读作「最差 B，最好可能到 S」。
+- `artwork_meta.evidence_type` / `source_quality` 逐条区分外部事实与 AI 推断。
+  判 FACT 必须指得出真实来源，`audit_load.py` 有硬检查：来源若仍写着
+  `Evidence Packet …` 直接报错退出 —— **Evidence Packet 是信息容器，不是信息来源**。
+  非 `evidence` 来源按 `source_key` 确定性回填（`SOURCE_RULES`），遇到没登记过的
+  `source_key` 报错退出，不猜。
+- **审计者用 OpenAI，评分者用 Anthropic，这是刻意的**，不做统一抽象层：V3.0 那批分是
+  `claude-opus-5` 打的，换一家的模型审可切断一部分同源偏差。型号写进 `audited_by`，
+  与 `scored_by` 对照即可看清。型号不写死（`--model` → `OPENAI_MODEL`），
+  key 从 `~/.openai_key`（权限 600）读，**同 MySQL 口令一样绝不进命令行**。
+- 审计自由文本成对存 `xx` / `xx_en` 两列**不走 `content` 表**（审计轨迹逐轮重写，
+  灌进内容表既删不掉又要新增 kind）。代价是导出的「零回落」检查照不到它们，
+  故 `audit_load.py` 里有中英成对齐全的校验，缺一边拒绝写入。
+- 馆级语境（喂给模型、直接决定 IU 与 CR 的判断方向）在 `museum_context.py`，
+  `tier_v3.py` 与 `audit_meta.py` 共用。两边各存一份必然分叉，且不报错。
+
+**⚠ PEM 这 196 件里，179 件（91%）无法与 PEM 官方发布的藏品对应上。**
+2026-08-31 抓全 18 个栏目页共 219 条官方编目记录后实测：95 件与官方记录**一个显著词
+都不重合**，84 件只重合 1 个词（screen/badge 这类巧合），最终只关联上 15 件。
+原因在源数据本身 —— 这 196 件的名称是**描述性转写**而非 PEM 编目题名
+（「Chinese Export Mandarin Punch Bowl」「Maori War Treasure Jade Mere」），
+指不到藏品库里任何一件具体的东西。
+
+**所以这批的低完备度不全是「资料薄」，有很大一部分是「对象身份本身不可核验」。**
+这两件事后果完全不同：前者补资料就能解决，后者得先把对象认出来。
+往后再看 PEM 的完备度分数、或考虑把管线推广到其余五馆时，先想清楚源数据的名称
+到底是不是能指向真实藏品的标识符。
+
+**⚠ 这两张表不能 DROP 重建，改结构一律走 `schema_audit.sql` 那样的 ALTER。**
+2026-08-31 发现 `artwork_meta` 与 `artwork_evidence` 里有仓库脚本复现不出来的数据：
+`source_key='pem_official'` 61 条、`'incollect'` 4 条，以及 9 行 `generated_by='rule'`
+却带 `best_source_tier=1` —— 都是当初在会话里逐件核实后直接入库的。
+
+`pem_official` 那批**已经补救**：18 个栏目页的抓取原文逐字存进 `pem_official_data.py`，
+由 `meta_fill_official_pem.py` 重放，现覆盖 15 件 82 条。`incollect` 那 4 条仍无脚本可复现。
+`best_source_tier` 也已改由 `evidence_score.py` 按库里实际存在的来源重算（`LEAST` 只升不降）。
+
+**教训是通用的：抓回来的东西要落进仓库，不能只落进库。** 光入库就等于把最硬的证据
+变成孤儿数据，下次连表都不敢重建。同理 `audit_out/` 的 JSONL 与审阅 CSV 要提交
+（只忽略日志），因为审计结果重跑一次要 2.5 小时 API。
 
 ---
 
@@ -251,6 +310,9 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成**尚未实现**（所需 metadata 全为空） |
 | `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
 | `utils/import_data/README.md` | `ari` 库的建表、导入、多语种机制与已知数据问题 |
+| `utils/import_data/museum_context.py` | 馆级语境，`tier_v3.py` 与 `audit_meta.py` 共用 |
+| `utils/import_data/source_rules.py` | 每个 `source_key` 的来源等级与 FACT/INFERENCE 性质，`evidence_score.py` 与 `audit_load.py` 共用 |
+| `utils/import_data/pem_official_data.py` | PEM 官网 18 个栏目页的抓取原文（219 条）+ 14 条人工核实映射 |
 | `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |

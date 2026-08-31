@@ -1,0 +1,62 @@
+# PEM 官网栏目页编目字段的中文译文
+#
+# key        —— 官网原文，去重键，须与 pem_official_data.py 里的抓取原文逐字一致
+# zh / en    —— 两个语种的文本；en 即 key 本身
+# confidence —— 官方 / AI / 存疑，只描述「译出来的那一半」
+#
+# 由 meta_fill_official_pem.py 增量补写，可直接手工编辑。
+# **译名必须留在本文件**：set_meta 按 source_key 清空重写，只改数据库的话重跑就没了。
+kind,key,zh,en,confidence
+pem_official,'Ulu (breadfruit) wood,'Ulu（面包果树）木材,'Ulu (breadfruit) wood,AI
+pem_official,1279,1279 年,1279,官方
+pem_official,1764-1765,1764—1765 年,1764-1765,AI
+pem_official,1849,1849 年,1849,官方
+pem_official,1880-89,1880—1889 年,1880-89,AI
+pem_official,19th century,19 世纪,19th century,官方
+pem_official,2008,2008 年,2008,官方
+pem_official,2017,2017 年,2017,官方
+pem_official,Aluminum with powder coat and automotive paint,铝，粉末涂层与汽车漆,Aluminum with powder coat and automotive paint,官方
+pem_official,Artist in Korea,韩国境内艺术家,Artist in Korea,AI
+pem_official,Artists in Japan,日本境内艺术家,Artists in Japan,AI
+pem_official,"Attributed to William Rush (1756-1833, United States)",传为威廉·拉什（1756—1833，美国）创作,"Attributed to William Rush (1756-1833, United States)",AI
+pem_official,Embroidered silk threads on silk damask,丝质提花缎地丝线刺绣,Embroidered silk threads on silk damask,AI
+pem_official,Fidelia Bridges,Fidelia Bridges,Fidelia Bridges,AI
+pem_official,Fitz Henry Lane,菲茨·亨利·莱恩,Fitz Henry Lane,AI
+pem_official,Gift of Carol and Jeffrey Horvitz,Carol 与 Jeffrey Horvitz 捐赠,Gift of Carol and Jeffrey Horvitz,官方
+pem_official,"Gift of Dr. Charles Goddard Weld, 1904",1904 年 Charles Goddard Weld 医生捐赠,"Gift of Dr. Charles Goddard Weld, 1904",官方
+pem_official,"Gift of Dr. Charles Goddard Weld, 1909",1909 年 Charles Goddard Weld 医生捐赠,"Gift of Dr. Charles Goddard Weld, 1909",官方
+pem_official,"Gift of Ernest Goodrich Stillman, 1947",1947 年 Ernest Goodrich Stillman 捐赠,"Gift of Ernest Goodrich Stillman, 1947",官方
+pem_official,"Gift of Gustavus Goward, 1899",1899 年 Gustavus Goward 捐赠,"Gift of Gustavus Goward, 1899",AI
+pem_official,"Gift of John T. Prince, 1846",1846 年 John T. Prince 捐赠,"Gift of John T. Prince, 1846",官方
+pem_official,"Gift of Mr. and Mrs. Charles Edward Cotting, 1976",1976 年 Charles Edward Cotting 夫妇捐赠,"Gift of Mr. and Mrs. Charles Edward Cotting, 1976",官方
+pem_official,"Gift of Serena M. Hatch in honor of Francis W. Hatch, 2014",2014 年 Serena M. Hatch 为纪念 Francis W. Hatch 捐赠,"Gift of Serena M. Hatch in honor of Francis W. Hatch, 2014",官方
+pem_official,"Gift of the artist, 1918",1918 年艺术家本人捐赠,"Gift of the artist, 1918",官方
+pem_official,Hank Willis Thomas,汉克·威利斯·托马斯,Hank Willis Thomas,AI
+pem_official,"Ink, color and gold leaf on paper",纸本墨、设色、金箔,"Ink, color and gold leaf on paper",官方
+pem_official,Ivory,象牙,Ivory,官方
+pem_official,John Singleton Copley,约翰·辛格尔顿·科普利,John Singleton Copley,AI
+pem_official,Kanaka Maoli (Native Hawaiian) artist,Kanaka Maoli（夏威夷原住民）艺术家,Kanaka Maoli (Native Hawaiian) artist,AI
+pem_official,"Katsumata Chieko (b. 1950, Japan)",胜间田千惠子（生于 1950 年，日本）,"Katsumata Chieko (b. 1950, Japan)",AI
+pem_official,Lacquer and shell inlay,漆与螺钿,Lacquer and shell inlay,官方
+pem_official,"Lacquered wood, gold leaf, pigments, copper alloy, and crystal",髹漆木胎，金箔、颜料、铜合金与水晶,"Lacquered wood, gold leaf, pigments, copper alloy, and crystal",官方
+pem_official,"Museum Purchase, made possible by the Elizabeth Rogers Acquisition Fund",博物馆购藏，由 Elizabeth Rogers Acquisition Fund 资助,"Museum Purchase, made possible by the Elizabeth Rogers Acquisition Fund",AI
+pem_official,Museum collection,博物馆馆藏,Museum collection,AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1994",1994 年博物馆购藏，由匿名捐赠者资助,"Museum purchase, made possible by an anonymous donor, 1994",AI
+pem_official,"Museum purchase, made possible by the Maritime Visiting Committee",博物馆购藏，由 Maritime Visiting Committee 资助,"Museum purchase, made possible by the Maritime Visiting Committee",AI
+pem_official,"Museum purchase, made possible by the R. C. Billings Fund, 1914",1914 年博物馆购藏，由 R. C. Billings Fund 资助,"Museum purchase, made possible by the R. C. Billings Fund, 1914",AI
+pem_official,"Naito Toyomasa (1773-1856, Japan)",内藤丰昌（1773—1856，日本）,"Naito Toyomasa (1773-1856, Japan)",AI
+pem_official,Native Hawaiian,夏威夷原住民,Native Hawaiian,AI
+pem_official,Oil on canvas,布面油彩,Oil on canvas,官方
+pem_official,Pine and paint,松木，彩绘,Pine and paint,官方
+pem_official,Robert Feke,Robert Feke,Robert Feke,AI
+pem_official,Stoneware with matte glazes,炻器，亚光釉,Stoneware with matte glazes,官方
+pem_official,Terada Tadatoyo,寺田忠丰,Terada Tadatoyo,官方
+pem_official,United States,美国,United States,AI
+pem_official,"Wood, lacquer, gilded brass, silk, paper, pigments, gold leaf, and bamboo",木、漆、鎏金铜、丝、纸、颜料、金箔与竹,"Wood, lacquer, gilded brass, silk, paper, pigments, gold leaf, and bamboo",官方
+pem_official,"Wood, lacquer, pigments, gold, and metal",木、漆、颜料、金与金属,"Wood, lacquer, pigments, gold, and metal",官方
+pem_official,about 1805,约 1805 年,about 1805,官方
+pem_official,ca. 1750,约 1750 年,ca. 1750,AI
+pem_official,early 17th century,17 世纪初,early 17th century,官方
+pem_official,early 19th century,19 世纪早期,early 19th century,官方
+pem_official,late 18th to early 19th century,18 世纪晚期至 19 世纪早期,late 18th to early 19th century,AI
+pem_official,late 18th-early 19th century,18 世纪晚期至 19 世纪早期,late 18th-early 19th century,AI

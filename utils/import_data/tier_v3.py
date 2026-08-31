@@ -48,6 +48,8 @@ try:
 except ImportError:
     sys.exit("缺少 openpyxl：pip install openpyxl")
 
+from museum_context import CONTEXTS
+
 
 MODEL = "claude-opus-5"
 
@@ -95,14 +97,9 @@ MUSEUMS = {
         header_row=0,
         col_name_en=2, col_name_cn=3, col_gallery=4,
         col_desc=5, col_category=8, col_tier_old=0,
-        context=(
-            "美国马萨诸塞州塞勒姆的皮博迪埃塞克斯博物馆（PEM）。"
-            "身份特征：全美最早的博物馆之一，起家于塞勒姆的远洋贸易，"
-            "因此海事艺术、亚洲外销艺术（Asian Export Art）、大洋洲与"
-            "东亚收藏构成其不可替代性的核心；荫余堂是海外唯一整体搬迁"
-            "重建的清代徽州民居，为全馆身份标志。相对而言，其欧洲绘画"
-            "与美国主流艺术藏品在全美范围内并非顶尖。"
-        ),
+        # 语境已挪进 museum_context.py：audit_meta.py 也要用同一段文字，
+        # 两边各存一份改漏了不会报错，只会让评级与审计悄悄用上两套不同的定义。
+        context=CONTEXTS["pem"],
     ),
     # 其余五馆待试点校准通过后再填。故宫需特别注意：1758 件共用 7 段展厅级
     # 套话简介，逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。

@@ -22,6 +22,17 @@
 
 三项都能从现有数据直接算出，不需要先知道研究结果。
 
+**本脚本量的是填充率，不是完备度。** 它只看 key 在不在 artwork_meta 里，不看
+取值质量，也不认「这一项对该对象不适用」。PEM 实测中位 1.1/100 —— 那个数字的
+含义是「196 件里绝大多数只有 object_form 一个键」，不是「这批东西没有价值」。
+真正的完备度判定在 audit_meta.py：12 项逐项判 full/partial/none/na，na 从分母剔除。
+
+**已审计的行本脚本一律跳过。** completeness / potential_ceiling / research_priority
+/ is_preliminary 四列由两个脚本共写，靠 completeness_src 分辨所有权：
+audit 口径的行归 audit_load.py，本脚本不碰。这不是洁癖 —— 早先本脚本用先删后插，
+把 evidence_fill.py 刚写的可信度与缺失证据一并冲成 NULL 且不报错，
+下次查询时才发现全变 NULL。同一张表多个写入者，职责必须互斥。
+
 用法：
     python3 evidence_score.py --museum pem --dry-run
     python3 evidence_score.py --museum pem
@@ -32,6 +43,7 @@ import argparse
 import collections
 
 import meta_lib as M
+from source_rules import SOURCE_RULES
 
 # 提案第 2 节的八个桶 -> 库中对应的 meta_key。权重合计 100。
 BUCKETS = [
@@ -76,17 +88,28 @@ def main() -> None:
                 " WHERE m.key_name=%s", (mk,))
     seqs = [r[0] for r in cur.fetchall()]
 
-    cur.execute("SELECT source_seq, key_name FROM artwork_meta WHERE museum_key=%s", (mk,))
+    cur.execute("SELECT source_seq, key_name, source_key FROM artwork_meta"
+                " WHERE museum_key=%s", (mk,))
     have = collections.defaultdict(set)
-    for s, k in cur.fetchall():
+    src_tier = {}
+    for s, k, sk in cur.fetchall():
         have[s].add(k)
+        t = SOURCE_RULES.get(sk, (4, "", ""))[0]
+        src_tier[s] = min(src_tier.get(s, 9), t)     # 等级数字越小越权威
 
     # 当前 tier 与 Core 来自 V3.0 评分表；没跑过评分的馆两列为空，按中性处理
     cur.execute("SELECT source_seq, tier, core FROM artwork_tier_v3 WHERE museum_key=%s", (mk,))
     scored = {r[0]: (r[1], float(r[2])) for r in cur.fetchall()}
 
+    # 已被 audit_meta.py 审过的行，这四列归 audit_load.py，本脚本不碰
+    cur.execute("SELECT source_seq FROM artwork_evidence"
+                " WHERE museum_key=%s AND completeness_src='audit'", (mk,))
+    audited = {r[0] for r in cur.fetchall()}
+
     rows, dist = [], collections.Counter()
     for s in seqs:
+        if s in audited:
+            continue
         comp = sum(w * (sum(1 for k in keys if k in have[s]) / len(keys))
                    for _, w, keys in BUCKETS)
         tier, core = scored.get(s, (None, None))
@@ -112,7 +135,15 @@ def main() -> None:
                      round(bd, 3) if bd is not None else None,
                      round(prio, 2), prelim))
 
-    print(f"{mk.upper()} {len(rows)} 件")
+    print(f"{mk.upper()} {len(rows)} 件按规则计分"
+          + (f"，{len(audited)} 件已审计（归 audit_load.py，跳过）" if audited else ""))
+    if not rows:
+        # 全馆都审过时这里没有可算的行，不是出错。硬往下走会在 comps[0] 上 IndexError，
+        # 报出来的还是个跟真实原因毫无关系的错。
+        print("没有需要按规则计分的行，退出。")
+        conn.close()
+        return
+
     print(f"\nCompleteness 分布：")
     for b in sorted(dist):
         print(f"  {b:3d}–{b+9:3d} 分  {dist[b]:4d} 件  {'█' * int(dist[b] / 4)}")
@@ -144,6 +175,28 @@ def main() -> None:
         " research_priority=VALUES(research_priority), is_preliminary=VALUES(is_preliminary)",
         rows)
     print(f"\nartwork_evidence 写入 {len(rows)} 行")
+
+    # best_source_tier：按库里**实际存在**的来源重算，只升不降。
+    #
+    # 这一列原本只由 evidence_fill.py 从 evidence_data_pem.py 里写死的 source_tier 填。
+    # 那批数字是写 packet 那天的判断，后来抓到 PEM 官网栏目页（Tier 1）之后没人回头改
+    # —— 2026-08-31 实测 seq 2/5/6/7/9 明明有 pem_official 的官网编目字段，
+    # best_source_tier 却还停在 4 或 3。审计读这一列，等于被喂了过时的输入。
+    #
+    # 用 LEAST 只升不降：若 packet 里记的来源比 artwork_meta 里能看到的更权威
+    # （譬如查过纸质图录，没落成 metadata 取值），不该被这里冲掉。
+    if src_tier:
+        cur.executemany(
+            "UPDATE artwork_evidence SET best_source_tier ="
+            " LEAST(COALESCE(best_source_tier, 9), %s)"
+            " WHERE museum_key=%s AND source_seq=%s",
+            [(t, mk, s) for s, t in sorted(src_tier.items())])
+        cur.execute("SELECT best_source_tier, COUNT(*) FROM artwork_evidence"
+                    " WHERE museum_key=%s GROUP BY best_source_tier"
+                    " ORDER BY best_source_tier", (mk,))
+        dist_t = cur.fetchall()
+        print("best_source_tier 重算后：" + "  ".join(
+            f"Tier {t if t is not None else '—'}: {n} 件" for t, n in dist_t))
 
     if args.dry_run:
         conn.rollback(); print("--dry-run：未写库")

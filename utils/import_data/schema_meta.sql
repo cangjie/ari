@@ -83,6 +83,14 @@ CREATE TABLE artwork_meta (
   -- V3.0 第十二节：每条都要能追到来源，并记录证据可信度
   source      VARCHAR(255) NULL COMMENT '来源：官网URL / 名称解析 / 源文件字段 / 人工录入',
   confidence  ENUM('high','medium','low') NOT NULL DEFAULT 'medium',
+  -- 提案第 3、4 节：每条取值都要说清「这是外部事实还是我们的推断」，以及来源有多硬。
+  -- confidence 回答不了这个问题 —— 一条 AI 推断可以「很有信心」，那与「有馆方
+  -- 官网背书」是两码事。混在一起，导出表里就分不出哪句有外部资料撑着。
+  -- 存量库补种见 schema_audit.sql。
+  evidence_type  ENUM('FACT','INFERENCE') NULL COMMENT
+              'FACT=有外部资料直接支撑；INFERENCE=Ariadne/AI 依据事实作出的判断。推断可用于定级，但不得冒充馆方或学术来源',
+  source_quality ENUM('strong','moderate','weak') NULL COMMENT
+              '提案第 4 节来源分级：strong=Tier1-2 馆方官方/UNESCO/学术出版；moderate=Tier3 专业数据库/拍卖行；weak=Tier4 一般网络资料，或仅有原 description 与 AI 推断支撑',
   filled_by   VARCHAR(64)  NOT NULL DEFAULT 'manual' COMMENT 'manual / rule / 模型名',
   created_at  DATETIME(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
   updated_at  DATETIME(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
@@ -92,6 +100,7 @@ CREATE TABLE artwork_meta (
   KEY idx_am_source (source_key, key_name),
   KEY idx_am_value (value_cid),
   KEY idx_am_num (key_name, value_num),
+  KEY idx_am_etype (museum_key, evidence_type, source_quality),
   CONSTRAINT fk_am_key FOREIGN KEY (key_name) REFERENCES meta_key (key_name)
     ON UPDATE CASCADE ON DELETE RESTRICT,
   CONSTRAINT fk_am_value FOREIGN KEY (value_cid) REFERENCES content (id)
@@ -114,7 +123,8 @@ SELECT
   kt.text         AS key_label,
   vt.text         AS value_text,
   am.value_num,
-  am.source, am.confidence, am.filled_by, am.updated_at
+  am.source, am.confidence, am.evidence_type, am.source_quality,
+  am.filled_by, am.updated_at
 FROM artwork_meta am
 JOIN meta_key  mk ON mk.key_name  = am.key_name
 JOIN content_text kt ON kt.content_id = mk.name_cid

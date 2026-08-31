@@ -83,7 +83,32 @@ VALUE_MAPS = {
         "名称与英文简介解析": "Parsed from name and English description",
         "名称解析（作者, 作品名）": "Parsed from name (Artist, Title)",
     },
+    "yes_no": {"是": "Yes", "否": "No"},
 }
+
+# 审计列的 ENUM 走另一张表，**映射方向是反的**。
+# VALUE_MAPS 那几组的前提是「库里存中文，英文版按表换」；审计这几组库里存的是
+# 英文 token（high / audit / FACT / weak），中文版才是需要换的那一边。
+# 混进 VALUE_MAPS 会让中文版直接漏出 medium、audit 这种原始取值 —— 实测踩过。
+# 同样不走内容表（审计轨迹逐轮重写，见 schema_audit.sql 末注），所以同样照不到
+# 「零回落」检查，只能靠这里兜住。
+ENUM_MAPS = {
+    "confidence": {"high": ("高", "High"), "medium": ("中", "Medium"),
+                   "low": ("低", "Low")},
+    "evidence_type": {"FACT": ("事实", "FACT"), "INFERENCE": ("推断", "INFERENCE")},
+    "source_quality": {"strong": ("强", "Strong"), "moderate": ("中等", "Moderate"),
+                       "weak": ("弱", "Weak")},
+    "completeness_src": {"rule": ("规则·字段填充率", "Rule (field fill rate)"),
+                         "audit": ("审计·逐项判定", "Audit (judged)")},
+}
+
+
+def mape(kind, value, lang):
+    """审计 ENUM 的双向映射：库里存英文 token，两个语种都要换。"""
+    if value is None:
+        return None
+    zh, en = ENUM_MAPS[kind].get(value, (value, value))
+    return zh if lang == ZH else en
 
 
 def mapv(kind, value, lang):
@@ -149,14 +174,51 @@ ARTWORK_COLUMNS = [
 ]
 
 
+# 元数据质量审计列。放在展品固有字段之后、动态 metadata 列之前。
+# 这一组回答的不是「这件东西是什么」，而是「我们凭什么说它是这一级」。
+AUDIT_COLUMNS = [
+    ("完备度", "Metadata Completeness"), ("完备度口径", "Completeness Basis"),
+    ("Tier可信度", "Tier Confidence"), ("潜在Tier区间", "Potential Tier Range"),
+    ("研究优先级", "Research Priority"), ("需复核", "Tier Review Flag"),
+    ("复核原因", "Review Reason"),
+    ("最关键缺失证据", "Most Important Missing Evidence"),
+    ("缺失证据", "Missing Evidence"),
+    ("建议研究问题", "Recommended Research Question"),
+    ("去推断后仍成立", "Survives Without Inference"),
+    ("最高来源等级", "Best Source Tier"),
+]
+
 # metadata 明细表的列。主表里每个键只占一格，冲突值会被并排挤在一起；
 # 明细表按「一行一条取值」摊开，来源与可信度逐条可查，谁说了什么一目了然。
+# 证据类型与来源质量两列是本轮加的：在这之前，源文件里的事实和 AI 写的
+# significance 判断在表里长得一模一样，读表的人分不出哪句有外部资料撑着。
 META_DETAIL_COLUMNS = [
     ("序号", "No."), ("展品名称", "Artwork Name"), ("键", "Key"),
     ("取值", "Value"), ("来源", "Source"), ("可信度", "Confidence"),
+    ("证据类型", "Evidence Type"), ("来源质量", "Source Quality"),
     ("来源明细", "Source Detail"),
 ]
 SHEET_META = {ZH: "metadata明细", EN: "Metadata Detail"}
+SHEET_AUDIT = {ZH: "元数据审计汇总", EN: "Metadata Audit Summary"}
+
+SUMMARY_TITLE = {ZH: "一、审计汇总", EN: "1. Audit Summary"}
+TOP20_TITLE = {ZH: "二、最该优先研究的 20 件", EN: "2. Top 20 Research Priorities"}
+TOP10_TITLE = {ZH: "三、最可能变级的 10 件（只列不改）",
+               EN: "3. Top 10 Possible Tier Changes (listed, not applied)"}
+
+SUMMARY_STAT_COLUMNS = [("指标", "Metric"), ("值", "Value")]
+TOP20_COLUMNS = [
+    ("排名", "Rank"), ("展品", "Object"), ("当前Tier", "Current Tier"),
+    ("潜在Tier区间", "Potential Tier Range"), ("完备度", "Metadata Completeness"),
+    ("Tier可信度", "Tier Confidence"), ("研究优先级", "Research Priority"),
+    ("最关键缺失证据", "Most Important Missing Evidence"),
+    ("建议研究问题", "Recommended Research Question"),
+]
+TOP10_COLUMNS = [
+    ("排名", "Rank"), ("展品", "Object"), ("当前Tier", "Current Tier"),
+    ("潜在Tier区间", "Potential Tier Range"), ("Tier可信度", "Tier Confidence"),
+    ("研究优先级", "Research Priority"), ("理由", "Reason"),
+]
 
 
 def headers(columns, lang):
@@ -195,6 +257,40 @@ def write_sheet(ws, cols, rows, lang):
         ws.column_dimensions[get_column_letter(i)].width = min(max(width + 2, 8), 60)
 
 
+def write_blocks(ws, blocks, lang):
+    """一个 sheet 里放多张表，块间空一行，每块前加一行粗体标题。
+
+    审计汇总天然是三张形状不同的表（汇总指标、Top 20、Top 10），
+    拆成三个 sheet 会让人来回翻，塞进一张表又对不齐列。write_sheet 只会写
+    单表头，故另起一个。列宽按所有块里最宽的一列取。
+    """
+    widths = {}
+    row_i = 1
+    for title, cols, rows in blocks:
+        if title:
+            c = ws.cell(row=row_i, column=1, value=title)
+            c.font = Font(bold=True, size=12)
+            row_i += 1
+        hdr = headers(cols, lang)
+        for i, h in enumerate(hdr, 1):
+            c = ws.cell(row=row_i, column=i, value=h)
+            c.fill, c.font = HEAD_FILL, HEAD_FONT
+            c.alignment = Alignment(vertical="center")
+            widths[i] = max(widths.get(i, 8),
+                            sum(2 if ord(ch) > 127 else 1 for ch in h))
+        row_i += 1
+        for r in rows:
+            for i, v in enumerate(r, 1):
+                ws.cell(row=row_i, column=i, value=cell(v))
+                if v is not None:
+                    widths[i] = max(widths.get(i, 8),
+                                    sum(2 if ord(ch) > 127 else 1 for ch in str(v)[:80]))
+            row_i += 1
+        row_i += 1                                  # 块间空一行
+    for i, w in widths.items():
+        ws.column_dimensions[get_column_letter(i)].width = min(max(w + 2, 8), 60)
+
+
 def meta_cell(vals):
     """把一个键的多条取值压成一格。
 
@@ -202,12 +298,12 @@ def meta_cell(vals):
     （源文件说 pre-contact 而 Wikidata 标 1825 年），不该由导出环节替人挑一个。
     完整来源与可信度见「metadata明细」sheet。
     """
-    texts = [t for _, t, _, _ in vals if t]
+    texts = [v[1] for v in vals if v[1]]
     if not texts:
         return None
     if len(set(texts)) == 1:
         return texts[0]
-    return " | ".join(f"{t}[{sk}]" for sk, t, _, _ in vals if t)
+    return " | ".join(f"{v[1]}[{v[0]}]" for v in vals if v[1])
 
 
 def safe_name(s):
@@ -306,14 +402,162 @@ class Exporter:
             " ORDER BY k.sort_order")]
 
     def meta_of(self, museum_key, lang):
-        """{source_seq: {key_name: [(source_key, 文本, 可信度, 来源明细), ...]}}"""
+        """{source_seq: {key_name: [(source_key, 文本, 可信度, 来源明细, 证据类型, 来源质量), ...]}}"""
         out = defaultdict(lambda: defaultdict(list))
-        for seq, key, skey, cid, conf, src in self.q(
-                "SELECT source_seq, key_name, source_key, value_cid, confidence, source"
+        for seq, key, skey, cid, conf, src, et, sq in self.q(
+                "SELECT source_seq, key_name, source_key, value_cid, confidence, source,"
+                " evidence_type, source_quality"
                 " FROM artwork_meta WHERE museum_key = %s"
                 " ORDER BY source_seq, key_name, source_key, ord", (museum_key,)):
-            out[seq][key].append((skey, self.t(cid, lang), conf, src))
+            out[seq][key].append((skey, self.t(cid, lang), conf, src, et, sq))
         return out
+
+    def pick(self, zh, en, lang):
+        """审计文本成对存列（不走内容表，见 schema_audit.sql 末注）。
+
+        缺目标语种时回落并计数 —— 与 t() 同样的口径，否则英文版会静默漏出中文，
+        而这正是当初 artwork_meta.source 出过的问题。
+        """
+        want, other = (zh, en) if lang == ZH else (en, zh)
+        if want:
+            return want
+        if other:
+            self.fallbacks += 1
+            return other
+        return None
+
+    def audit_of(self, museum_key, lang):
+        """{source_seq: [AUDIT_COLUMNS 对应的值]}。没审过的馆只有规则版完备度。"""
+        out = {}
+        for (seq, comp, csrc, tconf, plow, pceil, prio, flag,
+             rr, rr_en, miss, miss_en, tm, tm_en, rq, rq_en, surv, bst) in self.q(
+                "SELECT source_seq, completeness, completeness_src, tier_confidence,"
+                " potential_tier_low, potential_ceiling, research_priority,"
+                " tier_review_flag, review_reason, review_reason_en,"
+                " missing_evidence, missing_evidence_en, top_missing, top_missing_en,"
+                " research_question, research_question_en, inference_only_survives,"
+                " best_source_tier"
+                " FROM artwork_evidence WHERE museum_key = %s", (museum_key,)):
+            # 写成「下界–上界」，即差的那端在前：B–S 读作「最差 B，最好可能到 S」。
+            # 两端相同就只写一级，「A」比「A–A」更像一句话。
+            rng = None
+            if plow and pceil:
+                rng = plow if plow == pceil else f"{plow}–{pceil}"
+            out[seq] = [
+                comp, mape("completeness_src", csrc, lang),
+                mape("confidence", tconf, lang), rng, prio,
+                mapv("yes_no", "是" if flag else "否", lang),
+                self.pick(rr, rr_en, lang),
+                self.pick(tm, tm_en, lang),
+                self.pick(miss, miss_en, lang),
+                self.pick(rq, rq_en, lang),
+                None if surv is None else mapv("yes_no", "是" if surv else "否", lang),
+                bst,
+            ]
+        return out
+
+    def audit_summary(self, museum_key, lang):
+        """审计汇总的三块：指标、Top 20 该查的、Top 10 可能变级的。
+
+        **只列不改。** 第三块给的是「这几件的结论最可能被新资料推翻」，
+        不是「这几件应该改成什么」—— 改级要等资料真的查回来，
+        拿现在这批不足的证据去改，改出来的还是同样不足的结论。
+        """
+        rows = self.q("""
+            SELECT a.source_seq, a.name_cid, a.tier,
+                   e.completeness, e.completeness_src, e.tier_confidence,
+                   e.potential_tier_low, e.potential_ceiling, e.research_priority,
+                   e.tier_review_flag, e.top_missing, e.top_missing_en,
+                   e.research_question, e.research_question_en,
+                   e.inference_only_survives, e.review_reason, e.review_reason_en
+            FROM artwork a
+            JOIN museum m ON m.id = a.museum_id AND m.key_name = %s
+            LEFT JOIN artwork_evidence e
+                   ON e.museum_key = m.key_name AND e.source_seq = a.source_seq
+            ORDER BY a.source_seq""", (museum_key,))
+        if not rows:
+            return None
+
+        audited = [r for r in rows if r[5] is not None]     # tier_confidence 非空即审过
+        comps = sorted(float(r[3]) for r in audited if r[3] is not None)
+        conf = defaultdict(int)
+        for r in audited:
+            conf[r[5]] += 1
+
+        def rng(r):
+            lo, hi = r[6], r[7]
+            if not (lo and hi):
+                return None
+            return lo if lo == hi else f"{lo}–{hi}"
+
+        def span(r):
+            order = {"S": 0, "A": 1, "B": 2, "C": 3}
+            if not (r[6] and r[7]):
+                return 0
+            return abs(order[r[6]] - order[r[7]])
+
+        et = dict(self.q("SELECT evidence_type, COUNT(*) FROM artwork_meta"
+                         " WHERE museum_key = %s GROUP BY evidence_type", (museum_key,)))
+        sq = dict(self.q("SELECT source_quality, COUNT(*) FROM artwork_meta"
+                         " WHERE museum_key = %s GROUP BY source_quality", (museum_key,)))
+
+        # (中文标签, English label, 值)
+        stats = [
+            ("对象总数", "Total Objects", len(rows)),
+            ("已审计件数", "Audited Objects", len(audited)),
+            ("平均完备度", "Average Metadata Completeness",
+             round(sum(comps) / len(comps), 1) if comps else None),
+            ("中位完备度", "Median Metadata Completeness",
+             comps[len(comps) // 2] if comps else None),
+            ("Tier 可信度 High", "Tier Confidence: High", conf.get("high", 0)),
+            ("Tier 可信度 Medium", "Tier Confidence: Medium", conf.get("medium", 0)),
+            ("Tier 可信度 Low", "Tier Confidence: Low", conf.get("low", 0)),
+            ("需复核件数", "Tier Review Flag", sum(1 for r in audited if r[9])),
+            ("S 中 Low/Medium 可信度", "S Tier with Low/Medium Confidence",
+             sum(1 for r in audited if r[2] == "S" and r[5] in ("low", "medium"))),
+            ("A 中 Low 可信度", "A Tier with Low Confidence",
+             sum(1 for r in audited if r[2] == "A" and r[5] == "low")),
+            ("B 中潜在 A/S 候选", "Potential B to A/S Candidates",
+             sum(1 for r in audited if r[2] == "B" and r[7] in ("A", "S"))),
+            ("S/A 中去推断后不成立", "S/A Not Surviving Without Inference",
+             sum(1 for r in audited if r[14] == 0)),
+            ("metadata 条数 FACT", "Metadata Claims: FACT", et.get("FACT", 0)),
+            ("metadata 条数 INFERENCE", "Metadata Claims: INFERENCE", et.get("INFERENCE", 0)),
+            ("metadata 来源质量 weak", "Metadata Source Quality: Weak", sq.get("weak", 0)),
+            ("metadata 未标注", "Metadata Claims: Unlabelled", et.get(None, 0)),
+        ]
+        stat_rows = [[z if lang == ZH else e, v] for z, e, v in stats]
+
+        top20 = sorted([r for r in audited if r[8] is not None],
+                       key=lambda r: -float(r[8]))[:20]
+        top20_rows = [
+            [i, self.t(r[1], lang), r[2], rng(r), r[3],
+             mape("confidence", r[5], lang), r[8],
+             self.pick(r[10], r[11], lang), self.pick(r[12], r[13], lang)]
+            for i, r in enumerate(top20, 1)]
+
+        # 排序意图：区间跨得越宽 > 可信度越低 > 研究优先级越高。
+        # 跨度 0（资料已能钉死一级）的一律排除 —— 它们按定义就不会变。
+        conf_rank = {"low": 0, "medium": 1, "high": 2}
+        cands = [r for r in audited if span(r) > 0]
+        cands.sort(key=lambda r: (-span(r), conf_rank.get(r[5], 3), -float(r[8] or 0)))
+        top10_rows = [
+            [i, self.t(r[1], lang), r[2], rng(r),
+             mape("confidence", r[5], lang), r[8],
+             self.pick(r[15], r[16], lang) or self.pick(r[10], r[11], lang)]
+            for i, r in enumerate(cands[:10], 1)]
+
+        note = ("说明：本表只列出「结论最可能被新资料推翻」的对象，不代表建议改级。"
+                "改级须等证据真的查回来。"
+                if lang == ZH else
+                "Note: these are the objects whose current Tier is most likely to be "
+                "overturned by new evidence. This is not a recommendation to change any "
+                "Tier; changes must wait until the evidence is actually gathered.")
+        return [
+            (SUMMARY_TITLE[lang], SUMMARY_STAT_COLUMNS, stat_rows),
+            (TOP20_TITLE[lang], TOP20_COLUMNS, top20_rows),
+            (TOP10_TITLE[lang] + "  —  " + note, TOP10_COLUMNS, top10_rows),
+        ]
 
     def museums(self):
         return self.q("SELECT id, key_name, name_cid FROM museum ORDER BY id")
@@ -359,7 +603,8 @@ def export_one_lang(ex, lang, out_root, only=(), artworks_only=False):
         print(f"    -> {LIST_FILE[lang]}.xlsx")
 
     mkeys = ex.meta_keys(lang)
-    meta_cols = ARTWORK_COLUMNS + [(lab, lab) for _, lab in mkeys]
+    meta_cols = ARTWORK_COLUMNS + AUDIT_COLUMNS + [(lab, lab) for _, lab in mkeys]
+    n_audit = len(AUDIT_COLUMNS)
 
     for mid, key, name_cid in ex.museums():
         if only and key not in only:
@@ -367,6 +612,7 @@ def export_one_lang(ex, lang, out_root, only=(), artworks_only=False):
         title = ex.t(name_cid, lang) or key
         by_tier = ex.artworks(mid, lang)
         meta = ex.meta_of(key, lang)
+        audit = ex.audit_of(key, lang)
         wb = openpyxl.Workbook()
         wb.remove(wb.active)
         counts = []
@@ -376,16 +622,26 @@ def export_one_lang(ex, lang, out_root, only=(), artworks_only=False):
             for r in by_tier.get(sheet, []):
                 seq = r[1]                       # ARTWORK_COLUMNS 第 2 列是序号
                 mm = meta.get(seq, {})
-                rows.append(r + [meta_cell(mm.get(k, [])) for k, _ in mkeys])
+                rows.append(r + audit.get(seq, [None] * n_audit)
+                            + [meta_cell(mm.get(k, [])) for k, _ in mkeys])
                 for k, klab in mkeys:
-                    for skey, txt, conf, src in mm.get(k, []):
-                        detail.append([seq, r[3], klab, txt, skey, conf,
+                    for skey, txt, conf, src, et, sq in mm.get(k, []):
+                        detail.append([seq, r[3], klab, txt, skey,
+                                       mape("confidence", conf, lang),
+                                       mape("evidence_type", et, lang),
+                                       mape("source_quality", sq, lang),
                                        map_meta_source(src, lang)])
             write_sheet(wb.create_sheet(sheet), meta_cols, rows, lang)
             counts.append(f"{sheet} {len(rows)}")
         detail.sort(key=lambda x: (x[0], x[2], x[4]))
         write_sheet(wb.create_sheet(SHEET_META[lang]), META_DETAIL_COLUMNS, detail, lang)
         counts.append(f"{SHEET_META[lang]} {len(detail)}")
+
+        # 审计汇总恒定建 sheet：没审过的馆也留一张空表，按 sheet 名读文件的
+        # 脚本不会因为「这个馆还没审」而崩，与五个 tier sheet 同样的道理。
+        blocks = ex.audit_summary(key, lang)
+        write_blocks(wb.create_sheet(SHEET_AUDIT[lang]), blocks or [], lang)
+        counts.append(f"{SHEET_AUDIT[lang]} {sum(len(b[2]) for b in blocks) if blocks else 0}")
         fn = safe_name(ARTWORK_FILE_PREFIX[lang] + title) + ".xlsx"
         wb.save(os.path.join(out, fn))
         print(f"    {title[:28]:30} {' / '.join(counts):40} -> {fn}")
