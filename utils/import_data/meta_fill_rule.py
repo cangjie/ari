@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""从 PEM 现有字段确定性提取 metadata，写入 artwork_meta。
+"""从展品现有字段确定性提取 metadata，写入 artwork_meta。任意馆通用。
 
 **这不是抓取。** PEM 的藏品门户 explore-art.pem.org 已不可访问（443 连接被拒），
 库里 PEM 的 official_url 与 image_url 均为 0/196，没有可抓的链接。逐件网络搜索
@@ -17,9 +17,14 @@ Portrait of Gentleman」）查不到 —— 那类条目疑似填充数据。故
 **提取不到的**（源数据里根本没有，不是规则不够好）：
     尺寸 0/196、馆藏编号 0/196、出土地 1/196
 
+本脚本原名 meta_fill_pem.py，只跑 PEM。抽取逻辑（作者/年代/文化解析）本来
+就与馆无关，写死一个馆只会逼着下一个馆去复制一份 —— 复制出来的两份迟早分叉，
+且不报错。故就地泛化为 --museum。上面那组覆盖率是 PEM 的实测值，
+其余馆各不相同：名称形如「作者, 作品名」的比例、简介里带不带年代词，都不一样。
+
 用法：
-    python3 meta_fill_pem.py --dry-run    # 只统计与抽样，不写库
-    python3 meta_fill_pem.py
+    python3 meta_fill_rule.py --museum pem --dry-run   # 只统计与抽样，不写库
+    python3 meta_fill_rule.py --museum mfa_boston
 """
 from __future__ import annotations
 
@@ -28,7 +33,6 @@ import re
 
 import meta_lib as M
 
-MUSEUM = "pem"
 
 # ---- 作者 -------------------------------------------------------------------
 # 名称形如「Xxx Yyy, 作品名」。裸正则的准确率只有 30/44=68%，因为
@@ -73,6 +77,67 @@ PERIODS = [
 ]
 CENTURY_RE = re.compile(r"(\d{1,2})(?:st|nd|rd|th)?[‐\- ]century", re.I)
 ORD = {1: "st", 2: "nd", 3: "rd"}
+
+
+POSSESSIVE_RE = re.compile(
+    r"\b([A-Z][A-Za-z\u2018\u2019'\u2010-]{1,20}"
+    r"(?: (?:van|von|de|del|della|da|di|le|la))?"
+    r"(?: [A-Z][A-Za-z\u2018\u2019'\u2010-]{1,20}){0,2})[\u2019']s\b")
+
+# 简介里以所有格出现的大写人名，几乎只会是作者：
+#   「John Sargent's greatest group portrait」「Monet's famous Saint-Lazare series」
+# 要求首字母大写，把「the postman's wife」这类普通名词挡在外面。
+DESC_NOT_ARTIST = {"Boston", "Museum", "America", "North", "China", "Japan", "Europe",
+                   "Paris", "London", "Salem", "Harvard", "Ming", "Qing", "Edo", "Zen"}
+
+
+# 名称前缀是不是作者，是**每个源文件的格式事实**，跟「取哪一列 tier」同类，
+# 所以记在这里而不是做成命令行开关 —— 开关会被下一个人忘了加，配置不会。
+# 2026-09-01 逐馆实测（前缀候选数 -> 其中真是人名的）：
+#   pem         30 -> 29    「Fitz Henry Lane, Twilight on the Kennebec」
+#   ham         94 -> 92    「Rembrandt, Bust of an Old Man」，混着少量器物名
+#   mfa_boston  18 ->  3    「Vase, Ming Yong-le」「Aphrodite, "Boston Aphrodite"」
+#                            前缀基本是器型或题材，开了净是错的
+NAME_ARTIST_PREFIX = {"pem": True, "ham": True, "mfa_boston": False}
+
+# 器型 / 材质 / 题材 / 风格词。人名里不会出现，题名前缀里很常见，
+# 用来兜住 NAME_ARTIST_PREFIX 为真的馆里混进来的器物名（如「Bronze Owl Zun」）。
+OBJ_WORDS = {
+    "bronze", "silver", "gold", "gilt", "stone", "sandstone", "marble", "wood",
+    "wooden", "jade", "ivory", "glazed", "lacquer", "porcelain", "ceramic", "clay",
+    "terracotta", "iron", "tapestry", "diptych", "triptych", "fragment",
+    "vase", "bowl", "spoon", "set", "tile", "panel", "helmet", "armor", "armour",
+    "head", "figure", "statue", "sculpture", "screen", "scroll", "print",
+    "painting", "portrait", "mirror", "sword", "robe", "mask", "jar", "cup",
+    "plate", "dish", "box", "chair", "table", "clock", "quilt", "fan", "drum", "doll",
+    "buddha", "bodhisattva", "guanyin", "aphrodite", "athena", "apollo", "venus",
+    "zeus", "krishna", "shiva", "zun", "ding", "gothic", "baroque", "samurai",
+    # 朝代与画中人物。所有格解析会把「Emperor Huizong of Song's」截成「Song」、
+    # 把「emphasizing Susanna's dignity」里的画中人 Susanna 当成作者
+    # （那件的真作者 Artemisia Gentileschi 写在简介开头，不带所有格）。
+    "song", "ming", "qing", "tang", "han", "shang", "zhou", "edo", "meiji", "joseon",
+    "susanna", "judith", "madonna", "christ", "emperor", "empress",
+}
+
+
+def looks_like_person(w: str) -> bool:
+    """粗筛：至多四个词，且不含器型/题材词。
+
+    「Grant Wood」这样的真作者会被 wood 误杀 —— 这是刻意的取舍：
+    错的作者会被当成事实喂进评分，漏掉的只是少一条 metadata。
+    """
+    toks = [t.lower() for t in re.findall(r"[A-Za-z]+", w)]
+    return bool(toks) and len(toks) <= 4 and not (set(toks) & OBJ_WORDS)
+
+
+def artist_from_desc(desc: str) -> str | None:
+    """从英文简介的所有格里取作者。取不到就返回 None —— 宁可漏，不可错。"""
+    for m in POSSESSIVE_RE.finditer(desc or ""):
+        who = m.group(1).strip()
+        if who in DESC_NOT_ARTIST or len(who) < 4 or not looks_like_person(who):
+            continue
+        return who
+    return None
 
 
 def period_of(text: str):
@@ -132,9 +197,13 @@ def culture_of(text: str):
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--museum", required=True,
+                    help="museum.key_name，如 pem / mfa_boston / ham")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
+    museum = args.museum
 
     conn = M.connect()
     cur = conn.cursor()
@@ -146,9 +215,11 @@ def main() -> None:
         LEFT JOIN content_text me ON me.content_id = a.medium_cid AND me.lang = 'en'
         LEFT JOIN content_text mz ON mz.content_id = a.medium_cid AND mz.lang = 'zh-CN'
         LEFT JOIN content_text de ON de.content_id = a.description_cid AND de.lang = 'en'
-        ORDER BY a.source_seq""", (MUSEUM,))
+        ORDER BY a.source_seq""", (museum,))
     rows = cur.fetchall()
-    print(f"{MUSEUM.upper()} {len(rows)} 件")
+    if not rows:
+        raise SystemExit(f"库中没有 museum_key={museum!r} 的展品")
+    print(f"{museum.upper()} {len(rows)} 件")
 
     for k, zh, en, note in [
             ("object_form", "器型·类别", "Object Form", "器物形制或作品类型，自由文本"),
@@ -158,15 +229,39 @@ def main() -> None:
             ("cultural_context", "文化归属", "Cultural Attribution", "如「徽州」「大和民族」「毛利」")]:
         M.ensure_key(cur, k, zh, en, note)
 
+    # 先清空本脚本名下的两个 source_key。set_meta 只按 (seq, key, source_key) 覆盖，
+    # 某件这次不再产出 artist 时，上一轮写错的那条会原地留下 —— 必须整体清。
+    # 只删自己的 source_key，不碰 wikidata / pem_official / evidence（AGENTS.md 第 3 条）。
+    if not args.dry_run:
+        cur.execute("DELETE FROM artwork_meta WHERE museum_key=%s"
+                    " AND source_key IN ('rule','source_file')", (museum,))
+        print(f"  清空本脚本名下旧值 {cur.rowcount} 条")
+
     cache, stat, samples = {}, {}, {}
     for seq, ne, nz, me, mz, de in rows:
         blob = f"{ne} {de or ''}"
         out = []
         if me and mz:
             out.append(("object_form", (mz, me), "source_file", "源文件 Category 列", "high"))
-        who = artist_of(ne)
+        # 名称形如「作者, 作品名」**只有部分馆成立**，是源表格式而非通则：
+        #   PEM  Fitz Henry Lane, Twilight on the Kennebec   -> 成立
+        #   MFA  Vase, Ming Yong-le blue-and-white           -> 前缀是器型不是人
+        #        Aphrodite, "Boston Aphrodite"               -> 前缀是题材不是人
+        #   哈佛  Rembrandt, Bust of an Old Man（成立）与
+        #        Bronze Owl Zun, Shang Dynasty（不成立）混在一起
+        # 2026-09-01 实测：不加开关直接跑 MFA 与哈佛，抓出 Lullaby / Aphrodite /
+        # Vase / Guanyin / Bronze Owl Zun 这类假作者 112 条。错的作者比没有作者更糟 ——
+        # 它会被当成事实喂进评分。故改为按馆显式声明，默认关闭。
+        who = artist_of(ne) if NAME_ARTIST_PREFIX.get(museum) else None
+        if who and not looks_like_person(who):
+            who = None
         if who:
             out.append(("artist", (who, who), "rule", "名称解析（作者, 作品名）", "high"))
+        else:
+            # 与名称格式无关的兜底：简介里的所有格人名
+            who = artist_from_desc(de or "")
+            if who:
+                out.append(("artist", (who, who), "rule", "英文简介所有格解析", "medium"))
         p = period_of(blob)
         if p:
             out.append(("period", p, "rule", "名称与英文简介解析", "medium"))
@@ -180,7 +275,7 @@ def main() -> None:
             stat[key] = stat.get(key, 0) + 1
             samples.setdefault(key, []).append((seq, vzh, ven))
             if not args.dry_run:
-                M.set_meta(cur, MUSEUM, seq, key, [(vzh, ven)], source_key=skey,
+                M.set_meta(cur, museum, seq, key, [(vzh, ven)], source_key=skey,
                            source=src, confidence=conf, filled_by="rule", cache=cache)
 
     print(f"\n{'键':18s}{'命中':>6s}{'覆盖率':>8s}   抽样")

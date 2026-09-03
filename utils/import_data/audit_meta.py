@@ -382,11 +382,8 @@ COMMON_RULES = """你在执行 Ariadne 的 Metadata Quality Audit（元数据质
    注意：喂给你的「简介」和以往的「打分依据原文」本身多半也只是 AI 写的，
    不要把它们当成外部资料 —— 它们证明不了任何事，只能作为线索。
 
-【关于 PEM 这批数据你必须知道的实情】
-PEM 官方藏品门户 explore-art.pem.org 已停服，196 件里官方页面链接 0 条。
-除少数几件在 pem.org 藏品栏目页或 Wikidata 上核实过，其余的「资料」实际上只有
-一段来路不明的简介。所以低完备度是**如实的结论**，不是你没审好。
-看到一件只有名称和一句套话简介的东西，就该判低完备度、低可信度、写明缺什么。"""
+"""
+
 
 STAGE1_SYSTEM = COMMON_RULES + """
 
@@ -419,6 +416,27 @@ STAGE1_SYSTEM = COMMON_RULES + """
   「B — High Confidence」，意思是「资料已经够了，它就是 B」。
   绝对不要因为资料少就往低了判 Tier —— 你根本没在判 Tier。
 
+  **三档的锚点 —— 判的是「不确定性会不会改变 Tier」，不是「资料有多少」**
+
+    high    现有证据足以确定 Tier。进一步研究即使增加知识，也几乎不会改变它。
+    medium  存在一个或几个不确定的事实，有可能让 Tier 上下移动一级。
+    low     对象身份、归属、或作为定级主要依据的那个论断本身就不确定，
+            可能导致 Tier 大幅变化。
+
+  **这一列绝不能由完备度推出来。** 两者测的不是一回事：
+  完备度问「我们知道多少」，本列问「不知道的那部分会不会推翻结论」。
+  一件资料很少但地位毫无争议的东西，应当是 high；
+  一件资料很多但核心论断没有来源的东西，可以是 low。
+
+  **馆方与学界的既成共识本身就是证据。** 一件长期被本馆列为代表作、
+  在通行艺术史叙述中位置稳固的对象，即使 provenance 有缺口、
+  即使没有 catalogue raisonné 条目，你依然可以对它的 Tier 判 high ——
+  因为那些缺口就算永远补不上，也不会改变「游客该不该优先看它」。
+
+  反过来，「还能继续考证」不构成降低信心的理由。任何一件文物都永远有
+  可继续研究的问题；若以此为准，这一列会对每件东西都输出 low，
+  从而不携带任何信息。**能提出问题 ≠ 结论不可靠。**
+
 【三】Potential Tier Range：给出 potential_low 与 potential_high
 
   含义是：**结合现有证据与未知信息，这件对象合理的潜在 Tier 范围**。
@@ -429,6 +447,17 @@ STAGE1_SYSTEM = COMMON_RULES + """
   拉开区间不是猜测，是承认「我们不知道」。
 
 【四】Missing Evidence：真正影响 Tier 判断的缺失资料
+
+  **每条都要回答同一个问题：这条事实如果答案不同，Tier 会不会变？**
+  逐条给出 tier_sensitive：
+    true   这条不确定直接关系到定级依据。例如：简介称「伦勃朗真迹」但馆方
+           只标「伦勃朗工作坊」（可能 A→B/C）；声称「全美唯一一件」却没有
+           任何来源，而稀缺性正是它定级的主要理由；或者连作者、年代、馆藏号
+           都无法确认的普通小件。
+    false  值得研究，但答案如何都不影响 Tier。例如：Liberty Bowl 缺同期
+           委托档案 —— 补上了是学术收获，补不上也不改变「到了 MFA 该不该
+           看它」；水月观音的具体寺院来源不完整，同样不改变它是不是
+           中国艺术板块最不可错过的作品之一。
 
   **严禁写「需要更多资料」「信息不足」这类空话。** 每条都要具体到可以直接
   派人去查，例如：
@@ -447,14 +476,39 @@ STAGE1_SYSTEM = COMMON_RULES + """
   同类库战神像在大都会与大英博物馆各藏几件？」而不是「进一步研究其重要性」。
   没有研究价值时给 null。
 
-以及 review_flag（true / false）。以下情形之一为真时置 true 并写明 review_reason：
-  · 当前 Tier 明显缺乏证据支撑
-  · 新资料有可能导致跨 Tier
-  · 现有资料自相矛盾
-  · 以往可能因 description 不完整而被低估
-  · 以往可能因宣传性 description 而被高估
-  · 发现明显的事实错误
-不满足就置 false，review_reason 给 null。**不要为了显得认真而滥标。**"""
+以及 review_flag（true / false）—— **它等价于「该不该进人工研究队列」**。
+
+只有一个判据：**至少存在一条 tier_sensitive=true 的缺失证据**，
+或者你发现了明显的事实错误、资料自相矛盾。两者都不成立就置 false。
+
+  Research Needed **不等于** 还有东西可以研究，
+  Research Needed **等于** 缺的那条事实一旦有了答案，Tier 可能改变。
+
+问自己：「我们缺的哪一条事实，如果答案不同，会导致 Tier 改变？」
+答案是「没有」就置 false，哪怕你能列出十个值得研究的学术问题。
+一个两百件的馆，真正该进队列的通常是十几到三十件，不会是两百件 ——
+**如果你给几乎每件都标了 true，那不是审计结论，是这一列失效了。**"""
+
+
+# 每个馆的数据实情。**只陈述事实，不预先给结论。**
+#
+# 这一段原先写死在 COMMON_RULES 里，内容是 PEM 专属的，却被三个阶段、所有馆共用，
+# 而且末句直接写着「就该判低完备度、低可信度」—— 等于把答案告诉了审计者。
+# 2026-09-01 实测：MFA 与哈佛在这段话下跑出 203/203、204/204 全 low，
+# 而那两馆的官网根本没停服、库里也已有馆藏号。指定答案的提示词得到的不是审计结论，
+# 是提示词自己的回声。
+MUSEUM_NOTE = {
+    "pem": "PEM 官方藏品门户 explore-art.pem.org 已停服，196 件的官方页面链接为 0。"
+           "已从 pem.org 藏品栏目页核实 15 件、Wikidata 1 件，其余对象的外部来源为零。"
+           "另需知道：这批名称多是描述性转写而非编目题名，179/196 件无法与 PEM "
+           "官方发布的藏品对应上 —— 对这些对象，「身份可否核验」本身就是未知数。",
+    "mfa_boston": "MFA 官网与藏品检索库（collections.mfa.org）均可访问，但本轮未逐件查询。"
+                  "已从 Wikidata 核实 20 件，拿到馆藏号、创作年、作者与材质；"
+                  "其余 183 件目前只有源文件的名称、类别与一句简介。",
+    "ham": "哈佛艺术博物馆官网与藏品检索库均可访问，另有公开 API（本轮未申请密钥）。"
+           "已从 Wikidata 核实 12 件，拿到馆藏号、创作年、作者与材质；"
+           "其余 192 件目前只有源文件的名称、类别与一句简介。",
+}
 
 
 def _nullable(t):
@@ -492,8 +546,10 @@ STAGE1_SCHEMA = {
                         "type": "array",
                         "items": {
                             "type": "object",
-                            "properties": {"zh": {"type": "string"}, "en": {"type": "string"}},
-                            "required": ["zh", "en"],
+                            "properties": {"zh": {"type": "string"},
+                                           "en": {"type": "string"},
+                                           "tier_sensitive": {"type": "boolean"}},
+                            "required": ["zh", "en", "tier_sensitive"],
                             "additionalProperties": False,
                         },
                     },
@@ -529,12 +585,17 @@ def check1(rec: dict) -> None:
                            f"{rec['potential_low']}–{rec['potential_high']}")
     if rec["review_flag"] and not rec["review_reason_zh"]:
         raise RuntimeError(f"seq {rec['seq']} 标了 review_flag 却没写原因")
+    # review_flag 不再是独立判断，它就是「有没有 tier_sensitive 的缺口」。
+    # 留一个例外：发现事实错误或资料矛盾时也该标，那种情况 review_reason 里会写明，
+    # 所以只拦「有敏感缺口却没标」这一侧 —— 反向不拦。
+    if any(m["tier_sensitive"] for m in rec["missing"]) and not rec["review_flag"]:
+        raise RuntimeError(f"seq {rec['seq']} 有 tier_sensitive 的缺失证据却没标 review_flag")
     for m in rec["missing"]:
         if len(m["zh"]) < 6 or "更多资料" in m["zh"] or "信息不足" in m["zh"]:
             raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{m['zh']}")
 
 
-def stage1(client, model, effort, ctx, items, out: Path, batch: int) -> dict:
+def stage1(client, model, effort, ctx, note, items, out: Path, batch: int) -> dict:
     done = read_done(out)
     todo = [it for it in items if it["seq"] not in done]
     if not todo:
@@ -543,7 +604,7 @@ def stage1(client, model, effort, ctx, items, out: Path, batch: int) -> dict:
     print(f"  阶段一：待审 {len(todo)} 件（已完成 {len(done)}），每批 {batch}")
     for i in range(0, len(todo), batch):
         chunk = todo[i:i + batch]
-        user = (f"博物馆语境：\n{ctx}\n\n"
+        user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐件审计以下 {len(chunk)} 件对象：\n\n"
                 + "\n\n".join(fmt_item(it) for it in chunk))
         data = ask(client, model, STAGE1_SYSTEM, user, "audit_stage1", STAGE1_SCHEMA, effort)
@@ -591,8 +652,19 @@ verdict 取值：yes（充分/是）、partial（部分成立）、no（不充�
 这一问的答案单独落库为 inference_only_survives（q6 verdict 为 yes 时 true，
 partial 或 no 时 false）。
 
-你可以在本阶段修正阶段一的 tier_confidence 与潜在区间 —— 深审后看法变了是正常的，
-按你现在的判断给出。但仍然**不得给出新的 Tier**。"""
+**本阶段不再判 tier_confidence、潜在区间和是否需复核。** 那三项由阶段一按统一的
+锚点判定，这里重复判一次只会得到两套判据 —— 而阶段二的结论会覆盖阶段一，
+于是全馆 S/A 都按这里的口径走。2026-09-02 实测：阶段一给 MFA 的 S/A 判出
+15 高 / 24 中 / 62 低，被本阶段覆盖后变成 101 件全 low，只因为这里当时还在用
+旧问法。一列一个判据，判据只放在一个地方。
+
+你在这里只输出两样阶段一给不了的东西：
+  · 六问的逐问作答（这是审计轨迹，会原样入库供人复核）
+  · inference_only_survives —— 第六问的结论
+另加一个窄口子：若你在核对中发现了**明确的事实错误或资料自相矛盾**
+（例如简介称「伦勃朗真迹」而馆方标注为「伦勃朗工作坊」、中英文名称的归属不一致），
+置 found_factual_error=true 并写明。它只会**追加**一个复核理由，不会改动
+阶段一对可信度的判断。没发现就置 false。"""
 
 STAGE2_SCHEMA = {
     "type": "object",
@@ -620,16 +692,12 @@ STAGE2_SCHEMA = {
                         },
                     },
                     "inference_only_survives": {"type": "boolean"},
-                    "tier_confidence": {"type": "string", "enum": ["high", "medium", "low"]},
-                    "potential_low": {"type": "string", "enum": TIERS},
-                    "potential_high": {"type": "string", "enum": TIERS},
-                    "review_flag": {"type": "boolean"},
-                    "review_reason_zh": _nullable("string"),
-                    "review_reason_en": _nullable("string"),
+                    "found_factual_error": {"type": "boolean"},
+                    "error_note_zh": _nullable("string"),
+                    "error_note_en": _nullable("string"),
                 },
-                "required": ["seq", "answers", "inference_only_survives", "tier_confidence",
-                             "potential_low", "potential_high", "review_flag",
-                             "review_reason_zh", "review_reason_en"],
+                "required": ["seq", "answers", "inference_only_survives",
+                             "found_factual_error", "error_note_zh", "error_note_en"],
                 "additionalProperties": False,
             },
         }
@@ -644,16 +712,14 @@ def check2(rec: dict) -> None:
     want = [q for q, _ in STAGE2_QUESTIONS]
     if sorted(got) != sorted(want):
         raise RuntimeError(f"seq {rec['seq']} 的六问不全：{got}")
-    if TIER_IDX[rec["potential_low"]] < TIER_IDX[rec["potential_high"]]:
-        raise RuntimeError(f"seq {rec['seq']} 区间方向反了")
-    if rec["review_flag"] and not rec["review_reason_zh"]:
-        raise RuntimeError(f"seq {rec['seq']} 标了 review_flag 却没写原因")
+    if rec["found_factual_error"] and not rec["error_note_zh"]:
+        raise RuntimeError(f"seq {rec['seq']} 说发现事实错误却没写明")
     q6 = next(a for a in rec["answers"] if a["q"] == "q6_survives")
     if (q6["verdict"] == "yes") != rec["inference_only_survives"]:
         raise RuntimeError(f"seq {rec['seq']} 的 q6 结论与 inference_only_survives 不一致")
 
 
-def stage2(client, model, effort, ctx, items, s1: dict, out: Path, batch: int) -> dict:
+def stage2(client, model, effort, ctx, note, items, s1: dict, out: Path, batch: int) -> dict:
     cands = [it for it in items if it["tier"] in ("S", "A")]
     done = read_done(out)
     todo = [it for it in cands if it["seq"] not in done]
@@ -675,7 +741,7 @@ def stage2(client, model, effort, ctx, items, s1: dict, out: Path, batch: int) -
                 if r1["missing"]:
                     b += "\n  阶段一列出的缺失证据: " + "；".join(m["zh"] for m in r1["missing"])
             blocks.append(b)
-        user = (f"博物馆语境：\n{ctx}\n\n"
+        user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请对以下 {len(chunk)} 件 S/A 对象逐件做六问深审：\n\n"
                 + "\n\n".join(blocks))
         data = ask(client, model, STAGE2_SYSTEM, user, "audit_stage2", STAGE2_SCHEMA, effort)
@@ -749,7 +815,7 @@ STAGE3_SCHEMA = {
 }
 
 
-def stage3(client, model, effort, ctx, items, claims, out: Path, batch: int) -> dict:
+def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: int) -> dict:
     """键用 "seq|key" —— 一件对象有 9 条 sig_*，光用 seq 会互相覆盖。"""
     done = read_done(out, key="ck")
     todo = [c for c in claims if f"{c['seq']}|{c['key']}" not in done]
@@ -768,7 +834,7 @@ def stage3(client, model, effort, ctx, items, claims, out: Path, batch: int) -> 
                 f"（当前 Tier {it.get('tier') or '无'}）\n"
                 f"  取值: {c['text']}\n"
                 f"  当前记录的来源: {c['source'] or '—'}｜可信度: {c['confidence']}")
-        user = (f"博物馆语境：\n{ctx}\n\n"
+        user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐条判定以下 {len(chunk)} 条取值：\n\n" + "\n\n".join(lines))
         data = ask(client, model, STAGE3_SYSTEM, user, "audit_stage3", STAGE3_SCHEMA, effort)
         got = {f"{r['seq']}|{r['key']}" for r in data["results"]}
@@ -803,18 +869,17 @@ def write_review(items, s1, s2, path: Path) -> None:
             r2 = s2.get(it["seq"], {})
             grades = {x["key"]: x["grade"] for x in r1["items"]}
             comp = completeness_of(grades)
-            low = r2.get("potential_low", r1["potential_low"])
-            high = r2.get("potential_high", r1["potential_high"])
+            low, high = r1["potential_low"], r1["potential_high"]
             core = it["v3"]["core"] if it["v3"] else None
             w.writerow([
                 it["seq"], it["name_en"], it["name_zh"], it["tier"],
                 f"{core:.3f}" if core is not None else "",
                 f"{comp:.1f}",
-                r2.get("tier_confidence", r1["tier_confidence"]),
+                r1["tier_confidence"],
                 f"{low}–{high}" if low != high else low,
                 f"{priority_of(comp, low, high, core):.2f}",
-                "是" if (r2.get("review_flag") or r1["review_flag"]) else "",
-                r2.get("review_reason_zh") or r1["review_reason_zh"] or "",
+                "是" if (r1["review_flag"] or r2.get("found_factual_error")) else "",
+                r1["review_reason_zh"] or r2.get("error_note_zh") or "",
                 "" if "inference_only_survives" not in r2
                    else ("是" if r2["inference_only_survives"] else "否"),
                 r1["top_missing_zh"] or "",
@@ -844,6 +909,10 @@ def main() -> None:
     if not args.model:
         sys.exit("没指定型号：用 --model，或设环境变量 OPENAI_MODEL")
     effort = norm_effort(args.effort)
+    note = MUSEUM_NOTE.get(args.museum)
+    if note is None:
+        sys.exit(f"MUSEUM_NOTE 里没有 {args.museum} 的数据实情。这一段决定审计者对"
+                 "「手上到底有什么」的认识，缺了它只能靠猜 —— 先补上再审")
     ctx = CONTEXTS.get(args.museum)
     if ctx is None:
         sys.exit(f"museum_context.py 里没有 {args.museum} 的馆级语境，先补上再审 —— "
@@ -881,11 +950,11 @@ def main() -> None:
     s1 = read_done(p1)
     s2 = read_done(p2)
     if args.stage in ("all", "1"):
-        s1 = stage1(client, args.model, effort, ctx, items, p1, args.batch)
+        s1 = stage1(client, args.model, effort, ctx, note, items, p1, args.batch)
     if args.stage in ("all", "2"):
-        s2 = stage2(client, args.model, effort, ctx, items, s1, p2, max(1, args.batch // 2))
+        s2 = stage2(client, args.model, effort, ctx, note, items, s1, p2, max(1, args.batch // 2))
     if args.stage in ("all", "3"):
-        stage3(client, args.model, effort, ctx, items, claims, p3, args.batch)
+        stage3(client, args.model, effort, ctx, note, items, claims, p3, args.batch)
 
     if s1:
         review = out_dir / f"{mk}_audit_review.csv"

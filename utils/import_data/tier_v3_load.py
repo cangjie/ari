@@ -33,7 +33,10 @@ import pymysql
 
 from tier_v3 import MUSEUMS, DIMS_WITH_ER, core_of, tier_of, load_items
 
-SCORED_BY = "claude-opus-5"
+# 打分者的默认值。tier_v3.py 会把本轮实际用的型号写进 <out-dir>/<museum>.model，
+# 有那个文件就以它为准 —— 写死一个型号，换了供应商之后库里记的出处就是假的，
+# 而 scored_by 是判断「审计者与打分者是否同源」的唯一依据，写错整条追溯链就断了。
+SCORED_BY_DEFAULT = "claude-opus-5"
 
 
 def read_jsonl(p: Path) -> dict:
@@ -82,6 +85,10 @@ def main() -> None:
         raise SystemExit(f"库中无对应展品的 source_seq={sorted(orphan)[:20]}")
     print(f"{m.label}：评分 {len(items)} 件，库中 {len(in_db)} 件，source_seq 全部对得上")
 
+    mf = out / f"{m.key}.model"
+    scored_by = mf.read_text(encoding="utf-8").strip() if mf.exists() else SCORED_BY_DEFAULT
+    print(f"打分者：{scored_by}" + ("" if mf.exists() else "（无 .model 文件，用默认值）"))
+
     rows, dist = [], {}
     for seq in sorted(items):
         r, g = s1[seq], s2[seq]
@@ -101,7 +108,7 @@ def main() -> None:
             tier, why[:255],
             sn["q1"] if sn else None, sn["q2"] if sn else None, sn["q3"] if sn else None,
             r["confidence"], r.get("evidence"), g.get("cr_reason"),
-            sn.get("sness_reason") if sn else None, SCORED_BY,
+            sn.get("sness_reason") if sn else None, scored_by,
         ))
 
     cur.execute("DELETE FROM artwork_tier_v3 WHERE museum_key = %s", (m.key,))

@@ -441,7 +441,7 @@ python3 tier_v3_load.py --museum pem --apply-tier
 
 # 2 metadata：先灌键字典，再填取值（meta_seed 只跑一次，artwork_meta 非空时它会拒绝运行）
 python3 meta_seed.py ; python3 meta_seed_layer2.py
-python3 meta_fill_pem.py ; python3 meta_scrape_pem.py
+python3 meta_fill_rule.py --museum pem ; python3 meta_scrape.py --museum pem
 
 # 3 evidence：score 建行，fill 只 UPDATE 不 INSERT，顺序反了会静默丢数据
 python3 evidence_score.py --museum pem

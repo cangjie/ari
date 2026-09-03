@@ -127,15 +127,19 @@ def main() -> None:
         comp = completeness_of(grades)
         detail = "\n".join(f"{x['key']}|{x['grade']}|{x['note']}" for x in r1["items"])
 
-        # 阶段二看得更细，它的结论覆盖阶段一同名字段
-        low = r2.get("potential_low", r1["potential_low"])
-        high = r2.get("potential_high", r1["potential_high"])
+        # 可信度、潜在区间、是否需复核**一律取阶段一**。
+        # 阶段二只审 S/A，若让它覆盖这三列，全馆 S/A 就会按另一套判据走 ——
+        # 2026-09-02 实测：阶段一给 MFA 的 S/A 判出 15 高/24 中/62 低，
+        # 被阶段二覆盖后成了 101 件全 low，因为当时只改了阶段一的锚点。
+        # 一列一个判据，判据只放在一个地方。
+        low, high = r1["potential_low"], r1["potential_high"]
         if TIER_IDX[low] < TIER_IDX[high]:
             sys.exit(f"seq {seq} 潜在区间方向反了：{low}–{high}")
-        conf = r2.get("tier_confidence", r1["tier_confidence"])
-        flag = bool(r2.get("review_flag") or r1["review_flag"])
-        rr_zh = r2.get("review_reason_zh") or r1["review_reason_zh"]
-        rr_en = r2.get("review_reason_en") or r1["review_reason_en"]
+        conf = r1["tier_confidence"]
+        # 阶段二唯一能追加的是「发现了事实错误」，它只增不减
+        flag = bool(r1["review_flag"] or r2.get("found_factual_error"))
+        rr_zh = r1["review_reason_zh"] or r2.get("error_note_zh")
+        rr_en = r1["review_reason_en"] or r2.get("error_note_en")
         if flag and not rr_zh:
             sys.exit(f"seq {seq} 标了需复核却没有原因")
         pair(rr_zh, rr_en, "复核原因", seq)
@@ -164,8 +168,12 @@ def main() -> None:
             round(comp, 2), "audit", detail,
             high, low, round(prio, 2), prelim,
             conf, flag, rr_zh, rr_en,
-            "\n".join(m["zh"] for m in r1["missing"]) or None,
-            "\n".join(m["en"] for m in r1["missing"]) or None,
+            # 影响定级的缺口加前缀。artwork_meta 那边靠列区分，这里是一段自由文本，
+            # 不标出来的话「该研究的」和「顺带一提的」在导出里长得一模一样。
+            "\n".join(("[影响定级] " if m.get("tier_sensitive") else "") + m["zh"]
+                       for m in r1["missing"]) or None,
+            "\n".join(("[tier-sensitive] " if m.get("tier_sensitive") else "") + m["en"]
+                       for m in r1["missing"]) or None,
             r1["top_missing_zh"], r1["top_missing_en"],
             r1["research_question_zh"], r1["research_question_en"],
             r2.get("inference_only_survives"), notes_zh, notes_en,

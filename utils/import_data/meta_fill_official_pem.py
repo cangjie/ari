@@ -6,7 +6,7 @@
 —— PEM 官方藏品门户 explore-art.pem.org 已停服，196 件里官方页面链接 0 条。
 
 【匹配必须严】
-meta_scrape_pem.py 的文件头记着上次的教训：宽松分词匹配 196×50 报出 28 条候选，
+meta_scrape.py 的文件头记着上次的教训：宽松分词匹配 196×50 报出 28 条候选，
 人工核对后只有 1 条是真的，其余全是 portrait / mask / ship 这类常见词碰巧撞上。
 故本脚本沿用同一套 toks/STOP，并要求命中满足下列之一：
 
@@ -46,7 +46,7 @@ from pathlib import Path
 
 import meta_lib as M
 import pem_official_data as P
-from meta_scrape_pem import toks
+from meta_scrape import toks
 
 SOURCE_KEY = "pem_official"
 KIND = "pem_official"

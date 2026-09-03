@@ -116,6 +116,18 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 什么也没证明；要比的是源文件里你**没选**的那一列，或直接指定列号重跑比对。
 2026-08-28 就是先犯了这个错才漏掉故宫。
 
+**⚠ MFA 的源文件只填了 15.6%，那 1300 行是骨架不是数据。** `Master` 页 1300 行里
+只有 203 行有名称与简介，其余只有 Rank 和 Tier：S 100 格填 30、A 300 格填 67、
+B 899 格填 106。`Tier S` / `Tier A` / `Tier B` 三页是同一批数据的分页副本，填充率相同，
+**没有别处藏着更全的版本**。哈佛（204/204）与 PEM（196/196）是填满的。
+所以「MFA 用来测世界级名作密度」这件事，在源数据补全前做不了 —— 缺的不是算法。
+
+**⚠ 读源 Excel 生成 `source_seq` 时，必须按「过滤之后」的计数自增。**
+`import_artworks.read_museum` 是这么做的，`tier_v3.load_items` 曾用 `enumerate` 的行号
+—— 空占位行照样把计数推进，于是 MFA 每一件的分都会张冠李戴，**且不报错**。
+PEM 与哈佛没有空行，两种算法碰巧一致，这个 bug 藏到 2026-09-02 才暴露。
+新增馆时先查一遍：源表有没有空行、名称列中间有没有混入重复表头。
+
 **6. tier / metadata / evidence / 审计四套数据都放独立表，不加到 `artwork` 上。**
 
 `import_artworks.py` 第 355 行 `DELETE FROM artwork` 清全表并重置 AUTO_INCREMENT。
@@ -126,7 +138,7 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 | 表 | 装什么 | 由谁写 |
 |---|---|---|
 | `artwork_tier_v3` | V3.0 七维分、Core、S-ness、评分依据 | `tier_v3_load.py` |
-| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_*_pem.py` |
+| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_fill_rule.py` / `meta_scrape.py` / `meta_fill_official_pem.py` |
 | `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` |
 | `artwork_evidence` 的审计列 | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_load.py` |
 
@@ -173,10 +185,39 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
   `Evidence Packet …` 直接报错退出 —— **Evidence Packet 是信息容器，不是信息来源**。
   非 `evidence` 来源按 `source_key` 确定性回填（`SOURCE_RULES`），遇到没登记过的
   `source_key` 报错退出，不猜。
-- **审计者用 OpenAI，评分者用 Anthropic，这是刻意的**，不做统一抽象层：V3.0 那批分是
-  `claude-opus-5` 打的，换一家的模型审可切断一部分同源偏差。型号写进 `audited_by`，
-  与 `scored_by` 对照即可看清。型号不写死（`--model` → `OPENAI_MODEL`），
-  key 从 `~/.openai_key`（权限 600）读，**同 MySQL 口令一样绝不进命令行**。
+- **型号不写死**（`--model` → `OPENAI_MODEL`），key 从 `~/.openai_key`（权限 600）读，
+  **同 MySQL 口令一样绝不进命令行**。实际型号写进 `audited_by` / `scored_by`，
+  两者对照即可看出审计者与打分者是否同源。2026-09-02 起两边都是 `gpt-5.6-sol`
+  （本机没有 Anthropic 凭据），**同源偏差这一层保护已经没有了**，结论里要如实标注。
+
+**⚠ 提示词就是判据，写错一句就等于伪造结论。** 本轮三次踩到，代价都是整轮重跑：
+
+1. **不要把结论写进提示词。** `COMMON_RULES` 里曾有一句「看到一件只有名称和一句套话
+   简介的东西，就该判低完备度、低可信度」——这是我为了防模型编内容加的，结果它成了
+   唯一的锚点：三馆 603 件跑出 `low` 占 95% 以上。**指定答案的提示词得到的不是审计
+   结论，是提示词自己的回声。** 更糟的是我据此下过「两个馆独立复现同一形态，说明是
+   判据问题不是数据问题」的判断 —— 三个馆读的是同一段提示词，那是共因不是独立验证。
+2. **馆专属的事实不要放进通用规则。** 那段 PEM 实情（官方门户停服）被三个阶段、
+   所有馆共用，而 MFA 与哈佛的官网都正常。现改为 `MUSEUM_NOTE` 按馆陈述事实、不给结论；
+   缺某馆的条目直接报错退出，不许靠猜。
+3. **一列一个判据，判据只放在一个地方。** `tier_confidence` / 潜在区间 / `tier_review_flag`
+   曾同时由阶段一和阶段二输出，而 `audit_load.py` 让阶段二覆盖阶段一。改判据时只改了
+   阶段一，阶段二仍用旧问法 —— 于是三馆 248 件 S/A 的可信度被整片冲成 `low`，
+   B/C 段却是新判据。现在阶段二只输出它独有的东西（六问作答、`inference_only_survives`、
+   `found_factual_error`），三列一律取阶段一。
+
+**判据本身也有锚点要求，与 `tier_v3.py` 的 0–10 分档同理。** `tier_confidence` 三档必须
+写死含义，且**明确禁止由完备度推出**：完备度问「我们知道多少」，可信度问「不知道的那部分
+会不会推翻结论」。两条实测有效的补充：① 馆方与学界的既成共识本身就是证据，缺 provenance
+或 catalogue raisonné 不构成降信心的理由；② 「还能继续考证」不是理由 —— 任何文物都永远
+有可研究的问题，以此为准这一列会对每件都输出 low，从而不携带任何信息。
+
+**Research Needed ≠ 还有东西可以研究，= 缺的那条事实一旦有答案，Tier 可能改变。**
+每条缺失证据带 `tier_sensitive`，`tier_review_flag` 由它导出而非独立判断。
+**这一条目前只修好了上半段**：S 段需复核率降到 53–83%，但 B/C 段仍是 96–100% ——
+判据问「会不会改变 Tier」，而对身份不明的无名小件答案永远是「会」。
+缺的是第三条规则：潜在区间整个落在 B/C 内时不进队列（不管查出什么都不改变
+「不是本次参观重点」）。**未实现。**
 - 审计自由文本成对存 `xx` / `xx_en` 两列**不走 `content` 表**（审计轨迹逐轮重写，
   灌进内容表既删不掉又要新增 kind）。代价是导出的「零回落」检查照不到它们，
   故 `audit_load.py` 里有中英成对齐全的校验，缺一边拒绝写入。
@@ -313,6 +354,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/museum_context.py` | 馆级语境，`tier_v3.py` 与 `audit_meta.py` 共用 |
 | `utils/import_data/source_rules.py` | 每个 `source_key` 的来源等级与 FACT/INFERENCE 性质，`evidence_score.py` 与 `audit_load.py` 共用 |
 | `utils/import_data/pem_official_data.py` | PEM 官网 18 个栏目页的抓取原文（219 条）+ 14 条人工核实映射 |
+| `utils/import_data/meta_fill_rule.py` | 从名称/简介确定性提取 metadata，任意馆通用（原 `meta_fill_pem.py`）。`NAME_ARTIST_PREFIX` 记着各馆名称是不是「作者, 题名」格式 |
+| `utils/import_data/meta_scrape.py` | Wikidata 抓取，任意馆通用（原 `meta_scrape_pem.py`）。WDQS 限流时自动改用 QLever 端点 |
 | `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |

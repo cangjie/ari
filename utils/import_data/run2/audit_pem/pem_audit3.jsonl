@@ -19,9 +19,9 @@
 {"seq": 3, "key": "sig_art_historical", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_art_historical"}
 {"seq": 3, "key": "sig_category", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_category"}
 {"seq": 3, "key": "sig_cultural", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_cultural"}
-{"seq": 3, "key": "sig_historical", "evidence_type": "FACT", "source_quality": "strong", "real_source": "Peabody Essex Museum official collection record for Hawaiian Kū War God Figure, accession E12071; Wikidata record matching PEM accession E12071", "ck": "3|sig_historical"}
+{"seq": 3, "key": "sig_historical", "evidence_type": "FACT", "source_quality": "strong", "real_source": "Peabody Essex Museum official collection record for accession E12071; Wikidata record corresponding to PEM accession E12071", "ck": "3|sig_historical"}
 {"seq": 3, "key": "sig_institutional", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_institutional"}
-{"seq": 3, "key": "sig_provenance", "evidence_type": "FACT", "source_quality": "strong", "real_source": "Peabody Essex Museum official collection record for Hawaiian Kū War God Figure, accession E12071", "ck": "3|sig_provenance"}
+{"seq": 3, "key": "sig_provenance", "evidence_type": "FACT", "source_quality": "strong", "real_source": "Peabody Essex Museum official collection record for accession E12071", "ck": "3|sig_provenance"}
 {"seq": 3, "key": "sig_rarity", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_rarity"}
 {"seq": 3, "key": "sig_relations", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_relations"}
 {"seq": 3, "key": "sig_visual", "evidence_type": "INFERENCE", "source_quality": "weak", "real_source": null, "ck": "3|sig_visual"}

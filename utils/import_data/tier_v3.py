@@ -39,11 +39,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 try:
-    import anthropic
-except ImportError:
-    sys.exit("缺少 anthropic：pip install anthropic")
-
-try:
     import openpyxl
 except ImportError:
     sys.exit("缺少 openpyxl：pip install openpyxl")
@@ -101,8 +96,33 @@ MUSEUMS = {
         # 两边各存一份改漏了不会报错，只会让评级与审计悄悄用上两套不同的定义。
         context=CONTEXTS["pem"],
     ),
-    # 其余五馆待试点校准通过后再填。故宫需特别注意：1758 件共用 7 段展厅级
-    # 套话简介，逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
+    "mfa_boston": Museum(
+        key="mfa_boston",
+        label="Museum of Fine Arts, Boston",
+        path="artworks/MFA_Ariadne_1300_Artwork_Database.xlsx",
+        sheet="Master",
+        header_row=0,
+        # Master 页 1300 行里只有 203 行有名称，其余是空占位，且从第 30 行起
+        # 就开始夹杂 —— load_items 必须按**过滤后**的计数生成 seq，才能与
+        # import_artworks.read_museum 的 seq_auto 对齐。
+        col_name_en=2, col_name_cn=3, col_gallery=4,
+        col_desc=8, col_category=14, col_tier_old=1,
+        context=CONTEXTS["mfa_boston"],
+    ),
+    "ham": Museum(
+        key="ham",
+        label="Harvard Art Museums",
+        path="artworks/ham_带tier_c.xlsx",
+        sheet="All Tiers",
+        header_row=0,
+        # tier 取第 3 列的 Tier，不取第 4 列的 tier_c（AGENTS.md 数据库约定第 5 条：
+        # 一律以原表评级列为准，两列在哈佛有 86 条不一致）
+        col_name_en=0, col_name_cn=1, col_gallery=2,
+        col_desc=5, col_category=8, col_tier_old=3,
+        context=CONTEXTS["ham"],
+    ),
+    # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
+    # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
 }
 
 
@@ -121,14 +141,22 @@ def load_items(m: Museum, base: Path, limit: int | None) -> list[dict]:
         v = row[i]
         return "" if v is None else str(v).strip()
 
-    items = []
-    for n, row in enumerate(rows[m.header_row + 1:]):
+    # seq 必须与 import_artworks.read_museum 的 seq_auto 逐条对齐 —— 那边是
+    # **过滤之后**才自增的。早先这里用 enumerate 的行号，被跳过的空行照样把计数
+    # 推进，于是 MFA（1300 行里 1096 行是空占位，且从第 30 行起就开始夹杂）
+    # 每一件的 seq 都会错位，写库时张冠李戴且不报错 —— 名字对不上号也没人拦。
+    # PEM 与哈佛没有空行，两种算法碰巧一致，所以这个 bug 一直没暴露。
+    items, seq_auto = [], 0
+    for row in rows[m.header_row + 1:]:
         name_en = cell(row, m.col_name_en)
         name_cn = cell(row, m.col_name_cn)
         if not (name_en or name_cn):
             continue
+        if name_en in ("ArtWorkName_EN", "Name (English)") or name_cn == "展品名称":
+            continue                       # MFA Master 页中间混着的表头行
+        seq_auto += 1
         items.append({
-            "seq": n + 1,
+            "seq": seq_auto,
             "name_en": name_en,
             "name_cn": name_cn,
             "gallery": cell(row, m.col_gallery),
@@ -175,12 +203,26 @@ class LazyClient:
 
     def __getattr__(self, name):
         if self._c is None:
+            try:
+                import anthropic
+            except ImportError:
+                sys.exit("缺少 anthropic：pip install anthropic")
             self._c = anthropic.Anthropic()
         return getattr(self._c, name)
 
 
+# --provider openai 时由 main 填上；为 None 表示走原来的 Anthropic 路径。
+# 做成模块级变量而不是层层传参，是因为 ask() 有六个调用点，
+# 每个都改签名只会让这次「换供应商」的临时性掩盖在一堆参数里。
+OPENAI = None          # (client, model, effort)
+
+
 def ask(client, system: str, user: str, schema: dict) -> dict:
     """一次结构化输出调用。schema 保证返回的第一个 text block 是合法 JSON。"""
+    if OPENAI is not None:
+        import audit_meta as A
+        oc, model, effort = OPENAI
+        return A.ask(oc, model, system, user, "tier_v3", schema, effort)
     resp = client.messages.create(
         model=MODEL,
         max_tokens=16000,
@@ -290,7 +332,51 @@ STAGE1_SCHEMA = {
 }
 
 
-def fmt_item(it: dict) -> str:
+def load_evidence(mk: str) -> dict[int, str]:
+    """从库里取每件展品已核实的事实，供 --evidence 模式喂进评分。
+
+    **只喂事实，不喂审计的结论。** artwork_meta 的取值（含 FACT/INFERENCE 与来源
+    质量）进提示词；完备度、Tier 可信度、缺失证据一律不进。提案第 2 节讲得很清楚：
+    完备度低的含义是「我不知道它是否重要」，不是「它不重要」。把「证据不足」交给
+    打分者，几乎必然被读成「该压分」—— 那就把「不知道」和「不重要」混成一件事了，
+    而这正是整套证据管线要拆开的两件事。
+
+    同理不喂当前 tier 与 Core：算法第一阶段的纪律是「不要迎合原有评级」。
+    """
+    import meta_lib as M
+    conn = M.connect()
+    cur = conn.cursor()
+    cur.execute("""SELECT am.source_seq, am.key_name, am.source_key, am.source,
+                          am.evidence_type, am.source_quality, t.text
+                   FROM artwork_meta am
+                   JOIN content_text t ON t.content_id = am.value_cid AND t.lang = 'zh-CN'
+                   WHERE am.museum_key = %s
+                   ORDER BY am.source_seq, am.key_name, am.source_key, am.ord""", (mk,))
+    rows = cur.fetchall()
+    conn.close()
+
+    out: dict[int, list[str]] = {}
+    for seq, key, skey, src, etype, sq, txt in rows:
+        tag = f"{etype or '?'}/{sq or '?'}"
+        # 来源串一并给出：判断「这条硬不硬」要看它出自哪里，而不是看谁说得笃定
+        out.setdefault(seq, []).append(f"  - {key} = {txt}  [{tag} · {skey} · {src or '—'}]")
+    return {k: "\n".join(v) for k, v in out.items()}
+
+
+EVIDENCE_NOTE = """
+以上「已核实事实」的读法：
+  FACT/strong    馆方官网等一级来源发布的编目数据，可以当事实用
+  FACT/moderate  专业数据库或关联站点，基本可信但非馆方权威
+  FACT/weak      出自源工作表或由名称解析而来，事实性成立但来源仍弱
+  INFERENCE/*    以往 AI 依据描述作出的判断，**不是外部资料**，不得当作事实引用
+
+**没有列出事实，不等于这件东西不重要。** 多数展品只是没人去查过。
+遇到资料少的对象，按你对该类对象的领域判断评分，不要因为「资料少」就压低分数
+—— 那会把「我们不知道」错记成「它不重要」，是本算法明确要避免的错误。
+"""
+
+
+def fmt_item(it: dict, evidence: dict[int, str] | None = None) -> str:
     parts = [f"[seq {it['seq']}]"]
     if it["name_en"]:
         parts.append(f"名称(EN): {it['name_en']}")
@@ -301,10 +387,14 @@ def fmt_item(it: dict) -> str:
     if it["category"]:
         parts.append(f"类别: {it['category']}")
     parts.append(f"简介: {it['description'] or '（源数据无简介）'}")
+    if evidence and evidence.get(it["seq"]):
+        parts.append("已核实事实（来自馆方官网、Wikidata 等外部来源，逐条标了性质与来源质量）：")
+        parts.append(evidence[it["seq"]])
     return "\n".join(parts)
 
 
-def stage1(client, m: Museum, items: list[dict], out: Path, batch: int) -> dict:
+def stage1(client, m: Museum, items: list[dict], out: Path, batch: int,
+           evidence: dict | None = None) -> dict:
     done = read_done(out)
     todo = [it for it in items if it["seq"] not in done]
     if not todo:
@@ -318,7 +408,8 @@ def stage1(client, m: Museum, items: list[dict], out: Path, batch: int) -> dict:
             f"博物馆语境：\n{m.context}\n\n"
             f"请为以下 {len(chunk)} 件对象逐一评分。ER 一栏：object_type 为 object 时"
             f"填 0（单件展品 ER 权重为 0%，不参与计算）；为 node 或 site 时正常评分。\n\n"
-            + "\n\n".join(fmt_item(it) for it in chunk)
+            + "\n\n".join(fmt_item(it, evidence) for it in chunk)
+                + (EVIDENCE_NOTE if evidence else "")
         )
         data = ask(client, STAGE1_SYSTEM, user, STAGE1_SCHEMA)
         got = {r["seq"] for r in data["results"]}
@@ -375,7 +466,8 @@ STAGE2_SCHEMA = {
 }
 
 
-def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path) -> dict:
+def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path,
+           evidence: dict | None = None) -> dict:
     by_seq = {it["seq"]: it for it in items}
     groups: dict[str, list[int]] = {}
     for seq, r in s1.items():
@@ -399,10 +491,13 @@ def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path) -> dict:
                 f"  类别: {it['category'] or '—'} | 展厅: {it['gallery'] or '—'}\n"
                 f"  已评维度: HS={r['HS']} IU={r['IU']} VI={r['VI']} VA={r['VA']} CE={r['CE']}\n"
                 f"  简介: {it['description'] or '（无）'}"
+                + (f"\n  已核实事实:\n{evidence[s]}"
+                   if evidence and evidence.get(s) else "")
             )
         user = (
             f"博物馆语境：\n{m.context}\n\n"
-            f"Peer Group：{group}\n"
+            + (EVIDENCE_NOTE + "\n" if evidence else "")
+            + f"Peer Group：{group}\n"
             f"组内共 {len(seqs)} 件对象，请全部给出 Q / D / G：\n\n"
             + "\n\n".join(lines)
         )
@@ -460,7 +555,7 @@ STAGE3_SCHEMA = {
 
 
 def stage3(client, m: Museum, items: list[dict], cands: list[int],
-           s1: dict, cores: dict, out: Path) -> dict:
+           s1: dict, cores: dict, out: Path, evidence: dict | None = None) -> dict:
     by_seq = {it["seq"]: it for it in items}
     done = read_done(out)
     todo = [s for s in cands if s not in done]
@@ -479,9 +574,12 @@ def stage3(client, m: Museum, items: list[dict], cands: list[int],
             f"VA={r['VA']} CE={r['CE']}\n"
             f"  同类组: {r['peer_group']} | 展厅: {it['gallery'] or '—'}\n"
             f"  简介: {it['description'] or '（无）'}"
+            + (f"\n  已核实事实:\n{evidence[s]}"
+               if evidence and evidence.get(s) else "")
         )
     user = (f"博物馆语境：\n{m.context}\n\n"
-            f"以下 {len(todo)} 件对象已达 S 门槛，请逐件做 S-ness Test：\n\n"
+            + (EVIDENCE_NOTE + "\n" if evidence else "")
+            + f"以下 {len(todo)} 件对象已达 S 门槛，请逐件做 S-ness Test：\n\n"
             + "\n\n".join(lines))
     data = ask(client, STAGE3_SYSTEM, user, STAGE3_SCHEMA)
     got = {r["seq"] for r in data["results"]}
@@ -534,7 +632,27 @@ def main() -> None:
     ap.add_argument("--out-dir", default="./tier_v3_out")
     ap.add_argument("--limit", type=int, help="只跑前 N 件，用于冒烟")
     ap.add_argument("--batch", type=int, default=12, help="阶段一每批件数")
+    ap.add_argument("--provider", choices=["anthropic", "openai"], default="anthropic",
+                    help="评分用哪家模型。默认 anthropic（claude-opus-5），"
+                         "既有 PEM 评分就是它打的；换成 openai 会让新旧两批分不同源，"
+                         "跨轮比较时归因不到「证据」还是「模型」，务必在结论里标明")
+    ap.add_argument("--model", default="", help="--provider openai 时的型号")
+    ap.add_argument("--effort", default="", help="--provider openai 时的推理强度")
+    ap.add_argument("--key-file", default="~/.openai_key")
+    ap.add_argument("--evidence", action="store_true",
+                    help="把 artwork_meta 里已核实的事实喂进评分（只喂事实，"
+                         "不喂审计的完备度/可信度结论，理由见 load_evidence 的注释）。"
+                         "**务必配合独立的 --out-dir**，否则会与不带证据的那轮混在一起")
     args = ap.parse_args()
+
+    global OPENAI, MODEL
+    if args.provider == "openai":
+        if not args.model:
+            sys.exit("--provider openai 需要 --model")
+        import audit_meta as A
+        OPENAI = (A.LazyClient(args.key_file), args.model, A.norm_effort(args.effort))
+        MODEL = args.model + (f" effort={A.norm_effort(args.effort)}" if args.effort else "")
+        print(f"[provider] openai / {MODEL}")
 
     base = Path(__file__).resolve().parent
     out_dir = Path(args.out_dir)
@@ -544,13 +662,20 @@ def main() -> None:
     items = load_items(m, base, args.limit)
     print(f"{m.label}：{len(items)} 件" + ("（--limit 截断）" if args.limit else ""))
 
+    evidence = None
+    if args.evidence:
+        evidence = load_evidence(m.key)
+        n = sum(1 for it in items if evidence.get(it["seq"]))
+        print(f"证据模式：{n}/{len(items)} 件带已核实事实，"
+              f"共 {sum(len(v.splitlines()) for v in evidence.values())} 条")
+
     client = LazyClient()
     p1 = out_dir / f"{m.key}_stage1.jsonl"
     p2 = out_dir / f"{m.key}_stage2.jsonl"
     p3 = out_dir / f"{m.key}_stage3.jsonl"
 
-    s1 = stage1(client, m, items, p1, args.batch)
-    s2 = stage2(client, m, items, s1, p2)
+    s1 = stage1(client, m, items, p1, args.batch, evidence)
+    s2 = stage2(client, m, items, s1, p2, evidence)
 
     # 先用 CR 算一遍 Core，挑出 S 候选，再决定谁需要跑阶段三
     cr, cores = {}, {}
@@ -563,9 +688,32 @@ def main() -> None:
     cands = [s for s in sorted(cores)
              if cores[s] >= 8.5
              and max(float(s1[s][d]) for d in DIMS_WITH_ER if d in s1[s]) >= 9]
-    s3 = stage3(client, m, items, cands, s1, cores, p3) if cands else {}
+    s3 = stage3(client, m, items, cands, s1, cores, p3, evidence) if cands else {}
+
+    # 型号落盘。tier_v3_load.py 的 SCORED_BY 是写死的 claude-opus-5，
+    # 换了供应商还照写就等于在库里伪造出处 —— scored_by 是判断「审计者与打分者
+    # 是否同源」的唯一依据，写错了整条追溯链就断了。
+    (out_dir / f"{m.key}.model").write_text(MODEL, encoding="utf-8")
 
     # 写审阅 CSV
+    #
+    # 默认对照列是源表评级（Excel 第 0 列）。但 --evidence 那一轮要回答的问题是
+    # 「喂进证据之后，V3 的结论变了没有」，跟源表评级比毫无意义 —— 那两者本来就
+    # 差着一整轮重评。所以证据模式下把对照换成库里现存的 V3 tier。
+    old_tier = {it["seq"]: it["tier_old"] for it in items}
+    old_label = "原表tier"
+    if args.evidence:
+        import meta_lib as M
+        _c = M.connect(); _cur = _c.cursor()
+        _cur.execute("SELECT source_seq, tier FROM artwork_tier_v3 WHERE museum_key=%s",
+                     (m.key,))
+        db = dict(_cur.fetchall()); _c.close()
+        if db:
+            old_tier = {s: db.get(s, "") for s in old_tier}
+            old_label = "V3旧tier"
+        else:
+            print("  [warn] 库里没有 V3 评分，对照列仍用源表评级")
+
     review = out_dir / f"{m.key}_review.csv"
     changed = 0
     with review.open("w", encoding="utf-8-sig", newline="") as f:
@@ -574,7 +722,7 @@ def main() -> None:
                     "对象类型", "同类组", "组内件数",
                     "HS", "IU", "VI", "VA", "CE", "ER",
                     "Q", "D", "G", "CR", "Core",
-                    "原tier", "V3新tier", "是否变化", "判定说明",
+                    old_label, "V3新tier", "是否变化", "判定说明",
                     "证据可信度", "评分依据", "CR理由", "S-ness理由"])
         for it in items:
             s = it["seq"]
@@ -583,7 +731,7 @@ def main() -> None:
             # 算法第十二节：低可信度对象不能直接成为正式 S
             if t == "S" and r["confidence"] == "low":
                 t, why = "A", why + "；但证据可信度 low，按第十二节不得直接定 S"
-            diff = "变" if t != it["tier_old"] else ""
+            diff = "变" if t != old_tier[s] else ""
             if diff:
                 changed += 1
             w.writerow([
@@ -594,14 +742,14 @@ def main() -> None:
                 # 8.50，于是「Core 8.50 判为 A」看上去像 bug，其实是四舍五入。
                 # 边界附近的可读性比表格宽度重要。
                 g["Q"], g["D"], g["G"], f"{cr[s]:.3f}", f"{cores[s]:.3f}",
-                it["tier_old"], t, diff, why,
+                old_tier[s], t, diff, why,
                 r["confidence"], r["evidence"], g["cr_reason"],
                 s3.get(s, {}).get("sness_reason", ""),
             ])
 
     import collections
     dist_new = collections.Counter()
-    dist_old = collections.Counter(it["tier_old"] for it in items)
+    dist_old = collections.Counter(old_tier[it["seq"]] for it in items)
     for it in items:
         s = it["seq"]
         t, _ = tier_of(cores[s], s1[s], s3.get(s))
@@ -609,7 +757,7 @@ def main() -> None:
             t = "A"
         dist_new[t] += 1
 
-    print(f"\n原表评级：{dict(sorted(dist_old.items()))}")
+    print(f"\n{old_label}：{dict(sorted(dist_old.items()))}")
     print(f"V3.0 评级：{dict(sorted(dist_new.items()))}")
     print(f"变化 {changed}/{len(items)} 件")
     print(f"\n审阅表：{review}")

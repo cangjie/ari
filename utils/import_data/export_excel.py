@@ -82,6 +82,7 @@ VALUE_MAPS = {
         "源文件 Category 列": "Source file, Category column",
         "名称与英文简介解析": "Parsed from name and English description",
         "名称解析（作者, 作品名）": "Parsed from name (Artist, Title)",
+        "英文简介所有格解析": "Parsed from possessive in English description",
     },
     "yes_no": {"是": "Yes", "否": "No"},
 }
@@ -647,6 +648,31 @@ def export_one_lang(ex, lang, out_root, only=(), artworks_only=False):
         print(f"    {title[:28]:30} {' / '.join(counts):40} -> {fn}")
 
 
+CJK = re.compile(r"[\u4e00-\u9fff]")
+
+
+def scan_cjk(out_dir):
+    """扫英文版成品里残留的中文。
+
+    「零回落」只查走 content_text 的字段，而 artwork_meta.source、审计的
+    *_en 成对列这些**不走内容表**的字段它一概照不到 —— 2026-09-01 新增一个
+    source 取值忘了加映射，中文就这么漏进了英文版，而导出照样打印「零回落」。
+    与其靠人记得加映射，不如扫成品：漏了就吵。
+    """
+    leaks = []
+    for fn in sorted(os.listdir(out_dir)):
+        if not fn.endswith(".xlsx"):
+            continue
+        wb = openpyxl.load_workbook(os.path.join(out_dir, fn), read_only=True)
+        for ws in wb.worksheets:
+            for i, row in enumerate(ws.iter_rows(values_only=True), 1):
+                for v in row:
+                    if isinstance(v, str) and CJK.search(v):
+                        leaks.append((f"{fn} [{ws.title}] 行{i}", v))
+        wb.close()
+    return leaks
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--host", default="127.0.0.1")
@@ -693,8 +719,20 @@ def main():
         if unknown:
             sys.exit(f"未知的馆标识 {sorted(unknown)}；可用：{sorted(known)}")
 
+    cjk_leaks = []
     for lang in (LANGS if args.lang == "both" else [args.lang]):
         export_one_lang(ex, lang, args.out, only, args.artworks_only)
+    if EN in (LANGS if args.lang == "both" else [args.lang]):
+        cjk_leaks = scan_cjk(os.path.join(args.out, DIR_NAME[EN]))
+
+    if cjk_leaks:
+        print(f"\n[warn] 英文版有 {len(cjk_leaks)} 处漏出中文 —— "
+              f"多半是 artwork_meta.source 之类不走内容表的字段新增了取值，"
+              f"却没在 VALUE_MAPS 里加映射：")
+        for where, val in cjk_leaks[:10]:
+            print(f"       {where}  {val[:50]}")
+    else:
+        print("\n英文版零中文残留")
 
     if ex.fallbacks:
         print(f"\n[warn] {ex.fallbacks} 处取不到目标语种，已回落到另一语种 —— "

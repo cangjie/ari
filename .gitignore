@@ -38,12 +38,16 @@ utils/import_data/exports/
 # 都是派生文件，且重跑要花 API 额度，本地留着即可，不入仓库。
 utils/import_data/tier_v3_out/
 
-# 元数据质量审计的日志与一次性驱动脚本。**JSONL 与审阅 CSV 要入仓库**，
-# 与上面的 tier_v3_out 相反 —— 那批评分现在只存在于数据库里，脚本复现不出来，
-# 2026-08-31 就因此不敢重建 artwork_evidence，只能 ALTER。审计结果重跑一次要
-# 2.5 小时 API，1MB 换「随时可复核、可重灌」，值。
-utils/import_data/audit_out/*.log
-utils/import_data/audit_out/run_all.sh
+# 评分与审计的产出：**JSONL 与审阅 CSV 要入仓库**，日志与一次性驱动脚本不要。
+# 与上面的 tier_v3_out 相反 —— 那批评分只存在于数据库里、脚本复现不出来，
+# 2026-08-31 就因此不敢重建 artwork_evidence，只能 ALTER。审计重跑一次要
+# 2.5 小时 API，几 MB 换「随时可复核、可重灌」，值。
+utils/import_data/**/*.log
+utils/import_data/**/run_*.sh
+
+# 已被推翻的中间轮次。都是在有缺陷的提示词下跑出来的（详见该目录的 README），
+# 本地留着可回溯，但**不能入仓库** —— 混在权威结果旁边只会被当成结论读。
+utils/import_data/_superseded/
 
 # 本地临时虚拟环境（服务器用 /opt/ari/.venv，与此无关）
 .venv_local/
