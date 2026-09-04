@@ -31,6 +31,14 @@ SOURCE_RULES = {
     "pem_customprints": (3, "FACT", "PEM 关联站点 customprints，非官方藏品库"),
     # 行业媒体文章
     "incollect":        (4, "FACT", "incollect 行业媒体文章，一般网络资料"),
+    # MFA 扩充清单里 official_url 指向 mfa.org 的那 135 条。逐条核对过：带馆藏号、
+    # 断代、材质、入藏基金与展厅位置，出自馆方 featured gallery / 部门页，故 Tier 1。
+    # **必须与同一文件里的 Wikidata 那 4329 条分开登记** —— 混为一谈就等于把
+    # 「展厅与在展状态未经官网确认」的记录当成馆方权威发布。
+    "mfa_official":     (1, "FACT", "MFA 官网展厅/部门页，馆方发布的逐件编目数据"),
+    # 同一文件里 official_url 指向 wikidata.org 的 4329 条。带藏品编号可回官网核对，
+    # 但展厅与在展状态源文件自己标明「未经官网确认」，与 wikidata 同级。
+    "mfa_ext_wikidata": (3, "FACT", "MFA 扩充清单中的 Wikidata 条目，未经官网确认"),
     # 源工作表的 Category 列。是事实陈述，但这份 Excel 本身不是馆方权威发布
     "source_file":      (4, "FACT", "源工作表 Category 列，非馆方权威发布"),
     # 从展品名与英文简介解析而来。解析规则可靠，但被解析的那段文字不可靠

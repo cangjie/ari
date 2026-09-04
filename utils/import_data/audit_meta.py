@@ -184,34 +184,77 @@ EFFORT_ALIASES = {
 }
 
 
+# 按阶段分配推理强度。依据同 tier_v3.STAGE_EFFORT（2026-09-04 水月观音实测）：
+# audit_stage1_slim 从 xhigh 换 medium，推理 1245→424（-66%），是全管线省得最多的
+# 一处，而它输出的是「缺什么」的清单不是分数，措辞略简但指向同一件事，可以省。
+# 阶段二（六问）实测三问 100% 单一答案，本就该走 --slim 跳过；留 medium 兜底。
+# 阶段三逐条判 FACT/INFERENCE，是有明确判据的分类题，medium 够用。
+#
+# ⚠ effort 参与 llm_cache 的缓存键：改这里等于对应阶段整批重跑。
+# 非 None 时审计走 claude CLI 的订阅账号，型号即此字符串。
+# 与 tier_v3.CLAUDE_CLI 同一机制，理由见 claude_cli.py 的文件头。
+CLAUDE_CLI = None
+
+STAGE_EFFORT = {
+    "audit_stage1":      "medium",
+    "audit_stage1_slim": "medium",
+    "audit_stage2":      "medium",
+    "audit_stage3":      "medium",
+}
+
+
 def norm_effort(s: str | None) -> str | None:
     return EFFORT_ALIASES.get(s.strip().lower(), s.strip()) if s else None
 
 
 def ask(client, model: str, system: str, user: str, name: str, schema: dict,
-        effort: str | None = None) -> dict:
+        effort: str | None = None, museum_key: str | None = None,
+        scope: str | None = None, seqs=None) -> dict:
     """一次结构化输出调用。strict 模式保证返回的是合法且合规的 JSON。
 
     刻意不传 temperature / max_tokens：型号由 --model 决定，而不同代际的模型对这
     两个参数的支持并不一致（有的推理型号直接拒收 temperature，有的把 max_tokens
     换成了 max_completion_tokens）。全部走服务端默认值，换型号时不必改代码。
     reasoning_effort 只在显式传了 --effort 时才带上，同样不替型号做假设。
+
+    **走 llm_cache**：键含 system/user/schema 全文，所以提示词没改必然命中（不花钱），
+    改了必然不命中（拿不到旧判据的答案）。name 同时用作 stage，供事后分阶段算账。
     """
-    kw = {}
-    if effort:
-        kw["reasoning_effort"] = effort
-    resp = client.chat.completions.create(
-        model=model,
-        response_format={"type": "json_schema",
-                         "json_schema": {"name": name, "strict": True, "schema": schema}},
-        messages=[{"role": "system", "content": system},
-                  {"role": "user", "content": user}],
-        **kw,
-    )
-    msg = resp.choices[0].message
-    if getattr(msg, "refusal", None):
-        raise RuntimeError(f"模型拒答：{msg.refusal}")
-    return json.loads(msg.content)
+    if CLAUDE_CLI is not None:
+        import claude_cli, llm_cache
+
+        def _do_cli():
+            data, usage = claude_cli.ask(system, user, schema, CLAUDE_CLI)
+            return data, claude_cli.Usage(usage)
+
+        # effort 记 NULL：CLI 不暴露 reasoning_effort，这条路径没有档位可调。
+        return llm_cache.call(_do_cli, provider="anthropic_cli", model=CLAUDE_CLI,
+                              effort=None, stage=name, system=system, user=user,
+                              schema=schema, museum_key=museum_key, scope=scope,
+                              seqs=seqs)
+
+    def _do():
+        kw = {}
+        if effort:
+            kw["reasoning_effort"] = effort
+        resp = client.chat.completions.create(
+            model=model,
+            response_format={"type": "json_schema",
+                             "json_schema": {"name": name, "strict": True,
+                                             "schema": schema}},
+            messages=[{"role": "system", "content": system},
+                      {"role": "user", "content": user}],
+            **kw,
+        )
+        msg = resp.choices[0].message
+        if getattr(msg, "refusal", None):
+            raise RuntimeError(f"模型拒答：{msg.refusal}")
+        return json.loads(msg.content), getattr(resp, "usage", None)
+
+    import llm_cache
+    return llm_cache.call(_do, provider="openai", model=model, effort=effort,
+                          stage=name, system=system, user=user, schema=schema,
+                          museum_key=museum_key, scope=scope, seqs=seqs)
 
 
 # ---------------------------------------------------------------------------
@@ -505,6 +548,12 @@ MUSEUM_NOTE = {
     "mfa_boston": "MFA 官网与藏品检索库（collections.mfa.org）均可访问，但本轮未逐件查询。"
                   "已从 Wikidata 核实 20 件，拿到馆藏号、创作年、作者与材质；"
                   "其余 183 件目前只有源文件的名称、类别与一句简介。",
+    "mfa_boston_ext": "本清单 4464 件，来源分两类且性质差别很大：135 件出自 MFA 官网"
+                      "展厅页/部门页，带馆藏号、断代、材质、入藏基金与展厅位置（Tier 1）；"
+                      "其余 4329 件来自 Wikidata，带藏品编号可回官网核对，但源文件自己"
+                      "标明「展厅与在展状态未经官网确认」，其 on_view 一律为「未知」。"
+                      "判断证据是否充分时，请按每件实际列出的来源等级判断，"
+                      "不要因为同属一份清单就一视同仁。",
     "ham": "哈佛艺术博物馆官网与藏品检索库均可访问，另有公开 API（本轮未申请密钥）。"
            "已从 Wikidata 核实 12 件，拿到馆藏号、创作年、作者与材质；"
            "其余 192 件目前只有源文件的名称、类别与一句简介。",
@@ -595,7 +644,8 @@ def check1(rec: dict) -> None:
             raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{m['zh']}")
 
 
-def stage1(client, model, effort, ctx, note, items, out: Path, batch: int) -> dict:
+def stage1(client, model, effort, ctx, note, items, out: Path, batch: int,
+           mk: str) -> dict:
     done = read_done(out)
     todo = [it for it in items if it["seq"] not in done]
     if not todo:
@@ -607,7 +657,10 @@ def stage1(client, model, effort, ctx, note, items, out: Path, batch: int) -> di
         user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐件审计以下 {len(chunk)} 件对象：\n\n"
                 + "\n\n".join(fmt_item(it) for it in chunk))
-        data = ask(client, model, STAGE1_SYSTEM, user, "audit_stage1", STAGE1_SCHEMA, effort)
+        data = ask(client, model, STAGE1_SYSTEM, user, "audit_stage1", STAGE1_SCHEMA,
+                   effort, museum_key=mk,
+                   scope=f"seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
+                   seqs=[it['seq'] for it in chunk])
         got = {r["seq"] for r in data["results"]}
         missing = {it["seq"] for it in chunk} - got
         if missing:
@@ -719,7 +772,143 @@ def check2(rec: dict) -> None:
         raise RuntimeError(f"seq {rec['seq']} 的 q6 结论与 inference_only_survives 不一致")
 
 
-def stage2(client, model, effort, ctx, note, items, s1: dict, out: Path, batch: int) -> dict:
+# ---------------------------------------------------------------------------
+# 精简版阶段一（--slim）
+#
+# 【为什么要有它】2026-09-04 拿三馆 603 件实测了阶段一各列的区分度：
+#   · cultural_educational      203/203 全 partial
+#   · category_representativeness 198/203
+#   · 12 项里有 9 项在 203 件中**一次 full 都没出现过**，而它们合计占 90 分权重
+#   · 完备度全馆挤在 16.7–50.0，标准差 7.3
+#   · tier_review_flag 92–97% 全 true；potential_tier_low 74–92% 全 C
+#   · tier_confidence 对 MFA 镇馆之宝（水月观音）判 low，而判据自己写着
+#     「馆方与学界的既成共识本身就是证据……你依然可以判 high」
+# 也就是说：那四列在当前输入下要么是常数，要么方向可疑。
+#
+# 唯一不饱和的是 missing_evidence —— MFA 203 件里 202 条 top_missing 不重复，
+# 且逐件具体（版画问版次与复本比较、莫奈问「具体是哪一幅睡莲」）。
+# found_factual_error 也不饱和（三馆 27 件）。
+#
+# 所以精简版只要这两样，并**明确不要求模型判定 Tier 相关的任何结论**。
+# 完备度改由 evidence_score.py 的规则口径给（纯填充率，确定性、可复算、零 API）。
+# ---------------------------------------------------------------------------
+
+STAGE1_SLIM_SYSTEM = COMMON_RULES + """
+
+本阶段**只做一件事：列出缺什么**。不判完备度、不判 Tier 可信度、不判潜在区间、
+不判是否需要复核 —— 那些结论一律由确定性规则从库里算，不问你。
+
+【一】missing —— 真正影响 Tier 判断的缺失资料
+
+  **每条都要回答同一个问题：这条事实如果答案不同，Tier 会不会变？**
+  逐条给出 tier_sensitive：
+    true   这条不确定直接关系到定级依据。例如：简介称「伦勃朗真迹」但馆方
+           只标「伦勃朗工作坊」；声称「全美唯一一件」却没有任何来源，
+           而稀缺性正是它定级的主要理由。
+    false  值得研究，但答案如何都不影响 Tier。
+
+  **三条硬规则，违反任何一条这一列就失去作用：**
+
+  1. **严禁空话。** 不许写「需要更多资料」「信息不足」。每条都要具体到可以直接
+     派人去查，例如「缺该作品在艺术家创作生涯中的位置」「缺同类作品存世数量」。
+
+  2. **并存政权的归属之争一律判 tier_sensitive=false。** 辽/金/北宋在 12 世纪
+     并存（山西北部属辽、南部属北宋，1125 后入金），南北朝、五代十国、三国同理。
+     这类标签之争在学术上真实存在、也可能永远定不下来，但它**不改变游客该不该
+     优先看这件东西**。绝对年代（如「12 世纪初」，尤其有碳十四测年时）无争议，
+     不要把它和政权标签混为一谈。
+
+  3. **既成共识不是缺口。** 一件长期被馆方列为展厅核心展品、在通行艺术史叙述中
+     位置稳固的对象，即使 provenance 有缺口、即使没有 catalogue raisonné 条目，
+     那些缺口也**不是 tier_sensitive** —— 它们就算永远补不上，也不改变定级。
+     反过来，「还能继续考证」永远成立，不构成任何一条缺口。
+
+  资料已经足够时**给空列表**，这是允许且常见的结果。
+
+【二】found_factual_error —— 明确的事实错误或资料自相矛盾
+
+  例如简介称「伦勃朗真迹」而馆方标注为「伦勃朗工作坊」、中英文名称的归属不一致、
+  或已核实事实与简介直接冲突。**并存政权的不同表述不算矛盾**（见上）。
+  没发现就置 false，不要为了显得尽责而硬找。"""
+
+STAGE1_SLIM_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "results": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "seq": {"type": "integer"},
+                    "missing": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "zh": {"type": "string"},
+                                "en": {"type": "string"},
+                                "tier_sensitive": {"type": "boolean"},
+                            },
+                            "required": ["zh", "en", "tier_sensitive"],
+                            "additionalProperties": False,
+                        },
+                    },
+                    "top_missing_zh": _nullable("string"),
+                    "top_missing_en": _nullable("string"),
+                    "found_factual_error": {"type": "boolean"},
+                    "error_note_zh": _nullable("string"),
+                    "error_note_en": _nullable("string"),
+                },
+                "required": ["seq", "missing", "top_missing_zh", "top_missing_en",
+                             "found_factual_error", "error_note_zh", "error_note_en"],
+                "additionalProperties": False,
+            },
+        }
+    },
+    "required": ["results"],
+    "additionalProperties": False,
+}
+
+
+def check1_slim(rec: dict) -> None:
+    """精简版只剩两条硬检查 —— 其余判定已经不由模型出了。"""
+    for m in rec["missing"]:
+        if len(m["zh"]) < 6 or "更多资料" in m["zh"] or "信息不足" in m["zh"]:
+            raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{m['zh']}")
+    if rec["found_factual_error"] and not rec["error_note_zh"]:
+        raise RuntimeError(f"seq {rec['seq']} 说发现事实错误却没写明")
+
+
+def stage1_slim(client, model, effort, ctx, note, items, out: Path, batch: int,
+                mk: str) -> dict:
+    done = read_done(out)
+    todo = [it for it in items if it["seq"] not in done]
+    if not todo:
+        print(f"  阶段一（精简）：{len(done)} 件已完成，跳过")
+        return done
+    print(f"  阶段一（精简）：待审 {len(todo)} 件（已完成 {len(done)}），每批 {batch}")
+    for i in range(0, len(todo), batch):
+        chunk = todo[i:i + batch]
+        user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
+                f"请逐件列出以下 {len(chunk)} 件对象缺什么：\n\n"
+                + "\n\n".join(fmt_item(it) for it in chunk))
+        data = ask(client, model, STAGE1_SLIM_SYSTEM, user, "audit_stage1_slim",
+                   STAGE1_SLIM_SCHEMA, effort, museum_key=mk,
+                   scope=f"seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
+                   seqs=[it["seq"] for it in chunk])
+        got = {r["seq"] for r in data["results"]}
+        if (miss := {it["seq"] for it in chunk} - got):
+            raise RuntimeError(f"阶段一（精简）漏审 seq={sorted(miss)}")
+        for r in data["results"]:
+            check1_slim(r)
+            append(out, r)
+            done[r["seq"]] = r
+        print(f"    {min(i + batch, len(todo))}/{len(todo)}")
+    return done
+
+
+def stage2(client, model, effort, ctx, note, items, s1: dict, out: Path, batch: int,
+           mk: str) -> dict:
     cands = [it for it in items if it["tier"] in ("S", "A")]
     done = read_done(out)
     todo = [it for it in cands if it["seq"] not in done]
@@ -744,7 +933,10 @@ def stage2(client, model, effort, ctx, note, items, s1: dict, out: Path, batch: 
         user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请对以下 {len(chunk)} 件 S/A 对象逐件做六问深审：\n\n"
                 + "\n\n".join(blocks))
-        data = ask(client, model, STAGE2_SYSTEM, user, "audit_stage2", STAGE2_SCHEMA, effort)
+        data = ask(client, model, STAGE2_SYSTEM, user, "audit_stage2", STAGE2_SCHEMA,
+                   effort, museum_key=mk,
+                   scope=f"S/A seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
+                   seqs=[it['seq'] for it in chunk])
         got = {r["seq"] for r in data["results"]}
         miss = {it["seq"] for it in chunk} - got
         if miss:
@@ -815,7 +1007,8 @@ STAGE3_SCHEMA = {
 }
 
 
-def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: int) -> dict:
+def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: int,
+           mk: str) -> dict:
     """键用 "seq|key" —— 一件对象有 9 条 sig_*，光用 seq 会互相覆盖。"""
     done = read_done(out, key="ck")
     todo = [c for c in claims if f"{c['seq']}|{c['key']}" not in done]
@@ -836,7 +1029,9 @@ def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: in
                 f"  当前记录的来源: {c['source'] or '—'}｜可信度: {c['confidence']}")
         user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐条判定以下 {len(chunk)} 条取值：\n\n" + "\n\n".join(lines))
-        data = ask(client, model, STAGE3_SYSTEM, user, "audit_stage3", STAGE3_SCHEMA, effort)
+        data = ask(client, model, STAGE3_SYSTEM, user, "audit_stage3", STAGE3_SCHEMA,
+                   effort, museum_key=mk, scope=f"{len(chunk)} 条取值",
+                   seqs=[c['seq'] for c in chunk])
         got = {f"{r['seq']}|{r['key']}" for r in data["results"]}
         miss = {f"{c['seq']}|{c['key']}" for c in chunk} - got
         if miss:
@@ -896,19 +1091,44 @@ def main() -> None:
     ap.add_argument("--out-dir", default="./audit_out")
     ap.add_argument("--stage", default="all", choices=["all", "1", "2", "3"])
     ap.add_argument("--batch", type=int, default=12, help="阶段一每批件数")
+    ap.add_argument("--provider", choices=["openai", "claude_cli"], default="openai",
+                    help="审计走哪条路。默认 openai（需 ~/.openai_key）；"
+                         "claude_cli 走本机订阅账号，**但要先确认打分者不是 Anthropic** "
+                         "—— 两端同源时审计就成了自评，见文件头")
+    ap.add_argument("--only-seq", type=int, action="append",
+                    help="只审指定 source_seq（可重复给），用于逐件复核")
+    ap.add_argument("--slim", action="store_true",
+                    help="精简版：阶段一只输出缺失证据与事实错误，且**跳过阶段二** —— "
+                         "实测阶段二六问里三问在 248 件 S/A 上是单一答案，"
+                         "而阶段一的四列判定要么饱和要么方向可疑（见 STAGE1_SLIM_SYSTEM）")
     ap.add_argument("--limit", type=int, help="只审前 N 件，用于冒烟")
     ap.add_argument("--model", default=os.environ.get("OPENAI_MODEL", ""),
                     help="OpenAI 型号；不传则取环境变量 OPENAI_MODEL")
     ap.add_argument("--effort", default=os.environ.get("OPENAI_EFFORT", ""),
                     help="推理强度，如 xhigh / high / medium / low，也认「extra high」"
-                         "「超高」这类叫法；不传则不带该参数，走服务端默认")
+                         "「超高」这类叫法。**不给就按 STAGE_EFFORT 的分阶段推荐值**"
+                         "（当前四个阶段都是 medium，依据见该常量注释）。"
+                         "注意 effort 参与 llm_cache 的键：改档位 = 对应阶段整批重跑，"
+                         "且新旧两批结果不可直接比较"),
     ap.add_argument("--key-file", default="~/.openai_key",
                     help="OpenAI key 文件（权限须为 600）；OPENAI_API_KEY 存在时优先用它")
     args = ap.parse_args()
 
-    if not args.model:
+    # claude_cli 有默认型号（claude_cli.DEFAULT_MODEL），不强制 --model；
+    # 走 OpenAI 时仍然必须显式指定 —— 型号写死在代码里会让 audited_by 记错出处。
+    if not args.model and args.provider != "claude_cli":
         sys.exit("没指定型号：用 --model，或设环境变量 OPENAI_MODEL")
-    effort = norm_effort(args.effort)
+    global CLAUDE_CLI
+    if args.provider == "claude_cli":
+        import claude_cli
+        if not claude_cli.available():
+            sys.exit("找不到 `claude` 命令。装 Claude Code，或用默认的 --provider openai")
+        CLAUDE_CLI = args.model or claude_cli.DEFAULT_MODEL
+        print(f"[provider] claude CLI（订阅账号）/ {CLAUDE_CLI}；--effort 在此路径下无效")
+
+    # 不给 --effort 就用分阶段推荐值；给了就一次覆盖全部阶段。
+    eff = {s: norm_effort(args.effort or STAGE_EFFORT[s]) for s in STAGE_EFFORT}
+    effort = eff["audit_stage1"]        # 供下方沿用旧签名的几处调用
     note = MUSEUM_NOTE.get(args.museum)
     if note is None:
         sys.exit(f"MUSEUM_NOTE 里没有 {args.museum} 的数据实情。这一段决定审计者对"
@@ -928,6 +1148,13 @@ def main() -> None:
     claims = load_claims(cur, mk)
     conn.close()
 
+    if args.only_seq:
+        want = set(args.only_seq)
+        items = [it for it in items if it["seq"] in want]
+        claims = [c for c in claims if c["seq"] in want]
+        if (miss := want - {it["seq"] for it in items}):
+            sys.exit(f"--only-seq 指定的 {sorted(miss)} 不在本馆展品里")
+
     scored = sum(1 for it in items if it["v3"])
     dist = collections.Counter(it["tier"] or "无" for it in items)
     print(f"{mk.upper()}：{len(items)} 件"
@@ -938,7 +1165,10 @@ def main() -> None:
 
     # 审计者身份落盘，audit_load.py 默认从这里读，写进 artwork_evidence.audited_by。
     # 与 artwork_tier_v3.scored_by 对照，事后一眼能看出审计者与打分者是否同源。
-    tag = args.model + (f" effort={effort}" if effort else "")
+    # audited_by 是判断「这批审计怎么来的」的唯一依据，分阶段档位必须记全。
+    used = ("audit_stage1_slim",) if args.slim else ("audit_stage1", "audit_stage2")
+    tag = (f"{CLAUDE_CLI} (claude-cli)" if CLAUDE_CLI
+           else args.model + " effort=" + "/".join(eff[s] for s in used))
     (out_dir / f"{mk}.model").write_text(tag, encoding="utf-8")
     print(f"审计者：{tag}")
 
@@ -947,14 +1177,37 @@ def main() -> None:
     p2 = out_dir / f"{mk}_audit2.jsonl"
     p3 = out_dir / f"{mk}_audit3.jsonl"
 
+    if args.slim:
+        # 精简版另落一份 JSONL，不与旧口径的 audit1 混在一起 —— 两套判据的产物
+        # 若共用一个文件，断点续跑会把它们当成同一批，而它们的字段根本不同。
+        p1s = out_dir / f"{mk}_audit1_slim.jsonl"
+        s1s = stage1_slim(client, args.model, eff["audit_stage1_slim"], ctx, note, items, p1s,
+                          args.batch, mk)
+        if args.stage in ("all", "3"):
+            stage3(client, args.model, eff["audit_stage3"], ctx, note, items, claims, p3,
+                   args.batch, mk)
+        n_sens = sum(1 for r in s1s.values()
+                     if any(m["tier_sensitive"] for m in r["missing"]))
+        n_err = sum(1 for r in s1s.values() if r["found_factual_error"])
+        n_clean = sum(1 for r in s1s.values() if not r["missing"])
+        print(f"\n精简审计：{len(s1s)} 件")
+        print(f"  有 tier_sensitive 缺口（该进研究队列）：{n_sens} 件"
+              f"（{n_sens / len(s1s) * 100:.0f}%）")
+        print(f"  资料已足、无缺口：{n_clean} 件")
+        print(f"  发现事实错误：{n_err} 件")
+        print(f"\n产物：{p1s}")
+        print("完备度不在本模式产出 —— 由 evidence_score.py 的规则口径给（零 API）。")
+        return
+
     s1 = read_done(p1)
     s2 = read_done(p2)
     if args.stage in ("all", "1"):
-        s1 = stage1(client, args.model, effort, ctx, note, items, p1, args.batch)
+        s1 = stage1(client, args.model, eff["audit_stage1"], ctx, note, items, p1, args.batch, mk)
     if args.stage in ("all", "2"):
-        s2 = stage2(client, args.model, effort, ctx, note, items, s1, p2, max(1, args.batch // 2))
+        s2 = stage2(client, args.model, eff["audit_stage2"], ctx, note, items, s1, p2,
+                    max(1, args.batch // 2), mk)
     if args.stage in ("all", "3"):
-        stage3(client, args.model, effort, ctx, note, items, claims, p3, args.batch)
+        stage3(client, args.model, eff["audit_stage3"], ctx, note, items, claims, p3, args.batch, mk)
 
     if s1:
         review = out_dir / f"{mk}_audit_review.csv"

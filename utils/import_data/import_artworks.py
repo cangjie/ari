@@ -100,6 +100,35 @@ MUSEUMS = [
         on_view=lambda r, c: ON_VIEW_YES if truthy(r[c["on_view"]]) else ON_VIEW_UNKNOWN,
     ),
     dict(
+        # MFA 的第二份源文件，4464 件，格式与三个中文馆同构。
+        #
+        # 【为什么另起 key 而不覆盖 mfa_boston】
+        # 两份文件的 source_seq 是两套编号（旧 seq 1 = 水月观音，本表 seq 1 = 埃及木门），
+        # 而 artwork_tier_v3 / artwork_evidence / artwork_meta 用软键
+        # (museum_key, source_seq) 且故意没建外键 —— 覆盖会让那 799 行派生数据
+        # 原封不动贴到完全不同的展品上，**且数据库不报任何错**。
+        # 新旧同时在库里，合并可以直接用 SQL 比对着做，这一步也完全可逆。
+        #
+        # 本表不是旧表的超集：北斋《神奈川冲浪里》、Revere 自由之子碗均不在其中，
+        # 全表日本相关条目仅 16 条（Wikidata 对 MFA 的覆盖偏欧美绘画），
+        # 而日本艺术恰是 MFA 身份的核心板块。所以是两份互补，不是新旧替换。
+        key="mfa_boston_ext",
+        name_zh="波士顿美术馆（扩充清单）",
+        name_en="Museum of Fine Arts, Boston (Extended List)",
+        site_key="Museum of Fine Arts, Boston",   # 软链，与 mfa_boston 重复无妨（普通索引）
+        file="MFA_展品清单_400_带Tier.xlsx", sheet="展品清单", header_row=4,
+        cols=dict(seq=0, gallery=1, name_zh=2, desc_zh=3,
+                  image_url=4, on_view=5, official_url=6, tier=7),
+        # ⚠ 不能照抄中文馆的「第 5 列非空即在展」。那三个馆第 5 列叫「陈列状态」，
+        # 实测全填「当前在展」（国博 365/365、故宫 1757/1757）；本表第 5 列叫
+        # 「**来源**与陈列状态」，4464 行全非空，其中 4329 行写的是
+        # 「第三方来源（Wikidata）· 展厅与在展状态未经官网确认」——
+        # 照抄会把 4464 件全部标成在展。同 PEM「不能拿 Has Image 推在展」的教训。
+        on_view=lambda r, c: (ON_VIEW_UNKNOWN
+                              if "Wikidata" in (s(r[c["on_view"]]) or "")
+                              else ON_VIEW_YES),
+    ),
+    dict(
         key="pem", name_zh="皮博迪·埃塞克斯博物馆", name_en="Peabody Essex Museum",
         site_key=None,
         file="PEM_带tier_c.xlsx", sheet="All Tiers", header_row=1,

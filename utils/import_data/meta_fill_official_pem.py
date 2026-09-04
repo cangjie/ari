@@ -175,7 +175,8 @@ def translate(client, model, effort, todo: dict[str, str]) -> dict[str, str]:
         "- 材质按文物术语译：'Lacquered wood, gold leaf'→'髹漆木胎、金箔'\n"
         "**不要增补原文没有的信息，不要解释。** 逐条对应返回。")
     user = "请翻译以下 %d 条：\n" % len(keys) + "\n".join(f"- {k}" for k in keys)
-    data = A.ask(client, model, system, user, "official_zh", schema, effort)
+    data = A.ask(client, model, system, user, "official_zh", schema, effort,
+                 museum_key="pem")
     got = {d["en"]: d["zh"] for d in data["items"]}
     missing = [k for k in keys if k not in got]
     if missing:
@@ -188,7 +189,7 @@ def main() -> None:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--model", default="")
-    ap.add_argument("--effort", default="")
+    ap.add_argument("--effort", default="medium")
     ap.add_argument("--key-file", default="~/.openai_key")
     args = ap.parse_args()
 

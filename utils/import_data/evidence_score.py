@@ -74,6 +74,27 @@ def boundary_factor(core: float | None) -> tuple[float, float | None]:
     return (max(0.2, 1.0 - 0.8 * min(d, 1.0)), d)
 
 
+def _apply_src_tier(cur, mk: str, src_tier: dict) -> None:
+    """按 artwork_meta 里实际存在的来源重算 best_source_tier，只升不降。
+
+    单独成函数，是因为它有两个调用点：正常路径，以及「全馆已审计、没有按规则
+    计分的行」那条早退路径。早先只在正常路径里做，结果一个馆审计完成之后这一列
+    就再也不更新了 —— 而审计下一轮读的正是它。
+    """
+    if not src_tier:
+        return
+    cur.executemany(
+        "UPDATE artwork_evidence SET best_source_tier ="
+        " LEAST(COALESCE(best_source_tier, 9), %s)"
+        " WHERE museum_key=%s AND source_seq=%s",
+        [(t, mk, s) for s, t in sorted(src_tier.items())])
+    cur.execute("SELECT best_source_tier, COUNT(*) FROM artwork_evidence"
+                " WHERE museum_key=%s GROUP BY best_source_tier"
+                " ORDER BY best_source_tier", (mk,))
+    print("best_source_tier 重算后：" + "  ".join(
+        f"Tier {t if t is not None else '—'}: {n} 件" for t, n in cur.fetchall()))
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--museum", default="pem")
@@ -138,9 +159,20 @@ def main() -> None:
     print(f"{mk.upper()} {len(rows)} 件按规则计分"
           + (f"，{len(audited)} 件已审计（归 audit_load.py，跳过）" if audited else ""))
     if not rows:
-        # 全馆都审过时这里没有可算的行，不是出错。硬往下走会在 comps[0] 上 IndexError，
+        # 全馆都审过时这里没有按规则计分的行，不是出错。硬往下走会在 comps[0] 上 IndexError，
         # 报出来的还是个跟真实原因毫无关系的错。
-        print("没有需要按规则计分的行，退出。")
+        #
+        # ⚠ 但**不能就此 return**。best_source_tier 不归 audit_load.py 管，它由本脚本
+        # 按 artwork_meta 里实际存在的来源重算。早先这里直接 return，于是全馆审过之后
+        # 这一列永远停在旧值 —— 2026-09-03 实测：MFA 20 件、哈佛 12 件明明已抓到
+        # Wikidata（Tier 3），best_source_tier 却全馆卡在 4，而审计读的正是这一列。
+        # 所有权判断不能用「整个脚本退出」来实现，只能跳过本脚本不该碰的那几列。
+        print("没有需要按规则计分的行；仍继续重算 best_source_tier。")
+        _apply_src_tier(cur, mk, src_tier)
+        if args.dry_run:
+            conn.rollback(); print("--dry-run：未写库")
+        else:
+            conn.commit()
         conn.close()
         return
 
@@ -185,18 +217,7 @@ def main() -> None:
     #
     # 用 LEAST 只升不降：若 packet 里记的来源比 artwork_meta 里能看到的更权威
     # （譬如查过纸质图录，没落成 metadata 取值），不该被这里冲掉。
-    if src_tier:
-        cur.executemany(
-            "UPDATE artwork_evidence SET best_source_tier ="
-            " LEAST(COALESCE(best_source_tier, 9), %s)"
-            " WHERE museum_key=%s AND source_seq=%s",
-            [(t, mk, s) for s, t in sorted(src_tier.items())])
-        cur.execute("SELECT best_source_tier, COUNT(*) FROM artwork_evidence"
-                    " WHERE museum_key=%s GROUP BY best_source_tier"
-                    " ORDER BY best_source_tier", (mk,))
-        dist_t = cur.fetchall()
-        print("best_source_tier 重算后：" + "  ".join(
-            f"Tier {t if t is not None else '—'}: {n} 件" for t, n in dist_t))
+    _apply_src_tier(cur, mk, src_tier)
 
     if args.dry_run:
         conn.rollback(); print("--dry-run：未写库")

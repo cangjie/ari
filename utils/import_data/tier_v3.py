@@ -121,6 +121,21 @@ MUSEUMS = {
         col_desc=5, col_category=8, col_tier_old=3,
         context=CONTEXTS["ham"],
     ),
+    "mfa_boston_ext": Museum(
+        key="mfa_boston_ext",
+        label="Museum of Fine Arts, Boston (Extended List)",
+        path="artworks/MFA_展品清单_400_带Tier.xlsx",
+        sheet="展品清单",
+        # 表头在第 4 行（0 基下标 3），与三个中文馆同构；前三行是大标题与说明。
+        header_row=3,
+        # 名称与简介都只有中文一列；类别没有独立列（材质写在名称的括号注里，
+        # 已由 meta_fill_official_mfa.py 抽成 metadata，走 --evidence 进提示词）。
+        col_name_en=None, col_name_cn=2, col_gallery=1,
+        col_desc=3, col_category=None, col_tier_old=7,
+        # 与 mfa_boston 逐字共用同一段语境 —— 同一个馆若用两套「哪些东西算要紧」
+        # 的定义，两份数据的评分不可比，而且不会报错。
+        context=CONTEXTS["mfa_boston_ext"],
+    ),
     # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
     # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
 }
@@ -214,30 +229,82 @@ class LazyClient:
 # --provider openai 时由 main 填上；为 None 表示走原来的 Anthropic 路径。
 # 做成模块级变量而不是层层传参，是因为 ask() 有六个调用点，
 # 每个都改签名只会让这次「换供应商」的临时性掩盖在一堆参数里。
-OPENAI = None          # (client, model, effort)
+OPENAI = None          # (client, model, {stage: effort})
+CLAUDE_CLI = None      # 型号字符串；非 None 时走 claude CLI 的订阅账号
+
+# 按阶段分配推理强度。**依据是 2026-09-04 在水月观音上的实测**（同一提示词、
+# 只改 effort，输入 token 完全相同 6638，可直接归因）：
+#
+#   阶段          xhigh→medium 推理降幅   分数变化           结论
+#   tier_stage1   262→151  (-42%)        IU -0.4（权重最高） 降太多，用 high
+#   tier_stage2   183→107  (-42%)        D  -0.2            单件组无从横比，medium 够
+#   tier_stage3   252→231  ( -8%)        三个是非题，无变化   几乎不省钱，保住关卡用 xhigh
+#
+# 九个维度里八个下降、无一上升 —— 不是随机噪声，medium 会系统性地略保守。
+# Core 降了 0.168，而门槛卡在 8.5/7.2/5.5，边界附近的展品会因此改判，
+# 所以权重最高的 IU 所在的阶段一不能省。
+#
+# ⚠ effort 参与 llm_cache 的缓存键：改这里等于让对应阶段整批重跑，
+# 且新旧两批不可直接比较。改动前想清楚，并在结论里标明档位。
+STAGE_EFFORT = {
+    "tier_stage1": "high",
+    "tier_stage2": "medium",
+    "tier_stage3": "xhigh",
+}
 
 
-def ask(client, system: str, user: str, schema: dict) -> dict:
-    """一次结构化输出调用。schema 保证返回的第一个 text block 是合法 JSON。"""
+def ask(client, system: str, user: str, schema: dict, *,
+        stage: str = "tier_v3", museum_key: str | None = None,
+        scope: str | None = None, seqs=None) -> dict:
+    """一次结构化输出调用。schema 保证返回的第一个 text block 是合法 JSON。
+
+    两条路径（anthropic / openai）都经过 llm_cache：键含提示词全文，
+    所以判据没改必然命中、改了必然重跑。stage 供事后分阶段算账 ——
+    早先只传死字符串 "tier_v3"，三个阶段的账混在一起分不开。
+    """
+    if CLAUDE_CLI is not None:
+        import claude_cli, llm_cache
+        model = CLAUDE_CLI
+
+        def _do():
+            data, usage = claude_cli.ask(system, user, schema, model)
+            return data, claude_cli.Usage(usage)
+
+        # effort 传 None：CLI 不暴露 reasoning_effort，这条路径没有档位可调，
+        # 记 NULL 比记一个想当然的值诚实。
+        return llm_cache.call(_do, provider="anthropic_cli", model=model,
+                              effort=None, stage=stage, system=system, user=user,
+                              schema=schema, museum_key=museum_key, scope=scope,
+                              seqs=seqs)
+
     if OPENAI is not None:
         import audit_meta as A
-        oc, model, effort = OPENAI
-        return A.ask(oc, model, system, user, "tier_v3", schema, effort)
-    resp = client.messages.create(
-        model=MODEL,
-        max_tokens=16000,
-        thinking={"type": "adaptive"},
-        output_config={
-            "effort": "high",
-            "format": {"type": "json_schema", "schema": schema},
-        },
-        system=[{"type": "text", "text": system, "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": user}],
-    )
-    if resp.stop_reason == "refusal":
-        raise RuntimeError(f"模型拒答：{resp.stop_details}")
-    text = next(b.text for b in resp.content if b.type == "text")
-    return json.loads(text)
+        oc, model, efforts = OPENAI
+        return A.ask(oc, model, system, user, stage, schema, efforts.get(stage),
+                     museum_key=museum_key, scope=scope, seqs=seqs)
+
+    def _do():
+        resp = client.messages.create(
+            model=MODEL,
+            max_tokens=16000,
+            thinking={"type": "adaptive"},
+            output_config={
+                "effort": "high",
+                "format": {"type": "json_schema", "schema": schema},
+            },
+            system=[{"type": "text", "text": system,
+                     "cache_control": {"type": "ephemeral"}}],
+            messages=[{"role": "user", "content": user}],
+        )
+        if resp.stop_reason == "refusal":
+            raise RuntimeError(f"模型拒答：{resp.stop_details}")
+        text = next(b.text for b in resp.content if b.type == "text")
+        return json.loads(text), getattr(resp, "usage", None)
+
+    import llm_cache
+    return llm_cache.call(_do, provider="anthropic", model=MODEL, effort="high",
+                          stage=stage, system=system, user=user, schema=schema,
+                          museum_key=museum_key, scope=scope, seqs=seqs)
 
 
 # ---------------------------------------------------------------------------
@@ -411,7 +478,10 @@ def stage1(client, m: Museum, items: list[dict], out: Path, batch: int,
             + "\n\n".join(fmt_item(it, evidence) for it in chunk)
                 + (EVIDENCE_NOTE if evidence else "")
         )
-        data = ask(client, STAGE1_SYSTEM, user, STAGE1_SCHEMA)
+        data = ask(client, STAGE1_SYSTEM, user, STAGE1_SCHEMA,
+                   stage="tier_stage1", museum_key=m.key,
+                   scope=f"seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
+                   seqs=[it['seq'] for it in chunk])
         got = {r["seq"] for r in data["results"]}
         missing = {it["seq"] for it in chunk} - got
         if missing:
@@ -501,7 +571,9 @@ def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path,
             f"组内共 {len(seqs)} 件对象，请全部给出 Q / D / G：\n\n"
             + "\n\n".join(lines)
         )
-        data = ask(client, STAGE2_SYSTEM, user, STAGE2_SCHEMA)
+        data = ask(client, STAGE2_SYSTEM, user, STAGE2_SCHEMA,
+                   stage="tier_stage2", museum_key=m.key,
+                   scope=f"{group}（{len(seqs)} 件）", seqs=seqs)
         got = {r["seq"] for r in data["results"]}
         missing = set(seqs) - got
         if missing:
@@ -581,7 +653,9 @@ def stage3(client, m: Museum, items: list[dict], cands: list[int],
             + (EVIDENCE_NOTE + "\n" if evidence else "")
             + f"以下 {len(todo)} 件对象已达 S 门槛，请逐件做 S-ness Test：\n\n"
             + "\n\n".join(lines))
-    data = ask(client, STAGE3_SYSTEM, user, STAGE3_SCHEMA)
+    data = ask(client, STAGE3_SYSTEM, user, STAGE3_SCHEMA,
+               stage="tier_stage3", museum_key=m.key,
+               scope=f"S 候选 {len(todo)} 件", seqs=todo)
     got = {r["seq"] for r in data["results"]}
     missing = set(todo) - got
     if missing:
@@ -631,13 +705,26 @@ def main() -> None:
     ap.add_argument("--museum", required=True, choices=sorted(MUSEUMS))
     ap.add_argument("--out-dir", default="./tier_v3_out")
     ap.add_argument("--limit", type=int, help="只跑前 N 件，用于冒烟")
+    ap.add_argument("--only-seq", type=int, action="append",
+                    help="只跑指定 source_seq（可重复给）。用于逐件复核；"
+                         "**在 load_items 之后过滤**，不影响 seq 的生成方式")
     ap.add_argument("--batch", type=int, default=12, help="阶段一每批件数")
-    ap.add_argument("--provider", choices=["anthropic", "openai"], default="anthropic",
-                    help="评分用哪家模型。默认 anthropic（claude-opus-5），"
-                         "既有 PEM 评分就是它打的；换成 openai 会让新旧两批分不同源，"
+    ap.add_argument("--provider", choices=["anthropic", "openai", "claude_cli"],
+                    default="claude_cli",
+                    help="评分用哪条路。**默认 claude_cli**：走 `claude` CLI 的 "
+                         "headless 模式，用本机订阅账号跑 claude-opus-5 —— 不需要 "
+                         "API key，且恢复了「打分 Anthropic / 审计 OpenAI」的跨厂商设计"
+                         "（2026-09-02 起两边都是 gpt-5.6-sol，交叉验证形同虚设）。"
+                         "anthropic=直连 SDK 需 API key；openai=与审计同源，"
                          "跨轮比较时归因不到「证据」还是「模型」，务必在结论里标明")
     ap.add_argument("--model", default="", help="--provider openai 时的型号")
-    ap.add_argument("--effort", default="", help="--provider openai 时的推理强度")
+    ap.add_argument("--effort", default="",
+                    help="一次把三个阶段的推理强度全设成这一档。"
+                         "**不给就按 STAGE_EFFORT 的分阶段推荐值**"
+                         "（阶段一 high / 阶段二 medium / 阶段三 xhigh，依据见该常量注释）")
+    for _s in (1, 2, 3):
+        ap.add_argument(f"--effort-stage{_s}", default="",
+                        help=f"只覆盖阶段{_s}的推理强度，优先于 --effort")
     ap.add_argument("--key-file", default="~/.openai_key")
     ap.add_argument("--evidence", action="store_true",
                     help="把 artwork_meta 里已核实的事实喂进评分（只喂事实，"
@@ -645,13 +732,29 @@ def main() -> None:
                          "**务必配合独立的 --out-dir**，否则会与不带证据的那轮混在一起")
     args = ap.parse_args()
 
-    global OPENAI, MODEL
-    if args.provider == "openai":
+    global OPENAI, MODEL, CLAUDE_CLI
+    if args.provider == "claude_cli":
+        import claude_cli
+        if not claude_cli.available():
+            sys.exit("找不到 `claude` 命令。装 Claude Code，或改用 --provider openai")
+        CLAUDE_CLI = args.model or claude_cli.DEFAULT_MODEL
+        MODEL = CLAUDE_CLI + " (claude-cli)"
+        print(f"[provider] claude CLI（订阅账号）/ {CLAUDE_CLI}")
+        print("  注：CLI 不暴露 reasoning_effort，--effort* 在这条路径下无效；"
+              "每次调用附带约 5.4k token 的 Claude Code 脚手架开销")
+    elif args.provider == "openai":
         if not args.model:
             sys.exit("--provider openai 需要 --model")
         import audit_meta as A
-        OPENAI = (A.LazyClient(args.key_file), args.model, A.norm_effort(args.effort))
-        MODEL = args.model + (f" effort={A.norm_effort(args.effort)}" if args.effort else "")
+        efforts = {}
+        for st in STAGE_EFFORT:
+            one = getattr(args, f"effort_stage{st[-1]}")     # --effort-stage1/2/3
+            efforts[st] = A.norm_effort(one or args.effort or STAGE_EFFORT[st])
+        OPENAI = (A.LazyClient(args.key_file), args.model, efforts)
+        # 型号串里带上分阶段档位 —— scored_by 是判断「这批分怎么来的」的唯一依据，
+        # 三个阶段用了不同档位却只记一个数字，等于把出处记错了。
+        MODEL = args.model + " effort=" + "/".join(
+            efforts[s] for s in ("tier_stage1", "tier_stage2", "tier_stage3"))
         print(f"[provider] openai / {MODEL}")
 
     base = Path(__file__).resolve().parent
@@ -660,7 +763,15 @@ def main() -> None:
     m = MUSEUMS[args.museum]
 
     items = load_items(m, base, args.limit)
-    print(f"{m.label}：{len(items)} 件" + ("（--limit 截断）" if args.limit else ""))
+    if args.only_seq:
+        want = set(args.only_seq)
+        items = [it for it in items if it["seq"] in want]
+        missing = want - {it["seq"] for it in items}
+        if missing:
+            sys.exit(f"--only-seq 指定的 {sorted(missing)} 在源表里不存在")
+    print(f"{m.label}：{len(items)} 件"
+          + ("（--limit 截断）" if args.limit else "")
+          + (f"（--only-seq {sorted(args.only_seq)}）" if args.only_seq else ""))
 
     evidence = None
     if args.evidence:

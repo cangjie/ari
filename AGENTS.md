@@ -60,9 +60,11 @@
 
 ### 数据库设计约定
 
-`ari` 库现有 12 张表 + 4 个视图：两个源数据集（城市榜单、六馆展品）之外，
-另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据。
-完整说明见 `utils/import_data/README.md`，以下九条是改代码前必须知道的，踩过就知道疼：
+`ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
+另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
+以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
+展品侧现有 **7 个 museum key、13348 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件）。
+完整说明见 `utils/import_data/README.md`，以下十一条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -79,7 +81,7 @@ BCP-47 标签 `zh-CN`/`en`）。加语种只是多插行，不动表结构。
 | 数据集 | 写入者 | kind | ID 段 |
 |---|---|---|---|
 | 城市/点位榜单 | `import_data.py` | `city_name`…`data_source` | 1 – 999,999 |
-| 六馆展品 | `import_artworks.py` | `museum_name`、`gallery_*`、`artwork_*` | 1,000,000 起 |
+| 展品清单 | `import_artworks.py` | `museum_name`、`gallery_*`、`artwork_*` | 1,000,000 起 |
 | 展品 metadata | `meta_seed.py` / `meta_lib.py` | `meta_key_name`、`meta_value_text` | 2,000,000 起 |
 
 `content.kind` 是**固定 ENUM**，加 kind 要同时改三处：`schema.sql` 的 ENUM（从零建库）、
@@ -93,7 +95,7 @@ BCP-47 标签 `zh-CN`/`en`）。加语种只是多插行，不动表结构。
 
 **4. `museum.site_key` 是软链不是外键。**
 `import_data.py` 每次重灌都 `DELETE FROM cultural_site`，硬外键 RESTRICT 会让榜单
-导入失败、CASCADE 会静默删光展品；且六个馆里 PEM／哈佛／首博三家根本不在
+导入失败、CASCADE 会静默删光展品；且七个 key 里 PEM／哈佛／首博三家根本不在
 `cultural_site` 中。查询时 `LEFT JOIN cultural_site ON name_key = site_key`。
 
 **5. 源文件有两列 tier 时，一律取原表评级列，不取后来重算的那列。**
@@ -119,8 +121,24 @@ MFA／国博／首博只有一列 tier，无从选择。重算列会把一批 S 
 **⚠ MFA 的源文件只填了 15.6%，那 1300 行是骨架不是数据。** `Master` 页 1300 行里
 只有 203 行有名称与简介，其余只有 Rank 和 Tier：S 100 格填 30、A 300 格填 67、
 B 899 格填 106。`Tier S` / `Tier A` / `Tier B` 三页是同一批数据的分页副本，填充率相同，
-**没有别处藏着更全的版本**。哈佛（204/204）与 PEM（196/196）是填满的。
-所以「MFA 用来测世界级名作密度」这件事，在源数据补全前做不了 —— 缺的不是算法。
+**这份文件里没有更全的版本**。哈佛（204/204）与 PEM（196/196）是填满的。
+
+**⚠ 但 MFA 另有一份 4464 件的扩充清单，2026-09-04 已作为独立馆 `mfa_boston_ext` 导入。**
+`MFA_展品清单_400_带Tier.xlsx`（名字叫 400，实为 4464 件）4464 行全有名称、简介与
+官方页面链接，格式与三个中文馆同构。**它不是旧文件的超集**：北斋《神奈川冲浪里》、
+Revere 自由之子碗均不在其中，全表日本相关条目仅 16 条（Wikidata 对 MFA 的覆盖偏欧美绘画），
+而日本艺术恰是 MFA 的身份板块。所以是**两份互补，取并集合并**（用户 09-03 决定），
+**不是新旧替换** —— 合并前必须先建新旧 `source_seq` 映射，否则现有 799 行派生数据会
+原封不动贴到完全不同的展品上且不报错。合并尚未做。
+
+**⚠ 这份扩充清单里混着两种出处，性质差别很大，必须分开对待：**
+135 件 `official_url` 指向 `mfa.org`（馆方展厅/部门页，带馆藏号、断代、材质、
+入藏基金与展厅位置，Tier 1）；4329 件指向 `wikidata.org`（带藏品编号可回官网核对，
+但源文件自承「展厅与在展状态未经官网确认」，Tier 3）。已分成 `mfa_official` 与
+`mfa_ext_wikidata` 两个 `source_key`。**`on_view` 也因此不能照抄中文馆的映射** ——
+中文馆第 5 列叫「陈列状态」且全填「当前在展」，这份第 5 列叫「**来源**与陈列状态」，
+4464 行全非空，照抄会把 4464 件全标成在展且不报错（同 PEM「不能拿 Has Image 推在展」）。
+现按 `official_url` 域名映射：135 件在展 / 4329 件未知，已用未参与判断的列做非循环校验。
 
 **⚠ 读源 Excel 生成 `source_seq` 时，必须按「过滤之后」的计数自增。**
 `import_artworks.read_museum` 是这么做的，`tier_v3.load_items` 曾用 `enumerate` 的行号
@@ -133,7 +151,14 @@ PEM 与哈佛没有空行，两种算法碰巧一致，这个 bug 藏到 2026-09
 `import_artworks.py` 第 355 行 `DELETE FROM artwork` 清全表并重置 AUTO_INCREMENT。
 加在 `artwork` 上的列下次重灌就蒸发，且 `artwork.id` 每次重新分配，不能做跨重灌的引用。
 这几张表一律用软键 `(museum.key_name, artwork.source_seq)`，**故意不建到 artwork 的外键**
-（硬外键 RESTRICT 会让导入失败，CASCADE 会静默删光）。已实测该键在六馆 8884 行全局唯一。
+（硬外键 RESTRICT 会让导入失败，CASCADE 会静默删光）。已实测该键在 13348 行全局唯一。
+
+**⚠ `artwork.id` 与 `museum.id` 都是每次重灌重新分配的，任何地方都不要存。**
+导入器对 `museum` / `gallery` / `artwork` 三表全部 `DELETE` 并 `ALTER AUTO_INCREMENT = 1`，
+然后按 `MUSEUMS` 的**列表顺序**重新发号。2026-09-04 实测：把 `mfa_boston_ext` 插进
+列表第 2 位，PEM 的 `museum.id` 就从 2 变成 3、首件 `artwork.id` 从 204 变成 4668 ——
+PEM 自己一个字都没改。加在列表末尾这次能躲过，下次躲不过：只要前面任何一个馆的
+源文件行数变了，后面所有馆的 id 就整体平移。
 
 | 表 | 装什么 | 由谁写 |
 |---|---|---|
@@ -141,13 +166,24 @@ PEM 与哈佛没有空行，两种算法碰巧一致，这个 bug 藏到 2026-09
 | `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_fill_rule.py` / `meta_scrape.py` / `meta_fill_official_pem.py` |
 | `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` |
 | `artwork_evidence` 的审计列 | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_load.py` |
+| `llm_call` / `llm_call_item` | 每次 LLM 调用的问答原文、token 用量、覆盖了哪些展品 | `llm_cache.py` |
 
-**⚠ 每次跑完 `import_artworks.py`，必须重跑 `tier_v3_load.py --apply-tier`**，
-否则 `artwork.tier` 会退回源文件的原表评级。**不报错，只是数据悄悄变回去。**
+**⚠ 每次跑完 `import_artworks.py`，必须接着跑两件事，忘了都不报错：**
+
+```
+python3 tier_v3_load.py --museum <mk> --apply-tier   # 否则 artwork.tier 退回源表评级
+python3 llm_cache.py --refresh-ids                    # 否则 llm_call_item 的便利列指向错行
+```
 
 `artwork_evidence` 现在有**三个**写入者分写不同列，职责必须互斥，`evidence_score.py`
 必须用 UPSERT —— 早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据
-一并冲成 NULL，且不报错。`completeness` 等四列由 `evidence_score.py` 与 `audit_load.py`
+一并冲成 NULL，且不报错。
+
+**⚠ 所有权判断不能用「整个脚本退出」来实现。** 2026-08-31 为了让 `evidence_score.py`
+不覆盖已审计行，加了「全馆都审过就 return」；而 `best_source_tier` 的重算在那个
+return **之后**，于是一个馆审计完成后这一列就再也不更新了。2026-09-04 实测：
+MFA 20 件、哈佛 12 件明明已抓到 Wikidata（Tier 3），`best_source_tier` 却全馆卡在 4
+—— **而审计读的正是这一列**。只能跳过本脚本不该碰的那几列，不能跳过整个脚本。`completeness` 等四列由 `evidence_score.py` 与 `audit_load.py`
 共写，靠 `completeness_src` 分辨所有权：写成 `audit` 的行 `evidence_score.py` 一律跳过。
 
 **两个 completeness 不是一个东西**：`rule` 口径是「八个桶里 key 在不在 `artwork_meta`」
@@ -162,6 +198,28 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 馆藏号，PEM 官方是 `100183`，Wikidata 是 `M11043`（`M` 前缀疑为老 Peabody Museum 编号，
 纯数字疑为 Essex Institute 编号，两馆合并而来，未必是错）。谁对谁错交给读取方按
 `source_key` + `confidence` 判断，写入方不挑赢家。若按覆盖写，这类矛盾会永远看不见。
+
+**⚠ 中国分裂时期的朝代不能建成单值字段。** 辽/金/北宋在 12 世纪初是**并存政权**，
+不是先后相承（山西北部属辽、南部属北宋，1125 后才全境入金）；南北朝、五代十国、
+三国同理。同一件对象被不同来源标成「金代」与「宋代」**不是数据打架**，是不同的
+政权归属表述。故拆成 `date_absolute`（绝对年代，各方无争议）+ `polity`（政权归属，
+可多值并存）。这类归属之争在审计里一律判 `tier_sensitive=false` —— 学术上真实存在、
+也可能永远定不下来，但它不改变游客该不该优先看这件东西。
+
+**⚠ 从半结构化文本抽字段时，绝不能按位置猜。** 2026-09-04 实测：
+`MFA_展品清单_400_带Tier.xlsx` 里两种来源的名称括号结构完全不同 ——
+官网那 96 件是「（产地，年代；材质）」、Wikidata 那 3387 件是「（作者，ISO日期，材质）」，
+而官网那批的第一段实测有 **76 种取值**（产地、年代、朝代、材质、题材描述、专辑标签混在一起）。
+初版按位置把第一段一律当产地，**3370 条人名会被写成产地**（「威廉·莫里斯·亨特」「閻立本」）。
+正确做法是**逐段按模式判别，认不出的一概不写**：
+  · 朝代与产地**整段等值**匹配（「宋」是朝代，「宋徽宗」是人名）；
+  · 材质必须靠子串匹配，而子串规则撞上音译人名就是灾难
+    （约翰·辛格·沙「金」、欧仁·「布」丹、立「石」春美，实测误判 207 条）——
+    所以在「这一段按格式应该是人名」的位置要关掉子串规则；
+  · 解析的输入取 `artwork.name_key`（源数据原值），**不要取展示名** —— 展示名会被
+    译名表覆盖，覆盖后括号里要抽的东西就没了。
+取舍与 `meta_fill_rule.looks_like_person` 一致：宁可漏一条 metadata，也不能写错 ——
+错的事实会被当证据喂进评分，漏掉的只是少一条。
 
 **8. 数据库口令走 `~/.my.cnf`（权限 600），不进命令行。**
 
@@ -188,7 +246,11 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 - **型号不写死**（`--model` → `OPENAI_MODEL`），key 从 `~/.openai_key`（权限 600）读，
   **同 MySQL 口令一样绝不进命令行**。实际型号写进 `audited_by` / `scored_by`，
   两者对照即可看出审计者与打分者是否同源。2026-09-02 起两边都是 `gpt-5.6-sol`
-  （本机没有 Anthropic 凭据），**同源偏差这一层保护已经没有了**，结论里要如实标注。
+  2026-09-02 至 09-05 两边都是 `gpt-5.6-sol`（本机没有 Anthropic 凭据），
+  **那段时间同源偏差这一层保护是没有的**。**09-05 起打分改走 `claude` CLI 的 headless
+  模式**（`claude_cli.py`，用本机 Claude Code 订阅账号跑 `claude-opus-5`，无需 API key），
+  跨厂商恢复。**但库里现存三馆 603 件的评分与审计仍是同源那批**，重跑之前不要拿
+  它们的审计结论当独立验证。
 
 **⚠ 提示词就是判据，写错一句就等于伪造结论。** 本轮三次踩到，代价都是整轮重跑：
 
@@ -248,6 +310,35 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 **教训是通用的：抓回来的东西要落进仓库，不能只落进库。** 光入库就等于把最硬的证据
 变成孤儿数据，下次连表都不敢重建。同理 `audit_out/` 的 JSONL 与审阅 CSV 要提交
 （只忽略日志），因为审计结果重跑一次要 2.5 小时 API。
+
+**10. 每次 LLM 调用都进 `llm_call`，缓存键含提示词全文。**
+
+2026-09-03 复盘：两天约 100 美元，从 JSONL 反推约 1052 次调用，其中约 500 次（≈48%）
+是判据改动后作废重跑的。而当时 `ask()` 拿到响应只取 `content`，`resp.usage` 直接丢弃
+—— **精确账目事后根本查不出来**。原有的 JSONL 断点续跑挡不住两种花钱方式：
+键只有 `seq`，换 `--out-dir` 就全额重付；键里不含提示词，改了判据沿用旧 JSONL 会
+**静默返回旧答案**，为安全只能整轮删掉重跑。
+
+现在键是 `sha256(provider|model|effort|system|user|schema)`，一个哈希买到两个性质：
+**提示词一字未改必然命中（不花钱），改了必然不命中（拿不到旧判据的答案）。**
+
+- **`model` 与 `effort` 都在键里。** 换型号或换档位 = 对应阶段整批重跑，且新旧两批
+  **不可直接比较** —— 跨轮比较时若混了型号或档位，归因不到是「证据变了」还是
+  「模型/推理强度变了」。结论里必须标明。
+- **失败也留痕**（`status='error'`），但**失败行的 `cache_key` 恒为 NULL** ——
+  否则下次同样的提示词会命中一条错误记录，把一次偶发失败永久固化成「答案」。
+- **不要为了「把表弄干净」去删 `llm_call` 的行** —— 那是已付费的答案，删掉等于
+  把钱扔了。（2026-09-03 清理冒烟数据时就这么丢过一次结果。）
+- **本项目只记 token，不折算金额**（`cost_usd` 恒为 NULL，`PRICES` 留空）。
+  token 是客观事实，单价会变、会有折扣、会随账户不同；混在一列里日后分不清
+  某个数字是真实支出还是某次估算的残留。要临时看金额就填 `PRICES`，可随时回算。
+- **`llm_call_item` 用软键 `(museum_key, source_seq)` 关联展品**，多对多。
+  `artwork_id` / `museum_id` 是可空的**便利列**，重灌即失效，须跑 `--refresh-ids`；
+  视图 `v_artwork_llm_call` 的 `ids_stale` 列直接给出新鲜度判断。
+
+**11. `--limit N` 是「跑 N 件」，不是「跑第 N 件」。** 单件复核用 `--only-seq`
+（`tier_v3.py` / `audit_meta.py` / `meta_fill_official_mfa.py` 都支持，可重复给）。
+2026-09-04 因为写成 `--limit 130` 而多审了 48 件没人要求碰的展品。
 
 ---
 
@@ -356,6 +447,11 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/pem_official_data.py` | PEM 官网 18 个栏目页的抓取原文（219 条）+ 14 条人工核实映射 |
 | `utils/import_data/meta_fill_rule.py` | 从名称/简介确定性提取 metadata，任意馆通用（原 `meta_fill_pem.py`）。`NAME_ARTIST_PREFIX` 记着各馆名称是不是「作者, 题名」格式 |
 | `utils/import_data/meta_scrape.py` | Wikidata 抓取，任意馆通用（原 `meta_scrape_pem.py`）。WDQS 限流时自动改用 QLever 端点 |
+| `utils/import_data/meta_fill_official_mfa.py` | 从 `mfa_boston_ext` 的半结构化名称/简介确定性抽 8 个字段，**零 API**。逐段按模式判别，认不出就不写 |
+| `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
+| `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |
+| `utils/import_data/schema_llm_cache.sql` | `llm_call` / `llm_call_item` / `v_artwork_llm_call` 的建表与 ALTER |
+| `.claude/skills/onboard-museum/SKILL.md` 等三份 | 接入新馆的八步清单，含每步的通过判据与踩过的坑 |
 | `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
