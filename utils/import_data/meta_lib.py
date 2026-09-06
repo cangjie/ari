@@ -102,7 +102,9 @@ def set_meta(cur, museum_key: str, source_seq: int, key_name: str,
              values: list[tuple[str, str]], *, source_key: str,
              value_nums: list | None = None,
              source: str | None = None, confidence: str = "medium",
-             filled_by: str = "manual", cache: dict | None = None) -> int:
+             filled_by: str = "manual", cache: dict | None = None,
+             evidence_type: str | None = None,
+             source_quality: str | None = None) -> int:
     """写一件展品在某个键下、**某一个来源给出**的全部取值。
 
     values 是 [(中文, 英文), ...]；一个键可以有多个值，如材质「木/砖/石」。
@@ -111,6 +113,11 @@ def set_meta(cur, museum_key: str, source_seq: int, key_name: str,
     **只清空同一 source_key 的旧值**，别的来源原样保留。这是有意的：
     抓取来的数据彼此矛盾是常态（源文件说 pre-contact 而 Wikidata 标 1825 年），
     冲突本身是有用信息，不该由写入方替读取方挑一个赢家。
+
+    evidence_type / source_quality 由**来源本身**决定（`source_rules.SOURCE_RULES`
+    就是这张表），所以写入时一并填掉，不要留给审计阶段回填 —— `tier_v3 --evidence`
+    会把这两列拼进提示词，NULL 会渲染成「[?/? · xxx]」，而提示词里教模型怎么读
+    FACT/strong 的那几行就此作废。两者都缺省为 None，老调用方行为不变。
     """
     if value_nums is not None and len(value_nums) != len(values):
         raise ValueError("value_nums 与 values 长度不一致")
@@ -122,9 +129,10 @@ def set_meta(cur, museum_key: str, source_seq: int, key_name: str,
         cid = ensure_value(cur, zh, en, cache)
         num = value_nums[i] if value_nums else None
         rows.append((museum_key, source_seq, key_name, source_key, i, cid, num,
-                     source, confidence, filled_by))
+                     source, confidence, filled_by, evidence_type, source_quality))
     cur.executemany(
         "INSERT INTO artwork_meta (museum_key, source_seq, key_name, source_key,"
-        " ord, value_cid, value_num, source, confidence, filled_by)"
-        " VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", rows)
+        " ord, value_cid, value_num, source, confidence, filled_by,"
+        " evidence_type, source_quality)"
+        " VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", rows)
     return len(rows)

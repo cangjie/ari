@@ -190,17 +190,44 @@ def refresh_ids() -> tuple[int, int, int]:
     return n_call, n_item, n_orphan
 
 
+class Invalid(Exception):
+    """validate 判定这次返回不可用。调用方可据此重试。"""
+
+
+# 值得重试的瞬时故障。**按类名匹配而不是 import 具体异常类** —— 这里不该
+# 依赖 openai/anthropic 任一 SDK 的内部类型，换供应商时也不必改这份名单。
+# 认不出的异常一律原样抛出：宁可停下来让人看，也不要对着一个真 bug 空转三次。
+_TRANSIENT = ("APIConnectionError", "APITimeoutError", "RateLimitError",
+              "InternalServerError", "APIStatusError", "ConnectionError",
+              "ReadTimeout", "ConnectTimeout", "RemoteProtocolError")
+
+
+def _transient(e: Exception) -> bool:
+    return type(e).__name__ in _TRANSIENT
+
+
 def call(fn, *, provider: str, model: str, effort: str | None,
          stage: str, system: str, user: str, schema: dict,
          museum_key: str | None = None, scope: str | None = None,
          seqs=None, prompt_version: str | None = None,
-         refresh: bool = False) -> dict:
+         refresh: bool = False, validate=None, retries: int = 2) -> dict:
     """查缓存 -> 命中直接返回；未命中调 fn 并落库。
 
     fn() 须返回 (dict, usage)；usage 可为 None。
     seqs 是本次调用覆盖的 source_seq 列表，写进 llm_call_item
     （**不是 artwork.id** —— 那个每次重灌都重新分配，见 schema_llm_cache.sql）。
     refresh=True 时跳过读缓存但照常写（用于确认「不是缓存的锅」）。
+
+    【validate：为什么校验必须在缓存内部】
+    2026-09-05 实测：一批 12 件的阶段一调用，模型只返回了 11 件（漏了 seq 3412）。
+    API 层面完全成功、JSON 合法、schema 也过，于是被当成好答案存进缓存；
+    而校验写在调用方（stage1 的漏评检查），发现时已经晚了 ——
+    **重跑必然命中这条缓存、拿回同一个残缺答案、在同一处再崩**，
+    一个跑了 5 小时的进程就这么卡死在第 285 次调用上。
+
+    所以校验要在写缓存**之前**做。`validate(data)` 返回 falsy 或抛异常都算不通过：
+    不通过就重试（换不到新答案时按 error 落库，`cache_key=NULL` 不污染缓存），
+    重试用尽才抛 Invalid。给 error 行留痕是有意的 —— 那次调用的 token 已经花了。
     """
     key = cache_key(provider, model, effort, system, user, schema)
     conn = _connect()
@@ -210,38 +237,59 @@ def call(fn, *, provider: str, model: str, effort: str | None,
         cur.execute("SELECT id, response_json FROM llm_call WHERE cache_key = %s", (key,))
         row = cur.fetchone()
         if row:
-            _stats["hit"] += 1
-            # 命中也补一次关联：首次写入若失败过，这里能自愈
-            _link_items(conn, row[0], museum_key, seqs)
-            return json.loads(row[1])
+            data = json.loads(row[1])
+            # 缓存里的老答案也要过校验 —— 本次改造之前存进去的坏答案就靠这一步挡住
+            if validate is not None:
+                try:
+                    ok = validate(data)
+                except Exception:                    # noqa: BLE001
+                    ok = False
+                if not ok:
+                    print(f"  [warn] 缓存里的答案未通过校验（{stage} {scope}），"
+                          f"删除后重新请求", file=sys.stderr)
+                    conn.cursor().execute("DELETE FROM llm_call WHERE id = %s", (row[0],))
+                    row = None
+            if row:
+                _stats["hit"] += 1
+                # 命中也补一次关联：首次写入若失败过，这里能自愈
+                _link_items(conn, row[0], museum_key, seqs)
+                return data
 
     _stats["miss"] += 1
-    t0 = time.time()
-    try:
-        data, usage = fn()
-    except Exception as e:                       # noqa: BLE001
-        # 失败也要留痕：token 可能已经烧掉了，而且整批 429 这类事故只有靠它才看得见。
-        # **cache_key 写 NULL** —— 否则下次同样的提示词会命中这条失败记录，
-        # 把一次报错永久固化成「答案」。
+    for attempt in range(retries + 1):
+        # 瞬时故障（网络断、限流、网关 5xx）退避重试，不要让一次抖动打死整轮。
+        # 2026-09-05 实测：一次 APIConnectionError 让跑了 20 次调用的审计整个退出，
+        # 而 3 小时的活重启后要从断点重来。校验不过与请求失败走同一个重试计数。
+        try:
+            data, usage, latency = _once(fn, conn, provider, model, effort, stage,
+                                         museum_key, scope, prompt_version,
+                                         system, user, schema)
+        except Exception as e:                   # noqa: BLE001
+            if attempt >= retries or not _transient(e):
+                raise
+            wait = 5 * 2 ** attempt
+            print(f"  [warn] {stage} {scope} 请求失败（{type(e).__name__}），"
+                  f"{wait}s 后重试 {attempt + 1}/{retries}", file=sys.stderr)
+            time.sleep(wait)
+            continue
+        if validate is None:
+            break
+        try:
+            ok = validate(data)
+        except Exception:                        # noqa: BLE001
+            ok = False
+        if ok:
+            break
+        # 校验没过：按 error 落库（cache_key=NULL，不污染缓存），换个种子再要一次。
+        # token 已经花了，留痕才查得出「这一批为什么反复要」。
         _stats["error"] += 1
-        if conn:
-            try:
-                conn.cursor().execute(
-                    """INSERT INTO llm_call
-                       (cache_key, provider, model, effort, stage, museum_key, scope,
-                        prompt_version, system_text, user_text, schema_sha, response_json,
-                        latency_ms, status, error_text)
-                       VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'',%s,'error',%s)""",
-                    (provider, model, effort, stage, museum_key, scope, prompt_version,
-                     system, user,
-                     _sha(json.dumps(schema, sort_keys=True, ensure_ascii=False)),
-                     int((time.time() - t0) * 1000),
-                     f"{type(e).__name__}: {e}"[:60000]))
-            except Exception as e2:              # noqa: BLE001
-                print(f"  [warn] 失败记录写入也失败了（{type(e2).__name__}: {e2}）",
-                      file=sys.stderr)
-        raise
-    latency = int((time.time() - t0) * 1000)
+        _log_error(conn, provider, model, effort, stage, museum_key, scope,
+                   prompt_version, system, user, schema, latency,
+                   f"validate failed (attempt {attempt + 1}/{retries + 1})")
+        print(f"  [warn] {stage} {scope} 返回未通过校验，"
+              f"第 {attempt + 1}/{retries + 1} 次，重试中", file=sys.stderr)
+    else:
+        raise Invalid(f"{stage} {scope}：连试 {retries + 1} 次都没通过校验")
 
     if conn:
         cols = _usage_cols(usage)
@@ -262,8 +310,6 @@ def call(fn, *, provider: str, model: str, effort: str | None,
                  cols.get("prompt_tokens"), cols.get("cached_tokens"),
                  cols.get("completion_tokens"), cols.get("reasoning_tokens"),
                  estimate_cost(model, cols), latency))
-            # lastrowid 为 0 说明撞上了 ON DUPLICATE（并发下另一个进程先写了），
-            # 回查一次拿真正的 id，否则关联会挂到 0 上
             call_id = cur.lastrowid
             if not call_id:
                 cur.execute("SELECT id FROM llm_call WHERE cache_key = %s", (key,))
@@ -271,10 +317,47 @@ def call(fn, *, provider: str, model: str, effort: str | None,
                 call_id = r[0] if r else None
             _link_items(conn, call_id, museum_key, seqs)
         except Exception as e:                   # noqa: BLE001
-            # 写缓存失败不能让整轮白跑 —— 答案已经拿到了，钱也已经花了
             print(f"  [warn] 缓存写入失败（{type(e).__name__}: {e}），本次结果未入库",
                   file=sys.stderr)
     return data
+
+
+def _log_error(conn, provider, model, effort, stage, museum_key, scope,
+               prompt_version, system, user, schema, latency, msg) -> None:
+    """把一次不可用的调用记成 error 行。**cache_key 恒为 NULL**，不参与命中。"""
+    if not conn:
+        return
+    try:
+        conn.cursor().execute(
+            """INSERT INTO llm_call
+               (cache_key, provider, model, effort, stage, museum_key, scope,
+                prompt_version, system_text, user_text, schema_sha, response_json,
+                latency_ms, status, error_text)
+               VALUES (NULL,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,'',%s,'error',%s)""",
+            (provider, model, effort, stage, museum_key, scope, prompt_version,
+             system, user,
+             _sha(json.dumps(schema, sort_keys=True, ensure_ascii=False)),
+             latency, msg[:60000]))
+    except Exception as e:                       # noqa: BLE001
+        print(f"  [warn] 失败记录写入也失败了（{type(e).__name__}: {e}）", file=sys.stderr)
+
+
+def _once(fn, conn, provider, model, effort, stage, museum_key, scope,
+          prompt_version, system, user, schema):
+    """发一次请求，返回 (data, usage, latency_ms)。**只发不写缓存** ——
+    写缓存归 call()，因为要等 validate 过了才能写。抛异常时先留痕再原样抛出。
+    """
+    t0 = time.time()
+    try:
+        data, usage = fn()
+    except Exception as e:                       # noqa: BLE001
+        # 失败也要留痕：token 可能已经烧掉了，整批 429 这类事故只有靠它才看得见。
+        _stats["error"] += 1
+        _log_error(conn, provider, model, effort, stage, museum_key, scope,
+                   prompt_version, system, user, schema,
+                   int((time.time() - t0) * 1000), f"{type(e).__name__}: {e}")
+        raise
+    return data, usage, int((time.time() - t0) * 1000)
 
 
 def stats() -> dict:

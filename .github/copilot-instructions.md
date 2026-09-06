@@ -64,6 +64,21 @@
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
 以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
 展品侧现有 **7 个 museum key、13348 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件）。
+
+**管线覆盖到哪儿了（2026-09-06 实测）—— 四个馆跑过，三个馆一件没碰：**
+
+| 馆 | 展品 | V3 评分 | evidence | metadata | 审计口径 |
+|---|---:|---:|---:|---:|---|
+| `mfa_boston_ext` | 4464 | 4464 | 4464 | 14388 | **slim**（只 7 列） |
+| `ham` | 204 | 204 | 204 | 437 | 完整 |
+| `mfa_boston` | 203 | 203 | 203 | 393 | 完整 |
+| `pem` | 196 | 196 | 196 | 612 | 完整 |
+| `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
+
+`mfa_boston_ext` 的 evidence 行虽然是 4464，但 `completeness` / `research_priority` /
+`best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
+的 slim 说明。
+
 完整说明见 `utils/import_data/README.md`，以下十一条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
@@ -168,12 +183,19 @@ PEM 自己一个字都没改。加在列表末尾这次能躲过，下次躲不�
 | `artwork_evidence` 的审计列 | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_load.py` |
 | `llm_call` / `llm_call_item` | 每次 LLM 调用的问答原文、token 用量、覆盖了哪些展品 | `llm_cache.py` |
 
-**⚠ 每次跑完 `import_artworks.py`，必须接着跑两件事，忘了都不报错：**
+**⚠ 每次跑完 `import_artworks.py`，必须接着跑两件事：**
 
 ```
 python3 tier_v3_load.py --museum <mk> --apply-tier   # 否则 artwork.tier 退回源表评级
 python3 llm_cache.py --refresh-ids                    # 否则 llm_call_item 的便利列指向错行
 ```
+
+**第一条现在由导入器自己兜底**（`stale_tier_guard()`，收尾时比一遍
+`artwork.tier` 与 `COALESCE(tier_override, tier)`，不一致就按馆报警并打印该跑的命令）。
+加这个是因为规则写在文档里挡不住：`DELETE FROM artwork` 清的是**全表**，
+而人只会想到自己刚动过的那个馆 —— 2026-09-04 加 `mfa_boston_ext` 时就只给新馆
+跑了 `--apply-tier`，另外三馆 187 件（PEM 56 / MFA 76 / 哈佛 55）悄悄退回源表评级，
+两天后从导出的 tier 分布里才偶然看出来。**第二条仍然靠人记，忘了不报错。**
 
 `artwork_evidence` 现在有**三个**写入者分写不同列，职责必须互斥，`evidence_score.py`
 必须用 UPSERT —— 早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据
@@ -245,12 +267,51 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
   `source_key` 报错退出，不猜。
 - **型号不写死**（`--model` → `OPENAI_MODEL`），key 从 `~/.openai_key`（权限 600）读，
   **同 MySQL 口令一样绝不进命令行**。实际型号写进 `audited_by` / `scored_by`，
-  两者对照即可看出审计者与打分者是否同源。2026-09-02 起两边都是 `gpt-5.6-sol`
-  2026-09-02 至 09-05 两边都是 `gpt-5.6-sol`（本机没有 Anthropic 凭据），
-  **那段时间同源偏差这一层保护是没有的**。**09-05 起打分改走 `claude` CLI 的 headless
-  模式**（`claude_cli.py`，用本机 Claude Code 订阅账号跑 `claude-opus-5`，无需 API key），
-  跨厂商恢复。**但库里现存三馆 603 件的评分与审计仍是同源那批**，重跑之前不要拿
-  它们的审计结论当独立验证。
+  两者对照即可看出审计者与打分者是否同源。
+
+**⚠ 截至 2026-09-06，库里 5067 件一件都没享受到跨厂商交叉验证 —— 四个馆全是
+OpenAI 打分、OpenAI 审计。** `mfa_boston_ext` 更是两边同一型号：
+
+| 馆 | `scored_by` | `audited_by` |
+|---|---|---|
+| pem / ham / mfa_boston（603 件） | `gpt-5.6-sol xhigh` | `gpt-5.6-sol xhigh` |
+| mfa_boston_ext（4464 件） | `gpt-5.6-luna high/medium/xhigh` | **`gpt-5.6-luna medium`** |
+
+`claude_cli.py`（用本机 Claude Code 订阅账号跑 `claude-opus-5`，无需 API key）09-05 就
+建好了，也确实在两件测试展品上跑通 —— **但 4464 件全量那轮为了赶时间两边都退回了 luna**，
+`llm_call` 里只剩几次 `claude-opus-5` 的痕迹。曾经写在这里的「09-05 起跨厂商恢复」
+是**没有兑现的计划，不是事实**，已就地改正。
+
+**同源审计做出来的可信度，本质是打分者给自己打分。** 拿现存任何一个馆的审计结论当
+独立验证之前，先看这两列。补救成本不高：审计改走 `claude_cli`，不花 OpenAI 的钱
+（走订阅），代价是慢 —— 实测 `claude` CLI 每次调用 45–120 秒，OpenAI 是 4–47 秒。
+
+**⚠ `--slim` 只产出 7 列，跑完导出的「元数据审计汇总」会大半是空的 —— 不是导出算错。**
+slim 是为省钱设的精简口径：只问「缺哪些证据、有没有事实错误」，**不判 12 项完备度、
+不出 `tier_confidence`、不出潜在区间、不跑阶段二**。2026-09-06 `mfa_boston_ext`
+4464 件全量用 slim 跑完，汇总表除了「对象总数」和 metadata 三行之外全是 0。
+
+三处连锁，每一处单看都不像 bug：
+
+1. **slim 写的列**：`tier_review_flag`、`review_reason(_en)`、`missing_evidence(_en)`、
+   `top_missing(_en)`、`audited_by`、`audit_round`、`audited_at`。**没有** `tier_confidence`、
+   `potential_tier_low`、`completeness_detail`、`research_question`、`inference_only_survives`。
+2. **`export_excel.py` 拿 `tier_confidence` 非空当「这件审过没有」的探针**
+   （`audited = [r for r in rows if r[5] is not None]`）。slim 不写这一列，于是 `audited`
+   是空表，后面每一项都从它派生 —— 连**已经跑出来的** 4464 件已审、4460 件需复核、
+   Top 20 研究优先级清单也一起被挡在外面。拿一列代理另一件事，同「不能拿 Has Image
+   推在展」。
+3. **slim 的 INSERT 只列 10 个列名，其余全吃表默认值**，于是
+   `completeness NOT NULL DEFAULT 0` → 平均完备度 `0.00`、
+   `research_priority NOT NULL DEFAULT 0` → 优先级全 0、
+   `completeness_src NOT NULL DEFAULT 'rule'` → **这一行在撒谎**：它声称是
+   `evidence_score.py` 的填充率口径，而那个脚本对这个馆压根没跑过
+   （`generated_by` 全是表默认的 `manual`，`best_source_tier` 全 NULL）。
+   **`0.00` + `src='rule'` 比 NULL 危险得多** —— NULL 一眼看得出「没有」，
+   这个看着像一个测出来的结果。
+
+教训：**「没跑」和「跑出来是 0」必须在库里长得不一样。** NOT NULL DEFAULT 0 用在
+「测量结果」列上就是在制造这种混淆；新增此类列一律可空，让缺席保持可见。
 
 **⚠ 提示词就是判据，写错一句就等于伪造结论。** 本轮三次踩到，代价都是整轮重跑：
 
@@ -279,7 +340,9 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 **这一条目前只修好了上半段**：S 段需复核率降到 53–83%，但 B/C 段仍是 96–100% ——
 判据问「会不会改变 Tier」，而对身份不明的无名小件答案永远是「会」。
 缺的是第三条规则：潜在区间整个落在 B/C 内时不进队列（不管查出什么都不改变
-「不是本次参观重点」）。**未实现。**
+「不是本次参观重点」）。**未实现。** 2026-09-06 在 4464 件上再次证实：
+**4460/4464 = 99.9% 被标需复核**，一个 100% 饱和的队列不携带任何优先级信息，
+等于没有队列。
 - 审计自由文本成对存 `xx` / `xx_en` 两列**不走 `content` 表**（审计轨迹逐轮重写，
   灌进内容表既删不掉又要新增 kind）。代价是导出的「零回落」检查照不到它们，
   故 `audit_load.py` 里有中英成对齐全的校验，缺一边拒绝写入。
@@ -297,6 +360,13 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 这两件事后果完全不同：前者补资料就能解决，后者得先把对象认出来。
 往后再看 PEM 的完备度分数、或考虑把管线推广到其余五馆时，先想清楚源数据的名称
 到底是不是能指向真实藏品的标识符。
+
+**⚠ 文本列的宽度按中文估的，一上英文就爆。** 两处踩过，都是 4464 件那轮暴露的：
+`content_text.text` 原为 `varchar(512)`，英译普遍比中文长，写到第 120 条就
+`1406 Data too long`；审计的 `top_missing_en` 等 6 列原为 `varchar(255)`，同因。
+两处都已 ALTER 成 `TEXT`（记在 `schema_meta.sql` / `schema_audit.sql`）。
+**当时的应急做法是在写入前 `[:512]` 截断 —— 那是错的**，它把「存不下」变成
+「静默存了一半」，已删掉。宁可报错。
 
 **⚠ 这两张表不能 DROP 重建，改结构一律走 `schema_audit.sql` 那样的 ALTER。**
 2026-08-31 发现 `artwork_meta` 与 `artwork_evidence` 里有仓库脚本复现不出来的数据：
@@ -335,6 +405,31 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 - **`llm_call_item` 用软键 `(museum_key, source_seq)` 关联展品**，多对多。
   `artwork_id` / `museum_id` 是可空的**便利列**，重灌即失效，须跑 `--refresh-ids`；
   视图 `v_artwork_llm_call` 的 `ids_stale` 列直接给出新鲜度判断。
+- **校验必须发生在写缓存之前**（`call(validate=...)`）。曾经模型漏返一个 `seq`，
+  那条坏答案照样进了缓存 —— 于是重启后**每次都命中同一条坏答案，崩在同一个地方**，
+  看起来像「代码没改对」。现在 `validate` 不过就抛 `Invalid` 并重试（默认 2 次），
+  连缓存里的旧答案也会重新校验、不过就删掉。三个评分阶段与 slim 审计都传了 `validate`。
+- **瞬时错误退避重试**（`_transient()`：连接/超时/限流/5xx，退避 5s、10s）。
+  一次 `APIConnectionError` 曾直接打死跑了几小时的审计进程。
+- **`claude_cli` 的 token 计量目前是坏的**：库里那几行 `claude-opus-5` 调用
+  `prompt_tokens` 记成 4/8/12，显然没接上 CLI 的用量字段。不影响结果，但走
+  `claude_cli` 的那部分账目缺一块。**未修。**
+
+**⚠ 分批只是调度，绝不能进入算法。** 把批大小从 500 改成 100 或 1000，
+评分结果必须逐字节一致。初版让 `peer_group` 在每批 500 件内各自形成 —— 等于把批大小
+混进了判据，CR 的防评分膨胀机制（组内比较）会随分批方式变化，用户 09-05 当场否掉。
+现在的分法是：
+
+| 阶段 | 依赖 | 能不能分批 |
+|---|---|---|
+| 阶段一 HS/IU/VI/VA/CE | 逐件独立 | 可任意分批，随时中断续跑 |
+| 阶段二 CR | **须看到同组全部对象** | 必须等阶段一全跑完，按**全馆**分组 |
+| 阶段三 S-ness | S 候选 | 同上 |
+
+代价是要等全部跑完才看得到 tier，换来的是结果可复现。`tier_v3.py` 为此加了
+`--stage 1|2|3|all` 与 `--seq-from/--seq-to`（后者**只在 `--stage 1` 下允许**，
+在阶段二三用会静默破坏分组）。逐阶段推理强度写死在 `STAGE_EFFORT`：
+阶段一 `high`、阶段二 `medium`、阶段三 `xhigh`。
 
 **11. `--limit N` 是「跑 N 件」，不是「跑第 N 件」。** 单件复核用 `--only-seq`
 （`tier_v3.py` / `audit_meta.py` / `meta_fill_official_mfa.py` 都支持，可重复给）。
@@ -344,6 +439,19 @@ na 从分母剔除后归一化，量的是「资料够不够支撑判断」。
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
 两个导入器都是清空重灌，写在库里的译文重跑一次就没了。
+
+**中文源的馆导出英文版之前必须先跑 `translate_artwork.py`。** 导入器的规矩是
+「原文永远保底写入，即使译名表缺这一条」—— 所以**缺译不报错**，只在英文版 Excel 里
+整片露出中文。2026-09-06 首次导出 `mfa_boston_ext` 英文版报出 **14893 处** CJK 回落，
+两个原因都不在 artwork 表上：
+
+1. **漏了 `gallery.name_cid`** —— 81 个展厅名一段没译，而每件展品都带展厅列，
+   一个漏译名称乘以几千行就是上万处。补译要覆盖的不止 artwork。
+2. **只查 `e.text IS NULL` 不够** —— 「原文保底写入」会在 `en` 行里塞中文原文，
+   看着有英文其实没有。判据必须是 `e.text IS NULL OR e.text REGEXP '[一-鿿]'`，
+   这一条又捞出 67 个展品名。
+
+修完重跑，中英两版都是零回落。译文同时写 `content_text` 与译名表两处，缺一不可。
 
 **导出用 `utils/import_data/export_excel.py`**，中英各一套，落在
 `utils/import_data/exports/`（已 gitignore，属派生文件）。整跑约 12 分钟，瓶颈是跨公网
@@ -448,6 +556,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/meta_fill_rule.py` | 从名称/简介确定性提取 metadata，任意馆通用（原 `meta_fill_pem.py`）。`NAME_ARTIST_PREFIX` 记着各馆名称是不是「作者, 题名」格式 |
 | `utils/import_data/meta_scrape.py` | Wikidata 抓取，任意馆通用（原 `meta_scrape_pem.py`）。WDQS 限流时自动改用 QLever 端点 |
 | `utils/import_data/meta_fill_official_mfa.py` | 从 `mfa_boston_ext` 的半结构化名称/简介确定性抽 8 个字段，**零 API**。逐段按模式判别，认不出就不写 |
+| `utils/import_data/translate_artwork.py` | 给展品名称、**展厅名**与简介补英译，同时写 `content_text` 与译名表。中文源的馆导出英文版前必跑 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |
 | `utils/import_data/schema_llm_cache.sql` | `llm_call` / `llm_call_item` / `v_artwork_llm_call` 的建表与 ALTER |

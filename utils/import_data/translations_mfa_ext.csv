@@ -1,0 +1,817 @@
+# mfa_boston_ext 的 metadata 取值译名表
+# kind 固定 meta_value_text；key 与 zh 都是抽出来的中文原值
+# confidence：官方=通行既定译名 / AI=机器翻译 / 存疑=拿不准，优先人工复核
+# **人名一栏是回译不是翻译**：拿不准就留中文并标存疑，
+#   造一个不存在的拼写（沙金 -> Shajin）比留着中文更糟。
+kind,key,zh,en,confidence,used_by
+meta_value_text,1149 年,1149 年,1149,AI,date_absolute
+meta_value_text,1189 年,1189 年,1189,AI,date_absolute
+meta_value_text,11–12 世纪,11–12 世纪,11th–12th century,AI,date_absolute
+meta_value_text,12 世纪,12 世纪,12th century,AI,date_absolute
+meta_value_text,12 世纪初,12 世纪初,early 12th century,AI,date_absolute
+meta_value_text,13 世纪初,13 世纪初,early 13th century,AI,date_absolute
+meta_value_text,1356 年,1356 年,1356,AI,date_absolute
+meta_value_text,14 世纪中期,14 世纪中期,mid-14th century,AI,date_absolute
+meta_value_text,14–15 世纪,14–15 世纪,14th–15th century,AI,date_absolute
+meta_value_text,16–17 世纪,16–17 世纪,16th–17th century,AI,date_absolute
+meta_value_text,1763 年,1763 年,1763,AI,date_absolute
+meta_value_text,18 世纪中期,18 世纪中期,mid-18th century,AI,date_absolute
+meta_value_text,19 世纪,19 世纪,19th century,AI,date_absolute
+meta_value_text,19 世纪中期,19 世纪中期,mid-19th century,AI,date_absolute
+meta_value_text,19 世纪末,19 世纪末,late 19th century,AI,date_absolute
+meta_value_text,19 世纪末–20 世纪,19 世纪末–20 世纪,late 19th–20th century,AI,date_absolute
+meta_value_text,1900 年 Bartlett 捐款购藏,1900 年 Bartlett 捐款购藏,Purchased in 1900 with funds donated by Bartlett,AI,acquisition
+meta_value_text,1900 年 Francis Bartlett 十万美元专款购藏的成果,1900 年 Francis Bartlett 十万美元专款购藏的成果,"Acquired in 1900 through Francis Bartlett's designated fund of $100,000",AI,acquisition
+meta_value_text,1900 年 Francis Bartlett 捐款购藏,1900 年 Francis Bartlett 捐款购藏,Purchased in 1900 with funds donated by Francis Bartlett,AI,acquisition
+meta_value_text,1912 年 Bartlett 捐款购藏,1912 年 Bartlett 捐款购藏,Purchased in 1912 with funds donated by Bartlett,AI,acquisition
+meta_value_text,1930 年以 Harriet White Bradbury 基金购入,1930 年以 Harriet White Bradbury 基金购入,Purchased in 1930 with the Harriet White Bradbury Fund,AI,acquisition
+meta_value_text,20 世纪,20 世纪,20th century,AI,date_absolute
+meta_value_text,20 世纪中期,20 世纪中期,mid-20th century,AI,date_absolute
+meta_value_text,20 世纪初,20 世纪初,early 20th century,AI,date_absolute
+meta_value_text,2015 年 MFA 以多项基金联合购入,2015 年 MFA 以多项基金联合购入,Purchased by the MFA in 2015 with support from multiple funds,AI,acquisition
+meta_value_text,6 世纪,6 世纪,6th century,AI,date_absolute
+meta_value_text,9 世纪,9 世纪,9th century,AI,date_absolute
+meta_value_text,9–10 世纪,9–10 世纪,9th–10th century,AI,date_absolute
+meta_value_text,Art of Asia 亚洲艺术（Arts of Korea 韩国艺术展厅）,Art of Asia 亚洲艺术（Arts of Korea 韩国艺术展厅）,Art of Asia (Arts of Korea Gallery),AI,gallery_official
+meta_value_text,"Art of Asia 亚洲艺术（Level 1, Gallery 175 伊斯兰艺术）","Art of Asia 亚洲艺术（Level 1, Gallery 175 伊斯兰艺术）","Art of Asia (Level 1, Gallery 175, Islamic Art)",AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（Level 1–2 各亚洲展厅）,Art of Asia 亚洲艺术（Level 1–2 各亚洲展厅）,Art of Asia (Asian galleries on Levels 1–2),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（中国书画）,Art of Asia 亚洲艺术（中国书画）,Art of Asia (Chinese Calligraphy and Painting),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（中国绘画）,Art of Asia 亚洲艺术（中国绘画）,Art of Asia (Chinese Painting),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（南亚与东南亚）,Art of Asia 亚洲艺术（南亚与东南亚）,Art of Asia (South and Southeast Asia),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（南亚绘画）,Art of Asia 亚洲艺术（南亚绘画）,Art of Asia (South Asian Painting),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（日本版画）,Art of Asia 亚洲艺术（日本版画）,Art of Asia (Japanese Prints),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（日本艺术精选）,Art of Asia 亚洲艺术（日本艺术精选）,Art of Asia (Highlights of Japanese Art),AI,gallery_official
+meta_value_text,Art of Asia 亚洲艺术（翁万戈收藏）,Art of Asia 亚洲艺术（翁万戈收藏）,Art of Asia (Wan-go H. C. Weng Collection),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（19 世纪法国绘画展厅）,Art of Europe 欧洲艺术（19 世纪法国绘画展厅）,Art of Europe (19th-Century French Paintings Gallery),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（19 世纪法国雕塑）,Art of Europe 欧洲艺术（19 世纪法国雕塑）,Art of Europe (19th-Century French Sculpture),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（Kunstkammer 珍奇柜展厅）,Art of Europe 欧洲艺术（Kunstkammer 珍奇柜展厅）,Art of Europe (Kunstkammer Gallery),AI,gallery_official
+meta_value_text,"Art of Europe 欧洲艺术（Level 2, Gallery 250 汉诺威银器）","Art of Europe 欧洲艺术（Level 2, Gallery 250 汉诺威银器）","Art of Europe (Level 2, Gallery 250, Hanoverian Silver)",AI,gallery_official
+meta_value_text,"Art of Europe 欧洲艺术（Level 2, Gallery 252 Monet Gallery）","Art of Europe 欧洲艺术（Level 2, Gallery 252 Monet Gallery）","Art of Europe (Level 2, Gallery 252, Monet Gallery)",AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（中世纪艺术）,Art of Europe 欧洲艺术（中世纪艺术）,Art of Europe (Medieval Art),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（后印象派）,Art of Europe 欧洲艺术（后印象派）,Art of Europe (Post-Impressionism),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（意大利文艺复兴）,Art of Europe 欧洲艺术（意大利文艺复兴）,Art of Europe (Italian Renaissance),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（意大利绘画）,Art of Europe 欧洲艺术（意大利绘画）,Art of Europe (Italian Painting),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（欧洲手抄本）,Art of Europe 欧洲艺术（欧洲手抄本）,Art of Europe (European Manuscripts),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（欧洲绘画精选）,Art of Europe 欧洲艺术（欧洲绘画精选）,Art of Europe (Highlights of European Painting),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（欧洲雕塑）,Art of Europe 欧洲艺术（欧洲雕塑）,Art of Europe (European Sculpture),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（法国绘画）,Art of Europe 欧洲艺术（法国绘画）,Art of Europe (French Painting),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（英国绘画）,Art of Europe 欧洲艺术（英国绘画）,Art of Europe (British Painting),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（荷兰与佛兰德斯绘画）,Art of Europe 欧洲艺术（荷兰与佛兰德斯绘画）,Art of Europe (Dutch and Flemish Painting),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（荷兰装饰艺术）,Art of Europe 欧洲艺术（荷兰装饰艺术）,Art of Europe (Dutch Decorative Arts),AI,gallery_official
+meta_value_text,Art of Europe 欧洲艺术（西班牙绘画）,Art of Europe 欧洲艺术（西班牙绘画）,Art of Europe (Spanish Painting),AI,gallery_official
+meta_value_text,Art of the Americas Wing — Artists of African Descent 非裔艺术家专题,Art of the Americas Wing — Artists of African Descent 非裔艺术家专题,Art of the Americas Wing — Artists of African Descent,官方,gallery_official
+meta_value_text,Art of the Americas Wing — Boston Artists 波士顿画家专题,Art of the Americas Wing — Boston Artists 波士顿画家专题,Art of the Americas Wing — Boston Artists,官方,gallery_official
+meta_value_text,Art of the Americas Wing — Colonial Latin American Art 殖民地拉美艺术,Art of the Americas Wing — Colonial Latin American Art 殖民地拉美艺术,Art of the Americas Wing — Colonial Latin American Art,官方,gallery_official
+meta_value_text,Art of the Americas Wing — Folk Art of the Americas 美洲民间艺术专题,Art of the Americas Wing — Folk Art of the Americas 美洲民间艺术专题,Art of the Americas Wing — Folk Art of the Americas,官方,gallery_official
+meta_value_text,Art of the Americas Wing — Sculpture of the Americas 美洲雕塑专题,Art of the Americas Wing — Sculpture of the Americas 美洲雕塑专题,Art of the Americas Wing — Sculpture of the Americas,官方,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Colonial Latin American Art）,Art of the Americas Wing 美洲艺术翼（Colonial Latin American Art）,Art of the Americas Wing Art of the Americas Wing (Colonial Latin American Art),AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Decorative Arts of the Americas）,Art of the Americas Wing 美洲艺术翼（Decorative Arts of the Americas）,Art of the Americas Wing Art of the Americas Wing (Decorative Arts of the Americas),AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Level 1）,Art of the Americas Wing 美洲艺术翼（Level 1）,Art of the Americas Wing Art of the Americas Wing (Level 1),AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Level 2）,Art of the Americas Wing 美洲艺术翼（Level 2）,Art of the Americas Wing Art of the Americas Wing (Level 2),AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Level 3，20 世纪美洲艺术）,Art of the Americas Wing 美洲艺术翼（Level 3，20 世纪美洲艺术）,"Art of the Americas Wing Art of the Americas Wing (Level 3, 20th-Century Art of the Americas)",AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Level LG，Ancient Americas）,Art of the Americas Wing 美洲艺术翼（Level LG，Ancient Americas）,"Art of the Americas Wing Art of the Americas Wing (Level LG, Ancient Americas)",AI,gallery_official
+meta_value_text,Art of the Americas Wing 美洲艺术翼（Paintings of the Americas）,Art of the Americas Wing 美洲艺术翼（Paintings of the Americas）,Art of the Americas Wing Art of the Americas Wing (Paintings of the Americas),AI,gallery_official
+meta_value_text,Charles Potter Kling 基金购藏,Charles Potter Kling 基金购藏,Purchased with the Charles Potter Kling Fund,AI,acquisition
+meta_value_text,Edward J. 与 Mary S. Holmes 基金购藏,Edward J. 与 Mary S. Holmes 基金购藏,Purchased with the Edward J. and Mary S. Holmes Fund,AI,acquisition
+meta_value_text,Everett 基金购藏,Everett 基金购藏,Purchased with the Everett Fund,AI,acquisition
+meta_value_text,George Nixon Black 基金购藏,George Nixon Black 基金购藏,Purchased with the George Nixon Black Fund,AI,acquisition
+meta_value_text,Henry H. 与 Zoe Oliver Sherman 基金购藏,Henry H. 与 Zoe Oliver Sherman 基金购藏,Purchased with the Henry H. and Zoe Oliver Sherman Fund,AI,acquisition
+meta_value_text,Henry Lillie Pierce 基金购藏,Henry Lillie Pierce 基金购藏,Purchased with the Henry Lillie Pierce Fund,AI,acquisition
+meta_value_text,Hervey Edward Wetzel 基金购藏,Hervey Edward Wetzel 基金购藏,Purchased with the Hervey Edward Wetzel Fund,AI,acquisition
+meta_value_text,John Goelet 捐赠,John Goelet 捐赠,Gift of John Goelet,AI,acquisition
+meta_value_text,Landon T. Clay 捐赠,Landon T. Clay 捐赠,Gift of Landon T. Clay,AI,acquisition
+meta_value_text,Landon T. 与 Lavinia Clay 捐赠,Landon T. 与 Lavinia Clay 捐赠,Gift of Landon T. and Lavinia Clay,AI,acquisition
+meta_value_text,Level 1 — Ancient Egypt 古埃及展厅,Level 1 — Ancient Egypt 古埃及展厅,Level 1 — Ancient Egypt Ancient Egypt Gallery,AI,gallery_official
+meta_value_text,Level 1 — Ancient Near Eastern Art 古代近东艺术,Level 1 — Ancient Near Eastern Art 古代近东艺术,Level 1 — Ancient Near Eastern Art Ancient Near Eastern Art,AI,gallery_official
+meta_value_text,Level 1 — Arts of the Pacific 太平洋艺术展厅,Level 1 — Arts of the Pacific 太平洋艺术展厅,Level 1 — Arts of the Pacific Pacific Art Gallery,AI,gallery_official
+meta_value_text,Level 1 — Egyptian Art 埃及艺术展厅,Level 1 — Egyptian Art 埃及艺术展厅,Level 1 — Egyptian Art Egyptian Art Gallery,AI,gallery_official
+meta_value_text,Level 1 — Egyptian Funerary Arts 埃及丧葬艺术,Level 1 — Egyptian Funerary Arts 埃及丧葬艺术,Level 1 — Egyptian Funerary Arts Egyptian Funerary Arts,AI,gallery_official
+meta_value_text,Level 1 — Mummies 木乃伊展厅,Level 1 — Mummies 木乃伊展厅,Level 1 — Mummies Mummy Gallery,AI,gallery_official
+meta_value_text,Level 1 — Nubian Art 努比亚艺术展厅,Level 1 — Nubian Art 努比亚艺术展厅,Level 1 — Nubian Art Nubian Art Gallery,AI,gallery_official
+meta_value_text,"Level 1, Gallery 103 — Musical Instruments 乐器展厅","Level 1, Gallery 103 — Musical Instruments 乐器展厅","Level 1, Gallery 103 — Musical Instruments Musical Instruments Gallery",AI,gallery_official
+meta_value_text,"Level 1, Gallery 110 — Ancient Near Eastern Art 古代近东艺术","Level 1, Gallery 110 — Ancient Near Eastern Art 古代近东艺术","Level 1, Gallery 110 — Ancient Near Eastern Art Ancient Near Eastern Art",AI,gallery_official
+meta_value_text,"Level 1, Gallery 119 — Egyptian Funerary Arts 埃及丧葬艺术","Level 1, Gallery 119 — Egyptian Funerary Arts 埃及丧葬艺术","Level 1, Gallery 119 — Egyptian Funerary Arts Egyptian Funerary Arts",AI,gallery_official
+meta_value_text,"Level 1, Gallery 121 — Period Rooms 时期房间（Oak Hill 等）","Level 1, Gallery 121 — Period Rooms 时期房间（Oak Hill 等）","Level 1, Gallery 121 — Period Rooms Period Rooms (Oak Hill, etc.)",AI,gallery_official
+meta_value_text,"Level 1, Gallery 121D — Oak Hill Bedroom 橡树山卧室（时期房间）","Level 1, Gallery 121D — Oak Hill Bedroom 橡树山卧室（时期房间）","Level 1, Gallery 121D — Oak Hill Bedroom Oak Hill Bedroom (Period Room)",AI,gallery_official
+meta_value_text,"Level 1, Gallery 165 — Contemporary Art 当代艺术","Level 1, Gallery 165 — Contemporary Art 当代艺术","Level 1, Gallery 165 — Contemporary Art Contemporary Art",AI,gallery_official
+meta_value_text,"Level 1, Gallery 171 — African Art 非洲艺术","Level 1, Gallery 171 — African Art 非洲艺术","Level 1, Gallery 171 — African Art African Art",AI,gallery_official
+meta_value_text,"Level 1, Gallery 171 — African Art 非洲艺术展厅","Level 1, Gallery 171 — African Art 非洲艺术展厅","Level 1, Gallery 171 — African Art African Art Gallery",AI,gallery_official
+meta_value_text,"Level 1, Gallery 172 — Benin Kingdom Art 贝宁王国艺术","Level 1, Gallery 172 — Benin Kingdom Art 贝宁王国艺术","Level 1, Gallery 172 — Benin Kingdom Art Benin Kingdom Art",AI,gallery_official
+meta_value_text,"Level 1, Gallery 175 — Arts of Islamic Cultures 伊斯兰艺术展厅","Level 1, Gallery 175 — Arts of Islamic Cultures 伊斯兰艺术展厅","Level 1, Gallery 175 — Arts of Islamic Cultures Islamic Art Gallery",AI,gallery_official
+meta_value_text,Level 2 — Arts of Japan 日本艺术展厅,Level 2 — Arts of Japan 日本艺术展厅,Level 2 — Arts of Japan Japanese Art Gallery,AI,gallery_official
+meta_value_text,Level 2 — Arts of Japan 日本艺术展厅（含茶室与能剧展区）,Level 2 — Arts of Japan 日本艺术展厅（含茶室与能剧展区）,Level 2 — Arts of Japan Japanese Art Gallery (including the tearoom and Noh theater section),AI,gallery_official
+meta_value_text,"Level 2 — Behrakis Wing, Art of the Ancient World 古代世界艺术翼","Level 2 — Behrakis Wing, Art of the Ancient World 古代世界艺术翼","Level 2 — Behrakis Wing, Art of the Ancient World Art of the Ancient World Wing",AI,gallery_official
+meta_value_text,Level 2 — Byzantine Art 拜占庭艺术展厅,Level 2 — Byzantine Art 拜占庭艺术展厅,Level 2 — Byzantine Art Byzantine Art Gallery,AI,gallery_official
+meta_value_text,Level 2 — Early Greek Art 早期希腊艺术展厅,Level 2 — Early Greek Art 早期希腊艺术展厅,Level 2 — Early Greek Art Early Greek Art Gallery,AI,gallery_official
+meta_value_text,Level 2 — Etruscan Art 伊特鲁里亚艺术展区,Level 2 — Etruscan Art 伊特鲁里亚艺术展区,Level 2 — Etruscan Art Etruscan Art Section,AI,gallery_official
+meta_value_text,Level 2 — Greek Mythology 希腊神话展区,Level 2 — Greek Mythology 希腊神话展区,Level 2 — Greek Mythology Greek Mythology Section,AI,gallery_official
+meta_value_text,Level 2 — Greek Vases 希腊陶瓶展区,Level 2 — Greek Vases 希腊陶瓶展区,Level 2 — Greek Vases Greek Vases Section,AI,gallery_official
+meta_value_text,Level 2 — Greek and Roman Sculpture 希腊罗马雕塑,Level 2 — Greek and Roman Sculpture 希腊罗马雕塑,Level 2 — Greek and Roman Sculpture Greek and Roman Sculpture,AI,gallery_official
+meta_value_text,Level 2 — Homer and the Epics 荷马与史诗展厅,Level 2 — Homer and the Epics 荷马与史诗展厅,Level 2 — Homer and the Epics Homer and the Epics Gallery,AI,gallery_official
+meta_value_text,Level 2 — Ireland Gallery of Gems and Jewelry 古地中海宝石与珠宝展厅,Level 2 — Ireland Gallery of Gems and Jewelry 古地中海宝石与珠宝展厅,Level 2 — Ireland Gallery of Gems and Jewelry Ancient Mediterranean Gems and Jewelry Gallery,AI,gallery_official
+meta_value_text,Level 2 — Roman Portraiture 罗马肖像雕塑展厅,Level 2 — Roman Portraiture 罗马肖像雕塑展厅,Level 2 — Roman Portraiture Roman Portrait Sculpture Gallery,AI,gallery_official
+meta_value_text,Level 2 — Upper Rotunda / Greek Art 希腊艺术,Level 2 — Upper Rotunda / Greek Art 希腊艺术,Level 2 — Upper Rotunda / Greek Art Greek Art,AI,gallery_official
+meta_value_text,Level 2 — Upper Rotunda 上层圆厅,Level 2 — Upper Rotunda 上层圆厅,Level 2 — Upper Rotunda Upper Rotunda,AI,gallery_official
+meta_value_text,"Level 2, Gallery 242 — Art of the Netherlands in the 17th Century 17 世纪荷兰艺术","Level 2, Gallery 242 — Art of the Netherlands in the 17th Century 17 世纪荷兰艺术","Level 2, Gallery 242 — Art of the Netherlands in the 17th Century 17th-Century Dutch Art",AI,gallery_official
+meta_value_text,"Level 2, Gallery 250 — European Paintings and Hanoverian Silver 欧洲绘画与汉诺威银器","Level 2, Gallery 250 — European Paintings and Hanoverian Silver 欧洲绘画与汉诺威银器","Level 2, Gallery 250 — European Paintings and Hanoverian Silver European Paintings and Hanoverian Silver",AI,gallery_official
+meta_value_text,"Level 2, Gallery 252 — Monet Gallery 莫奈展厅","Level 2, Gallery 252 — Monet Gallery 莫奈展厅","Level 2, Gallery 252 — Monet Gallery Monet Gallery",AI,gallery_official
+meta_value_text,"Level 2, Gallery 274 — Paul and Helen Bernat Gallery（中国宋代艺术展厅）","Level 2, Gallery 274 — Paul and Helen Bernat Gallery（中国宋代艺术展厅）","Level 2, Gallery 274 — Paul and Helen Bernat Gallery (Gallery of Chinese Art of the Song Dynasty)",AI,gallery_official
+meta_value_text,"Level 2, Gallery 275 — Chinese Ceramics 中国陶瓷展厅","Level 2, Gallery 275 — Chinese Ceramics 中国陶瓷展厅","Level 2, Gallery 275 — Chinese Ceramics Chinese Ceramics Gallery",AI,gallery_official
+meta_value_text,"Level 2, Gallery 278B — Buddhist Art from Japan 日本佛教艺术","Level 2, Gallery 278B — Buddhist Art from Japan 日本佛教艺术","Level 2, Gallery 278B — Buddhist Art from Japan Japanese Buddhist Art",AI,gallery_official
+meta_value_text,"Level 2, Gallery 280 区 — Japanese Buddhist Temple Room 日本佛教寺庙厅","Level 2, Gallery 280 区 — Japanese Buddhist Temple Room 日本佛教寺庙厅","Level 2, Gallery 280 Section — Japanese Buddhist Temple Room Japanese Buddhist Temple Room",AI,gallery_official
+meta_value_text,"Level 3, Gallery 327 — 20 世纪美国艺术（曾为 Women Take the Floor 展区）","Level 3, Gallery 327 — 20 世纪美国艺术（曾为 Women Take the Floor 展区）","Level 3, Gallery 327 — 20th-Century American Art (formerly the Women Take the Floor section)",AI,gallery_official
+meta_value_text,Level LG — Ancient Americas 古代美洲展厅,Level LG — Ancient Americas 古代美洲展厅,Level LG — Ancient Americas Ancient Americas Gallery,AI,gallery_official
+meta_value_text,Level LG — Native North American Art 北美原住民艺术展厅,Level LG — Native North American Art 北美原住民艺术展厅,Level LG — Native North American Art Native North American Art Gallery,AI,gallery_official
+meta_value_text,"Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations 前哥伦布黄金与安第斯文明","Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations 前哥伦布黄金与安第斯文明","Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations Pre-Columbian Gold and Andean Civilizations",AI,gallery_official
+meta_value_text,MFA 创始理事、首任馆长 Martin Brimmer 于 1877 年捐赠,MFA 创始理事、首任馆长 Martin Brimmer 于 1877 年捐赠,"Gift of MFA founding trustee and first director Martin Brimmer, 1877",AI,acquisition
+meta_value_text,Special Chinese and Japanese Fund 购藏,Special Chinese and Japanese Fund 购藏,Purchased with the Special Chinese and Japanese Fund,AI,acquisition
+meta_value_text,丁托列托,丁托列托,Tintoretto,官方,artist
+meta_value_text,丝绸,丝绸,silk,AI,material
+meta_value_text,中国,中国,China,官方,origin_place
+meta_value_text,中村不折,中村不折,Nakamura Fusetsu,官方,artist
+meta_value_text,主要依靠 William 与 Bertha Teel 等捐赠人,主要依靠 William 与 Bertha Teel 等捐赠人,Primarily through gifts from donors including William and Bertha Teel,AI,acquisition
+meta_value_text,乌木、阿勒颇松、阿布拉木、黄杨与象牙／骨,乌木、阿勒颇松、阿布拉木、黄杨与象牙／骨,"ebony, Aleppo pine, abura wood, boxwood, and ivory/bone",AI,material
+meta_value_text,乔凡尼·第·保禄,乔凡尼·第·保禄,Giovanni di Paolo,官方,artist
+meta_value_text,乔治·卢克斯,乔治·卢克斯,George Luks,官方,artist
+meta_value_text,乔治·斯塔布斯,乔治·斯塔布斯,George Stubbs,官方,artist
+meta_value_text,乔治·莫兰迪,乔治·莫兰迪,Giorgio Morandi,官方,artist
+meta_value_text,乔治·鲁奥,乔治·鲁奥,Georges Rouault,官方,artist
+meta_value_text,乔瓦尼·保罗·帕尼尼,乔瓦尼·保罗·帕尼尼,Giovanni Paolo Panini,官方,artist
+meta_value_text,乔瓦尼·巴蒂斯塔·提埃坡罗,乔瓦尼·巴蒂斯塔·提埃坡罗,Giovanni Battista Tiepolo,官方,artist
+meta_value_text,乔瓦尼·巴蒂斯塔·皮亚泽塔,乔瓦尼·巴蒂斯塔·皮亚泽塔,Giovanni Battista Piazzetta,官方,artist
+meta_value_text,乔瓦尼·巴蒂斯塔·莫罗尼,乔瓦尼·巴蒂斯塔·莫罗尼,Giovanni Battista Moroni,官方,artist
+meta_value_text,乔纳森·博罗夫斯基,乔纳森·博罗夫斯基,Jonathan Borofsky,官方,artist
+meta_value_text,于贝尔·罗贝尔,于贝尔·罗贝尔,Hubert Robert,官方,artist
+meta_value_text,亚伯拉罕·瓦尔科维茨,亚伯拉罕·瓦尔科维茨,Abraham Walkowitz,官方,artist
+meta_value_text,亚历山德罗·亚洛里,亚历山德罗·亚洛里,Alessandro Allori,官方,artist
+meta_value_text,亚历山德罗·隆吉,亚历山德罗·隆吉,Alessandro Longhi,官方,artist
+meta_value_text,亚森特·里戈,亚森特·里戈,Hyacinthe Rigaud,官方,artist
+meta_value_text,亚瑟·达夫,亚瑟·达夫,Arthur Dove,官方,artist
+meta_value_text,亞歷山大·卡拉姆,亞歷山大·卡拉姆,Alexandre Calame,官方,artist
+meta_value_text,亞歷山德羅·馬尼亞斯科,亞歷山德羅·馬尼亞斯科,Alessandro Magnasco,官方,artist
+meta_value_text,亨利·勒尼奥,亨利·勒尼奥,Henri Regnault,官方,artist
+meta_value_text,亨利·因曼,亨利·因曼,Henry Inman,官方,artist
+meta_value_text,亨利·奥利弗·沃克,亨利·奥利弗·沃克,Henry Oliver Walker,官方,artist
+meta_value_text,亨利·德·土魯斯-羅特列克,亨利·德·土魯斯-羅特列克,Henri de Toulouse-Lautrec,官方,artist
+meta_value_text,亨利·摩尔,亨利·摩尔,Henry Moore,官方,artist
+meta_value_text,亨利·方丹-拉图尔,亨利·方丹-拉图尔,Henri Fantin-Latour,官方,artist
+meta_value_text,亨利·盧梭,亨利·盧梭,Henri Rousseau,官方,artist
+meta_value_text,亨利·莫雷,亨利·莫雷,Henry Moret,官方,artist
+meta_value_text,亨利·阿皮尼,亨利·阿皮尼,Henri-Joseph Harpignies,官方,artist
+meta_value_text,亨利·雷布恩,亨利·雷布恩,Henry Raeburn,官方,artist
+meta_value_text,亨利·马蒂斯,亨利·马蒂斯,Henri Matisse,官方,artist
+meta_value_text,亨利·高迪-布熱斯卡,亨利·高迪-布熱斯卡,Henri Gaudier-Brzeska,官方,artist
+meta_value_text,亨利・泰納,亨利・泰納,Henry Ossawa Tanner,官方,artist
+meta_value_text,亨德里克·霍尔奇尼斯,亨德里克·霍尔奇尼斯,Hendrick Goltzius,官方,artist
+meta_value_text,代表作,代表作,masterpiece,AI,museum_highlight
+meta_value_text,以 George D. 与 Margo Behrakis 捐款购藏,以 George D. 与 Margo Behrakis 捐款购藏,Purchased with funds donated by George D. and Margo Behrakis,AI,acquisition
+meta_value_text,以 Landon T. Clay 捐款购藏,以 Landon T. Clay 捐款购藏,Purchased with funds donated by Landon T. Clay,AI,acquisition
+meta_value_text,伊万·康斯坦丁诺维奇·艾瓦佐夫斯基,伊万·康斯坦丁诺维奇·艾瓦佐夫斯基,Ivan Konstantinovich Aivazovsky,官方,artist
+meta_value_text,伊丽莎白·舒马托夫,伊丽莎白·舒马托夫,Elizabeth Shoumatoff,官方,artist
+meta_value_text,伊丽莎白·默里,伊丽莎白·默里,Elizabeth Murray,官方,artist
+meta_value_text,伊拉克,伊拉克,Iraq,官方,origin_place
+meta_value_text,伊斯门·约翰逊,伊斯门·约翰逊,Eastman Johnson,官方,artist
+meta_value_text,伊莉莎白·維傑·勒布倫,伊莉莎白·維傑·勒布倫,Élisabeth Vigée Le Brun,官方,artist
+meta_value_text,伊莱休·维德,伊莱休·维德,Elihu Vedder,官方,artist
+meta_value_text,伊薩·史托勒,伊薩·史托勒,Ezra Stoller,官方,artist
+meta_value_text,伊藤若冲,伊藤若冲,Itō Jakuchū,官方,artist
+meta_value_text,伊西多爾·考夫曼,伊西多爾·考夫曼,Isidor Kaufmann,官方,artist
+meta_value_text,休伯特·凡·赫克默,休伯特·凡·赫克默,Hubert von Herkomer,官方,artist
+meta_value_text,伦勃朗,伦勃朗,Rembrandt,官方,artist
+meta_value_text,但丁·加百列·羅塞蒂,但丁·加百列·羅塞蒂,Dante Gabriel Rossetti,官方,artist
+meta_value_text,何塞·克萊門特·奧羅斯科,何塞·克萊門特·奧羅斯科,José Clemente Orozco,官方,artist
+meta_value_text,保卢斯·莫雷尔瑟,保卢斯·莫雷尔瑟,Paulus Moreelse,官方,artist
+meta_value_text,保盧斯·波特,保盧斯·波特,Paulus Potter,官方,artist
+meta_value_text,保罗·于埃,保罗·于埃,Paul Huet,官方,artist
+meta_value_text,保罗·塞尚,保罗·塞尚,Paul Cézanne,官方,artist
+meta_value_text,保罗·委罗内塞,保罗·委罗内塞,Paolo Veronese,官方,artist
+meta_value_text,保罗·西涅克,保罗·西涅克,Paul Signac,官方,artist
+meta_value_text,保羅·克利,保羅·克利,Paul Klee,官方,artist
+meta_value_text,保羅·凱德馬斯,保羅·凱德馬斯,Paul Cadmus,官方,artist
+meta_value_text,保羅·高更,保羅·高更,Paul Gauguin,官方,artist
+meta_value_text,偉恩·第伯,偉恩·第伯,Wayne Thiebaud,官方,artist
+meta_value_text,光琳,光琳,Ogata Kōrin,官方,artist
+meta_value_text,克劳德·莫奈,克劳德·莫奈,Claude Monet,官方,artist
+meta_value_text,克洛德·洛兰,克洛德·洛兰,Claude Lorrain,官方,artist
+meta_value_text,克里斯多福·伍爾,克里斯多福·伍爾,Christopher Wool,官方,artist
+meta_value_text,克雷斯皮·朱瑟貝,克雷斯皮·朱瑟貝,Giuseppe Maria Crespi,官方,artist
+meta_value_text,公元 700–1520 年,公元 700–1520 年,700–1520 CE,AI,date_absolute
+meta_value_text,公元前 14 世纪,公元前 14 世纪,14th century BCE,AI,date_absolute
+meta_value_text,公元前 2010–1961,公元前 2010–1961,2010–1961 BCE,AI,date_absolute
+meta_value_text,公元前 2010–1961 年,公元前 2010–1961 年,2010–1961 BCE,AI,date_absolute
+meta_value_text,公元前 2490–2472,公元前 2490–2472,2490–2472 BCE,AI,date_absolute
+meta_value_text,公元前 3 世纪末,公元前 3 世纪末,late 3rd century BCE,AI,date_absolute
+meta_value_text,公元前 538–519,公元前 538–519,538–519 BCE,AI,date_absolute
+meta_value_text,公元前 883–859 年,公元前 883–859 年,883–859 BCE,AI,date_absolute
+meta_value_text,公元前 900–600 年,公元前 900–600 年,900–600 BCE,AI,date_absolute
+meta_value_text,凱德·威利,凱德·威利,Kehinde Wiley,官方,artist
+meta_value_text,凱瑞·詹姆斯·馬歇爾,凱瑞·詹姆斯·馬歇爾,Kerry James Marshall,官方,artist
+meta_value_text,切斯特·哈丁,切斯特·哈丁,Chester Harding,官方,artist
+meta_value_text,利維奧·梅烏斯,利維奧·梅烏斯,Livio Mehus,官方,artist
+meta_value_text,加埃塔諾·佩謝,加埃塔諾·佩謝,Gaetano Pesce,官方,artist
+meta_value_text,加布里埃爾·梅曲,加布里埃爾·梅曲,Gabriel Metsu,官方,artist
+meta_value_text,加斯帕德·杜格,加斯帕德·杜格,Gaspard Dughet,官方,artist
+meta_value_text,加纳莱托,加纳莱托,Canaletto,官方,artist
+meta_value_text,加里·梅爾徹斯,加里·梅爾徹斯,Gari Melchers,官方,artist
+meta_value_text,勞倫斯·阿爾瑪-塔德瑪,勞倫斯·阿爾瑪-塔德瑪,Lawrence Alma-Tadema,官方,artist
+meta_value_text,北宋,北宋,Northern Song dynasty,官方,polity
+meta_value_text,南达拉·玻色,南达拉·玻色,Nandalal Bose,官方,artist
+meta_value_text,博尼法齐奥·韦罗内塞,博尼法齐奥·韦罗内塞,Bonifazio Veronese,官方,artist
+meta_value_text,博韦皇家地毯手工厂,博韦皇家地毯手工厂,Beauvais Royal Manufactory,官方,artist
+meta_value_text,卡尔·博德默,卡尔·博德默,Karl Bodmer,官方,artist
+meta_value_text,卡洛·多爾齊,卡洛·多爾齊,Carlo Dolci,官方,artist
+meta_value_text,卡洛·馬拉塔,卡洛·馬拉塔,Carlo Maratta,官方,artist
+meta_value_text,卡爾·法布里蒂烏斯,卡爾·法布里蒂烏斯,Carel Fabritius,官方,artist
+meta_value_text,卡米耶·畢沙羅,卡米耶·畢沙羅,Camille Pissarro,官方,artist
+meta_value_text,卡罗·克里韦利,卡罗·克里韦利,Carlo Crivelli,官方,artist
+meta_value_text,卡雷尔·阿佩尔,卡雷尔·阿佩尔,Karel Appel,官方,artist
+meta_value_text,卢卡·焦尔达诺,卢卡·焦尔达诺,Luca Giordano,官方,artist
+meta_value_text,卢卡斯·范·莱顿,卢卡斯·范·莱顿,Lucas van Leyden,官方,artist
+meta_value_text,卢多尔夫·巴克赫伊森,卢多尔夫·巴克赫伊森,Ludolf Bakhuizen,官方,artist
+meta_value_text,厄斯塔什·勒叙厄尔,厄斯塔什·勒叙厄尔,Eustache Le Sueur,官方,artist
+meta_value_text,古斯塔夫·卡耶博特,古斯塔夫·卡耶博特,Gustave Caillebotte,官方,artist
+meta_value_text,古斯塔夫·多雷,古斯塔夫·多雷,Gustave Doré,官方,artist
+meta_value_text,吉姆·戴恩,吉姆·戴恩,Jim Dine,官方,artist
+meta_value_text,吉尔伯特·斯图尔特,吉尔伯特·斯图尔特,Gilbert Stuart,官方,artist
+meta_value_text,吉田博,吉田博,Yoshida Hiroshi,官方,artist
+meta_value_text,吉诺·塞韦里尼,吉诺·塞韦里尼,Gino Severini,官方,artist
+meta_value_text,含黑色包裹体的硬玉,含黑色包裹体的硬玉,jadeite with black inclusions,AI,material
+meta_value_text,周季常,周季常,Zhou Jichang,官方,artist
+meta_value_text,喜多川歌麿,喜多川歌麿,Kitagawa Utamaro,官方,artist
+meta_value_text,喬托·迪·邦多內,喬托·迪·邦多內,Giotto di Bondone,官方,artist
+meta_value_text,喬斯·凡·克里夫,喬斯·凡·克里夫,Joos van Cleve,官方,artist
+meta_value_text,喬治·亨利·鮑頓,喬治·亨利·鮑頓,George Henry Boughton,官方,artist
+meta_value_text,喬治·凱勒·賓漢,喬治·凱勒·賓漢,George Caleb Bingham,官方,artist
+meta_value_text,喬治·布拉克,喬治·布拉克,Georges Braque,官方,artist
+meta_value_text,喬治·皮埃尔·秀拉,喬治·皮埃尔·秀拉,Georges Pierre Seurat,官方,artist
+meta_value_text,喬治·羅姆尼,喬治·羅姆尼,George Romney,官方,artist
+meta_value_text,喬治·英尼斯,喬治·英尼斯,George Inness,官方,artist
+meta_value_text,喬治·貝洛斯,喬治·貝洛斯,George Bellows,官方,artist
+meta_value_text,喬治亞·歐姬芙,喬治亞·歐姬芙,Georgia O’Keeffe,官方,artist
+meta_value_text,喬瓦尼·巴蒂斯塔·奇普里亞尼,喬瓦尼·巴蒂斯塔·奇普里亞尼,Giovanni Battista Cipriani,官方,artist
+meta_value_text,喬納森·理查德森,喬納森·理查德森,Jonathan Richardson,官方,artist
+meta_value_text,喬萬尼·巴蒂斯塔·羅勃洛,喬萬尼·巴蒂斯塔·羅勃洛,喬萬尼·巴蒂斯塔·羅勃洛,存疑,artist
+meta_value_text,土佐光起,土佐光起,Tosa Mitsuoki,官方,artist
+meta_value_text,土田麥僊,土田麥僊,Tsuchida Bakusen,官方,artist
+meta_value_text,圭尔奇诺,圭尔奇诺,Guercino,官方,artist
+meta_value_text,埃内斯特·梅索尼埃,埃内斯特·梅索尼埃,Jean-Louis-Ernest Meissonier,官方,artist
+meta_value_text,埃及,埃及,Egypt,官方,origin_place
+meta_value_text,埃尔·格列柯,埃尔·格列柯,El Greco,官方,artist
+meta_value_text,埃尔斯沃斯·凯利,埃尔斯沃斯·凯利,Ellsworth Kelly,官方,artist
+meta_value_text,埃德加·德加,埃德加·德加,Edgar Degas,官方,artist
+meta_value_text,埃德溫·奧斯丁·阿貝,埃德溫·奧斯丁·阿貝,Edwin Austin Abbey,官方,artist
+meta_value_text,埃瓦利斯特·維塔勒·盧米納伊斯,埃瓦利斯特·維塔勒·盧米納伊斯,Évariste Vital Luminais,官方,artist
+meta_value_text,埃米尔·贝尔纳,埃米尔·贝尔纳,Émile Bernard,官方,artist
+meta_value_text,埃赫隆·范德内尔,埃赫隆·范德内尔,Eglon van der Neer,官方,artist
+meta_value_text,埃马努埃尔·洛伊策,埃马努埃尔·洛伊策,Emanuel Leutze,官方,artist
+meta_value_text,堂本印象,堂本印象,Dōmoto Inshō,官方,artist
+meta_value_text,塞巴斯蒂亚诺·孔卡,塞巴斯蒂亚诺·孔卡,Sebastiano Conca,官方,artist
+meta_value_text,塞巴斯蒂亚诺·里奇,塞巴斯蒂亚诺·里奇,Sebastiano Ricci,官方,artist
+meta_value_text,塞巴斯蒂安·布尔东,塞巴斯蒂安·布尔东,Sébastien Bourdon,官方,artist
+meta_value_text,夏尔-弗朗索瓦·多比尼,夏尔-弗朗索瓦·多比尼,Charles-François Daubigny,官方,artist
+meta_value_text,夏爾-埃米爾·雅克,夏爾-埃米爾·雅克,Charles-Émile Jacque,官方,artist
+meta_value_text,多明尼克·帕碑提,多明尼克·帕碑提,Domenico Panetti,官方,artist
+meta_value_text,多明尼科·費提,多明尼科·費提,Domenico Fetti,官方,artist
+meta_value_text,多梅尼科·丁托列托,多梅尼科·丁托列托,Domenico Tintoretto,官方,artist
+meta_value_text,多梅尼科·吉兰达约,多梅尼科·吉兰达约,Domenico Ghirlandaio,官方,artist
+meta_value_text,多梅尼科·貝卡富米,多梅尼科·貝卡富米,Domenico Beccafumi,官方,artist
+meta_value_text,多納托·克雷蒂,多納托·克雷蒂,Donato Creti,官方,artist
+meta_value_text,多色木版画,多色木版画,polychrome woodblock print,AI,material
+meta_value_text,大卫·霍克尼,大卫·霍克尼,David Hockney,官方,artist
+meta_value_text,大理石,大理石,marble,AI,material
+meta_value_text,失蜡法铸铜合金,失蜡法铸铜合金,lost-wax cast copper alloy,AI,material
+meta_value_text,头部 1–2 世纪、身躯公元前 1 世纪末–公元 1 世纪初,头部 1–2 世纪、身躯公元前 1 世纪末–公元 1 世纪初,head: 1st–2nd century CE; body: late 1st century BCE–early 1st century CE,AI,date_absolute
+meta_value_text,夹纻漆,夹纻漆,dry lacquer,AI,material
+meta_value_text,奎多,奎多,奎多,存疑,artist
+meta_value_text,奥古斯特·埃尔班,奥古斯特·埃尔班,Auguste Herbin,官方,artist
+meta_value_text,奥拉斯·韦尔内,奥拉斯·韦尔内,Horace Vernet,官方,artist
+meta_value_text,奥拉齐奥·真蒂莱斯基,奥拉齐奥·真蒂莱斯基,Orazio Gentileschi,官方,artist
+meta_value_text,奥斯卡·弗洛里安斯·布鲁姆纳,奥斯卡·弗洛里安斯·布鲁姆纳,Oscar Florianus Bluemner,官方,artist
+meta_value_text,奥斯卡·柯克西卡,奥斯卡·柯克西卡,Oskar Kokoschka,官方,artist
+meta_value_text,奥斯卡·费钦格,奥斯卡·费钦格,Oskar Fischinger,官方,artist
+meta_value_text,奥诺雷·杜米埃,奥诺雷·杜米埃,Honoré Daumier,官方,artist
+meta_value_text,奧托·馬爾斯尤斯·馮·世里克,奧托·馬爾斯尤斯·馮·世里克,Otto Marseus van Schrieck,官方,artist
+meta_value_text,委拉斯開茲,委拉斯開茲,Diego Velázquez,官方,artist
+meta_value_text,威廉·哈密尔顿,威廉·哈密尔顿,William Hamilton,官方,artist
+meta_value_text,威廉·埃蒂,威廉·埃蒂,William Etty,官方,artist
+meta_value_text,威廉·基思,威廉·基思,William Keith,官方,artist
+meta_value_text,威廉·奧爾彭,威廉·奧爾彭,William Orpen,官方,artist
+meta_value_text,威廉·布莱克,威廉·布莱克,William Blake,官方,artist
+meta_value_text,威廉·德·库宁,威廉·德·库宁,Willem de Kooning,官方,artist
+meta_value_text,威廉·德赫斯,威廉·德赫斯,William de Haas,官方,artist
+meta_value_text,威廉·格拉肯斯,威廉·格拉肯斯,William Glackens,官方,artist
+meta_value_text,威廉·梅里特·蔡斯,威廉·梅里特·蔡斯,William Merritt Chase,官方,artist
+meta_value_text,威廉·比奇,威廉·比奇,William Beechey,官方,artist
+meta_value_text,威廉·特羅斯特·理查茲,威廉·特羅斯特·理查茲,William Trost Richards,官方,artist
+meta_value_text,威廉·瑞莫,威廉·瑞莫,William Rimmer,官方,artist
+meta_value_text,威廉·莫里斯·亨特,威廉·莫里斯·亨特,William Morris Hunt,官方,artist
+meta_value_text,威廉·蘭尼,威廉·蘭尼,William Ranney,官方,artist
+meta_value_text,威廉·西格爵士,威廉·西格爵士,Sir William Segar,官方,artist
+meta_value_text,威廉·贺加斯,威廉·贺加斯,William Hogarth,官方,artist
+meta_value_text,威廉·阿道夫·布格罗,威廉·阿道夫·布格罗,William-Adolphe Bouguereau,官方,artist
+meta_value_text,威廉·霍爾布魯克·比爾德,威廉·霍爾布魯克·比爾德,William Holbrook Beard,官方,artist
+meta_value_text,威廉·麥葛雷格·帕克斯頓,威廉·麥葛雷格·帕克斯頓,William McGregor Paxton,官方,artist
+meta_value_text,威拉德·梅特卡夫,威拉德·梅特卡夫,Willard Metcalf,官方,artist
+meta_value_text,威納·凡·丹·華卻特,威納·凡·丹·華卻特,Werner van den Valckert,官方,artist
+meta_value_text,安东尼·范戴克,安东尼·范戴克,Anthony van Dyck,官方,artist
+meta_value_text,安东尼奥·卡拉奇,安东尼奥·卡拉奇,Antonio Carracci,官方,artist
+meta_value_text,安东尼奥·洛佩斯·加西亚,安东尼奥·洛佩斯·加西亚,Antonio López García,官方,artist
+meta_value_text,安东尼奥·瓦拉斯,安东尼奥·瓦拉斯,安东尼奥·瓦拉斯,存疑,artist
+meta_value_text,安东尼奥·达·柯勒乔,安东尼奥·达·柯勒乔,Antonio da Correggio,官方,artist
+meta_value_text,安塞姆•基弗,安塞姆•基弗,Anselm Kiefer,官方,artist
+meta_value_text,安德斯·佐恩,安德斯·佐恩,Anders Zorn,官方,artist
+meta_value_text,安德烈·德兰,安德烈·德兰,André Derain,官方,artist
+meta_value_text,安德里亞·索拉里,安德里亞·索拉里,Andrea Solari,官方,artist
+meta_value_text,安德里亞·萬尼,安德里亞·萬尼,Andrea Vanni,官方,artist
+meta_value_text,安德魯·魏斯,安德魯·魏斯,Andrew Wyeth,官方,artist
+meta_value_text,安托万-路易·巴里,安托万-路易·巴里,Antoine-Louis Barye,官方,artist
+meta_value_text,安東·毛沃,安東·毛沃,Anton Mauve,官方,artist
+meta_value_text,安東尼奧·佩萊格里尼,安東尼奧·佩萊格里尼,Giovanni Antonio Pellegrini,官方,artist
+meta_value_text,安東尼奧·坦佩斯塔,安東尼奧·坦佩斯塔,Antonio Tempesta,官方,artist
+meta_value_text,安東尼奧·岡薩雷茲·維拉斯奎茲,安東尼奧·岡薩雷茲·維拉斯奎茲,Antonio González Velázquez,官方,artist
+meta_value_text,安迪·沃荷,安迪·沃荷,Andy Warhol,官方,artist
+meta_value_text,宋徽宗,宋徽宗,Emperor Huizong of Song,官方,artist
+meta_value_text,官方御用瓷,官方御用瓷,imperial porcelain,AI,material
+meta_value_text,富岡鐵齋,富岡鐵齋,Tomioka Tessai,官方,artist
+meta_value_text,尊·韋德·亞歷山大,尊·韋德·亞歷山大,John White Alexander,官方,artist
+meta_value_text,小亞歷山大·波普,小亞歷山大·波普,Alexander Pope Jr.,官方,artist
+meta_value_text,小卢卡斯·克拉纳赫,小卢卡斯·克拉纳赫,Lucas Cranach the Younger,官方,artist
+meta_value_text,小埃米爾·科薩,小埃米爾·科薩,Emil Kosa Jr.,官方,artist
+meta_value_text,小威廉·范德费尔德,小威廉·范德费尔德,Willem van de Velde the Younger,官方,artist
+meta_value_text,小戴维·泰尼尔斯,小戴维·泰尼尔斯,David Teniers the Younger,官方,artist
+meta_value_text,小林永濯,小林永濯,Kobayashi Eitaku,官方,artist
+meta_value_text,小艾倫·拉姆齊,小艾倫·拉姆齊,Allan Ramsay Jr.,官方,artist
+meta_value_text,尚·梅金傑,尚·梅金傑,Jean Metzinger,官方,artist
+meta_value_text,尤利乌斯·比西尔,尤利乌斯·比西尔,Julius Bissier,官方,artist
+meta_value_text,尤斯圖斯·蘇斯特曼斯,尤斯圖斯·蘇斯特曼斯,Justus Sustermans,官方,artist
+meta_value_text,尤瑟夫·卡希,尤瑟夫·卡希,Yousuf Karsh,官方,artist
+meta_value_text,尼古拉·德·斯塔埃尔,尼古拉·德·斯塔埃尔,Nicolas de Staël,官方,artist
+meta_value_text,尼古拉·德拉吉利耶,尼古拉·德拉吉利耶,Nicolas de Largillière,官方,artist
+meta_value_text,尼古拉·普桑,尼古拉·普桑,Nicolas Poussin,官方,artist
+meta_value_text,尼古拉·朗克雷,尼古拉·朗克雷,Nicolas Lancret,官方,artist
+meta_value_text,尼古拉斯·彼得松·贝尔赫姆,尼古拉斯·彼得松·贝尔赫姆,Nicolaes Pieterszoon Berchem,官方,artist
+meta_value_text,尼古拉斯·马斯,尼古拉斯·马斯,Nicolaes Maes,官方,artist
+meta_value_text,尼可洛·迪·皮埃特羅·傑里尼,尼可洛·迪·皮埃特羅·傑里尼,Niccolò di Pietro Gerini,官方,artist
+meta_value_text,尼日利亚,尼日利亚,Nigeria,官方,origin_place
+meta_value_text,尼爾·威利弗,尼爾·威利弗,Neil Welliver,官方,artist
+meta_value_text,尾形乾山,尾形乾山,Ogata Kenzan,官方,artist
+meta_value_text,局部鎏金银器、镌刻装饰,局部鎏金银器、镌刻装饰,parcel-gilt silver with engraved decoration,AI,material
+meta_value_text,居斯塔夫·库尔贝,居斯塔夫·库尔贝,Gustave Courbet,官方,artist
+meta_value_text,"岡田謙三,","岡田謙三,",Kenzo Okada,官方,artist
+meta_value_text,巴勃羅·畢卡索,巴勃羅·畢卡索,Pablo Picasso,官方,artist
+meta_value_text,巴尔塔萨·范·德·阿斯特,巴尔塔萨·范·德·阿斯特,Balthasar van der Ast,官方,artist
+meta_value_text,巴布亚新几内亚,巴布亚新几内亚,Papua New Guinea,官方,origin_place
+meta_value_text,巴德·霍普金斯,巴德·霍普金斯,Budd Hopkins,官方,artist
+meta_value_text,巴托洛梅·埃斯特萬·牟利羅,巴托洛梅·埃斯特萬·牟利羅,Bartolomé Esteban Murillo,官方,artist
+meta_value_text,巴托羅密歐·維內托,巴托羅密歐·維內托,Bartolomeo Veneto,官方,artist
+meta_value_text,巴拿马,巴拿马,Panama,官方,origin_place
+meta_value_text,巴爾托洛梅奧·帕薩羅蒂,巴爾托洛梅奧·帕薩羅蒂,Bartolomeo Passarotti,官方,artist
+meta_value_text,巴爾托洛梅奧·維瓦里尼,巴爾托洛梅奧·維瓦里尼,Bartolomeo Vivarini,官方,artist
+meta_value_text,巴里斯·博爾多內,巴里斯·博爾多內,Paris Bordone,官方,artist
+meta_value_text,布拉曼蒂诺,布拉曼蒂诺,Bramantino,官方,artist
+meta_value_text,布面油画,布面油画,oil on canvas,AI,material
+meta_value_text,希腊,希腊,Greece,官方,origin_place
+meta_value_text,帕尔马·乔凡尼,帕尔马·乔凡尼,Palma il Giovane,官方,artist
+meta_value_text,帕特裏克·休斯,帕特裏克·休斯,Patrick Hughes,官方,artist
+meta_value_text,帕罗·德·麦缇斯,帕罗·德·麦缇斯,Paolo de Matteis,官方,artist
+meta_value_text,康斯坦·特魯瓦永,康斯坦·特魯瓦永,Constant Troyon,官方,artist
+meta_value_text,弗兰斯.斯尼德斯,弗兰斯.斯尼德斯,Frans Snyders,官方,artist
+meta_value_text,弗兰斯·哈尔斯,弗兰斯·哈尔斯,Frans Hals,官方,artist
+meta_value_text,弗拉·安杰利科,弗拉·安杰利科,Fra Angelico,官方,artist
+meta_value_text,弗朗兹·克兰,弗朗兹·克兰,Franz Kline,官方,artist
+meta_value_text,弗朗兹·克萨韦尔·温特哈尔特,弗朗兹·克萨韦尔·温特哈尔特,Franz Xaver Winterhalter,官方,artist
+meta_value_text,弗朗切斯科·克萊門特,弗朗切斯科·克萊門特,Francesco Clemente,官方,artist
+meta_value_text,弗朗切斯科·卡伊罗,弗朗切斯科·卡伊罗,Francesco Cairo,官方,artist
+meta_value_text,弗朗切斯科·德爾·科薩,弗朗切斯科·德爾·科薩,Francesco del Cossa,官方,artist
+meta_value_text,弗朗切斯科·瓜尔迪,弗朗切斯科·瓜尔迪,Francesco Guardi,官方,artist
+meta_value_text,弗朗切斯科·迪·喬爾吉奧·馬爾提尼,弗朗切斯科·迪·喬爾吉奧·馬爾提尼,Francesco di Giorgio Martini,官方,artist
+meta_value_text,弗朗索瓦-于贝尔·德鲁埃,弗朗索瓦-于贝尔·德鲁埃,François-Hubert Drouais,官方,artist
+meta_value_text,弗朗索瓦-格扎维埃·法布尔,弗朗索瓦-格扎维埃·法布尔,François-Xavier Fabre,官方,artist
+meta_value_text,弗朗索瓦-約瑟夫·納維茲,弗朗索瓦-約瑟夫·納維茲,François-Joseph Navez,官方,artist
+meta_value_text,弗朗索瓦-路易·法兰西,弗朗索瓦-路易·法兰西,François-Louis Français,官方,artist
+meta_value_text,弗朗索瓦·布歇,弗朗索瓦·布歇,François Boucher,官方,artist
+meta_value_text,弗朗茨·冯·伦巴赫,弗朗茨·冯·伦巴赫,Franz von Lenbach,官方,artist
+meta_value_text,弗朗茨·马克,弗朗茨·马克,Franz Marc,官方,artist
+meta_value_text,弗朗西斯科·德·苏巴朗,弗朗西斯科·德·苏巴朗,Francisco de Zurbarán,官方,artist
+meta_value_text,弗朗西斯科·戈雅,弗朗西斯科·戈雅,Francisco Goya,官方,artist
+meta_value_text,弗朗西斯科·阿爾巴尼,弗朗西斯科·阿爾巴尼,Francesco Albani,官方,artist
+meta_value_text,弗蘭斯・波斯特,弗蘭斯・波斯特,Frans Post,官方,artist
+meta_value_text,弗里德尔·祖巴斯,弗里德尔·祖巴斯,Friedel Dzubas,官方,artist
+meta_value_text,弗雷德里克·卡尔·弗里塞克,弗雷德里克·卡尔·弗里塞克,Frederick Carl Frieseke,官方,artist
+meta_value_text,弗雷德里克·埃德溫·丘奇,弗雷德里克·埃德溫·丘奇,Frederic Edwin Church,官方,artist
+meta_value_text,弗雷德里克·阿瑟·布里奇曼,弗雷德里克·阿瑟·布里奇曼,Frederick Arthur Bridgman,官方,artist
+meta_value_text,弗雷德里克·雷明顿,弗雷德里克·雷明顿,Frederic Remington,官方,artist
+meta_value_text,张萱,张萱,Zhang Xuan,官方,artist
+meta_value_text,彩釉陶器,彩釉陶器,ceramic with colored glazes,AI,material
+meta_value_text,彼得·F·羅斯梅爾,彼得·F·羅斯梅爾,Peter F. Rothermel,官方,artist
+meta_value_text,彼得·保羅·魯本斯,彼得·保羅·魯本斯,Peter Paul Rubens,官方,artist
+meta_value_text,彼得·克拉斯,彼得·克拉斯,Pieter Claesz,官方,artist
+meta_value_text,彼得·布鲁姆,彼得·布鲁姆,Peter Blume,官方,artist
+meta_value_text,彼得·庫克·范·阿爾斯特,彼得·庫克·范·阿爾斯特,Pieter Coecke van Aelst,官方,artist
+meta_value_text,彼得·德霍赫,彼得·德霍赫,Pieter de Hooch,官方,artist
+meta_value_text,彼得·拉斯特曼,彼得·拉斯特曼,Pieter Lastman,官方,artist
+meta_value_text,德拉罗什,德拉罗什,Paul Delaroche,官方,artist
+meta_value_text,恩斯特·路德维希·基希纳,恩斯特·路德维希·基希纳,Ernst Ludwig Kirchner,官方,artist
+meta_value_text,愛德華·伯恩-瓊斯,愛德華·伯恩-瓊斯,Edward Burne-Jones,官方,artist
+meta_value_text,愛德華·史泰欽,愛德華·史泰欽,Edward Steichen,官方,artist
+meta_value_text,愛德華·莫蘭,愛德華·莫蘭,Edward Moran,官方,artist
+meta_value_text,愛德華·蒙克,愛德華·蒙克,Edvard Munch,官方,artist
+meta_value_text,愛德華·霍普,愛德華·霍普,Edward Hopper,官方,artist
+meta_value_text,愛德華·馬奈,愛德華·馬奈,Édouard Manet,官方,artist
+meta_value_text,愛立信,愛立信,愛立信,存疑,artist
+meta_value_text,愛麗絲·尼爾,愛麗絲·尼爾,Alice Neel,官方,artist
+meta_value_text,戈弗雷·内勒,戈弗雷·内勒,Godfrey Kneller,官方,artist
+meta_value_text,戈弗雷內勒,戈弗雷內勒,Godfrey Kneller,官方,artist
+meta_value_text,手卷,手卷,handscroll,AI,material
+meta_value_text,托馬斯·哈特·本頓,托馬斯·哈特·本頓,Thomas Hart Benton,官方,artist
+meta_value_text,托馬斯·庚斯博羅,托馬斯·庚斯博羅,Thomas Gainsborough,官方,artist
+meta_value_text,托馬斯·科爾,托馬斯·科爾,Thomas Cole,官方,artist
+meta_value_text,托马·库蒂尔,托马·库蒂尔,Thomas Couture,官方,artist
+meta_value_text,托马斯·劳伦斯,托马斯·劳伦斯,Thomas Lawrence,官方,artist
+meta_value_text,托马斯·埃金斯,托马斯·埃金斯,Thomas Eakins,官方,artist
+meta_value_text,托马斯·结露,托马斯·结露,Thomas Dewing,官方,artist
+meta_value_text,扬·利芬斯,扬·利芬斯,Jan Lievens,官方,artist
+meta_value_text,扬·戴维茨·德赫姆,扬·戴维茨·德赫姆,Jan Davidsz. de Heem,官方,artist
+meta_value_text,扬·斯滕,扬·斯滕,Jan Steen,官方,artist
+meta_value_text,扬·波赛利斯,扬·波赛利斯,Jan Porcellis,官方,artist
+meta_value_text,扬·范斯科雷尔,扬·范斯科雷尔,Jan van Scorel,官方,artist
+meta_value_text,扬·范霍延,扬·范霍延,Jan van Goyen,官方,artist
+meta_value_text,扬·莫勒纳尔,扬·莫勒纳尔,Jan Miense Molenaer,官方,artist
+meta_value_text,扬·阿瑟莱恩,扬·阿瑟莱恩,Jan Asselijn,官方,artist
+meta_value_text,扬·霍萨特,扬·霍萨特,Jan Gossaert,官方,artist
+meta_value_text,折叠式屏風,折叠式屏風,folding screen,AI,material
+meta_value_text,拉尔夫·厄尔,拉尔夫·厄尔,Ralph Earl,官方,artist
+meta_value_text,拉斐尔·圣齐奥,拉斐尔·圣齐奥,Raffaello Sanzio,官方,artist
+meta_value_text,拉维尼亚·丰塔纳,拉维尼亚·丰塔纳,Lavinia Fontana,官方,artist
+meta_value_text,拉里·彭斯,拉里·彭斯,Larry Poons,官方,artist
+meta_value_text,拉里·里弗斯,拉里·里弗斯,Larry Rivers,官方,artist
+meta_value_text,提香,提香,Titian,官方,artist
+meta_value_text,揚·威爾登斯,揚·威爾登斯,Jan Wildens,官方,artist
+meta_value_text,揚·德·比爾,揚·德·比爾,Jan de Beer,官方,artist
+meta_value_text,揚·范·惠瑟姆,揚·范·惠瑟姆,Jan van Huysum,官方,artist
+meta_value_text,揚·范德爾·海登,揚·范德爾·海登,Jan van der Heyden,官方,artist
+meta_value_text,文森特·德赛德里奥,文森特·德赛德里奥,Vincent Desiderio,官方,artist
+meta_value_text,文森特·梵高,文森特·梵高,Vincent van Gogh,官方,artist
+meta_value_text,斯卡塞利诺,斯卡塞利诺,Scarsellino,官方,artist
+meta_value_text,斯图亚特·戴维斯,斯图亚特·戴维斯,Stuart Davis,官方,artist
+meta_value_text,新西兰,新西兰,New Zealand,官方,origin_place
+meta_value_text,日本,日本,Japan,官方,origin_place
+meta_value_text,是 MFA 史上最大的一批欧洲绘画捐赠,是 MFA 史上最大的一批欧洲绘画捐赠,The largest gift of European paintings in MFA history,AI,acquisition
+meta_value_text,是 MFA 馆史上最重要的中国书画捐赠,是 MFA 馆史上最重要的中国书画捐赠,The most important gift of Chinese paintings and calligraphy in MFA history,AI,acquisition
+meta_value_text,是馆史上最重要的中国书画捐赠,是馆史上最重要的中国书画捐赠,The most important gift of Chinese paintings and calligraphy in the museum's history,AI,acquisition
+meta_value_text,曾我萧白,曾我萧白,Soga Shōhaku,官方,artist
+meta_value_text,月冈芳年,月冈芳年,Tsukioka Yoshitoshi,官方,artist
+meta_value_text,朝鲜,朝鲜,Joseon dynasty,官方,polity
+meta_value_text,木,木,wood,AI,material
+meta_value_text,木、彩绘,木、彩绘,wood with polychromy,AI,material
+meta_value_text,木材,木材,wood,AI,material
+meta_value_text,木造,木造,wood,AI,material
+meta_value_text,木面板,木面板,wood panel,AI,material
+meta_value_text,本·尼科尔森,本·尼科尔森,Ben Nicholson,官方,artist
+meta_value_text,本杰明·委斯特,本杰明·委斯特,Benjamin West,官方,artist
+meta_value_text,朱利奥·切萨雷·普罗卡奇尼,朱利奥·切萨雷·普罗卡奇尼,Giulio Cesare Procaccini,官方,artist
+meta_value_text,朱利安·奥尔登·韦尔,朱利安·奥尔登·韦尔,Julian Alden Weir,官方,artist
+meta_value_text,朱利安·許納貝,朱利安·許納貝,Julian Schnabel,官方,artist
+meta_value_text,朱利安·迪普雷,朱利安·迪普雷,Julien Dupré,官方,artist
+meta_value_text,朱塞佩·切薩里,朱塞佩·切薩里,Giuseppe Cesari,官方,artist
+meta_value_text,朱尔·布勒东,朱尔·布勒东,Jules Breton,官方,artist
+meta_value_text,朱尔·帕斯金,朱尔·帕斯金,Jules Pascin,官方,artist
+meta_value_text,朱尔斯·奥列斯基,朱尔斯·奥列斯基,Jules Olitski,官方,artist
+meta_value_text,朱爾·迪普雷,朱爾·迪普雷,Julien Dupré,官方,artist
+meta_value_text,朱爾斯·路易·馬沙爾,朱爾斯·路易·馬沙爾,Jules Louis Machard,官方,artist
+meta_value_text,村上華岳,村上華岳,Murakami Kagaku,官方,artist
+meta_value_text,杜喬·迪·博尼塞尼亞,杜喬·迪·博尼塞尼亞,Duccio di Buoninsegna,官方,artist
+meta_value_text,杨木,杨木,poplar wood,AI,material
+meta_value_text,杰克·巴特勒·叶芝,杰克·巴特勒·叶芝,Jack Butler Yeats,官方,artist
+meta_value_text,杰克·布什,杰克·布什,Jack Bush,官方,artist
+meta_value_text,杰克逊·波洛克,杰克逊·波洛克,Jackson Pollock,官方,artist
+meta_value_text,東州斎写楽,東州斎写楽,Tōshūsai Sharaku,官方,artist
+meta_value_text,板上油画,板上油画,oil on panel,AI,material
+meta_value_text,林飞龙,林飞龙,Lin Feilong,官方,artist
+meta_value_text,查克·克洛斯,查克·克洛斯,Chuck Close,官方,artist
+meta_value_text,查爾斯·伯德·金,查爾斯·伯德·金,Charles Bird King,官方,artist
+meta_value_text,查爾斯·席勒,查爾斯·席勒,Charles Sheeler,官方,artist
+meta_value_text,查爾斯·羅伯特·萊斯利,查爾斯·羅伯特·萊斯利,Charles Robert Leslie,官方,artist
+meta_value_text,查爾斯·達納·吉布森,查爾斯·達納·吉布森,Charles Dana Gibson,官方,artist
+meta_value_text,查理斯·威爾遜·皮爾,查理斯·威爾遜·皮爾,Charles Willson Peale,官方,artist
+meta_value_text,查理斯·德穆斯,查理斯·德穆斯,Charles Demuth,官方,artist
+meta_value_text,格倫·利貢,格倫·利貢,Glenn Ligon,官方,artist
+meta_value_text,格哈德·里希特,格哈德·里希特,Gerhard Richter,官方,artist
+meta_value_text,格奥尔格·巴泽利茨,格奥尔格·巴泽利茨,Georg Baselitz,官方,artist
+meta_value_text,桃花心木、乌木与缎木镶嵌、松木,桃花心木、乌木与缎木镶嵌、松木,"mahogany, ebony and satinwood marquetry, and pine",AI,material
+meta_value_text,桑福德·羅賓遜·吉福德,桑福德·羅賓遜·吉福德,Sanford Robinson Gifford,官方,artist
+meta_value_text,桧木、贴金、水晶嵌眼,桧木、贴金、水晶嵌眼,Japanese cypress with gilding and crystal-inlaid eyes,AI,material
+meta_value_text,棉平纹、木薯糊防染,棉平纹、木薯糊防染,cotton plain weave with cassava-paste resist dyeing,AI,material
+meta_value_text,棉花,棉花,cotton,AI,material
+meta_value_text,欧仁·伊萨贝,欧仁·伊萨贝,Eugène Isabey,官方,artist
+meta_value_text,欧仁·卡里埃,欧仁·卡里埃,Eugène Carrière,官方,artist
+meta_value_text,欧仁·布丹,欧仁·布丹,Eugène Boudin,官方,artist
+meta_value_text,欧仁·弗罗芒坦,欧仁·弗罗芒坦,Eugène Fromentin,官方,artist
+meta_value_text,欧仁·德拉克罗瓦,欧仁·德拉克罗瓦,Eugène Delacroix,官方,artist
+meta_value_text,歌川廣重,歌川廣重,Utagawa Hiroshige,官方,artist
+meta_value_text,水彩,水彩,watercolor,AI,material
+meta_value_text,汉斯·沃汀格,汉斯·沃汀格,Hans Wertinger,官方,artist
+meta_value_text,汉斯·霍夫曼,汉斯·霍夫曼,Hans Hofmann,官方,artist
+meta_value_text,沃尔特·西克特,沃尔特·西克特,Walter Sickert,官方,artist
+meta_value_text,沃辛顿·惠特里奇,沃辛顿·惠特里奇,Worthington Whittredge,官方,artist
+meta_value_text,油彩,油彩,oil paint,AI,material
+meta_value_text,法蘭切斯科·德·穆拉,法蘭切斯科·德·穆拉,Francesco de Mura,官方,artist
+meta_value_text,法蘭西斯·戴維斯·米萊特,法蘭西斯·戴維斯·米萊特,Francis Davis Millet,官方,artist
+meta_value_text,泡桐木、彩绘与贴金,泡桐木、彩绘与贴金,Paulownia wood with polychromy and gilding,官方,material
+meta_value_text,波士顿藏家已大量购藏,波士顿藏家已大量购藏,Boston collectors had already acquired substantial holdings,AI,acquisition
+meta_value_text,泰奥·范赖瑟尔贝赫,泰奥·范赖瑟尔贝赫,Théo van Rysselberghe,官方,artist
+meta_value_text,泰奥多尔·杰利柯,泰奥多尔·杰利柯,Théodore Géricault,官方,artist
+meta_value_text,泰奥巴尔·沙尔特朗,泰奥巴尔·沙尔特朗,Théobald Chartran,官方,artist
+meta_value_text,泰奥迪勒·里博,泰奥迪勒·里博,Théodule Ribot,官方,artist
+meta_value_text,泰奧多爾·盧梭,泰奧多爾·盧梭,Théodore Rousseau,官方,artist
+meta_value_text,洛倫索·科斯塔,洛倫索·科斯塔,Lorenzo Costa,官方,artist
+meta_value_text,洞石,洞石,travertine,AI,material
+meta_value_text,海伦·佛兰肯瑟勒,海伦·佛兰肯瑟勒,Helen Frankenthaler,官方,artist
+meta_value_text,温斯洛·霍默,温斯洛·霍默,Winslow Homer,官方,artist
+meta_value_text,溪齋英泉,溪齋英泉,Keisai Eisen,官方,artist
+meta_value_text,漢斯·梅姆林,漢斯·梅姆林,Hans Memling,官方,artist
+meta_value_text,潘公凯 (画家),潘公凯 (画家),Pan Gongkai,官方,artist
+meta_value_text,爱德华·德太耶,爱德华·德太耶,Édouard Detaille,官方,artist
+meta_value_text,爱德华·维亚尔,爱德华·维亚尔,Édouard Vuillard,官方,artist
+meta_value_text,爱德华·鲁斯查,爱德华·鲁斯查,Ed Ruscha,官方,artist
+meta_value_text,犊皮纸上墨、金与颜料,犊皮纸上墨、金与颜料,"ink, gold, and pigments on vellum",AI,material
+meta_value_text,狩野芳崖,狩野芳崖,Kanō Hōgai,官方,artist
+meta_value_text,王天德 (1960年),王天德 (1960年),Wang Tiande,官方,artist
+meta_value_text,玛丽·卡萨特,玛丽·卡萨特,Mary Cassatt,官方,artist
+meta_value_text,玛格丽特·热拉尔,玛格丽特·热拉尔,Marguerite Gérard,官方,artist
+meta_value_text,珍·斯圖爾特,珍·斯圖爾特,Jane Stuart,官方,artist
+meta_value_text,班·夏恩,班·夏恩,Ben Shahn,官方,artist
+meta_value_text,理查·威爾森,理查·威爾森,Richard Wilson,官方,artist
+meta_value_text,理查·帕克斯·波寧頓,理查·帕克斯·波寧頓,Richard Parkes Bonington,官方,artist
+meta_value_text,理查德·阿努斯凯维奇,理查德·阿努斯凯维奇,Richard Anuszkiewicz,官方,artist
+meta_value_text,琼·斯奈德,琼·斯奈德,Joan Snyder,官方,artist
+meta_value_text,琼·米切尔,琼·米切尔,Joan Mitchell,官方,artist
+meta_value_text,瑞秋·魯伊希,瑞秋·魯伊希,Rachel Ruysch,官方,artist
+meta_value_text,瑪喬莉·菲利普斯,瑪喬莉·菲利普斯,Marjorie Phillips,官方,artist
+meta_value_text,瑪麗·羅蘭珊,瑪麗·羅蘭珊,Marie Laurencin,官方,artist
+meta_value_text,瓦尔特·达秘·班纳德,瓦尔特·达秘·班纳德,Walter Darby Bannard,官方,artist
+meta_value_text,瓦西里·韦雷什查金,瓦西里·韦雷什查金,Vasily Vereshchagin,官方,artist
+meta_value_text,瓷,瓷,porcelain,AI,material
+meta_value_text,由画中四姐妹共同捐赠以纪念父亲,由画中四姐妹共同捐赠以纪念父亲,Joint gift of the four sisters depicted in the painting in memory of their father,AI,acquisition
+meta_value_text,由里维尔的三位后人捐赠,由里维尔的三位后人捐赠,Gift of three descendants of Revere,AI,acquisition
+meta_value_text,画布,画布,canvas,AI,material
+meta_value_text,皂石,皂石,soapstone,AI,material
+meta_value_text,皮埃尔-保罗·普吕东,皮埃尔-保罗·普吕东,Pierre-Paul Prud'hon,官方,artist
+meta_value_text,皮埃爾·皮維·德·夏凡納,皮埃爾·皮維·德·夏凡納,Pierre Puvis de Chavannes,官方,artist
+meta_value_text,皮埃特羅·諾維利,皮埃特羅·諾維利,Pietro Novelli,官方,artist
+meta_value_text,皮得罗·达·科尔托纳,皮得罗·达·科尔托纳,Pietro da Cortona,官方,artist
+meta_value_text,皮爾·波納爾,皮爾·波納爾,Pierre Bonnard,官方,artist
+meta_value_text,皮特·蒙德里安,皮特·蒙德里安,Piet Mondrian,官方,artist
+meta_value_text,皮耶-奧古斯特·雷諾瓦,皮耶-奧古斯特·雷諾瓦,Pierre-Auguste Renoir,官方,artist
+meta_value_text,皮耶羅·迪·科西莫,皮耶羅·迪·科西莫,Piero di Cosimo,官方,artist
+meta_value_text,盧卡·西諾萊利,盧卡·西諾萊利,Luca Signorelli,官方,artist
+meta_value_text,盧西安·弗洛伊德,盧西安·弗洛伊德,Lucian Freud,官方,artist
+meta_value_text,直纹纸,直纹纸,laid paper,AI,material
+meta_value_text,真蒂莱·贝利尼,真蒂莱·贝利尼,Gentile Bellini,官方,artist
+meta_value_text,石墨,石墨,graphite,AI,material
+meta_value_text,石灰岩,石灰岩,limestone,AI,material
+meta_value_text,石膏,石膏,plaster,AI,material
+meta_value_text,石英岩,石英岩,quartzite,AI,material
+meta_value_text,科内利斯·德福斯,科内利斯·德福斯,Cornelis de Vos,官方,artist
+meta_value_text,科西莫·羅塞利,科西莫·羅塞利,Cosimo Rosselli,官方,artist
+meta_value_text,立石春美,立石春美,Tateishi Harumi,官方,artist
+meta_value_text,第一代雷頓男爵弗雷德里克·雷頓,第一代雷頓男爵弗雷德里克·雷頓,"Frederic Leighton, 1st Baron Leighton",官方,artist
+meta_value_text,米凯尔·博伊曼斯,米凯尔·博伊曼斯,米凯尔·博伊曼斯,存疑,artist
+meta_value_text,米希尔·扬松·范米勒费尔特,米希尔·扬松·范米勒费尔特,Michiel Jansz. van Mierevelt,官方,artist
+meta_value_text,約書亞·雷諾茲,約書亞·雷諾茲,Joshua Reynolds,官方,artist
+meta_value_text,約瑟夫·博澤,約瑟夫·博澤,Joseph Boze,官方,artist
+meta_value_text,約瑟夫·康奈爾,約瑟夫·康奈爾,Joseph Cornell,官方,artist
+meta_value_text,約瑟夫·斯泰拉,約瑟夫·斯泰拉,Joseph Stella,官方,artist
+meta_value_text,約翰·奧古斯塔斯,約翰·奧古斯塔斯,John Augustus,官方,artist
+meta_value_text,約翰·弗雷德里克·肯塞特,約翰·弗雷德里克·肯塞特,John Frederick Kensett,官方,artist
+meta_value_text,約翰·惠頓·埃寧格,約翰·惠頓·埃寧格,John Whetton Ehninger,官方,artist
+meta_value_text,約翰·拉·法爾熱,約翰·拉·法爾熱,John La Farge,官方,artist
+meta_value_text,約翰·拉弗里,約翰·拉弗里,John Lavery,官方,artist
+meta_value_text,約翰·斯米伯特,約翰·斯米伯特,John Smibert,官方,artist
+meta_value_text,約翰·斯隆,約翰·斯隆,John Sloan,官方,artist
+meta_value_text,約翰·格奧爾格·邁爾,約翰·格奧爾格·邁爾,Johann Georg Meyer,官方,artist
+meta_value_text,約翰·特倫布,約翰·特倫布,John Trumbull,官方,artist
+meta_value_text,約翰·皮伯 (藝術家),約翰·皮伯 (藝術家),John Piper,官方,artist
+meta_value_text,約翰·衛斯理·賈維斯,約翰·衛斯理·賈維斯,John Wesley Jarvis,官方,artist
+meta_value_text,約翰·赫西留斯,約翰·赫西留斯,John Hesselius,官方,artist
+meta_value_text,約翰·阿特金森·格里姆肖,約翰·阿特金森·格里姆肖,John Atkinson Grimshaw,官方,artist
+meta_value_text,約翰·馬丁,約翰·馬丁,John Martin,官方,artist
+meta_value_text,約翰·馬林,約翰·馬林,John Marin,官方,artist
+meta_value_text,索爾·勒維特,索爾·勒維特,Sol LeWitt,官方,artist
+meta_value_text,索福尼斯巴·安圭索拉,索福尼斯巴·安圭索拉,Sofonisba Anguissola,官方,artist
+meta_value_text,约 1628,约 1628,ca. 1628,AI,date_absolute
+meta_value_text,约 1638,约 1638,ca. 1638,AI,date_absolute
+meta_value_text,约 1720–25,约 1720–25,ca. 1720–25,AI,date_absolute
+meta_value_text,约 1736,约 1736,ca. 1736,AI,date_absolute
+meta_value_text,约 1830–31,约 1830–31,ca. 1830–31,AI,date_absolute
+meta_value_text,约公元前 350–325,约公元前 350–325,ca. 350–325 BCE,AI,date_absolute
+meta_value_text,约公元前 540–530,约公元前 540–530,ca. 540–530 BCE,AI,date_absolute
+meta_value_text,约公元前 700–675,约公元前 700–675,ca. 700–675 BCE,AI,date_absolute
+meta_value_text,约斯·德蒙佩尔,约斯·德蒙佩尔,Joos de Momper the Younger,官方,artist
+meta_value_text,约瑟夫·伊斯拉尔斯,约瑟夫·伊斯拉尔斯,Jozef Israëls,官方,artist
+meta_value_text,约瑟夫·杜普莱西斯,约瑟夫·杜普莱西斯,Joseph Duplessis,官方,artist
+meta_value_text,约瑟夫·艾伯斯,约瑟夫·艾伯斯,Josef Albers,官方,artist
+meta_value_text,约瑟夫·赖特,约瑟夫·赖特,Joseph Wright,官方,artist
+meta_value_text,约瑟夫·迪克勒,约瑟夫·迪克勒,Joseph Decker,官方,artist
+meta_value_text,约瑟夫·马洛德·威廉·透纳,约瑟夫·马洛德·威廉·透纳,Joseph Mallord William Turner,官方,artist
+meta_value_text,约翰·乔治·布朗,约翰·乔治·布朗,John George Brown,官方,artist
+meta_value_text,约翰·亨利·特瓦克特曼,约翰·亨利·特瓦克特曼,John Henry Twachtman,官方,artist
+meta_value_text,约翰·康斯特勃,约翰·康斯特勃,John Constable,官方,artist
+meta_value_text,约翰·戎金,约翰·戎金,Johan Barthold Jongkind,官方,artist
+meta_value_text,约翰·斯图亚特·库里,约翰·斯图亚特·库里,John Steuart Curry,官方,artist
+meta_value_text,约翰·格林伍德,约翰·格林伍德,John Greenwood,官方,artist
+meta_value_text,约翰·科普利,约翰·科普利,John Copley,官方,artist
+meta_value_text,约翰·科赫,约翰·科赫,John Koch,官方,artist
+meta_value_text,约翰·诺思科特·纳什,约翰·诺思科特·纳什,John Northcote Nash,官方,artist
+meta_value_text,约翰·辛格·沙金,约翰·辛格·沙金,John Singer Sargent,官方,artist
+meta_value_text,约翰内斯·科内利松·费斯普龙克,约翰内斯·科内利松·费斯普龙克,Johannes Cornelisz. Verspronck,官方,artist
+meta_value_text,约阿希姆·于特瓦尔,约阿希姆·于特瓦尔,Joachim Wtewael,官方,artist
+meta_value_text,纳西斯·比尔希略·迪亚斯,纳西斯·比尔希略·迪亚斯,Narcisse Virgilio Díaz de la Peña,官方,artist
+meta_value_text,纸,纸,paper,AI,material
+meta_value_text,纸本不透明水彩,纸本不透明水彩,opaque watercolor on paper,AI,material
+meta_value_text,纸本水墨,纸本水墨,ink on paper,AI,material
+meta_value_text,绢本设色泥金,绢本设色泥金,"ink, color, and gold on silk",AI,material
+meta_value_text,维托雷·卡尔帕乔,维托雷·卡尔帕乔,Vittore Carpaccio,官方,artist
+meta_value_text,罗伊·利希滕斯坦,罗伊·利希滕斯坦,Roy Lichtenstein,官方,artist
+meta_value_text,罗伯特·S·邓肯森,罗伯特·S·邓肯森,Robert S. Duncanson,官方,artist
+meta_value_text,罗伯特·亨利,罗伯特·亨利,Robert Henri,官方,artist
+meta_value_text,罗伯特·曼戈尔德,罗伯特·曼戈尔德,Robert Mangold,官方,artist
+meta_value_text,罗伯特·沃诺,罗伯特·沃诺,Robert Vonnoh,官方,artist
+meta_value_text,罗伯特·马瑟韦尔,罗伯特·马瑟韦尔,Robert Motherwell,官方,artist
+meta_value_text,罗克韦尔·肯特,罗克韦尔·肯特,Rockwell Kent,官方,artist
+meta_value_text,罗希尔·范德魏登,罗希尔·范德魏登,Rogier van der Weyden,官方,artist
+meta_value_text,罗斯·布莱克纳,罗斯·布莱克纳,Ross Bleckner,官方,artist
+meta_value_text,罗斯玛丽·特罗克尔,罗斯玛丽·特罗克尔,Rosemarie Trockel,官方,artist
+meta_value_text,罗纳德·戴维斯,罗纳德·戴维斯,Ronald Davis,官方,artist
+meta_value_text,罗贝尔·勒菲弗,罗贝尔·勒菲弗,Robert Lefèvre,官方,artist
+meta_value_text,罗贝尔·德劳内,罗贝尔·德劳内,Robert Delaunay,官方,artist
+meta_value_text,罗马,罗马,Rome,AI,origin_place
+meta_value_text,羅倫佐·洛托,羅倫佐·洛托,Lorenzo Lotto,官方,artist
+meta_value_text,羅索·菲奧倫蒂諾,羅索·菲奧倫蒂諾,Rosso Fiorentino,官方,artist
+meta_value_text,羅薩爾芭·卡列拉,羅薩爾芭·卡列拉,Rosalba Carriera,官方,artist
+meta_value_text,羅貝托・馬塔,羅貝托・馬塔,Roberto Matta,官方,artist
+meta_value_text,老卢卡斯·克拉纳赫,老卢卡斯·克拉纳赫,Lucas Cranach the Elder,官方,artist
+meta_value_text,老揚·勃魯蓋爾,老揚·勃魯蓋爾,Jan Brueghel the Elder,官方,artist
+meta_value_text,耶罗尼米斯·博斯,耶罗尼米斯·博斯,Hieronymus Bosch,官方,artist
+meta_value_text,肖恩·斯库利,肖恩·斯库利,Sean Scully,官方,artist
+meta_value_text,肯尼思·诺兰,肯尼思·诺兰,Kenneth Noland,官方,artist
+meta_value_text,胡塞佩·德·里韋拉,胡塞佩·德·里韋拉,Jusepe de Ribera,官方,artist
+meta_value_text,胡安·格里斯,胡安·格里斯,Juan Gris,官方,artist
+meta_value_text,胡安·米羅,胡安·米羅,Joan Miró,官方,artist
+meta_value_text,艾格尼丝·马丁,艾格尼丝·马丁,Agnes Martin,官方,artist
+meta_value_text,艾絲菲·斯勞柏肯納,艾絲菲·斯勞柏肯納,Esphyr Slobodkina,官方,artist
+meta_value_text,苏珊·罗滕伯格,苏珊·罗滕伯格,Susan Rothenberg,官方,artist
+meta_value_text,若阿基姆·帕蒂尼尔,若阿基姆·帕蒂尼尔,Joachim Patinir,官方,artist
+meta_value_text,草間弥生,草間弥生,Yayoi Kusama,官方,artist
+meta_value_text,莉拉·卡伯特·佩里,莉拉·卡伯特·佩里,Lilla Cabot Perry,官方,artist
+meta_value_text,莫里斯·德·弗拉曼克,莫里斯·德·弗拉曼克,Maurice de Vlaminck,官方,artist
+meta_value_text,莫里斯·普伦德加斯特,莫里斯·普伦德加斯特,Maurice Prendergast,官方,artist
+meta_value_text,莫里斯·路易斯,莫里斯·路易斯,Morris Louis,官方,artist
+meta_value_text,莫里斯·郁特里罗,莫里斯·郁特里罗,Maurice Utrillo,官方,artist
+meta_value_text,莫里茨·科內利斯·埃舍爾,莫里茨·科內利斯·埃舍爾,Maurits Cornelis Escher,官方,artist
+meta_value_text,莱昂·奥古斯丁·莱尔米特,莱昂·奥古斯丁·莱尔米特,Léon Augustin Lhermitte,官方,artist
+meta_value_text,莱昂内尔·费宁格,莱昂内尔·费宁格,Lyonel Feininger,官方,artist
+meta_value_text,華盛頓·奧爾斯頓,華盛頓·奧爾斯頓,Washington Allston,官方,artist
+meta_value_text,華金·索羅拉,華金·索羅拉,Joaquín Sorolla,官方,artist
+meta_value_text,菱川師宣,菱川師宣,Hishikawa Moronobu,官方,artist
+meta_value_text,菲利普·加斯顿,菲利普·加斯顿,Philip Guston,官方,artist
+meta_value_text,菲利普·德·尚帕涅,菲利普·德·尚帕涅,Philippe de Champaigne,官方,artist
+meta_value_text,菲利普·德拉斯洛,菲利普·德拉斯洛,Philip de László,官方,artist
+meta_value_text,菲利普·詹姆斯·德·路德堡,菲利普·詹姆斯·德·路德堡,Philip James de Loutherbourg,官方,artist
+meta_value_text,菲茨·休·蓮恩,菲茨·休·蓮恩,Fitz Henry Lane,官方,artist
+meta_value_text,萊昂·博納,萊昂·博納,Léon Bonnat,官方,artist
+meta_value_text,萨姆·吉列姆,萨姆·吉列姆,Sam Gilliam,官方,artist
+meta_value_text,萨拉·古德里奇,萨拉·古德里奇,Sarah Goodridge,官方,artist
+meta_value_text,萨洛蒙·德·布雷,萨洛蒙·德·布雷,Salomon de Bray,官方,artist
+meta_value_text,萨缪尔·摩尔斯,萨缪尔·摩尔斯,Samuel F. B. Morse,官方,artist
+meta_value_text,葛饰北斋,葛饰北斋,Katsushika Hokusai,官方,artist
+meta_value_text,葛饰应为,葛饰应为,Katsushika Ōi,官方,artist
+meta_value_text,蔡尔德·哈萨姆,蔡尔德·哈萨姆,Childe Hassam,官方,artist
+meta_value_text,製陶,製陶,pottery,AI,material
+meta_value_text,西恩納的巴爾纳,西恩納的巴爾纳,Barna da Siena,官方,artist
+meta_value_text,西格玛尔·波尔克,西格玛尔·波尔克,Sigmar Polke,官方,artist
+meta_value_text,西蒙內·坎塔里尼,西蒙內·坎塔里尼,Simone Cantarini,官方,artist
+meta_value_text,西蒙尼·马蒂尼,西蒙尼·马蒂尼,Simone Martini,官方,artist
+meta_value_text,西西莉亞·包斯,西西莉亞·包斯,Cecilia Beaux,官方,artist
+meta_value_text,詹·馬蘇斯,詹·馬蘇斯,Jan Massys,官方,artist
+meta_value_text,詹姆斯·恩索爾,詹姆斯·恩索爾,James Ensor,官方,artist
+meta_value_text,詹姆斯·惠斯勒,詹姆斯·惠斯勒,James McNeill Whistler,官方,artist
+meta_value_text,詹姆斯·迪索,詹姆斯·迪索,James Tissot,官方,artist
+meta_value_text,詹姆斯·麦克杜格尔·哈特,詹姆斯·麦克杜格尔·哈特,James McDougal Hart,官方,artist
+meta_value_text,詹巴蒂斯塔·皮托尼,詹巴蒂斯塔·皮托尼,Giambattista Pittoni,官方,artist
+meta_value_text,讓-弗朗索瓦·米勒,讓-弗朗索瓦·米勒,Jean-François Millet,官方,artist
+meta_value_text,讓-雅克·亨納,讓-雅克·亨納,Jean-Jacques Henner,官方,artist
+meta_value_text,让-奥诺雷·弗拉戈纳尔,让-奥诺雷·弗拉戈纳尔,Jean-Honoré Fragonard,官方,artist
+meta_value_text,让-安东尼·华托,让-安东尼·华托,Jean-Antoine Watteau,官方,artist
+meta_value_text,让-巴蒂斯特·佩罗诺,让-巴蒂斯特·佩罗诺,Jean-Baptiste Perronneau,官方,artist
+meta_value_text,让-巴蒂斯特·卡米耶·柯洛,让-巴蒂斯特·卡米耶·柯洛,Jean-Baptiste-Camille Corot,官方,artist
+meta_value_text,让-巴蒂斯特·格勒兹,让-巴蒂斯特·格勒兹,Jean-Baptiste Greuze,官方,artist
+meta_value_text,让-巴蒂斯特·桑泰尔,让-巴蒂斯特·桑泰尔,Jean-Baptiste Santerre,官方,artist
+meta_value_text,让-莱昂·热罗姆,让-莱昂·热罗姆,Jean-Léon Gérôme,官方,artist
+meta_value_text,让-路易·福兰,让-路易·福兰,Jean-Louis Forain,官方,artist
+meta_value_text,让-雅克-弗朗索瓦·勒巴尔比耶,让-雅克-弗朗索瓦·勒巴尔比耶,Jean-Jacques-François Le Barbier,官方,artist
+meta_value_text,让·巴蒂斯·西美翁·夏尔丹,让·巴蒂斯·西美翁·夏尔丹,Jean-Baptiste-Siméon Chardin,官方,artist
+meta_value_text,该展厅的核心展品,该展厅的核心展品,A centerpiece of this gallery,AI,museum_highlight
+meta_value_text,诺曼·刘易斯,诺曼·刘易斯,Norman Lewis,官方,artist
+meta_value_text,象牙,象牙,ivory,AI,material
+meta_value_text,象牙海岸／利比里亚达恩族,象牙海岸／利比里亚达恩族,Ivory Coast/Liberian Dan people,AI,material
+meta_value_text,豪梅·馬特奧,豪梅·馬特奧,Jaume Mateu,官方,artist
+meta_value_text,豬熊弦一郎,豬熊弦一郎,Genichiro Inokuma,官方,artist
+meta_value_text,貝爾納多·卡瓦利諾,貝爾納多·卡瓦利諾,Bernardo Cavallino,官方,artist
+meta_value_text,貝爾納多·達迪,貝爾納多·達迪,Bernardo Daddi,官方,artist
+meta_value_text,貝爾納爾多·斯特羅齊,貝爾納爾多·斯特羅齊,Bernardo Strozzi,官方,artist
+meta_value_text,貝瑟·莫里索,貝瑟·莫里索,Berthe Morisot,官方,artist
+meta_value_text,費爾菲爾德·波特,費爾菲爾德·波特,Fairfield Porter,官方,artist
+meta_value_text,費迪南德·博爾,費迪南德·博爾,Ferdinand Bol,官方,artist
+meta_value_text,賓杜里喬,賓杜里喬,Pinturicchio,官方,artist
+meta_value_text,贝内代托·热纳里二世,贝内代托·热纳里二世,Benedetto Gennari II,官方,artist
+meta_value_text,贝尔纳迪诺·卢伊尼,贝尔纳迪诺·卢伊尼,Bernardino Luini,官方,artist
+meta_value_text,贝纳多·贝洛托,贝纳多·贝洛托,Bernardo Bellotto,官方,artist
+meta_value_text,贡萨洛·佩雷斯,贡萨洛·佩雷斯,Gonzalo Pérez,官方,artist
+meta_value_text,费尔南多·博特罗,费尔南多·博特罗,Fernando Botero,官方,artist
+meta_value_text,赫尔曼·尼特西,赫尔曼·尼特西,Hermann Nitsch,官方,artist
+meta_value_text,赫布兰德·范登埃克霍特,赫布兰德·范登埃克霍特,Gerbrand van den Eeckhout,官方,artist
+meta_value_text,赫拉德·特博赫,赫拉德·特博赫,Gerard ter Borch,官方,artist
+meta_value_text,赫拉德·范洪特霍斯特,赫拉德·范洪特霍斯特,Gerrit van Honthorst,官方,artist
+meta_value_text,赫里特·贝克海德,赫里特·贝克海德,Gerrit Adriaensz. Berckheyde,官方,artist
+meta_value_text,赫里特·道,赫里特·道,Gerrit Dou,官方,artist
+meta_value_text,路易-利奥波德·布瓦伊,路易-利奥波德·布瓦伊,Louis-Léopold Boilly,官方,artist
+meta_value_text,路易斯·埃希迪奧·梅倫德斯,路易斯·埃希迪奧·梅倫德斯,Luis Egidio Meléndez,官方,artist
+meta_value_text,达维德·布尔柳克,达维德·布尔柳克,David Burliuk,官方,artist
+meta_value_text,这批捐赠使 MFA 的 20 世纪中期收藏跃升为全美最好的之一,这批捐赠使 MFA 的 20 世纪中期收藏跃升为全美最好的之一,This gift elevated the MFA's mid-20th-century collection to one of the finest in the United States,AI,acquisition
+meta_value_text,迪爾克·范巴比倫,迪爾克·范巴比倫,Dirck van Baburen,官方,artist
+meta_value_text,邓肯·格兰特,邓肯·格兰特,Duncan Grant,官方,artist
+meta_value_text,里昂·巴克斯,里昂·巴克斯,Léon Bakst,官方,artist
+meta_value_text,金,金,Jin dynasty,AI,polity
+meta_value_text,金与珐琅,金与珐琅,gold and enamel,AI,material
+meta_value_text,金合金,金合金,gold alloy,AI,material
+meta_value_text,鈴木春信,鈴木春信,Suzuki Harunobu,官方,artist
+meta_value_text,銅合金列表,銅合金列表,銅合金列表,存疑,artist
+meta_value_text,铜管,铜管,copper tubing,AI,material
+meta_value_text,银,银,silver,AI,material
+meta_value_text,镶嵌木材与刻绘骨、maque 漆、金与彩绘、金属配件,镶嵌木材与刻绘骨、maque 漆、金与彩绘、金属配件,"inlaid wood with incised bone, maque lacquer, gilding and polychromy, and metal fittings",AI,material
+meta_value_text,閻立本,閻立本,Yan Liben,官方,artist
+meta_value_text,阿伯特·赛耶,阿伯特·赛耶,Abbott Handerson Thayer,官方,artist
+meta_value_text,阿尔万·克拉克,阿尔万·克拉克,Alvan Clark,官方,artist
+meta_value_text,阿尔布雷希特·丢勒,阿尔布雷希特·丢勒,Albrecht Dürer,官方,artist
+meta_value_text,阿尔弗雷德·科瓦尔斯基,阿尔弗雷德·科瓦尔斯基,Alfred Wierusz-Kowalski,官方,artist
+meta_value_text,阿尔弗雷德·西斯莱,阿尔弗雷德·西斯莱,Alfred Sisley,官方,artist
+meta_value_text,阿尔泰米西娅·真蒂莱斯基,阿尔泰米西娅·真蒂莱斯基,Artemisia Gentileschi,官方,artist
+meta_value_text,阿尔特·范德内尔,阿尔特·范德内尔,Aert van der Neer,官方,artist
+meta_value_text,阿尔芒德·基约曼,阿尔芒德·基约曼,Armand Guillaumin,官方,artist
+meta_value_text,阿尔贝托·贾科梅蒂,阿尔贝托·贾科梅蒂,Alberto Giacometti,官方,artist
+meta_value_text,阿尔贝特·克伊普,阿尔贝特·克伊普,Aelbert Cuyp,官方,artist
+meta_value_text,阿尼奧羅·加迪,阿尼奧羅·加迪,Agnolo Gaddi,官方,artist
+meta_value_text,阿希尔·戈尔基,阿希尔·戈尔基,Arshile Gorky,官方,artist
+meta_value_text,阿德尔斯滕·诺曼,阿德尔斯滕·诺曼,Adelsteen Normann,官方,artist
+meta_value_text,阿德里安·布劳沃,阿德里安·布劳沃,Adriaen Brouwer,官方,artist
+meta_value_text,阿德里安·范·奥斯塔德,阿德里安·范·奥斯塔德,Adriaen van Ostade,官方,artist
+meta_value_text,阿德里安·范德费尔德,阿德里安·范德费尔德,Adriaen van de Velde,官方,artist
+meta_value_text,阿爾·赫爾德,阿爾·赫爾德,Al Held,官方,artist
+meta_value_text,阿爾伯特·比爾施塔特,阿爾伯特·比爾施塔特,Albert Bierstadt,官方,artist
+meta_value_text,阿爾佛雷德·斯蒂格利茲,阿爾佛雷德·斯蒂格利茲,Alfred Stieglitz,官方,artist
+meta_value_text,阿爾福雷德·毛雷,阿爾福雷德·毛雷,Alfred Maurer,官方,artist
+meta_value_text,阿舍·布朗·杜兰德,阿舍·布朗·杜兰德,Asher Brown Durand,官方,artist
+meta_value_text,阿诺德·勃克林,阿诺德·勃克林,Arnold Böcklin,官方,artist
+meta_value_text,阿道夫·戈特利布,阿道夫·戈特利布,Adolph Gottlieb,官方,artist
+meta_value_text,阿道夫·施赖尔,阿道夫·施赖尔,Adolf Schreyer,官方,artist
+meta_value_text,阿道夫·蒙蒂塞利,阿道夫·蒙蒂塞利,Adolphe Monticelli,官方,artist
+meta_value_text,阿道夫·赫尔策尔,阿道夫·赫尔策尔,Adolf Hölzel,官方,artist
+meta_value_text,阿里·謝弗,阿里·謝弗,Ary Scheffer,官方,artist
+meta_value_text,阿隆佐·查佩爾,阿隆佐·查佩爾,Alonzo Chappel,官方,artist
+meta_value_text,陈容,陈容,Chen Rong,官方,artist
+meta_value_text,除冰器,除冰器,除冰器,存疑,artist
+meta_value_text,陶瓦,陶瓦,terracotta,AI,material
+meta_value_text,陶瓷,陶瓷,ceramic,AI,material
+meta_value_text,雅各布·伊萨克松·范勒伊斯达尔,雅各布·伊萨克松·范勒伊斯达尔,Jacob van Ruisdael,官方,artist
+meta_value_text,雅各布·勞倫斯,雅各布·勞倫斯,Jacob Lawrence,官方,artist
+meta_value_text,雅各布·巴萨诺,雅各布·巴萨诺,Jacopo Bassano,官方,artist
+meta_value_text,雅各布·德爾·卡森蒂諾,雅各布·德爾·卡森蒂諾,Jacopo del Casentino,官方,artist
+meta_value_text,雅各布·约尔丹斯,雅各布·约尔丹斯,Jacob Jordaens,官方,artist
+meta_value_text,雅各布·費迪南德·沃特,雅各布·費迪南德·沃特,Jacob Ferdinand Voet,官方,artist
+meta_value_text,雅各布·阿米格尼,雅各布·阿米格尼,Jacopo Amigoni,官方,artist
+meta_value_text,雪松木,雪松木,cedar wood,AI,material
+meta_value_text,雪莉·勒文,雪莉·勒文,Sherrie Levine,官方,artist
+meta_value_text,雷姆布蘭特·皮爾,雷姆布蘭特·皮爾,Rembrandt Peale,官方,artist
+meta_value_text,雷梅迪奧斯•瓦羅,雷梅迪奧斯•瓦羅,Remedios Varo,官方,artist
+meta_value_text,雷金納德·馬什,雷金納德·馬什,Reginald Marsh,官方,artist
+meta_value_text,霍华德 加德纳 库欣,霍华德 加德纳 库欣,Howard Gardiner Cushing,官方,artist
+meta_value_text,霍德弗里德·斯哈尔肯,霍德弗里德·斯哈尔肯,Godfried Schalcken,官方,artist
+meta_value_text,青铜,青铜,bronze,AI,material
+meta_value_text,馬克·夏卡爾,馬克·夏卡爾,Marc Chagall,官方,artist
+meta_value_text,馬克思菲爾德·派黎胥,馬克思菲爾德·派黎胥,Maxfield Parrish,官方,artist
+meta_value_text,馬可·巴塞提,馬可·巴塞提,Marco Bassetti,官方,artist
+meta_value_text,馬森·哈特利,馬森·哈特利,Marsden Hartley,官方,artist
+meta_value_text,馬瑟．布朗,馬瑟．布朗,Mather Brown,官方,artist
+meta_value_text,马克·布拉德福德,马克·布拉德福德,Mark Bradford,官方,artist
+meta_value_text,马克·罗斯科,马克·罗斯科,Mark Rothko,官方,artist
+meta_value_text,马克斯·贝克曼,马克斯·贝克曼,Max Beckmann,官方,artist
+meta_value_text,马斯莫·斯坦茨奥内,马斯莫·斯坦茨奥内,Massimo Stanzione,官方,artist
+meta_value_text,马里亚·福尔图尼,马里亚·福尔图尼,Marià Fortuny,官方,artist
+meta_value_text,高登齊奧·費拉里,高登齊奧·費拉里,Gaudenzio Ferrari,官方,artist
+meta_value_text,魯弗斯·波特,魯弗斯·波特,Rufus Porter,官方,artist
+meta_value_text,鲁兰·萨弗赖,鲁兰·萨弗赖,Roelandt Savery,官方,artist
+meta_value_text,麥克思·韋伯,麥克思·韋伯,Max Weber,官方,artist
+meta_value_text,黄金,黄金,gold,AI,material
+meta_value_text,黑绘陶,黑绘陶,black-figure pottery,AI,material
+meta_value_text,龐培奧·巴托尼,龐培奧·巴托尼,Pompeo Batoni,官方,artist

@@ -378,6 +378,42 @@ ARTWORK_COLS = ["museum_id", "gallery_id", "source_seq", "name_key", "name_cid",
                 "irreplaceability", "on_view", "has_image", "image_url", "official_url"]
 
 
+
+def stale_tier_guard(t) -> None:
+    """本次重灌把 artwork.tier 冲回源表评级的馆，逐个报出来。
+
+    **为什么必须由脚本自己查。** 「跑完导入要重跑 tier_v3_load --apply-tier」
+    这条规则在 AGENTS.md 里写了很久，2026-09-04 加 mfa_boston_ext 时我还是只给
+    新馆跑了 --apply-tier，另外三个馆的 187 件（PEM 56 / MFA 76 / 哈佛 55）
+    悄悄退回源表评级 —— 两天后从导出的 tier 分布里才偶然看出来。
+
+    规则写在文档里挡不住这种漏：DELETE FROM artwork 影响的是**全表**，
+    而人只会想到自己刚动过的那个馆。所以让脚本在收尾时自己比一遍，
+    一句 SQL 的事，不报错只报警（评分表可能本来就没跑过，那不是错）。
+    """
+    if t.flavor != "mysql":
+        return
+    try:
+        cur = t.exec("""SELECT m.key_name, COUNT(*) FROM artwork a
+                    JOIN museum m ON m.id = a.museum_id
+                    JOIN artwork_tier_v3 v
+                      ON v.museum_key = m.key_name AND v.source_seq = a.source_seq
+                   WHERE NOT (a.tier <=> COALESCE(v.tier_override, v.tier))
+                   GROUP BY m.key_name ORDER BY 2 DESC""")
+        bad = cur.fetchall()
+    except Exception as e:                       # noqa: BLE001
+        print(f"  [warn] tier 一致性检查跑不了（{type(e).__name__}: {e}）")
+        return
+    if not bad:
+        print("  artwork.tier 与 artwork_tier_v3 一致 ✓")
+        return
+    print("\n  ⚠ 以下馆的 artwork.tier 已退回源表评级，**必须重跑 --apply-tier**：")
+    for k, n in bad:
+        print(f"       {k:16s} {n} 件不一致 -> "
+              f"python3 tier_v3_load.py --museum {k} --out-dir <该馆的 out-dir> --apply-tier")
+    print("     不跑的话库里的 tier 就不是 V3 的结论了，而且**不会有任何报错**。")
+
+
 def load(t, items, galleries, trans):
     # 清空：展品三表全清，内容表只删本导入器名下的 kind
     for tb in ("artwork", "gallery", "museum"):
@@ -449,6 +485,7 @@ def load(t, items, galleries, trans):
         print(f"  [warn] {orphan} 段内容没有被任何行引用，多半是收集逻辑与写入逻辑取的键不一致")
 
     t.conn.commit()
+    stale_tier_guard(t)
 
 
 # ---------------------------------------------------------------- SQLite 试跑

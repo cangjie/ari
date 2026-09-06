@@ -209,7 +209,7 @@ def norm_effort(s: str | None) -> str | None:
 
 def ask(client, model: str, system: str, user: str, name: str, schema: dict,
         effort: str | None = None, museum_key: str | None = None,
-        scope: str | None = None, seqs=None) -> dict:
+        scope: str | None = None, seqs=None, validate=None) -> dict:
     """一次结构化输出调用。strict 模式保证返回的是合法且合规的 JSON。
 
     刻意不传 temperature / max_tokens：型号由 --model 决定，而不同代际的模型对这
@@ -231,7 +231,7 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
         return llm_cache.call(_do_cli, provider="anthropic_cli", model=CLAUDE_CLI,
                               effort=None, stage=name, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
-                              seqs=seqs)
+                              seqs=seqs, validate=validate)
 
     def _do():
         kw = {}
@@ -254,7 +254,8 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
     import llm_cache
     return llm_cache.call(_do, provider="openai", model=model, effort=effort,
                           stage=name, system=system, user=user, schema=schema,
-                          museum_key=museum_key, scope=scope, seqs=seqs)
+                          museum_key=museum_key, scope=scope, seqs=seqs,
+                          validate=validate)
 
 
 # ---------------------------------------------------------------------------
@@ -870,13 +871,40 @@ STAGE1_SLIM_SCHEMA = {
 }
 
 
+# 空话的判定词。**只在整条很短时才据此判空泛** —— 用子串匹配去否定一整句是错的：
+# 2026-09-06 实测，「缺可靠艺术史资料说明 Pietro Mera 的身份、活动年代、艺术史地位
+# 及该画在其作品中的位置；现有信息不足以支持…」被拒了，只因为句子中段含「信息不足」。
+# 那条点名了艺术家、列了四项要查的东西，是这一列里最好的那种写法。
+# 同「材质子串规则把音译人名判成材质」是一类错误：子串匹配不能用来做否定判断。
+VAGUE_WORDS = ("更多资料", "信息不足", "资料不足", "缺乏资料")
+VAGUE_MAXLEN = 30          # 超过这个长度就认为它已经说清了缺什么
+
+
 def check1_slim(rec: dict) -> None:
     """精简版只剩两条硬检查 —— 其余判定已经不由模型出了。"""
     for m in rec["missing"]:
-        if len(m["zh"]) < 6 or "更多资料" in m["zh"] or "信息不足" in m["zh"]:
-            raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{m['zh']}")
+        zh = m["zh"].strip()
+        if len(zh) < 8 or (len(zh) <= VAGUE_MAXLEN
+                           and any(w in zh for w in VAGUE_WORDS)):
+            raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{zh}")
     if rec["found_factual_error"] and not rec["error_note_zh"]:
         raise RuntimeError(f"seq {rec['seq']} 说发现事实错误却没写明")
+
+
+def _slim_ok(data: dict, want: set) -> bool:
+    """整批的校验，交给 llm_cache 在**写缓存之前**跑。
+
+    早先 check1_slim 写在拿到 data 之后，于是不合格的答案已经进了缓存，
+    重跑必然命中它、必然在同一处再崩 —— 阶段一/二已经各栽过一次。
+    """
+    if want - {r["seq"] for r in data["results"]}:
+        return False
+    for r in data["results"]:
+        try:
+            check1_slim(r)
+        except RuntimeError:
+            return False
+    return True
 
 
 def stage1_slim(client, model, effort, ctx, note, items, out: Path, batch: int,
@@ -892,15 +920,14 @@ def stage1_slim(client, model, effort, ctx, note, items, out: Path, batch: int,
         user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐件列出以下 {len(chunk)} 件对象缺什么：\n\n"
                 + "\n\n".join(fmt_item(it) for it in chunk))
+        want = {it["seq"] for it in chunk}
         data = ask(client, model, STAGE1_SLIM_SYSTEM, user, "audit_stage1_slim",
                    STAGE1_SLIM_SCHEMA, effort, museum_key=mk,
                    scope=f"seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
-                   seqs=[it["seq"] for it in chunk])
-        got = {r["seq"] for r in data["results"]}
-        if (miss := {it["seq"] for it in chunk} - got):
-            raise RuntimeError(f"阶段一（精简）漏审 seq={sorted(miss)}")
+                   seqs=[it["seq"] for it in chunk],
+                   validate=lambda d, w=want: _slim_ok(d, w))
         for r in data["results"]:
-            check1_slim(r)
+            check1_slim(r)          # 这里只剩兜底，正常路径已在 validate 里过了
             append(out, r)
             done[r["seq"]] = r
         print(f"    {min(i + batch, len(todo))}/{len(todo)}")

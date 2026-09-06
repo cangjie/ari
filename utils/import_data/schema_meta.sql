@@ -131,3 +131,22 @@ JOIN content_text kt ON kt.content_id = mk.name_cid
 JOIN content_text vt ON vt.content_id = am.value_cid AND vt.lang = kt.lang
 JOIN museum  m ON m.key_name  = am.museum_key
 JOIN artwork a ON a.museum_id = m.id AND a.source_seq = am.source_seq;
+
+-- ============================================================================
+-- 2026-09-06：content_text.text 由 VARCHAR(512) 改为 TEXT
+--
+-- 原列宽是按中文实测定的（注释写着「实测最长 116 字符」）。中文信息密度高，
+-- 512 字符绰绰有余；但**英译同样内容通常是 2–3 倍字符数**，
+-- mfa_boston_ext 的展品简介译成英文后直接撑爆：
+--   DataError (1406): Data too long for column 'text' at row 1
+-- 而这一撞让补译进程整个退出，名称译完了、简介只译了 4 批。
+--
+-- 中文塞得进 512 是信息密度带来的巧合，不是这一列的固有上限 ——
+-- 只要加英译（或任何拉丁语系语种），这个上限迟早会撞上。故改 TEXT。
+--
+-- 索引不用动：idx_ct_lang_text 本来就是 (lang, text(64)) 前缀索引。
+-- ============================================================================
+
+ALTER TABLE content_text
+  MODIFY COLUMN text TEXT NOT NULL
+  COMMENT '该语种下的文本。中文多在百字内，但英译通常是中文的 2–3 倍字符数，故用 TEXT 不用 VARCHAR';

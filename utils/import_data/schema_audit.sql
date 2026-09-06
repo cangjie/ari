@@ -122,3 +122,22 @@ CREATE INDEX idx_am_etype ON artwork_meta (museum_key, evidence_type, source_qua
 -- 同类问题，英文版曾因此漏出中文。故审计脚本必须中英同时产出，
 -- audit_load.py 里有成对齐全的校验，缺一边直接拒绝写入。
 -- ============================================================================
+
+-- ============================================================================
+-- 2026-09-06：审计的自由文本列由 VARCHAR 改为 TEXT
+--
+-- 这几列的宽度当初是按中文实测定的，英文同样内容通常是 2–3 倍字符数：
+--   DataError (1406): Data too long for column 'top_missing_en'
+-- 与 content_text.text 那次是同一个成因（见 schema_meta.sql 同日的改动）。
+--
+-- **不要靠在代码里 [:512] 截断来绕过** —— 截断是静默的，导出时看到的是半句话，
+-- 而没人知道它被截过。宁可加宽列。这几列都不进索引，改 TEXT 没有代价。
+-- ============================================================================
+
+ALTER TABLE artwork_evidence
+  MODIFY COLUMN review_reason        TEXT NULL COMMENT '需复核的原因；英译比中文长 2–3 倍，故用 TEXT',
+  MODIFY COLUMN review_reason_en     TEXT NULL COMMENT '同上，英文',
+  MODIFY COLUMN top_missing          TEXT NULL COMMENT '最关键的一条缺失证据',
+  MODIFY COLUMN top_missing_en       TEXT NULL COMMENT '同上，英文',
+  MODIFY COLUMN research_question    TEXT NULL COMMENT '可直接执行的研究问题',
+  MODIFY COLUMN research_question_en TEXT NULL COMMENT '同上，英文';

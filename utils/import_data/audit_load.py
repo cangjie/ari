@@ -91,8 +91,19 @@ def main() -> None:
     s1 = read_done(out_dir / f"{mk}_audit1.jsonl")
     s2 = read_done(out_dir / f"{mk}_audit2.jsonl")
     s3 = read_done(out_dir / f"{mk}_audit3.jsonl", key="ck")
-    if not s1:
-        sys.exit(f"没有阶段一结果：{out_dir / f'{mk}_audit1.jsonl'} 不存在或为空")
+    # 精简版（audit_meta --slim）产出的是另一套字段：只有缺失证据与事实错误，
+    # 没有 12 项完备度、可信度、潜在区间。**不要把两者混在一个文件里读** ——
+    # 字段对不上，而 read_done 只按 seq 归并，混了不会报错只会 KeyError 在半路。
+    slim = read_done(out_dir / f"{mk}_audit1_slim.jsonl")
+    if slim and s1:
+        sys.exit(f"{out_dir} 里同时有 audit1.jsonl 与 audit1_slim.jsonl —— "
+                 "两套判据的产物不能一起写库，请指明用哪一套（删掉或移走另一个）")
+    if not s1 and not slim:
+        sys.exit(f"没有阶段一结果：{out_dir / f'{mk}_audit1.jsonl'} 与 "
+                 f"{mk}_audit1_slim.jsonl 都不存在或为空")
+    if slim:
+        print(f"精简口径（--slim）：{len(slim)} 件。"
+              "完备度/可信度/潜在区间这三列本模式不产出，保持原值不动。")
 
     audited_by = args.audited_by
     if not audited_by:
@@ -118,8 +129,46 @@ def main() -> None:
     before = tier_snapshot(cur, mk)
 
     # ---------------------------------------------------------------- 对象级
-    rows, flagged, prelim_n = [], 0, 0
-    for seq, r1 in sorted(s1.items()):
+    if slim:
+        rows, flagged, err_n = [], 0, 0
+        for seq, r in sorted(slim.items()):
+            for m in r["missing"]:
+                pair(m["zh"], m["en"], "缺失证据", seq)
+            pair(r["top_missing_zh"], r["top_missing_en"], "最关键缺失证据", seq)
+            pair(r.get("error_note_zh"), r.get("error_note_en"), "事实错误说明", seq)
+            # review_flag 由「有没有 tier_sensitive 缺口」导出，不独立判断
+            # （AGENTS.md 第 9 条：Research Needed = 缺的事实一旦有答案 Tier 可能改变）。
+            # 发现事实错误只增不减地追加一条理由。
+            sens = [m for m in r["missing"] if m.get("tier_sensitive")]
+            flag = bool(sens or r["found_factual_error"])
+            rr_zh = r.get("error_note_zh") or (sens[0]["zh"] if sens else None)
+            rr_en = r.get("error_note_en") or (sens[0]["en"] if sens else None)
+            flagged += flag
+            err_n += bool(r["found_factual_error"])
+            rows.append((mk, seq,
+                         # 不截断 —— 列已改 TEXT。截断是静默的，导出时看到半句话
+                         # 而没人知道它被截过（2026-09-06 加宽列时一并去掉）。
+                         flag, rr_zh, rr_en,
+                         "\n".join(("[影响定级] " if m.get("tier_sensitive") else "") + m["zh"]
+                                   for m in r["missing"]) or None,
+                         "\n".join(("[tier-sensitive] " if m.get("tier_sensitive") else "") + m["en"]
+                                   for m in r["missing"]) or None,
+                         r["top_missing_zh"], r["top_missing_en"],
+                         audited_by, args.round, dt.datetime.now()))
+        SLIM_COLS = ["tier_review_flag", "review_reason", "review_reason_en",
+                     "missing_evidence", "missing_evidence_en",
+                     "top_missing", "top_missing_en",
+                     "audited_by", "audit_round", "audited_at"]
+        cur.executemany(
+            "INSERT INTO artwork_evidence (museum_key, source_seq, "
+            + ", ".join(SLIM_COLS) + ") VALUES ("
+            + ",".join(["%s"] * (2 + len(SLIM_COLS))) + ") ON DUPLICATE KEY UPDATE "
+            + ", ".join(f"{c}=VALUES({c})" for c in SLIM_COLS), rows)
+        print(f"artwork_evidence：写入 {len(rows)} 行（精简口径）"
+              f"；需复核 {flagged} 件，发现事实错误 {err_n} 件")
+    else:
+      rows, flagged, prelim_n = [], 0, 0
+      for seq, r1 in sorted(s1.items()):
         r2 = s2.get(seq, {})
         grades = {x["key"]: x["grade"] for x in r1["items"]}
         if sorted(grades) != sorted(ITEM_KEYS):
@@ -180,14 +229,14 @@ def main() -> None:
             audited_by, args.round, dt.datetime.now(),
         ))
 
-    cur.executemany(
+      cur.executemany(
         "INSERT INTO artwork_evidence (museum_key, source_seq, "
         + ", ".join(AUDIT_COLS) + ") VALUES (" + ",".join(["%s"] * (2 + len(AUDIT_COLS)))
         + ") ON DUPLICATE KEY UPDATE "
         + ", ".join(f"{c}=VALUES({c})" for c in AUDIT_COLS),
         rows)
-    print(f"artwork_evidence：写入 {len(rows)} 行审计结果"
-          f"（需复核 {flagged} 件，Preliminary {prelim_n} 件）")
+      print(f"artwork_evidence：写入 {len(rows)} 行审计结果"
+            f"（需复核 {flagged} 件，Preliminary {prelim_n} 件）")
 
     # ---------------------------------------------------------------- 逐条 claim
     cur.execute("SELECT DISTINCT source_key FROM artwork_meta WHERE museum_key=%s", (mk,))

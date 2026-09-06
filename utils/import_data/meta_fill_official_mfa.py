@@ -31,6 +31,8 @@
 from __future__ import annotations
 
 import argparse
+import csv
+import pathlib
 import re
 
 import meta_lib as M
@@ -100,10 +102,28 @@ MATERIAL_WORDS = ("油彩", "油画", "木", "石", "铜", "金", "银", "玉", 
                   "手卷", "册页", "挂轴", "textile", "彩绘", "贴金", "鎏金")
 
 ACCESSION = re.compile(r"(?:藏品)?编号\s*([0-9]{2,4}\.[0-9]+(?:\.[0-9]+)*)")
-ACQUIRE = re.compile(r"([^。；，]{2,40}?(?:基金|捐赠|购藏|遗赠|捐出))")
+
+# 入藏方式：**按分句取整段**，不要用非贪婪正则从句中任意位置起截。
+# 早先写的是 `([^。；，]{2,40}?(?:基金|捐赠|购藏|遗赠|捐出))`，最短匹配会把句子
+# 拦腰砍断，实测截出「MFA 创始理事、首任馆长 Martin Brimmer 于」
+# 「捐赠者 William Sturgis Bigelow 一人」「器收藏的核心来自…」这类碎片 ——
+# 而这些碎片会带着 FACT 标记进库、喂进评分。整句取才是完整的事实陈述。
+ACQUIRE_WORDS = ("基金", "捐赠", "购藏", "遗赠", "捐出")
+CLAUSE_SEP = re.compile(r"[。；，\n]")
+
 # 馆方自己的重点标注。**只认原文写死的这几种说法**，不做语义判断 ——
 # 一旦开始「理解」它有多重要，这一列就从事实变成了推断。
-HIGHLIGHT = re.compile(r"(该展厅的核心展品|展厅核心展品|镇馆|代表作)")
+# 「镇馆」要写全「镇馆之宝」：光一个「镇馆」会匹配到词的一半（实测中过一次）。
+HIGHLIGHT = re.compile(r"(该展厅的核心展品|展厅核心展品|镇馆之宝|代表作)")
+
+
+def acquisition_of(desc: str) -> str | None:
+    """取包含入藏关键词的**完整分句**。太长（>40 字）说明切错了，宁可不要。"""
+    for c in CLAUSE_SEP.split(desc or ""):
+        c = c.strip()
+        if 2 <= len(c) <= 40 and any(w in c for w in ACQUIRE_WORDS):
+            return c
+    return None
 
 
 def classify(seg: str, strict: bool = False) -> tuple[str, str] | None:
@@ -169,8 +189,8 @@ def parse(name: str, desc: str, is_official: bool) -> list[tuple[str, str]]:
     d = desc or ""
     if (m := ACCESSION.search(d)):
         out.append(("accession_number", m.group(1)))
-    if (m := ACQUIRE.search(d)):
-        out.append(("acquisition", m.group(1).strip()))
+    if (a := acquisition_of(d)):
+        out.append(("acquisition", a))
     if (m := HIGHLIGHT.search(d)):
         out.append(("museum_highlight", m.group(1)))
     # 同一个键抽到多个值时只留第一个（如两段都判成 date_absolute）
@@ -181,11 +201,213 @@ def parse(name: str, desc: str, is_official: bool) -> list[tuple[str, str]]:
     return uniq
 
 
+TRANS_CSV = "translations_mfa_ext.csv"
+
+# 抽出来的值哪些需要英译。accession_number 是编号，中英同形，不进译名表。
+NO_TRANSLATE = {"accession_number"}
+
+
+def has_cjk(s: str) -> bool:
+    return any("㐀" <= c <= "鿿" for c in s or "")
+
+
+def read_trans_rows(path: pathlib.Path) -> dict[str, dict]:
+    """读 translations_mfa_ext.csv -> {中文: 整行}。缺文件不报错，只是没有译文。"""
+    if not path.exists():
+        return {}
+    with path.open(encoding="utf-8") as f:
+        rows = [ln for ln in f if not ln.lstrip().startswith("#")]
+    return {zh: r for r in csv.DictReader(rows)
+            if (zh := (r.get("zh") or "").strip())}
+
+
+def load_trans(path: pathlib.Path) -> dict[str, str]:
+    """{中文: 英文}。**标了「存疑」的不算数** —— 那是模型说「我认不出这是谁」，
+    它把中文原样退了回来。当成译文用，就等于把一个没译的值伪装成译好的。
+    """
+    out = {}
+    for zh, r in read_trans_rows(path).items():
+        en = (r.get("en") or "").strip()
+        if en and en != zh and (r.get("confidence") or "").strip() != "存疑":
+            out[zh] = en
+    return out
+
+
+def bilingual(k: str, v: str, trans: dict[str, str]) -> tuple[str, str]:
+    """把抽出的中文值配上英文。
+
+    三种情况：
+      · 键在 NO_TRANSLATE 里（编号）或值本身不含中文（`1891`、`Joseph Lindon Smith`）
+        —— 中英同形，直接用原值；
+      · 译名表里有 —— 用译名；
+      · 译名表里没有 —— **退回中文并让调用方统计**，不猜、不音译。
+        英文导出的 CJK 扫描会把这些捞出来，那正是我们要的信号。
+    """
+    if k in NO_TRANSLATE or not has_cjk(v):
+        return (v, v)
+    return (v, trans.get(v, v))
+
+
+def dump_values(rows, path: pathlib.Path) -> None:
+    """把所有含中文的去重取值写成译名表骨架（en 留空待译）。
+
+    **已有的 en 与 confidence 原样保留** —— 重跑不能冲掉人工校对过的结果，
+    尤其不能把「存疑」改写成「官方」（2026-09-05 就这么把 7 条标记冲掉过一次：
+    模型认不出而退回中文的行，被当成「已译好」重新写成了官方）。
+    """
+    have = read_trans_rows(path)
+    need: dict[str, set] = {}
+    for seq, name, desc, url, gallery in rows:
+        vals = parse(name, desc, "mfa.org" in url)
+        if "mfa.org" in url and gallery:
+            vals.append(("gallery_official", gallery))
+        for k, v in vals:
+            if k not in NO_TRANSLATE and has_cjk(v):
+                need.setdefault(v, set()).add(k)
+    with path.open("w", encoding="utf-8", newline="") as f:
+        f.write("# mfa_boston_ext 的 metadata 取值译名表\n"
+                "# kind 固定 meta_value_text；key 与 zh 都是抽出来的中文原值\n"
+                "# confidence：官方=通行既定译名 / AI=机器翻译 / 存疑=拿不准，优先人工复核\n"
+                "# **人名一栏是回译不是翻译**：拿不准就留中文并标存疑，\n"
+                "#   造一个不存在的拼写（沙金 -> Shajin）比留着中文更糟。\n")
+        w = csv.writer(f, lineterminator="\n")
+        w.writerow(["kind", "key", "zh", "en", "confidence", "used_by"])
+        for v in sorted(need):
+            old = have.get(v) or {}
+            w.writerow(["meta_value_text", v, v,
+                        (old.get("en") or "").strip(),
+                        (old.get("confidence") or "").strip(),
+                        "|".join(sorted(need[v]))])
+    n_todo = sum(1 for v in need if not (have.get(v, {}).get("en") or "").strip())
+    n_doubt = sum(1 for v in need
+                  if (have.get(v, {}).get("confidence") or "").strip() == "存疑")
+    print(f"{path}：{len(need)} 个含中文的去重取值，其中 {n_todo} 个待译"
+          + (f"、{n_doubt} 个标了存疑（模型认不出，已退回中文）" if n_doubt else ""))
+
+
+SYS_PERSON = """把博物馆编目里的**人名**从中文还原成通行的原文拼写。
+
+**这是回译，不是翻译。** 这些中文多是西方艺术家姓名的音译
+（「约翰·辛格·沙金」= John Singer Sargent、「阿尔布雷希特·丢勒」= Albrecht Dürer），
+也有中日韩本名（「閻立本」= Yan Liben、「立石春美」= Tateishi Harumi）。
+
+规则，按优先级：
+1. 认得出是哪位艺术家 —— 给**该艺术家通行的原文姓名**，连同变音符号
+   （Dürer、Renoir、Miró）。confidence 填 official。
+2. 中日韩人名而无通行罗马化 —— 按规范罗马化（中文汉语拼音、日文训读/音读、
+   韩文罗马字），confidence 填 AI。
+3. **认不出、或拿不准是哪一位 —— 原样返回那段中文**，confidence 填 doubt。
+
+**第 3 条是硬要求。** 绝不要按字音硬拼（「沙金」→ Shajin）造出一个不存在的名字：
+错的拼写会被当成事实写进库、喂进评分；留着中文只是导出时缺一条英文，
+而且会被 CJK 扫描捞出来交给人工。**编一个名字比承认不知道糟得多。**"""
+
+SYS_TERM = """把博物馆编目字段从中文译成英文。这是藏品编目数据，不是文案。
+
+- 材质按文物术语译：「泡桐木、彩绘与贴金」→ Paulownia wood with polychromy and gilding；
+  「绢本设色」→ ink and color on silk
+- 年代按英文习惯：「12 世纪初」→ early 12th century；「公元前 883–859 年」→ 883–859 BCE
+- 朝代/政权用通行英文名：「北宋」→ Northern Song dynasty；「金」→ Jin dynasty
+- 产地用通行国名/地区名：「中国」→ China
+- 入藏方式保留基金或捐赠人原名：「Hervey Edward Wetzel 基金」→ Hervey Edward Wetzel Fund
+- 展厅名保留其中已有的英文原文，只译中文部分
+
+**不要增补原文没有的信息，不要解释。** 拿不准就原样返回中文并把 confidence 填 doubt。
+
+**每条都标了它属于哪个字段，必须照字段义翻。** 同一个中文在不同字段下英文完全不同：
+  「金」在 polity 下是 Jin dynasty，在 material 下才是 gold
+  「朝鲜」在 polity 下是 Joseon dynasty，在 origin_place 下是 Korea
+2026-09-05 就因为没把字段名传给模型，把 polity 的「金」译成了 gold。"""
+
+TRANS_SCHEMA = {
+    "type": "object",
+    "properties": {"items": {"type": "array", "items": {
+        "type": "object",
+        "properties": {"zh": {"type": "string"}, "en": {"type": "string"},
+                       "confidence": {"type": "string",
+                                      "enum": ["official", "AI", "doubt"]}},
+        "required": ["zh", "en", "confidence"], "additionalProperties": False}}},
+    "required": ["items"], "additionalProperties": False,
+}
+
+CONF_ZH = {"official": "官方", "AI": "AI", "doubt": "存疑"}
+
+
+def translate_csv(path: pathlib.Path, args) -> None:
+    """把译名表里 en 为空的行补上。人名与术语分开问，提示词不同。
+
+    **已有译文的行不动** —— 人工校对过的结果不能被重跑冲掉。
+    """
+    if not path.exists():
+        raise SystemExit(f"{path} 不存在，先跑 --dump-values")
+    if not args.model:
+        raise SystemExit("--translate 需要 --model")
+    import audit_meta as A
+    client = A.LazyClient(args.key_file)
+    effort = A.norm_effort(args.effort)
+
+    with path.open(encoding="utf-8") as f:
+        head = [ln for ln in f if ln.lstrip().startswith("#")]
+    with path.open(encoding="utf-8") as f:
+        rows = list(csv.DictReader([ln for ln in f if not ln.lstrip().startswith("#")]))
+
+    todo = [r for r in rows if not (r.get("en") or "").strip()]
+    person = [r for r in todo if "artist" in (r.get("used_by") or "")]
+    term = [r for r in todo if r not in person]
+    print(f"待译 {len(todo)} 条：人名 {len(person)}、术语 {len(term)}")
+
+    got: dict[str, tuple[str, str]] = {}
+    for label, group, system, size in (("人名", person, SYS_PERSON, 60),
+                                       ("术语", term, SYS_TERM, 60)):
+        for i in range(0, len(group), size):
+            chunk = group[i:i + size]
+            # 带上字段名 —— 同一个中文在不同字段下英文不同（金：polity=Jin dynasty
+            # / material=gold）。返回时只按 zh 对齐，所以这批里不能有重复的 zh。
+            user = (f"请逐条给出英文，共 {len(chunk)} 条。"
+                    f"格式为「字段名｜中文」：\n"
+                    + "\n".join(f"- {r.get('used_by') or '?'}｜{r['zh']}" for r in chunk))
+            data = A.ask(client, args.model, system, user, "mfa_ext_trans",
+                         TRANS_SCHEMA, effort, museum_key=MUSEUM,
+                         scope=f"{label} {i + 1}-{i + len(chunk)}")
+            for d in data["items"]:
+                got[d["zh"]] = (d["en"], d["confidence"])
+            miss = {r["zh"] for r in chunk} - {d["zh"] for d in data["items"]}
+            if miss:
+                raise SystemExit(f"{label}漏译 {len(miss)} 条，例：{sorted(miss)[:3]}")
+            print(f"  {label} {min(i + size, len(group))}/{len(group)}")
+
+    n_doubt = 0
+    for r in rows:
+        if r["zh"] in got:
+            en, conf = got[r["zh"]]
+            r["en"], r["confidence"] = en, CONF_ZH.get(conf, "AI")
+            if conf == "doubt":
+                n_doubt += 1
+    with path.open("w", encoding="utf-8", newline="") as f:
+        f.writelines(head)
+        w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+    print(f"\n已写回 {path}：新增 {len(got)} 条译文，其中 {n_doubt} 条标了「存疑」")
+    if n_doubt:
+        print("   `grep 存疑` 捞出来人工过一遍再写库 —— 存疑的多半是认不出的人名，"
+              "它们会按中文写进 en 列并被 CJK 扫描捞出。")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--only-seq", type=int, help="只处理这一件，用于逐件核对")
+    ap.add_argument("--dump-values", action="store_true",
+                    help=f"把含中文的去重取值写成 {TRANS_CSV} 骨架（en 待译），不写库")
+    ap.add_argument("--translate", action="store_true",
+                    help=f"用 LLM 把 {TRANS_CSV} 里 en 为空的行补上，不写库")
+    ap.add_argument("--model", default="", help="--translate 用的型号")
+    ap.add_argument("--effort", default="medium")
+    ap.add_argument("--key-file", default="~/.openai_key")
+    ap.add_argument("--commit-every", type=int, default=200,
+                    help="每写多少件提交一次。跨公网连接，攒批提交比逐件提交快得多")
     args = ap.parse_args()
 
     conn = M.connect()
@@ -208,6 +430,21 @@ def main() -> None:
         WHERE 1=1 {where}
         ORDER BY a.source_seq""", params)
     rows = cur.fetchall()
+
+    base = pathlib.Path(__file__).resolve().parent
+    csv_path = base / TRANS_CSV
+
+    if args.dump_values:
+        dump_values(rows, csv_path)
+        conn.rollback()
+        return
+    if args.translate:
+        conn.rollback()
+        translate_csv(csv_path, args)
+        return
+
+    trans = load_trans(csv_path)
+    print(f"译名表 {TRANS_CSV}：{len(trans)} 条")
 
     for k, (zh, en) in KEYS.items():
         M.ensure_key(cur, k, zh, en)
@@ -243,34 +480,88 @@ def main() -> None:
         print("\n--dry-run：未写库")
         return
 
-    total = 0
+    # ── 批量写入 ────────────────────────────────────────────────────────────
+    # **不逐件调 meta_lib.set_meta。** 它每件每键要发 1 次 DELETE + 1 次
+    # executemany，而 ensure_value 对每个没见过的取值再查 1 次 —— 4464 件里
+    # 3940 个馆藏号个个不同，全是缓存未命中。2026-09-05 实测：跨公网 13 分钟
+    # 只写完 200 件，全量要 5 小时。瓶颈是**往返次数**不是数据量。
+    #
+    # 改成三步，总往返十几次：
+    #   ① 一次查回所有已存在的 (zh,en) -> content_id
+    #   ② 新值在本地分配 ID 后 executemany 建 content / content_text
+    #   ③ 整馆一次 DELETE，再 executemany 写 artwork_meta
+    #
+    # evidence_type / source_quality 在写入时就按 SOURCE_RULES 填死，不留给审计回填：
+    # tier_v3 的 --evidence 会把这两列拼进提示词，NULL 会渲染成「[?/? · xxx]」，
+    # 而提示词里教模型怎么读 FACT/strong 的那四行就此作废。
+
+    # 先把全部要写的行摊平，同时收集去重后的 (zh, en)
+    flat = []          # (sk, seq, key, ord, zh, en)
+    pairs: set[tuple[str, str]] = set()
+    untranslated: set[str] = set()
     for sk, items in payload.items():
         for seq, vals in items:
-            # 只清自己 source_key 的旧值（AGENTS.md 第 7 条：冲突取值并存，不消解）
-            cur.execute("DELETE FROM artwork_meta WHERE museum_key=%s AND source_seq=%s"
-                        " AND source_key=%s", (MUSEUM, seq, sk))
             for ord_, (k, v) in enumerate(vals):
-                cid = M.ensure_value(cur, v, v)     # 值本身多为专名/编号，中英同形
-                # evidence_type / source_quality 在**写入时**就按 SOURCE_RULES 填死，
-                # 不留给 audit_load.py 事后回填。理由：tier_v3 的 --evidence 会把这
-                # 两列拼进提示词，NULL 会渲染成「[?/? · mfa_official]」——
-                # 而提示词里花了四行教模型怎么读 FACT/strong 与 INFERENCE，
-                # 递过去一个 ?/? 等于把那段说明作废。来源等级是 source_key 的函数，
-                # 确定性可知，没有任何理由推迟到审计阶段才填。
-                etype, quality = SR.SOURCE_RULES[sk][1], SR.quality_of(SR.SOURCE_RULES[sk][0])
-                cur.execute(
-                    "INSERT INTO artwork_meta (museum_key, source_seq, key_name,"
-                    " source_key, ord, value_cid, source, confidence,"
-                    " evidence_type, source_quality)"
-                    " VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                    (MUSEUM, seq, k, sk, ord_, cid,
-                     "MFA 官网展厅/部门页" if sk == "mfa_official"
-                     else "MFA 扩充清单 · Wikidata 条目",
-                     "high" if sk == "mfa_official" else "medium",
-                     etype, quality))
-                total += 1
+                zh, en = bilingual(k, v, trans)
+                if zh == en and has_cjk(zh):
+                    untranslated.add(zh)
+                flat.append((sk, seq, k, ord_, zh, en))
+                pairs.add((zh, en))
+    print(f"待写 {len(flat)} 条，去重后 {len(pairs)} 个不同取值")
+
+    # ① 已存在的取值
+    cid_of: dict[tuple[str, str], int] = {}
+    cur.execute("""SELECT z.text, e.text, z.content_id FROM content_text z
+                   JOIN content c ON c.id = z.content_id AND c.kind = %s
+                   JOIN content_text e ON e.content_id = z.content_id AND e.lang = 'en'
+                   WHERE z.lang = 'zh-CN'""", (M.KIND_VALUE,))
+    have = {(z, e): cid for z, e, cid in cur.fetchall()}
+    cid_of.update({p: have[p] for p in pairs if p in have})
+    todo = sorted(pairs - set(cid_of))
+    print(f"  已在库中 {len(cid_of)} 个，需新建 {len(todo)} 个")
+
+    # ② 新值：本地分配 ID 后批量插。ID 段见 AGENTS.md 第 3 条（metadata 段 2,000,000 起）
+    if todo:
+        cur.execute("SELECT COALESCE(MAX(id), %s) FROM content WHERE id >= %s",
+                    (M.CONTENT_ID_BASE, M.CONTENT_ID_BASE))
+        nxt = cur.fetchone()[0] + 1
+        crows, trows = [], []
+        for i, (zh, en) in enumerate(todo):
+            cid = nxt + i
+            cid_of[(zh, en)] = cid
+            crows.append((cid, M.KIND_VALUE))
+            trows.append((cid, "zh-CN", zh, M.SRC_ZH))
+            trows.append((cid, "en", en, M.SRC_EN))
+        cur.executemany("INSERT INTO content (id, kind) VALUES (%s,%s)", crows)
+        cur.executemany("INSERT INTO content_text (content_id, lang, text, source)"
+                        " VALUES (%s,%s,%s,%s)", trows)
+
+    # ③ 只清本脚本两个 source_key 的旧值，别的来源原样保留（AGENTS.md 第 7 条）
+    for sk in payload:
+        cur.execute("DELETE FROM artwork_meta WHERE museum_key=%s AND source_key=%s",
+                    (MUSEUM, sk))
+    meta_rows = []
+    for sk, seq, k, ord_, zh, en in flat:
+        rule = SR.SOURCE_RULES[sk]
+        meta_rows.append((
+            MUSEUM, seq, k, sk, ord_, cid_of[(zh, en)],
+            "MFA 官网展厅/部门页" if sk == "mfa_official"
+            else "MFA 扩充清单 · Wikidata 条目",
+            "high" if sk == "mfa_official" else "medium",
+            "rule", rule[1], SR.quality_of(rule[0])))
+    for i in range(0, len(meta_rows), 2000):
+        cur.executemany(
+            "INSERT INTO artwork_meta (museum_key, source_seq, key_name, source_key,"
+            " ord, value_cid, source, confidence, filled_by,"
+            " evidence_type, source_quality)"
+            " VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)", meta_rows[i:i + 2000])
     conn.commit()
-    print(f"\n写入 artwork_meta {total} 条")
+    n_done = sum(len(x) for x in payload.values())
+    print(f"\n写入 artwork_meta {len(meta_rows)} 条，覆盖 {n_done} 件")
+    if untranslated:
+        print(f"⚠ {len(untranslated)} 个取值没有英译（含标了「存疑」的），已按中文写入 en 列。"
+              f"英文导出的 CJK 扫描会把它们捞出来 —— 这是预期信号，不是 bug。")
+        print("   例：" + "、".join(sorted(untranslated)[:5]))
 
 
 if __name__ == "__main__":

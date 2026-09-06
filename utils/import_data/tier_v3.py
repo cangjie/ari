@@ -255,7 +255,7 @@ STAGE_EFFORT = {
 
 def ask(client, system: str, user: str, schema: dict, *,
         stage: str = "tier_v3", museum_key: str | None = None,
-        scope: str | None = None, seqs=None) -> dict:
+        scope: str | None = None, seqs=None, validate=None) -> dict:
     """一次结构化输出调用。schema 保证返回的第一个 text block 是合法 JSON。
 
     两条路径（anthropic / openai）都经过 llm_cache：键含提示词全文，
@@ -275,13 +275,14 @@ def ask(client, system: str, user: str, schema: dict, *,
         return llm_cache.call(_do, provider="anthropic_cli", model=model,
                               effort=None, stage=stage, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
-                              seqs=seqs)
+                              seqs=seqs, validate=validate)
 
     if OPENAI is not None:
         import audit_meta as A
         oc, model, efforts = OPENAI
         return A.ask(oc, model, system, user, stage, schema, efforts.get(stage),
-                     museum_key=museum_key, scope=scope, seqs=seqs)
+                     museum_key=museum_key, scope=scope, seqs=seqs,
+                     validate=validate)
 
     def _do():
         resp = client.messages.create(
@@ -304,7 +305,8 @@ def ask(client, system: str, user: str, schema: dict, *,
     import llm_cache
     return llm_cache.call(_do, provider="anthropic", model=MODEL, effort="high",
                           stage=stage, system=system, user=user, schema=schema,
-                          museum_key=museum_key, scope=scope, seqs=seqs)
+                          museum_key=museum_key, scope=scope, seqs=seqs,
+                          validate=validate)
 
 
 # ---------------------------------------------------------------------------
@@ -478,14 +480,16 @@ def stage1(client, m: Museum, items: list[dict], out: Path, batch: int,
             + "\n\n".join(fmt_item(it, evidence) for it in chunk)
                 + (EVIDENCE_NOTE if evidence else "")
         )
+        want = {it["seq"] for it in chunk}
+        # 「本批必须全返」交给 llm_cache 在**写缓存之前**校验并自动重试。
+        # 早先这个检查写在这里（拿到 data 之后 raise），于是残缺答案已经进了缓存，
+        # 重跑必然命中它、必然在同一处再崩 —— 2026-09-05 一个跑了 5 小时的进程
+        # 就这么卡死在第 285 次调用（模型漏返了 seq 3412）。
         data = ask(client, STAGE1_SYSTEM, user, STAGE1_SCHEMA,
                    stage="tier_stage1", museum_key=m.key,
                    scope=f"seq {chunk[0]['seq']}-{chunk[-1]['seq']}",
-                   seqs=[it['seq'] for it in chunk])
-        got = {r["seq"] for r in data["results"]}
-        missing = {it["seq"] for it in chunk} - got
-        if missing:
-            raise RuntimeError(f"阶段一漏评 seq={sorted(missing)}，未写入，请重跑该批")
+                   seqs=[it['seq'] for it in chunk],
+                   validate=lambda d, w=want: not (w - {r["seq"] for r in d["results"]}))
         for r in data["results"]:
             append(out, r)
             done[r["seq"]] = r
@@ -571,13 +575,13 @@ def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path,
             f"组内共 {len(seqs)} 件对象，请全部给出 Q / D / G：\n\n"
             + "\n\n".join(lines)
         )
+        # 同阶段一：「本组必须全返」交给 llm_cache 在写缓存之前校验并重试，
+        # 否则残缺答案进了缓存，重跑必然在同一组再崩。
+        want = set(seqs)
         data = ask(client, STAGE2_SYSTEM, user, STAGE2_SCHEMA,
                    stage="tier_stage2", museum_key=m.key,
-                   scope=f"{group}（{len(seqs)} 件）", seqs=seqs)
-        got = {r["seq"] for r in data["results"]}
-        missing = set(seqs) - got
-        if missing:
-            raise RuntimeError(f"阶段二组「{group}」漏算 seq={sorted(missing)}")
+                   scope=f"{group}（{len(seqs)} 件）", seqs=seqs,
+                   validate=lambda d, w=want: not (w - {r["seq"] for r in d["results"]}))
         for r in data["results"]:
             r["peer_group"] = group
             r["peer_size"] = len(seqs)
@@ -653,13 +657,11 @@ def stage3(client, m: Museum, items: list[dict], cands: list[int],
             + (EVIDENCE_NOTE + "\n" if evidence else "")
             + f"以下 {len(todo)} 件对象已达 S 门槛，请逐件做 S-ness Test：\n\n"
             + "\n\n".join(lines))
+    want = set(todo)
     data = ask(client, STAGE3_SYSTEM, user, STAGE3_SCHEMA,
                stage="tier_stage3", museum_key=m.key,
-               scope=f"S 候选 {len(todo)} 件", seqs=todo)
-    got = {r["seq"] for r in data["results"]}
-    missing = set(todo) - got
-    if missing:
-        raise RuntimeError(f"阶段三漏测 seq={sorted(missing)}")
+               scope=f"S 候选 {len(todo)} 件", seqs=todo,
+               validate=lambda d, w=want: not (w - {r["seq"] for r in d["results"]}))
     for r in data["results"]:
         append(out, r)
         done[r["seq"]] = r
@@ -726,6 +728,13 @@ def main() -> None:
         ap.add_argument(f"--effort-stage{_s}", default="",
                         help=f"只覆盖阶段{_s}的推理强度，优先于 --effort")
     ap.add_argument("--key-file", default="~/.openai_key")
+    ap.add_argument("--stage", choices=["all", "1", "2", "3"], default="all",
+                    help="只跑某个阶段。大馆分批时用：阶段一逐批跑（--seq-from/--seq-to），"
+                         "**阶段二必须等阶段一全跑完再一次性跑** —— 它按 peer_group 分组，"
+                         "分批跑会让同一批性质相同的对象落进不同批次的不同组，"
+                         "CR 的组内比较就失效了")
+    ap.add_argument("--seq-from", type=int, help="只跑 source_seq >= 此值（配合 --stage 1）")
+    ap.add_argument("--seq-to", type=int, help="只跑 source_seq <= 此值（配合 --stage 1）")
     ap.add_argument("--evidence", action="store_true",
                     help="把 artwork_meta 里已核实的事实喂进评分（只喂事实，"
                          "不喂审计的完备度/可信度结论，理由见 load_evidence 的注释）。"
@@ -769,9 +778,24 @@ def main() -> None:
         missing = want - {it["seq"] for it in items}
         if missing:
             sys.exit(f"--only-seq 指定的 {sorted(missing)} 在源表里不存在")
+
+    # seq 区间只对阶段一有意义。阶段二按 peer_group 分组，必须看到全馆；
+    # 阶段三要从全馆的 Core 里挑 S 候选。截断了它们就是在改算法，不是在分批。
+    if args.seq_from or args.seq_to:
+        if args.stage != "1":
+            sys.exit("--seq-from/--seq-to 只能配合 --stage 1 使用。\n"
+                     "阶段二按 peer_group 分组、阶段三从全馆挑 S 候选，"
+                     "两者都必须看到全部对象 —— 截断会让批大小混进算法，"
+                     "同一批数据分 9 批和分 5 批会得出不同的 CR。")
+        lo = args.seq_from or 0
+        hi = args.seq_to or 10 ** 9
+        items = [it for it in items if lo <= it["seq"] <= hi]
     print(f"{m.label}：{len(items)} 件"
           + ("（--limit 截断）" if args.limit else "")
-          + (f"（--only-seq {sorted(args.only_seq)}）" if args.only_seq else ""))
+          + (f"（--only-seq {sorted(args.only_seq)}）" if args.only_seq else "")
+          + (f"（seq {args.seq_from or 1}–{args.seq_to or '末'}）"
+             if args.seq_from or args.seq_to else "")
+          + (f"，只跑阶段 {args.stage}" if args.stage != "all" else ""))
 
     evidence = None
     if args.evidence:
@@ -785,8 +809,32 @@ def main() -> None:
     p2 = out_dir / f"{m.key}_stage2.jsonl"
     p3 = out_dir / f"{m.key}_stage3.jsonl"
 
-    s1 = stage1(client, m, items, p1, args.batch, evidence)
-    s2 = stage2(client, m, items, s1, p2, evidence)
+    if args.stage in ("all", "1"):
+        s1 = stage1(client, m, items, p1, args.batch, evidence)
+    else:
+        s1 = read_done(p1)
+
+    if args.stage == "1":
+        # 分批跑阶段一时到此为止：阶段二要等全馆的 peer_group 都定了才能分组。
+        done = {it["seq"] for it in items} & set(s1)
+        print(f"\n阶段一完成 {len(done)}/{len(items)} 件，累计 {len(s1)} 件已评。")
+        print(f"产物：{p1}")
+        print("全部批次跑完后再跑 --stage 2（一次性，按全馆 peer_group 分组）。")
+        return
+
+    # 阶段二/三要看全馆。若阶段一是分批跑的，这里必须已经全齐。
+    missing1 = {it["seq"] for it in items} - set(s1)
+    if missing1:
+        sys.exit(f"阶段一还缺 {len(missing1)} 件（如 seq={sorted(missing1)[:10]}），"
+                 f"先把 --stage 1 的批次跑完再跑阶段二。")
+
+    if args.stage in ("all", "2"):
+        s2 = stage2(client, m, items, s1, p2, evidence)
+    else:
+        s2 = read_done(p2)
+    missing2 = {it["seq"] for it in items} - set(s2)
+    if missing2:
+        sys.exit(f"阶段二还缺 {len(missing2)} 件，先跑 --stage 2。")
 
     # 先用 CR 算一遍 Core，挑出 S 候选，再决定谁需要跑阶段三
     cr, cores = {}, {}
@@ -799,7 +847,10 @@ def main() -> None:
     cands = [s for s in sorted(cores)
              if cores[s] >= 8.5
              and max(float(s1[s][d]) for d in DIMS_WITH_ER if d in s1[s]) >= 9]
-    s3 = stage3(client, m, items, cands, s1, cores, p3, evidence) if cands else {}
+    if args.stage in ("all", "3") and cands:
+        s3 = stage3(client, m, items, cands, s1, cores, p3, evidence)
+    else:
+        s3 = read_done(p3)
 
     # 型号落盘。tier_v3_load.py 的 SCORED_BY 是写死的 claude-opus-5，
     # 换了供应商还照写就等于在库里伪造出处 —— scored_by 是判断「审计者与打分者
