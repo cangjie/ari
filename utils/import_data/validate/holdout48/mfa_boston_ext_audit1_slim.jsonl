@@ -1,0 +1,48 @@
+{"seq": 53, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 80, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 131, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 235, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 94.72），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 94.72），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 334, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 17.1697），缺 MFA 官网对象页确认的展厅位置与当前在展状态；长卷是否常设展出对游客能否现场看到有实际影响", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 17.1697），缺 MFA 官网对象页确认的展厅位置与当前在展状态；长卷是否常设展出对游客能否现场看到有实际影响"}
+{"seq": 357, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 82.777），缺 MFA 官网对象页确认的展厅位置与当前在展状态；浮世绘版画轮换展出频率高，在展状态对游客实际可见性有影响", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 82.777），缺 MFA 官网对象页确认的展厅位置与当前在展状态；浮世绘版画轮换展出频率高，在展状态对游客实际可见性有影响"}
+{"seq": 359, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 59.301），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 59.301），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 378, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 47.1188），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 47.1188），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 555, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 47.1243），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 47.1243），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 613, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 42.542），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 42.542），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 684, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 687, "missing": [{"zh": "数据仅来自 Wikidata（馆藏号 69.49），缺 MFA 官网对象页确认的展厅位置与当前在展状态", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "数据仅来自 Wikidata（馆藏号 69.49），缺 MFA 官网对象页确认的展厅位置与当前在展状态"}
+{"seq": 837, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 924, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1066, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1169, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1252, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1467, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1513, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1531, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1782, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1812, "missing": [{"zh": "艺术家字段为未解析的 Wikidata 实体编号 Q4740381，缺对应的真实姓名", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "艺术家字段为未解析的 Wikidata 实体编号 Q4740381，缺对应的真实姓名"}
+{"seq": 2088, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2226, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2253, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2265, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2273, "missing": [{"zh": "馆藏号前缀 L-R 在 MFA 编号体系中通常指借展品（Loan）而非永久馆藏，需核实该作是否仍在馆内、游客是否能看到；当前定级完全建立在「MFA 馆藏中的斯图尔特革命人物肖像」这一前提上，若实际已归还或不在展，前提不成立。", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "馆藏号前缀 L-R 在 MFA 编号体系中通常指借展品（Loan）而非永久馆藏，需核实该作是否仍在馆内、游客是否能看到；当前定级完全建立在「MFA 馆藏中的斯图尔特革命人物肖像」这一前提上，若实际已归还或不在展，前提不成立。"}
+{"seq": 2327, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2343, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2361, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2490, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2619, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2690, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3375, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3540, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3680, "missing": [{"zh": "Metadata 中艺术家仍为未解析的 Wikidata ID Q8023886，而打分依据已将其称为「理查兹」；需在 metadata 层面补全艺术家可读姓名以保持数据一致性。", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "Metadata 中艺术家仍为未解析的 Wikidata ID Q8023886，而打分依据已将其称为「理查兹」；需在 metadata 层面补全艺术家可读姓名以保持数据一致性。"}
+{"seq": 3854, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3962, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4064, "missing": [], "found_factual_error": true, "error_note_zh": "元数据中 date_absolute = 1800，但尾形光琳卒于 1716 年，该屏风通常断代为约 1700–1710 年；1800 年在画家去世近一个世纪之后，属明确的事实错误（源自 Wikidata 精度或提取问题）。", "top_missing_zh": null}
+{"seq": 4094, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4135, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4191, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4315, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4328, "missing": [{"zh": "缺馆藏号：简介中未列出任何馆藏编号，其余同组写乐作品均有馆藏号可供核对，此件无法指向 MFA 馆藏库中的具体对象。", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺馆藏号：简介中未列出任何馆藏编号，其余同组写乐作品均有馆藏号可供核对，此件无法指向 MFA 馆藏库中的具体对象。"}
+{"seq": 4362, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4405, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4414, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 4421, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}

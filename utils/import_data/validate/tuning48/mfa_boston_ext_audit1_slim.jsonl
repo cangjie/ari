@@ -1,0 +1,48 @@
+{"seq": 5, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 11, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 13, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 14, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 16, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 19, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 21, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 28, "missing": [{"zh": "缺该雕塑的作者归属（哪位 19 世纪美国雕塑家的作品）", "tier_sensitive": false}, {"zh": "缺确切创作年代与馆藏号", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺该雕塑的作者归属（哪位 19 世纪美国雕塑家的作品）"}
+{"seq": 30, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 39, "missing": [{"zh": "缺该对象的具体馆藏身份：艺术家、确切题名、馆藏号与官方对象页——翁万戈捐赠含数百件作品，'明清书画四条屏'无法定位到任何一件具体藏品，对象身份本身存疑", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺该对象的具体馆藏身份：艺术家、确切题名、馆藏号与官方对象页——翁万戈捐赠含数百件作品，'明清书画四条屏'无法定位到任何一件具体藏品，对象身份本身存疑"}
+{"seq": 44, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 45, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 46, "missing": [{"zh": "缺 MFA 所藏版本的具体身份说明（身后青铜翻铸版编号 / Hébrard 铸造批次），以区别于华盛顿国家美术馆所藏蜡原作", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺 MFA 所藏版本的具体身份说明（身后青铜翻铸版编号 / Hébrard 铸造批次），以区别于华盛顿国家美术馆所藏蜡原作"}
+{"seq": 47, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 48, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 50, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 56, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 57, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 65, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 67, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 74, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 77, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 89, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 91, "missing": [{"zh": "缺馆方关于这五件作品当前所有权审查与归还谈判进展的最新状态，可能影响实际是否在展", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺馆方关于这五件作品当前所有权审查与归还谈判进展的最新状态，可能影响实际是否在展"}
+{"seq": 95, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1489, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1511, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1570, "missing": [{"zh": "缺 MFA 官网对该作品的馆藏页信息（标题、归属、断代、展厅），目前仅有 Wikidata 来源", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺 MFA 官网对该作品的馆藏页信息（标题、归属、断代、展厅），目前仅有 Wikidata 来源"}
+{"seq": 1571, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1577, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1580, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1582, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1596, "missing": [{"zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记，属数据解析遗留问题", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记，属数据解析遗留问题"}
+{"seq": 1604, "missing": [{"zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记"}
+{"seq": 1605, "missing": [{"zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家归属——artist 字段为 Wikidata 空白节点 URI 而非实际人名或「佚名」标记"}
+{"seq": 2990, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2995, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3000, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3002, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3021, "missing": [{"zh": "缺艺术家字段的实际人名（当前仍为 Wikidata 实体编号 Q2693042，无法向游客展示）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家字段的实际人名（当前仍为 Wikidata 实体编号 Q2693042，无法向游客展示）"}
+{"seq": 3037, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3039, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3057, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3066, "missing": [{"zh": "缺艺术家字段的实际人名（当前仍为 Wikidata 实体编号 Q6836743，无法向游客展示）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家字段的实际人名（当前仍为 Wikidata 实体编号 Q6836743，无法向游客展示）"}
+{"seq": 3076, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3077, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3080, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3095, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}

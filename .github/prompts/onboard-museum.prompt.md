@@ -12,16 +12,21 @@ description: 接入新馆 —— 定源、体检、登记、入库、评级、me
 
 ## 一条贯穿全程的纪律
 
-**打分与审计必须不同源。** 当前配置：
+**打分与审计必须不同源。** 当前配置（用户 2026-09-08 定）：
 
 | | 型号 | 入口 | effort |
 |---|---|---|---|
-| 打分 `tier_v3.py` | `claude-opus-5` | `claude` CLI headless（**订阅账号，无需 API key**） | 无此旋钮 |
-| 审计 `audit_meta.py` | `gpt-5.6-sol` | OpenAI SDK（`~/.openai_key`） | 分阶段，见 `STAGE_EFFORT` |
+| 打分 `tier_v3.py` | `gpt-5.6-luna` | OpenAI SDK（`~/.openai_key`） | 分阶段，见 `STAGE_EFFORT` |
+| 审计 `audit_meta.py` | `claude-opus-5` | `claude` CLI headless（**订阅账号，无需 API key**） | **无此旋钮** |
+
+**审计一律用 Claude，不再用 OpenAI** —— `--provider` 的默认值就是 `claude_cli`，
+正常情况下不用写。`--model` 也可以不给（缺省 `claude-opus-5`）。
+代价是慢：实测每次调用 45–120 秒，OpenAI 是 4–47 秒。
 
 审计要回答的是「支撑这一级的证据够不够」。审计者若与打分者同源，这个问题的答案
-先天可疑。2026-09-02 至 09-05 两边都是 `gpt-5.6-sol`（本机无 Anthropic 凭据），
-**交叉验证形同虚设**；09-05 改走 `claude` CLI 后恢复。
+先天可疑 —— 那是打分者给自己打分。2026-09-02 至 09-06 期间两端一直同源
+（先都是 `gpt-5.6-sol`，后来 `mfa_boston_ext` 两端都是 `gpt-5.6-luna`），
+**交叉验证形同虚设，库里现存 5067 件的审计结论都受此影响**。
 `scored_by` / `audited_by` 两列一对照即可看出是否同源 —— **改配置前先看这两列。**
 
 **花钱之前先量。** 成本几乎全在 reasoning token 上（`xhigh` 下占输出的 68%）。
@@ -183,7 +188,7 @@ NULL 会渲染成 `[?/? · xxx]`，而提示词里教模型怎么读 FACT/strong
 
 ```
 python3 evidence_score.py --museum <mk>        # 0 API，规则口径完备度 + best_source_tier
-python3 audit_meta.py --museum <mk> --slim --model <model> --out-dir ./run/<mk>
+python3 audit_meta.py --museum <mk> --slim --out-dir ./run/<mk>   # 默认走 claude_cli
 python3 audit_load.py --museum <mk> --out-dir ./run/<mk>
 ```
 
@@ -200,8 +205,14 @@ python3 audit_load.py --museum <mk> --out-dir ./run/<mk>
 2. **馆专属事实只进 `MUSEUM_NOTE`**，不进通用规则
 3. **一列一个判据，判据只放在一个地方。** 曾让阶段二覆盖阶段一，
    改判据只改了阶段一，248 件 S/A 的可信度被整片冲成 `low`
-4. **`tier_sensitive` 问的是「这条事实有了答案 Tier 会不会变」**，不是「还能不能研究」。
-   并存政权的归属之争一律 `false`；既成共识不是缺口
+4. **`tier_sensitive` 问的是「这条事实有了答案，游客的行程决定会不会变」**，
+   不是「学术上还能不能继续研究」。**读者是旅游者不是学者**（用户 2026-09-08 定）：
+   按学术出版的标准审，每一件都会「资料不足」，这一列就不携带信息。
+   并存政权的归属之争一律 `false`；既成共识不是缺口；
+   **B/C 段且够不着 A/S 的一条 `true` 都不给**（不管查出什么都不改变
+   「不是本次参观重点」）；精确尺寸／碳十四区间／流传链条／catalogue raisonné
+   ／专家归属之争这类纯学术项一律 `false`。
+   **但事实错误照报** —— 放宽的是深究标准，不是事实标准
 
 **审计只审证据，绝不改 tier。** `audit_load.py` 写入前后各拍快照，不一致整体回滚。
 

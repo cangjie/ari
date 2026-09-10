@@ -511,14 +511,19 @@ python3 export_excel.py --defaults-file ~/.my.cnf --museum pem --artworks-only
   `audit_load.py` 的 `SOURCE_RULES`。遇到没登记过的 `source_key` 会报错退出，
   不猜 —— 猜一个来源的性质，等于替读表的人下他自己该下的判断。
 
-**审计者用 OpenAI，评分者用 Anthropic，这是刻意的。** V3.0 那批分是
-`claude-opus-5` 打的，换一家的模型来审，「审计者即打分者」的同源偏差被切断了一部分。
-这仍不是独立第三方审计（喂进去的证据本身就是那轮打分的产物）。型号写进
-`artwork_evidence.audited_by`，与 `artwork_tier_v3.scored_by` 对照即可看清是否同源。
+**审计用 Claude，评分用 OpenAI，这是刻意的**（用户 2026-09-08 定；此前方向写反过，
+已更正）。`audit_meta.py --provider` 默认就是 `claude_cli`，走本机 Claude Code 订阅账号，
+**不需要 API key、不产生 OpenAI 费用**，`--model` 缺省 `claude-opus-5`；
+代价是慢，实测每次调用 45–120 秒（OpenAI 是 4–47 秒）。`--effort` 在这条路径下无效。
 
-型号不写死：`--model` 优先，其次环境变量 `OPENAI_MODEL`，都没有就报错退出。
-key 从 `~/.openai_key`（权限须 600）读，脚本会检查权限；`OPENAI_API_KEY` 存在时优先用它。
-**同 MySQL 口令一样，key 绝不进命令行。**
+换一家的模型来审，切断的是「审计者即打分者」的同源偏差。**这仍不是独立第三方审计**
+（喂进去的证据本身就是那轮打分的产物）。型号写进 `artwork_evidence.audited_by`，
+与 `artwork_tier_v3.scored_by` 对照即可看清是否同源 —— 库里现存 5067 件两端都是
+OpenAI，那批审计结论在重跑前不能当独立验证用。
+
+走 `--provider openai` 时型号仍不写死：`--model` 优先，其次环境变量 `OPENAI_MODEL`，
+都没有就报错退出。key 从 `~/.openai_key`（权限须 600）读，脚本会检查权限；
+`OPENAI_API_KEY` 存在时优先用它。**同 MySQL 口令一样，key 绝不进命令行。**
 
 ### 导出里的审计产物
 

@@ -1,0 +1,48 @@
+{"seq": 5, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 11, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 13, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 14, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 16, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 19, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 21, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 28, "missing": [{"zh": "缺作者归属与确切创作年代，当前仅有题材描述与展厅位置", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺作者归属与确切创作年代，当前仅有题材描述与展厅位置"}
+{"seq": 30, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 39, "missing": [{"zh": "该条目缺具体馆藏身份：无艺术家、作品题名、馆藏号或官方对象页，无法将其指向MFA馆藏中任何一件具体作品；翁万戈捐赠含数百件作品，'明清书画四条屏'过于宽泛，A级评定建立在一件无法识别的对象上", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "该条目缺具体馆藏身份：无艺术家、作品题名、馆藏号或官方对象页，无法将其指向MFA馆藏中任何一件具体作品；翁万戈捐赠含数百件作品，'明清书画四条屏'过于宽泛，A级评定建立在一件无法识别的对象上"}
+{"seq": 44, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 45, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 46, "missing": [{"zh": "缺该件的材质与版本身份的馆方确认；据公开资料，德加原蜡塑（1881年展出的那一件）现藏华盛顿国家美术馆，MFA此件若为约28件死后翻铸青铜版之一，则简介所暗示的唯一性（'德加唯一生前展出的雕塑'）描述的是另一件作品，S级不可替代性（IU=9.0）的依据会显著不同", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺该件的材质与版本身份的馆方确认；据公开资料，德加原蜡塑（1881年展出的那一件）现藏华盛顿国家美术馆，MFA此件若为约28件死后翻铸青铜版之一，则简介所暗示的唯一性（'德加唯一生前展出的雕塑'）描述的是另一件作品，S级不可替代性（IU=9.0）的依据会显著不同"}
+{"seq": 47, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 48, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 50, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 56, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 57, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 65, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 67, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 74, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 77, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 89, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 91, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 95, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1489, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1511, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1570, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1571, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1577, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 1580, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 1582, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1596, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1604, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1605, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2990, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 2995, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 3000, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3002, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 3021, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3037, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3039, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3057, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3066, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3076, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 3077, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 3080, "missing": [{"zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺MFA官方展厅与在展状态确认（Wikidata来源未提供展陈信息）"}
+{"seq": 3095, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}

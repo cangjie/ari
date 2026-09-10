@@ -197,7 +197,10 @@ class Invalid(Exception):
 # 值得重试的瞬时故障。**按类名匹配而不是 import 具体异常类** —— 这里不该
 # 依赖 openai/anthropic 任一 SDK 的内部类型，换供应商时也不必改这份名单。
 # 认不出的异常一律原样抛出：宁可停下来让人看，也不要对着一个真 bug 空转三次。
-_TRANSIENT = ("APIConnectionError", "APITimeoutError", "RateLimitError",
+# Transient 是 claude_cli 自己的类 —— 按类名匹配就不必 import 它，
+# 也就不会让本模块依赖某个具体 provider。
+_TRANSIENT = ("Transient",
+              "APIConnectionError", "APITimeoutError", "RateLimitError",
               "InternalServerError", "APIStatusError", "ConnectionError",
               "ReadTimeout", "ConnectTimeout", "RemoteProtocolError")
 

@@ -19,8 +19,29 @@
 1. **每次调用附带约 5.4k token 的 Claude Code 自身脚手架**（系统提示词、工具定义），
    走 prompt cache 但仍计入用量。相比直连 SDK 是纯额外开销。
 2. **慢**：单次 4–10 秒，含进程启动。4464 件 × 3 阶段是以小时计的。
-3. **没有 effort 旋钮**。CLI 不暴露 reasoning_effort，档位无法按阶段调，
-   只能靠选型号（opus / sonnet）。故本 provider 的 effort 一律记 NULL。
+3. **有 `--effort low|medium|high|max` 开关，但对压输出量没用 —— 别指望它。**
+   （早先这里写的是「CLI 不暴露 reasoning_effort」，那是错的，已更正。
+   因为这个错误认知，llm_call.effort 一路记成 NULL，实际跑的是默认档。）
+
+   2026-09-09 在 haiku-4.5 同一批 12 件上实测：
+
+       档位        输出 token   耗时    missing 总数   进队列
+       默认          14,137      —          —           —
+       --effort low  18,519     218s        0           0     ← 更贵且判断垮掉
+       --effort med  14,521     163s        9           6
+
+   **low 档不但不省，反而多吐 31%，而且 12 件全返回空 missing**（与 gemini-flash
+   同一种摆烂形态）。medium 与默认持平。三档下 num_turns 恒为 2。
+
+4. **`num_turns` 恒为 2，这是输出量的结构性来源。** 配 `--json-schema` 时 CLI
+   要跑两轮（极可能是先作答、再按 schema 重排），同一份内容生成两次都计费。
+   实测一次调用 output_tokens=14,137，而可见内容合计只有 3,780 字符
+   （structured_output 3,063 + result 717）—— 约七成 token 看不见。
+
+   **压输出这件事，三条路都试过了，全部无效**（详见 audit_meta.py 的
+   STAGE1_SLIM_SCHEMA 注释）：砍可见文本（token 反升）、限量限长（判断垮掉）、
+   调 effort（同上）。要省只能换模型：同一任务 gemini-3.1-pro 均 1,667 token/次，
+   opus-5 均 10,721，haiku-4.5 均 17,719 —— **haiku 是三个里最费的**。
 
 **不要加 `--bare`**：它明说「Anthropic auth is strictly ANTHROPIC_API_KEY or
 apiKeyHelper，OAuth and keychain are never read」—— 加了就用不了订阅账号。
@@ -41,12 +62,35 @@ NO_TOOLS = ["Bash", "Edit", "Write", "Read", "Glob", "Grep",
 DEFAULT_MODEL = "claude-opus-5"
 
 
+class Transient(RuntimeError):
+    """这次调用失败得像是抖动，值得重试。
+
+    llm_cache._TRANSIENT 按**类名**判断该不该退避重试，而它原先只列了 OpenAI 的
+    异常类名。claude_cli 一直抛普通 RuntimeError，于是 2026-09-05 给 OpenAI 那条
+    路径加的重试保护，在 Claude 这条路径上**从来没生效过** —— 2026-09-08 七个分片
+    并发跑 MFA，第 2 次调用后全部被并发限打回，一个都没重试，24/4667 件就全灭了。
+    """
+
+
 def available() -> bool:
     return shutil.which("claude") is not None
 
 
+# 单次调用的超时。**1200 而不是 600**：2026-09-10 跑 MFA 的 S/A 700 件时，
+# sonnet-5 + batch 48 的实测耗时是 214–402 秒，但分布有长尾 —— 16 次调用里至少
+# 4 批撞上 600 秒被砍（seq 1-60 第 3 次才成、seq 71-211 与 seq 2694-3251 都用满
+# 4 次重试）。每次超时白烧 600 秒的生成量且照付，有效产出被严重稀释。
+#
+# ⚠ 教训：**批越大，耗时的方差越大**。当初只用 2 次调用就判定 batch 48 安全，
+# 样本量看不出分布的尾巴。以后定批大小要看多次调用的最大值，不是平均值。
+#
+# timeout 不进 llm_cache 的缓存键（键是 provider|model|effort|system|user|schema），
+# 所以调它不会让已跑的结果失效。
+DEFAULT_TIMEOUT = 1200
+
+
 def ask(system: str, user: str, schema: dict, model: str = DEFAULT_MODEL,
-        timeout: int = 600) -> tuple[dict, dict]:
+        timeout: int = DEFAULT_TIMEOUT) -> tuple[dict, dict]:
     """一次结构化输出调用。返回 (解析好的 dict, usage 字典)。
 
     user 走 stdin —— 评分提示词动辄几千字符，塞进 argv 会撞 ARG_MAX，
@@ -60,10 +104,16 @@ def ask(system: str, user: str, schema: dict, model: str = DEFAULT_MODEL,
         "--output-format", "json",
         "--disallowedTools", *NO_TOOLS,
     ]
-    r = subprocess.run(cmd, input=user, capture_output=True, text=True,
-                       timeout=timeout)
+    try:
+        r = subprocess.run(cmd, input=user, capture_output=True, text=True,
+                           timeout=timeout)
+    except subprocess.TimeoutExpired as e:
+        raise Transient(f"claude CLI 超过 {timeout}s 未返回") from e
     if r.returncode != 0:
-        raise RuntimeError(f"claude CLI 退出码 {r.returncode}：{r.stderr[:400]}")
+        # stdout 也要带上 —— `--output-format json` 下 CLI 把错误写在 stdout，
+        # 只报 stderr 会得到一句空的「退出码 1」，查不出任何东西。
+        detail = (r.stderr or "").strip() or (r.stdout or "").strip() or "（无输出）"
+        raise Transient(f"claude CLI 退出码 {r.returncode}：{detail[:400]}")
     try:
         out = json.loads(r.stdout)
     except json.JSONDecodeError:

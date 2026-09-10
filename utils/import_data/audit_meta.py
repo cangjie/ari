@@ -34,8 +34,18 @@ V3.0 那批分是 claude-opus-5 打的。审计者若还是同一个模型，「
     # 全量三阶段（可反复重跑，已完成的会跳过）
     python3 audit_meta.py --museum pem
 
-型号不写死：--model 优先，其次环境变量 OPENAI_MODEL，都没有就报错退出。
-key 从 ~/.openai_key（权限 600）读，与本仓库 ~/.my.cnf 的做法一致 ——
+**审计一律走 Claude（`--provider claude_cli`，已是默认值）。** 用户 2026-09-08 定的
+规矩：审计不再用 OpenAI。走的是本机 Claude Code 订阅账号，不需要 API key，也不产生
+OpenAI 费用；代价是慢，实测每次调用 45–120 秒（OpenAI 是 4–47 秒）。
+
+理由不是省钱，是**审计必须与打分不同源**：库里现存四个馆的 `scored_by` 全是 OpenAI，
+审计再用 OpenAI 就等于打分者给自己打分，这一列就不携带独立信息了。
+`--effort` 在这条路径下无效（CLI 不暴露 reasoning_effort），`llm_call.effort` 记 NULL。
+
+型号不写死：--model 优先，claude_cli 路径下缺省取 claude_cli.DEFAULT_MODEL；
+走 --provider openai 时则必须显式给（或设 OPENAI_MODEL），否则报错退出 ——
+型号写死在代码里会让 audited_by 记错出处。
+OpenAI key 从 ~/.openai_key（权限 600）读，与本仓库 ~/.my.cnf 的做法一致 ——
 命令行里不出现 key，也就不会被权限系统写进必须提交的 .claude/settings.json。
 """
 from __future__ import annotations
@@ -194,6 +204,7 @@ EFFORT_ALIASES = {
 # 非 None 时审计走 claude CLI 的订阅账号，型号即此字符串。
 # 与 tier_v3.CLAUDE_CLI 同一机制，理由见 claude_cli.py 的文件头。
 CLAUDE_CLI = None
+GEMINI = None
 
 STAGE_EFFORT = {
     "audit_stage1":      "medium",
@@ -220,6 +231,19 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
     **走 llm_cache**：键含 system/user/schema 全文，所以提示词没改必然命中（不花钱），
     改了必然不命中（拿不到旧判据的答案）。name 同时用作 stage，供事后分阶段算账。
     """
+    if GEMINI is not None:
+        import gemini_api, llm_cache
+
+        def _do_gemini():
+            return gemini_api.ask(system, user, schema, GEMINI)
+
+        # effort 记 NULL：Gemini 这条路径没有 reasoning_effort 旋钮，同 claude_cli。
+        # retries=4：免费层限速 12 次/分钟，撞 429 是常态，退避要给够。
+        return llm_cache.call(_do_gemini, provider="google", model=GEMINI,
+                              effort=None, stage=name, system=system, user=user,
+                              schema=schema, museum_key=museum_key, scope=scope,
+                              seqs=seqs, validate=validate, retries=4)
+
     if CLAUDE_CLI is not None:
         import claude_cli, llm_cache
 
@@ -228,10 +252,12 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
             return data, claude_cli.Usage(usage)
 
         # effort 记 NULL：CLI 不暴露 reasoning_effort，这条路径没有档位可调。
+        # retries 比 OpenAI 那条路径高：CLI 走订阅账号，撞的是**并发/额度限**而不是
+        # 网络抖动，恢复得慢。4 次退避是 5+10+20+40=75 秒，够跨过一次限流窗口。
         return llm_cache.call(_do_cli, provider="anthropic_cli", model=CLAUDE_CLI,
                               effort=None, stage=name, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
-                              seqs=seqs, validate=validate)
+                              seqs=seqs, validate=validate, retries=4)
 
     def _do():
         kw = {}
@@ -286,7 +312,36 @@ def append(path: Path, rec: dict) -> None:
 CONF_DIMS = ("hs", "iu", "vi", "va", "ce", "cr", "er")
 
 
-def load_items(cur, mk: str, limit: int | None) -> list[dict]:
+def load_items(cur, mk: str, limit: int | None,
+               seq_from: int | None = None, seq_to: int | None = None,
+               tiers: list[str] | None = None) -> list[dict]:
+    """读一个馆的展品与全部派生数据。
+
+    **seq 范围一定要下推到 SQL，不能捞回来再过滤。** 本函数要读五张表、
+    带 content_text 的多表 join，全馆 4464 件跨公网拉一次要 2 分钟以上。
+    而分片跑批每次重启都要重新加载 —— 额度耗尽导致的重启很频繁，
+    原先「先全捞再切片」等于每次白付两分钟。2026-09-09 实测：只审 12 件时，
+    加载耗时超过 120 秒，而真正的审计调用一次才 170 秒。
+    """
+    # 拼一次，五个查询共用。参数按位置追加，顺序必须与 SQL 里出现的顺序一致。
+    rng, rng_a = "", []
+    if seq_from is not None:
+        rng += " AND {col} >= %s"; rng_a.append(seq_from)
+    if seq_to is not None:
+        rng += " AND {col} <= %s"; rng_a.append(seq_to)
+    R = lambda col: rng.format(col=col)                       # noqa: E731
+
+    # 按等级过滤：**必须下推**。S/A 只占 MFA 的 15%，捞回全部 4464 件再筛掉
+    # 85% 是纯浪费，而分片重启时这笔加载要反复付（额度等待导致的重启很频繁）。
+    # 判定用 COALESCE(tier_override, tier)，与视图 v_artwork_tier_v3 同口径 ——
+    # 专家锁定过的等级要以锁定值为准。
+    tier_sql, tier_args = "", []
+    if tiers:
+        ph = ",".join(["%s"] * len(tiers))
+        tier_sql = (" AND a.source_seq IN (SELECT source_seq FROM artwork_tier_v3"
+                    f" WHERE museum_key = %s AND COALESCE(tier_override, tier) IN ({ph}))")
+        tier_args = [mk, *tiers]
+
     cur.execute("""
         SELECT a.source_seq, tn_en.text, tn_zh.text, tg.text,
                td_en.text, tm.text, a.tier
@@ -298,7 +353,8 @@ def load_items(cur, mk: str, limit: int | None) -> list[dict]:
         LEFT JOIN content_text tn_zh ON tn_zh.content_id = a.name_cid        AND tn_zh.lang='zh-CN'
         LEFT JOIN content_text td_en ON td_en.content_id = a.description_cid AND td_en.lang='en'
         LEFT JOIN content_text tm    ON tm.content_id    = a.medium_cid      AND tm.lang='zh-CN'
-        ORDER BY a.source_seq""", (mk,))
+        WHERE 1=1""" + R("a.source_seq") + tier_sql + """
+        ORDER BY a.source_seq""", (mk, *rng_a, *tier_args))
     items = {r[0]: {"seq": r[0], "name_en": r[1], "name_zh": r[2], "gallery": r[3],
                     "description": r[4], "category": r[5], "tier": r[6],
                     "v3": None, "meta": [], "conf": {}, "src_tier": None, "missing": None}
@@ -307,7 +363,7 @@ def load_items(cur, mk: str, limit: int | None) -> list[dict]:
     cur.execute("""
         SELECT source_seq, object_type, peer_group, hs, iu, vi, va, ce, er, cr, core,
                tier, tier_reason, confidence, evidence, cr_reason, sness_reason
-        FROM artwork_tier_v3 WHERE museum_key = %s""", (mk,))
+        FROM artwork_tier_v3 WHERE museum_key = %s""" + R("source_seq"), (mk, *rng_a))
     for r in cur.fetchall():
         if r[0] in items:
             items[r[0]]["v3"] = {
@@ -323,8 +379,8 @@ def load_items(cur, mk: str, limit: int | None) -> list[dict]:
         SELECT am.source_seq, am.key_name, am.source_key, am.source, am.confidence, t.text
         FROM artwork_meta am
         JOIN content_text t ON t.content_id = am.value_cid AND t.lang = 'zh-CN'
-        WHERE am.museum_key = %s
-        ORDER BY am.source_seq, am.key_name, am.source_key, am.ord""", (mk,))
+        WHERE am.museum_key = %s""" + R("am.source_seq") + """
+        ORDER BY am.source_seq, am.key_name, am.source_key, am.ord""", (mk, *rng_a))
     for seq, key, skey, src, conf, txt in cur.fetchall():
         if seq in items:
             items[seq]["meta"].append({"key": key, "source_key": skey,
@@ -332,7 +388,8 @@ def load_items(cur, mk: str, limit: int | None) -> list[dict]:
 
     cur.execute("SELECT source_seq, " + ", ".join(f"conf_{d}" for d in CONF_DIMS)
                 + ", best_source_tier, missing_evidence"
-                  " FROM artwork_evidence WHERE museum_key = %s", (mk,))
+                  " FROM artwork_evidence WHERE museum_key = %s" + R("source_seq"),
+                (mk, *rng_a))
     for r in cur.fetchall():
         if r[0] in items:
             items[r[0]]["conf"] = {d: v for d, v in zip(CONF_DIMS, r[1:8]) if v}
@@ -343,18 +400,24 @@ def load_items(cur, mk: str, limit: int | None) -> list[dict]:
     return out[:limit] if limit else out
 
 
-def load_claims(cur, mk: str) -> list[dict]:
+def load_claims(cur, mk: str, seq_from: int | None = None,
+                seq_to: int | None = None) -> list[dict]:
     """待逐条判 FACT/INFERENCE 的取值：只有 source_key='evidence' 的需要模型判。
 
     其余来源（source_file / rule / wikidata / pem_official / pem_customprints /
     incollect）的性质由来源本身就决定了，audit_load.py 里确定性回填，不花 API。
     """
+    rng2, rng2_a = "", []
+    if seq_from is not None:
+        rng2 += " AND am.source_seq >= %s"; rng2_a.append(seq_from)
+    if seq_to is not None:
+        rng2 += " AND am.source_seq <= %s"; rng2_a.append(seq_to)
     cur.execute("""
         SELECT am.source_seq, am.key_name, am.source, am.confidence, t.text
         FROM artwork_meta am
         JOIN content_text t ON t.content_id = am.value_cid AND t.lang = 'zh-CN'
-        WHERE am.museum_key = %s AND am.source_key = 'evidence'
-        ORDER BY am.source_seq, am.key_name""", (mk,))
+        WHERE am.museum_key = %s AND am.source_key = 'evidence'""" + rng2 + """
+        ORDER BY am.source_seq, am.key_name""", (mk, *rng2_a))
     return [{"seq": r[0], "key": r[1], "source": r[2], "confidence": r[3], "text": r[4]}
             for r in cur.fetchall()]
 
@@ -409,6 +472,20 @@ def fmt_item(it: dict, with_v3_detail: bool = True) -> str:
 COMMON_RULES = """你在执行 Ariadne 的 Metadata Quality Audit（元数据质量审计）。
 
 **审计的问题不是「这件东西该是几级」，而是「支撑它现在这一级的资料够不够」。**
+
+【读者是谁 —— 这决定「够不够」的标准】
+
+Ariadne 是给**旅游者**用的行程工具，不是学术编目系统。它要回答的只有一个问题：
+**「我这趟去这个馆，该不该专门为这件东西留时间？」**
+
+所以「资料够不够」的标准是**够不够支撑这个参观决策**，不是够不够写一篇论文。
+一件东西的断代、归属、来源流传在学界还有争论，完全不妨碍它是本馆必看的一件 ——
+这两件事没有关系。**按学术出版的标准来审，每一件都会「资料不足」，
+这一列就不再携带任何信息。**
+
+这不是叫你放松事实标准：**说错的事实照样是错的**（见 found_factual_error），
+错误信息会误导游客。放松的是**「还有多少可深究」的标准** —— 深究不完是常态，
+不构成缺口。
 
 三条纪律，违反任何一条这次审计就白做了：
 
@@ -490,18 +567,27 @@ STAGE1_SYSTEM = COMMON_RULES + """
   资料严重不足、且有合理线索指向更高等级时，区间就该拉开（如 B 和 S）。
   拉开区间不是猜测，是承认「我们不知道」。
 
-【四】Missing Evidence：真正影响 Tier 判断的缺失资料
+【四】Missing Evidence：会改变「值不值得专门去看」的缺失资料
 
-  **每条都要回答同一个问题：这条事实如果答案不同，Tier 会不会变？**
+  **每条都要回答同一个问题：这条事实如果答案相反，游客的行程决定会不会变？**
+  注意问的是**游客的决定**，不是「学术上还能不能再考证」。
   逐条给出 tier_sensitive：
-    true   这条不确定直接关系到定级依据。例如：简介称「伦勃朗真迹」但馆方
-           只标「伦勃朗工作坊」（可能 A→B/C）；声称「全美唯一一件」却没有
-           任何来源，而稀缺性正是它定级的主要理由；或者连作者、年代、馆藏号
-           都无法确认的普通小件。
-    false  值得研究，但答案如何都不影响 Tier。例如：Liberty Bowl 缺同期
+    true   答案相反就会让人改变要不要专门去看它。例如：简介称「伦勃朗真迹」但
+           馆方只标「伦勃朗工作坊」（冲着真迹去的人会觉得被骗）；声称「全美
+           唯一一件」却没有任何来源，而稀缺性正是它值得专程一看的全部理由。
+    false  值得研究，但答案如何游客都会做同样的决定。例如：Liberty Bowl 缺同期
            委托档案 —— 补上了是学术收获，补不上也不改变「到了 MFA 该不该
            看它」；水月观音的具体寺院来源不完整，同样不改变它是不是
            中国艺术板块最不可错过的作品之一。
+
+  **两条补充规则，与精简口径一致：**
+    · **当前是 B 或 C、且补齐资料也到不了 A/S 的，一条 true 都不要给。**
+      这类对象不是本次参观的重点，而不管查出什么都改变不了这个结论。
+      只有当你认为它确实可能被低估、够得着 A/S 时才给 true，并写明凭什么。
+    · **下面这些一律 false**（除非它正是定级的唯一理由）：精确尺寸／修复报告
+      与碳十四测年区间／颜料层与贴金的年代关系／入藏法律状态与流传链条／
+      catalogue raisonné 条目／专家之间的归属之争／内部装藏物。
+      游客不会因为「不知道碳十四区间」就改变要不要去看一尊造像。
 
   **严禁写「需要更多资料」「信息不足」这类空话。** 每条都要具体到可以直接
   派人去查，例如：
@@ -799,16 +885,17 @@ STAGE1_SLIM_SYSTEM = COMMON_RULES + """
 本阶段**只做一件事：列出缺什么**。不判完备度、不判 Tier 可信度、不判潜在区间、
 不判是否需要复核 —— 那些结论一律由确定性规则从库里算，不问你。
 
-【一】missing —— 真正影响 Tier 判断的缺失资料
+【一】missing —— 会改变「值不值得专门去看」的缺失资料
 
-  **每条都要回答同一个问题：这条事实如果答案不同，Tier 会不会变？**
+  **每条都要回答同一个问题：这条事实如果答案相反，游客的行程决定会不会变？**
+  注意问的是**游客的决定**，不是「学术上还能不能再考证」。
   逐条给出 tier_sensitive：
-    true   这条不确定直接关系到定级依据。例如：简介称「伦勃朗真迹」但馆方
-           只标「伦勃朗工作坊」；声称「全美唯一一件」却没有任何来源，
-           而稀缺性正是它定级的主要理由。
-    false  值得研究，但答案如何都不影响 Tier。
+    true   答案相反就会让人改变要不要专门去看它。例如：简介称「伦勃朗真迹」但
+           馆方只标「伦勃朗工作坊」（冲着真迹去的人会觉得被骗）；声称「全美
+           唯一一件」却没有任何来源，而稀缺性正是它值得专程一看的全部理由。
+    false  值得研究，但答案如何游客都会做同样的决定。
 
-  **三条硬规则，违反任何一条这一列就失去作用：**
+  **六条硬规则，违反任何一条这一列就失去作用：**
 
   1. **严禁空话。** 不许写「需要更多资料」「信息不足」。每条都要具体到可以直接
      派人去查，例如「缺该作品在艺术家创作生涯中的位置」「缺同类作品存世数量」。
@@ -824,14 +911,94 @@ STAGE1_SLIM_SYSTEM = COMMON_RULES + """
      那些缺口也**不是 tier_sensitive** —— 它们就算永远补不上，也不改变定级。
      反过来，「还能继续考证」永远成立，不构成任何一条缺口。
 
-  资料已经足够时**给空列表**，这是允许且常见的结果。
+  4. **当前是 B 或 C、且补齐资料也到不了 A/S 的，一条 tier_sensitive 都不要给。**
+     这类对象**不是本次参观的重点**，而不管查出什么都改变不了这个结论 ——
+     既然结论不会变，就没有「影响判断的缺口」，`missing` 该给空列表或只给
+     tier_sensitive=false 的条目。只有当你认为它**确实可能被低估、够得着 A/S**
+     时，才给 true，并在该条里写明凭什么够得着。
+
+  4b. **当前是 S 或 A 的，游客的决定已经是「去看」，所以只有「可能掉出优先档」
+     才算 tier_sensitive —— 而这需要一条具体的反向线索，不是资料薄。**
+     规则 4 管的是下半段，这条管上半段，两者对称：一件东西已经在优先档里，
+     再补多少资料也还是「去看」，决定不会变。
+
+     判 true 必须能指出一条**具体的、反向的信号**，例如：
+       · 馆方自己的标注与简介冲突（简介称真迹、馆方标「工作坊」/「传」/「款」）；
+       · 定级所依据的那句话（「全美唯一」「本馆镇馆之宝」）在馆方与学界材料里
+         找不到任何呼应，而它是定级的**唯一**理由；
+       · 该对象的身份本身存疑（指不到馆藏库里任何一件具体的东西）。
+
+     **以下一律不算反向线索，判 false**：没有 provenance、没有 catalogue raisonné
+     条目、缺尺寸与修复报告、断代有区间、学界对归属仍有讨论、「还可以再查证」。
+     这些是任何一件文物的常态 —— 拿它们当 true 的理由，等于对每件 S/A 都判 true。
+
+     **「不知道」不是线索，「有相反的证据」才是。** 前者对每件都成立，
+     用它做判据这一列就不携带信息了。
+
+  5. **下面这些，对旅游产品一律 tier_sensitive=false**（除非它正是定级的唯一理由）：
+     精确尺寸／修复报告与碳十四测年区间／颜料层与贴金的年代关系／入藏法律状态
+     与流传链条／catalogue raisonné 条目／专家之间的归属之争／内部装藏物。
+     这些是编目和学术研究要的东西。游客不会因为「不知道碳十四区间」就改变
+     要不要去看一尊造像。
+
+  资料已经足够时**给空列表，这是正常且应当常见的结果** —— 尤其在 B/C 段。
+
+  **只写中文。** 英文由后续的批量补译流程统一处理，这里写了也会被丢弃。
+  （这只是语种要求，不是让你少写：该指出的缺口一条都不要省。）
+
 
 【二】found_factual_error —— 明确的事实错误或资料自相矛盾
 
-  例如简介称「伦勃朗真迹」而馆方标注为「伦勃朗工作坊」、中英文名称的归属不一致、
-  或已核实事实与简介直接冲突。**并存政权的不同表述不算矛盾**（见上）。
+  标准是「**说错了**」，不是「说得不够细」。**只报下面三类**（用户 2026-09-09 划定）：
+
+  1. **会让游客扑空的。** 展厅位置、在展状态与事实冲突；或这条记录根本不指向
+     一件实物（例如自承是「官网专题的代表性图像」却被分配了具体展厅位置）。
+     行程工具最严重的失败就是让人跑一趟找不到东西。
+  2. **说错了这是什么。** 题名、作者、年代、材质、文化归属与馆方标注冲突
+     （简介称「伦勃朗真迹」而馆方标「工作坊」）；或简介内部对同一件东西
+     给出互相矛盾的说法（同一件既叫 ocarina 又叫「埙」）；或明显的常识错误
+     （称某君主为「阿蒙之王」，而阿蒙是神名，该君主是库施国王）。
+  3. **字段填错位置。** 某个 metadata 键里装的根本不是那个键该装的东西 ——
+     例如 `material` 的取值是「象牙海岸／利比里亚达恩族」（那是文化归属不是材质）、
+     `origin_place` 里装的是人名。这类错误会让展品信息直接显示成一句胡话，
+     而且多半是抽取管线自己造的，报出来就能修。
+
+  **以下一律不算错误，不要报**：入藏来源与捐赠人记错、基金名称不符、流传链条
+  有缺环、藏品号缺失或对不上。**游客关心的是展品本身，不是它怎么流转到这里的。**
+  这些是编目问题，交给数据清理，不该占用审计的判断力。
+
+  同样**不算错误**的还有：「学界对此仍有不同看法」、「表述不够精确」、
+  并存政权的不同表述（见上）。
   没发现就置 false，不要为了显得尽责而硬找。"""
 
+# **⚠ 审计只出中文，英文由 audit_translate.py 事后批量补（用户 2026-09-09 定）。**
+#
+# 归因要分清楚：同一天试过「只出中文 + 每件最多 2 条 + 每条不超过 40 字」三件事
+# 一起上，结果 12 件全返回空 missing。**罪魁是限量限长那两条** —— 它们与提示词里
+# 原有的「资料足够时给空列表是正常结果」叠加，等于给轻量模型三重许可去偷懒。
+# 只出中文本身没有这个副作用，且能把可见输出砍掉约六成、让单次调用快很多
+# （恢复双语后实测出现过单次调用超过 600 秒的情况）。
+#
+# **但不要指望它省 token**：实测可见文本降到 3% 时，completion token 反而从
+# 17,672 升到 19,662 —— Haiku 的输出 token 九成是思考，不是 JSON 文本。
+# 提示词管得住写多少，管不住想多少，而账是按想的算的。**别再试图靠提示词压成本。**
+
+#
+# 2026-09-09 试过把输出砍到最小（只出中文、每件最多 2 条、每条不超过 40 字），
+# **两头都失败，实测数据如下**：
+#   · 可见文本从每件 230 字符降到 8 字符，而**实际 completion token 从 17,672
+#     升到 19,662** —— 因为 Haiku 的输出 token 九成是思考，不是 JSON 文本。
+#     提示词管得住它写多少，管不住它想多少，而账是按想的算的。
+#   · 12 件全部返回空 missing —— 和 gemini-flash 的摆烂是同一个形态。
+#     原提示词里本就有「资料足够时给空列表，这是正常且应当常见的结果」，
+#     再叠加限量限长，等于对一个轻量模型连说三遍「少写点」，它选了最省事的解法。
+#
+# **教训：靠提示词压输出成本这条路不通，代价却是判断质量。** 别再试了。
+#
+# 保留的只有「不要模型出 top_missing」这一条 —— 它是纯冗余：实测 175 条里只有
+# 2%（4 条）与某条 missing 逐字相同，其余都是模型又想一遍另写一遍，
+# 既费推理又多一个可能与 missing 打架的说法。现由 derive_top_missing() 从
+# missing[] 里取；英文那一侧由 audit_translate.py 跟着 missing 一起补，天然同源。
 STAGE1_SLIM_SCHEMA = {
     "type": "object",
     "properties": {
@@ -847,21 +1014,16 @@ STAGE1_SLIM_SCHEMA = {
                             "type": "object",
                             "properties": {
                                 "zh": {"type": "string"},
-                                "en": {"type": "string"},
                                 "tier_sensitive": {"type": "boolean"},
                             },
-                            "required": ["zh", "en", "tier_sensitive"],
+                            "required": ["zh", "tier_sensitive"],
                             "additionalProperties": False,
                         },
                     },
-                    "top_missing_zh": _nullable("string"),
-                    "top_missing_en": _nullable("string"),
                     "found_factual_error": {"type": "boolean"},
                     "error_note_zh": _nullable("string"),
-                    "error_note_en": _nullable("string"),
                 },
-                "required": ["seq", "missing", "top_missing_zh", "top_missing_en",
-                             "found_factual_error", "error_note_zh", "error_note_en"],
+                "required": ["seq", "missing", "found_factual_error", "error_note_zh"],
                 "additionalProperties": False,
             },
         }
@@ -869,6 +1031,20 @@ STAGE1_SLIM_SCHEMA = {
     "required": ["results"],
     "additionalProperties": False,
 }
+
+
+def derive_top_missing(rec: dict) -> str | None:
+    """「最关键的一条缺失证据」由代码取，不问模型。
+
+    判据固定：第一条 tier_sensitive=true 的；一条都没有就取第一条；全空则 None。
+    实测让模型另写一遍，175 条里只有 2% 与某条 missing 逐字相同 —— 其余都是它
+    重新组织的第三个版本，既费推理又多一个可能与 missing 打架的说法。
+    英文那一侧由 audit_translate.py 跟着 missing 一起补，天然同源。
+    """
+    ms = rec.get("missing") or []
+    if not ms:
+        return None
+    return next((m for m in ms if m.get("tier_sensitive")), ms[0]).get("zh")
 
 
 # 空话的判定词。**只在整条很短时才据此判空泛** —— 用子串匹配去否定一整句是错的：
@@ -881,7 +1057,13 @@ VAGUE_MAXLEN = 30          # 超过这个长度就认为它已经说清了缺什
 
 
 def check1_slim(rec: dict) -> None:
-    """精简版只剩两条硬检查 —— 其余判定已经不由模型出了。"""
+    """精简版只剩两条硬检查 —— 其余判定已经不由模型出了。
+
+    **刻意不限制条数。** 2026-09-09 加过「最多 2 条」的上限，结果模型直接
+    12 件全给空列表 —— 限量与提示词里「资料足够时给空列表是正常结果」叠加，
+    对轻量模型就是放行摆烂。而实测限量并不省 token（输出成本主要是思考），
+    等于白白拿判断质量去换零收益。
+    """
     for m in rec["missing"]:
         zh = m["zh"].strip()
         if len(zh) < 8 or (len(zh) <= VAGUE_MAXLEN
@@ -928,6 +1110,13 @@ def stage1_slim(client, model, effort, ctx, note, items, out: Path, batch: int,
                    validate=lambda d, w=want: _slim_ok(d, w))
         for r in data["results"]:
             check1_slim(r)          # 这里只剩兜底，正常路径已在 validate 里过了
+            # top_missing 由代码导出，不问模型（见 STAGE1_SLIM_SCHEMA 上方说明）。
+            # 落进 JSONL 的字段名与旧口径保持一致，audit_load 那侧不必改读法。
+            # **两个键都要写，哪怕值是 None。** 只写 zh 的话，missing 为空的记录
+            # 里就没有 top_missing_en 这个键，而 audit_load.py 是按 r["..."] 直接取的
+            # —— 2026-09-10 写库时 KeyError 崩在这儿。缺键和值为空是两回事。
+            r["top_missing_zh"] = derive_top_missing(r)
+            r["top_missing_en"] = None      # 由 audit_translate.py 补，无中文则保持 None
             append(out, r)
             done[r["seq"]] = r
         print(f"    {min(i + batch, len(todo))}/{len(todo)}")
@@ -1118,19 +1307,26 @@ def main() -> None:
     ap.add_argument("--out-dir", default="./audit_out")
     ap.add_argument("--stage", default="all", choices=["all", "1", "2", "3"])
     ap.add_argument("--batch", type=int, default=12, help="阶段一每批件数")
-    ap.add_argument("--provider", choices=["openai", "claude_cli"], default="openai",
-                    help="审计走哪条路。默认 openai（需 ~/.openai_key）；"
-                         "claude_cli 走本机订阅账号，**但要先确认打分者不是 Anthropic** "
-                         "—— 两端同源时审计就成了自评，见文件头")
+    ap.add_argument("--provider", choices=["gemini", "claude_cli", "openai"],
+                    default="claude_cli",
+                    help="审计走哪条路。**默认且应当一直是 claude_cli**（本机 Claude Code "
+                         "订阅账号，不需 API key）—— 用户 2026-09-08 定的规矩：审计一律用 "
+                         "Claude，不再用 OpenAI。改成 openai 之前先看 audited_by/scored_by："
+                         "现存四个馆的打分者全是 OpenAI，审计再用 OpenAI 就是自评")
     ap.add_argument("--only-seq", type=int, action="append",
                     help="只审指定 source_seq（可重复给），用于逐件复核")
+    ap.add_argument("--tier", help="只审这些等级，逗号分隔（如 S,A）。"
+                                   "按 artwork_tier_v3 的 COALESCE(tier_override,tier) 判定")
+    ap.add_argument("--seq-from", type=int, help="分片起点（含），并行跑大馆用")
+    ap.add_argument("--seq-to", type=int, help="分片终点（含）")
     ap.add_argument("--slim", action="store_true",
                     help="精简版：阶段一只输出缺失证据与事实错误，且**跳过阶段二** —— "
                          "实测阶段二六问里三问在 248 件 S/A 上是单一答案，"
                          "而阶段一的四列判定要么饱和要么方向可疑（见 STAGE1_SLIM_SYSTEM）")
     ap.add_argument("--limit", type=int, help="只审前 N 件，用于冒烟")
     ap.add_argument("--model", default=os.environ.get("OPENAI_MODEL", ""),
-                    help="OpenAI 型号；不传则取环境变量 OPENAI_MODEL")
+                    help="型号。走默认的 claude_cli 时可不给（取 claude_cli.DEFAULT_MODEL）；"
+                         "走 --provider openai 时必须给，或设环境变量 OPENAI_MODEL")
     ap.add_argument("--effort", default=os.environ.get("OPENAI_EFFORT", ""),
                     help="推理强度，如 xhigh / high / medium / low，也认「extra high」"
                          "「超高」这类叫法。**不给就按 STAGE_EFFORT 的分阶段推荐值**"
@@ -1143,13 +1339,22 @@ def main() -> None:
 
     # claude_cli 有默认型号（claude_cli.DEFAULT_MODEL），不强制 --model；
     # 走 OpenAI 时仍然必须显式指定 —— 型号写死在代码里会让 audited_by 记错出处。
-    if not args.model and args.provider != "claude_cli":
+    if not args.model and args.provider not in ("claude_cli", "gemini"):
         sys.exit("没指定型号：用 --model，或设环境变量 OPENAI_MODEL")
-    global CLAUDE_CLI
+    global CLAUDE_CLI, GEMINI
+    if args.provider == "gemini":
+        import gemini_api
+        if not gemini_api.available():
+            sys.exit("读不到 ~/.gemini_key（需存在且权限 600）")
+        GEMINI = args.model or gemini_api.DEFAULT_MODEL
+        print(f"[provider] Google AI Studio / {GEMINI}"
+              f"；限速 {gemini_api.RPM} 次/分钟，--effort 在此路径下无效")
     if args.provider == "claude_cli":
         import claude_cli
         if not claude_cli.available():
-            sys.exit("找不到 `claude` 命令。装 Claude Code，或用默认的 --provider openai")
+            sys.exit("找不到 `claude` 命令。装好 Claude Code 再跑。\n"
+                 "  真要退回 OpenAI 得显式写 --provider openai —— 但那样审计与打分同源，"
+                 "结论不能当独立验证用。")
         CLAUDE_CLI = args.model or claude_cli.DEFAULT_MODEL
         print(f"[provider] claude CLI（订阅账号）/ {CLAUDE_CLI}；--effort 在此路径下无效")
 
@@ -1171,8 +1376,18 @@ def main() -> None:
 
     conn = M.connect()
     cur = conn.cursor()
-    items = load_items(cur, mk, args.limit)
-    claims = load_claims(cur, mk)
+    # 把 --seq-from/--seq-to 传进 SQL，而不是捞回来再切 —— 见 load_items 的说明。
+    # --only-seq 也顺带收窄成一个区间（min..max），虽然仍要在内存里精确过滤，
+    # 但先把范围压下去已经能省掉绝大部分传输。
+    _lo, _hi = args.seq_from, args.seq_to
+    if args.only_seq:
+        _lo = max(_lo or min(args.only_seq), min(args.only_seq))
+        _hi = min(_hi or max(args.only_seq), max(args.only_seq))
+    _tiers = [x.strip().upper() for x in args.tier.split(",")] if args.tier else None
+    if _tiers and (bad := [x for x in _tiers if x not in TIERS]):
+        sys.exit(f"--tier 只认 {'/'.join(TIERS)}，收到 {bad}")
+    items = load_items(cur, mk, args.limit, _lo, _hi, _tiers)
+    claims = load_claims(cur, mk, _lo, _hi)
     conn.close()
 
     if args.only_seq:
@@ -1181,6 +1396,22 @@ def main() -> None:
         claims = [c for c in claims if c["seq"] in want]
         if (miss := want - {it["seq"] for it in items}):
             sys.exit(f"--only-seq 指定的 {sorted(miss)} 不在本馆展品里")
+
+    # 分片：阶段一逐件独立判断，切开跑与整跑结果相同，可并行。
+    # **只允许在阶段一用。** 阶段二审的是 S/A 段、阶段三要看全馆已核实事实，
+    # 切片跑会让它们看到残缺的输入 —— 与 tier_v3.py 的 --seq-from 同一条守卫。
+    # 每个分片必须用各自的 --out-dir，否则几个进程同时往一个 JSONL 追加会写坏。
+    if args.seq_from is not None or args.seq_to is not None:
+        if args.stage != "1":
+            sys.exit("--seq-from/--seq-to 只能配 --stage 1 使用："
+                     "阶段二三要看全馆输入，切片会让它们基于残缺数据下结论")
+        lo = args.seq_from if args.seq_from is not None else -(1 << 62)
+        hi = args.seq_to if args.seq_to is not None else (1 << 62)
+        items = [it for it in items if lo <= it["seq"] <= hi]
+        claims = [c for c in claims if lo <= c["seq"] <= hi]
+        print(f"[分片] source_seq {lo}–{hi}，本片 {len(items)} 件")
+        if not items:
+            sys.exit("本分片没有展品，检查区间")
 
     scored = sum(1 for it in items if it["v3"])
     dist = collections.Counter(it["tier"] or "无" for it in items)
@@ -1194,7 +1425,8 @@ def main() -> None:
     # 与 artwork_tier_v3.scored_by 对照，事后一眼能看出审计者与打分者是否同源。
     # audited_by 是判断「这批审计怎么来的」的唯一依据，分阶段档位必须记全。
     used = ("audit_stage1_slim",) if args.slim else ("audit_stage1", "audit_stage2")
-    tag = (f"{CLAUDE_CLI} (claude-cli)" if CLAUDE_CLI
+    tag = (f"{GEMINI} (google-ai-studio)" if GEMINI
+           else f"{CLAUDE_CLI} (claude-cli)" if CLAUDE_CLI
            else args.model + " effort=" + "/".join(eff[s] for s in used))
     (out_dir / f"{mk}.model").write_text(tag, encoding="utf-8")
     print(f"审计者：{tag}")

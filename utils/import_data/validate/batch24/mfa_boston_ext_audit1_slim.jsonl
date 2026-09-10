@@ -1,0 +1,48 @@
+{"seq": 5, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 11, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 13, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 14, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 16, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 19, "missing": [], "found_factual_error": true, "error_note_zh": "简介称此画为「美国公立博物馆首件卡罗油画」，但旧金山现代艺术博物馆（SFMOMA）早在 1936 年即通过 Albert M. Bender 捐赠入藏了卡罗的布面油画《Frieda and Diego Rivera》（1931），远早于 MFA 的 2015 年购藏。此断言与已知事实直接冲突。", "top_missing_zh": null}
+{"seq": 21, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 28, "missing": [{"zh": "缺该雕塑的作者归属——简介未提及雕塑家姓名（如 Harriet Hosmer 或其他 19 世纪美国新古典主义雕塑家），馆方对象记录中亦无相关信息。", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺该雕塑的作者归属——简介未提及雕塑家姓名（如 Harriet Hosmer 或其他 19 世纪美国新古典主义雕塑家），馆方对象记录中亦无相关信息。"}
+{"seq": 30, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 39, "missing": [{"zh": "该条目无法指向馆藏中任何一件具体作品：缺艺术家姓名、确切作品题名、馆藏号与官方对象页，「明清书画四条屏」更像是对翁万戈捐赠的笼统概括而非一件可查实的藏品。若这件东西在 MFA 馆藏库里实际并不存在为独立的四条屏对象，当前 A 级便缺乏审计对象。", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "该条目无法指向馆藏中任何一件具体作品：缺艺术家姓名、确切作品题名、馆藏号与官方对象页，「明清书画四条屏」更像是对翁万戈捐赠的笼统概括而非一件可查实的藏品。若这件东西在 MFA 馆藏库里实际并不存在为独立的四条屏对象，当前 A 级便缺乏审计对象。"}
+{"seq": 44, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 45, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 46, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 47, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 48, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 50, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 56, "missing": [{"zh": "缺简介对《古董商》这件作品本身的描述——当前简介全部在讲 MFA 西班牙绘画收藏概况（委拉斯开兹、苏巴朗、格列柯），未提供该画的主题、构图或任何可供游客判断值不值得看的信息。", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺简介对《古董商》这件作品本身的描述——当前简介全部在讲 MFA 西班牙绘画收藏概况（委拉斯开兹、苏巴朗、格列柯），未提供该画的主题、构图或任何可供游客判断值不值得看的信息。"}
+{"seq": 57, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 65, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 67, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 74, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 77, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 89, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 91, "missing": [{"zh": "缺五件贝宁青铜器当前在展状态的确认——馆方已公开表示正在审查殖民时期来源与所有权，存在部分或全部已撤展或归还的可能。", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺五件贝宁青铜器当前在展状态的确认——馆方已公开表示正在审查殖民时期来源与所有权，存在部分或全部已撤展或归还的可能。"}
+{"seq": 95, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1489, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1511, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1570, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1571, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1577, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1580, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1582, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1596, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 1604, "missing": [{"zh": "缺艺术家身份：Wikidata 中为空白节点，需通过馆藏号 23.542 在 MFA 官网核实实际画家姓名", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家身份：Wikidata 中为空白节点，需通过馆藏号 23.542 在 MFA 官网核实实际画家姓名"}
+{"seq": 1605, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2990, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 2995, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3000, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3002, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3021, "missing": [{"zh": "缺艺术家实际姓名：当前字段为未解析的 Wikidata 实体编号 Q2693042，需通过馆藏号 17.1687 在 MFA 官网核实", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家实际姓名：当前字段为未解析的 Wikidata 实体编号 Q2693042，需通过馆藏号 17.1687 在 MFA 官网核实"}
+{"seq": 3037, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3039, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3057, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3066, "missing": [{"zh": "缺艺术家实际姓名：当前字段为未解析的 Wikidata 实体编号 Q6836743，需通过馆藏号 22.806.1 在 MFA 官网核实", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "缺艺术家实际姓名：当前字段为未解析的 Wikidata 实体编号 Q6836743，需通过馆藏号 22.806.1 在 MFA 官网核实"}
+{"seq": 3076, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3077, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3080, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}
+{"seq": 3095, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null}

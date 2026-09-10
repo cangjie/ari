@@ -134,7 +134,7 @@ def main() -> None:
         for seq, r in sorted(slim.items()):
             for m in r["missing"]:
                 pair(m["zh"], m["en"], "缺失证据", seq)
-            pair(r["top_missing_zh"], r["top_missing_en"], "最关键缺失证据", seq)
+            pair(r.get("top_missing_zh"), r.get("top_missing_en"), "最关键缺失证据", seq)
             pair(r.get("error_note_zh"), r.get("error_note_en"), "事实错误说明", seq)
             # review_flag 由「有没有 tier_sensitive 缺口」导出，不独立判断
             # （AGENTS.md 第 9 条：Research Needed = 缺的事实一旦有答案 Tier 可能改变）。
@@ -153,7 +153,7 @@ def main() -> None:
                                    for m in r["missing"]) or None,
                          "\n".join(("[tier-sensitive] " if m.get("tier_sensitive") else "") + m["en"]
                                    for m in r["missing"]) or None,
-                         r["top_missing_zh"], r["top_missing_en"],
+                         r.get("top_missing_zh"), r.get("top_missing_en"),
                          audited_by, args.round, dt.datetime.now()))
         SLIM_COLS = ["tier_review_flag", "review_reason", "review_reason_en",
                      "missing_evidence", "missing_evidence_en",
