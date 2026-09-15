@@ -32,7 +32,10 @@ venv/
 # ────────────────────────────────────────────────────────────
 
 # 导出的 Excel 是派生文件，可由 export_excel.py 随时从库里重新生成，不入仓库
+# 两个拼写都要挡：export_excel.py 写 exports/，merge_mfa_xlsx.py 写 export/。
+# 2026-09-14 发现只挡了复数那个，export/ 里的 4MB xlsx 一直是未跟踪且未忽略。
 utils/import_data/exports/
+utils/import_data/export/
 
 # tier_v3.py 的评分中间结果与审阅表。JSONL 是断点续跑用的缓存，CSV 由它生成。
 # 都是派生文件，且重跑要花 API 额度，本地留着即可，不入仓库。

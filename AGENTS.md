@@ -206,12 +206,67 @@ Wikidata 来源 4329 件的 P195 全部含 MFA（Q49133），**但其中 33 件�
 
 正确规则：只有原文写「常设展出」的判在展，其余一律「未知」（135 → 12）。
 即便这 12 件也要打折扣：其中一条写的是「Arts of Japan 展厅，**绘画轮换**」。
-要真正确定只能去 `collections.mfa.org` 逐件查 On View 字段（135 件里 7 件的链接
-本身就是单件页）。修正要动导入器，而重灌会清全表，之后必须 `--apply-tier` 与
-`--refresh-ids`，所以留给下一轮。
+修正要动导入器，而重灌会清全表，之后必须 `--apply-tier` 与 `--refresh-ids`，
+所以留给下一轮。
+
+**⚠ 想「去 `collections.mfa.org` 逐件查 On View」这条路已经堵死（2026-09-14 实测）。**
+早先这里写着「要真正确定只能去官网逐件查」—— 那句话没说清它能不能做到，现在能了：
+
+  · 站点有**人机验证 CAPTCHA**（`Human Verification` / "Let's confirm you are human"），
+    纯 HTTP 拿到 202 空页，**无头浏览器（playwright + chromium）撞的是同一堵墙**；
+  · `robots.txt` **`Disallow: /search`** —— 按馆藏号查的入口正是被禁的那条，
+    且 `Crawl-delay: 30`（3900 件要爬 32 小时）；
+  · **MFA 没有公开 API**（哈佛、大都会都有）。
+
+绕过人机验证是另一种性质的事，不做。可用的替代只有两条，各有上限：
+**Wikidata P4625（MFA 对象 ID）**能绕开被禁的 `/search` 直接拼 `/objects/{id}`（robots 允许），
+但 S+A 段覆盖率只有 **62.9%**，且 **S 级 42 件里 30 件没有任何标识符**
+（它们来自官网那 135 件，没有 Wikidata 链接）——
+**最重要的那批恰好最查不到**；**Wikidata P276** 覆盖 98% 但只到馆一级
+（取值就是 "Museum of Fine Arts Boston"），没有展厅、没有在展状态。
 
 **原清单 203 件的在展状态同样没核实过**：源文件第 12 列就叫 `IsCurrentlyOnView`，
 202 行为 `True`，导入器照抄。那是某个时间点从 MFA 馆藏库导出的，时效不明。
+
+**⚠ 用模型填在展状态：做过了，结论是「在展」这一列不能这么来（2026-09-14/15）。**
+用户知情后决定试，由 `fill_onview_gemini.py` 就地改合并版 Excel 的 `陈列状态`/`展厅`
+两列，S+A 677 件跑完（`gemini-3.6-flash` 20 次配额用尽后换 `gemini-3.5-flash`，
+两者同批横评一致率 92%）。**结果不能当事实用，有两条实测证据：**
+
+1. **在我们唯一有独立答案的样本上，它判错了，且错在最有害的方向。**
+   `mfa_membership.json` 的 32 件已离馆展品里，模型把 **2 件判成「在展」**——
+   埃尔·格列柯《天使报喜》，以及莫奈《安提布堡》**还配了具体展厅号 `Gallery 252`**。
+   给一件已经易主的画写上展厅号，游客会照着走过去。
+   已由 `fix_departed_onview.py` 按核实结果钉成「不在展」（确定性，零 API）。
+   **没有理由认为其余四千行没有同类错误 —— 只是查不出来。**
+2. **不开检索时它会伪造出处。** 同一个问题（Homer《The Fog Warning》在哪个展厅）：
+   裸 `generateContent` 答 **`Gallery 222`** 并自称「根据波士顿美术馆的官方馆藏记录」
+   （它没查过任何记录）；用户在 Gemini App 里开着检索问，答 **`Gallery 234`**。
+   **两个数字不一样，不带检索的那个还编了个出处。**
+
+所以 `fill_onview_gemini.py` 的提示词写死「记不准展厅号就留空」——
+挡住的正是 `Gallery 222` 这类东西，代价是展厅列大片为空（118 件判在展里 73 件没给展厅）。
+**那些空格不是失败，是唯一诚实的输出。** 模型把「古埃及展厅」「印象派展厅」这类
+放进了 `note`，由 `mark_gallery_precision.py` 救回并加后缀 `（部门级，未确认具体展厅）`
+—— 保留信息，但不让粗粒度冒充精确定位（与 78 行「Art of Europe 欧洲艺术」同一个形状）。
+
+**正确的做法是给检索能力 + 要出处，而不是靠禁令。** `gallery_grounded.py` 走
+`tools: [{"google_search": {}}]`，硬规则是**没有 `groundingChunks` 就不写**，
+写入格式 `Gallery 234（来源：mfa.org）`，证据落 `gallery_grounded.jsonl`。
+**⚠ 结构化输出与搜索工具不能同时用**（`responseSchema` 与 `tools` 冲突），
+故改为让模型以 `GALLERY: xxx` 收尾再正则取值，取不到算失败、不猜。
+**尚未跑过**（配额耗尽），首次跑先 `--limit 2` 拿 The Fog Warning 对照 `Gallery 234`。
+
+**⚠ Gemini 免费层的实情，跟文档写的对不上（2026-09-14 实测）：**
+· **项目一旦开过预付计费，免费层对它就永久失效**，余额为 0 时**所有型号**一律
+  429 `Your prepayment credits are depleted` —— 卡的是项目不是型号，换型号没用。
+  要免费额度只能**新建一个从没开过计费的项目**再建 key。
+· 新项目上 `gemini-3.6-flash` 实测是 **20 次请求/天**
+  （`GenerateRequestsPerDayPerProjectPerModel-FreeTier`，`quotaValue: 20`），
+  不是文档写的 1500 RPD。降到 4 RPM、等待 60/90/120 秒重试均无效，确认是按天。
+· 配额**按型号分别计**，但 S+A 这类同一批数据换型号跑会混判据，不可比。
+· **`gemini-2.5-flash` 对新用户已下线**（404，官方指向 `gemini-3.6-flash`）。
+· 卡请求数不卡 token ⇒ **加大批次是唯一有效的省法**（同第 10 条那条结论）。
 
 **⚠ 读源 Excel 生成 `source_seq` 时，必须按「过滤之后」的计数自增。**
 `import_artworks.read_museum` 是这么做的，`tier_v3.load_items` 曾用 `enumerate` 的行号
@@ -593,6 +648,8 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 | `merge_mfa_xlsx.seq_col` | 找不到序号列就返回 None、跳过过滤 | **中文版去重了、英文版没有**，两个文件件数不一致且不报错 |
 | MFA 扩充清单在展状态 | 「来源是官网」就推成「在展」 | 135 件在展里 123 件无依据，含一件按捐赠条款**永不展出**的北斋 |
 | MFA 馆藏归属 | 只查 P195「含不含」MFA | 4329 件全过，**实际 32 件已离馆** —— 漏了离馆时间限定 |
+| 查不到展厅就问模型 | 不开检索，让模型凭记忆答展厅号 | 答 `Gallery 222` 且自称「据官方馆藏记录」，带检索的同一模型答 `Gallery 234` |
+| 合并表里定位行 | 拿 `序号` 建 行映射 | `序号` 在合并表里**不唯一**（两个 museum key 各自从 1 编号），A 件的答案写进 B 件的行且不报错 |
 
 判断状态优先用**客观量**（进度增量、行数），关键词与子串只能做辅助；
 找不到必需的东西就 `sys.exit` 并把实际看到的内容打印出来。
@@ -723,12 +780,16 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/meta_scrape.py` | Wikidata 抓取，任意馆通用（原 `meta_scrape_pem.py`）。WDQS 限流时自动改用 QLever 端点 |
 | `utils/import_data/meta_fill_official_mfa.py` | 从 `mfa_boston_ext` 的半结构化名称/简介确定性抽 8 个字段，**零 API**。逐段按模式判别，认不出就不写 |
 | `utils/import_data/translate_artwork.py` | 给展品名称、**展厅名**与简介补英译，同时写 `content_text` 与译名表。中文源的馆导出英文版前必跑 |
-| `utils/import_data/gemini_api.py` | Google AI Studio（Gemini）provider。key 走 `~/.gemini_key`(600) 与 `x-goog-api-key` 头。**flash 档实测不能做审计**，pro 档免费层不给用 |
+| `utils/import_data/gemini_api.py` | Google AI Studio（Gemini）provider。key 走 `~/.gemini_key` 与 `x-goog-api-key` 头。**flash 档实测不能做审计**。默认 `GEMINI_RPM=10`（免费层上限）。**Windows 下不查 600 权限**——NTFS 靠 ACL、`chmod` 是空操作、Python 恒报 `0o666`，硬查会让 `available()` 永远为 False |
 | `utils/import_data/audit_bc_guard.py` | B/C 段兜底：把没写明升档理由的 `tier_sensitive` 降为 false。零 API，原值留 `tier_sensitive_raw` |
 | `utils/import_data/audit_translate.py` | 给审计的中文自由文本批量补英译（默认走 OpenAI）。**写库前必跑** |
 | `utils/import_data/merge_confirm.py` | 判定 MFA 两批导入里哪些是同一件实物。启发式召回 + 模型逐对确认，结果落 `merge_pairs.json` |
 | `utils/import_data/merge_mfa_xlsx.py` | 把 MFA 两份导出的 Excel 合成一份（重复以 ext 为准）。只动文件不碰库 |
 | `utils/import_data/verify_mfa_membership.py` | 按 Wikidata P195+P582 核实扩充清单展品是否**现藏** MFA，结果落 `mfa_membership.json` |
+| `utils/import_data/fill_onview_gemini.py` | 让模型按名称判在展状态，就地改合并版 Excel 的 `陈列状态`/`展厅`。**产出不是事实**，读之前先看上面那条实测结论。缓存落 `onview_cache.jsonl`，标识用 xlsx 行号（`序号` 不唯一） |
+| `utils/import_data/fix_departed_onview.py` | 用 `mfa_membership.json` 的 32 件离馆记录把状态钉成「不在展」并清展厅。零 API，**核实过的事实压过模型推断** |
+| `utils/import_data/mark_gallery_precision.py` | 从模型 note 里救回「古埃及展厅」这类说法，加后缀 `（部门级，未确认具体展厅）`；给翼级取值补同一后缀。零 API，幂等且能自愈 |
+| `utils/import_data/gallery_grounded.py` | 开 `google_search` 工具逐件查具体展厅号，**没有 `groundingChunks` 就不写**。证据落 `gallery_grounded.jsonl`。**尚未跑过** |
 | `utils/import_data/validate/` | 审计选型的证据：两批 48 件样本（调参集/留出集，零重合）与各模型跑分 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |

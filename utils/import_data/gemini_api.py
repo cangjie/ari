@@ -58,11 +58,12 @@ DEFAULT_MODEL = "gemini-3.1-pro-preview"
 ENDPOINT = ("https://generativelanguage.googleapis.com/v1beta/models/"
             "{model}:generateContent")
 
-# 免费层是 12 次/分钟；2026-09-09 开通付费后放宽。取环境变量便于分片时
-# 各分一份配额（N 个分片就各给 总RPM/N，避免它们各算各的一起超速）。
-# 超了会 429，而 429 已归入 Transient 由 llm_cache 退避重试，所以这里
-# 设得略激进也不会丢数据，只是会多几次重试。
-RPM = int(os.environ.get("GEMINI_RPM", "20"))
+# 默认按免费层最严的档设：gemini-3.6-flash 免费层是 10 次/分钟。
+# （2026-09-09 开通付费后曾放宽到 20；09-14 换回免费层的 key，20 会直接撞 429，
+#  故改回 10。付费账号可用环境变量调高。）
+# 取环境变量便于分片时各分一份配额（N 个分片就各给 总RPM/N，避免一起超速）。
+# 超了会 429，而 429 已归入 Transient 由 llm_cache 退避重试。
+RPM = int(os.environ.get("GEMINI_RPM", "10"))
 _MIN_GAP = 60.0 / RPM         # 两次请求之间至少隔这么久
 _last_call = 0.0
 _lock = threading.Lock()
@@ -80,9 +81,13 @@ def _key(path: str = "~/.gemini_key") -> str:
     p = pathlib.Path(path).expanduser()
     if not p.exists():
         raise RuntimeError(f"找不到 {p}。去 AI Studio 建 key 后写入该文件并 chmod 600")
-    mode = p.stat().st_mode & 0o777
-    if mode & 0o077:
-        raise RuntimeError(f"{p} 权限是 {mode:o}，必须是 600（其他人可读的密钥等于泄露）")
+    # Windows 没有 POSIX 权限位：NTFS 靠 ACL，`chmod` 是空操作，Python 恒报 0o666。
+    # 在这里硬查 600 会让 Windows 下 available() 永远为 False（2026-09-14 实测）。
+    # 家目录默认只有本用户与管理员可读，故跳过；其他平台照查不误。
+    if os.name != "nt":
+        mode = p.stat().st_mode & 0o777
+        if mode & 0o077:
+            raise RuntimeError(f"{p} 权限是 {mode:o}，必须是 600（其他人可读的密钥等于泄露）")
     k = p.read_text().strip()
     if not k:
         raise RuntimeError(f"{p} 是空的")
