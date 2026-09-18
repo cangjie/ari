@@ -63,6 +63,8 @@ ENDPOINT = ("https://generativelanguage.googleapis.com/v1beta/models/"
 #  故改回 10。付费账号可用环境变量调高。）
 # 取环境变量便于分片时各分一份配额（N 个分片就各给 总RPM/N，避免一起超速）。
 # 超了会 429，而 429 已归入 Transient 由 llm_cache 退避重试。
+from tls import ssl_ctx
+
 RPM = int(os.environ.get("GEMINI_RPM", "10"))
 _MIN_GAP = 60.0 / RPM         # 两次请求之间至少隔这么久
 _last_call = 0.0
@@ -199,7 +201,7 @@ def ask(system: str, user: str, schema: dict, model: str = DEFAULT_MODEL,
 
     _throttle()
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with urllib.request.urlopen(req, timeout=timeout, context=ssl_ctx()) as r:
             resp = json.loads(r.read())
     except urllib.error.HTTPError as e:
         detail = e.read().decode()[:400]

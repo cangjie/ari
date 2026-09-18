@@ -1,0 +1,180 @@
+[
+ {
+  "a": [
+   "S",
+   31
+  ],
+  "b": [
+   "S",
+   44
+  ],
+  "a_row": 30,
+  "b_row": 42,
+  "a_name": "Five-colored parakeet on a blossoming apricot tree（宋徽宗，1110-01-01）",
+  "b_name": "五色鹦鹉图卷",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为宋徽宗《五色鹦鹉图卷》，英文题名 Five-colored parakeet on a blossoming apricot tree 即其通行译名，作者与年代一致。"
+ },
+ {
+  "a": [
+   "S",
+   24
+  ],
+  "b": [
+   "S",
+   33
+  ],
+  "a_row": 24,
+  "b_row": 31,
+  "a_name": "Night Attack on the Sanjô Palace, from the Illustrated Scrolls of the Events of the Heiji Era (Heiji monogatar",
+  "b_name": "平治物语绘卷（http://www.wikidata.org/.well-known/genid/13ef7cce561dc041541b4b092e6cf417，1275-01-01）",
+  "a_sub": "ext·wikidata",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "《平治物语绘卷·三条殿夜讨卷》与整部《平治物语绘卷》属整体/分卷关系，按同一件处理，1275 与 1300 只是断代出入。"
+ },
+ {
+  "a": [
+   "S",
+   15
+  ],
+  "b": [
+   "S",
+   38
+  ],
+  "a_row": 15,
+  "b_row": 36,
+  "a_name": "《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）",
+  "b_name": "Triad of King Mycerinus and two Goddesses-09.200（http://www.wikidata.org/.well-known/genid/6830ab182ab46b8be37",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "Menkaura 即 Mycerinus，同为 MFA 09.200 号门卡乌拉与哈索尔及野兔诺姆神三联像，第四王朝年代范围相合。"
+ },
+ {
+  "a": [
+   "S",
+   12
+  ],
+  "b": [
+   "S",
+   39
+  ],
+  "a_row": 12,
+  "b_row": 37,
+  "a_name": "《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）",
+  "b_name": "Statue of Menkaura and Queen Khamerernebty II",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为 MFA 藏门卡乌拉王与王后（哈梅雷内布蒂二世）杂砂岩双人立像，Menkaura=Mycerinus，题名仅译法不同。"
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   20
+  ],
+  "a_row": 6,
+  "b_row": 20,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "《凯风快晴（赤富士）》与 Fine Wind, Clear Weather 是北斋《富岳三十六景》同一幅版画的两个通行译名，作者与年代一致。"
+ },
+ {
+  "a": [
+   "S",
+   10
+  ],
+  "b": [
+   "S",
+   30
+  ],
+  "a_row": 10,
+  "b_row": 29,
+  "a_name": "J.M.W. Turner《Slave Ship》奴隶船（1840）",
+  "b_name": "奴隸船（约瑟夫·马洛德·威廉·透纳，1840-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为透纳 1840 年油画《奴隶船》，作者、年代、材质完全对应，仅中英文与简繁差异。"
+ },
+ {
+  "a": [
+   "S",
+   7
+  ],
+  "b": [
+   "A",
+   449
+  ],
+  "a_row": 7,
+  "b_row": 493,
+  "a_name": "（传）宋徽宗《捣练图》Court ladies preparing newly woven silk（北宋，12 世纪初，绢本设色泥金）",
+  "b_name": "捣练图（张萱，1101-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名同为《捣练图》但作者归属存在异说（一条题宋徽宗、一条题张萱），按规则判为不同记录。"
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   40
+  ],
+  "a_row": 6,
+  "b_row": 38,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "神奈川冲浪里",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为北斋《富岳三十六景》但属不同作品：《凯风快晴（赤富士）》与《神奈川冲浪里》是两幅版画。"
+ }
+]

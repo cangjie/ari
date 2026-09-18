@@ -58,3 +58,9 @@ utils/import_data/_superseded/
 # 外部抓取的缓存（Wikidata SPARQL 结果等）。派生文件，且 WDQS 会限流，
 # 本地留一份复用即可；要更新用 meta_scrape_pem.py --refresh-wikidata
 utils/import_data/meta_cache/
+
+# 去重的中间产物：零 API、几秒可重生成（dedupe_recall.py / dedupe_group.py --dry-run），
+# 且 dedupe_groups.json 每次空跑都被覆盖，与实际跑过的 dedupe_clusters.json 的组号对不上。
+# 花过钱或联网抓来的（dedupe_facts.json、dedupe_llm_cache.jsonl、dedupe_clusters.json）照常入库。
+utils/import_data/dedupe_cands.json
+utils/import_data/dedupe_groups.json

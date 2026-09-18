@@ -1,0 +1,6589 @@
+[
+ {
+  "a": [
+   "A",
+   625
+  ],
+  "b": [
+   "A",
+   636
+  ],
+  "a_row": 667,
+  "b_row": 678,
+  "a_name": "狮吼观音",
+  "b_name": "多臂观音",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "狮吼观音与多臂观音是两尊不同的观音造像，仅题材相近、年代同为明代，属同题材不同件。"
+ },
+ {
+  "a": [
+   "S",
+   4
+  ],
+  "b": [
+   "A",
+   363
+  ],
+  "a_row": 4,
+  "b_row": 402,
+  "a_name": "John Singleton Copley《Paul Revere》保罗·里维尔像（1768，布面油画）",
+  "b_name": "John Amory（约翰·科普利，1768-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为科普利1768年所作，但一幅是保罗·里维尔像、一幅是约翰·阿莫里像，系同一画家的不同肖像作品。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   277
+  ],
+  "a_row": 51,
+  "b_row": 317,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Calla Lily on Grey（喬治亞·歐姬芙，1928-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "欧姬芙的《带佩德纳尔山的鹿头骨》与《灰底马蹄莲》题材、题名皆不同，是同一画家的两件作品。"
+ },
+ {
+  "a": [
+   "B",
+   2251
+  ],
+  "b": [
+   "C",
+   1196
+  ],
+  "a_row": 2871,
+  "b_row": 4031,
+  "a_name": "古老农舍",
+  "b_name": "French Farmhouse（Philip Leslie Hale，1893-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「古老农舍」与Philip Leslie Hale的《法国农舍》题名不一致，且[a]无作者与年代可核，无法确认为同一件。"
+ },
+ {
+  "a": [
+   "A",
+   65
+  ],
+  "b": [
+   "A",
+   571
+  ],
+  "a_row": 106,
+  "b_row": 615,
+  "a_name": "日本女人 (绘画)（克劳德·莫奈，1876-01-01，油彩）",
+  "b_name": "莫奈夫人与她的儿子",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "莫奈1876年的《日本女人（La Japonaise）》与《莫奈夫人与她的儿子》是两幅不同的画作，仅同属莫奈以卡米耶为模特的作品。"
+ },
+ {
+  "a": [
+   "A",
+   593
+  ],
+  "b": [
+   "B",
+   2202
+  ],
+  "a_row": 637,
+  "b_row": 2822,
+  "a_name": "柳下美人图",
+  "b_name": "树下浴女",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「柳下美人图」与「树下浴女」题名、题材均不同，属同类仕女／人物题材的不同件。"
+ },
+ {
+  "a": [
+   "B",
+   2242
+  ],
+  "b": [
+   "C",
+   263
+  ],
+  "a_row": 2862,
+  "b_row": 3136,
+  "a_name": "河流与废墟风景",
+  "b_name": "Landscape with Classical Ruins（Georg von Hoesslin，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「河流与废墟风景」与《古典废墟风景》题名不同，[a]又无作者年代可核，仅「废墟风景」一词相撞，不足以判为同一件。"
+ },
+ {
+  "a": [
+   "B",
+   1874
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 476,
+  "b_row": 2506,
+  "a_name": "",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]题名缺失，只有作者陆俨少一项可比，无法确认其即为《陶渊明诗意山水》这一件。"
+ },
+ {
+  "a": [
+   "A",
+   147
+  ],
+  "b": [
+   "A",
+   625
+  ],
+  "a_row": 187,
+  "b_row": 667,
+  "a_name": "猎狮（欧仁·德拉克罗瓦，1858-01-01，油彩）",
+  "b_name": "狮吼观音",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德拉克罗瓦 1858 年油画《猎狮》与明代「狮吼观音」造像分属不同文化、材质与年代，仅「狮」字偶合。"
+ },
+ {
+  "a": [
+   "B",
+   3
+  ],
+  "b": [
+   "B",
+   226
+  ],
+  "a_row": 685,
+  "b_row": 907,
+  "a_name": "Anthony van Dyck《Isabella, Lady de La Warr》（约 1638，布面油画）",
+  "b_name": "Portrait of Isabella, Lady de La Warr（安东尼·范戴克，1638-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为范戴克约1638年所绘 Isabella, Lady de La Warr 肖像，作者、年代、题名均对应，仅译名与格式不同。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   268
+  ],
+  "a_row": 51,
+  "b_row": 308,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Shell and Old Shingle No. II（喬治亞·歐姬芙，1926-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题名各异（带佩德纳尔山的鹿头骨 vs Shell and Old Shingle No. II），是两件不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   42
+  ],
+  "b": [
+   "B",
+   431
+  ],
+  "a_row": 84,
+  "b_row": 1112,
+  "a_name": "《朱诺》Juno（罗马，头部 1–2 世纪、身躯公元前 1 世纪末–公元 1 世纪初，大理石）",
+  "b_name": "Pallas Athena, Venus and Juno（Hans von Aachen，1593-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为罗马时期大理石朱诺雕像，一为汉斯·冯·亚琛1593年油画，仅共用「Juno」一词。"
+ },
+ {
+  "a": [
+   "A",
+   617
+  ],
+  "b": [
+   "C",
+   1701
+  ],
+  "a_row": 661,
+  "b_row": 4530,
+  "a_name": "基督哀悼",
+  "b_name": "The lamentation over the dead Christ（http://www.wikidata.org/.well-known/genid/e549d1689d1d428e9d15692311a4748",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「哀悼基督」为常见宗教题材，[a] 缺作者与年代、[b] 作者为匿名节点，无法确认是同一件。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   193
+  ],
+  "a_row": 67,
+  "b_row": 233,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Head of Cyrus Brought to Queen Tomyris（彼得·保羅·魯本斯，1909-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为鲁本斯，但《穆莱·艾哈迈德》与《居鲁士之首献于托米丽司女王》是两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1438
+  ],
+  "a_row": 692,
+  "b_row": 2101,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "La Baker（Loïs Mailou Jones，1977-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones，但《Hudson》肖像与1977年《La Baker》是两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   615
+  ],
+  "b": [
+   "B",
+   385
+  ],
+  "a_row": 659,
+  "b_row": 1066,
+  "a_name": "总督安德烈·格里蒂肖像",
+  "b_name": "Portrait of a Doge, probably Pasquale Malipiero（真蒂莱·贝利尼，1460-01-01，tempera）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "画中人物不同（总督安德烈·格里蒂 vs 疑为帕斯夸莱·马利皮耶罗），属不同肖像。"
+ },
+ {
+  "a": [
+   "B",
+   144
+  ],
+  "b": [
+   "B",
+   2233
+  ],
+  "a_row": 825,
+  "b_row": 2853,
+  "a_name": "Mrs. Paul Revere (Rachel Walker)（Q47455747，1784-01-01，象牙）",
+  "b_name": "保罗·里维尔银糖罐",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是 1784 年象牙微型肖像《里维尔夫人（Rachel Walker）》，另一件是保罗·里维尔所制银糖罐，材质与器物类型完全不同，非同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   609
+  ],
+  "b": [
+   "B",
+   2231
+  ],
+  "a_row": 653,
+  "b_row": 2851,
+  "a_name": "齐本德尔高斗柜",
+  "b_name": "齐本德尔边椅",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "齐本德尔式高斗柜与齐本德尔式边椅只是同一家具风格下的两件不同器物。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "B",
+   325
+  ],
+  "a_row": 9,
+  "b_row": 1006,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Ballet Dancer with Arms Crossed（埃德加·德加，1872-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德加同一作者但不同作品：一件是雕塑《十四岁的小舞者》，另一件是 1872 年油画《抱臂的芭蕾舞者》。"
+ },
+ {
+  "a": [
+   "A",
+   447
+  ],
+  "b": [
+   "B",
+   16
+  ],
+  "a_row": 491,
+  "b_row": 698,
+  "a_name": "Portrait of a 62-year-old Woman, possibly Aeltje Pietersdr Uylenburgh（伦勃朗，1632-01-01，油彩）",
+  "b_name": "Rembrandt van Rijn《Portrait of Aeltje Uylenburgh》（1632）",
+  "a_sub": "ext·wikidata",
+  "b_sub": "ext·官网",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "均为伦勃朗 1632 年《阿尔杰·厄伦堡肖像》，Wikidata 只是用了带存疑限定的长题名，作者、年代、材质一致，指向同一幅画。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 472,
+  "b_row": 2506,
+  "a_name": "",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 条无题名、无年代，仅凭作者同为陆俨少无法确认就是《陶渊明诗意山水》，证据不足。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "B",
+   324
+  ],
+  "a_row": 69,
+  "b_row": 1005,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Degas's Father Listening to Lorenzo Pagans Playing the Guitar（埃德加·德加，1870-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德加的两幅不同油画：《隆尚的赛马》与《听帕甘斯弹吉他的德加之父》。"
+ },
+ {
+  "a": [
+   "A",
+   616
+  ],
+  "b": [
+   "B",
+   436
+  ],
+  "a_row": 660,
+  "b_row": 1117,
+  "a_name": "苏珊娜与长老",
+  "b_name": "Susanna and the Elders（亨德里克·霍尔奇尼斯，1615-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「苏珊娜与长老」即霍尔奇尼斯 1615 年同名油画的中译，题名对应且为该馆此题材藏品。"
+ },
+ {
+  "a": [
+   "B",
+   1871
+  ],
+  "b": [
+   "B",
+   1873
+  ],
+  "a_row": 473,
+  "b_row": 475,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条同出原清单且题名均为空，仅作者同为陆俨少，无法排除是其名下两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   336
+  ],
+  "b": [
+   "C",
+   1704
+  ],
+  "a_row": 1017,
+  "b_row": 4533,
+  "a_name": "Portrait of a Young Woman (The Debutante)（Ethel Walker，油彩）",
+  "b_name": "年轻女子肖像",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「年轻女子肖像」是通用题名且原清单无作者、年代信息，无法确认就是 Ethel Walker 这幅《The Debutante》，同题材不同件风险高。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   266
+  ],
+  "a_row": 51,
+  "b_row": 306,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Abiquiu Trees VII（喬治亞·歐姬芙，1953-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但分别是《带佩德纳尔山的鹿头骨》与《Abiquiu Trees VII》，题名与年代均不同，属同一艺术家的不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1436
+  ],
+  "a_row": 692,
+  "b_row": 2099,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Main Entrance（Loïs Mailou Jones，1946-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones 作品，但一为《Hudson》肖像、一为《Main Entrance》，题名与题材均不同。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   274
+  ],
+  "a_row": 51,
+  "b_row": 314,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Deer's Skull with Pedernal（喬治亞·歐姬芙，1936-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为欧姬芙 1936 年布面油画《Deer('s) Skull with Pedernal》，作者、题名、材质一致，仅所有格与译名写法差异。"
+ },
+ {
+  "a": [
+   "B",
+   2190
+  ],
+  "b": [
+   "C",
+   1422
+  ],
+  "a_row": 2813,
+  "b_row": 4253,
+  "a_name": "维纳斯与丘比特",
+  "b_name": "Venus and Cupid（Q22002318）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「维纳斯与丘比特」为极常见题材题名，b 条记录作者与年代字段明显损坏（QID 即自身、年代 2200），馆藏中另有同名作品，无法确定为同一件。"
+ },
+ {
+  "a": [
+   "B",
+   428
+  ],
+  "b": [
+   "B",
+   2173
+  ],
+  "a_row": 1109,
+  "b_row": 2796,
+  "a_name": "Stream in the Forest（居斯塔夫·库尔贝，1862-01-01，油彩）",
+  "b_name": "湾流",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "库尔贝《Stream in the Forest》（林间溪流）与「湾流」（The Gulf Stream）是完全不同的作品，仅因词块巧合命中。"
+ },
+ {
+  "a": [
+   "B",
+   2222
+  ],
+  "b": [
+   "C",
+   971
+  ],
+  "a_row": 2842,
+  "b_row": 3809,
+  "a_name": "罗马贵妇大理石肖像",
+  "b_name": "A Marble Quarry（James Hope，1851-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为罗马时期大理石肖像雕塑，一为 James Hope 1851 年油画《A Marble Quarry》，材质、门类、年代全不相符。"
+ },
+ {
+  "a": [
+   "B",
+   2237
+  ],
+  "b": [
+   "C",
+   443
+  ],
+  "a_row": 2857,
+  "b_row": 3311,
+  "a_name": "斜倚的丘比特",
+  "b_name": "Venus and Cupid (I)（纳西斯·比尔希略·迪亚斯，1847-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「斜倚的丘比特」与迪亚斯《Venus and Cupid (I)》题名、构图主体不同，且原清单无作者年代可核，属同题材不同件。"
+ },
+ {
+  "a": [
+   "A",
+   611
+  ],
+  "b": [
+   "B",
+   2225
+  ],
+  "a_row": 655,
+  "b_row": 2845,
+  "a_name": "湿婆舞王铜像",
+  "b_name": "湿婆与帕尔瓦蒂浮雕",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是湿婆舞王（Nataraja）铜造像，另一件是湿婆与帕尔瓦蒂题材的浮雕，题材与形制均不同，属两件不同实物。"
+ },
+ {
+  "a": [
+   "A",
+   374
+  ],
+  "b": [
+   "B",
+   2174
+  ],
+  "a_row": 413,
+  "b_row": 2797,
+  "a_name": "Far Wind（肯尼思·诺兰，1969-01-01）",
+  "b_name": "乘风破浪",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是诺兰 1969 年的抽象绘画《Far Wind》，[b] 只是无作者无年代的中文名「乘风破浪」，并非该画通行译名，缺乏同一实物的证据。"
+ },
+ {
+  "a": [
+   "B",
+   2186
+  ],
+  "b": [
+   "B",
+   2252
+  ],
+  "a_row": 2809,
+  "b_row": 2872,
+  "a_name": "牙雕宝盒",
+  "b_name": "象牙耶稣受难像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为象牙材质但器物类型不同：一件是牙雕容器（宝盒），一件是耶稣受难像雕刻，非同一件。"
+ },
+ {
+  "a": [
+   "A",
+   190
+  ],
+  "b": [
+   "B",
+   2205
+  ],
+  "a_row": 230,
+  "b_row": 2825,
+  "a_name": "Drunken Bacchus with Faun and Satyr（彼得·保羅·魯本斯）",
+  "b_name": "站立的农牧神",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是鲁本斯的《醉酒的巴克斯与农牧神、萨提尔》绘画，[b] 是单体的「站立的农牧神」雕像，作品与媒介均不同。"
+ },
+ {
+  "a": [
+   "B",
+   2249
+  ],
+  "b": [
+   "C",
+   849
+  ],
+  "a_row": 2869,
+  "b_row": 3692,
+  "a_name": "马穆鲁克清真寺铜灯",
+  "b_name": "Tijmentje Polishing Brass（Q21795337，1911-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 为马穆鲁克时期清真寺铜灯（金属器），[b] 为 1911 年油画《Tijmentje Polishing Brass》，仅因「铜/brass」词块碰撞，实为两物。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   278
+  ],
+  "a_row": 700,
+  "b_row": 959,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Poultry Market at Gisors（卡米耶·畢沙羅，1885-01-01，tempera）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗作品但题名与题材不同（《草地上的两个农妇》与《吉索尔的家禽市场》），属同一艺术家的不同作品。"
+ },
+ {
+  "a": [
+   "S",
+   20
+  ],
+  "b": [
+   "S",
+   40
+  ],
+  "a_row": 20,
+  "b_row": 38,
+  "a_name": "Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",
+  "b_name": "神奈川冲浪里",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为北斋《富岳三十六景》系列但非同一幅：《凯风快晴（赤富士）》与《神奈川冲浪里》是两件不同版画。"
+ },
+ {
+  "a": [
+   "B",
+   2229
+  ],
+  "b": [
+   "C",
+   1420
+  ],
+  "a_row": 2849,
+  "b_row": 4251,
+  "a_name": "狩猎纹釉陶板",
+  "b_name": "English Hunting Scene（威廉·瑞莫，1871-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是带狩猎纹的釉陶板（工艺品），[b] 是威廉·瑞莫 1871 年的《英国狩猎场景》绘画，仅题材词「狩猎」相同。"
+ },
+ {
+  "a": [
+   "B",
+   2206
+  ],
+  "b": [
+   "C",
+   591
+  ],
+  "a_row": 2826,
+  "b_row": 3443,
+  "a_name": "跳舞的酒神女祭司",
+  "b_name": "Bacchante（http://www.wikidata.org/.well-known/genid/bf844f92f6720799bbb3bd9557f36d58，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「跳舞的酒神女祭司」与仅题为 Bacchante 的油画属同题材不同件，作者不明、材质与年代（844）均对不上，不能合并。"
+ },
+ {
+  "a": [
+   "B",
+   674
+  ],
+  "b": [
+   "B",
+   2169
+  ],
+  "a_row": 1352,
+  "b_row": 2792,
+  "a_name": "Rape of the Sabine Women（巴勃羅·畢卡索，1963-01-01，油彩）",
+  "b_name": "欧罗巴被劫",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "毕加索《掠夺萨宾妇女》与《欧罗巴被劫》是取材不同神话的两幅不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   218
+  ],
+  "b": [
+   "A",
+   564
+  ],
+  "a_row": 258,
+  "b_row": 608,
+  "a_name": "Ravine（文森特·梵高，1889-01-01，油彩）",
+  "b_name": "摇摇篮的鲁林夫人",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为梵高 1889 年作品，但《沟壑》与《摇摇篮的鲁林夫人》是两幅不同的画。"
+ },
+ {
+  "a": [
+   "B",
+   2189
+  ],
+  "b": [
+   "C",
+   1292
+  ],
+  "a_row": 2812,
+  "b_row": 4127,
+  "a_name": "荒野中的圣哲罗姆",
+  "b_name": "Opening of the Wilderness（Thomas Prichard Rossiter，1858-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「荒野中的圣哲罗姆」与罗西特 1858 年《Opening of the Wilderness》仅共用 wilderness 一词，题材、作者、年代全然不同。"
+ },
+ {
+  "a": [
+   "A",
+   572
+  ],
+  "b": [
+   "B",
+   2237
+  ],
+  "a_row": 616,
+  "b_row": 2857,
+  "a_name": "丘比特与普赛克",
+  "b_name": "斜倚的丘比特",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「丘比特与普赛克」与「斜倚的丘比特」是以丘比特为题的两件不同作品。"
+ },
+ {
+  "a": [
+   "S",
+   15
+  ],
+  "b": [
+   "S",
+   38
+  ],
+  "a_row": 15,
+  "b_row": 36,
+  "a_name": "《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）",
+  "b_name": "Triad of King Mycerinus and two Goddesses-09.200（http://www.wikidata.org/.well-known/genid/6830ab182ab46b8be37",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "Mycerinus 即门卡乌拉的旧译，两条同指 MFA 09.200 那件门卡乌拉与哈索尔、诺姆神三联像，年代区间相容。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   190
+  ],
+  "a_row": 67,
+  "b_row": 230,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Drunken Bacchus with Faun and Satyr（彼得·保羅·魯本斯）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为鲁本斯，但《穆莱·艾哈迈德》与《醉酒的巴克斯与农牧神、萨提尔》是两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1435
+  ],
+  "a_row": 692,
+  "b_row": 2098,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Yellow Cup（Loïs Mailou Jones，1938-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones，但《Hudson》肖像与 1938 年《Yellow Cup》是两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   82
+  ],
+  "b": [
+   "B",
+   2231
+  ],
+  "a_row": 123,
+  "b_row": 2851,
+  "a_name": "Pratt Chair（加埃塔諾·佩謝，1984-01-01，氨基甲酸乙酯）",
+  "b_name": "齐本德尔边椅",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是佩谢 1984 年的聚氨酯 Pratt Chair，另一件是 18 世纪齐本德尔式木质边椅，作者、年代、材质全不相同。"
+ },
+ {
+  "a": [
+   "B",
+   653
+  ],
+  "b": [
+   "B",
+   2171
+  ],
+  "a_row": 1331,
+  "b_row": 2794,
+  "a_name": "Saint Victorinus, Saint Sebastian, Saint Jerome（Niccolò di Liberatore，1479-01-01）",
+  "b_name": "圣塞巴斯蒂安",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是尼科洛·迪·利贝拉托雷 1479 年描绘维克托里努斯、塞巴斯蒂安、哲罗姆三圣的画板，[b] 仅为通用题名「圣塞巴斯蒂安」的单件，无法确认是同一实物。"
+ },
+ {
+  "a": [
+   "B",
+   2190
+  ],
+  "b": [
+   "B",
+   2237
+  ],
+  "a_row": 2813,
+  "b_row": 2857,
+  "a_name": "维纳斯与丘比特",
+  "b_name": "斜倚的丘比特",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「维纳斯与丘比特」与「斜倚的丘比特」题材构成不同，属两件各自独立的作品。"
+ },
+ {
+  "a": [
+   "A",
+   617
+  ],
+  "b": [
+   "B",
+   2015
+  ],
+  "a_row": 661,
+  "b_row": 2638,
+  "a_name": "基督哀悼",
+  "b_name": "Lamentation over the Dead Christ（卡罗·克里韦利，1485-01-01，tempera）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「基督哀悼」即 Lamentation over the Dead Christ 的通行中译，指向克里韦利 1485 年同一幅蛋彩画。"
+ },
+ {
+  "a": [
+   "S",
+   16
+  ],
+  "b": [
+   "B",
+   2227
+  ],
+  "a_row": 16,
+  "b_row": 2847,
+  "a_name": "《观音菩萨像》Guanyin, Bodhisattva of Compassion（中国，金代，12 世纪初；泡桐木、彩绘与贴金）",
+  "b_name": "室利佛逝菩萨首",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是中国金代泡桐木彩绘贴金观音全身像，[b] 是室利佛逝（东南亚）风格的菩萨头像，产地、形制、材质均不同。"
+ },
+ {
+  "a": [
+   "A",
+   590
+  ],
+  "b": [
+   "C",
+   1678
+  ],
+  "a_row": 634,
+  "b_row": 4508,
+  "a_name": "唐宫春游图",
+  "b_name": "Spring Outing（Itaya Hironaga，1800-01-01，丝绸）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 为唐代中国绘画「唐宫春游图」，[b] 为板谷广长 1800 年的日本绢本「Spring Outing」，仅题材相近而非同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "A",
+   141
+  ],
+  "a_row": 69,
+  "b_row": 181,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Visit to a Museum（埃德加·德加，1879-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但分别是《隆尚的赛马》与《Visit to a Museum》两幅不同的画。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1872
+  ],
+  "a_row": 472,
+  "b_row": 474,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条均无题名，仅作者同为陆俨少，无法排除是其名下的两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   267
+  ],
+  "b": [
+   "B",
+   2171
+  ],
+  "a_row": 948,
+  "b_row": 2794,
+  "a_name": "Saint Sebastian Tended by Saint Irene and Her Maid（貝爾納爾多·斯特羅齊，1630-01-01，油彩）",
+  "b_name": "圣塞巴斯蒂安",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b]「圣塞巴斯蒂安」只是通用圣徒题材短名，无作者与年代佐证，而[a]是斯特罗齐《圣伊雷娜及侍女照料圣塞巴斯蒂安》，馆藏同题材另有他件，无法确认为同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "B",
+   2045
+  ],
+  "a_row": 67,
+  "b_row": 2668,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Christ expiring on the cross（彼得·保羅·魯本斯，1619-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为鲁本斯作品但题名不同：一为《穆莱·艾哈迈德》肖像，一为1619年《基督在十字架上断气》，属同一作者的不同作品。"
+ },
+ {
+  "a": [
+   "S",
+   16
+  ],
+  "b": [
+   "A",
+   636
+  ],
+  "a_row": 16,
+  "b_row": 678,
+  "a_name": "《观音菩萨像》Guanyin, Bodhisattva of Compassion（中国，金代，12 世纪初；泡桐木、彩绘与贴金）",
+  "b_name": "多臂观音",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]为金代12世纪泡桐木彩绘观音像，[b]为明代多臂观音，年代、形制均不同，是同题材的两件不同造像。"
+ },
+ {
+  "a": [
+   "A",
+   617
+  ],
+  "b": [
+   "B",
+   339
+  ],
+  "a_row": 661,
+  "b_row": 1020,
+  "a_name": "基督哀悼",
+  "b_name": "The Lamentation (Christ at the Tomb)（欧仁·德拉克罗瓦，1848-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「基督哀悼」即德拉克罗瓦1848年《The Lamentation (Christ at the Tomb)》的中译名，指向MFA同一幅油画。"
+ },
+ {
+  "a": [
+   "B",
+   319
+  ],
+  "b": [
+   "B",
+   2256
+  ],
+  "a_row": 1000,
+  "b_row": 2876,
+  "a_name": "The Martyrdom of Saint Sigismond and his Family（多梅尼科·貝卡富米，1520-01-01，油彩）",
+  "b_name": "圣劳伦斯殉道",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]是贝卡富米《圣西吉斯蒙德及其家人殉道》，[b]是圣劳伦斯殉道，殉道主角不同，非同一件。"
+ },
+ {
+  "a": [
+   "B",
+   1798
+  ],
+  "b": [
+   "B",
+   2251
+  ],
+  "a_row": 2456,
+  "b_row": 2871,
+  "a_name": "Farmhouse（Q8023886，1868-01-01，油彩）",
+  "b_name": "古老农舍",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「古老农舍」无作者与年代信息，与1868年那件《Farmhouse》仅题材相近，通用题名难以确认为同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   637
+  ],
+  "b": [
+   "B",
+   1050
+  ],
+  "a_row": 679,
+  "b_row": 1727,
+  "a_name": "源氏物语绘屏风",
+  "b_name": "The Silver Screen（Frank Weston Benson，1921-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]为江户时期源氏物语题材绘屏风，[b]为本森1921年油画《The Silver Screen》，作者、年代、材质皆不同。"
+ },
+ {
+  "a": [
+   "A",
+   91
+  ],
+  "b": [
+   "B",
+   16
+  ],
+  "a_row": 132,
+  "b_row": 698,
+  "a_name": "Young Girl in a Gold-Trimmed Cloak（伦勃朗，1632-01-01，油彩）",
+  "b_name": "Rembrandt van Rijn《Portrait of Aeltje Uylenburgh》（1632）",
+  "a_sub": "ext·wikidata",
+  "b_sub": "ext·官网",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为伦勃朗1632年作品，但一幅是《披金边斗篷的少女》，另一幅是《阿尔特耶·厄伦堡肖像》（老妇），属同一作者不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "C",
+   858
+  ],
+  "a_row": 617,
+  "b_row": 3700,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "The Seine（Ernest Wadsworth Longfellow，1880-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「阿让特伊的塞纳河」是莫奈笔下的塞纳河景，与朗费罗（E. W. Longfellow）1880 年的《The Seine》作者与作品均不同。"
+ },
+ {
+  "a": [
+   "B",
+   571
+  ],
+  "b": [
+   "C",
+   1705
+  ],
+  "a_row": 1249,
+  "b_row": 4534,
+  "a_name": "Windmill near Norwich（John Crome，油彩）",
+  "b_name": "风车风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b]「风车风景」无作者且为通用题名，与克罗姆具体题名《Windmill near Norwich》无法确认为同一件，按保守原则不合并。"
+ },
+ {
+  "a": [
+   "A",
+   282
+  ],
+  "b": [
+   "A",
+   608
+  ],
+  "a_row": 322,
+  "b_row": 652,
+  "a_name": "Mrs. Paul Revere (Rachel Walker)（吉尔伯特·斯图尔特，1813-01-01，油彩）",
+  "b_name": "保罗·里维尔银茶壶",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是斯图尔特 1813 年画的里维尔夫人肖像油画，一件是保罗·里维尔所制银茶壶，材质与品类完全不同。"
+ },
+ {
+  "a": [
+   "B",
+   1872
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 474,
+  "b_row": 2506,
+  "a_name": "",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 题名与年代均缺失，仅凭「陆俨少」同作者不足以认定即为《Landscape after a Tao Yuanming poem》这一具体画作。"
+ },
+ {
+  "a": [
+   "B",
+   2223
+  ],
+  "b": [
+   "C",
+   1160
+  ],
+  "a_row": 2843,
+  "b_row": 3997,
+  "a_name": "四季主题马赛克嵌板",
+  "b_name": "Seasons（Michael Mazur，1999-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 为四季主题马赛克嵌板，[b] 为马祖尔 1999 年油彩作品《Seasons》，材质不符，仅题材相近。"
+ },
+ {
+  "a": [
+   "B",
+   1873
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 475,
+  "b_row": 2506,
+  "a_name": "",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同 786，[a] 无题名无年代，仅同作者无法确定指向陆俨少的这一具体山水；且与 786 重复，合并会造成一对多误配。"
+ },
+ {
+  "a": [
+   "S",
+   16
+  ],
+  "b": [
+   "A",
+   625
+  ],
+  "a_row": 16,
+  "b_row": 667,
+  "a_name": "《观音菩萨像》Guanyin, Bodhisattva of Compassion（中国，金代，12 世纪初；泡桐木、彩绘与贴金）",
+  "b_name": "狮吼观音",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一尊为金代约 1100–1133 年泡桐木彩绘观音像，一尊为约明代的狮吼观音，年代与形制不同，属同题材不同件。"
+ },
+ {
+  "a": [
+   "B",
+   2190
+  ],
+  "b": [
+   "C",
+   441
+  ],
+  "a_row": 2813,
+  "b_row": 3309,
+  "a_name": "维纳斯与丘比特",
+  "b_name": "Venus and Cupid (II)（纳西斯·比尔希略·迪亚斯，1847-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「维纳斯与丘比特」为常见通用题材题名且 [a] 无作者，而 [b] 标注 (II) 说明同名另有别本，无法确认为同一件。"
+ },
+ {
+  "a": [
+   "B",
+   2231
+  ],
+  "b": [
+   "C",
+   806
+  ],
+  "a_row": 2851,
+  "b_row": 3649,
+  "a_name": "齐本德尔边椅",
+  "b_name": "Child in Rocking Chair（E. L. George，1876-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是齐本德尔式边椅家具，另一件是 E. L. George 1876 年的油画《摇椅中的孩子》，仅因“椅”字相关而误配。"
+ },
+ {
+  "a": [
+   "A",
+   594
+  ],
+  "b": [
+   "B",
+   2104
+  ],
+  "a_row": 638,
+  "b_row": 2727,
+  "a_name": "红白梅图屏风",
+  "b_name": "Beauty Admiring Plum Blossoms in Snow",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "《红白梅图》屏风与《雪中赏梅美人图》是题材同为梅花的两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   187
+  ],
+  "b": [
+   "B",
+   2253
+  ],
+  "a_row": 868,
+  "b_row": 2873,
+  "a_name": "Madonna and Child（Master of the Lanckoronski Annunciation，1500-01-01，木材）",
+  "b_name": "圣母子板画",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "“圣母子”属通用题名，原清单条目无作者与年代可佐证，馆藏同题板画不止一件，无法确认为同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   219
+  ],
+  "b": [
+   "A",
+   564
+  ],
+  "a_row": 259,
+  "b_row": 608,
+  "a_name": "Enclosed Field with Ploughman（文森特·梵高，1889-10-01，油彩）",
+  "b_name": "摇摇篮的鲁林夫人",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为梵高 1889 年作品，但《犁地者与围场》与《摇摇篮的鲁林夫人》是两幅不同的画。"
+ },
+ {
+  "a": [
+   "A",
+   377
+  ],
+  "b": [
+   "B",
+   10
+  ],
+  "a_row": 416,
+  "b_row": 692,
+  "a_name": "My Mother's Hats（Loïs Mailou Jones，1943-01-01，油彩）",
+  "b_name": "Loïs Mailou Jones《Hudson》肖像",
+  "a_sub": "ext·wikidata",
+  "b_sub": "ext·官网",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones 所作，但《我母亲的帽子》与《Hudson》肖像是不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   50
+  ],
+  "b": [
+   "C",
+   83
+  ],
+  "a_row": 91,
+  "b_row": 2958,
+  "a_name": "《荷马胸像》Bust of Homer（罗马，大理石）",
+  "b_name": "Homer Dictating to Scribes（Arent de Gelder，1705-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是罗马大理石荷马胸像雕塑，另一件是 Arent de Gelder 1705 年油画《荷马向书记员口述》，仅共享“荷马”一词。"
+ },
+ {
+  "a": [
+   "A",
+   608
+  ],
+  "b": [
+   "B",
+   144
+  ],
+  "a_row": 652,
+  "b_row": 825,
+  "a_name": "保罗·里维尔银茶壶",
+  "b_name": "Mrs. Paul Revere (Rachel Walker)（Q47455747，1784-01-01，象牙）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是保罗·里维尔制作的银茶壶，另一件是其妻 Rachel Walker 的象牙微型肖像，实物完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "B",
+   1073
+  ],
+  "a_row": 51,
+  "b_row": 1750,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Patio with Black Door（喬治亞·歐姬芙，1955-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品，但《带佩德纳尔山的鹿头骨》与《带黑门的庭院》是两幅不同的画。"
+ },
+ {
+  "a": [
+   "S",
+   41
+  ],
+  "b": [
+   "B",
+   757
+  ],
+  "a_row": 39,
+  "b_row": 1435,
+  "a_name": "自由之子银碗",
+  "b_name": "Phineas and the Sons of Boreas（塞巴斯蒂亚诺·里奇，1695-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是 Paul Revere 的银器「自由之子碗」，b 是里奇的油画《Phineas and the Sons of Boreas》，作者、材质、品类全不同，仅因 Sons 一词误命中。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   275
+  ],
+  "a_row": 700,
+  "b_row": 956,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Sunlight on the Road, Pontoise（卡米耶·畢沙羅，1874-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗，但《草地上的两个农妇》与《蓬图瓦兹路上的阳光》是两幅不同的油画。"
+ },
+ {
+  "a": [
+   "A",
+   580
+  ],
+  "b": [
+   "A",
+   620
+  ],
+  "a_row": 624,
+  "b_row": 662,
+  "a_name": "约翰·亚当斯肖像",
+  "b_name": "阿比盖尔·亚当斯肖像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一幅是约翰·亚当斯肖像、一幅是阿比盖尔·亚当斯肖像，画中人不同，属两件肖像作品。"
+ },
+ {
+  "a": [
+   "A",
+   32
+  ],
+  "b": [
+   "B",
+   1582
+  ],
+  "a_row": 74,
+  "b_row": 2244,
+  "a_name": "Auguste Rodin《Eternal Springtime》永恒的春天",
+  "b_name": "Springtime in France（罗伯特·沃诺，1890-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是罗丹的雕塑《永恒的春天》，b 是沃诺 1890 年的油画《Springtime in France》，作者与材质均不同。"
+ },
+ {
+  "a": [
+   "A",
+   641
+  ],
+  "b": [
+   "B",
+   526
+  ],
+  "a_row": 683,
+  "b_row": 1205,
+  "a_name": "牧羊女",
+  "b_name": "Fishing Boat（讓-弗朗索瓦·米勒，1871-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为米勒同年作品，但《牧羊女》与《渔船》题材、题名不同，是两件不同的画。"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "A",
+   574
+  ],
+  "a_row": 617,
+  "b_row": 618,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "阿让特伊大桥",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "莫奈的《阿让特伊的塞纳河》与《阿让特伊大桥》是同一地点的两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   606
+  ],
+  "b": [
+   "A",
+   607
+  ],
+  "a_row": 650,
+  "b_row": 651,
+  "a_name": "蒂凡尼牡丹台灯",
+  "b_name": "蒂凡尼蜻蜓台灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "蒂凡尼牡丹纹台灯与蜻蜓纹台灯是同一工坊的两件不同灯具。"
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   40
+  ],
+  "a_row": 6,
+  "b_row": 38,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "神奈川冲浪里",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为北斋《富岳三十六景》，但《凯风快晴（赤富士）》与《神奈川冲浪里》是该系列中两幅不同的版画。"
+ },
+ {
+  "a": [
+   "B",
+   2177
+  ],
+  "b": [
+   "C",
+   1106
+  ],
+  "a_row": 2800,
+  "b_row": 3944,
+  "a_name": "岁寒三友图",
+  "b_name": "Julius and Friends（朱尔斯·奥列斯基，1967-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「岁寒三友图」是中国松竹梅题材绘画，与奥列斯基1967年抽象作品《Julius and Friends》毫无关系，仅因「friends/友」误配。"
+ },
+ {
+  "a": [
+   "A",
+   144
+  ],
+  "b": [
+   "A",
+   577
+  ],
+  "a_row": 184,
+  "b_row": 621,
+  "a_name": "Victorine Meurent（愛德華·馬奈，1862-01-01，油彩）",
+  "b_name": "维克托里娜·默朗小姐",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为马奈1862年油画《Victorine Meurent》，「维克托里娜·默朗小姐」是其通行中译名，作者与年代一致。"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "B",
+   1230
+  ],
+  "a_row": 617,
+  "b_row": 1896,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "In the Valley of the Seine（John Leslie Breck，1889-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「阿让特伊的塞纳河」与布雷克1889年《In the Valley of the Seine》是描绘塞纳河的不同作品，作者与地点均不对应。"
+ },
+ {
+  "a": [
+   "B",
+   135
+  ],
+  "b": [
+   "B",
+   2242
+  ],
+  "a_row": 816,
+  "b_row": 2862,
+  "a_name": "Landscape with Ruins in Olinda（弗蘭斯・波斯特，1663-01-01，油彩）",
+  "b_name": "河流与废墟风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「河流与废墟风景」属通用风景题名，与波斯特1663年《奥林达废墟风景》的具体地点要素对不上，无法确认为同一件。"
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "A",
+   495
+  ],
+  "a_row": 6,
+  "b_row": 539,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "Peonies and Canary（葛饰北斋）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为葛饰北斋作品但属不同版画：《凯风快晴（赤富士）》出自《富岳三十六景》，《牡丹与金丝雀》属花鸟系列。"
+ },
+ {
+  "a": [
+   "B",
+   2171
+  ],
+  "b": [
+   "C",
+   503
+  ],
+  "a_row": 2794,
+  "b_row": 3365,
+  "a_name": "圣塞巴斯蒂安",
+  "b_name": "Saint Sebastian（http://www.wikidata.org/.well-known/genid/d5bbf60230d1be2756696c29ddf3fe00）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "b 条无作者（匿名 genid）、年代「6023」明显异常，圣塞巴斯蒂安为常见题材，同名不同件的风险极高。"
+ },
+ {
+  "a": [
+   "S",
+   7
+  ],
+  "b": [
+   "S",
+   31
+  ],
+  "a_row": 7,
+  "b_row": 30,
+  "a_name": "（传）宋徽宗《捣练图》Court ladies preparing newly woven silk（北宋，12 世纪初，绢本设色泥金）",
+  "b_name": "Five-colored parakeet on a blossoming apricot tree（宋徽宗，1110-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同传为宋徽宗名下，但《捣练图》与《五色鹦鹉图》是两件完全不同的绢本绘画。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   274
+  ],
+  "a_row": 700,
+  "b_row": 955,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Morning Sunlight on the Snow, Éragny-sur-Epte（卡米耶·畢沙羅，1895-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗作品，但《草地上的两个农妇》与1895年《埃拉尼雪地上的晨光》题材、年代均不同，属不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   612
+  ],
+  "b": [
+   "C",
+   1679
+  ],
+  "a_row": 656,
+  "b_row": 4509,
+  "a_name": "巴尔扎克纪念碑（习作）",
+  "b_name": "Monument to Thomas Freeborn, Pilot（James Smillie）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是罗丹《巴尔扎克纪念碑》习作，[b] 是 James Smillie 的《Monument to Thomas Freeborn, Pilot》，作者与纪念对象皆不同，仅「纪念碑」一词偶合。"
+ },
+ {
+  "a": [
+   "A",
+   628
+  ],
+  "b": [
+   "B",
+   1863
+  ],
+  "a_row": 670,
+  "b_row": 2499,
+  "a_name": "雪中猛虎",
+  "b_name": "Tiger（Irie Hakō）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条只共享「虎」这一题材，[b] 明确为入江波光所作《Tiger》，[a] 无作者信息且题名为「雪中猛虎」，同题材不同件不能合并。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "A",
+   468
+  ],
+  "a_row": 69,
+  "b_row": 512,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "At the Races in the Countryside（埃德加·德加，1869-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加赛马题材但属两件不同油画：《Racehorses at Longchamp》与《At the Races in the Countryside》，MFA 分别收藏。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "B",
+   1191
+  ],
+  "a_row": 633,
+  "b_row": 1857,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Still Life with Apples and Chestnuts（John F. Francis，1859-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b] 是 John F. Francis 1859 年《Still Life with Apples and Chestnuts》（苹果与栗子），与 [a] 的「苹果与橙子静物」题名内容不同，属同题材不同件。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "C",
+   1299
+  ],
+  "a_row": 633,
+  "b_row": 4134,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Apples（沃辛顿·惠特里奇，1867-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b] 是惠特里奇 1867 年《Apples》，与 [a]「苹果与橙子静物」并非同一幅，仅静物题材相近。"
+ },
+ {
+  "a": [
+   "A",
+   28
+  ],
+  "b": [
+   "B",
+   623
+  ],
+  "a_row": 70,
+  "b_row": 1301,
+  "a_name": "Mariano Fortuny y Carbó《Antiquaries》古董商",
+  "b_name": "Cavalry Battle（马里亚·福尔图尼，1871-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为福尔图尼作品但题名不同：《Antiquaries》古董商与《Cavalry Battle》骑兵战，系同一作者的两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   604
+  ],
+  "b": [
+   "B",
+   405
+  ],
+  "a_row": 648,
+  "b_row": 1086,
+  "a_name": "雅典娜大理石雕像",
+  "b_name": "Nobility Holding a Statue of Athena（安東尼奧·佩萊格里尼，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是雅典娜大理石雕像（雕塑），[b] 是佩莱格里尼描绘「持雅典娜像的贵族」的油画，媒材与实物完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "B",
+   1616
+  ],
+  "a_row": 633,
+  "b_row": 2277,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Apples and Jug（斯图亚特·戴维斯，1923-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b] 是斯图亚特·戴维斯 1923 年《Apples and Jug》（苹果与罐），与 [a]「苹果与橙子静物」为不同静物作品。"
+ },
+ {
+  "a": [
+   "A",
+   608
+  ],
+  "b": [
+   "B",
+   2233
+  ],
+  "a_row": 652,
+  "b_row": 2853,
+  "a_name": "保罗·里维尔银茶壶",
+  "b_name": "保罗·里维尔银糖罐",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为里维尔银器但器型不同：一件是茶壶、一件是糖罐，属两件不同实物。"
+ },
+ {
+  "a": [
+   "A",
+   433
+  ],
+  "b": [
+   "A",
+   594
+  ],
+  "a_row": 477,
+  "b_row": 638,
+  "a_name": "Spring blossoms（石鲁）",
+  "b_name": "红白梅图屏风",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "石鲁的《Spring blossoms》与日本琳派《红白梅图屏风》作者、国别、形制均不同。"
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   20
+  ],
+  "a_row": 6,
+  "b_row": 20,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「凯风快晴（赤富士）」与「Fine Wind, Clear Weather」是北斋《富岳三十六景》同一幅版画的两个通行译名，作者与年代一致。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   276
+  ],
+  "a_row": 51,
+  "b_row": 316,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Red Tree, Yellow Sky（喬治亞·歐姬芙，1952-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题名与母题不同（鹿头骨 vs 红树黄天），属两件不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   593
+  ],
+  "b": [
+   "A",
+   626
+  ],
+  "a_row": 637,
+  "b_row": 668,
+  "a_name": "柳下美人图",
+  "b_name": "美人阅信图",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「柳下美人」与「美人阅信」是两幅题材相近但情节不同的美人图，属同题材不同件。"
+ },
+ {
+  "a": [
+   "A",
+   631
+  ],
+  "b": [
+   "B",
+   1894
+  ],
+  "a_row": 673,
+  "b_row": 2525,
+  "a_name": "蒂凡尼紫藤台灯",
+  "b_name": "Wisteria and bees（齐白石）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "蒂凡尼紫藤玻璃台灯与齐白石《紫藤蜜蜂》仅共享「紫藤」词，作者与门类完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   28
+  ],
+  "b": [
+   "C",
+   415
+  ],
+  "a_row": 70,
+  "b_row": 3283,
+  "a_name": "Mariano Fortuny y Carbó《Antiquaries》古董商",
+  "b_name": "Tomb in North Africa（马里亚·福尔图尼，1859-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为福尔图尼作品但题名与题材不同（古董商 vs 北非墓地），属两件不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   634
+  ],
+  "b": [
+   "B",
+   151
+  ],
+  "a_row": 676,
+  "b_row": 832,
+  "a_name": "渔夫一家",
+  "b_name": "A Fresh Breeze（温斯洛·霍默，1881-01-01，石墨）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为霍默1881年作品，但「渔夫一家」与《A Fresh Breeze》题名、材质不同，属两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   814
+  ],
+  "b": [
+   "B",
+   2256
+  ],
+  "a_row": 1492,
+  "b_row": 2876,
+  "a_name": "Martyrdom of Saint Hippolytus（http://www.wikidata.org/.well-known/genid/f5c957f9ce4d4711e9938349a41927a7，1495-",
+  "b_name": "圣劳伦斯殉道",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是圣希波吕托斯殉道、另一件是圣劳伦斯殉道，殉道主角不同，是两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   267
+  ],
+  "a_row": 51,
+  "b_row": 307,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Shell and Old Shingle No. I（喬治亞·歐姬芙，1926-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题名各异（带佩德纳尔山的鹿头骨 vs 贝壳与旧木瓦第一号），属同一作者的不同画作。"
+ },
+ {
+  "a": [
+   "B",
+   2228
+  ],
+  "b": [
+   "B",
+   2249
+  ],
+  "a_row": 2848,
+  "b_row": 2869,
+  "a_name": "嵌铜银水壶",
+  "b_name": "马穆鲁克清真寺铜灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是嵌铜银水壶、另一件是马穆鲁克清真寺铜灯，器型与用途完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   572
+  ],
+  "b": [
+   "C",
+   1422
+  ],
+  "a_row": 616,
+  "b_row": 4253,
+  "a_name": "丘比特与普赛克",
+  "b_name": "Venus and Cupid（Q22002318）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "丘比特与普赛克和维纳斯与丘比特是两个不同的神话题材，并非同一件作品。"
+ },
+ {
+  "a": [
+   "A",
+   616
+  ],
+  "b": [
+   "C",
+   1412
+  ],
+  "a_row": 660,
+  "b_row": 4243,
+  "a_name": "苏珊娜与长老",
+  "b_name": "Susanna and the Elders（William Perkins Babcock，1850-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "题名为同一作品的中英文对照（Susanna and the Elders＝苏珊娜与长老），同馆同一件巴布科克油画，无相冲突属性。"
+ },
+ {
+  "a": [
+   "B",
+   602
+  ],
+  "b": [
+   "B",
+   2256
+  ],
+  "a_row": 1280,
+  "b_row": 2876,
+  "a_name": "Martyrdom of Saint Bartholomew（Lorenzo di Niccolò di Martino，1407-01-01）",
+  "b_name": "圣劳伦斯殉道",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是圣巴多罗买殉道（1407年洛伦佐作），另一件是圣劳伦斯殉道，殉道圣人不同。"
+ },
+ {
+  "a": [
+   "B",
+   2171
+  ],
+  "b": [
+   "C",
+   144
+  ],
+  "a_row": 2794,
+  "b_row": 3018,
+  "a_name": "圣塞巴斯蒂安",
+  "b_name": "Saint Sebastian（Bernardino di Lorenzo di Cecco，1482-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "Saint Sebastian即圣塞巴斯蒂安，为同馆同一件作品的中英文题名，作者年代无冲突信息。"
+ },
+ {
+  "a": [
+   "A",
+   579
+  ],
+  "b": [
+   "B",
+   487
+  ],
+  "a_row": 623,
+  "b_row": 1167,
+  "a_name": "朱迪斯与霍洛芬斯的头颅",
+  "b_name": "Judith with the Head of Holofernes（詹·馬蘇斯，1543-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "Judith with the Head of Holofernes即朱迪斯与霍洛芬斯的头颅，系同一件作品的英中题名对应。"
+ },
+ {
+  "a": [
+   "B",
+   2256
+  ],
+  "b": [
+   "C",
+   124
+  ],
+  "a_row": 2876,
+  "b_row": 2998,
+  "a_name": "圣劳伦斯殉道",
+  "b_name": "Martyrdom of Saint Marta（安東尼奧·岡薩雷茲·維拉斯奎茲，1741-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为圣劳伦斯殉道，一为冈萨雷斯·维拉斯奎兹所作圣玛尔塔殉道，圣徒对象与作者年代均不同，属不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   1871
+  ],
+  "b": [
+   "B",
+   1872
+  ],
+  "a_row": 473,
+  "b_row": 474,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条均无题名、无年代、无材质，仅同为陆俨少名下，无法确认指向同一件实物，按存疑处理。"
+ },
+ {
+  "a": [
+   "A",
+   625
+  ],
+  "b": [
+   "B",
+   390
+  ],
+  "a_row": 667,
+  "b_row": 1071,
+  "a_name": "狮吼观音",
+  "b_name": "Lion and Lioness（乔治·斯塔布斯，1771-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为明代狮吼观音造像，一为斯塔布斯1771年油画《狮与母狮》，门类、作者、年代完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "B",
+   1315
+  ],
+  "a_row": 633,
+  "b_row": 1979,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Roasting Apples（Joseph Decker，1868-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为苹果与橙子静物，一为德克尔1868年《烤苹果》，题材相近但非同一件作品。"
+ },
+ {
+  "a": [
+   "S",
+   7
+  ],
+  "b": [
+   "A",
+   449
+  ],
+  "a_row": 7,
+  "b_row": 493,
+  "a_name": "（传）宋徽宗《捣练图》Court ladies preparing newly woven silk（北宋，12 世纪初，绢本设色泥金）",
+  "b_name": "捣练图（张萱，1101-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名同为《捣练图》，但一条署宋徽宗（摹本）、一条署张萱（原作者），作者归属存在异说，不并。"
+ },
+ {
+  "a": [
+   "A",
+   604
+  ],
+  "b": [
+   "C",
+   971
+  ],
+  "a_row": 648,
+  "b_row": 3809,
+  "a_name": "雅典娜大理石雕像",
+  "b_name": "A Marble Quarry（James Hope，1851-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为雅典娜大理石雕像，一为詹姆斯·霍普1851年油画《大理石采石场》，仅“大理石”字面偶合。"
+ },
+ {
+  "a": [
+   "A",
+   33
+  ],
+  "b": [
+   "B",
+   415
+  ],
+  "a_row": 75,
+  "b_row": 1096,
+  "a_name": "Giovanni Paolo Pannini《Picture Gallery with Views of Modern Rome》现代罗马景观画廊（1757，布面油画）",
+  "b_name": "Capriccio of Roman Ruins with a Bas-Relief of a Charioteer（乔瓦尼·保罗·帕尼尼，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为帕尼尼所作，但一为1757年《现代罗马景观画廊》，一为《带驭车者浮雕的罗马废墟随想》，系不同作品。"
+ },
+ {
+  "a": [
+   "S",
+   12
+  ],
+  "b": [
+   "S",
+   15
+  ],
+  "a_row": 12,
+  "b_row": 15,
+  "a_name": "《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）",
+  "b_name": "《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·官网",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为门卡乌拉王与王后双人像，一为门卡乌拉三联像，是第四王朝的两件不同雕像。"
+ },
+ {
+  "a": [
+   "B",
+   2190
+  ],
+  "b": [
+   "C",
+   443
+  ],
+  "a_row": 2813,
+  "b_row": 3311,
+  "a_name": "维纳斯与丘比特",
+  "b_name": "Venus and Cupid (I)（纳西斯·比尔希略·迪亚斯，1847-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「维纳斯与丘比特」是通用神话题名且原清单未给作者年代，而对方题名带「(I)」编号说明同题存在多件，无法确指同一实物。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   192
+  ],
+  "a_row": 67,
+  "b_row": 232,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Portrait of Mulay Ahmad（彼得·保羅·魯本斯，1609-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为鲁本斯约1609年的《穆莱·艾哈迈德》肖像，仅题名有无「Portrait of」前缀之差，作者QID一致。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1437
+  ],
+  "a_row": 692,
+  "b_row": 2100,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Veve Voudou II（Loïs Mailou Jones，1963-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同一位琼斯的不同作品：一为《Hudson》肖像，一为1963年《Veve Voudou II》。"
+ },
+ {
+  "a": [
+   "C",
+   94
+  ],
+  "b": [
+   "C",
+   1705
+  ],
+  "a_row": 2969,
+  "b_row": 4534,
+  "a_name": "Windmill（Alexandre-Gabriel Decamps，1835-01-01，油彩）",
+  "b_name": "风车风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「风车风景」属风景类通用题名且原清单无作者年代，与德坎普《Windmill》无法确证为同一件。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   275
+  ],
+  "a_row": 51,
+  "b_row": 315,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "White Rose with Larkspur No. 2（喬治亞·歐姬芙，1927-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题材不同：带佩德纳尔山的鹿头骨 ≠ 1927年《White Rose with Larkspur No. 2》。"
+ },
+ {
+  "a": [
+   "A",
+   631
+  ],
+  "b": [
+   "B",
+   2249
+  ],
+  "a_row": 673,
+  "b_row": 2869,
+  "a_name": "蒂凡尼紫藤台灯",
+  "b_name": "马穆鲁克清真寺铜灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是蒂凡尼紫藤玻璃台灯，一件是马穆鲁克铜质清真寺灯，年代、材质、产地全不同。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   140
+  ],
+  "a_row": 9,
+  "b_row": 180,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Duchessa di Montejasi with Her Daughters, Elena and Camilla（埃德加·德加，1876-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德加的不同作品且门类不同：十四岁小舞者是雕塑，另一件是1876年油画家族肖像。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "B",
+   1075
+  ],
+  "a_row": 51,
+  "b_row": 1752,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Fishhook From Hawaii No. 2（喬治亞·歐姬芙，1939-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题材不同：鹿头骨 ≠ 1939年《Fishhook From Hawaii No. 2》。"
+ },
+ {
+  "a": [
+   "B",
+   2173
+  ],
+  "b": [
+   "C",
+   183
+  ],
+  "a_row": 2796,
+  "b_row": 3057,
+  "a_name": "湾流",
+  "b_name": "Stream through the Forest（César de Cock，1872-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「湾流」是温斯洛·霍默的 The Gulf Stream，与 César de Cock 的油画《Stream through the Forest》作者与作品均不同，仅因“stream/流”字面撞词。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   273
+  ],
+  "a_row": 51,
+  "b_row": 313,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Ends of Barns（喬治亞·歐姬芙，1922-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品，但《带佩德纳尔山的鹿头骨》与《Ends of Barns》(1922) 是两幅不同的画。"
+ },
+ {
+  "a": [
+   "A",
+   603
+  ],
+  "b": [
+   "B",
+   2247
+  ],
+  "a_row": 647,
+  "b_row": 2867,
+  "a_name": "青年男子青铜像",
+  "b_name": "雅典娜小型青铜像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是青年男子青铜像，一件是雅典娜小型青铜像，题材与对象不同，属两件不同藏品。"
+ },
+ {
+  "a": [
+   "A",
+   600
+  ],
+  "b": [
+   "A",
+   630
+  ],
+  "a_row": 644,
+  "b_row": 672,
+  "a_name": "杰胡提纳克特彩绘木棺",
+  "b_name": "阿梅尼尔迪斯彩绘外棺",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "杰胡提纳克特木棺与阿梅尼尔迪斯外棺分属不同墓主，是两件不同的彩绘棺。"
+ },
+ {
+  "a": [
+   "B",
+   2231
+  ],
+  "b": [
+   "C",
+   688
+  ],
+  "a_row": 2851,
+  "b_row": 3533,
+  "a_name": "齐本德尔边椅",
+  "b_name": "Black Cat on a Chair（Andrew L. von Wittkamp，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是齐本德尔家具边椅实物，一件是 von Wittkamp 画的油画《椅上黑猫》，仅“椅”字相同。"
+ },
+ {
+  "a": [
+   "A",
+   604
+  ],
+  "b": [
+   "B",
+   2247
+  ],
+  "a_row": 648,
+  "b_row": 2867,
+  "a_name": "雅典娜大理石雕像",
+  "b_name": "雅典娜小型青铜像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为雅典娜题材，但一件是大理石雕像、一件是小型青铜像，材质与尺寸不同，属两件不同雕像。"
+ },
+ {
+  "a": [
+   "A",
+   29
+  ],
+  "b": [
+   "B",
+   1988
+  ],
+  "a_row": 71,
+  "b_row": 2611,
+  "a_name": "Joachim Fries 款《Diana and Stag》狄安娜与牡鹿自动机（automaton）",
+  "b_name": "The Stag Hunt (1659)（Philips Wouwerman，1659-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是 Joachim Fries 款狄安娜与牡鹿自动机（金属工艺品），一件是 Wouwerman 1659 年油画《牡鹿狩猎》，作者与门类均不同。"
+ },
+ {
+  "a": [
+   "S",
+   42
+  ],
+  "b": [
+   "B",
+   152
+  ],
+  "a_row": 40,
+  "b_row": 833,
+  "a_name": "雾的警告",
+  "b_name": "Street Corner, Santiago de Cuba（温斯洛·霍默，1885-01-01，石墨）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为霍默 1885 年作品，但《雾的警告》是油画，《圣地亚哥街角》是石墨素描，属不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1434
+  ],
+  "a_row": 692,
+  "b_row": 2097,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Jeanne, Martiniquaise（Loïs Mailou Jones，1938-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones 作品，但《Hudson》肖像与 1938 年《Jeanne, Martiniquaise》是两幅不同的画，仅作者相同。"
+ },
+ {
+  "a": [
+   "B",
+   2185
+  ],
+  "b": [
+   "B",
+   2249
+  ],
+  "a_row": 2808,
+  "b_row": 2869,
+  "a_name": "黄铜星盘",
+  "b_name": "马穆鲁克清真寺铜灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是黄铜星盘（天文仪器），一件是马穆鲁克清真寺铜灯，器物类型与用途完全不同。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   27
+  ],
+  "a_row": 9,
+  "b_row": 69,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·官网",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品，但《十四岁的小舞者》雕塑与《隆尚的赛马》绘画是两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   572
+  ],
+  "b": [
+   "C",
+   441
+  ],
+  "a_row": 616,
+  "b_row": 3309,
+  "a_name": "丘比特与普赛克",
+  "b_name": "Venus and Cupid (II)（纳西斯·比尔希略·迪亚斯，1847-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题材主角不同（丘比特与普赛克 vs 维纳斯与丘比特），且 [b] 为迪亚斯 1847 年画作，无法对应。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "A",
+   140
+  ],
+  "a_row": 69,
+  "b_row": 180,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Duchessa di Montejasi with Her Daughters, Elena and Camilla（埃德加·德加，1876-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品，但《隆尚的赛马》与 1876 年《Duchessa di Montejasi 与两女》是不同画作。"
+ },
+ {
+  "a": [
+   "B",
+   512
+  ],
+  "b": [
+   "B",
+   2190
+  ],
+  "a_row": 1192,
+  "b_row": 2813,
+  "a_name": "Venus Clipping Cupid's Wings（让-巴蒂斯特·卡米耶·柯洛，1871-01-01，油彩）",
+  "b_name": "维纳斯与丘比特",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b]「维纳斯与丘比特」是无作者无年代的通用题名，与柯洛 1871 年《Venus Clipping Cupid's Wings》无法确证为同一件，存疑从否。"
+ },
+ {
+  "a": [
+   "S",
+   5
+  ],
+  "b": [
+   "S",
+   35
+  ],
+  "a_row": 5,
+  "b_row": 33,
+  "a_name": "John Singer Sargent《The Daughters of Edward Darley Boit》博伊特家的女儿们（1882，布面油画）",
+  "b_name": "爱德华·达里·博伊特的女儿（约翰·辛格·沙金，1882-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为沙金 1882 年油画《博伊特家的女儿们》，作者、年代、题名（中英译名）与材质均一致。"
+ },
+ {
+  "a": [
+   "B",
+   2228
+  ],
+  "b": [
+   "C",
+   849
+  ],
+  "a_row": 2848,
+  "b_row": 3692,
+  "a_name": "嵌铜银水壶",
+  "b_name": "Tijmentje Polishing Brass（Q21795337，1911-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是嵌铜银水壶（金属器），一件是 1911 年题为《Tijmentje Polishing Brass》的油画，门类完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "C",
+   1439
+  ],
+  "a_row": 633,
+  "b_row": 4270,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Zinnias and Apples（http://www.wikidata.org/.well-known/genid/fbdd33714f9e2c0098767ac8213d1505，1921-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名所指静物内容不同（苹果与橙子 vs 百日菊与苹果），属同类题材的不同作品"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   277
+  ],
+  "a_row": 700,
+  "b_row": 958,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Pontoise, the Road to Gisors in Winter（卡米耶·畢沙羅，1873-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗但题名与主题完全不同（草地上的两个农妇 vs 蓬图瓦兹冬季通往吉索尔的路），且年代未能对应"
+ },
+ {
+  "a": [
+   "B",
+   1872
+  ],
+  "b": [
+   "B",
+   1874
+  ],
+  "a_row": 474,
+  "b_row": 476,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条记录题名、年代、材质均缺失，仅同为陆俨少作品，无法确认指向同一件，按保守原则不合并"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1996
+  ],
+  "a_row": 692,
+  "b_row": 2619,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Portrait of Hudson（Loïs Mailou Jones，1932-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "作者、题名（Hudson 肖像 / Portrait of Hudson）、年代 1932 与材质均一致，系同一件油画的中英文记录"
+ },
+ {
+  "a": [
+   "B",
+   2237
+  ],
+  "b": [
+   "C",
+   441
+  ],
+  "a_row": 2857,
+  "b_row": 3309,
+  "a_name": "斜倚的丘比特",
+  "b_name": "Venus and Cupid (II)（纳西斯·比尔希略·迪亚斯，1847-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为「斜倚的丘比特」，一为迪亚斯《维纳斯与丘比特（二）》，题材相近但为不同作品"
+ },
+ {
+  "a": [
+   "B",
+   1873
+  ],
+  "b": [
+   "B",
+   1874
+  ],
+  "a_row": 475,
+  "b_row": 476,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条记录题名、年代、材质均缺失，仅同为陆俨少作品，无法确认指向同一件，按保守原则不合并"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "C",
+   211
+  ],
+  "a_row": 617,
+  "b_row": 3085,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "Fishing on the Banks of the Seine（Émile Lambinet，1872-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名与地点均不同（阿让特伊的塞纳河 vs 塞纳河岸垂钓），且原清单一条无作者信息，不能认定同件"
+ },
+ {
+  "a": [
+   "C",
+   270
+  ],
+  "b": [
+   "C",
+   1705
+  ],
+  "a_row": 3143,
+  "b_row": 4534,
+  "a_name": "Windmill on a Bluff（Georges Michel）",
+  "b_name": "风车风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「风车风景」属通用题名，与《悬崖上的风车》未必同件，米歇尔存在多幅风车题材作品，信息不足不予合并"
+ },
+ {
+  "a": [
+   "B",
+   3
+  ],
+  "b": [
+   "B",
+   230
+  ],
+  "a_row": 685,
+  "b_row": 911,
+  "a_name": "Anthony van Dyck《Isabella, Lady de La Warr》（约 1638，布面油画）",
+  "b_name": "Princess Mary, Daughter of Charles I（安东尼·范戴克，1637-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为范戴克作品但题名与对象不同：一为德拉瓦夫人伊莎贝拉肖像，一为查理一世之女玛丽公主像，属同一作者的不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   256
+  ],
+  "b": [
+   "B",
+   2254
+  ],
+  "a_row": 937,
+  "b_row": 2874,
+  "a_name": "Adoration of the Magi（Bartholomäus Zeitblom）",
+  "b_name": "三博士朝拜",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「三博士朝拜」是通用宗教题材题名，b 条无作者与年代佐证，无法确认即为蔡特布洛姆那一件，MFA 同题材另有他件，存疑从否。"
+ },
+ {
+  "a": [
+   "B",
+   2173
+  ],
+  "b": [
+   "C",
+   920
+  ],
+  "a_row": 2796,
+  "b_row": 3760,
+  "a_name": "湾流",
+  "b_name": "Gulf of Spezia（Henry Roderick Newman，1884-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「湾流」（Gulf Stream）与纽曼所绘「斯佩齐亚湾」（Gulf of Spezia）是不同题材的不同作品，仅因 Gulf 一词误撞。"
+ },
+ {
+  "a": [
+   "A",
+   631
+  ],
+  "b": [
+   "B",
+   1890
+  ],
+  "a_row": 673,
+  "b_row": 2521,
+  "a_name": "蒂凡尼紫藤台灯",
+  "b_name": "Blooming wisteria（齐白石）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为蒂凡尼紫藤图案玻璃台灯，一为齐白石紫藤画作，仅题材词「紫藤」相同，材质、作者、门类均不同。"
+ },
+ {
+  "a": [
+   "A",
+   26
+  ],
+  "b": [
+   "C",
+   1480
+  ],
+  "a_row": 68,
+  "b_row": 4310,
+  "a_name": "Donatello《Madonna of the Clouds》云中圣母（浮雕）",
+  "b_name": "The scene of allegory: drifting clouds（何懷碩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为多纳泰罗的大理石浮雕《云中圣母》，一为何懷碩的绘画《浮云》，作者、年代、材质全不相符，仅「云」字撞词。"
+ },
+ {
+  "a": [
+   "A",
+   23
+  ],
+  "b": [
+   "B",
+   722
+  ],
+  "a_row": 65,
+  "b_row": 1400,
+  "a_name": "Pierre-Auguste Renoir《Dance at Bougival》布吉瓦尔之舞（1883）",
+  "b_name": "Landscape on the Coast, near Menton（皮耶-奧古斯特·雷諾瓦，1883-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为雷诺阿 1883 年作品，但一为《布吉瓦尔之舞》人物画，一为《芒通附近海岸风景》风景画，是不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1871
+  ],
+  "a_row": 472,
+  "b_row": 473,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条记录题名均为空，仅有相同作者陆俨少，缺乏题名、年代、材质等可比信息，无法确认为同一件，存疑从否。"
+ },
+ {
+  "a": [
+   "A",
+   222
+  ],
+  "b": [
+   "B",
+   2231
+  ],
+  "a_row": 262,
+  "b_row": 2851,
+  "a_name": "Niagara from the American Side（阿爾伯特·比爾施塔特，1869-01-01）",
+  "b_name": "齐本德尔边椅",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为比尔施塔特的尼亚加拉瀑布油画，一为齐本德尔式边椅家具，门类、作者、年代完全不同。"
+ },
+ {
+  "a": [
+   "S",
+   10
+  ],
+  "b": [
+   "S",
+   30
+  ],
+  "a_row": 10,
+  "b_row": 29,
+  "a_name": "J.M.W. Turner《Slave Ship》奴隶船（1840）",
+  "b_name": "奴隸船（约瑟夫·马洛德·威廉·透纳，1840-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为透纳 1840 年油画《Slave Ship》，中英题名互为译名，作者 QID、年代、材质均一致。"
+ },
+ {
+  "a": [
+   "A",
+   558
+  ],
+  "b": [
+   "B",
+   2256
+  ],
+  "a_row": 602,
+  "b_row": 2876,
+  "a_name": "The Martyrdom of Saint Paul（1460-01-01，丝绸）",
+  "b_name": "圣劳伦斯殉道",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是圣保罗殉道，另一件是圣劳伦斯殉道，殉道主角不同，属不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   1956
+  ],
+  "b": [
+   "B",
+   2254
+  ],
+  "a_row": 2580,
+  "b_row": 2874,
+  "a_name": "Adoration of the Magi（http://www.wikidata.org/.well-known/genid/b22d620cfc1d0deeb42bab4037b5aeaf）",
+  "b_name": "三博士朝拜",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名虽对应「三博士朝拜」这一通用宗教题材，但 a 无作者、年代异常（620），无法确认是同一件而非馆藏中的另一件同题材作品。"
+ },
+ {
+  "a": [
+   "B",
+   2231
+  ],
+  "b": [
+   "C",
+   1307
+  ],
+  "a_row": 2851,
+  "b_row": 4142,
+  "a_name": "齐本德尔边椅",
+  "b_name": "Man in a Red Chair（http://www.wikidata.org/.well-known/genid/1b95b89e364c23559635ba15da3f6e02，1825-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是齐本德尔风格边椅（家具），另一件是 1825 年油画《Man in a Red Chair》，门类完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   270
+  ],
+  "a_row": 51,
+  "b_row": 310,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Shell and Old Shingle No. IV（喬治亞·歐姬芙，1926-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题名不同：《带佩德纳尔山的鹿头骨》与《Shell and Old Shingle No. IV》是两件独立作品。"
+ },
+ {
+  "a": [
+   "B",
+   2240
+  ],
+  "b": [
+   "C",
+   1420
+  ],
+  "a_row": 2860,
+  "b_row": 4251,
+  "a_name": "巴洛克狩猎挂毯残片",
+  "b_name": "English Hunting Scene（威廉·瑞莫，1871-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是巴洛克狩猎挂毯残片（织物），另一件是威廉·瑞莫 1871 年的《English Hunting Scene》，材质与作者年代均不符。"
+ },
+ {
+  "a": [
+   "B",
+   1987
+  ],
+  "b": [
+   "B",
+   2174
+  ],
+  "a_row": 2610,
+  "b_row": 2797,
+  "a_name": "Gust of Wind（Maxime Maufra，1899-01-01，油彩）",
+  "b_name": "乘风破浪",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「乘风破浪」并非 Maufra《Gust of Wind》的通行译名，原清单条目无作者年代佐证，不能确认为同一件。"
+ },
+ {
+  "a": [
+   "A",
+   282
+  ],
+  "b": [
+   "B",
+   2233
+  ],
+  "a_row": 322,
+  "b_row": 2853,
+  "a_name": "Mrs. Paul Revere (Rachel Walker)（吉尔伯特·斯图尔特，1813-01-01，油彩）",
+  "b_name": "保罗·里维尔银糖罐",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是斯图尔特所绘《Mrs. Paul Revere》肖像油画，另一件是里维尔制作的银糖罐，仅因人名相关而误配。"
+ },
+ {
+  "a": [
+   "A",
+   599
+  ],
+  "b": [
+   "B",
+   2246
+  ],
+  "a_row": 643,
+  "b_row": 2866,
+  "a_name": "杰胡提纳克特卡诺匹斯罐",
+  "b_name": "卡诺匹斯箱残件",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是杰胡提纳克特的卡诺匹斯罐，另一件是卡诺匹斯箱的残件，器形与件数均不同，属两件不同实物。"
+ },
+ {
+  "a": [
+   "B",
+   1872
+  ],
+  "b": [
+   "B",
+   1873
+  ],
+  "a_row": 474,
+  "b_row": 475,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条仅有相同作者陆俨少而题名年代皆缺，无法确认非同一作者的不同作品，按存疑判不合并。"
+ },
+ {
+  "a": [
+   "B",
+   2166
+  ],
+  "b": [
+   "C",
+   89
+  ],
+  "a_row": 2789,
+  "b_row": 2964,
+  "a_name": "十字军进入君士坦丁堡 习作",
+  "b_name": "Courtyard in Constantinople（Alberto Pasini，1868-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "前者是德拉克洛瓦《十字军进入君士坦丁堡》的习作，后者是帕西尼1868年《君士坦丁堡庭院》，作者与作品都不同。"
+ },
+ {
+  "a": [
+   "B",
+   793
+  ],
+  "b": [
+   "B",
+   2173
+  ],
+  "a_row": 1471,
+  "b_row": 2796,
+  "a_name": "Wooded Stream（泰奧多爾·盧梭，1859-01-01）",
+  "b_name": "湾流",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "前者是卢梭1859年的《林间溪流》，后者「湾流」指霍默的《The Gulf Stream》，作者与画作均不同。"
+ },
+ {
+  "a": [
+   "A",
+   572
+  ],
+  "b": [
+   "B",
+   1257
+  ],
+  "a_row": 616,
+  "b_row": 1922,
+  "a_name": "丘比特与普赛克",
+  "b_name": "Venus and Cupid（约翰·科普利，1779-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题材不同，一为丘比特与普赛克，一为科普利1779年《维纳斯与丘比特》，属两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   589
+  ],
+  "b": [
+   "C",
+   1148
+  ],
+  "a_row": 633,
+  "b_row": 3985,
+  "a_name": "苹果与橙子静物",
+  "b_name": "Green Apples（Maurice Sterne，1924-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "前者是塞尚式《苹果与橙子静物》，后者为斯特恩1924年《绿苹果》，作者与题名年代均不符。"
+ },
+ {
+  "a": [
+   "A",
+   606
+  ],
+  "b": [
+   "B",
+   2249
+  ],
+  "a_row": 650,
+  "b_row": 2869,
+  "a_name": "蒂凡尼牡丹台灯",
+  "b_name": "马穆鲁克清真寺铜灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是蒂凡尼牡丹纹玻璃台灯，一件是马穆鲁克风格清真寺铜灯，材质年代与产地全然不同。"
+ },
+ {
+  "a": [
+   "A",
+   584
+  ],
+  "b": [
+   "C",
+   496
+  ],
+  "a_row": 628,
+  "b_row": 3358,
+  "a_name": "十二朵向日葵",
+  "b_name": "Sunflowers in a Vase（Pieter van Veen，1930-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "前者指梵高《十二朵向日葵》，后者是范维恩1930年《瓶中向日葵》，仅题材相近而作者年代不同。"
+ },
+ {
+  "a": [
+   "A",
+   629
+  ],
+  "b": [
+   "B",
+   2247
+  ],
+  "a_row": 671,
+  "b_row": 2867,
+  "a_name": "青铜梵钟",
+  "b_name": "雅典娜小型青铜像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是日本镰仓时期青铜梵钟，一件是希腊雅典娜小型青铜像，仅同为青铜器，题材与实物完全不同。"
+ },
+ {
+  "a": [
+   "B",
+   1871
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 473,
+  "b_row": 2506,
+  "a_name": "",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 条只有作者陆俨少而无题名、年代、材质，无法确认与《陶渊明诗意山水》为同一幅，且「山水」属通用题名，同一作者多件易混。"
+ },
+ {
+  "a": [
+   "A",
+   614
+  ],
+  "b": [
+   "B",
+   1179
+  ],
+  "a_row": 658,
+  "b_row": 1852,
+  "a_name": "复活天使",
+  "b_name": "Resurrection（琼·斯奈德，1977-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「复活天使」指带天使形象的作品，与琼·斯奈德 1977 年抽象画《Resurrection》题材不符，仅「复活」一词偶合。"
+ },
+ {
+  "a": [
+   "B",
+   2185
+  ],
+  "b": [
+   "C",
+   849
+  ],
+  "a_row": 2808,
+  "b_row": 3692,
+  "a_name": "黄铜星盘",
+  "b_name": "Tijmentje Polishing Brass（Q21795337，1911-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是黄铜星盘实物器物，一件是 1911 年油画《Tijmentje Polishing Brass》，仅因「黄铜/brass」撞词。"
+ },
+ {
+  "a": [
+   "A",
+   607
+  ],
+  "b": [
+   "B",
+   2249
+  ],
+  "a_row": 651,
+  "b_row": 2869,
+  "a_name": "蒂凡尼蜻蜓台灯",
+  "b_name": "马穆鲁克清真寺铜灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "蒂凡尼蜻蜓玻璃台灯与马穆鲁克清真寺铜灯是年代、产地、材质完全不同的两件灯具。"
+ },
+ {
+  "a": [
+   "A",
+   105
+  ],
+  "b": [
+   "B",
+   2195
+  ],
+  "a_row": 146,
+  "b_row": 2815,
+  "a_name": "Approaching Storm: Beach near Newport（Martin Johnson Heade，1861-01-01，油彩）",
+  "b_name": "风暴将至的风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「风暴将至的风景」即希德 1861 年《Approaching Storm: Beach near Newport》的中文意译名，指同一幅 MFA 藏油画。"
+ },
+ {
+  "a": [
+   "A",
+   121
+  ],
+  "b": [
+   "A",
+   573
+  ],
+  "a_row": 162,
+  "b_row": 617,
+  "a_name": "Morning on the Seine, near Giverny（克劳德·莫奈，1896-01-01，油彩）",
+  "b_name": "阿让特伊的塞纳河",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为莫奈作品但地点不同：一为 1896 年吉维尼附近塞纳河晨景，一为阿让特伊的塞纳河，属不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   572
+  ],
+  "b": [
+   "B",
+   2190
+  ],
+  "a_row": 616,
+  "b_row": 2813,
+  "a_name": "丘比特与普赛克",
+  "b_name": "维纳斯与丘比特",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「丘比特与普赛克」与「维纳斯与丘比特」是题材不同的两件作品，仅共有丘比特一角。"
+ },
+ {
+  "a": [
+   "S",
+   40
+  ],
+  "b": [
+   "A",
+   495
+  ],
+  "a_row": 38,
+  "b_row": 539,
+  "a_name": "神奈川冲浪里",
+  "b_name": "Peonies and Canary（葛饰北斋）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为葛饰北斋作品但《神奈川冲浪里》与花鸟画《牡丹与金丝雀》是两件完全不同的版画，仅靠作者相同不能合并。"
+ },
+ {
+  "a": [
+   "A",
+   579
+  ],
+  "b": [
+   "C",
+   421
+  ],
+  "a_row": 623,
+  "b_row": 3289,
+  "a_name": "朱迪斯与霍洛芬斯的头颅",
+  "b_name": "Judith with the Head of Holofernes（马斯莫·斯坦茨奥内，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「朱迪斯与霍洛芬斯的头颅」即 Judith with the Head of Holofernes 的中译，馆藏该题名油画为马斯莫·斯坦茨奥内所作，题名逐词对应，视为同一件。"
+ },
+ {
+  "a": [
+   "B",
+   2189
+  ],
+  "b": [
+   "C",
+   318
+  ],
+  "a_row": 2812,
+  "b_row": 3189,
+  "a_name": "荒野中的圣哲罗姆",
+  "b_name": "Saint Jerome in the Wilderness（Jacopo da Valenza）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「荒野中的圣哲罗姆」是常见宗教题材，馆内同题名作品（含丢勒等版画）不止一件，而[a]未给作者、年代、材质，无法确认就是雅各布·达·瓦伦扎那件。"
+ },
+ {
+  "a": [
+   "A",
+   606
+  ],
+  "b": [
+   "A",
+   631
+  ],
+  "a_row": 650,
+  "b_row": 673,
+  "a_name": "蒂凡尼牡丹台灯",
+  "b_name": "蒂凡尼紫藤台灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是蒂凡尼牡丹纹台灯、一件是紫藤纹台灯，属同一工坊的不同款实物。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   273
+  ],
+  "a_row": 700,
+  "b_row": 954,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Spring Pasture（卡米耶·畢沙羅，1889-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "《草地上的两个农妇》与《春牧场》是毕沙罗的两件不同油画，题名与画面主体均不同，[a]又无年代佐证。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   194
+  ],
+  "a_row": 67,
+  "b_row": 234,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Landscape with an Avenue of Trees（彼得·保羅·魯本斯，1635-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "鲁本斯的肖像画《穆莱·艾哈迈德》与风景画《林荫道风景》是两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   607
+  ],
+  "b": [
+   "A",
+   631
+  ],
+  "a_row": 651,
+  "b_row": 673,
+  "a_name": "蒂凡尼蜻蜓台灯",
+  "b_name": "蒂凡尼紫藤台灯",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "蜻蜓纹台灯与紫藤纹台灯是蒂凡尼工坊的两款不同实物。"
+ },
+ {
+  "a": [
+   "B",
+   181
+  ],
+  "b": [
+   "B",
+   2253
+  ],
+  "a_row": 862,
+  "b_row": 2873,
+  "a_name": "Madonna and Child（亨利·摩尔，1943-01-01，青铜）",
+  "b_name": "圣母子板画",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]是亨利·摩尔1943年的青铜圣母子雕塑，[b]是圣母子板上绘画，作者与材质均不符。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1876
+  ],
+  "a_row": 472,
+  "b_row": 2507,
+  "a_name": "",
+  "b_name": "Landscape after a Liu Yong poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 条只有作者「陆俨少」而无题名、年代、材质，仅凭同一作者无法确认就是 b 的《柳永词意山水》，证据不足。"
+ },
+ {
+  "a": [
+   "B",
+   1257
+  ],
+  "b": [
+   "B",
+   2237
+  ],
+  "a_row": 1922,
+  "b_row": 2857,
+  "a_name": "Venus and Cupid（约翰·科普利，1779-01-01）",
+  "b_name": "斜倚的丘比特",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "科普利《维纳斯与丘比特》与「斜倚的丘比特」是题材相近但不同的两件作品，不能合并。"
+ },
+ {
+  "a": [
+   "B",
+   2185
+  ],
+  "b": [
+   "B",
+   2228
+  ],
+  "a_row": 2808,
+  "b_row": 2848,
+  "a_name": "黄铜星盘",
+  "b_name": "嵌铜银水壶",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "黄铜星盘与嵌铜银水壶是器形、用途完全不同的两件金属器。"
+ },
+ {
+  "a": [
+   "A",
+   568
+  ],
+  "b": [
+   "C",
+   1247
+  ],
+  "a_row": 612,
+  "b_row": 4082,
+  "a_name": "普赛克",
+  "b_name": "Psyche Carried Away by the Zephyrs（Sarah Paxton Ball Dodson，1883-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 仅为通用短名「普赛克」，无作者年代，无法确认即是多德森 1883 年油画《被西风神掳走的普赛克》。"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "B",
+   692
+  ],
+  "a_row": 617,
+  "b_row": 1370,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "View of the Seine at Herblay（保罗·西涅克，1889-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "阿让特伊的塞纳河与西涅克 1889 年《埃尔布莱的塞纳河景》地点与作者均不同，是不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   599
+  ],
+  "b": [
+   "A",
+   600
+  ],
+  "a_row": 643,
+  "b_row": 644,
+  "a_name": "杰胡提纳克特卡诺匹斯罐",
+  "b_name": "杰胡提纳克特彩绘木棺",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同属杰胡提纳克特墓葬，但卡诺匹斯罐与彩绘木棺是两件不同的随葬实物。"
+ },
+ {
+  "a": [
+   "B",
+   1050
+  ],
+  "b": [
+   "B",
+   2179
+  ],
+  "a_row": 1727,
+  "b_row": 2802,
+  "a_name": "The Silver Screen（Frank Weston Benson，1921-01-01，油彩）",
+  "b_name": "狩野派山水屏风",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "本森 1921 年油画《银屏》与江户狩野派山水屏风在作者、年代、材质上完全无关。"
+ },
+ {
+  "a": [
+   "S",
+   11
+  ],
+  "b": [
+   "A",
+   467
+  ],
+  "a_row": 11,
+  "b_row": 511,
+  "a_name": "Vincent van Gogh《Postman Joseph Roulin》邮差约瑟夫·鲁兰（1888）",
+  "b_name": "The Roulin Family（文森特·梵高，1888-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "梵高同年所作《邮差约瑟夫·鲁兰》与《鲁兰一家》是不同的两幅肖像作品。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "B",
+   324
+  ],
+  "a_row": 9,
+  "b_row": 1005,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Degas's Father Listening to Lorenzo Pagans Playing the Guitar（埃德加·德加，1870-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但一件是雕塑《十四岁的小舞者》、另一件是1870年油画《听帕甘斯弹吉他的德加之父》，属同一作者的不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1874
+  ],
+  "a_row": 472,
+  "b_row": 476,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条记录除同为陆俨少外均无题名、年代、材质等可比信息，无法确认指向同一件实物，从严判不合并。"
+ },
+ {
+  "a": [
+   "A",
+   617
+  ],
+  "b": [
+   "B",
+   622
+  ],
+  "a_row": 661,
+  "b_row": 1300,
+  "a_name": "基督哀悼",
+  "b_name": "The Lamentation over the Dead Christ（馬可·巴塞提）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「基督哀悼」是常见宗教题材的通用题名，原清单条目未注作者，与巴塞提所作《哀悼基督》无法对应，且同一题名另有克拉纳赫版本，作者归属存在异说。"
+ },
+ {
+  "a": [
+   "A",
+   587
+  ],
+  "b": [
+   "B",
+   2202
+  ],
+  "a_row": 631,
+  "b_row": 2822,
+  "a_name": "浴女",
+  "b_name": "树下浴女",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「浴女」与「树下浴女」题名不同、无作者与年代佐证，属同一题材的不同件。"
+ },
+ {
+  "a": [
+   "A",
+   603
+  ],
+  "b": [
+   "A",
+   629
+  ],
+  "a_row": 647,
+  "b_row": 671,
+  "a_name": "青年男子青铜像",
+  "b_name": "青铜梵钟",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是青年男子青铜像，一件是约1185–1333年的青铜梵钟，仅因材质同为青铜而命中，实为两件不同器物。"
+ },
+ {
+  "a": [
+   "A",
+   617
+  ],
+  "b": [
+   "B",
+   613
+  ],
+  "a_row": 661,
+  "b_row": 1291,
+  "a_name": "基督哀悼",
+  "b_name": "The Lamentation（老卢卡斯·克拉纳赫，1538-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "原清单「基督哀悼」无作者信息，而该题名同时可对应克拉纳赫与巴塞提等多件作品，作者归属存在异说，不能合并。"
+ },
+ {
+  "a": [
+   "B",
+   2094
+  ],
+  "b": [
+   "B",
+   2185
+  ],
+  "a_row": 2717,
+  "b_row": 2808,
+  "a_name": "An astrolabe with an equatorial ring on the rete（1375-01-01，黃銅）",
+  "b_name": "黄铜星盘",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "原清单「黄铜星盘」仅给出材质、无年代与形制细节，无法确认即是1375年那件带赤道环星盘，馆藏星盘不止一件。"
+ },
+ {
+  "a": [
+   "B",
+   2237
+  ],
+  "b": [
+   "C",
+   1422
+  ],
+  "a_row": 2857,
+  "b_row": 4253,
+  "a_name": "斜倚的丘比特",
+  "b_name": "Venus and Cupid（Q22002318）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「斜倚的丘比特」与《维纳斯与丘比特》题材构图不同，仅因「丘比特」一词命中，属不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   901
+  ],
+  "b": [
+   "B",
+   2206
+  ],
+  "a_row": 1578,
+  "b_row": 2826,
+  "a_name": "Dancing Willows（亚瑟·达夫，1944-01-01）",
+  "b_name": "跳舞的酒神女祭司",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是亚瑟·达夫 1944 年的抽象画《Dancing Willows》（舞动的柳树），b 是「跳舞的酒神女祭司」雕塑题材，作者与实物均不同。"
+ },
+ {
+  "a": [
+   "B",
+   2176
+  ],
+  "b": [
+   "B",
+   2202
+  ],
+  "a_row": 2799,
+  "b_row": 2822,
+  "a_name": "坐着的浴女",
+  "b_name": "树下浴女",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「坐着的浴女」与「树下浴女」是浴女题材下的两件不同作品，通用题名不足以证明同一件。"
+ },
+ {
+  "a": [
+   "S",
+   4
+  ],
+  "b": [
+   "B",
+   2233
+  ],
+  "a_row": 4,
+  "b_row": 2853,
+  "a_name": "John Singleton Copley《Paul Revere》保罗·里维尔像（1768，布面油画）",
+  "b_name": "保罗·里维尔银糖罐",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是科普利 1768 年的油画肖像《保罗·里维尔像》，b 是里维尔本人打造的银糖罐，媒介与实物完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   587
+  ],
+  "b": [
+   "B",
+   2176
+  ],
+  "a_row": 631,
+  "b_row": 2799,
+  "a_name": "浴女",
+  "b_name": "坐着的浴女",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「浴女」与「坐着的浴女」均为通用题名，无作者、年代、材质佐证，应视为两件不同藏品。"
+ },
+ {
+  "a": [
+   "B",
+   2229
+  ],
+  "b": [
+   "B",
+   2240
+  ],
+  "a_row": 2849,
+  "b_row": 2860,
+  "a_name": "狩猎纹釉陶板",
+  "b_name": "巴洛克狩猎挂毯残片",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是狩猎纹釉陶板，一件是巴洛克狩猎挂毯残片，仅题材相近，材质与年代皆异。"
+ },
+ {
+  "a": [
+   "A",
+   158
+  ],
+  "b": [
+   "B",
+   2238
+  ],
+  "a_row": 198,
+  "b_row": 2858,
+  "a_name": "Instruments of the Passion of Christ（耶罗尼米斯·博斯，1498-01-01，油彩）",
+  "b_name": "哥特牙雕双联板：基督受难",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是博斯 1498 年的油彩《基督受难刑具》，b 是哥特牙雕双联板，作者、材质、形制均不同。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   141
+  ],
+  "a_row": 9,
+  "b_row": 181,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Visit to a Museum（埃德加·德加，1879-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但分属两件：《十四岁的小舞者》是雕塑，《Visit to a Museum》是 1879 年油画。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   1989
+  ],
+  "a_row": 700,
+  "b_row": 2612,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "The Delafolie House, Éragny（卡米耶·畢沙羅，1885-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗作品但题名不同：《草地上的两个农妇》与 1885 年《埃拉尼的德拉福利宅邸》是两幅画。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   142
+  ],
+  "a_row": 9,
+  "b_row": 182,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Edmondo and Thérèse Morbilli（埃德加·德加，1865-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但不同件：[a] 是雕塑《十四岁的小舞者》，[b] 是 1865 年油画《埃德蒙多与泰蕾兹·莫比利夫妇像》，题材、年代、材质均不符。"
+ },
+ {
+  "a": [
+   "A",
+   594
+  ],
+  "b": [
+   "B",
+   2200
+  ],
+  "a_row": 638,
+  "b_row": 2820,
+  "a_name": "红白梅图屏风",
+  "b_name": "李子果园",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是尾形光琳风格的《红白梅图》屏风，[b] 指向另一件以梅园为题的作品，两者为不同实物，仅因「梅／李」题材用词相近而误配。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   468
+  ],
+  "a_row": 9,
+  "b_row": 512,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "At the Races in the Countryside（埃德加·德加，1869-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但不同件：[a] 是雕塑《十四岁的小舞者》，[b] 是 1869 年油画《乡间赛马》。"
+ },
+ {
+  "a": [
+   "A",
+   625
+  ],
+  "b": [
+   "C",
+   106
+  ],
+  "a_row": 667,
+  "b_row": 2980,
+  "a_name": "狮吼观音",
+  "b_name": "Lion and Boar（安托万-路易·巴里，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是明代中国狮吼观音造像，[b] 是巴里的《狮与野猪》油画，作者、国别、材质完全不同，仅因「狮」字相撞。"
+ },
+ {
+  "a": [
+   "B",
+   103
+  ],
+  "b": [
+   "B",
+   2256
+  ],
+  "a_row": 784,
+  "b_row": 2876,
+  "a_name": "The martyrdom of Saint Hippolytus（1492-01-01）",
+  "b_name": "圣劳伦斯殉道",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "殉道主角不同：[a] 为圣希波吕托斯殉道（1492），[b] 为圣劳伦斯殉道，属同题材不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   191
+  ],
+  "a_row": 67,
+  "b_row": 231,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Virgin and Child Adored by Saints（彼得·保羅·魯本斯，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为鲁本斯作品但不同件：[a] 是《穆莱·艾哈迈德》肖像，[b] 是《圣徒崇敬圣母子》。"
+ },
+ {
+  "a": [
+   "S",
+   4
+  ],
+  "b": [
+   "A",
+   608
+  ],
+  "a_row": 4,
+  "b_row": 652,
+  "a_name": "John Singleton Copley《Paul Revere》保罗·里维尔像（1768，布面油画）",
+  "b_name": "保罗·里维尔银茶壶",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是科普利 1768 年布面油画《保罗·里维尔像》，[b] 是里维尔本人打制的银茶壶，一为绘画一为银器，实物不同。"
+ },
+ {
+  "a": [
+   "A",
+   607
+  ],
+  "b": [
+   "B",
+   1838
+  ],
+  "a_row": 651,
+  "b_row": 2486,
+  "a_name": "蒂凡尼蜻蜓台灯",
+  "b_name": "Bamboo And Dragonfly（堂本印象）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是蒂凡尼蜻蜓图案彩玻台灯，[b] 是堂本印象的《竹与蜻蜓》绘画，作者、材质、类别均不同，仅共享「蜻蜓」题材。"
+ },
+ {
+  "a": [
+   "A",
+   570
+  ],
+  "b": [
+   "B",
+   146
+  ],
+  "a_row": 614,
+  "b_row": 827,
+  "a_name": "牧场少年",
+  "b_name": "Boy Milking a Cow（温斯洛·霍默，1874-01-01，纸）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「牧场少年」即 Homer 的油画 Boy in a Pasture，与纸本的 Boy Milking a Cow 是同作者同年的两件不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   24
+  ],
+  "b": [
+   "B",
+   737
+  ],
+  "a_row": 66,
+  "b_row": 1415,
+  "a_name": "Rembrandt van Rijn《Artist in his Studio》画室中的艺术家（约 1628）",
+  "b_name": "Old Man in Prayer（伦勃朗，1630-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为伦勃朗作品但题名与年代均不同（画室中的艺术家约1628 vs 祈祷的老人1630），属不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   2173
+  ],
+  "b": [
+   "C",
+   472
+  ],
+  "a_row": 2796,
+  "b_row": 3339,
+  "a_name": "湾流",
+  "b_name": "Willows by a Stream（Pascal Dagnan-Bouveret，1908-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「湾流」与 Dagnan-Bouveret 的《溪畔垂柳》题名、作者、题材均不符，仅因 stream 一词误配。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "A",
+   142
+  ],
+  "a_row": 69,
+  "b_row": 182,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Edmondo and Thérèse Morbilli（埃德加·德加，1865-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品但一为《隆尚的赛马》、一为《莫尔比利夫妇肖像》，题材与题名完全不同。"
+ },
+ {
+  "a": [
+   "A",
+   613
+  ],
+  "b": [
+   "B",
+   639
+  ],
+  "a_row": 657,
+  "b_row": 1317,
+  "a_name": "塔楼的戴安娜",
+  "b_name": "The Philosopher's Tower（莫里斯·郁特里罗，1920-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「塔楼的戴安娜」与郁特里罗《哲学家之塔》题名与题材不同，仅共享「塔」字。"
+ },
+ {
+  "a": [
+   "S",
+   14
+  ],
+  "b": [
+   "B",
+   1339
+  ],
+  "a_row": 14,
+  "b_row": 2003,
+  "a_name": "《安克哈夫王子胸像》Bust of Prince Ankhhaf（古王国第四王朝）",
+  "b_name": "Bust of Prince Ankh-haf, profile view, G 7510, Giza, 3rd Dynasty（Joseph Lindon Smith）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是第四王朝安克哈夫王子石胸像实物，[b] 是 Joseph Lindon Smith 绘制的该胸像侧面写生画，属两件不同实物。"
+ },
+ {
+  "a": [
+   "B",
+   1870
+  ],
+  "b": [
+   "B",
+   1873
+  ],
+  "a_row": 472,
+  "b_row": 475,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条均无题名、年代与材质，仅同作者不足以确认为同一件，按保守原则不合并。"
+ },
+ {
+  "a": [
+   "B",
+   625
+  ],
+  "b": [
+   "C",
+   1704
+  ],
+  "a_row": 1303,
+  "b_row": 4533,
+  "a_name": "Portrait of a Young Woman（伊莉莎白·維傑·勒布倫，1797-01-01，油彩）",
+  "b_name": "年轻女子肖像",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「年轻女子肖像」为通用题名且无作者与年代信息，无法确认即维热·勒布伦 1797 年那件。"
+ },
+ {
+  "a": [
+   "A",
+   22
+  ],
+  "b": [
+   "A",
+   565
+  ],
+  "a_row": 64,
+  "b_row": 609,
+  "a_name": "Claude Monet《Water Lilies》睡莲",
+  "b_name": "睡莲",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "两条同指波士顿美术馆藏莫奈《Water Lilies》睡莲，b 为该画的中文短名，题名与作者一致。"
+ },
+ {
+  "a": [
+   "A",
+   568
+  ],
+  "b": [
+   "A",
+   572
+  ],
+  "a_row": 612,
+  "b_row": 616,
+  "a_name": "普赛克",
+  "b_name": "丘比特与普赛克",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「普赛克」单像与「丘比特与普赛克」是题材相关但各自独立的两件作品。"
+ },
+ {
+  "a": [
+   "A",
+   591
+  ],
+  "b": [
+   "B",
+   2211
+  ],
+  "a_row": 635,
+  "b_row": 2831,
+  "a_name": "明永乐青花大瓶",
+  "b_name": "明万历青花大罐",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是永乐朝青花大瓶、一件是万历朝青花大罐，年款与器型均不同，属不同器物。"
+ },
+ {
+  "a": [
+   "B",
+   1872
+  ],
+  "b": [
+   "B",
+   1876
+  ],
+  "a_row": 474,
+  "b_row": 2507,
+  "a_name": "",
+  "b_name": "Landscape after a Liu Yong poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 无题名、年代等任何识别信息，仅作者同为陆俨少，不足以判定为同一幅画。"
+ },
+ {
+  "a": [
+   "S",
+   17
+  ],
+  "b": [
+   "A",
+   60
+  ],
+  "a_row": 17,
+  "b_row": 101,
+  "a_name": "《大日如来坐像》Dainichi, Buddha of Infinite Illumination（日本，1149 年，木造）",
+  "b_name": "《阿弥陀如来像》Amida, Buddha of Infinite Light（日本，12 世纪，木造）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·官网",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "大日如来坐像（1149年）与阿弥陀如来像（12世纪）是尊格与纪年都不同的两尊木雕。"
+ },
+ {
+  "a": [
+   "A",
+   326
+  ],
+  "b": [
+   "A",
+   639
+  ],
+  "a_row": 365,
+  "b_row": 681,
+  "a_name": "Hercules and the Hydra（约翰·辛格·沙金，1921-01-01，油彩）",
+  "b_name": "赫拉克勒斯功绩石棺",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一件是沙金 1921 年油画《Hercules and the Hydra》，一件是古罗马赫拉克勒斯功绩石棺，年代与材质完全不同。"
+ },
+ {
+  "a": [
+   "B",
+   1873
+  ],
+  "b": [
+   "B",
+   1876
+  ],
+  "a_row": 475,
+  "b_row": 2507,
+  "a_name": "",
+  "b_name": "Landscape after a Liu Yong poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 无题名与年代信息，仅共享作者陆俨少，无法确认与该幅《Landscape after a Liu Yong poem》为同件。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "B",
+   1074
+  ],
+  "a_row": 51,
+  "b_row": 1751,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "In the Patio No. IV（喬治亞·歐姬芙，1948-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但分别是《带佩德纳尔山的鹿头骨》与《In the Patio No. IV》，属不同画作。"
+ },
+ {
+  "a": [
+   "S",
+   12
+  ],
+  "b": [
+   "S",
+   39
+  ],
+  "a_row": 12,
+  "b_row": 37,
+  "a_name": "《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）",
+  "b_name": "Statue of Menkaura and Queen Khamerernebty II",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "同为 MFA 藏古王国第四王朝门卡乌拉王与王后杂砂岩双人立像（编号11.1738），b 只是把王后具名为哈美雷内布蒂二世。"
+ },
+ {
+  "a": [
+   "A",
+   33
+  ],
+  "b": [
+   "B",
+   414
+  ],
+  "a_row": 75,
+  "b_row": 1095,
+  "a_name": "Giovanni Paolo Pannini《Picture Gallery with Views of Modern Rome》现代罗马景观画廊（1757，布面油画）",
+  "b_name": "Capriccio of Roman Ruins with a Statue of Silenus and Dionysus（乔瓦尼·保罗·帕尼尼，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为帕尼尼所作但题材不同，一为《现代罗马景观画廊》，一为带西勒诺斯与狄俄尼索斯雕像的罗马废墟随想画，属同一作者的不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   272
+  ],
+  "a_row": 51,
+  "b_row": 312,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "A Sunflower from Maggie（喬治亞·歐姬芙，1937-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "均为欧姬芙油画，但《带佩德纳尔山的鹿头骨》与《玛姬送来的向日葵》是两件不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "C",
+   1127
+  ],
+  "a_row": 692,
+  "b_row": 3964,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Glyphs（Loïs Mailou Jones，1985-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones 作品，但《Hudson》肖像与 1985 年的《Glyphs》题材年代均不同，系不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   434
+  ],
+  "b": [
+   "B",
+   2200
+  ],
+  "a_row": 478,
+  "b_row": 2820,
+  "a_name": "Releasing the Oar in the Plum Valley（富岡鐵齋）",
+  "b_name": "李子果园",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "富冈铁斋《梅溪放棹》与「李子果园」仅因「梅/李」类词块相撞，题名与内容不对应，且后者无作者年代佐证。"
+ },
+ {
+  "a": [
+   "A",
+   634
+  ],
+  "b": [
+   "B",
+   147
+  ],
+  "a_row": 676,
+  "b_row": 828,
+  "a_name": "渔夫一家",
+  "b_name": "Fisherwomen（温斯洛·霍默，1881-01-01，石墨）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为霍默 1881 年英国时期作品，但《渔夫一家》与石墨素描《Fisherwomen》题名与材质均不同，属不同作品。"
+ },
+ {
+  "a": [
+   "A",
+   602
+  ],
+  "b": [
+   "C",
+   117
+  ],
+  "a_row": 646,
+  "b_row": 2991,
+  "a_name": "狄俄尼索斯饮酒赛马赛克",
+  "b_name": "Horses Drinking（安東·毛沃）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为古代狄俄尼索斯饮酒主题马赛克，一为安东·毛沃的绘画《Horses Drinking》，年代、作者、材质全不相干。"
+ },
+ {
+  "a": [
+   "A",
+   598
+  ],
+  "b": [
+   "A",
+   639
+  ],
+  "a_row": 642,
+  "b_row": 681,
+  "a_name": "内斯帕卡舒提石棺",
+  "b_name": "赫拉克勒斯功绩石棺",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "内斯帕卡舒提石棺（埃及）与赫拉克勒斯功绩石棺（罗马）是两件不同的实物，仅共享「石棺」词块。"
+ },
+ {
+  "a": [
+   "A",
+   451
+  ],
+  "b": [
+   "A",
+   628
+  ],
+  "a_row": 495,
+  "b_row": 670,
+  "a_name": "Tiger（曾我萧白，1770-01-01，纸）",
+  "b_name": "雪中猛虎",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 为曾我萧白 1770 年纸本《Tiger》，[b]「雪中猛虎」只给通用虎题材、无作者年代信息，雪景描述也对不上，属同题材可能不同件，从严判否。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "B",
+   2046
+  ],
+  "a_row": 67,
+  "b_row": 2669,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "Coronation of the Virgin（彼得·保羅·魯本斯，1625-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为鲁本斯作品但题名完全不同，《穆莱·艾哈迈德》肖像与《圣母加冕》是两件独立画作。"
+ },
+ {
+  "a": [
+   "C",
+   271
+  ],
+  "b": [
+   "C",
+   1705
+  ],
+  "a_row": 3144,
+  "b_row": 4534,
+  "a_name": "Landscape with a Windmill（Georges Michel）",
+  "b_name": "风车风景",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「风车风景」即 Georges Michel《Landscape with a Windmill》的中译，题名与作者对应一致，系同馆同一幅画。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "B",
+   1072
+  ],
+  "a_row": 51,
+  "b_row": 1749,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Lightning at Sea（喬治亞·歐姬芙，1922-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但《带佩德纳尔山的鹿头骨》与《Lightning at Sea》是题材、年代均不同的两幅画。"
+ },
+ {
+  "a": [
+   "S",
+   36
+  ],
+  "b": [
+   "A",
+   566
+  ],
+  "a_row": 34,
+  "b_row": 610,
+  "a_name": "Colossal Statue of Menkaura in Boston（http://www.wikidata.org/.well-known/genid/df65bb85e74bd803c0025d76ab83ab",
+  "b_name": "拉美西斯二世花岗岩巨像",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一为门卡拉（孟考拉）巨像，一为拉美西斯二世花岗岩巨像，法老对象不同，是两件不同雕像。"
+ },
+ {
+  "a": [
+   "B",
+   1257
+  ],
+  "b": [
+   "B",
+   2190
+  ],
+  "a_row": 1922,
+  "b_row": 2813,
+  "a_name": "Venus and Cupid（约翰·科普利，1779-01-01）",
+  "b_name": "维纳斯与丘比特",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": true,
+  "reason": "「维纳斯与丘比特」即 John Singleton Copley 1779 年《Venus and Cupid》的中译，题名对应一致，为同一幅画。"
+ },
+ {
+  "a": [
+   "B",
+   18
+  ],
+  "b": [
+   "B",
+   276
+  ],
+  "a_row": 700,
+  "b_row": 957,
+  "a_name": "Camille Pissarro《Two Peasant Women in a Meadow (Le Pré)》草地上的两个农妇",
+  "b_name": "Turkey Girl（卡米耶·畢沙羅，1884-01-01，纸）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为毕沙罗作品但《草地上的两个农妇》与《Turkey Girl》题名、媒材不同，是两件独立作品。"
+ },
+ {
+  "a": [
+   "A",
+   641
+  ],
+  "b": [
+   "B",
+   544
+  ],
+  "a_row": 683,
+  "b_row": 1222,
+  "a_name": "牧羊女",
+  "b_name": "Buckwheat Harvest, Summer（讓-弗朗索瓦·米勒，1871-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为米勒 1871 年作品，但《牧羊女》与《荞麦收获·夏》是不同画作，仅作者年代相同不足以合并。"
+ },
+ {
+  "a": [
+   "B",
+   2206
+  ],
+  "b": [
+   "C",
+   690
+  ],
+  "a_row": 2826,
+  "b_row": 3535,
+  "a_name": "跳舞的酒神女祭司",
+  "b_name": "The Dancing Bear（Anne Lyman Powers，1952-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是古典题材的舞蹈酒神女祭司雕塑/画作，b 是 Anne Lyman Powers 1952 年油画《跳舞的熊》，题材、作者、年代均不同，仅因译名词块相近而误命中。"
+ },
+ {
+  "a": [
+   "A",
+   24
+  ],
+  "b": [
+   "A",
+   307
+  ],
+  "a_row": 66,
+  "b_row": 346,
+  "a_name": "Rembrandt van Rijn《Artist in his Studio》画室中的艺术家（约 1628）",
+  "b_name": "An Artist in His Studio（约翰·辛格·沙金，1904-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "题名虽同为「画室中的艺术家」，但一件是伦勃朗约 1628 年作品、另一件是沙金 1904 年作品，作者与年代完全不同，属同题名的两件不同藏品。"
+ },
+ {
+  "a": [
+   "A",
+   566
+  ],
+  "b": [
+   "B",
+   1385
+  ],
+  "a_row": 610,
+  "b_row": 2049,
+  "a_name": "拉美西斯二世花岗岩巨像",
+  "b_name": "Head of colossal statue of Amen（Joseph Lindon Smith，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是拉美西斯二世花岗岩巨像（埃及雕塑），b 是 Joseph Lindon Smith 描绘阿蒙神巨像头部的油画，媒介与所指实物均不同。"
+ },
+ {
+  "a": [
+   "B",
+   2254
+  ],
+  "b": [
+   "C",
+   188
+  ],
+  "a_row": 2874,
+  "b_row": 3062,
+  "a_name": "三博士朝拜",
+  "b_name": "Adoration of the Magi（多梅尼科·丁托列托，1605-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「三博士朝拜」为通用宗教题名，a 条未给作者与年代，无法确认即为丁托列托 1605 年这一件，同题材馆藏多件，存在误合并风险。"
+ },
+ {
+  "a": [
+   "A",
+   47
+  ],
+  "b": [
+   "B",
+   977
+  ],
+  "a_row": 88,
+  "b_row": 1654,
+  "a_name": "《奥古斯都头像》Head of Augustus（罗马，大理石）",
+  "b_name": "George Augustus Gardner（Dennis Miller Bunker，1888-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是罗马大理石奥古斯都头像，b 是 Dennis Miller Bunker 1888 年的肖像油画《George Augustus Gardner》，仅共享「Augustus」一词，实物无关。"
+ },
+ {
+  "a": [
+   "A",
+   129
+  ],
+  "b": [
+   "A",
+   574
+  ],
+  "a_row": 169,
+  "b_row": 618,
+  "a_name": "Snow at Argenteuil（克劳德·莫奈，1874-01-01，油彩）",
+  "b_name": "阿让特伊大桥",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为莫奈在阿让特伊所作，但《阿让特伊雪景》与《阿让特伊大桥》是两幅不同作品，属同一艺术家的不同画作。"
+ },
+ {
+  "a": [
+   "B",
+   3
+  ],
+  "b": [
+   "B",
+   229
+  ],
+  "a_row": 685,
+  "b_row": 910,
+  "a_name": "Anthony van Dyck《Isabella, Lady de La Warr》（约 1638，布面油画）",
+  "b_name": "Portrait of a Man with an Armillary Sphere（安东尼·范戴克，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为范戴克作品，但一幅是德拉瓦尔夫人伊莎贝拉的女性肖像，另一幅是持浑天仪的男子肖像，画中人与作品均不同。"
+ },
+ {
+  "a": [
+   "A",
+   355
+  ],
+  "b": [
+   "A",
+   640
+  ],
+  "a_row": 394,
+  "b_row": 682,
+  "a_name": "Samuel Quincy（约翰·科普利，1767-01-01，油彩）",
+  "b_name": "丽贝卡·博伊尔斯顿肖像",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两幅均为科普利 1767 年的肖像，但分别描绘 Samuel Quincy 与 Rebecca Boylston，是同一作者同年所作的两件不同肖像。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1433
+  ],
+  "a_row": 692,
+  "b_row": 2096,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Ubi Girl from Tai Region（Loïs Mailou Jones，1972-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同一作者的不同作品：[a] 是名为《Hudson》的肖像，[b] 是 1972 年的《Ubi Girl from Tai Region》，题名与题材均不同，仅靠作者相同不足以合并。"
+ },
+ {
+  "a": [
+   "A",
+   613
+  ],
+  "b": [
+   "C",
+   1458
+  ],
+  "a_row": 657,
+  "b_row": 4289,
+  "a_name": "塔楼的戴安娜",
+  "b_name": "Tower（http://www.wikidata.org/.well-known/genid/a3dadfcb47709b7ab265fd2470469efb，1986-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a]「塔楼的戴安娜」是圣高登斯的镀金铜像，[b] 是作者不明（genid 占位）的 1986 年油画《Tower》，材质、年代、作者全不对应，仅共享「塔」字。"
+ },
+ {
+  "a": [
+   "A",
+   573
+  ],
+  "b": [
+   "B",
+   712
+  ],
+  "a_row": 617,
+  "b_row": 1390,
+  "a_name": "阿让特伊的塞纳河",
+  "b_name": "The Seine at Chatou（皮耶-奧古斯特·雷諾瓦，1881-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同题材不同件：[a] 是阿让特伊的塞纳河，[b] 是雷诺阿画的沙图（Chatou）河段，地点不同，属两幅画。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   271
+  ],
+  "a_row": 51,
+  "b_row": 311,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Shell and Old Shingle No. VII（喬治亞·歐姬芙，1926-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "欧姬芙的两件不同作品：[a] 是布面油画《带佩德纳尔山的鹿头骨》，[b] 是 1926 年《Shell and Old Shingle No. VII》，仅作者相同。"
+ },
+ {
+  "a": [
+   "A",
+   25
+  ],
+  "b": [
+   "A",
+   196
+  ],
+  "a_row": 67,
+  "b_row": 236,
+  "a_name": "Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德",
+  "b_name": "The Sacrifice of the Old Covenant（彼得·保羅·魯本斯，1650-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "鲁本斯的不同作品：[a] 为肖像《穆莱·艾哈迈德》，[b] 为宗教题材《旧约献祭》（1650），题名与题材均不符。"
+ },
+ {
+  "a": [
+   "B",
+   315
+  ],
+  "b": [
+   "B",
+   2254
+  ],
+  "a_row": 996,
+  "b_row": 2874,
+  "a_name": "Adoration of the Magi（Corrado Giaquinto，1725-01-01，油彩）",
+  "b_name": "三博士朝拜",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "「三博士朝拜」是被众多画家反复描绘的通用宗教题名，[a] 无作者与年代信息，无法确认即为焦阿基诺 1725 年那一件，存在同题材不同件的风险。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "A",
+   79
+  ],
+  "a_row": 69,
+  "b_row": 120,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Dancers in the Rehearsal Room（埃德加·德加，1900-01-01，纸）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德加的不同作品：[a] 为《隆尚的赛马》，[b] 为纸本《排练厅中的舞者》（1900），题材与材质均不同。"
+ },
+ {
+  "a": [
+   "A",
+   23
+  ],
+  "b": [
+   "B",
+   721
+  ],
+  "a_row": 65,
+  "b_row": 1399,
+  "a_name": "Pierre-Auguste Renoir《Dance at Bougival》布吉瓦尔之舞（1883）",
+  "b_name": "Children on the Seashore, Guernsey（皮耶-奧古斯特·雷諾瓦，1883-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "雷诺阿同年（1883）创作的两幅不同画作：《布吉瓦尔之舞》与《根西岛海边的孩子》，仅作者与年代重合。"
+ },
+ {
+  "a": [
+   "A",
+   63
+  ],
+  "b": [
+   "A",
+   460
+  ],
+  "a_row": 104,
+  "b_row": 504,
+  "a_name": "《毗沙门天像》Bishamonten, Guardian of the North（日本，11–12 世纪，木造）",
+  "b_name": "Bishamonten, the Guardian of the North, with his Retinue（http://www.wikidata.org/.well-known/genid/d36be1669bc",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块",
+   "题名相等"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条虽同为毗沙门天题材，但 [a] 是 11–12 世纪木造单尊立像，[b] 是「与眷属」的群像作品，属同题材不同件。"
+ },
+ {
+  "a": [
+   "A",
+   624
+  ],
+  "b": [
+   "B",
+   404
+  ],
+  "a_row": 666,
+  "b_row": 1085,
+  "a_name": "水罐与水果静物",
+  "b_name": "Still Life of Bottles and Pitcher（乔治·莫兰迪，1946-01-01，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[b] 是莫兰迪 1946 年《瓶与水罐静物》，[a] 为「水罐与水果」静物且无作者年代信息，静物题名通用、所绘物件也不同，不能认定同件。"
+ },
+ {
+  "a": [
+   "A",
+   144
+  ],
+  "b": [
+   "A",
+   578
+  ],
+  "a_row": 184,
+  "b_row": 622,
+  "a_name": "Victorine Meurent（愛德華·馬奈，1862-01-01，油彩）",
+  "b_name": "街头歌女",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两件同为马奈 1862 年以 Victorine Meurent 为模特的作品，但《维多琳·莫涵肖像》与《街头歌女》是馆藏两件不同画作。"
+ },
+ {
+  "a": [
+   "A",
+   605
+  ],
+  "b": [
+   "C",
+   710
+  ],
+  "a_row": 649,
+  "b_row": 3555,
+  "a_name": "绘战斗场景陶葬瓮",
+  "b_name": "Variations on a Greek Urn（Byron Browne，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 是绘战斗场景的古希腊陶葬瓮实物，[b] 是拜伦·布朗的现代油画《希腊瓮变奏》，媒材与年代完全不同。"
+ },
+ {
+  "a": [
+   "S",
+   9
+  ],
+  "b": [
+   "A",
+   79
+  ],
+  "a_row": 9,
+  "b_row": 120,
+  "a_name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+  "b_name": "Dancers in the Rehearsal Room（埃德加·德加，1900-01-01，纸）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "德加同一作者的不同作品：[a] 是《十四岁的小舞者》雕塑，[b] 是纸本《排练厅中的舞者》。"
+ },
+ {
+  "a": [
+   "B",
+   1871
+  ],
+  "b": [
+   "B",
+   1876
+  ],
+  "a_row": 473,
+  "b_row": 2507,
+  "a_name": "",
+  "b_name": "Landscape after a Liu Yong poem（陆俨少）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 题名缺失，仅凭作者陆俨少无法确认与 [b]《柳永词意山水》为同一件，按存疑不合并。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "B",
+   1071
+  ],
+  "a_row": 51,
+  "b_row": 1748,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Grey Wash Forms（喬治亞·歐姬芙，1936-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "欧姬芙同一作者的不同作品：布面油画《带佩德纳尔山的鹿头骨》与 1936 年《灰色淡彩形体》。"
+ },
+ {
+  "a": [
+   "B",
+   2182
+  ],
+  "b": [
+   "B",
+   2248
+  ],
+  "a_row": 2805,
+  "b_row": 2868,
+  "a_name": "犍陀罗佛首",
+  "b_name": "阿玛拉瓦蒂砂岩佛造像",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "[a] 为犍陀罗片岩佛首，[b] 为阿玛拉瓦蒂砂岩佛造像，产地、材质与形制均不同，是两件佛教造像。"
+ },
+ {
+  "a": [
+   "A",
+   9
+  ],
+  "b": [
+   "A",
+   269
+  ],
+  "a_row": 51,
+  "b_row": 309,
+  "a_name": "Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）",
+  "b_name": "Shell and Old Shingle No. III（喬治亞·歐姬芙，1926-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为欧姬芙作品但题材完全不同：一为《带佩德纳尔山的鹿头骨》，一为1926年的《Shell and Old Shingle No. III》，属同一作者的不同作品。"
+ },
+ {
+  "a": [
+   "B",
+   2195
+  ],
+  "b": [
+   "C",
+   929
+  ],
+  "a_row": 2815,
+  "b_row": 3767,
+  "a_name": "风暴将至的风景",
+  "b_name": "Plowed Field with Approaching Storm, Vermont（Herbert Barnett，1948-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "仅「风暴将至」一词相合，a 是泛称的「风景」而 b 是「佛蒙特犁过的田地与将至的风暴」，且 a 无作者与年代可资佐证，不足以确认同一件。"
+ },
+ {
+  "a": [
+   "B",
+   10
+  ],
+  "b": [
+   "B",
+   1439
+  ],
+  "a_row": 692,
+  "b_row": 2102,
+  "a_name": "Loïs Mailou Jones《Hudson》肖像",
+  "b_name": "Two Faiths, Paris（Loïs Mailou Jones，1944-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为 Loïs Mailou Jones 作品，但一为《Hudson》肖像、一为1944年《Two Faiths, Paris》，题材与年代均不同。"
+ },
+ {
+  "a": [
+   "A",
+   29
+  ],
+  "b": [
+   "A",
+   613
+  ],
+  "a_row": 71,
+  "b_row": 657,
+  "a_name": "Joachim Fries 款《Diana and Stag》狄安娜与牡鹿自动机（automaton）",
+  "b_name": "塔楼的戴安娜",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "a 是 Joachim Fries 款狄安娜与牡鹿自动机，b「塔楼的戴安娜」是另一件（圣高登斯式）戴安娜雕像，仅题材人物相同。"
+ },
+ {
+  "a": [
+   "A",
+   27
+  ],
+  "b": [
+   "B",
+   325
+  ],
+  "a_row": 69,
+  "b_row": 1006,
+  "a_name": "Edgar Degas《Racehorses at Longchamp》隆尚的赛马",
+  "b_name": "Ballet Dancer with Arms Crossed（埃德加·德加，1872-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为德加作品，但《隆尚的赛马》与《Ballet Dancer with Arms Crossed》是不同题材的两幅画。"
+ },
+ {
+  "a": [
+   "A",
+   129
+  ],
+  "b": [
+   "A",
+   573
+  ],
+  "a_row": 169,
+  "b_row": 617,
+  "a_name": "Snow at Argenteuil（克劳德·莫奈，1874-01-01，油彩）",
+  "b_name": "阿让特伊的塞纳河",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为阿让特伊题材的莫奈风景，但《Snow at Argenteuil》（雪景）与《阿让特伊的塞纳河》是不同的两幅画。"
+ },
+ {
+  "a": [
+   "B",
+   1871
+  ],
+  "b": [
+   "B",
+   1874
+  ],
+  "a_row": 473,
+  "b_row": 476,
+  "a_name": "",
+  "b_name": "",
+  "a_sub": "原清单",
+  "b_sub": "原清单",
+  "channels": [
+   "作者+年代",
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "两条记录均无题名、年代与材质，仅作者相同，无法确认指向同一件实物，从严判否。"
+ },
+ {
+  "a": [
+   "S",
+   42
+  ],
+  "b": [
+   "A",
+   87
+  ],
+  "a_row": 40,
+  "b_row": 128,
+  "a_name": "雾的警告",
+  "b_name": "Harbor Island, Bahamas（温斯洛·霍默，1885-01-01）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "作者+年代"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "同为霍默1885年作品，但《雾的警告》与《Harbor Island, Bahamas》是不同的两件，仅作者与年份重合。"
+ },
+ {
+  "a": [
+   "A",
+   202
+  ],
+  "b": [
+   "B",
+   2215
+  ],
+  "a_row": 242,
+  "b_row": 2835,
+  "a_name": "Evangelist Writing（伦勃朗，1663-01-01，油彩）",
+  "b_name": "菊花纹漆砚盒",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一条是伦勃朗1663年的布面油画《福音书作者写作》，另一条是日本江户时期的菊花纹漆砚盒，作者、年代、材质、品类全不相干。"
+ },
+ {
+  "a": [
+   "B",
+   2214
+  ],
+  "b": [
+   "C",
+   301
+  ],
+  "a_row": 2834,
+  "b_row": 3173,
+  "a_name": "秋浦图扇面",
+  "b_name": "By the Riverside（Henry Lerolle，油彩）",
+  "a_sub": "原清单",
+  "b_sub": "ext·wikidata",
+  "channels": [
+   "稀有词块"
+  ],
+  "review_only": false,
+  "same": false,
+  "reason": "一条是日本江户时期的秋浦图扇面，另一条是法国画家Henry Lerolle的油画《河畔》，作者、产地、材质与形制均不同。"
+ }
+]

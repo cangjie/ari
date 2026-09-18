@@ -1,0 +1,537 @@
+[
+ {
+  "a": [
+   "B",
+   1252
+  ],
+  "b": [
+   "A",
+   621
+  ],
+  "a_row": 1917,
+  "b_row": 663,
+  "a_name": "Mrs. Charles E. Inches (Louise Pomeroy)（约翰·辛格·沙金，1887-01-01，油彩）",
+  "b_name": "查尔斯·英奇斯夫人",
+  "rule": "跨管线馆藏号 1991.926",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   366
+  ],
+  "b": [
+   "A",
+   640
+  ],
+  "a_row": 405,
+  "b_row": 682,
+  "a_name": "Portrait of Rebecca Boylston（约翰·科普利，1767-01-01，油彩）",
+  "b_name": "丽贝卡·博伊尔斯顿肖像",
+  "rule": "跨管线馆藏号 1976.667",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   1805
+  ],
+  "b": [
+   "A",
+   570
+  ],
+  "a_row": 2463,
+  "b_row": 614,
+  "a_name": "Boys in a Pasture（温斯洛·霍默，1874-01-01，油彩）",
+  "b_name": "牧场少年",
+  "rule": "跨管线馆藏号 53.2552",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   731
+  ],
+  "b": [
+   "B",
+   2170
+  ],
+  "a_row": 1409,
+  "b_row": 2793,
+  "a_name": "Virgin and Child with Saints（皮得罗·达·科尔托纳，油彩）",
+  "b_name": "圣母子与诸圣",
+  "rule": "跨管线馆藏号 42.422",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "C",
+   593
+  ],
+  "b": [
+   "C",
+   1710
+  ],
+  "a_row": 3445,
+  "b_row": 4536,
+  "a_name": "Study of a Male Nude（http://www.wikidata.org/.well-known/genid/a800c8bc98ce1f0c5",
+  "b_name": "男性人体习作",
+  "rule": "跨管线馆藏号 91.26",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   89
+  ],
+  "b": [
+   "A",
+   583
+  ],
+  "a_row": 130,
+  "b_row": 627,
+  "a_name": "Mrs. Fiske Warren (Gretchen Osgood) and Her Daughter Rachel（约翰·辛格·沙金，1903-01-01，",
+  "b_name": "菲斯克·沃伦夫人与女儿",
+  "rule": "跨管线馆藏号 64.693",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": false
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   2105
+  ],
+  "b": [
+   "B",
+   2235
+  ],
+  "a_row": 2728,
+  "b_row": 2855,
+  "a_name": "Still Life with Fruit and Shells（巴尔塔萨·范·德·阿斯特，1623-01-01）",
+  "b_name": "水果贝壳静物",
+  "rule": "跨管线馆藏号 2018.2109",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   545
+  ],
+  "b": [
+   "A",
+   641
+  ],
+  "a_row": 1223,
+  "b_row": 683,
+  "a_name": "Young Shepherdess（讓-弗朗索瓦·米勒，1871-01-01，油彩）",
+  "b_name": "牧羊女",
+  "rule": "跨管线馆藏号 77.249",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": false
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   1318
+  ],
+  "b": [
+   "C",
+   1712
+  ],
+  "a_row": 1982,
+  "b_row": 4538,
+  "a_name": "Portrait of an Old Man（Joseph Hirsch，1939-01-01，油彩）",
+  "b_name": "老者肖像",
+  "rule": "跨管线馆藏号 42.175",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   562
+  ],
+  "b": [
+   "A",
+   578
+  ],
+  "a_row": 606,
+  "b_row": 622,
+  "a_name": "Street Singer（愛德華·馬奈，1862-01-01，油彩）",
+  "b_name": "街头歌女",
+  "rule": "跨管线馆藏号 66.304",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   480
+  ],
+  "b": [
+   "S",
+   45
+  ],
+  "a_row": 524,
+  "b_row": 43,
+  "a_name": "Appeal to the Great Spirit（Cyrus Edwin Dallin，1909-01-01，青铜）",
+  "b_name": "向伟大之灵祈祷",
+  "rule": "跨管线馆藏号 13.38",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "S",
+   23
+  ],
+  "b": [
+   "S",
+   42
+  ],
+  "a_row": 23,
+  "b_row": 40,
+  "a_name": "The Fog Warning（温斯洛·霍默，1885-01-01，油彩）",
+  "b_name": "雾的警告",
+  "rule": "跨管线馆藏号 94.72",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   70
+  ],
+  "b": [
+   "A",
+   634
+  ],
+  "a_row": 111,
+  "b_row": 676,
+  "a_name": "Fisherman's Family（温斯洛·霍默，1881-01-01，纸）",
+  "b_name": "渔夫一家",
+  "rule": "跨管线馆藏号 48.726",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "C",
+   287
+  ],
+  "b": [
+   "B",
+   2255
+  ],
+  "a_row": 3160,
+  "b_row": 2875,
+  "a_name": "River Landscape with Figures（Giuseppe Zais，油彩）",
+  "b_name": "人物河流风景",
+  "rule": "跨管线馆藏号 21.1461",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": false
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "S",
+   29
+  ],
+  "b": [
+   "A",
+   564
+  ],
+  "a_row": 28,
+  "b_row": 608,
+  "a_name": "Lullaby: Madame Augustine Roulin Rocking a Cradle (La Berceuse)（文森特·梵高，1889-01-0",
+  "b_name": "摇摇篮的鲁林夫人",
+  "rule": "跨管线馆藏号 48.548",
+  "checks": {
+   "作者不冲突": true,
+   "年代不冲突": true,
+   "题名有交集": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   159
+  ],
+  "b": [
+   "A",
+   160
+  ],
+  "a_row": 199,
+  "b_row": 200,
+  "a_name": "Franco van Langhel and His Sons with Saint John the Evangelist (outer face); Pie",
+  "b_name": "Heilwich van der Rullen and Her Daughters with Saint Mary Magdalen (outer face);",
+  "rule": "组画分件 基号 56.171（作者 Q130531 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1870
+  ],
+  "a_row": 471,
+  "b_row": 472,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "",
+  "rule": "组画分件 基号 1986.127（作者 Q1872755 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1871
+  ],
+  "a_row": 471,
+  "b_row": 473,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1872
+  ],
+  "a_row": 471,
+  "b_row": 474,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1873
+  ],
+  "a_row": 471,
+  "b_row": 475,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1874
+  ],
+  "a_row": 471,
+  "b_row": 476,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1875
+  ],
+  "a_row": 471,
+  "b_row": 2506,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "Landscape after a Tao Yuanming poem（陆俨少）",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "A",
+   432
+  ],
+  "b": [
+   "B",
+   1876
+  ],
+  "a_row": 471,
+  "b_row": 2507,
+  "a_name": "Landscapes after Tang poems（陆俨少）",
+  "b_name": "Landscape after a Liu Yong poem（陆俨少）",
+  "rule": "组画分件 基号 1986.127（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   126
+  ],
+  "b": [
+   "B",
+   128
+  ],
+  "a_row": 807,
+  "b_row": 809,
+  "a_name": "Night（安东尼奥·洛佩斯·加西亚，2008-01-01，青铜）",
+  "b_name": "Day（安东尼奥·洛佩斯·加西亚，2008-01-01，青铜）",
+  "rule": "组画分件 基号 2008.166（作者 Q1257924 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   1454
+  ],
+  "b": [
+   "B",
+   1455
+  ],
+  "a_row": 2117,
+  "b_row": 2118,
+  "a_name": "#3（Martha Diamond，2008-01-01，油彩）",
+  "b_name": "#6（Martha Diamond，2008-01-01，油彩）",
+  "rule": "组画分件 基号 2009.5053（作者 Q20857237 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ },
+ {
+  "a": [
+   "B",
+   1454
+  ],
+  "b": [
+   "B",
+   1456
+  ],
+  "a_row": 2117,
+  "b_row": 2119,
+  "a_name": "#3（Martha Diamond，2008-01-01，油彩）",
+  "b_name": "#7（Martha Diamond，2008-01-01，油彩）",
+  "rule": "组画分件 基号 2009.5053（作者 ? 一致）",
+  "checks": {
+   "基号相同": true,
+   "作者一致": true
+  },
+  "auto": true
+ }
+]

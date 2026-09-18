@@ -1,0 +1,83 @@
+[
+ {
+  "gid": 24,
+  "akey": "Q159758",
+  "rows": [
+   10,
+   29
+  ],
+  "reason": "J.M.W. Turner同一时期同一作品《Slave Ship/奴隶船》的两条记录，英文题名分别为简称与完整题名。"
+ },
+ {
+  "gid": 750,
+  "akey": "佚名",
+  "rows": [
+   24,
+   31
+  ],
+  "reason": "古代日本平治物語绘卷及其分卷三条殿夜讨，同一部作品的整体与分卷记录。"
+ },
+ {
+  "gid": 13,
+  "akey": "Q7486",
+  "rows": [
+   30,
+   42
+  ],
+  "reason": "宋徽宗《五色鹦鹉图卷》的两个不同题名版本记录（Five-colored parakeet on a blossoming apricot tree / Five-Coloured Parrot Scroll）。"
+ },
+ {
+  "gid": 12,
+  "akey": "Q5586",
+  "rows": [
+   6,
+   20
+  ],
+  "reason": "葛饰北斋名作《凯风快晴》（赤富士）的两个英文题名版本（Red Fuji / Fine Wind, Clear Weather），同一件作品。"
+ },
+ {
+  "gid": 747,
+  "akey": "佚名",
+  "rows": [
+   12,
+   37
+  ],
+  "reason": "埃及第四王朝Menkaura王与王后Khamerernebty II的双像雕刻，同一件的中英文不同题名版本。"
+ },
+ {
+  "gid": 747,
+  "akey": "佚名",
+  "rows": [
+   15,
+   36
+  ],
+  "reason": "Menkaura王与两位女神（Hathor和地方保护神）的三联像雕刻，馆藏号09.200确认为同一件；Mycerinus为Menkaura的异译名。"
+ },
+ {
+  "gid": 31,
+  "akey": "Q344838",
+  "rows": [
+   111,
+   676
+  ],
+  "reason": "同一作品的中英两版记录，馆藏号48.726"
+ },
+ {
+  "gid": 31,
+  "akey": "Q344838",
+  "rows": [
+   23,
+   40
+  ],
+  "reason": "同一作品的中英两版记录，馆藏号94.72"
+ },
+ {
+  "gid": 31,
+  "akey": "Q344838",
+  "rows": [
+   614,
+   2463
+  ],
+  "reason": "同一作品的中英两版记录，馆藏号53.2552"
+ }
+]

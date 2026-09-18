@@ -85,7 +85,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十一条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十二条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -149,6 +149,11 @@ B 899 格填 106。`Tier S` / `Tier A` / `Tier B` 三页是同一批数据的分
 官方页面链接，格式与三个中文馆同构。**它不是旧文件的超集**，两份互补取并集
 （用户 09-03 决定），不是新旧替换。
 
+**这份清单不到馆藏的 1%**（2026-09-11 查清）：135 件取自约 20 个官网概览页
+（部门首页、150 周年幻灯片、几个展厅页，单件页只有 7 个），4329 件约等于
+Wikidata 上 `P195=MFA` 的全部条目（一共 4429 条）。MFA 馆藏约 50 万件。
+**某件 MFA 展品在库里查不到是常态**，缺口出在源头的选取方式，不是抓取失败。
+
 **⚠ 早先这里写的「北斋《神奈川冲浪里》、Revere 自由之子碗均不在其中」不准确，已更正**：
 北斋的《凯风快晴（赤富士）》就在 `ext#31`、Copley 的《保罗·里维尔像》在 `ext#16`。
 真正不在 ext 的是《神奈川冲浪里》本身（`old#3`，2026-09-10 逐件确认过）。
@@ -158,6 +163,8 @@ B 899 格填 106。`Tier S` / `Tier A` / `Tier B` 三页是同一批数据的分
 old 的 203 件里有 16 件与 ext 重复，用户定的规则是**以 ext 为准**。
 做法是启发式召回（名称 token 权重 2.0、简介 0.6，滤掉过于常见的 token，取 top3）
 再由模型逐对确认 —— **召回分数不能直接采信**：「神奈川冲浪里」会召回「赤富士」。
+**这套逐对召回已被第 12 条取代**：它只做 old×ext、从不做 ext×ext，
+203 件里 151 件零候选、从未送审就默认成了「独有」。
 4 对已知真重复（水月观音/小舞者/捣练图/博伊特的女儿们）全部命中，可作回归基准。
 
 **ext 内部也有重复**：捣练图同时是 `ext#32`（归宋徽宗）与 `ext#4028`（归张萱）。
@@ -216,7 +223,9 @@ Wikidata 来源 4329 件的 P195 全部含 MFA（Q49133），**但其中 33 件�
     纯 HTTP 拿到 202 空页，**无头浏览器（playwright + chromium）撞的是同一堵墙**；
   · `robots.txt` **`Disallow: /search`** —— 按馆藏号查的入口正是被禁的那条，
     且 `Crawl-delay: 30`（3900 件要爬 32 小时）；
-  · **MFA 没有公开 API**（哈佛、大都会都有）。
+  · **MFA 没有公开 API**（哈佛、大都会都有）；
+  · 2026-09-16 复测：`WebFetch` 同样拿到空页（响应头 `x-amzn-waf-action: challenge`），
+    旧版 `www.mfa.org/collections/object/…` 直接 **403**。
 
 绕过人机验证是另一种性质的事，不做。可用的替代只有两条，各有上限：
 **Wikidata P4625（MFA 对象 ID）**能绕开被禁的 `/search` 直接拼 `/objects/{id}`（robots 允许），
@@ -229,33 +238,57 @@ Wikidata 来源 4329 件的 P195 全部含 MFA（Q49133），**但其中 33 件�
 202 行为 `True`，导入器照抄。那是某个时间点从 MFA 馆藏库导出的，时效不明。
 
 **⚠ 用模型填在展状态：做过了，结论是「在展」这一列不能这么来（2026-09-14/15）。**
-用户知情后决定试，由 `fill_onview_gemini.py` 就地改合并版 Excel 的 `陈列状态`/`展厅`
+用户知情后决定试，由 `fill_onview_gemini.py` 改合并版 Excel 的 `陈列状态`/`展厅`
 两列，S+A 677 件跑完（`gemini-3.6-flash` 20 次配额用尽后换 `gemini-3.5-flash`，
 两者同批横评一致率 92%）。**结果不能当事实用，有两条实测证据：**
 
 1. **在我们唯一有独立答案的样本上，它判错了，且错在最有害的方向。**
    `mfa_membership.json` 的 32 件已离馆展品里，模型把 **2 件判成「在展」**——
-   埃尔·格列柯《天使报喜》，以及莫奈《安提布堡》**还配了具体展厅号 `Gallery 252`**。
-   给一件已经易主的画写上展厅号，游客会照着走过去。
+   埃尔·格列柯《天使报喜》，以及莫奈 `The Fort of Antibes`（seq 4118，
+   Wikidata 记 2011 年离开 MFA、现属 Museum Barberini）**还配了 `Gallery 252`**。
+   **252 是真展厅，就是 MFA 的莫奈厅** —— 错的不是号，是把「MFA 的莫奈挂在 252」
+   这条通则套到了一件已不属于 MFA 的画上。游客会照着走过去。
    已由 `fix_departed_onview.py` 按核实结果钉成「不在展」（确定性，零 API）。
    **没有理由认为其余四千行没有同类错误 —— 只是查不出来。**
-2. **不开检索时它会伪造出处。** 同一个问题（Homer《The Fog Warning》在哪个展厅）：
-   裸 `generateContent` 答 **`Gallery 222`** 并自称「根据波士顿美术馆的官方馆藏记录」
-   （它没查过任何记录）；用户在 Gemini App 里开着检索问，答 **`Gallery 234`**。
-   **两个数字不一样，不带检索的那个还编了个出处。**
+2. **不开检索时它会伪造出处。** 问 Homer《The Fog Warning》在哪个展厅，
+   裸 `generateContent` 答 `Gallery 222`，还自称「根据波士顿美术馆的官方馆藏记录」——
+   它没查过任何记录，**编的是出处**。
+   **⚠ 早先这里据此推断「222 是编的、234 是对的」，那是错的（2026-09-16 更正）**：
+   `222` 在官网来源的展厅列里出现 5 次，是真展厅；Gemini App 开检索给的 `234`
+   反倒在我们表里一次都没出现过。同一个问题问了三次，得到三种答案：
+   `222`、`234`、「美洲艺术翼二楼」（09-16 在 App 里再问，没给号）。
+   **一个展厅号看着像真的，不等于它对。**
 
-所以 `fill_onview_gemini.py` 的提示词写死「记不准展厅号就留空」——
-挡住的正是 `Gallery 222` 这类东西，代价是展厅列大片为空（118 件判在展里 73 件没给展厅）。
-**那些空格不是失败，是唯一诚实的输出。** 模型把「古埃及展厅」「印象派展厅」这类
-放进了 `note`，由 `mark_gallery_precision.py` 救回并加后缀 `（部门级，未确认具体展厅）`
-—— 保留信息，但不让粗粒度冒充精确定位（与 78 行「Art of Europe 欧洲艺术」同一个形状）。
+跟用户说明具体展品时，**给行号和表里的原名**，别用只存在于文档里的中译
+（09-16 用户按「安提布堡」在表里搜不到，表里只有 `The Fort of Antibes`）。
+同题材的莫奈另有三件（`Antibes, Afternoon Effect` 等），它们仍属 MFA，不要混在一起。
 
-**正确的做法是给检索能力 + 要出处，而不是靠禁令。** `gallery_grounded.py` 走
-`tools: [{"google_search": {}}]`，硬规则是**没有 `groundingChunks` 就不写**，
-写入格式 `Gallery 234（来源：mfa.org）`，证据落 `gallery_grounded.jsonl`。
-**⚠ 结构化输出与搜索工具不能同时用**（`responseSchema` 与 `tools` 冲突），
-故改为让模型以 `GALLERY: xxx` 收尾再正则取值，取不到算失败、不猜。
-**尚未跑过**（配额耗尽），首次跑先 `--limit 2` 拿 The Fog Warning 对照 `Gallery 234`。
+**展厅粒度，用户 2026-09-16 定：翼楼+楼层（`Art of the Americas Wing, Level 2`）可以接受。**
+提示词随之放开：记不准展厅号时填翼楼/部门层级，**但仍然不许编号**。
+工作副本是 `exports/展品_波士顿美术馆_展厅检索.xlsx`，用 `copy_sheet.py` 从合并版里
+抽出「去重后总表」这一张，**合并版原件从此只读**。
+
+**⚠ 09-16 那一轮把 34 行本来更准的值改差了。** 选行条件改成「展厅不够具体就选」后，
+三百多行已有值的行也被卷了进来，写入却仍是无条件覆盖：58 行被改写，**34 行变差、0 行变好**
+（`Level LG, Gallery LG33 — …` 被改成 `Art of the Americas Wing`，丢了一个真展厅号）。
+现在写入一律先过 `gallery_text.better()`。粒度按 `precision()` 分四级：
+展厅号 / 翼楼+楼层 / 只到部门 / 空。**新值严格更具体才写，平手时原值赢**
+（原值有出处，模型的答案没有）。被挡下的答案落 `onview_rejected.jsonl`。
+已用 `gallery_precision_guard.py` 按 `(来源表,来源行)` 还原了 54 行，
+净效果：77 行变好，0 行变差。`is_specific()` 早先认不出 `Gallery LG33`
+这种带字母前缀的厅号，这是行 50 被卷进去重填的直接原因，也已修好。
+
+**免费渠道拿不到展厅号**（09-16 逐条试过）：Gemini 免费层没有检索（见下）；
+`collections.mfa.org` 和 `www.mfa.org` 都挡脚本；网页搜索只给到翼楼一级；
+Wikidata 只到馆一级。公开网络上能拿到的就只有翼楼这个粒度。
+
+**`gallery_grounded.py` 仍然一次都没跑成。** 它会开 `google_search`，
+**没有 `groundingChunks` 就不写**。卡住的原因是：免费项目没有检索额度，付费项目余额为 0。
+脚本已改成先判在展、再问展厅，并跳过 32 件已核实离馆的。
+预算用 `--max-queries` 按**搜索次数**设：Gemini 3 按 `webSearchQueries` 的条数计费，
+一次请求可能触发好几次搜索。大批量又不设预算的话，脚本直接拒跑。
+**⚠ 结构化输出与搜索工具不能同时用**，所以让模型以 `ONVIEW:` / `GALLERY:` 收尾，
+再用正则取值。首次跑先 `--limit 2`。
 
 **⚠ Gemini 免费层的实情，跟文档写的对不上（2026-09-14 实测）：**
 · **项目一旦开过预付计费，免费层对它就永久失效**，余额为 0 时**所有型号**一律
@@ -267,6 +300,15 @@ Wikidata 来源 4329 件的 P195 全部含 MFA（Q49133），**但其中 33 件�
 · 配额**按型号分别计**，但 S+A 这类同一批数据换型号跑会混判据，不可比。
 · **`gemini-2.5-flash` 对新用户已下线**（404，官方指向 `gemini-3.6-flash`）。
 · 卡请求数不卡 token ⇒ **加大批次是唯一有效的省法**（同第 10 条那条结论）。
+· **免费层没有 Search grounding**（2026-09-16 实测）：同一个型号，不带 tools 返回 200，
+  带 `google_search` 就 429，8 个型号全都一样。错误体里**没有 `QuotaFailure`**
+  （没有 quotaId，也没有 retryDelay）。连旧工具名 `google_search_retrieval` 也是 429，
+  不是 400，说明拦截发生在参数校验之前：卡的是权限，不是配额。
+· key 分两个文件：`~/.gemini_key` 是付费项目（09-16 余额为 0，连裸调用都 429），
+  `~/.gemini_key_free` 是免费项目。脚本用 `--key-file` 显式指定，别靠默认值去猜哪把在花钱。
+· **python.org 版 Python 装在 macOS 上时不带根证书**，所有 HTTPS 都会报
+  `CERTIFICATE_VERIFY_FAILED`。这个错看起来像网络问题，`gemini_api` 会把它当瞬时错误重试。
+  所有网络脚本一律走 `tls.ssl_ctx()`，没有根证书时自动改用 certifi，**绝不关闭证书校验**。
 
 **⚠ 读源 Excel 生成 `source_seq` 时，必须按「过滤之后」的计数自增。**
 `import_artworks.read_museum` 是这么做的，`tier_v3.load_items` 曾用 `enumerate` 的行号
@@ -577,6 +619,11 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
   否则下次同样的提示词会命中一条错误记录，把一次偶发失败永久固化成「答案」。
 - **不要为了「把表弄干净」去删 `llm_call` 的行** —— 那是已付费的答案，删掉等于
   把钱扔了。（2026-09-03 清理冒烟数据时就这么丢过一次结果。）
+- **连不上库时，`llm_cache` 会退化成「全部实调、一条不留」**，而且只打一行 warn。
+  有的机器没有 `~/.my.cnf`，`meta_lib.connect()` 会退回 localhost 并报 2003。
+  2026-09-16 就是在这样的机器上，用 `claude-opus-5` 跑了半小时去重确认才被叫停，
+  已付费的答案一条也没落下。所以去重另加了一层本地 JSONL 缓存（`dedupe_llm.py`）。
+  **批量调模型之前，先确认缓存能写，并估出预计命中数**（`dedupe_group.py --dry-run` 会打印）。
 - **本项目只记 token，不折算金额**（`cost_usd` 恒为 NULL，`PRICES` 留空）。
   token 是客观事实，单价会变、会有折扣、会随账户不同；混在一列里日后分不清
   某个数字是真实支出还是某次估算的残留。要临时看金额就填 `PRICES`，可随时回算。
@@ -637,7 +684,7 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 阶段一 `high`、阶段二 `medium`、阶段三 `xhigh`。
 
 **⚠ 「取不到就退而求其次」是本仓库最高频的缺陷模式，一律改成「取不到就喊」。**
-同一个形状已经出现过七次，每次都是**不报错、只是结果悄悄不对**：
+同一个形状已经出现过十次，每次都是**不报错、只是结果悄悄不对**：
 
 | 现场 | 退而求其次的写法 | 后果 |
 |---|---|---|
@@ -648,7 +695,8 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 | `merge_mfa_xlsx.seq_col` | 找不到序号列就返回 None、跳过过滤 | **中文版去重了、英文版没有**，两个文件件数不一致且不报错 |
 | MFA 扩充清单在展状态 | 「来源是官网」就推成「在展」 | 135 件在展里 123 件无依据，含一件按捐赠条款**永不展出**的北斋 |
 | MFA 馆藏归属 | 只查 P195「含不含」MFA | 4329 件全过，**实际 32 件已离馆** —— 漏了离馆时间限定 |
-| 查不到展厅就问模型 | 不开检索，让模型凭记忆答展厅号 | 答 `Gallery 222` 且自称「据官方馆藏记录」，带检索的同一模型答 `Gallery 234` |
+| 查不到展厅就问模型 | 不开检索，让模型凭记忆答展厅号 | 答 `Gallery 222` 并自称「据官方馆藏记录」（号是真的，出处是编的）；还给已离馆的莫奈配上了 `Gallery 252` |
+| 展厅补位写回 | 新值只要非空，就当成比原值好 | 58 行被改写，34 行变差、0 行变好，丢掉了真展厅号 `LG33` |
 | 合并表里定位行 | 拿 `序号` 建 行映射 | `序号` 在合并表里**不唯一**（两个 museum key 各自从 1 编号），A 件的答案写进 B 件的行且不报错 |
 
 判断状态优先用**客观量**（进度增量、行数），关键词与子串只能做辅助；
@@ -657,6 +705,50 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 **11. `--limit N` 是「跑 N 件」，不是「跑第 N 件」。** 单件复核用 `--only-seq`
 （`tier_v3.py` / `audit_meta.py` / `meta_fill_official_mfa.py` 都支持，可重复给）。
 2026-09-04 因为写成 `--limit 130` 而多审了 48 件没人要求碰的展品。
+
+**12. 展品去重：按「作者 + 创作时期」分组，只在组内找重复（用户 2026-09-17 定）。**
+
+重复只可能出现在同一作者、同一时期的作品之间，跨作者的配对**在结构上就不可能出现**。流程：
+`dedupe_facts.py`（从 Wikidata 取作者 QID、年代、多语标签）→ `dedupe_extract.py`
+（用 haiku 给作者没解析出来的 252 行补作者）→ `dedupe_recall.py`（硬证据：跨管线馆藏号、组画分件）
+→ `dedupe_group.py`（按作者+时期分组，haiku 在组内判重）→ `dedupe_apply.py`
+（写回三列 + `去重后总表_v2`，另生成「重复展品清单」「重复展品明细」两张 sheet）。
+
+- **模型统一用 `claude-haiku-4-5`**，只在 `dedupe_llm.MODEL` 这一处定义（用户 09-17 定）。
+  09-16 曾沿用 `claude_cli` 的默认值 `claude-opus-5` 逐对跑 2221 对，跑了半小时被叫停。
+  **批量调模型之前，先看清型号、估算调用次数、确认缓存能写。**
+- 用户定的规则：**保留非空字段最多的那条**，落败方的独有字段进 `X_补充N` 列；
+  **作者必须一致**，但任一侧作者未知不算冲突（否则原清单 179 行里只剩 16 行能比）；
+  **组画、册页、分卷都合成一件**（陆俨少七开册页；平治物语绘卷和它的三条殿夜讨卷）。
+- **模型给出的簇要过三道确定性闸**，挡下来的进「待人工复核」：
+  ① 簇内年代冲突；② **一件平面、一件立体**（haiku 曾把木造的毗沙门天像和一幅同名的画判成同一件）；
+  ③ 佚名簇里，原清单那一侧既没有年代也没有馆藏号（「圣塞巴斯蒂安」「黄铜星盘」：同类不等于同件）。
+- **佚名组要问两遍，结果取并集**：同一个组问两次，haiku 一次判出了《门卡乌拉王与王后》，
+  另一次漏掉了。佚名组用罕见题名词分块，而且中英要分开算题名重叠度（≥0.2），
+  否则单链传递会把上百件粘成一个组。
+- 默认**不送**「全是 ext·wikidata 且有作者」的组（600 多组）。这些组里每一行都是不同的
+  Wikidata 实体，歌川国员同一年的 40 张名所图、写乐的 30 张役者绘都在这里面。
+- **状态要把「没查过」和「查过且独一」分开**：`已复核·独一`、`未复核·无同组`、
+  `未复核·同组全为Wikidata条目` 是三种不同的状态。上一轮 151 件零候选被默认当成
+  「独有」，就是因为这几种在表里长得一样。
+- 结果（09-18）：41 组、并入 48 行，`去重后总表_v2` 4489 行，待人工复核 10 行。
+  **年代解析修好之后，具名作者组还没有重跑**（佚名组已经补跑）。重跑共 22 次调用，其中 7 次能命中缓存。
+
+**踩过的坑。这些都不报错，只是结果悄悄不对：**
+- `norm_title()` 会去掉空格，拿它的结果去分词，整串只剩一个 token，**题名 Jaccard 恒为 0**。
+  也就是说题名重叠这个通道从来没生效过。分词必须用原始串。
+- 名称里嵌着 Wikidata 匿名节点的网址，年份正则从里面的十六进制哈希抠出了 **4214 年、6023 年**，
+  所以要先把网址剥掉。另外，「公元」里的「元」会被当成元朝，`1830-01-01` 会被当成省略写法的区间 `1830–01`。
+- Wikidata 的 `P170` 会返回匿名创作者节点（genid）。那不是一个人，不能拿它当作者去分组。
+- Wikidata 作品的中文标签只覆盖约 1%，当不了主要的翻译桥。原清单的英文桥是
+  `exports/en/Artworks - Museum of Fine Arts, Boston.xlsx`（179/179 全覆盖）。
+- Excel 把「馆藏号」列转成了数字：`09.200` 存成了 `9.2`。简介里「藏品编号」那一段才是原样的字符串。
+- 同管线（ext 内部）馆藏号相等的，抽查 12/15 是假重复（P217 被截断或填错）。
+  只有跨管线相等才算硬证据。
+- 校验太严会导致反复重付：一个簇里混进一个别组的行号，整批答案就作废重问。
+  **只有结构性问题才重试，细节问题就地清洗。**
+- 杀掉父进程之后，`claude -p` 子进程还活着、还在计费，要按 PID 逐个 `kill -9`。
+  用 `nohup` 跑 Python 要加 `-u`，否则日志全被缓冲，看不到进度。
 
 ---
 
@@ -783,13 +875,20 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/gemini_api.py` | Google AI Studio（Gemini）provider。key 走 `~/.gemini_key` 与 `x-goog-api-key` 头。**flash 档实测不能做审计**。默认 `GEMINI_RPM=10`（免费层上限）。**Windows 下不查 600 权限**——NTFS 靠 ACL、`chmod` 是空操作、Python 恒报 `0o666`，硬查会让 `available()` 永远为 False |
 | `utils/import_data/audit_bc_guard.py` | B/C 段兜底：把没写明升档理由的 `tier_sensitive` 降为 false。零 API，原值留 `tier_sensitive_raw` |
 | `utils/import_data/audit_translate.py` | 给审计的中文自由文本批量补英译（默认走 OpenAI）。**写库前必跑** |
-| `utils/import_data/merge_confirm.py` | 判定 MFA 两批导入里哪些是同一件实物。启发式召回 + 模型逐对确认，结果落 `merge_pairs.json` |
+| `utils/import_data/merge_confirm.py` | 判定 MFA 两批导入里哪些是同一件实物。启发式召回 + 模型逐对确认，结果落 `merge_pairs.json`。**已被第 12 条的 `dedupe_*` 取代** |
 | `utils/import_data/merge_mfa_xlsx.py` | 把 MFA 两份导出的 Excel 合成一份（重复以 ext 为准）。只动文件不碰库 |
 | `utils/import_data/verify_mfa_membership.py` | 按 Wikidata P195+P582 核实扩充清单展品是否**现藏** MFA，结果落 `mfa_membership.json` |
-| `utils/import_data/fill_onview_gemini.py` | 让模型按名称判在展状态，就地改合并版 Excel 的 `陈列状态`/`展厅`。**产出不是事实**，读之前先看上面那条实测结论。缓存落 `onview_cache.jsonl`，标识用 xlsx 行号（`序号` 不唯一） |
+| `utils/import_data/fill_onview_gemini.py` | 让模型按名称判在展状态，改 `陈列状态`/`展厅` 两列。**产出不是事实**，读之前先看上面那条实测结论。`--xlsx` 指定工作副本，`--need-gallery` 按展厅粒度选行，`--key-file` 选 key。展厅写入要过粒度闸。缓存落 `onview_cache.jsonl`，行标识用 xlsx 行号（`序号` 不唯一） |
 | `utils/import_data/fix_departed_onview.py` | 用 `mfa_membership.json` 的 32 件离馆记录把状态钉成「不在展」并清展厅。零 API，**核实过的事实压过模型推断** |
 | `utils/import_data/mark_gallery_precision.py` | 从模型 note 里救回「古埃及展厅」这类说法，加后缀 `（部门级，未确认具体展厅）`；给翼级取值补同一后缀。零 API，幂等且能自愈 |
-| `utils/import_data/gallery_grounded.py` | 开 `google_search` 工具逐件查具体展厅号，**没有 `groundingChunks` 就不写**。证据落 `gallery_grounded.jsonl`。**尚未跑过** |
+| `utils/import_data/gallery_grounded.py` | 开 `google_search` 工具逐件查在展与展厅号，**没有 `groundingChunks` 就不写**。`--max-queries` 按搜索次数设预算。证据落 `gallery_grounded.jsonl`。**尚未跑成**：免费层没有检索，付费项目余额为 0 |
+| `utils/import_data/gallery_text.py` | 展厅文本的四级粒度 `precision()` 与写入判据 `better()`（严格更具体才覆盖）。所有写展厅列的脚本共用 |
+| `utils/import_data/gallery_precision_guard.py` | 对照基准工作簿，把展厅列里被改粗的行按 `(来源表,来源行)` 还原。零 API，幂等 |
+| `utils/import_data/merged_xlsx.py` | 解析合并版工作簿的路径（`export/`、`exports/`、`exports/zh-CN/` 三处都找），**找到两份就停**，不去猜该改哪一份 |
+| `utils/import_data/copy_sheet.py` / `move_column.py` / `fit_columns.py` | Excel 小工具：抽一张 sheet 成新文件（断言行序不变）、按列名挪列、按 p95 内容长度定列宽（中日韩字符按两格计） |
+| `utils/import_data/tls.py` | 所有 HTTPS 共用的 TLS 上下文。缺根证书时改用 certifi，缺 certifi 就报错退出，**不关闭证书校验** |
+| `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
+| `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
 | `utils/import_data/validate/` | 审计选型的证据：两批 48 件样本（调参集/留出集，零重合）与各模型跑分 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |

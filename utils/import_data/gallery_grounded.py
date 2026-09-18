@@ -43,8 +43,11 @@ import urllib.request
 
 import openpyxl
 
+from gallery_text import SPECIFIC_RE, is_specific
+from tls import ssl_ctx
+from merged_xlsx import merged_xlsx
+
 HERE = pathlib.Path(__file__).parent
-XLSX = HERE / "export" / "展品_波士顿美术馆_合并.xlsx"
 OUT = HERE / "gallery_grounded.jsonl"
 SHEET = "去重后总表"
 
@@ -54,29 +57,33 @@ ENDPOINT = ("https://generativelanguage.googleapis.com/v1beta/models/"
 KEY_FILE = "~/.gemini_key"
 MIN_GAP = 8.0          # 秒；带搜索的调用更贵，放慢一点
 
-DEPT_MARK = "部门级"
 GALLERY_RE = re.compile(r"GALLERY:\s*(.+?)\s*$", re.I | re.M)
-# 只认真正的定位：Gallery + 数字，或 MFA 的命名空间
-SPECIFIC_RE = re.compile(
-    r"(Gallery\s*\d+[A-Za-z]?)"
-    r"|(Sargent\s+(?:Colonnade|Rotunda))"
-    r"|(Huntington\s+Avenue\s+Plaza)", re.I)
+ONVIEW_RE = re.compile(r"ONVIEW:\s*(YES|NO|UNKNOWN)\s*$", re.I | re.M)
 
-PROMPT = """请查询波士顿美术馆（Museum of Fine Arts, Boston）这件藏品当前陈列在哪个展厅。
+PROMPT = """请查证波士顿美术馆（Museum of Fine Arts, Boston）这件藏品的当前状态。
 
 藏品：{name}
 {acc}
 
+依次回答两件事：
+1. 它现在是否在 MFA 的展厅公开展出？
+2. 若在展，具体在哪个展厅？
+
 要求：
-1. 用搜索查证，优先采信 mfa.org / collections.mfa.org 的页面。
+1. **必须用搜索查证**，优先采信 mfa.org / collections.mfa.org 的页面。
+   collections.mfa.org 的单件页上有 "On View" 或 "Not on View" 字样，那是最可靠的依据。
 2. 只有查到**具体展厅**（如 "Gallery 234"）才算数。
    「美洲艺术翼」「古埃及展区」这类是**区域不是展厅**，不算。
-3. 查不到具体展厅号就如实说查不到 —— 不要凭印象给一个号。
-   给错展厅号的后果是游客走过去扑空，比留空严重得多。
+3. **查不到就如实说查不到，不要凭印象回答。**
+   这件东西可能早已不属于 MFA（易主、退藏、长期外借），也可能在库房轮换。
+   凭「这类作品通常陈列在某厅」推断具体某件在不在，正是要避免的错误。
+4. 判断在展与否，说的是**这一件**，不是同一位作者的其他作品。
+5. **检索次数就是成本**：请用尽量少、尽量精准的关键词查证，
+   能一次查清就不要拆成多次搜索。
 
-最后另起一行，严格用这个格式收尾（二选一）：
-GALLERY: Gallery 234
-GALLERY: NONE"""
+最后另起两行，严格用这两个格式收尾：
+ONVIEW: YES / NO / UNKNOWN
+GALLERY: Gallery 234 / NONE"""
 
 
 def source_label(sources: list[dict]) -> str:
@@ -98,8 +105,15 @@ def source_label(sources: list[dict]) -> str:
     return re.sub(r"^www\.", "", m.group(1)) if m else "未知来源"
 
 
-def key() -> str:
-    p = pathlib.Path(KEY_FILE).expanduser()
+
+def key(key_file: str = KEY_FILE) -> str:
+    """读 API key。
+
+    ⚠ 本机同时存着两个 key：`~/.gemini_key`（付费项目）与 `~/.gemini_key_free`。
+    带检索的调用要走付费项目 —— 免费层没有 Search grounding 的额度。
+    **哪个 key 花钱是要写清楚的事**，所以留 --key-file 显式指定，不靠默认值猜。
+    """
+    p = pathlib.Path(key_file).expanduser()
     if not p.exists():
         sys.exit(f"找不到 {p}")
     return p.read_text().strip()
@@ -116,7 +130,7 @@ def ask(name: str, acc, model: str, api_key: str) -> dict:
     req = urllib.request.Request(
         ENDPOINT.format(model=model), data=json.dumps(body).encode(),
         headers={"x-goog-api-key": api_key, "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=300) as r:
+    with urllib.request.urlopen(req, timeout=300, context=ssl_ctx()) as r:
         resp = json.load(r)
 
     cand = resp["candidates"][0]
@@ -130,9 +144,12 @@ def ask(name: str, acc, model: str, api_key: str) -> dict:
     m = GALLERY_RE.search(text)
     raw = m.group(1).strip() if m else ""
     sm = SPECIFIC_RE.search(raw)
+    om = ONVIEW_RE.search(text)
     return {
         "text": text,
+        "onview_raw": om.group(1).upper() if om else "",
         "gallery_raw": raw,
+        # 收尾格式取不到就算失败，不去正文里猜 —— 猜出来的东西没法复核。
         "gallery": sm.group(0) if sm else None,
         "sources": sources,
         "queries": gm.get("webSearchQueries") or [],
@@ -146,7 +163,20 @@ def main() -> None:
     ap.add_argument("--limit", type=int)
     ap.add_argument("--model", default=MODEL)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--xlsx", help="要改的工作簿；不给则按 merged_xlsx() 解析合并版。"
+                                   "**就地改**，所以跑新一轮时建议先 copy_sheet.py 抄一份副本。")
+    ap.add_argument("--max-queries", type=int,
+                    help="搜索次数预算。Grounding 按**模型实际发起的搜索次数**计费"
+                         "（groundingMetadata.webSearchQueries 的长度），不是按请求数 —— "
+                         "一次请求可能触发多次搜索。累计达到这个数就停下并保存已有结果。")
+    ap.add_argument("--key-file", default=KEY_FILE,
+                    help=f"API key 文件，默认 {KEY_FILE}（付费项目）。"
+                         "带检索的调用只有付费项目跑得了。")
     args = ap.parse_args()
+
+    XLSX = pathlib.Path(args.xlsx) if args.xlsx else merged_xlsx()
+    if args.xlsx and not XLSX.exists():
+        sys.exit(f"--xlsx 指定的文件不存在：{XLSX}")
 
     wb = openpyxl.load_workbook(XLSX)
     ws = wb[SHEET]
@@ -158,31 +188,66 @@ def main() -> None:
     c_g, c_n = hdr.index("展厅") + 1, hdr.index("展品名称") + 1
     c_a = hdr.index("馆藏号") + 1
 
+    c_seq = hdr.index("序号") + 1 if "序号" in hdr else None
+    c_mus = hdr.index("博物馆") + 1 if "博物馆" in hdr else None
+
+    # 已核实离馆的展品（Wikidata P195+P582，见 verify_mfa_membership.py）。
+    # **核实过的事实压过模型推断** —— 模型曾把其中 2 件判成「在展」，
+    # 莫奈《The Fort of Antibes》还配了 Gallery 252（那个号本身没错，
+    # MFA 的莫奈确实在 252 厅，错的是这一件已于 2011 年易主 Museum Barberini）。
+    # 所以这些行一律不查也不动，免得一次调用就把核实结果冲掉。
+    departed = set()
+    mp = HERE / "mfa_membership.json"
+    if mp.exists():
+        departed = {r["seq"] for r in json.loads(mp.read_text(encoding="utf-8"))["left_mfa"]}
+
     tiers = {x.strip() for x in args.tier.split(",") if x.strip()}
-    todo = []
+    todo, protected = [], 0
     for row in range(2, ws.max_row + 1):
         if ws.cell(row, c_t).value not in tiers:
             continue
-        if ws.cell(row, c_s).value != "在展":
-            continue
         g = str(ws.cell(row, c_g).value or "")
-        if g and DEPT_MARK not in g:          # 已有具体展厅的不动
+        if is_specific(g):                    # 已有能走过去的定位，不动
             continue
+        if c_seq and c_mus and "扩充清单" in str(ws.cell(row, c_mus).value or ""):
+            if ws.cell(row, c_seq).value in departed:
+                protected += 1
+                continue
         todo.append({"row": row, "name": str(ws.cell(row, c_n).value),
-                     "acc": ws.cell(row, c_a).value, "cur": g})
+                     "acc": ws.cell(row, c_a).value, "cur": g,
+                     "state": ws.cell(row, c_s).value})
     if args.limit:
         todo = todo[:args.limit]
 
-    print(f"待查 {len(todo)} 行（Tier {args.tier}，在展，且未查到具体展厅）")
-    for t in todo:
-        print(f"  行{t['row']:<6} {t['name'][:46]:<48} 现值={t['cur'][:18] or '空'}")
+    print(f"待查 {len(todo)} 行（Tier {args.tier}，展厅给不出具体位置）"
+          f"｜已核实离馆而跳过 {protected} 行")
+    for t in todo[:40]:
+        print(f"  行{t['row']:<6} {t['name'][:42]:<44} 状态={str(t['state'] or '空'):<5} "
+              f"展厅={t['cur'][:16] or '空'}")
+    if len(todo) > 40:
+        print(f"  …… 其余 {len(todo)-40} 行略")
+    if not args.dry_run and not args.max_queries and len(todo) > 200:
+        # 大批量又不设预算，是这个仓库里最容易出事的组合：按搜索次数计费，
+        # 而搜索次数事前不可知（一次请求可能拆成多次搜索）。宁可先喊一声。
+        print(f"\n⚠ 待查 {len(todo)} 行且未设 --max-queries。"
+              f"Grounding 按搜索次数计费，一次请求可能触发多次搜索，"
+              f"实际次数会高于 {len(todo)}。\n"
+              f"  建议先小批验证，或用 --max-queries 设上限。")
+        sys.exit("已中止：请显式给出 --max-queries（或用 --limit 先小批跑）。")
+
     if args.dry_run or not todo:
         return
 
-    api_key = key()
-    written, nosrc, nogal, failed = [], [], [], []
+    api_key = key(args.key_file)
+    wrote_gal, wrote_ov, nosrc, nogal, failed = [], [], [], [], []
+    n_queries = 0          # 累计搜索次数 —— 这才是计费口径
+    stopped = None
     last = 0.0
     for t in todo:
+        if args.max_queries and n_queries >= args.max_queries:
+            stopped = f"已达搜索次数预算 {args.max_queries}（实际 {n_queries}）"
+            print(f"\n⏹ {stopped}，停止；已完成的结果照常保存。")
+            break
         gap = MIN_GAP - (time.time() - last)
         if gap > 0:
             time.sleep(gap)
@@ -199,34 +264,60 @@ def main() -> None:
             failed.append(t["row"])
             continue
 
+        nq = len(r["queries"])
+        n_queries += nq
         rec = {"row": t["row"], "name": t["name"], "acc": str(t["acc"]),
-               "model": args.model, **r}
+               "model": args.model, "n_queries": nq, "n_queries_total": n_queries,
+               "before": {"state": t["state"], "gallery": t["cur"]},
+               **r}
         with OUT.open("a", encoding="utf-8") as f:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
-        if not r["gallery"]:
-            print(f"  行{t['row']} 未查到具体展厅（原文 {r['gallery_raw']!r}）")
-            nogal.append(t["row"])
-            continue
+        # 硬规则：没有检索来源，什么都不写 —— 在展与否也不写。
+        # 凭记忆答的在展状态正是上一轮被证伪的那批。
         if not r["sources"]:
-            # 硬规则：没出处就不写，哪怕它给了一个号
-            print(f"  行{t['row']} ⚠ 给了 {r['gallery']} 但**没有检索来源**，丢弃")
+            print(f"  行{t['row']} ⚠ 无检索来源，整条丢弃"
+                  f"（它说 ONVIEW={r['onview_raw'] or '?'} GALLERY={r['gallery_raw']!r}）")
             nosrc.append(t["row"])
             continue
 
-        ws.cell(t["row"], c_g).value = f"{r['gallery']}（来源：{source_label(r['sources'])}）"
-        written.append((t["row"], r["gallery"], len(r["sources"]), t["name"][:34]))
-        print(f"  行{t['row']} ✓ {r['gallery']}  来源 {len(r['sources'])} 条")
+        src = source_label(r["sources"])
+        ov = r["onview_raw"]
+        if ov == "YES":
+            ws.cell(t["row"], c_s).value = "在展"
+            wrote_ov.append((t["row"], "在展"))
+            if r["gallery"]:
+                ws.cell(t["row"], c_g).value = f"{r['gallery']}（来源：{src}）"
+                wrote_gal.append((t["row"], r["gallery"], len(r["sources"]), t["name"][:34]))
+                print(f"  行{t['row']} ✓ 在展 {r['gallery']}  来源 {len(r['sources'])} 条")
+            else:
+                nogal.append(t["row"])
+                print(f"  行{t['row']} · 在展，但未查到具体展厅（原文 {r['gallery_raw']!r}）")
+        elif ov == "NO":
+            ws.cell(t["row"], c_s).value = "不在展"
+            ws.cell(t["row"], c_g).value = None
+            wrote_ov.append((t["row"], "不在展"))
+            print(f"  行{t['row']} ✓ 不在展（来源 {len(r['sources'])} 条）")
+        else:
+            # UNKNOWN 或没按格式收尾：**不覆盖**已有状态。
+            # 把「查不到」写成「未知」会把一条已有判断降级成无信息。
+            nogal.append(t["row"])
+            print(f"  行{t['row']} · 查不到（ONVIEW={ov or '未按格式收尾'}），保持原值")
 
-    print(f"\n写入 {len(written)}｜未查到 {len(nogal)}｜有号无出处丢弃 {len(nosrc)}｜失败 {len(failed)}")
-    for row, g, n, nm in written:
+    done = len(wrote_gal) + len(wrote_ov) + len(nogal) + len(nosrc)
+    print(f"\n写入展厅 {len(wrote_gal)}｜写入在展状态 {len(wrote_ov)}｜"
+          f"查不到 {len(nogal)}｜无出处丢弃 {len(nosrc)}｜调用失败 {len(failed)}")
+    print(f"搜索次数合计 {n_queries} 次"
+          + (f"，平均每件 {n_queries/done:.2f} 次" if done else "")
+          + "（计费口径；请求数 != 搜索数）")
+    if stopped:
+        print(f"⏹ 本轮提前结束：{stopped}")
+    for row, g, n, nm in wrote_gal:
         print(f"  行{row:<6} {g:<14} 来源{n}条  {nm}")
-    # 只在真有记录时才说写了 —— 全部调用失败时 JSONL 里一条也没有，
-    # 这时候打印「证据已写入」就是在报告一件没发生的事。
-    if len(written) + len(nogal) + len(nosrc):
+    if len(wrote_gal) + len(wrote_ov) + len(nogal) + len(nosrc):
         print(f"\n逐条证据已写入 {OUT.name}")
 
-    if not written:
+    if not (wrote_gal or wrote_ov):
         print("没有任何行被写入，不重存文件。")
         return
     bak = XLSX.with_suffix(".xlsx.bak4")

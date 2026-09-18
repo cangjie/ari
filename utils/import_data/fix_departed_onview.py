@@ -26,14 +26,16 @@ import sys
 
 import openpyxl
 
+from merged_xlsx import merged_xlsx
+
 HERE = pathlib.Path(__file__).parent
-XLSX = HERE / "export" / "展品_波士顿美术馆_合并.xlsx"
 MEMBERSHIP = HERE / "mfa_membership.json"
 SHEET = "去重后总表"
 EXT_MUSEUM = "波士顿美术馆（扩充清单）"
 
 
 def main() -> None:
+    XLSX = merged_xlsx()
     if not MEMBERSHIP.exists():
         sys.exit(f"找不到 {MEMBERSHIP}")
     data = json.loads(MEMBERSHIP.read_text(encoding="utf-8"))

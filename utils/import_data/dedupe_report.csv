@@ -1,0 +1,100 @@
+﻿去重组ID,去重状态,去重依据,来源表,来源行,Tier,展品名称,馆藏号,官方页面
+G0001,主行,作者+时期同组·haiku 判同一件（Q46408）：同一件作品的中英两条记录，题名为Deer Skull with Pedernal，年代和作者均相同,A,9,A,Georgia O'Keeffe《Deer Skull with Pedernal》带佩德纳尔山的鹿头骨（布面油画）,,https://www.mfa.org/programs/mfa-150/slideshow
+G0002,并入(G0002),作者+时期同组·haiku 判同一件（Q296）：两条记录英文题名均为 Water Lilies，中文都是睡莲，明确指向同一件莫奈油画,A,22,A,Claude Monet《Water Lilies》睡莲,,https://www.mfa.org/collections/europe
+G0003,并入(G0003),作者+时期同组·haiku 判同一件（Q5599）：同一肖像作品《穆莱·艾哈迈德/Portrait of Mulay Ahmad》的两条记录，题名本质相,A,25,A,Peter Paul Rubens《Mulay Ahmad》穆莱·艾哈迈德,,https://collections.mfa.org/objects/32728/mulay-ahmad
+G0031,并入(G0031),作者+时期同组·haiku 判同一件（佚名）：杰胡提纳赫特外棺的同一件物品，不同面板的记录（侧板与前侧板）,A,34,A,杰胡提纳赫特外棺前侧板 Outer coffin of Djehutynakht（中王国，公元前 2010–1961，雪松木）,,https://www.mfa.org/collections/ancient-egypt-nubia-and-the-near-east
+G0004,并入(G0004),作者+时期同组·haiku 判同一件（Q296）：La Japonaise，莫奈之妻卡米耶穿着日本和服，创作于1876年，[607]为[106]的不完,A,65,A,日本女人 (绘画)（克劳德·莫奈，1876-01-01，油彩）,56.147,https://www.wikidata.org/wiki/Q10322900
+G0005,并入(G0005),跨管线馆藏号 48.726,A,70,A,Fisherman's Family（温斯洛·霍默，1881-01-01，纸）,48.726,https://www.wikidata.org/wiki/Q111352238
+G0006,并入(G0006),跨管线馆藏号 64.693,A,89,A,Mrs. Fiske Warren (Gretchen Osgood) and Her Daughter Rachel（约翰·辛格·沙金，1903-01-01，油彩）,64.693,https://www.wikidata.org/wiki/Q17026932
+G0007,并入(G0007),作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,144,A,Victorine Meurent（愛德華·馬奈，1862-01-01，油彩）,46.846,https://www.wikidata.org/wiki/Q20539197
+G0008,主行,组画分件 基号 56.171（作者 Q130531 一致）,A,159,A,Franco van Langhel and His Sons with Saint John the Evangelist (outer face); Pieter van Os,56.171.1,https://www.wikidata.org/wiki/Q20540155
+G0008,并入(G0008),组画分件 基号 56.171（作者 Q130531 一致）,A,160,A,Heilwich van der Rullen and Her Daughters with Saint Mary Magdalen (outer face); Hendrixke,56.171.2,https://www.wikidata.org/wiki/Q20540157
+G0003,主行,作者+时期同组·haiku 判同一件（Q5599）：同一肖像作品《穆莱·艾哈迈德/Portrait of Mulay Ahmad》的两条记录，题名本质相,A,192,A,Portrait of Mulay Ahmad（彼得·保羅·魯本斯，1609-01-01，油彩）,40.2,https://www.wikidata.org/wiki/Q20555569
+G0001,并入(G0001),作者+时期同组·haiku 判同一件（Q46408）：同一件作品的中英两条记录，题名为Deer Skull with Pedernal，年代和作者均相同,A,274,A,Deer's Skull with Pedernal（喬治亞·歐姬芙，1936-01-01，油彩）,1990.432,https://www.wikidata.org/wiki/Q20634926
+G0009,并入(G0009),作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,286,A,John Adams（吉尔伯特·斯图尔特，1823-01-01，油彩）,1999.59,https://www.wikidata.org/wiki/Q20634988
+G0010,并入(G0010),跨管线馆藏号 1976.667,A,366,A,Portrait of Rebecca Boylston（约翰·科普利，1767-01-01，油彩）,1976.667,https://www.wikidata.org/wiki/Q20772177
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,A,432,A,Landscapes after Tang poems（陆俨少）,1986.127.1,https://www.wikidata.org/wiki/Q20786068
+G0012,主行,作者+时期同组·haiku 判同一件（Q5598）：同一件伦勃朗肖像：题名分别为通用描述（62岁女性）与具体人名（Aeltje Uylenburgh），,A,447,A,"Portrait of a 62-year-old Woman, possibly Aeltje Pietersdr Uylenburgh（伦勃朗，1632-01-01，油彩）",,https://www.wikidata.org/wiki/Q21501685
+G0013,主行,作者+时期同组·haiku 判同一件（Q3076703）：都是曾我蕭白《龍虎図》的两个分件（龍部与虎部），同一件作品的整体与分卷,A,450,A,Tigre（曾我萧白，1770-01-01，纸）,11.7051,https://www.wikidata.org/wiki/Q26221007
+G0013,并入(G0013),作者+时期同组·haiku 判同一件（Q3076703）：都是曾我蕭白《龍虎図》的两个分件（龍部与虎部），同一件作品的整体与分卷,A,451,A,Tiger（曾我萧白，1770-01-01，纸）,11.7052,https://www.wikidata.org/wiki/Q26221008
+G0014,并入(G0014),跨管线馆藏号 13.38,A,480,A,Appeal to the Great Spirit（Cyrus Edwin Dallin，1909-01-01，青铜）,13.38,https://www.wikidata.org/wiki/Q4780980
+G0015,并入(G0015),跨管线馆藏号 66.304,A,562,A,Street Singer（愛德華·馬奈，1862-01-01，油彩）,66.304,https://www.wikidata.org/wiki/Q39226
+G0004,主行,作者+时期同组·haiku 判同一件（Q296）：La Japonaise，莫奈之妻卡米耶穿着日本和服，创作于1876年，[607]为[106]的不完,A,563,A,和服女子,,
+G0040,主行,跨管线馆藏号 48.548,A,564,A,摇摇篮的鲁林夫人,,
+G0002,主行,作者+时期同组·haiku 判同一件（Q296）：两条记录英文题名均为 Water Lilies，中文都是睡莲，明确指向同一件莫奈油画,A,565,A,睡莲,,
+G0027,主行,跨管线馆藏号 53.2552,A,570,A,牧场少年,,
+G0016,主行,作者+时期同组·haiku 判同一件（Q296）：题名均指莫奈夫人卡米耶与其子在阿让特伊花园的场景，创作于1875年，[615]为[984]的简化记录,A,571,A,莫奈夫人与她的儿子,,
+G0007,主行,作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,577,A,维克托里娜·默朗小姐,,
+G0015,主行,跨管线馆藏号 66.304,A,578,A,街头歌女,,
+G0009,主行,作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,580,A,约翰·亚当斯肖像,,
+G0006,主行,跨管线馆藏号 64.693,A,583,A,菲斯克·沃伦夫人与女儿,,
+G0024,主行,跨管线馆藏号 1991.926,A,621,A,查尔斯·英奇斯夫人,,
+G0005,主行,跨管线馆藏号 48.726,A,634,A,渔夫一家,,
+G0010,主行,跨管线馆藏号 1976.667,A,640,A,丽贝卡·博伊尔斯顿肖像,,
+G0021,主行,跨管线馆藏号 77.249,A,641,A,牧羊女,,
+G0017,主行,作者+时期同组·haiku 判同一件（Q150679）：Isabella Lady de La Warr肖像，题名完全一致，年代1638年前后相同，馆藏号3,B,3,B,"Anthony van Dyck《Isabella, Lady de La Warr》（约 1638，布面油画）",,https://www.mfa.org/programs/mfa-150/slideshow
+G0012,并入(G0012),作者+时期同组·haiku 判同一件（Q5598）：同一件伦勃朗肖像：题名分别为通用描述（62岁女性）与具体人名（Aeltje Uylenburgh），,B,16,B,Rembrandt van Rijn《Portrait of Aeltje Uylenburgh》（1632）,,https://www.mfa.org/collections/europe
+G0018,并入(G0018),作者+时期同组·haiku 判同一件（佚名）：同一件圣希波吕图斯殉道题材作品，题名相同（仅差冠词），年代相差3年为古代断代常见差异,B,103,B,The martyrdom of Saint Hippolytus（1492-01-01）,,https://www.wikidata.org/wiki/Q121514523
+G0019,并入(G0019),作者+时期同组·haiku 判同一件（Q41402）：题名基本相同（Mrs. James Swan），仅拼写和标点差异（Clark/Clarke），年代作,B,106,B,Mrs. James Swan (Hepzibah Clark).（吉尔伯特·斯图尔特，1808-01-01，画板）,,https://www.wikidata.org/wiki/Q123004242
+G0020,主行,组画分件 基号 2008.166（作者 Q1257924 一致）,B,126,B,Night（安东尼奥·洛佩斯·加西亚，2008-01-01，青铜）,2008.166.2,https://www.wikidata.org/wiki/Q130753230
+G0020,并入(G0020),组画分件 基号 2008.166（作者 Q1257924 一致）,B,128,B,Day（安东尼奥·洛佩斯·加西亚，2008-01-01，青铜）,2008.166.1,https://www.wikidata.org/wiki/Q131351820
+G0017,并入(G0017),作者+时期同组·haiku 判同一件（Q150679）：Isabella Lady de La Warr肖像，题名完全一致，年代1638年前后相同，馆藏号3,B,226,B,"Portrait of Isabella, Lady de La Warr（安东尼·范戴克，1638-01-01，油彩）",30.445,https://www.wikidata.org/wiki/Q20537477
+G0016,并入(G0016),作者+时期同组·haiku 判同一件（Q296）：题名均指莫奈夫人卡米耶与其子在阿让特伊花园的场景，创作于1875年，[615]为[984]的简化记录,B,303,B,Camille Monet and a Child in the Artist's Garden in Argenteuil（克劳德·莫奈，1875-01-01，油彩）,1976.833,https://www.wikidata.org/wiki/Q20538875
+G0021,并入(G0021),跨管线馆藏号 77.249,B,545,B,Young Shepherdess（讓-弗朗索瓦·米勒，1871-01-01，油彩）,77.249,https://www.wikidata.org/wiki/Q20540676
+G0022,并入(G0022),跨管线馆藏号 42.422,B,731,B,Virgin and Child with Saints（皮得罗·达·科尔托纳，油彩）,42.422,https://www.wikidata.org/wiki/Q20556764
+G0018,主行,作者+时期同组·haiku 判同一件（佚名）：同一件圣希波吕图斯殉道题材作品，题名相同（仅差冠词），年代相差3年为古代断代常见差异,B,814,B,Martyrdom of Saint Hippolytus（http://www.wikidata.org/.well-known/genid/f5c957f9ce4d4711e9,63.66,https://www.wikidata.org/wiki/Q20567275
+G0023,主行,作者+时期同组·haiku 判同一件（佚名）：馆藏号27.785分为a/b，原为一件被分割的浮雕,B,832,B,The Last Supper Frieze (from the church of San Baudelio near Berlanga)（http://www.wikidata,27.785,https://www.wikidata.org/wiki/Q20630387
+G0019,主行,作者+时期同组·haiku 判同一件（Q41402）：题名基本相同（Mrs. James Swan），仅拼写和标点差异（Clark/Clarke），年代作,B,1095,B,Mrs. James Swan (Hepzibah Clarke)（吉尔伯特·斯图尔特，1808-01-01）,27.539,https://www.wikidata.org/wiki/Q20634957
+G0024,并入(G0024),跨管线馆藏号 1991.926,B,1252,B,Mrs. Charles E. Inches (Louise Pomeroy)（约翰·辛格·沙金，1887-01-01，油彩）,1991.926,https://www.wikidata.org/wiki/Q20771695
+G0025,并入(G0025),跨管线馆藏号 42.175,B,1318,B,Portrait of an Old Man（Joseph Hirsch，1939-01-01，油彩）,42.175,https://www.wikidata.org/wiki/Q20772734
+G0026,主行,组画分件 基号 2009.5053（作者 Q20857237 一致）,B,1454,B,#3（Martha Diamond，2008-01-01，油彩）,2009.5053.1,https://www.wikidata.org/wiki/Q20774473
+G0026,并入(G0026),组画分件 基号 2009.5053（作者 Q20857237 一致）,B,1455,B,#6（Martha Diamond，2008-01-01，油彩）,2009.5053.2,https://www.wikidata.org/wiki/Q20774478
+G0026,并入(G0026),组画分件 基号 2009.5053（作者 Q20857237 一致）,B,1456,B,#7（Martha Diamond，2008-01-01，油彩）,2009.5053.3,https://www.wikidata.org/wiki/Q20774485
+G0027,并入(G0027),跨管线馆藏号 53.2552,B,1805,B,Boys in a Pasture（温斯洛·霍默，1874-01-01，油彩）,53.2552,https://www.wikidata.org/wiki/Q20778190
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1870,,,1986.127.2,https://www.wikidata.org/wiki/Q20786073
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1871,,,1986.127.3,https://www.wikidata.org/wiki/Q20786081
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1872,,,1986.127.4,https://www.wikidata.org/wiki/Q20786087
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1873,,,1986.127.5,https://www.wikidata.org/wiki/Q20786094
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1874,,,1986.127.6,https://www.wikidata.org/wiki/Q20786100
+G0011,主行,组画分件 基号 1986.127（作者 Q1872755 一致）,B,1875,B,Landscape after a Tao Yuanming poem（陆俨少）,1986.127.7,https://www.wikidata.org/wiki/Q20786104
+G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,B,1876,B,Landscape after a Liu Yong poem（陆俨少）,1986.127.8,https://www.wikidata.org/wiki/Q20786110
+G0028,并入(G0028),跨管线馆藏号 2018.2109,B,2105,B,Still Life with Fruit and Shells（巴尔塔萨·范·德·阿斯特，1623-01-01）,2018.2109,https://www.wikidata.org/wiki/Q62596704
+G0022,主行,跨管线馆藏号 42.422,B,2170,B,圣母子与诸圣,,
+G0028,主行,跨管线馆藏号 2018.2109,B,2235,B,水果贝壳静物,,
+G0029,主行,跨管线馆藏号 21.1461,B,2255,B,人物河流风景,,
+G0029,并入(G0029),跨管线馆藏号 21.1461,C,287,C,River Landscape with Figures（Giuseppe Zais，油彩）,21.1461,https://www.wikidata.org/wiki/Q20539967
+G0030,并入(G0030),跨管线馆藏号 91.26,C,593,C,Study of a Male Nude（http://www.wikidata.org/.well-known/genid/a800c8bc98ce1f0c5bb97101c02,91.26,https://www.wikidata.org/wiki/Q20568717
+G0023,并入(G0023),作者+时期同组·haiku 判同一件（佚名）：馆藏号27.785分为a/b，原为一件被分割的浮雕,C,607,C,Ribbon Meander Frieze (from the church of San Baudelio near Berlanga)（http://www.wikidata.,27.785,https://www.wikidata.org/wiki/Q20630389
+G0030,主行,跨管线馆藏号 91.26,C,1710,C,男性人体习作,,
+G0025,主行,跨管线馆藏号 42.175,C,1712,C,老者肖像,,
+G0031,主行,作者+时期同组·haiku 判同一件（佚名）：杰胡提纳赫特外棺的同一件物品，不同面板的记录（侧板与前侧板）,S,2,S,杰胡提纳赫特外棺侧板 Outer coffin of Djehutynakht（埃及，公元前 2010–1961 年，雪松木）,,https://www.mfa.org/programs/mfa-150/slideshow
+G0032,主行,作者+时期同组·haiku 判同一件（Q155626）：《博伊特家的女儿们》的中英两条记录，英文题名相同，年代相同（1882），油彩作品,S,5,S,John Singer Sargent《The Daughters of Edward Darley Boit》博伊特家的女儿们（1882，布面油画）,,https://www.mfa.org/gallery/john-singer-sargent
+G0033,并入(G0033),"作者+时期同组·haiku 判同一件（Q5586）：题名为同一作品的通行异名：Fine Wind, Clear Weather（凯风快晴/赤富士），年代",S,6,S,葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）,,https://www.mfa.org/collections/asia
+G0034,并入(G0034),作者+时期同组·haiku 判同一件（Q159758）：同一件作品的常用简称与完整题名，年代一致,S,10,S,J.M.W. Turner《Slave Ship》奴隶船（1840）,,https://www.mfa.org/collections/europe
+G0035,主行,作者+时期同组·haiku 判同一件（佚名）：门卡乌拉法老与王后Khamerernebty II雕像的中英两条记录,S,12,S,《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）,,https://www.mfa.org/collections/ancient-egypt-nubia-and-the-near-east
+G0036,并入(G0036),作者+时期同组·haiku 判同一件（佚名）：埃及法老门卡乌拉（麦塞里努斯）三联像的中英版本，馆藏号09.200相符,S,15,S,《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）,,https://www.mfa.org/collections/ancient-egypt-nubia-and-the-near-east
+G0033,主行,"作者+时期同组·haiku 判同一件（Q5586）：题名为同一作品的通行异名：Fine Wind, Clear Weather（凯风快晴/赤富士），年代",S,20,S,"Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",21.6756,https://www.wikidata.org/wiki/Q106769954
+G0037,并入(G0037),跨管线馆藏号 94.72,S,23,S,The Fog Warning（温斯洛·霍默，1885-01-01，油彩）,94.72,https://www.wikidata.org/wiki/Q12162390
+G0038,并入(G0038),作者+时期同组·haiku 判同一件（佚名）：平治物语绘卷的整体与其分卷（三条殿夜讨卷）同一部作品,S,24,S,"Night Attack on the Sanjô Palace, from the Illustrated Scrolls of the Events of the Heiji ",,https://www.wikidata.org/wiki/Q126673828
+G0039,并入(G0039),作者+时期同组·haiku 判同一件（Q2739948）：陈容《九龙图卷》的中英两条记录,S,25,S,九龍圖（陈容，1244-01-01，纸）,17.1697,https://www.wikidata.org/wiki/Q15592269
+G0040,并入(G0040),跨管线馆藏号 48.548,S,29,S,Lullaby: Madame Augustine Roulin Rocking a Cradle (La Berceuse)（文森特·梵高，1889-01-01，油彩）,48.548,https://www.wikidata.org/wiki/Q20630411
+G0034,主行,作者+时期同组·haiku 判同一件（Q159758）：同一件作品的常用简称与完整题名，年代一致,S,30,S,奴隸船（约瑟夫·马洛德·威廉·透纳，1840-01-01，油彩）,99.22,https://www.wikidata.org/wiki/Q219344
+G0041,并入(G0041),作者+时期同组·haiku 判同一件（Q7486）：都是宋徽宗《五色鹦鹉图卷》的中英两条记录，题名互为翻译,S,31,S,Five-colored parakeet on a blossoming apricot tree（宋徽宗，1110-01-01）,33.364,https://www.wikidata.org/wiki/Q28801723
+G0038,主行,作者+时期同组·haiku 判同一件（佚名）：平治物语绘卷的整体与其分卷（三条殿夜讨卷）同一部作品,S,33,S,平治物语绘卷（http://www.wikidata.org/.well-known/genid/13ef7cce561dc041541b4b092e6cf417，1275-01-,,https://www.wikidata.org/wiki/Q3443335
+G0032,并入(G0032),作者+时期同组·haiku 判同一件（Q155626）：《博伊特家的女儿们》的中英两条记录，英文题名相同，年代相同（1882），油彩作品,S,35,S,爱德华·达里·博伊特的女儿（约翰·辛格·沙金，1882-01-01，油彩）,19.124,https://www.wikidata.org/wiki/Q644106
+G0036,主行,作者+时期同组·haiku 判同一件（佚名）：埃及法老门卡乌拉（麦塞里努斯）三联像的中英版本，馆藏号09.200相符,S,38,S,Triad of King Mycerinus and two Goddesses-09.200（http://www.wikidata.org/.well-known/genid,9.2,https://www.wikidata.org/wiki/Q77592741
+G0035,并入(G0035),作者+时期同组·haiku 判同一件（佚名）：门卡乌拉法老与王后Khamerernebty II雕像的中英两条记录,S,39,S,Statue of Menkaura and Queen Khamerernebty II,,https://www.wikidata.org/wiki/Q8843134
+G0037,主行,跨管线馆藏号 94.72,S,42,S,雾的警告,,
+G0039,主行,作者+时期同组·haiku 判同一件（Q2739948）：陈容《九龙图卷》的中英两条记录,S,43,S,九龙图卷,,
+G0041,主行,作者+时期同组·haiku 判同一件（Q7486）：都是宋徽宗《五色鹦鹉图卷》的中英两条记录，题名互为翻译,S,44,S,五色鹦鹉图卷,,
+G0014,主行,跨管线馆藏号 13.38,S,45,S,向伟大之灵祈祷,,
+,待人工复核,模型判同一件，但被闸挡下：类型不符（一件平面、一件立体）,A,63,A,"《毗沙门天像》Bishamonten, Guardian of the North（日本，11–12 世纪，木造）",,https://www.mfa.org/news/japan
+,待人工复核,模型判同一件，但被闸挡下：类型不符（一件平面、一件立体）,A,460,A,"Bishamonten, the Guardian of the North, with his Retinue（http://www.wikidata.org/.well-kno",5.202,https://www.wikidata.org/wiki/Q28801581
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,813,B,The Resurrection of Christ (recto); The Instruments of the Passion (verso)（http://www.wiki,20.86,https://www.wikidata.org/wiki/Q20567176
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,1956,B,Adoration of the Magi（http://www.wikidata.org/.well-known/genid/b22d620cfc1d0deeb42bab4037,2014.1877,https://www.wikidata.org/wiki/Q20788869
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,2094,B,An astrolabe with an equatorial ring on the rete（1375-01-01，黃銅）,88.654,https://www.wikidata.org/wiki/Q60659629
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,2171,B,圣塞巴斯蒂安,,
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,2185,B,黄铜星盘,,
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,2238,B,哥特牙雕双联板：基督受难,,
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,B,2254,B,三博士朝拜,,
+,待人工复核,模型判同一件，但被闸挡下：佚名且原清单一侧无年代无馆藏号,C,503,C,Saint Sebastian（http://www.wikidata.org/.well-known/genid/d5bbf60230d1be2756696c29ddf3fe00,6.12,https://www.wikidata.org/wiki/Q20557479

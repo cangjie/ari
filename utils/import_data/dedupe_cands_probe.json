@@ -1,0 +1,321 @@
+[
+ {
+  "a": [
+   "S",
+   31
+  ],
+  "b": [
+   "S",
+   44
+  ],
+  "a_row": 30,
+  "b_row": 42,
+  "a_name": "Five-colored parakeet on a blossoming apricot tree（宋徽宗，1110-01-01）",
+  "b_name": "五色鹦鹉图卷",
+  "a_sub": "ext·wikidata",
+  "b_sub": "原清单",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "宋徽宗",
+  "b_artist": "宋徽宗",
+  "a_creator_qid": "Q7486",
+  "b_creator_qid": "Q7486",
+  "a_span": [
+   1110,
+   1110,
+   false
+  ],
+  "b_span": null,
+  "channels": [
+   "作者+年代"
+  ],
+  "evidence": {
+   "creator": "Q7486",
+   "year": "unknown",
+   "jaccard": 0.11,
+   "group": 3
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   24
+  ],
+  "b": [
+   "S",
+   33
+  ],
+  "a_row": 24,
+  "b_row": 31,
+  "a_name": "Night Attack on the Sanjô Palace, from the Illustrated Scrolls of the Events of the Heiji Era (Heiji monogatar",
+  "b_name": "平治物语绘卷（http://www.wikidata.org/.well-known/genid/13ef7cce561dc041541b4b092e6cf417，1275-01-01）",
+  "a_sub": "ext·wikidata",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "",
+  "b_artist": "",
+  "a_creator_qid": null,
+  "b_creator_qid": null,
+  "a_span": [
+   1300,
+   1300,
+   false
+  ],
+  "b_span": [
+   1275,
+   1275,
+   false
+  ],
+  "channels": [
+   "稀有词块"
+  ],
+  "evidence": {
+   "token": "monogatari",
+   "jaccard": 0.25
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   15
+  ],
+  "b": [
+   "S",
+   38
+  ],
+  "a_row": 15,
+  "b_row": 36,
+  "a_name": "《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）",
+  "b_name": "Triad of King Mycerinus and two Goddesses-09.200（http://www.wikidata.org/.well-known/genid/6830ab182ab46b8be37",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "",
+  "b_artist": "",
+  "a_creator_qid": null,
+  "b_creator_qid": null,
+  "a_span": [
+   -2686,
+   -2181,
+   true
+  ],
+  "b_span": [
+   -2500,
+   -2500,
+   false
+  ],
+  "channels": [
+   "稀有词块"
+  ],
+  "evidence": {
+   "token": "triad",
+   "jaccard": 0.25
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   12
+  ],
+  "b": [
+   "S",
+   39
+  ],
+  "a_row": 12,
+  "b_row": 37,
+  "a_name": "《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）",
+  "b_name": "Statue of Menkaura and Queen Khamerernebty II",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "",
+  "b_artist": "",
+  "a_creator_qid": null,
+  "b_creator_qid": null,
+  "a_span": [
+   -2490,
+   -2472,
+   false
+  ],
+  "b_span": null,
+  "channels": [
+   "稀有词块"
+  ],
+  "evidence": {
+   "token": "menkaura",
+   "jaccard": 0.29
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   20
+  ],
+  "a_row": 6,
+  "b_row": 20,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "葛饰北斋",
+  "b_artist": "葛饰北斋",
+  "a_creator_qid": "Q5586",
+  "b_creator_qid": "Q5586",
+  "a_span": [
+   1830,
+   1831,
+   true
+  ],
+  "b_span": [
+   1830,
+   1830,
+   false
+  ],
+  "channels": [
+   "作者+年代"
+  ],
+  "evidence": {
+   "creator": "Q5586",
+   "year": "overlap",
+   "jaccard": 0.11,
+   "group": 4
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   10
+  ],
+  "b": [
+   "S",
+   30
+  ],
+  "a_row": 10,
+  "b_row": 29,
+  "a_name": "J.M.W. Turner《Slave Ship》奴隶船（1840）",
+  "b_name": "奴隸船（约瑟夫·马洛德·威廉·透纳，1840-01-01，油彩）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "约瑟夫·马洛德·威廉·透纳",
+  "b_artist": "约瑟夫·马洛德·威廉·透纳",
+  "a_creator_qid": "Q159758",
+  "b_creator_qid": "Q159758",
+  "a_span": [
+   1840,
+   1840,
+   false
+  ],
+  "b_span": [
+   1840,
+   1840,
+   false
+  ],
+  "channels": [
+   "作者+年代",
+   "稀有词块",
+   "题名相等"
+  ],
+  "evidence": {
+   "title": "slaveship",
+   "creator": "Q159758",
+   "year": "overlap",
+   "jaccard": 0.22,
+   "group": 4,
+   "token": "slave"
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   7
+  ],
+  "b": [
+   "A",
+   449
+  ],
+  "a_row": 7,
+  "b_row": 493,
+  "a_name": "（传）宋徽宗《捣练图》Court ladies preparing newly woven silk（北宋，12 世纪初，绢本设色泥金）",
+  "b_name": "捣练图（张萱，1101-01-01）",
+  "a_sub": "ext·官网",
+  "b_sub": "ext·wikidata",
+  "a_tier": "S",
+  "b_tier": "A",
+  "a_artist": "宋徽宗",
+  "b_artist": "张萱",
+  "a_creator_qid": "Q7486",
+  "b_creator_qid": "Q565370",
+  "a_span": [
+   1100,
+   1133,
+   true
+  ],
+  "b_span": [
+   1101,
+   1101,
+   false
+  ],
+  "channels": [
+   "题名相等"
+  ],
+  "evidence": {
+   "title": "捣练图"
+  },
+  "review_only": false
+ },
+ {
+  "a": [
+   "S",
+   6
+  ],
+  "b": [
+   "S",
+   40
+  ],
+  "a_row": 6,
+  "b_row": 38,
+  "a_name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+  "b_name": "神奈川冲浪里",
+  "a_sub": "ext·官网",
+  "b_sub": "原清单",
+  "a_tier": "S",
+  "b_tier": "S",
+  "a_artist": "葛饰北斋",
+  "b_artist": "Katsushika Hokusai",
+  "a_creator_qid": "Q5586",
+  "b_creator_qid": "Q5586",
+  "a_span": [
+   1830,
+   1831,
+   true
+  ],
+  "b_span": null,
+  "channels": [
+   "作者+年代"
+  ],
+  "evidence": {
+   "creator": "Q5586",
+   "year": "unknown",
+   "jaccard": 0.0,
+   "group": 4
+  },
+  "review_only": false
+ }
+]

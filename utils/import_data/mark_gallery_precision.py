@@ -35,8 +35,9 @@ import sys
 
 import openpyxl
 
+from merged_xlsx import merged_xlsx
+
 HERE = pathlib.Path(__file__).parent
-XLSX = HERE / "export" / "展品_波士顿美术馆_合并.xlsx"
 CACHE = HERE / "onview_cache.jsonl"
 SHEET = "去重后总表"
 
@@ -80,6 +81,7 @@ def derive(a: dict) -> str | None:
 
 
 def main() -> None:
+    XLSX = merged_xlsx()
     if not CACHE.exists():
         sys.exit(f"找不到 {CACHE}")
     ans = {}

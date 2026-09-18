@@ -39,11 +39,15 @@ import time
 
 import openpyxl
 
-import gemini_api
+from merged_xlsx import merged_xlsx
 
-XLSX = pathlib.Path(__file__).parent / "export" / "展品_波士顿美术馆_合并.xlsx"
+import gemini_api
+from gallery_text import better, is_specific
+
 SHEET = "去重后总表"
 CACHE = pathlib.Path(__file__).parent / "onview_cache.jsonl"
+# 被粒度闸挡下的模型答案。丢弃不等于扔掉 —— 留痕才不会下次又花一遍钱问同一个问题。
+REJECTED = pathlib.Path(__file__).parent / "onview_rejected.jsonl"
 
 MODEL = "gemini-3.6-flash"     # 2.5-flash 对新用户已下线，官方指向这个
 
@@ -57,8 +61,11 @@ SYSTEM = """你在为一份波士顿美术馆（MFA Boston）的展品清单核�
 
 · 你没有 MFA 的实时馆藏数据。**只有在你确知这件作品是该馆长期陈列的知名展品时**，
   才回答 on_view=true；否则一律 "unknown"。
-· **不要猜展厅号。** 记不准具体展厅就把 gallery 留空，只要 on_view 判断。
-  写错的展厅号比空着有害得多 —— 游客会照着它走过去然后扑空。
+· **不要猜展厅号。** 写错的展厅号比空着有害得多 —— 游客会照着它走过去然后扑空。
+  但**粗粒度是可以接受的**（用户 2026-09-16 明确同意）：
+  记不准具体展厅号时，若你确知它属于某个翼楼或部门展区，
+  就填那个层级，例如 "Art of the Americas Wing, Level 2"、"Art of Asia"。
+  **宁可给翼楼级，也不要编一个 Gallery 号；两者都给不出时才留空。**
 · 库房藏品、纸本（浮世绘、素描、摄影）等因保存需要轮换展出的门类，
   除非你确知它常年陈列，否则一律 "unknown"。
 · 已知离馆、易主、或有捐赠条款限制不得公开展出的，回答 on_view=false 并在 note 说明。
@@ -130,10 +137,20 @@ def main() -> None:
                     help="连已有依据的行也覆盖（默认只填「未知」与空行）")
     ap.add_argument("--dry-run", action="store_true",
                     help="不调 API，验证读表/回写通路")
+    ap.add_argument("--xlsx", help="要改的工作簿；不给则按 merged_xlsx() 解析合并版。"
+                                   "**就地改**，跑新一轮前建议先 copy_sheet.py 抄一份副本。")
+    ap.add_argument("--key-file", default="~/.gemini_key",
+                    help="API key 文件。付费项目余额为 0 时用 ~/.gemini_key_free。")
+    ap.add_argument("--need-gallery", action="store_true",
+                    help="改按「展厅列给不出具体位置」选行（不论陈列状态），"
+                         "而不是只挑状态为空/未知的行。"
+                         "覆盖「已在展但没有展厅」那一批。")
     args = ap.parse_args()
 
-    if not XLSX.exists():
-        sys.exit(f"找不到 {XLSX}")
+
+    XLSX = pathlib.Path(args.xlsx) if args.xlsx else merged_xlsx()
+    if args.xlsx and not XLSX.exists():
+        sys.exit(f"--xlsx 指定的文件不存在：{XLSX}")
 
     wb = openpyxl.load_workbook(XLSX)
     if SHEET not in wb.sheetnames:
@@ -148,16 +165,32 @@ def main() -> None:
             sys.exit(f"表头里找不到列「{name}」，现有前 10 列：{hdr[:10]}")
         col[name] = hdr.index(name) + 1        # openpyxl 是 1-based
 
+    # 已核实离馆的展品一律不碰 —— 核实过的事实压过模型推断。
+    # 模型曾把其中 2 件判成「在展」，其中莫奈《The Fort of Antibes》还配了 Gallery 252
+    #（那个展厅号本身没错，MFA 的莫奈确实在 252 厅；错的是这一件 2011 年已易主）。
+    departed = set()
+    mp = pathlib.Path(__file__).parent / "mfa_membership.json"
+    if mp.exists():
+        departed = {r["seq"] for r in json.loads(mp.read_text(encoding="utf-8"))["left_mfa"]}
+    c_mus = hdr.index("博物馆") + 1 if "博物馆" in hdr else None
+
     tiers = {t.strip() for t in args.tier.split(",") if t.strip()}
-    todo = []
+    todo, protected = [], 0
     for row in range(2, ws.max_row + 1):
         if tiers and ws.cell(row, col["Tier"]).value not in tiers:
             continue
         status = ws.cell(row, col["陈列状态"]).value
-        if not args.overwrite and status not in (None, "", "未知"):
+        if args.need_gallery:
+            if is_specific(ws.cell(row, col["展厅"]).value):
+                continue
+        elif not args.overwrite and status not in (None, "", "未知"):
             continue
         name = ws.cell(row, col["展品名称"]).value
         if not name:
+            continue
+        if c_mus and "扩充清单" in str(ws.cell(row, c_mus).value or "") \
+                and ws.cell(row, col["序号"]).value in departed:
+            protected += 1
             continue
         todo.append({
             "row": row,
@@ -168,7 +201,8 @@ def main() -> None:
     if args.limit:
         todo = todo[:args.limit]
     scope = f"Tier {args.tier}" if tiers else "全部 Tier"
-    print(f"待处理 {len(todo)} 行（{scope}；全表 {ws.max_row - 1} 行）")
+    print(f"待处理 {len(todo)} 行（{scope}；全表 {ws.max_row - 1} 行）"
+          f"｜已核实离馆而跳过 {protected} 行")
     if not todo:
         sys.exit("没有需要填的行")
 
@@ -180,10 +214,11 @@ def main() -> None:
         return
 
     if not gemini_api.available():
-        sys.exit("gemini_api.available() 为 False —— 检查 ~/.gemini_key 是否存在且权限正确")
+        sys.exit(f"gemini_api.available() 为 False —— 检查 {args.key_file} 是否存在且权限正确")
 
     cache = load_cache()
     filled = skipped = 0
+    rejected: list[dict] = []          # 被粒度闸挡下的模型答案
 
     for i in range(0, len(todo), args.batch):
         batch = todo[i:i + args.batch]
@@ -194,7 +229,8 @@ def main() -> None:
             print(f"[{i//args.batch + 1}] 命中缓存")
         else:
             try:
-                resp, usage = gemini_api.ask(SYSTEM, user, SCHEMA, model=args.model)
+                resp, usage = gemini_api.ask(SYSTEM, user, SCHEMA, model=args.model,
+                                             key_file=args.key_file)
             except Exception as e:
                 print(f"[{i//args.batch + 1}] 调用失败：{type(e).__name__} {str(e)[:160]}")
                 time.sleep(10)
@@ -220,12 +256,32 @@ def main() -> None:
                 ws.cell(row, col["陈列状态"]).value = "在展"
                 g = (r.get("gallery") or "").strip()
                 if g:
-                    ws.cell(row, col["展厅"]).value = g
+                    # 粒度闸：只有更具体才覆盖。相等或更低一律保留原值 ——
+                    # 原值来自源数据/官网，有出处；模型答案没有，平手时原值赢。
+                    # 2026-09-16 没有这道闸，58 行被改写、34 行变差 0 行变好，
+                    # 其中 `Gallery LG33` 这样的真展厅号被改成了 `Art of the Americas Wing`。
+                    cur = ws.cell(row, col["展厅"]).value
+                    if better(g, cur):
+                        ws.cell(row, col["展厅"]).value = g
+                    else:
+                        # 丢弃的答案要留痕，否则下次又花一遍钱问同一个问题
+                        rejected.append({"row": row, "kept": cur, "rejected": g,
+                                         "name": b["name"][:60]})
             elif ov == "false":
                 ws.cell(row, col["陈列状态"]).value = "不在展"
             else:
                 ws.cell(row, col["陈列状态"]).value = "未知"
             filled += 1
+
+    if rejected:
+        with REJECTED.open("a", encoding="utf-8") as f:
+            for r in rejected:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        print(f"\n粒度闸挡下 {len(rejected)} 条更粗的答案（原值保留），已记入 {REJECTED.name}：")
+        for r in rejected[:8]:
+            print(f"    行{r['row']:<5} 保留 {str(r['kept'])[:32]!r}  丢弃 {r['rejected'][:26]!r}")
+        if len(rejected) > 8:
+            print(f"    …… 其余 {len(rejected) - 8} 条")
 
     # 一行没填就不要重存 —— openpyxl 重写工作簿会丢图表、条件格式等它不认识的东西，
     # 没有改动却付这个代价是纯亏。（2026-09-14 全批 429 时踩到。）
