@@ -6,12 +6,12 @@ G0031,并入(G0031),作者+时期同组·haiku 判同一件（佚名）：杰胡
 G0004,并入(G0004),作者+时期同组·haiku 判同一件（Q296）：La Japonaise，莫奈之妻卡米耶穿着日本和服，创作于1876年，[607]为[106]的不完,A,65,A,日本女人 (绘画)（克劳德·莫奈，1876-01-01，油彩）,56.147,https://www.wikidata.org/wiki/Q10322900
 G0005,并入(G0005),跨管线馆藏号 48.726,A,70,A,Fisherman's Family（温斯洛·霍默，1881-01-01，纸）,48.726,https://www.wikidata.org/wiki/Q111352238
 G0006,并入(G0006),跨管线馆藏号 64.693,A,89,A,Mrs. Fiske Warren (Gretchen Osgood) and Her Daughter Rachel（约翰·辛格·沙金，1903-01-01，油彩）,64.693,https://www.wikidata.org/wiki/Q17026932
-G0007,并入(G0007),作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,144,A,Victorine Meurent（愛德華·馬奈，1862-01-01，油彩）,46.846,https://www.wikidata.org/wiki/Q20539197
+G0007,主行,作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,144,A,Victorine Meurent（愛德華·馬奈，1862-01-01，油彩）,46.846,https://www.wikidata.org/wiki/Q20539197
 G0008,主行,组画分件 基号 56.171（作者 Q130531 一致）,A,159,A,Franco van Langhel and His Sons with Saint John the Evangelist (outer face); Pieter van Os,56.171.1,https://www.wikidata.org/wiki/Q20540155
 G0008,并入(G0008),组画分件 基号 56.171（作者 Q130531 一致）,A,160,A,Heilwich van der Rullen and Her Daughters with Saint Mary Magdalen (outer face); Hendrixke,56.171.2,https://www.wikidata.org/wiki/Q20540157
 G0003,主行,作者+时期同组·haiku 判同一件（Q5599）：同一肖像作品《穆莱·艾哈迈德/Portrait of Mulay Ahmad》的两条记录，题名本质相,A,192,A,Portrait of Mulay Ahmad（彼得·保羅·魯本斯，1609-01-01，油彩）,40.2,https://www.wikidata.org/wiki/Q20555569
 G0001,并入(G0001),作者+时期同组·haiku 判同一件（Q46408）：同一件作品的中英两条记录，题名为Deer Skull with Pedernal，年代和作者均相同,A,274,A,Deer's Skull with Pedernal（喬治亞·歐姬芙，1936-01-01，油彩）,1990.432,https://www.wikidata.org/wiki/Q20634926
-G0009,并入(G0009),作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,286,A,John Adams（吉尔伯特·斯图尔特，1823-01-01，油彩）,1999.59,https://www.wikidata.org/wiki/Q20634988
+G0009,主行,作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,286,A,John Adams（吉尔伯特·斯图尔特，1823-01-01，油彩）,1999.59,https://www.wikidata.org/wiki/Q20634988
 G0010,并入(G0010),跨管线馆藏号 1976.667,A,366,A,Portrait of Rebecca Boylston（约翰·科普利，1767-01-01，油彩）,1976.667,https://www.wikidata.org/wiki/Q20772177
 G0011,并入(G0011),组画分件 基号 1986.127（作者 Q1872755 一致）,A,432,A,Landscapes after Tang poems（陆俨少）,1986.127.1,https://www.wikidata.org/wiki/Q20786068
 G0012,主行,作者+时期同组·haiku 判同一件（Q5598）：同一件伦勃朗肖像：题名分别为通用描述（62岁女性）与具体人名（Aeltje Uylenburgh），,A,447,A,"Portrait of a 62-year-old Woman, possibly Aeltje Pietersdr Uylenburgh（伦勃朗，1632-01-01，油彩）",,https://www.wikidata.org/wiki/Q21501685
@@ -24,9 +24,9 @@ G0040,主行,跨管线馆藏号 48.548,A,564,A,摇摇篮的鲁林夫人,,
 G0002,主行,作者+时期同组·haiku 判同一件（Q296）：两条记录英文题名均为 Water Lilies，中文都是睡莲，明确指向同一件莫奈油画,A,565,A,睡莲,,
 G0027,主行,跨管线馆藏号 53.2552,A,570,A,牧场少年,,
 G0016,主行,作者+时期同组·haiku 判同一件（Q296）：题名均指莫奈夫人卡米耶与其子在阿让特伊花园的场景，创作于1875年，[615]为[984]的简化记录,A,571,A,莫奈夫人与她的儿子,,
-G0007,主行,作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,577,A,维克托里娜·默朗小姐,,
+G0007,并入(G0007),作者+时期同组·haiku 判同一件（Q40599）：维克托里娜·默朗肖像，Victorine Meurent中英两条题名互为翻译，年代1862相同,A,577,A,维克托里娜·默朗小姐,,
 G0015,主行,跨管线馆藏号 66.304,A,578,A,街头歌女,,
-G0009,主行,作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,580,A,约翰·亚当斯肖像,,
+G0009,并入(G0009),作者+时期同组·haiku 判同一件（Q41402）：同一件肖像：斯图尔特为John Adams所作，题名简洁版（John Adams）与完整版（Port,A,580,A,约翰·亚当斯肖像,,
 G0006,主行,跨管线馆藏号 64.693,A,583,A,菲斯克·沃伦夫人与女儿,,
 G0024,主行,跨管线馆藏号 1991.926,A,621,A,查尔斯·英奇斯夫人,,
 G0005,主行,跨管线馆藏号 48.726,A,634,A,渔夫一家,,

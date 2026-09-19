@@ -1,0 +1,1518 @@
+{
+ "generated_at": "2026-09-18T17:37:15",
+ "tiers": [
+  "S"
+ ],
+ "coverage": {
+  "空着": 7,
+  "wikidata": 21,
+  "跳过（展厅行或同组已有）": 6,
+  "gemini_memory（另一列）": 6,
+  "本表简介": 1,
+  "commons": 1
+ },
+ "rows": [
+  {
+   "来源表": "S",
+   "来源行": 2,
+   "row": 2,
+   "name": "杰胡提纳赫特外棺侧板 Outer coffin of Djehutynakht（埃及，公元前 2010–1961 年，雪松木）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 3,
+   "row": 3,
+   "name": "Claude Monet《Grainstack (Sunset)》干草堆（日落）（1891，布面油画）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q20538838",
+     "match": "题名相同且作者一致（Q296）",
+     "raw": {
+      "P2048": [
+       [
+        73.3,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        92.7,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 73.3,
+      "宽": 92.7
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q20538838",
+    "dims": {
+     "高": 73.3,
+     "宽": 92.7
+    },
+    "text": "高 73.3 × 宽 92.7 cm（来源：Wikidata Q20538838）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 4,
+   "row": 4,
+   "name": "John Singleton Copley《Paul Revere》保罗·里维尔像（1768，布面油画）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q20772166",
+     "match": "题名相同且作者一致（Q316016）",
+     "raw": {
+      "P2048": [
+       [
+        89.22,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        72.39,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 89.22,
+      "宽": 72.39
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q20772166",
+    "dims": {
+     "高": 89.22,
+     "宽": 72.39
+    },
+    "text": "高 89.22 × 宽 72.39 cm（来源：Wikidata Q20772166）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 5,
+   "row": 5,
+   "name": "John Singer Sargent《The Daughters of Edward Darley Boit》博伊特家的女儿们（1882，布面油画）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q644106",
+     "match": "题名相同且作者一致（Q155626）",
+     "raw": {
+      "P2048": [
+       [
+        221.93,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        222.57,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 221.93,
+      "宽": 222.57
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q644106",
+    "dims": {
+     "高": 221.93,
+     "宽": 222.57
+    },
+    "text": "高 221.93 × 宽 222.57 cm（来源：Wikidata Q644106）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 6,
+   "row": 6,
+   "name": "葛饰北斋《凯风快晴（赤富士）》Red Fuji（约 1830–31，《富岳三十六景》之一，多色木版画）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "跳过",
+     "why": "同去重组 G0033 已有有出处的尺寸"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 7,
+   "row": 7,
+   "name": "（传）宋徽宗《捣练图》Court ladies preparing newly woven silk（北宋，12 世纪初，绢本设色泥金）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 37.0,
+      "宽": 145.3
+     },
+     "why": "波士顿美术馆记录画心尺寸为高 37.0 cm，宽 145.3 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 37.0,
+     "宽": 145.3
+    },
+    "text": "高 37 × 宽 145.3 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 8,
+   "row": 8,
+   "name": "Paul Gauguin《Where Do We Come From? What Are We? Where Are We Going?》我们从何处来？我们是谁？我们向何处去？（1897–98）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q890678",
+     "match": "题名相同且作者一致（Q37693）",
+     "raw": {
+      "P2048": [
+       [
+        139.1,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        374.6,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 139.1,
+      "宽": 374.6
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q890678",
+    "dims": {
+     "高": 139.1,
+     "宽": 374.6
+    },
+    "text": "高 139.1 × 宽 374.6 cm（来源：Wikidata Q890678）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 9,
+   "row": 9,
+   "name": "Edgar Degas《The Little Dancer Aged Fourteen》十四岁的小舞者",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 10,
+   "row": 10,
+   "name": "J.M.W. Turner《Slave Ship》奴隶船（1840）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q219344",
+     "match": "题名相同且作者一致（Q159758）",
+     "raw": {
+      "P2048": [
+       [
+        90.8,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        122.6,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 90.8,
+      "宽": 122.6
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q219344",
+    "dims": {
+     "高": 90.8,
+     "宽": 122.6
+    },
+    "text": "高 90.8 × 宽 122.6 cm（来源：Wikidata Q219344）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 11,
+   "row": 11,
+   "name": "Vincent van Gogh《Postman Joseph Roulin》邮差约瑟夫·鲁兰（1888）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q1117805",
+     "match": "题名相同且作者一致（Q5582）",
+     "raw": {
+      "P2048": [
+       [
+        81.3,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        65.4,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 81.3,
+      "宽": 65.4
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q1117805",
+    "dims": {
+     "高": 81.3,
+     "宽": 65.4
+    },
+    "text": "高 81.3 × 宽 65.4 cm（来源：Wikidata Q1117805）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 12,
+   "row": 12,
+   "name": "《门卡乌拉王与王后》King Menkaura (Mycerinus) and queen（埃及古王国第四王朝，公元前 2490–2472，杂砂岩）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q90568358",
+     "match": "题名相同（作者不可考，全馆唯一命中）",
+     "raw": {
+      "P2048": [
+       [
+        142.2,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        57.1,
+        "Q174728"
+       ]
+      ],
+      "P2043": [
+       [
+        55.2,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 142.2,
+      "宽": 57.1,
+      "长": 55.2
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q90568358",
+    "dims": {
+     "高": 142.2,
+     "宽": 57.1,
+     "长": 55.2
+    },
+    "text": "高 142.2 × 宽 57.1 × 长 55.2 cm（来源：Wikidata Q90568358）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 13,
+   "row": 13,
+   "name": "木乃伊与彩绘棺群（Mummies 展厅陈列）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "跳过",
+     "why": "这一行写的是展厅/陈列，不是单件"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 14,
+   "row": 14,
+   "name": "《安克哈夫王子胸像》Bust of Prince Ankhhaf（古王国第四王朝）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 50.4
+     },
+     "why": "波士顿美术馆官方记录胸像高度为 50.4 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 50.4
+    },
+    "text": "高 50.4 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 15,
+   "row": 15,
+   "name": "《门卡乌拉、哈索尔女神与野兔诺姆神三联像》Triad of King Menkaura（古王国第四王朝）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "跳过",
+     "why": "同去重组 G0036 已有有出处的尺寸"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 16,
+   "row": 16,
+   "name": "《观音菩萨像》Guanyin, Bodhisattva of Compassion（中国，金代，12 世纪初；泡桐木、彩绘与贴金）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 17,
+   "row": 17,
+   "name": "《大日如来坐像》Dainichi, Buddha of Infinite Illumination（日本，1149 年，木造）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 18,
+   "row": 18,
+   "name": "快庆《弥勒菩萨立像》Boston Miroku（日本，1189 年，桧木、贴金、水晶嵌眼，寄木造）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q124727344",
+     "match": "馆藏号 20.723.1",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "本表简介",
+     "cm": {
+      "高": 142.0
+     },
+     "raw": "高约 142 厘米"
+    }
+   ],
+   "chosen": {
+    "source": "本表简介",
+    "dims": {
+     "高": 142.0
+    },
+    "text": "约 高 142 cm（来源：本表简介「高约 142 厘米」）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 19,
+   "row": 19,
+   "name": "曾我蕭白《雲龍図》Dragon and Clouds（日本，1763 年，纸本水墨）",
+   "sub": "ext·官网",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 20,
+   "row": 20,
+   "name": "Fine Wind, Clear Weather（葛饰北斋，1830-01-01）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q106769954",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        244.0,
+        "Q174789"
+       ]
+      ],
+      "P2049": [
+       [
+        381.0,
+        "Q174789"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 24.400000000000002,
+      "宽": 38.1
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q106769954",
+    "dims": {
+     "高": 24.400000000000002,
+     "宽": 38.1
+    },
+    "text": "高 24.4 × 宽 38.1 cm（来源：Wikidata Q106769954）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 21,
+   "row": 21,
+   "name": "吉備大臣入唐繪卷（http://www.wikidata.org/.well-known/genid/f8f2af50392fe08b91cb63cf3dca7e8c，1200-01-01）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q11412641",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Kibi daijin nitto emaki - sample.jpg",
+     "cm": null,
+     "why": "馆藏机构不是 MFA（institution=无）"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 22,
+   "row": 22,
+   "name": "Waves at Matsushima（光琳，1650-01-01，折叠式屏風）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q11530118",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "wikidata",
+     "qid": "Q33162756",
+     "match": "合并时搬来的 QID（官方页面_补充N）",
+     "raw": {
+      "P2048": [
+       [
+        150.2,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        367.8,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 150.2,
+      "宽": 367.8
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q33162756",
+    "dims": {
+     "高": 150.2,
+     "宽": 367.8
+    },
+    "text": "高 150.2 × 宽 367.8 cm（来源：Wikidata Q33162756）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 23,
+   "row": 23,
+   "name": "The Fog Warning（温斯洛·霍默，1885-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q12162390",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        76.83,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        123.19,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 76.83,
+      "宽": 123.19
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q12162390",
+    "dims": {
+     "高": 76.83,
+     "宽": 123.19
+    },
+    "text": "高 76.83 × 宽 123.19 cm（来源：Wikidata Q12162390）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 24,
+   "row": 24,
+   "name": "Night Attack on the Sanjô Palace, from the Illustrated Scrolls of the Events of the Heiji Era (Heiji monogatari emaki)（1300-01-01）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q126673828",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Heiji Monogatari Emaki - Sanjo scroll part 5 - v2.jpg",
+     "cm": null,
+     "why": "dimensions 认不出：699.7 m (long), 41.3 cm (high)"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 41.3,
+      "宽": 699.7
+     },
+     "why": "波士顿美术馆官方记录高 41.3 cm，长 699.7 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 41.3,
+     "宽": 699.7
+    },
+    "text": "高 41.3 × 宽 699.7 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 25,
+   "row": 25,
+   "name": "九龍圖（陈容，1244-01-01，纸）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q15592269",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Chen Rong - Nine Dragons.jpg",
+     "cm": {
+      "高": 46.8,
+      "宽": 1496.5
+     },
+     "raw": "Overall: 46.8 x 1496.5 cm (18 7/16 x 589 3/16 in.)<br/> Image: 46.2 x 958.4 cm (18 3/16 x 377 5/16 in.)"
+    }
+   ],
+   "chosen": {
+    "source": "commons",
+    "file": "Chen Rong - Nine Dragons.jpg",
+    "dims": {
+     "高": 46.8,
+     "宽": 1496.5
+    },
+    "text": "高 46.8 × 宽 1496.5 cm（来源：Wikimedia Commons Chen Rong - Nine Dragons.jpg）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 26,
+   "row": 26,
+   "name": "Watson and the Shark（约翰·科普利，1778-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q1787460",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        90.0,
+        "Q218593"
+       ]
+      ],
+      "P2049": [
+       [
+        70.0,
+        "Q218593"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 228.6,
+      "宽": 177.8
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q1787460",
+    "dims": {
+     "高": 228.6,
+     "宽": 177.8
+    },
+    "text": "高 228.6 × 宽 177.8 cm（来源：Wikidata Q1787460）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 28,
+   "row": 27,
+   "name": "The Water Lily Pond（克劳德·莫奈，1900-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q20538908",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        90.2,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        92.7,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 90.2,
+      "宽": 92.7
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q20538908",
+    "dims": {
+     "高": 90.2,
+     "宽": 92.7
+    },
+    "text": "高 90.2 × 宽 92.7 cm（来源：Wikidata Q20538908）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 29,
+   "row": 28,
+   "name": "Lullaby: Madame Augustine Roulin Rocking a Cradle (La Berceuse)（文森特·梵高，1889-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q20630411",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        92.7,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        72.7,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 92.7,
+      "宽": 72.7
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q20630411",
+    "dims": {
+     "高": 92.7,
+     "宽": 72.7
+    },
+    "text": "高 92.7 × 宽 72.7 cm（来源：Wikidata Q20630411）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 30,
+   "row": 29,
+   "name": "奴隸船（约瑟夫·马洛德·威廉·透纳，1840-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q219344",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        90.8,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        122.6,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 90.8,
+      "宽": 122.6
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q219344",
+    "dims": {
+     "高": 90.8,
+     "宽": 122.6
+    },
+    "text": "高 90.8 × 宽 122.6 cm（来源：Wikidata Q219344）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 31,
+   "row": 30,
+   "name": "Five-colored parakeet on a blossoming apricot tree（宋徽宗，1110-01-01）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q28801723",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        533.0,
+        "Q174789"
+       ]
+      ],
+      "P2049": [
+       [
+        1251.0,
+        "Q174789"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 53.300000000000004,
+      "宽": 125.10000000000001
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q28801723",
+    "dims": {
+     "高": 53.300000000000004,
+     "宽": 125.10000000000001
+    },
+    "text": "高 53.3 × 宽 125.1 cm（来源：Wikidata Q28801723）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 33,
+   "row": 31,
+   "name": "平治物语绘卷（http://www.wikidata.org/.well-known/genid/13ef7cce561dc041541b4b092e6cf417，1275-01-01）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q3443335",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Heiji Monogatari Emaki - Sanjo scroll complete.jpg",
+     "cm": null,
+     "why": "dimensions 认不出：699.7 m (long), 41.3 cm (high)"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": null,
+     "why": "模型答不知道，或数值不合理"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 34,
+   "row": 32,
+   "name": "波士顿绿头（-0400-01-0，杂砂岩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q5738098",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Boston Green Head 1859.jpg",
+     "cm": null,
+     "why": "馆藏机构不是 MFA（institution=无）"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 10.5
+     },
+     "why": "波士顿美术馆官方记录绿头雕像头部高度为 10.5 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 10.5
+    },
+    "text": "高 10.5 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 35,
+   "row": 33,
+   "name": "爱德华·达里·博伊特的女儿（约翰·辛格·沙金，1882-01-01，油彩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q644106",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        221.93,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        222.57,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 221.93,
+      "宽": 222.57
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q644106",
+    "dims": {
+     "高": 221.93,
+     "宽": 222.57
+    },
+    "text": "高 221.93 × 宽 222.57 cm（来源：Wikidata Q644106）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 36,
+   "row": 34,
+   "name": "Colossal Statue of Menkaura in Boston（http://www.wikidata.org/.well-known/genid/df65bb85e74bd803c0025d76ab83abbb，-2500-01-0，洞石）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q69352713",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        243.8,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        83.8,
+        "Q174728"
+       ]
+      ],
+      "P2043": [
+       [
+        115.6,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 243.8,
+      "宽": 83.8,
+      "长": 115.6
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q69352713",
+    "dims": {
+     "高": 243.8,
+     "宽": 83.8,
+     "长": 115.6
+    },
+    "text": "高 243.8 × 宽 83.8 × 长 115.6 cm（来源：Wikidata Q69352713）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 37,
+   "row": 35,
+   "name": "Beadnet dress-27.1548.1-2（http://www.wikidata.org/.well-known/genid/02f88c16e886949865ab46c4fc5b5ab2，-2600-01-0，彩釉陶器）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q75317748",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        113.0,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        44.0,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 113.0,
+      "宽": 44.0
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q75317748",
+    "dims": {
+     "高": 113.0,
+     "宽": 44.0
+    },
+    "text": "高 113 × 宽 44 cm（来源：Wikidata Q75317748）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 38,
+   "row": 36,
+   "name": "Triad of King Mycerinus and two Goddesses-09.200（http://www.wikidata.org/.well-known/genid/6830ab182ab46b8be37560bc66b7ef78，-2500-01-0，杂砂岩）",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q77592741",
+     "match": "行自带 QID",
+     "raw": {
+      "P2048": [
+       [
+        84.5,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        43.5,
+        "Q174728"
+       ]
+      ],
+      "P2610": [
+       [
+        49.0,
+        "Q174728"
+       ]
+      ],
+      "P2067": [
+       [
+        187.8,
+        "Q11570"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 84.5,
+      "宽": 43.5,
+      "深": 49.0,
+      "重": 187.8
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q77592741",
+    "dims": {
+     "高": 84.5,
+     "宽": 43.5,
+     "深": 49.0,
+     "重": 187.8
+    },
+    "text": "高 84.5 × 宽 43.5 × 深 49 cm；重 187.8 kg（来源：Wikidata Q77592741）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 39,
+   "row": 37,
+   "name": "Statue of Menkaura and Queen Khamerernebty II",
+   "sub": "ext·wikidata",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q8843134",
+     "match": "行自带 QID",
+     "raw": {},
+     "cm": {},
+     "notes": [],
+     "why": "条目在，但没有尺寸"
+    },
+    {
+     "source": "commons",
+     "file": "Menkaure and Chamerernebti II.jpg",
+     "cm": null,
+     "why": "馆藏机构不是 MFA（institution=无）"
+    },
+    {
+     "source": "跳过",
+     "why": "同去重组 G0035 已有有出处的尺寸"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 40,
+   "row": 38,
+   "name": "神奈川冲浪里",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 25.7,
+      "宽": 37.9
+     },
+     "why": "波士顿美术馆藏印本纸张尺寸为高 25.7 cm，宽 37.9 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 25.7,
+     "宽": 37.9
+    },
+    "text": "高 25.7 × 宽 37.9 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 41,
+   "row": 39,
+   "name": "自由之子银碗",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "gemini_memory",
+     "model": "gemini-3.6-flash",
+     "cm": {
+      "高": 14.0,
+      "直径": 28.0
+     },
+     "why": "保罗·里维尔制银碗官方尺寸为高 14.0 cm，口径 28.0 cm。"
+    }
+   ],
+   "chosen": null,
+   "gemini": {
+    "dims": {
+     "高": 14.0,
+     "直径": 28.0
+    },
+    "text": "高 14 × 直径 28 cm（gemini-3.6-flash 凭记忆，未核实）"
+   }
+  },
+  {
+   "来源表": "S",
+   "来源行": 42,
+   "row": 40,
+   "name": "雾的警告",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q12162390",
+     "match": "馆藏号 94.72",
+     "raw": {
+      "P2048": [
+       [
+        76.83,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        123.19,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 76.83,
+      "宽": 123.19
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q12162390",
+    "dims": {
+     "高": 76.83,
+     "宽": 123.19
+    },
+    "text": "高 76.83 × 宽 123.19 cm（来源：Wikidata Q12162390）"
+   },
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 43,
+   "row": 41,
+   "name": "九龙图卷",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "跳过",
+     "why": "同去重组 G0039 已有有出处的尺寸"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 44,
+   "row": 42,
+   "name": "五色鹦鹉图卷",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "why": "Wikidata 的 MFA 条目里没有同名的"
+    },
+    {
+     "source": "跳过",
+     "why": "同去重组 G0041 已有有出处的尺寸"
+    }
+   ],
+   "chosen": null,
+   "gemini": null
+  },
+  {
+   "来源表": "S",
+   "来源行": 45,
+   "row": 43,
+   "name": "向伟大之灵祈祷",
+   "sub": "原清单",
+   "tried": [
+    {
+     "source": "wikidata",
+     "qid": "Q4780980",
+     "match": "题名相同且作者一致（Q1148931）",
+     "raw": {
+      "P2048": [
+       [
+        309.88,
+        "Q174728"
+       ]
+      ],
+      "P2049": [
+       [
+        111.12,
+        "Q174728"
+       ]
+      ]
+     },
+     "cm": {
+      "高": 309.88,
+      "宽": 111.12
+     },
+     "notes": []
+    }
+   ],
+   "chosen": {
+    "source": "wikidata",
+    "qid": "Q4780980",
+    "dims": {
+     "高": 309.88,
+     "宽": 111.12
+    },
+    "text": "高 309.88 × 宽 111.12 cm（来源：Wikidata Q4780980）"
+   },
+   "gemini": null
+  }
+ ]
+}

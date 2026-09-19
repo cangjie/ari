@@ -85,7 +85,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十二条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十三条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -304,6 +304,10 @@ Wikidata 只到馆一级。公开网络上能拿到的就只有翼楼这个粒�
   带 `google_search` 就 429，8 个型号全都一样。错误体里**没有 `QuotaFailure`**
   （没有 quotaId，也没有 retryDelay）。连旧工具名 `google_search_retrieval` 也是 429，
   不是 400，说明拦截发生在参数校验之前：卡的是权限，不是配额。
+· **免费层经常 503 过载**（`This model is currently experiencing high demand`）。
+  09-18 跑 A 级尺寸时，6 批里有 4 批连续 3 次 503，前后共 30 次失败。
+  失败的请求算不算进每天 20 次的额度，API 查不到，要去 AI Studio 的速率限制页看。
+  **分批 + 每批单独缓存**，失败的批次留到下次重跑，已成功的不重付。
 · key 分两个文件：`~/.gemini_key` 是付费项目（09-16 余额为 0，连裸调用都 429），
   `~/.gemini_key_free` 是免费项目。脚本用 `--key-file` 显式指定，别靠默认值去猜哪把在花钱。
 · **python.org 版 Python 装在 macOS 上时不带根证书**，所有 HTTPS 都会报
@@ -733,6 +737,13 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
   「独有」，就是因为这几种在表里长得一样。
 - 结果（09-18）：41 组、并入 48 行，`去重后总表_v2` 4489 行，待人工复核 10 行。
   **年代解析修好之后，具名作者组还没有重跑**（佚名组已经补跑）。重跑共 22 次调用，其中 7 次能命中缓存。
+- **⚠ 已知缺陷，未修（用户 09-18 说稍后处理）：合并后的 Tier 被悄悄降级。**
+  主行按「非空字段数」选，而合并后的 Tier 直接取主行的值，**选主行时根本不看 Tier**。
+  原清单走过完整审计，多出 11 个审计字段，所以常常赢过扩充清单里那条 S 级：
+  《摇摇篮的鲁林夫人》原清单 A（26 个字段）对扩充清单 S（20 个字段），合并后成了 A。
+  一共 3 组（G0040 鲁林夫人 S→A、G0011 陆俨少册页 A→B、G0025 老者肖像 B→C）。
+  这又是拿一个指标（字段多）去代理另一件事（该保留哪条）。建议的修法是主行照旧按字段数选，
+  Tier 单独取组内最高，并在 `去重依据` 里写明两条记录的评级不一致。
 
 **踩过的坑。这些都不报错，只是结果悄悄不对：**
 - `norm_title()` 会去掉空格，拿它的结果去分词，整串只剩一个 token，**题名 Jaccard 恒为 0**。
@@ -749,6 +760,44 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
   **只有结构性问题才重试，细节问题就地清洗。**
 - 杀掉父进程之后，`claude -p` 子进程还活着、还在计费，要按 PID 逐个 `kill -9`。
   用 `nohup` 跑 Python 要加 `-u`，否则日志全被缓冲，看不到进度。
+
+**13. 展品尺寸：以 Wikidata 为主，Gemini 免费层只补缺，而且单独一列（用户 2026-09-18 定）。**
+
+`fetch_dims.py --tier S|A` 写 `展厅检索.xlsx` 的「去重后总表」，按 `(来源表,来源行)` 定位，
+写完要重跑 `dedupe_apply.py`，v2 和两张重复展品 sheet 才会带上尺寸（零 API）。
+只写空格子，写之前备份到 `.xlsx.bak_dims`。**数据库本轮没写**（本机连不上）：
+证据文件已按 `artwork_meta` 能灌入的形状准备好，`source_key` 取 `wikidata` / `wikimedia_commons` /
+`gemini_memory`，其中后两个还没在 `source_rules.py` 登记，灌库之前要先补上。
+
+| 来源 | 写进哪一列 | 说明 |
+|---|---|---|
+| Wikidata P2048/P2049/P2610/P2386/P2043/P2067 | `尺寸` | 一次 SPARQL 拉下 MFA 名下 4429 个条目，缓存进 `mfa_wikidata_dims.json`，之后本地匹配 |
+| 本表简介里写明的（如「像高约 142 厘米」） | `尺寸` | 只看官网和原清单两个子集的简介；ext·wikidata 的简介是模板，没有尺寸 |
+| Commons 图片页 `{{Artwork}}` 的 dimensions | `尺寸` | **institution 必须是 MFA 才采用** |
+| Gemini 免费层（没有检索，凭记忆） | `尺寸（模型记忆·未核实）` | 只补前面都没有的；**两列互斥**，同一去重组里只要有一条有出处，其余就不送 |
+
+**结果（09-18，v2）：S 级 32 件里 19 件有出处，6 件是模型记忆；A 级 620 件里 417 件有出处（67%），1 件是模型记忆。**
+Gemini 在 A 级基本没用：问到的 80 件只答出 1 件，另外 125 件赶上 503 没问到。
+**唯一答出来的那件（捣练图），理由写的是「波士顿美术馆官方记录……」，它根本没查过任何记录**，
+和 `Gallery 222` 是同一个毛病：数值碰巧是对的，出处是编的。
+
+**踩过的坑：**
+- **Wikidata 自己也会错，照录、不改**（第 7 条）：`Watson and the Shark` 高宽填反了
+  （228.6 × 177.8，实际是横幅）；`Bocca Baciata` 挂着「长 2700 cm」，实际是一幅 32 × 27 cm 的小画。
+  后面这种靠**比例闸**拦：某一维超过其余维度中位数的 60 倍就丢掉那一维
+  （手卷九龙图是 32 倍，不会被误伤）。单看每个数都在 0.5–3000 cm 之内，只有放在一起才看得出错。
+- **题名匹配先保留括号**：`norm_title` 会剥掉末尾括号，结果 `Grainstack (Sunset)` 和
+  `Grainstack (Snow Effect)` 撞成了同一个 `grainstack`。Wikidata 标签里的括号是题名的一部分。
+  题名匹配还要核对作者：`Paul Revere` 要匹配到 Copley 画的那幅肖像，不能是 Revere 做的银器。
+- **行上可能带着两个 QID**（`官方页面` 加上合并时搬来的 `官方页面_补充N`），其中一个可能是笼统条目：
+  `Waves at Matsushima` 的 Q11530118 挂了宗达、光琳两位作者，没有馆藏号；
+  真正的 MFA 那件是 Q33162756（馆藏号 11.4584）。所以要挨个试，有尺寸的那个才算数。
+- **图片链接会挂到别的作品上**：`Waves at Matsushima` 的图片其实是宗达的屏风（弗利尔美术馆藏）。
+- Commons wikitext 取字段值时，`=` 后面只能吃空格和制表符。用 `\s*` 的话，字段为空时会越过换行，
+  把下一行的 `|department =` 当成值读进来。
+- **Wikimedia 按 IP 限流**：`wbsearchentities` 间隔 0.5 秒，跑到第 12 次左右就 429，Commons 会被一起限。
+  所以用一次 SPARQL 拉全量，Commons 请求间隔 ≥ 2 秒。
+- 馆藏号比对只能去前导零，**不能去尾零**：`12.15` 和 `12.150` 可能是两件东西。
 
 ---
 
@@ -889,6 +938,9 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tls.py` | 所有 HTTPS 共用的 TLS 上下文。缺根证书时改用 certifi，缺 certifi 就报错退出，**不关闭证书校验** |
 | `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
 | `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
+| `utils/import_data/fetch_dims.py` | 第 13 条的尺寸抓取：Wikidata → 本表简介 → Commons → Gemini 免费层（单独一列）。`--tier`、`--dry-run`、`--no-gemini` |
+| `utils/import_data/mfa_wikidata_dims.json` | MFA 名下 4429 个 Wikidata 条目的标签、馆藏号、作者和尺寸原值。跑别的 Tier 直接复用，`--refresh-wd` 才重新拉 |
+| `utils/import_data/dims_s.json` / `dims_a.json` / `dims_gemini_cache.jsonl` | 逐行证据（每个来源试过的结果、原始值、最终采用哪一个）与 Gemini 的缓存 |
 | `utils/import_data/validate/` | 审计选型的证据：两批 48 件样本（调参集/留出集，零重合）与各模型跑分 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |
