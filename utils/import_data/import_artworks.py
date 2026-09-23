@@ -34,13 +34,18 @@ import openpyxl
 
 import pem_ext_data
 import pem_gallery_data
-from import_data import (CONF_TO_SOURCE, LANG_EN, LANG_ZH, Target, detect_lang,
+from import_data import (LANG_EN, LANG_ZH, Target, detect_lang,
                          load_translations)
 
 ARTWORK_DIR = "artworks"
 
 # 本数据集的内容ID段起点，与 import_data.py 的 0 段错开
 CONTENT_ID_BASE = 1_000_000
+
+# 译名表的 confidence 评价译文本身，不证明译文经过人工核校。展品译名由
+# translate_artwork.py 等模型流程生成；即使模型把通行译名标成「官方」，写入
+# content_text 时也必须如实记作 AI翻译。源 Excel 自带的双语 pairs 另走「原始」。
+ARTWORK_CONF_TO_SOURCE = {"官方": "AI翻译", "AI": "AI翻译", "存疑": "存疑"}
 
 CONTENT_KINDS = (
     "museum_name", "gallery_name", "gallery_theme",
@@ -389,7 +394,7 @@ def build_content_rows(buckets, trans, pairs, id_base=CONTENT_ID_BASE):
             if other:                                   # 源数据自带的另一语种
                 texts.setdefault(detect_lang(other), (other, "原始"))
             zh, en, conf = trans.get((kind, key), (None, None, ""))
-            src = CONF_TO_SOURCE.get(conf, "AI翻译")
+            src = ARTWORK_CONF_TO_SOURCE.get(conf, "AI翻译")
             if zh and LANG_ZH not in texts:
                 texts[LANG_ZH] = (zh, src)
             if en and LANG_EN not in texts:
