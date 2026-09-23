@@ -204,6 +204,11 @@ EFFORT_ALIASES = {
 # 非 None 时审计走 claude CLI 的订阅账号，型号即此字符串。
 # 与 tier_v3.CLAUDE_CLI 同一机制，理由见 claude_cli.py 的文件头。
 CLAUDE_CLI = None
+# 型号串；非 None 时走 codex exec 的 ChatGPT 订阅（codex_cli.py）。
+# **只供翻译类调用方使用**（meta_fill_official_pem / translate_artwork / audit_translate），
+# 审计本身的 --provider 里刻意不开放它：评级已经走 OpenAI（codex/luna），
+# 审计再用 OpenAI 就是打分者给自己打分（AGENTS.md 第 9 条）。
+CODEX_CLI = None
 GEMINI = None
 
 STAGE_EFFORT = {
@@ -241,6 +246,20 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
         # retries=4：免费层限速 12 次/分钟，撞 429 是常态，退避要给够。
         return llm_cache.call(_do_gemini, provider="google", model=GEMINI,
                               effort=None, stage=name, system=system, user=user,
+                              schema=schema, museum_key=museum_key, scope=scope,
+                              seqs=seqs, validate=validate, retries=4)
+
+    if CODEX_CLI is not None:
+        import codex_cli, llm_cache
+
+        def _do_codex():
+            data, usage = codex_cli.ask(system, user, schema, CODEX_CLI, effort)
+            return data, codex_cli.Usage(usage)
+
+        # 这条路径的 effort 真能控（-c model_reasoning_effort），所以照实进缓存键。
+        # retries=4：订阅撞的是速率限制，恢复得慢，同 claude_cli。
+        return llm_cache.call(_do_codex, provider="openai_codex", model=CODEX_CLI,
+                              effort=effort, stage=name, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
                               seqs=seqs, validate=validate, retries=4)
 

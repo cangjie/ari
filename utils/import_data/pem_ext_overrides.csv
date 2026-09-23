@@ -1,0 +1,3 @@
+# 人工裁决。identity 取 pem_ext_candidates.csv 的同名列。
+# action: drop（这条不要） / merge=<现有展品的 source_seq>（其实是同一件）
+identity,action,note

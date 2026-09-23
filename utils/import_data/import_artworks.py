@@ -5,8 +5,8 @@
 文本走 content / content_text 双语机制（与 import_data.py 共表，见下）。
 
 用法：
-  # 正式导入 MySQL
-  python import_artworks.py --host 44.207.251.65 --user ari --password *** --database ari
+  # 正式导入 MySQL（口令走选项文件，不进命令行）
+  python import_artworks.py --defaults-file ~/.my.cnf
 
   # 不连 MySQL，用 SQLite 试跑一遍验证清洗逻辑
   python import_artworks.py --sqlite ./aw.db
@@ -32,6 +32,8 @@ from collections import Counter
 
 import openpyxl
 
+import pem_ext_data
+import pem_gallery_data
 from import_data import (CONF_TO_SOURCE, LANG_EN, LANG_ZH, Target, detect_lang,
                          load_translations)
 
@@ -137,6 +139,11 @@ MUSEUMS = [
                   desc_en=5, desc_zh=6, has_image=7, medium=8),
         # 源文件只有 Has Image，没有在展字段 —— 不能拿有没有图去推在展与否
         on_view=lambda r, c: ON_VIEW_UNKNOWN,
+        # 第 4 列那 23 个「展厅」其实是主题标签，不是实体房间。展厅表改由官网的
+        # 26 个实体/冠名展厅充当，展品经 LABEL_MAP 挂上去，对不上的置 NULL
+        gallery_table=pem_gallery_data,
+        # Excel 之外的展品：官网栏目页 204 条 + Wikidata 67 条，追加在 seq 197 起
+        extra_table=pem_ext_data,
     ),
     dict(
         key="ham", name_zh="哈佛艺术博物馆", name_en="Harvard Art Museums",
@@ -229,15 +236,55 @@ def read_museum(m, base_dir):
             official_url=s(r[c["official_url"]]) if "official_url" in c else None,
         ))
 
-    # 展厅：先从展品里收集，再用「展厅索引」页补充元信息（目前只有故宫有）
-    galleries = {}
-    for it in items:
-        if it["gallery"]:
-            galleries.setdefault(it["gallery"], dict(
-                museum_key=m["key"], name_key=it["gallery"],
-                theme=None, location=None, minutes=None,
-                official_url=it["official_url"],
-            ))
+    # 展厅，两条路径：
+    #   默认      —— 从展品的展厅列收集，展厅是展品的副产品（6 个馆）
+    #   gallery_table —— 展厅是独立的基准表，展品的标签经映射挂上去（目前只有 PEM）
+    # 再用「展厅索引」页补充元信息（目前只有故宫有）
+    # 源 Excel 之外的展品行（目前只有 PEM：官网 204 条 + Wikidata 67 条）。
+    # 追加在最后，所以 Excel 那批的 source_seq 一个都不动 —— 那是
+    # artwork_tier_v3 / artwork_meta / artwork_evidence / llm_call_item 四张表的软键。
+    et = m.get("extra_table")
+    if et:
+        extra = et.import_rows(m["key"])
+        if extra:
+            lo = min(x["source_seq"] for x in extra)
+            if lo <= max((x["source_seq"] for x in items), default=0):
+                sys.exit(f"[fatal] {m['key']} 追加行的最小 source_seq 是 {lo}，"
+                         f"与 Excel 那批重叠 —— 会覆盖现有展品的软键。")
+        items += extra
+
+    gt = m.get("gallery_table")
+    if gt:
+        for it in items:
+            # 追加行的展厅已经由证据定出，就是 26 个实体展厅里的名字；
+            # LABEL_MAP 是给 Excel 里那 23 个旧主题标签用的，别拿它去解已解好的值
+            if not it["gallery"] or it.get("gallery_resolved"):
+                continue
+            try:
+                it["gallery"] = gt.resolve(it["gallery"])
+            except KeyError:
+                sys.exit(
+                    f"[fatal] {m['key']} 的展厅标签 {it['gallery']!r} 不在 "
+                    f"{gt.__name__}.LABEL_MAP 里。去登记它 —— 对应到某个实体展厅，"
+                    f"或显式写 None 表示不对应。不要猜，也不要让它静默变 NULL。")
+        # 基准表整份入库，包括没有展品落在上面的那些：它是 PEM 的展厅清单，
+        # 不是展品的副产品。少了这些，「这个馆有哪些展厅」就退回到只能从展品反推
+        galleries = {
+            g["name_en"]: dict(
+                museum_key=m["key"], name_key=g["name_en"],
+                theme=None, location=None, minutes=None, official_url=None,
+            )
+            for g in gt.GALLERIES
+        }
+    else:
+        galleries = {}
+        for it in items:
+            if it["gallery"]:
+                galleries.setdefault(it["gallery"], dict(
+                    museum_key=m["key"], name_key=it["gallery"],
+                    theme=None, location=None, minutes=None,
+                    official_url=it["official_url"],
+                ))
     if m.get("gallery_index") and m["gallery_index"] in wb.sheetnames:
         gi = wb[m["gallery_index"]]
         for r in gi.iter_rows(min_row=4, values_only=True):
@@ -563,6 +610,10 @@ def main():
     ap.add_argument("--password-file",
                     help="存放密码的文件（建议权限 600），优先于 --password；"
                          "避免密码出现在命令行与 shell 历史里")
+    ap.add_argument("--defaults-file",
+                    help="MySQL 选项文件（如 ~/.my.cnf，权限 600），"
+                         "连接参数与口令都从中读取，命令行里不出现密码。"
+                         "与 export_excel.py 的同名选项一致")
     ap.add_argument("--database", default="ari")
     args = ap.parse_args()
     if args.password_file:
@@ -607,9 +658,18 @@ def main():
         conn.close()
     else:
         import pymysql
-        conn = pymysql.connect(host=args.host, port=args.port, user=args.user,
-                               password=args.password, database=args.database,
-                               charset="utf8mb4", autocommit=False)
+        if args.defaults_file:
+            # 优先走选项文件：口令不进命令行，也不进 shell 历史与权限系统的 allow 列表
+            conn = pymysql.connect(
+                read_default_file=os.path.expanduser(args.defaults_file),
+                charset="utf8mb4", autocommit=False)
+        else:
+            if not args.password:
+                sys.exit("没有密码：用 --defaults-file、--password-file "
+                         "或环境变量 MYSQL_PASSWORD")
+            conn = pymysql.connect(host=args.host, port=args.port, user=args.user,
+                                   password=args.password, database=args.database,
+                                   charset="utf8mb4", autocommit=False)
         load(Target(conn, "mysql"), items, galleries, trans)
         conn.close()
     print("完成")

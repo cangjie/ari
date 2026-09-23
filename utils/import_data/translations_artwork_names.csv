@@ -5981,43 +5981,20 @@ gallery_name,333 Romantic European,333 欧洲浪漫主义,333 Romantic European,
 gallery_name,334 19th‑Century Academic France,334 十九世纪法国学院派,334 19th‑Century Academic France,AI
 gallery_name,334 European 18‑19C,334 欧洲十八至十九世纪,334 European 18‑19C,AI
 gallery_name,334 Realist France,334 法国现实主义,334 Realist France,AI
-gallery_name,American Art Gallery,美国艺术厅,American Art Gallery,AI
-gallery_name,American Contemporary Gallery,美国当代艺术厅,American Contemporary Gallery,AI
-gallery_name,American Decorative Arts,美国装饰艺术,American Decorative Arts,AI
-gallery_name,Ancient Mediterranean,古代地中海,Ancient Mediterranean,AI
-gallery_name,Art & Nature Center,艺术与自然中心,Art & Nature Center,AI
-gallery_name,Asian Export Art Gallery,亚洲外销艺术厅,Asian Export Art Gallery,AI
 gallery_name,Busch‑Reisinger 2100,布施-赖辛格 2100,Busch‑Reisinger 2100,AI
 gallery_name,Busch‑Reisinger 2110,布施-赖辛格 2110,Busch‑Reisinger 2110,AI
 gallery_name,Busch‑Reisinger 2120,布施-赖辛格 2120,Busch‑Reisinger 2120,AI
 gallery_name,Calderwood Courtyard,考尔德伍德中庭,Calderwood Courtyard,AI
-gallery_name,European Decorative Arts,欧洲装饰艺术,European Decorative Arts,AI
-gallery_name,Gardner‑Pingree Historic House,加德纳-平格里古宅,Gardner‑Pingree Historic House,AI
-gallery_name,Gardner‑Pingree House,加德纳-平格里宅,Gardner‑Pingree House,AI
 gallery_name,Islamic Art Gallery,伊斯兰艺术厅,Islamic Art Gallery,AI
 gallery_name,Islamic Gallery,伊斯兰厅,Islamic Gallery,AI
-gallery_name,Islamic‑Asian Gallery,伊斯兰与亚洲艺术厅,Islamic‑Asian Gallery,AI
 gallery_name,Japanese 215,日本艺术 215,Japanese 215,AI
 gallery_name,Japanese 216,日本艺术 216,Japanese 216,AI
-gallery_name,Japanese Art Gallery,日本艺术厅,Japanese Art Gallery,AI
 gallery_name,Japanese Galleries 215,日本艺术厅 215,Japanese Galleries 215,AI
-gallery_name,Korean Art Gallery,韩国艺术厅,Korean Art Gallery,AI
-gallery_name,Korean Contemporary Gallery,韩国当代艺术厅,Korean Contemporary Gallery,AI
 gallery_name,LG Egyptian Galleries,地下层 埃及艺术厅,LG Egyptian Galleries,AI
 gallery_name,LG31 Japanese Prints,地下层31 日本版画,LG31 Japanese Prints,AI
 gallery_name,LG32 Japanese Prints,地下层32 日本版画,LG32 Japanese Prints,AI
 gallery_name,MFA Outside Courtyard,波士顿美术馆室外庭院,MFA Outside Courtyard,AI
-gallery_name,Maritime Gallery,海事厅,Maritime Gallery,AI
-gallery_name,Maritime Gallery Captain Collectors,海事厅·船长收藏家,Maritime Gallery Captain Collectors,AI
-gallery_name,Mixed Oceanic Gallery,大洋洲综合厅,Mixed Oceanic Gallery,AI
-gallery_name,Oceanic Art Gallery,大洋洲艺术厅,Oceanic Art Gallery,AI
-gallery_name,Oceanic Gallery,大洋洲厅,Oceanic Gallery,AI
-gallery_name,Phillips Library Display Case,菲利普斯图书馆展柜,Phillips Library Display Case,AI
-gallery_name,Photography Gallery,摄影厅,Photography Gallery,AI
-gallery_name,Powerful Figures Gallery,力量之形厅,Powerful Figures Gallery,AI
 gallery_name,South Asian Galleries,南亚艺术厅,South Asian Galleries,AI
-gallery_name,Special Case Display,特别展柜,Special Case Display,AI
-gallery_name,Yin Yu Tang Courtyard,荫余堂庭院,Yin Yu Tang Courtyard,AI
 gallery_name,京城旧事·老北京民俗展（方形展厅五层 F 厅）,京城旧事·老北京民俗展（方形展厅五层 F 厅）,"Old Beijing Days: Folk Customs of Old Beijing (Square Building, Floor 5, Gallery F)",AI
 gallery_name,北京古代佛塔文物展（圆形展厅六层 L 厅）,北京古代佛塔文物展（圆形展厅六层 L 厅）,"Ancient Buddhist Pagoda Relics of Beijing (Round Building, Floor 6, Gallery L)",AI
 gallery_name,古代中国·三国（南20展厅）,古代中国·三国（南20展厅）,Ancient China: Three Kingdoms (Gallery S20),AI
@@ -9649,3 +9626,293 @@ gallery_name,"Level 3, Gallery 327 — 20 世纪美国艺术（曾为 Women Take
 gallery_name,Level LG — Ancient Americas 古代美洲展厅,Level LG — Ancient Americas 古代美洲展厅,Level LG — Ancient Americas Gallery,AI
 gallery_name,Level LG — Native North American Art 北美原住民艺术展厅,Level LG — Native North American Art 北美原住民艺术展厅,Level LG — Native North American Art Gallery,AI
 gallery_name,"Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations 前哥伦布黄金与安第斯文明","Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations 前哥伦布黄金与安第斯文明","Level LG, Gallery LG33 — Pre-Columbian Gold and Andean Civilizations",官方
+gallery_name,Seamans Gallery,西曼斯展厅,Seamans Gallery,AI
+gallery_name,Sean M. Healey Family Gallery of Asian Export Art,肖恩·M·希利家族亚洲外销艺术展厅,Sean M. Healey Family Gallery of Asian Export Art,AI
+gallery_name,Jurrien Timmer Gallery,朱里恩·蒂默展厅,Jurrien Timmer Gallery,AI
+gallery_name,Yu Kil-Chun Gallery of Korean Art and Culture,俞吉濬韩国艺术与文化展厅,Yu Kil-Chun Gallery of Korean Art and Culture,AI
+gallery_name,Byrne Family Gallery of Maritime Art,伯恩家族航海艺术展厅,Byrne Family Gallery of Maritime Art,AI
+gallery_name,Nancy and George Putnam Gallery,南希与乔治·普特南展厅,Nancy and George Putnam Gallery,AI
+gallery_name,Barbara Weld Putnam Gallery,芭芭拉·韦尔德·普特南展厅,Barbara Weld Putnam Gallery,AI
+gallery_name,Louise Du Pont Crowninshield Gallery,路易丝·杜邦·克劳宁希尔德展厅,Louise Du Pont Crowninshield Gallery,AI
+gallery_name,Chester and Davida Herwitz Gallery,切斯特与达维达·赫维茨展厅,Chester and Davida Herwitz Gallery,AI
+gallery_name,Prashant H. Fadia Foundation and Deshpande Foundation Gallery,普拉尚特·H·法迪亚基金会与德什潘德基金会展厅,Prashant H. Fadia Foundation and Deshpande Foundation Gallery,AI
+gallery_name,H.A. Crosby Forbes Gallery,H.A.克罗斯比·福布斯展厅,H.A. Crosby Forbes Gallery,AI
+gallery_name,Pamela Cunningham Copeland Gallery,帕梅拉·坎宁安·科普兰展厅,Pamela Cunningham Copeland Gallery,AI
+gallery_name,Carl and Iris Barrel Apfel Gallery of Fashion and Design,卡尔与艾瑞斯·巴瑞尔·阿普菲尔时尚与设计展厅,Carl and Iris Barrel Apfel Gallery of Fashion and Design,AI
+gallery_name,James Duncan Phillips Trust Gallery,詹姆斯·邓肯·菲利普斯信托展厅,James Duncan Phillips Trust Gallery,AI
+gallery_name,Yin Yu Tang Interpretive Gallery,荫余堂诠释展厅,Yin Yu Tang Interpretive Gallery,AI
+gallery_name,East India Marine Hall,东印度海事厅,East India Marine Hall,AI
+gallery_name,Studio Glass Gallery,现代玻璃艺术展厅,Studio Glass Gallery,AI
+gallery_name,Japanese Gallery,日本艺术展厅,Japanese Gallery,AI
+gallery_name,Witch Trials Gallery,女巫审判展厅,Witch Trials Gallery,AI
+gallery_name,Salem Stories Gallery,塞勒姆故事展厅,Salem Stories Gallery,AI
+gallery_name,Anila Quayyum Agha’s All the Flowers Are for Me Gallery,阿尼拉·卡尤姆·阿迦“所有花朵都为你”展厅,Anila Quayyum Agha’s All the Flowers Are for Me Gallery,AI
+gallery_name,Special Exhibition Gallery A,特展厅A,Special Exhibition Gallery A,AI
+gallery_name,Special Exhibition Gallery C,特展厅C,Special Exhibition Gallery C,AI
+gallery_name,Gallery 115,115号展厅,Gallery 115,AI
+gallery_name,Gallery 201 / Dodge 2 Galleries,201号展厅 / 道奇二层展厅,Gallery 201 / Dodge 2 Galleries,AI
+gallery_name,Gallery 300,300号展厅,Gallery 300,AI
+artwork_name,Mwaash aMbooy mask,Mwaash aMbooy面具,Mwaash aMbooy mask,存疑
+artwork_name,Figure group,人物组像,Figure group,AI
+artwork_name,Barkcloth,树皮布,Barkcloth,AI
+artwork_name,Sowo-wui mask,Sowo-wui面具,Sowo-wui mask,存疑
+artwork_name,West African Outlook,西非展望,West African Outlook,AI
+artwork_name,Kiti cha enzi (chair of power),Kiti cha enzi（权力椅）,Kiti cha enzi (chair of power),AI
+artwork_name,Headrest,头枕,Headrest,AI
+artwork_name,Finger piano,拇指琴,Finger piano,AI
+artwork_name,Drum,鼓,Drum,AI
+artwork_name,Mask,面具,Mask,AI
+artwork_name,Ceremonial axe,仪式斧,Ceremonial axe,AI
+artwork_name,Sensul (Folding icons) in original embossed leather case,原浮雕皮革盒中的 Sensul（折叠圣像）,Sensul (Folding icons) in original embossed leather case,存疑
+artwork_name,Salem Common on Training Day,训练日的塞勒姆公地,Salem Common on Training Day,AI
+artwork_name,La belle epoque,美好年代,La belle epoque,AI
+artwork_name,Untitled,无题,Untitled,AI
+artwork_name,"Webster House, Provincetown",普罗温斯敦的韦伯斯特住宅,"Webster House, Provincetown",AI
+artwork_name,Weight,砝码,Weight,AI
+artwork_name,"East Headland, Appledore, Isles of Shoals",沙尔群岛阿普尔多东岬,"East Headland, Appledore, Isles of Shoals",AI
+artwork_name,Portrait of Ahmad bin Na'aman,Ahmad bin Na'aman肖像,Portrait of Ahmad bin Na'aman,存疑
+artwork_name,Velocipede,早期自行车,Velocipede,AI
+artwork_name,Jug,壶,Jug,AI
+artwork_name,Pear,梨,Pear,AI
+artwork_name,Great chair,大椅,Great chair,AI
+artwork_name,Chimneypiece from the Simon Forrester house,西蒙·福雷斯特住宅的壁炉架,Chimneypiece from the Simon Forrester house,AI
+artwork_name,Dressing chest,梳妆柜,Dressing chest,AI
+artwork_name,Pictorial Sampler,图画绣样,Pictorial Sampler,AI
+artwork_name,Side chair,侧椅,Side chair,AI
+artwork_name,Dwarf Clock,矮钟,Dwarf Clock,存疑
+artwork_name,Coffee service,咖啡具,Coffee service,AI
+artwork_name,Valuables cabinet owned by Joseph and Bathsheba Pope,Joseph和Bathsheba Pope所有的贵重物品柜,Valuables cabinet owned by Joseph and Bathsheba Pope,存疑
+artwork_name,Teapot in Hand,手持茶壶,Teapot in Hand,AI
+artwork_name,Talavera Poblana Basin,普埃布拉塔拉韦拉陶盆,Talavera Poblana Basin,AI
+artwork_name,Isabella,Isabella,Isabella,存疑
+artwork_name,Brooch,胸针,Brooch,官方
+artwork_name,Cabinet,柜子,Cabinet,官方
+artwork_name,Sampler,刺绣样本,Sampler,AI
+artwork_name,Child's jacket,儿童夹克,Child's jacket,官方
+artwork_name,Dressing table,梳妆台,Dressing table,官方
+artwork_name,Shuja-ud-Daula and His Sons,Shuja-ud-Daula 与他的儿子们,Shuja-ud-Daula and His Sons,存疑
+artwork_name,Mounted crow cup,乌鸦杯,Mounted crow cup,存疑
+artwork_name,Ewer,水罐,Ewer,官方
+artwork_name,Portable shrine,便携式神龛,Portable shrine,官方
+artwork_name,Chair,椅子,Chair,官方
+artwork_name,Figure of a bijin (beautiful woman),美人像,Figure of a bijin (beautiful woman),AI
+artwork_name,A complete set of Chinese wallpaper,一整套中国墙纸,A complete set of Chinese wallpaper,官方
+artwork_name,Tea packer and tea porter,茶叶装箱工与挑茶工,Tea packer and tea porter,AI
+artwork_name,Charger with the Okeover family coat of arms,饰有 Okeover 家族纹章的盛盘,Charger with the Okeover family coat of arms,AI
+artwork_name,Teapot,茶壶,Teapot,官方
+artwork_name,Christ child,圣婴,Christ child,官方
+artwork_name,Tea Production in China,中国茶叶生产,Tea Production in China,官方
+artwork_name,Augustus the Strong's covered vase,强者奥古斯特的带盖花瓶,Augustus the Strong's covered vase,AI
+artwork_name,Six-panel wall hanging,六扇屏风挂饰,Six-panel wall hanging,AI
+artwork_name,Pair of tribute bearers,一对进贡者,Pair of tribute bearers,AI
+artwork_name,"Jesus, Mary, and Joseph",耶稣、玛丽亚与约瑟,"Jesus, Mary, and Joseph",官方
+artwork_name,Second-degree Daoist priest's robe,二阶道士袍,Second-degree Daoist priest's robe,存疑
+artwork_name,Stool,凳子,Stool,官方
+artwork_name,Bed cover,床罩,Bed cover,官方
+artwork_name,Empress Xiaoxian,孝贤皇后,Empress Xiaoxian,官方
+artwork_name,Lidded ritual grain container with lozenges and scrolls,带盖祭祀谷物容器，饰菱形纹与卷草纹,Lidded ritual grain container with lozenges and scrolls,AI
+artwork_name,Desk and dressing table on stand,带支架的书桌与梳妆台,Desk and dressing table on stand,AI
+artwork_name,Headdress,头饰,Headdress,AI
+artwork_name,Snuff bottle,鼻烟壶,Snuff bottle,AI
+artwork_name,Figurehead 2.0,船首像 2.0,Figurehead 2.0,AI
+artwork_name,"Alchemy of the Soul, Elixir of the Spirits",灵魂的炼金术，精灵的长生药,"Alchemy of the Soul, Elixir of the Spirits",AI
+artwork_name,Mr. and Mrs. Paul Mellon Staircase and Galleries,保罗·梅隆先生和夫人的楼梯与画廊,Mr. and Mrs. Paul Mellon Staircase and Galleries,AI
+artwork_name,Immanence,内在性,Immanence,AI
+artwork_name,Pretty Pretty 10,Pretty Pretty 10,Pretty Pretty 10,存疑
+artwork_name,Stamp Act Repeal'd teapot,《印花税法》废除茶壶,Stamp Act Repeal'd teapot,AI
+artwork_name,Two English Boys in Asian Clothing,穿亚洲服装的两个英国男孩,Two English Boys in Asian Clothing,AI
+artwork_name,Side chair from the grand salon on the ocean liner Normandie,远洋客轮诺曼底号大沙龙的侧椅,Side chair from the grand salon on the ocean liner Normandie,AI
+artwork_name,"Homeland, Blue and White",故土，蓝与白,"Homeland, Blue and White",AI
+artwork_name,"Armor, helmet and cuirass, used for the gioco del ponte (contest on the bridge) in Pisa",用于比萨桥上游戏（桥上竞赛）的盔甲、头盔和胸甲,"Armor, helmet and cuirass, used for the gioco del ponte (contest on the bridge) in Pisa",AI
+artwork_name,Potpourri vase,香料花瓶,Potpourri vase,AI
+artwork_name,"Dr. Thomas Richardson Colledge and His Assistant Afun in Their Ophthalmic Hospital, Macau",托马斯·理查森·科利奇医生及其助手阿福在澳门眼科医院,"Dr. Thomas Richardson Colledge and His Assistant Afun in Their Ophthalmic Hospital, Macau",AI
+artwork_name,Launching of an Armed Merchantman in Calcutta Harbor,加尔各答港武装商船下水,Launching of an Armed Merchantman in Calcutta Harbor,AI
+artwork_name,"Pair of vases, USS Demologos and USS Constitution vs. HMS Guerriere",一对花瓶，描绘“美国海军德莫洛戈斯号”和“美国海军宪法号”对阵“英国皇家海军格里埃尔号”,"Pair of vases, USS Demologos and USS Constitution vs. HMS Guerriere",AI
+artwork_name,Prayer bead with the God in Glory and the Last Judgment,带有荣耀中的上帝和最后审判图像的念珠,Prayer bead with the God in Glory and the Last Judgment,AI
+artwork_name,Chandelier for East India Marine Hall,为东印度海事大厅制作的枝形吊灯,Chandelier for East India Marine Hall,AI
+artwork_name,Salem Light Infantry uniform,塞勒姆轻步兵制服,Salem Light Infantry uniform,AI
+artwork_name,Corset,紧身胸衣,Corset,AI
+artwork_name,Wedding dress,婚纱,Wedding dress,AI
+artwork_name,Applique Rising-Sun Quilt,太阳升起图案贴布被,Applique Rising-Sun Quilt,AI
+artwork_name,Dress,连衣裙,Dress,AI
+artwork_name,Banyan (dressing gown),班扬袍（晨衣）,Banyan (dressing gown),AI
+artwork_name,Palampore (bed cover),帕兰波尔布（床罩）,Palampore (bed cover),AI
+artwork_name,Evening tuxedo jumpsuit,晚礼服连身裤,Evening tuxedo jumpsuit,AI
+artwork_name,Bracelet,手镯,Bracelet,AI
+artwork_name,Kiss Me Dolores,吻我，多洛雷斯,Kiss Me Dolores,存疑
+artwork_name,"Ensemble, from the collection Fashion as Resistance",套装，出自“时尚即抵抗”系列,"Ensemble, from the collection Fashion as Resistance",AI
+artwork_name,Cape,披肩,Cape,AI
+artwork_name,Doll of a woman and child (iki ningyo),妇女与儿童人偶（iki ningyo）,Doll of a woman and child (iki ningyo),AI
+artwork_name,"Kabuki robe (uchikake) with design of tortoise, crane, and pines",歌舞伎打挂（uchikake），饰有龟、鹤和松树图案,"Kabuki robe (uchikake) with design of tortoise, crane, and pines",AI
+artwork_name,"Dejima, the Dutch Trading Station at Nagasaki handscroll",长崎出岛荷兰贸易站手卷,"Dejima, the Dutch Trading Station at Nagasaki handscroll",AI
+artwork_name,Teacup and saucer,茶杯与茶碟,Teacup and saucer,官方
+artwork_name,Surcoat (jinbaori),阵羽织（jinbaori）,Surcoat (jinbaori),官方
+artwork_name,Brazier in the form of a rabbit,兔形火盆,Brazier in the form of a rabbit,AI
+artwork_name,Portrait of Edward Sylvester Morse,爱德华·西尔维斯特·莫尔斯肖像,Portrait of Edward Sylvester Morse,官方
+artwork_name,Screen,屏风,Screen,官方
+artwork_name,Ten-panel screen (Banquet of Guo Ziyi),十扇屏风（郭子仪宴）,Ten-panel screen (Banquet of Guo Ziyi),AI
+artwork_name,Soban (small individual table),小盘（小型个人桌）,Soban (small individual table),AI
+artwork_name,Hat (gat),帽（gat）,Hat (gat),存疑
+artwork_name,Cotton armor with talismans,带护符的棉甲,Cotton armor with talismans,AI
+artwork_name,Portrait of Yu Giljun,俞吉濬肖像,Portrait of Yu Giljun,官方
+artwork_name,Noblewoman's bridal fan (jinjuseon),贵妇新娘扇（jinjuseon）,Noblewoman's bridal fan (jinjuseon),存疑
+artwork_name,Hwarot (bridal robe),Hwarot（婚礼礼服）,Hwarot (bridal robe),存疑
+artwork_name,Village guardian posts (jangseung),村落守护柱（jangseung）,Village guardian posts (jangseung),AI
+artwork_name,Box,盒,Box,官方
+artwork_name,Wrapping cloth (bojagi),包袱布（bojagi）,Wrapping cloth (bojagi),AI
+artwork_name,Nectar Ritual (gamnotaeng) hanging scroll,甘露仪式（gamnotaeng）挂轴,Nectar Ritual (gamnotaeng) hanging scroll,存疑
+artwork_name,Dragon jar,龙罐,Dragon jar,官方
+artwork_name,Bowler hat,圆顶礼帽,Bowler hat,官方
+artwork_name,"Inkwell inscribed, Madam Pauling, Joseon Ministry of Internal Affairs","刻有“Madam Pauling, Joseon Ministry of Internal Affairs”字样的墨水瓶","Inkwell inscribed, Madam Pauling, Joseon Ministry of Internal Affairs",存疑
+artwork_name,Sword and sheath,剑与剑鞘,Sword and sheath,官方
+artwork_name,Free reed wind instrument (saenghwang),自由簧片管乐器（saenghwang）,Free reed wind instrument (saenghwang),AI
+artwork_name,Lute (biwa),琵琶（biwa）,Lute (biwa),官方
+artwork_name,Fan (taegeukseon),太极扇（taegeukseon）,Fan (taegeukseon),AI
+artwork_name,Launching of the Ship Fame,Fame号下水,Launching of the Ship Fame,AI
+artwork_name,Two-headed equestrian figurehead,双头骑马人物船首像,Two-headed equestrian figurehead,存疑
+artwork_name,"The Stranding of Corvettes in the Mauvais Canal, Strait of Torres",护卫舰在托雷斯海峡毛维斯运河搁浅,"The Stranding of Corvettes in the Mauvais Canal, Strait of Torres",存疑
+artwork_name,Royal presentation octant dedicated to King Louis XVI,献给路易十六国王的皇家赠礼八分仪,Royal presentation octant dedicated to King Louis XVI,AI
+artwork_name,Scrimshaw of the ship Susan,苏珊号船的鲸骨雕刻品,Scrimshaw of the ship Susan,AI
+artwork_name,Model of the ship Queen Elizabeth,伊丽莎白女王号船模型,Model of the ship Queen Elizabeth,AI
+artwork_name,Ship Southern Cross in Boston Harbor,波士顿港的“南十字”号船,Ship Southern Cross in Boston Harbor,AI
+artwork_name,Icebound Ship,困于冰中的船,Icebound Ship,AI
+artwork_name,They Took Their Wives with Them on Their Cruises,他们在航行中带上了自己的妻子,They Took Their Wives with Them on Their Cruises,AI
+artwork_name,Portrait of Nathaniel Bowditch,纳撒尼尔·鲍迪奇肖像,Portrait of Nathaniel Bowditch,官方
+artwork_name,Model of the ship Friendship,友谊号船模型,Model of the ship Friendship,AI
+artwork_name,Captain Cook Cast a Way on Cape Cod,库克船长在科德角遇险,Captain Cook Cast a Way on Cape Cod,存疑
+artwork_name,Ship Alfred of Salem Cap Joseph Felt,塞勒姆的阿尔弗雷德号船，约瑟夫·费尔特船长,Ship Alfred of Salem Cap Joseph Felt,AI
+artwork_name,Hovenweep #331,Hovenweep #331,Hovenweep #331,存疑
+artwork_name,"Tsu Heidei Shugaxtutaan (We Will Again Open This Container of Wisdom That Has Been Left in Our Care), Parts I and II",Tsu Heidei Shugaxtutaan（我们将再次打开留在我们照管之下的这个智慧容器），第一部分和第二部分,"Tsu Heidei Shugaxtutaan (We Will Again Open This Container of Wisdom That Has Been Left in Our Care), Parts I and II",AI
+artwork_name,Boots,靴子,Boots,官方
+artwork_name,Indian with Beaded Headdress,戴串珠头饰的印第安人,Indian with Beaded Headdress,AI
+artwork_name,Hanodaga:yas (Town Destroyer),Hanodaga:yas（毁城者）,Hanodaga:yas (Town Destroyer),存疑
+artwork_name,"David Weeden (Mashpee Wampanoag), from the ongoing Critical Indigenous Photographic Exchange series",David Weeden（Mashpee Wampanoag），选自持续进行的 Critical Indigenous Photographic Exchange 系列,"David Weeden (Mashpee Wampanoag), from the ongoing Critical Indigenous Photographic Exchange series",存疑
+artwork_name,"Companion Species: Cosmos, Sunrise, Flint",伴生物种：Cosmos、Sunrise、Flint,"Companion Species: Cosmos, Sunrise, Flint",存疑
+artwork_name,Sash,腰带,Sash,AI
+artwork_name,Bibi k'inpi (cradleboard),Bibi k'inpi（背婴板）,Bibi k'inpi (cradleboard),存疑
+artwork_name,Basket,篮子,Basket,官方
+artwork_name,The Seine of Journeys,旅程之塞纳河,The Seine of Journeys,存疑
+artwork_name,Pipe,烟斗,Pipe,官方
+artwork_name,Sculpture,雕塑,Sculpture,官方
+artwork_name,Doll,娃娃,Doll,官方
+artwork_name,King penguin (Aptenodytes patagonicus),王企鹅（Aptenodytes patagonicus）,King penguin (Aptenodytes patagonicus),官方
+artwork_name,Coco de mer (Lodoicea maldivica) nut,海椰子（Lodoicea maldivica）坚果,Coco de mer (Lodoicea maldivica) nut,官方
+artwork_name,Ostrich (Struthio camelus) egg,鸵鸟（Struthio camelus）蛋,Ostrich (Struthio camelus) egg,官方
+artwork_name,Leatherback turtle (Dermochelys coriacea),棱皮龟（Dermochelys coriacea）,Leatherback turtle (Dermochelys coriacea),官方
+artwork_name,Red Malay rooster (Gallus gallus domesticus),红马来公鸡（Gallus gallus domesticus）,Red Malay rooster (Gallus gallus domesticus),AI
+artwork_name,Zoological illustration of a newly discovered species of toad,新发现蛙类物种的动物学插图,Zoological illustration of a newly discovered species of toad,AI
+artwork_name,"Insect teaching chart for the Peabody Academy of Science's Summer School of Biology, Salem",为塞勒姆皮博迪科学学院生物学暑期学校制作的昆虫教学图表,"Insect teaching chart for the Peabody Academy of Science's Summer School of Biology, Salem",AI
+artwork_name,Pintail decoy,针尾鸭诱饵,Pintail decoy,AI
+artwork_name,Decorative carving of a semipalmated sandpiper,半蹼鹬装饰雕刻,Decorative carving of a semipalmated sandpiper,官方
+artwork_name,Marginal wood fern (Dryopteris marginalis),边缘鳞毛蕨（Dryopteris marginalis）,Marginal wood fern (Dryopteris marginalis),存疑
+artwork_name,"American bison, bull",美洲野牛，公牛,"American bison, bull",官方
+artwork_name,"Kava - We, the two of us",Kava——我们两人,"Kava - We, the two of us",AI
+artwork_name,Tapa,树皮布,Tapa,官方
+artwork_name,Peue ei (women's head ornament),Peue ei（女性头饰）,Peue ei (women's head ornament),AI
+artwork_name,Bure kalou (spirit house),Bure kalou（灵屋）,Bure kalou (spirit house),AI
+artwork_name,Kupe'e hoaka (boar tusk bracelet),Kupe'e hoaka（野猪牙手镯）,Kupe'e hoaka (boar tusk bracelet),AI
+artwork_name,Fan,扇,Fan,官方
+artwork_name,Scrapbook containing ancestor portraits of Chinese men and women,含有华人男女祖先肖像的剪贴簿,Scrapbook containing ancestor portraits of Chinese men and women,AI
+artwork_name,Designs for fur coats,毛皮大衣设计图,Designs for fur coats,AI
+artwork_name,The New Testament of our Lord and Saviour Jesus Christ,我们的主和救主耶稣基督的新约,The New Testament of our Lord and Saviour Jesus Christ,官方
+artwork_name,"Map of Nagasaki, Hizen Province, Japan (Hizen Nagasaki zu)",日本肥前国长崎地图（Hizen Nagasaki zu）,"Map of Nagasaki, Hizen Province, Japan (Hizen Nagasaki zu)",AI
+artwork_name,Cleopatra's Barge (Yacht) journal,Cleopatra's Barge（游艇）日志,Cleopatra's Barge (Yacht) journal,AI
+artwork_name,Study for the front elevation of Derby Mansion,Derby Mansion正立面设计稿,Study for the front elevation of Derby Mansion,存疑
+artwork_name,"Account of Lafayette Dinner, August 30, 1824",拉斐特晚宴记录，1824年8月30日,"Account of Lafayette Dinner, August 30, 1824",官方
+artwork_name,Commonplace book,杂记簿,Commonplace book,AI
+artwork_name,Massachusetts Colony five-shilling note,马萨诸塞殖民地五先令纸币,Massachusetts Colony five-shilling note,官方
+artwork_name,Illustrated note,插图便笺,Illustrated note,AI
+artwork_name,America: A Hymnal,America：赞美诗集,America: A Hymnal,AI
+artwork_name,Shina Pekinjo Kenchiku (plate 18),Shina Pekinjo Kenchiku（图版18）,Shina Pekinjo Kenchiku (plate 18),官方
+artwork_name,"Petition of Mary Esty, September 15, 1692",Mary Esty的请愿书，1692年9月15日,"Petition of Mary Esty, September 15, 1692",存疑
+artwork_name,"Portrait of William Lloyd Garrison, George Thompson, and Wendell Phillips",威廉·劳埃德·加里森、乔治·汤普森和温德尔·菲利普斯的肖像,"Portrait of William Lloyd Garrison, George Thompson, and Wendell Phillips",官方
+artwork_name,"Pont Neuf, Paris",巴黎新桥,"Pont Neuf, Paris",官方
+artwork_name,"Cinquefoil, from the Ephemera portfolio",五叶形饰，选自Ephemera作品集,"Cinquefoil, from the Ephemera portfolio",AI
+artwork_name,Scrimshaw Carver,鲸骨雕刻师,Scrimshaw Carver,AI
+artwork_name,"Canyonlands, Utah",犹他州峡谷地,"Canyonlands, Utah",官方
+artwork_name,Japanese Woman at Her Toilette,梳妆中的日本女子,Japanese Woman at Her Toilette,AI
+artwork_name,"Wounded Soldiers Being Tended in the Field after the Battle of Chancellorsville near Fredericksburg, VA",弗吉尼亚州弗雷德里克斯堡附近钱瑟勒斯维尔战役后在战场上接受救治的伤兵,"Wounded Soldiers Being Tended in the Field after the Battle of Chancellorsville near Fredericksburg, VA",AI
+artwork_name,"View of the Beach, The Mangrove Coast, Florida",海滩景观，佛罗里达州红树林海岸,"View of the Beach, The Mangrove Coast, Florida",AI
+artwork_name,"Treasury Street, Canton",广州金库街,"Treasury Street, Canton",AI
+artwork_name,"The Island Pagoda, from the album Foochow and the River Min",岛上佛塔，出自《福州与闽江》相册,"The Island Pagoda, from the album Foochow and the River Min",AI
+artwork_name,Whalers Rousseau and Desdemona,捕鲸船 Rousseau 和 Desdemona,Whalers Rousseau and Desdemona,AI
+artwork_name,Portrait of a Woman (Possibly Empress Myeongseong),女性肖像（可能为明成皇后）,Portrait of a Woman (Possibly Empress Myeongseong),官方
+artwork_name,"Khamba Jong, Tibet, from the album Tibet and Lhasa",Khamba Jong，西藏，出自《西藏与拉萨》相册,"Khamba Jong, Tibet, from the album Tibet and Lhasa",存疑
+artwork_name,A Royal Family,王室一家,A Royal Family,AI
+artwork_name,Protector Goddess,护法女神,Protector Goddess,AI
+artwork_name,Woman '95,女子“95”,Woman '95,存疑
+artwork_name,August '81,8月“81”,August '81,存疑
+artwork_name,Old Arguments on Indigenism,关于本土主义的旧争论,Old Arguments on Indigenism,AI
+artwork_name,2nd October,10月2日,2nd October,官方
+artwork_name,Man,男子,Man,官方
+artwork_name,Bindu La Terre,Bindu La Terre,Bindu La Terre,存疑
+artwork_name,Two Men with Hand Cart,推手推车的两名男子,Two Men with Hand Cart,AI
+artwork_name,Girl Eating Rasagolla,吃拉苏古拉的女孩,Girl Eating Rasagolla,AI
+artwork_name,Hanuman Revealing Rama and Sita in his Heart,哈奴曼展示心中的罗摩和悉多,Hanuman Revealing Rama and Sita in his Heart,AI
+artwork_name,Devotee of Krishna,克里希纳的虔诚信徒,Devotee of Krishna,AI
+artwork_name,Portrait of Captain William B. Aiken,威廉·B.·艾肯船长肖像,Portrait of Captain William B. Aiken,AI
+artwork_name,Portrait of Charlotte Story Forrester,Charlotte Story Forrester 肖像,Portrait of Charlotte Story Forrester,存疑
+artwork_name,Portrait of Nancy Blood Story,Nancy Blood Story 肖像,Portrait of Nancy Blood Story,存疑
+artwork_name,View of the Northfields (North Salem) and Beverly,北菲尔兹（北塞勒姆）和贝弗利景观,View of the Northfields (North Salem) and Beverly,AI
+artwork_name,Portrait of William Pepperrell,威廉·佩珀雷尔肖像,Portrait of William Pepperrell,官方
+artwork_name,John Quincy Adams by Charles Osgood,查尔斯·奥斯古德所作的约翰·昆西·亚当斯肖像,John Quincy Adams by Charles Osgood,官方
+artwork_name,Portrait of Alexander Hamilton,亚历山大·汉密尔顿肖像,Portrait of Alexander Hamilton,官方
+artwork_name,Portrait of Henry Carwick,Henry Carwick 肖像,Portrait of Henry Carwick,存疑
+artwork_name,View of Courthouse Square,法院广场景观,View of Courthouse Square,AI
+artwork_name,Portrait of Abraham Prescott Jr.,亚伯拉罕·普雷斯科特小肖像,Portrait of Abraham Prescott Jr.,AI
+artwork_name,Portrait of Nathaniel Hawthorne,纳撒尼尔·霍桑肖像,Portrait of Nathaniel Hawthorne,官方
+artwork_name,Portrait of Jane Shattuck,Jane Shattuck 肖像,Portrait of Jane Shattuck,存疑
+artwork_name,Shoes 134356.1253AB,鞋子 134356.1253AB,Shoes 134356.1253AB,AI
+artwork_name,"The Captain, by Gilbert Gaul",《船长》，Gilbert Gaul作,"The Captain, by Gilbert Gaul",存疑
+artwork_name,After the Storm,暴风雨之后,After the Storm,AI
+artwork_name,Timothy Fitch by Joseph Blackburn,Timothy Fitch，Joseph Blackburn作,Timothy Fitch by Joseph Blackburn,存疑
+artwork_name,Portrait of Elizabeth Chipman Gray,Elizabeth Chipman Gray肖像,Portrait of Elizabeth Chipman Gray,存疑
+artwork_name,Portrait of William Gray,William Gray肖像,Portrait of William Gray,存疑
+artwork_name,Cage of la Corriveau,La Corriveau的笼子,Cage of la Corriveau,存疑
+artwork_name,Plate with the coat of arms of Willem van Outhoorn,带有Willem van Outhoorn纹章的盘,Plate with the coat of arms of Willem van Outhoorn,AI
+artwork_name,Sweetmeat set with the coat of arms of Johannes Camphuys,带有Johannes Camphuys纹章的糖果套具,Sweetmeat set with the coat of arms of Johannes Camphuys,AI
+artwork_name,Dish/Charger with the IHS cipher for Christ,带有基督IHS花押的盘/大盘,Dish/Charger with the IHS cipher for Christ,AI
+artwork_name,Charger with a view of Xiamen (Amoy),带有厦门（Amoy）景观的大盘,Charger with a view of Xiamen (Amoy),AI
+artwork_name,Kuka'ilimoku E12071,Kuka'ilimoku E12071,Kuka'ilimoku E12071,官方
+artwork_name,Leiomano E19679,Leiomano E19679,Leiomano E19679,官方
+artwork_name,Sioux baby carrier E21292,苏族婴儿背带 E21292,Sioux baby carrier E21292,AI
+artwork_name,Djilakons mask,Djilakons面具,Djilakons mask,存疑
+artwork_name,Nguru E5520,Nguru E5520,Nguru E5520,官方
+artwork_name,Jagannatha-E7626,Jagannatha E7626,Jagannatha-E7626,官方
+artwork_name,Kutch blouse E77824,库奇女式上衣 E77824,Kutch blouse E77824,AI
+artwork_name,european family,欧洲家庭,european family,AI
+artwork_name,Charger with VOC emblem,带有VOC徽章的大盘,Charger with VOC emblem,AI
+artwork_name,Ropework beckets M10698,绳结索环 M10698,Ropework beckets M10698,存疑
+artwork_name,"An unsigned, undated astrolabe with an unusual rete",一件带有独特网板的无署名、无日期星盘,"An unsigned, undated astrolabe with an unusual rete",AI
+artwork_name,Judge Richard Saltonstall by Robert Feke,Judge Richard Saltonstall，Robert Feke作,Judge Richard Saltonstall by Robert Feke,存疑
+artwork_name,Mouqua,Mouqua,Mouqua,存疑
+artwork_name,Aquamarine demi-parure M20453,海蓝宝石半套首饰 M20453,Aquamarine demi-parure M20453,AI
+artwork_name,Figurehead from the ship Galatea,Galatea号船的船艏像,Figurehead from the ship Galatea,存疑
+artwork_name,Portrait of Mrs. Thomas Shippard,Mrs. Thomas Shippard肖像,Portrait of Mrs. Thomas Shippard,存疑
+artwork_name,Great Clipper Trade Wind for Panama,驶往巴拿马的快速帆船“Trade Wind”号,Great Clipper Trade Wind for Panama,存疑
+artwork_name,Female figurehead M27185,女性船艏像 M27185,Female figurehead M27185,AI
+artwork_name,Portrait of Rajinder Dutt,Rajinder Dutt肖像,Portrait of Rajinder Dutt,存疑
+artwork_name,Figurehead M6490,船首像 M6490,Figurehead M6490,AI
+artwork_name,The Examination of a Witch,审讯女巫,The Examination of a Witch,AI
+artwork_name,U.S.S. WASP Boarding H.M Brig FROLIC,U.S.S. WASP 登临 H.M. Brig FROLIC,U.S.S. WASP Boarding H.M Brig FROLIC,AI
+artwork_name,Clipper Ship HURRICANE in the English Channel,英吉利海峡中的快速帆船 HURRICANE 号,Clipper Ship HURRICANE in the English Channel,AI
+artwork_name,Burning of the Ocean Monarch,“Ocean Monarch”号焚毁,Burning of the Ocean Monarch,AI
+artwork_name,View of Whampoa Island and the Whampoa anchorage from Dane's Island (Changzhou) in the Pearl River in Canton (Guangzhou).,从广州（今广州）珠江中的丹麦岛（长洲）眺望黄埔岛和黄埔锚地,View of Whampoa Island and the Whampoa anchorage from Dane's Island (Changzhou) in the Pearl River in Canton (Guangzhou).,AI
+artwork_name,"A catalogue of the different specimens of cloth collected in the three voyages of Captain Cook, to the southern hemisphere",库克船长三次南半球航行中收集的不同布料标本目录,"A catalogue of the different specimens of cloth collected in the three voyages of Captain Cook, to the southern hemisphere",AI
+artwork_name,"The Yacht America Winning the International Race, 1851",“America”号游艇赢得 1851 年国际帆船赛,"The Yacht America Winning the International Race, 1851",AI
+artwork_name,birdcage vase,鸟笼花瓶,birdcage vase,AI
+artwork_name,Crowninshield's Wharf,克朗宁希尔德码头,Crowninshield's Wharf,存疑
+artwork_name,"Still-Life with Green and Purple Grapes, a Peach, and a Pear",静物：绿葡萄与紫葡萄、桃子和梨,"Still-Life with Green and Purple Grapes, a Peach, and a Pear",AI
+artwork_name,Dashing Wave Clipper Ship off Boston Light,波士顿灯塔外乘风破浪的快速帆船,Dashing Wave Clipper Ship off Boston Light,AI
+artwork_name,Portrait of Stephen Reynolds,斯蒂芬·雷诺兹肖像,Portrait of Stephen Reynolds,AI
+artwork_name,Sailor's embroidered ditty bag,水手刺绣小袋,Sailor's embroidered ditty bag,AI
+artwork_name,PEM Inca dance crown,PEM 印加舞蹈冠,PEM Inca dance crown,存疑
+artwork_name,The Great Gale of 1846,1846 年大风暴,The Great Gale of 1846,AI
+artwork_name,John Morton painting,John Morton 画作,John Morton painting,存疑
+artwork_name,Ostrich egg PEM,PEM 鸵鸟蛋,Ostrich egg PEM,AI
+artwork_name,"Hamilton, Salem",Hamilton，塞勒姆,"Hamilton, Salem",存疑
+artwork_name,The Letter by Lucy Hiller Lambert Cleveland,Lucy Hiller Lambert Cleveland 的《信》,The Letter by Lucy Hiller Lambert Cleveland,存疑
+artwork_name,Figurehead of Britannia,Britannia 船首像,Figurehead of Britannia,AI
+artwork_name,"View of the City of Victoria, Hong Kong, by Sunqua",Sunqua 绘维多利亚城（香港）景色,"View of the City of Victoria, Hong Kong, by Sunqua",存疑
+artwork_name,Portrait of Harriet Low,哈丽雅特·洛肖像,Portrait of Harriet Low,AI
+artwork_name,Portrait of Henry Hoolulu Pitman,Henry Hoolulu Pitman 肖像,Portrait of Henry Hoolulu Pitman,存疑

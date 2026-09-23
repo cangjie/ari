@@ -91,7 +91,7 @@ def main() -> None:
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out-dir", required=True, help="审计产物目录（可给多个，用逗号分隔）")
     ap.add_argument("--museum", default="mfa_boston_ext")
-    ap.add_argument("--provider", choices=["openai", "gemini", "claude_cli"],
+    ap.add_argument("--provider", choices=["openai", "gemini", "claude_cli", "codex_cli"],
                     default="openai", help="默认 openai —— 翻译是廉价任务")
     ap.add_argument("--model", default="", help="OpenAI 型号；不给则取 OPENAI_MODEL")
     ap.add_argument("--key-file", default="~/.openai_key")
@@ -117,16 +117,27 @@ def main() -> None:
 
     import audit_meta as A
     import os
-    if args.provider == "gemini":
+    # codex_cli：走本机 codex exec 的 ChatGPT 订阅。**审计本身绝不能用它**
+    # （打分已经是 OpenAI，审计再用就是自评），但翻译不是判断题 ——
+    # 把翻译放在这条路上，Claude 的订阅额度可以全留给审计。
+    if args.provider == "codex_cli":
+        import codex_cli
+        if not codex_cli.available():
+            sys.exit("找不到 codex 可执行文件")
+        A.CODEX_CLI = args.model or codex_cli.DEFAULT_MODEL
+    elif args.provider == "gemini":
         import gemini_api
         A.GEMINI = args.model or gemini_api.DEFAULT_MODEL
     elif args.provider == "claude_cli":
         import claude_cli
         A.CLAUDE_CLI = args.model or claude_cli.DEFAULT_MODEL
     model = args.model or os.environ.get("OPENAI_MODEL", "")
+    if args.provider == "codex_cli":
+        model = A.CODEX_CLI
     if args.provider == "openai" and not model:
         sys.exit("走 OpenAI 需要 --model，或设环境变量 OPENAI_MODEL")
-    client = A.LazyClient(args.key_file)
+    # codex/gemini/claude 三条路都不碰 OpenAI 的 key，LazyClient 只在真用到时才读
+    client = None if args.provider != "openai" else A.LazyClient(args.key_file)
 
     for f in files:
         recs = [json.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]

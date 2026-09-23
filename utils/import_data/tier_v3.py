@@ -44,6 +44,7 @@ except ImportError:
     sys.exit("缺少 openpyxl：pip install openpyxl")
 
 from museum_context import CONTEXTS
+import pem_ext_data
 
 
 MODEL = "claude-opus-5"
@@ -81,6 +82,9 @@ class Museum:
     col_category: int | None
     col_tier_old: int        # 入库用的那一列 tier（AGENTS.md 数据库约定第 5 条）
     context: str             # 交给模型的馆级语境，直接影响 IU 与 CR 的判断
+    # 源 Excel 之外的展品行（目前只有 PEM）。必须与 import_artworks 同出一处，
+    # 否则库里有、评分器看不见 —— 那两条腿就对不上了。
+    extra: object = None
 
 
 MUSEUMS = {
@@ -95,6 +99,7 @@ MUSEUMS = {
         # 语境已挪进 museum_context.py：audit_meta.py 也要用同一段文字，
         # 两边各存一份改漏了不会报错，只会让评级与审计悄悄用上两套不同的定义。
         context=CONTEXTS["pem"],
+        extra=pem_ext_data,
     ),
     "mfa_boston": Museum(
         key="mfa_boston",
@@ -179,7 +184,36 @@ def load_items(m: Museum, base: Path, limit: int | None) -> list[dict]:
             "category": cell(row, m.col_category),
             "tier_old": cell(row, m.col_tier_old),
         })
+    if m.extra is not None:
+        extra = m.extra.tier_rows()
+        if extra and min(x["seq"] for x in extra) <= seq_auto:
+            sys.exit(f"[fatal] {m.key} 追加行的最小 seq 与 Excel 那批重叠 —— "
+                     f"评分会贴到别的展品上，且不报错。")
+        items += extra
     return items[:limit] if limit else items
+
+
+def record_model(out_dir: Path, museum_key: str) -> None:
+    """
+    把本次的打分者记进 `<out-dir>/<馆>.model`，tier_v3_load.py 从这里读 scored_by。
+
+    型号落盘。tier_v3_load.py 的默认值是写死的 claude-opus-5，换了供应商还照写就等于
+    在库里伪造出处 —— scored_by 是判断「审计者与打分者是否同源」的唯一依据。
+
+    **每个真正调过模型的阶段结束都要记一笔**，不能只在三个阶段全跑完时才记：
+    早先这一步放在 main 的最末尾，`--stage 1` 提前 return 根本走不到，
+    于是分片跑完阶段一的目录里没有 .model，load 时退回默认值 —— 把 codex/luna
+    打的分记成了 claude-opus-5（2026-09-22 冒烟时发现）。
+
+    **追加，不覆盖。** 增量续跑时同一个 out-dir 可能混着两个打分者的结果
+    （旧件 gpt-5.6-sol、新件 gpt-5.6-luna）。覆盖会把全部结果都记成最后一次的型号。
+    """
+    mp = out_dir / f"{museum_key}.model"
+    old = mp.read_text(encoding="utf-8").strip() if mp.exists() else ""
+    parts = [x.strip() for x in old.split(" | ") if x.strip()]
+    if MODEL not in parts:
+        parts.append(MODEL)
+    mp.write_text(" | ".join(parts), encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -231,6 +265,7 @@ class LazyClient:
 # 每个都改签名只会让这次「换供应商」的临时性掩盖在一堆参数里。
 OPENAI = None          # (client, model, {stage: effort})
 CLAUDE_CLI = None      # 型号字符串；非 None 时走 claude CLI 的订阅账号
+CODEX_CLI = None       # (型号, {stage: effort})；非 None 时走 codex exec 的 ChatGPT 订阅
 
 # 按阶段分配推理强度。**依据是 2026-09-04 在水月观音上的实测**（同一提示词、
 # 只改 effort，输入 token 完全相同 6638，可直接归因）：
@@ -255,13 +290,34 @@ STAGE_EFFORT = {
 
 def ask(client, system: str, user: str, schema: dict, *,
         stage: str = "tier_v3", museum_key: str | None = None,
-        scope: str | None = None, seqs=None, validate=None) -> dict:
+        scope: str | None = None, seqs=None, validate=None,
+        refresh: bool = False) -> dict:
     """一次结构化输出调用。schema 保证返回的第一个 text block 是合法 JSON。
+
+    refresh=True 跳过缓存读取（仍然写入），只给「量噪声底」这类必须真问第二遍的
+    场合用 —— 同一提示词问两遍才看得出模型自身的波动有多大。
 
     两条路径（anthropic / openai）都经过 llm_cache：键含提示词全文，
     所以判据没改必然命中、改了必然重跑。stage 供事后分阶段算账 ——
     早先只传死字符串 "tier_v3"，三个阶段的账混在一起分不开。
     """
+    if CODEX_CLI is not None:
+        import codex_cli, llm_cache
+        model, efforts = CODEX_CLI
+        effort = efforts.get(stage)
+
+        def _do():
+            data, usage = codex_cli.ask(system, user, schema, model, effort)
+            return data, codex_cli.Usage(usage)
+
+        # 这条路径的 effort 是真能控的（-c model_reasoning_effort），所以进缓存键：
+        # 换档位 = 换判据，必须不命中旧答案。
+        return llm_cache.call(_do, provider="openai_codex", model=model,
+                              effort=effort, stage=stage, system=system, user=user,
+                              schema=schema, museum_key=museum_key, scope=scope,
+                              seqs=seqs, validate=validate, retries=4,
+                              refresh=refresh)
+
     if CLAUDE_CLI is not None:
         import claude_cli, llm_cache
         model = CLAUDE_CLI
@@ -540,6 +596,53 @@ STAGE2_SCHEMA = {
 }
 
 
+def stage2_line(s, by_seq, s1, evidence) -> str:
+    """阶段二提示词里一件对象的那一段。逐组与合批共用，保证两边给模型看的是同一份材料。"""
+    it, r = by_seq[s], s1[s]
+    return (
+        f"[seq {s}] {it['name_en'] or it['name_cn']}"
+        f"{' / ' + it['name_cn'] if it['name_en'] and it['name_cn'] else ''}\n"
+        f"  类别: {it['category'] or '—'} | 展厅: {it['gallery'] or '—'}\n"
+        f"  已评维度: HS={r['HS']} IU={r['IU']} VI={r['VI']} VA={r['VA']} CE={r['CE']}\n"
+        f"  简介: {it['description'] or '（无）'}"
+        + (f"\n  已核实事实:\n{evidence[s]}"
+           if evidence and evidence.get(s) else "")
+    )
+
+
+def stage2_user(m, group, seqs, by_seq, s1, evidence) -> str:
+    """逐组的阶段二提示词。**改一个字都会让已付费的答案全部失效**（全文在缓存键里）。"""
+    lines = [stage2_line(s, by_seq, s1, evidence) for s in sorted(seqs)]
+    return (
+        f"博物馆语境：\n{m.context}\n\n"
+        + (EVIDENCE_NOTE + "\n" if evidence else "")
+        + f"Peer Group：{group}\n"
+        f"组内共 {len(seqs)} 件对象，请全部给出 Q / D / G：\n\n"
+        + "\n\n".join(lines)
+    )
+
+
+def stage2_user_merged(m, pairs, by_seq, s1, evidence) -> str:
+    """
+    把若干个**单件组**合成一次请求。pairs = [(组名, seq), ...]。
+
+    单件组没有组内对象可比（STAGE2_SYSTEM：「D 按『本馆此类唯一』判断」），
+    逐组发请求携带不了任何比较内容，却要各付一次约 7k token 的脚手架。
+    合批的唯一风险是**同一次收到的几件互相影响** —— 所以明令逐件独立、彼此不比较，
+    并且在推广前用 A/B 量过（见 stage2_singleton_ab.py）。
+    """
+    blocks = [f"Peer Group：{g}（单件组，组内只有这一件）\n{stage2_line(s, by_seq, s1, evidence)}"
+              for g, s in pairs]
+    return (
+        f"博物馆语境：\n{m.context}\n\n"
+        + (EVIDENCE_NOTE + "\n" if evidence else "")
+        + f"以下 {len(pairs)} 件对象**各自构成一个单件 Peer Group**（组内只有它自己）。\n"
+        "请逐件独立给出 Q / D / G：**彼此之间不做比较**，不要因为同一次收到而相互压分或抬分；"
+        "每件的 D 按「本馆此类唯一」判断。\n\n"
+        + "\n\n".join(blocks)
+    )
+
+
 def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path,
            evidence: dict | None = None) -> dict:
     by_seq = {it["seq"]: it for it in items}
@@ -556,25 +659,7 @@ def stage2(client, m: Museum, items: list[dict], s1: dict, out: Path,
 
     print(f"  阶段二：{len(groups)} 个同类组，待算 {len(todo)} 组")
     for gi, (group, seqs) in enumerate(sorted(todo.items()), 1):
-        lines = []
-        for s in sorted(seqs):
-            it, r = by_seq[s], s1[s]
-            lines.append(
-                f"[seq {s}] {it['name_en'] or it['name_cn']}"
-                f"{' / ' + it['name_cn'] if it['name_en'] and it['name_cn'] else ''}\n"
-                f"  类别: {it['category'] or '—'} | 展厅: {it['gallery'] or '—'}\n"
-                f"  已评维度: HS={r['HS']} IU={r['IU']} VI={r['VI']} VA={r['VA']} CE={r['CE']}\n"
-                f"  简介: {it['description'] or '（无）'}"
-                + (f"\n  已核实事实:\n{evidence[s]}"
-                   if evidence and evidence.get(s) else "")
-            )
-        user = (
-            f"博物馆语境：\n{m.context}\n\n"
-            + (EVIDENCE_NOTE + "\n" if evidence else "")
-            + f"Peer Group：{group}\n"
-            f"组内共 {len(seqs)} 件对象，请全部给出 Q / D / G：\n\n"
-            + "\n\n".join(lines)
-        )
+        user = stage2_user(m, group, seqs, by_seq, s1, evidence)
         # 同阶段一：「本组必须全返」交给 llm_cache 在写缓存之前校验并重试，
         # 否则残缺答案进了缓存，重跑必然在同一组再崩。
         want = set(seqs)
@@ -711,7 +796,7 @@ def main() -> None:
                     help="只跑指定 source_seq（可重复给）。用于逐件复核；"
                          "**在 load_items 之后过滤**，不影响 seq 的生成方式")
     ap.add_argument("--batch", type=int, default=12, help="阶段一每批件数")
-    ap.add_argument("--provider", choices=["anthropic", "openai", "claude_cli"],
+    ap.add_argument("--provider", choices=["anthropic", "openai", "claude_cli", "codex_cli"],
                     default="claude_cli",
                     help="评分用哪条路。**默认 claude_cli**：走 `claude` CLI 的 "
                          "headless 模式，用本机订阅账号跑 claude-opus-5 —— 不需要 "
@@ -741,8 +826,23 @@ def main() -> None:
                          "**务必配合独立的 --out-dir**，否则会与不带证据的那轮混在一起")
     args = ap.parse_args()
 
-    global OPENAI, MODEL, CLAUDE_CLI
-    if args.provider == "claude_cli":
+    global OPENAI, MODEL, CLAUDE_CLI, CODEX_CLI
+    if args.provider == "codex_cli":
+        import codex_cli
+        if not codex_cli.available():
+            sys.exit("找不到 codex 可执行文件。设 CODEX_BIN，或装 ChatGPT.app")
+        import audit_meta as A
+        efforts = {}
+        for st in STAGE_EFFORT:
+            one = getattr(args, f"effort_stage{st[-1]}")
+            efforts[st] = A.norm_effort(one or args.effort or STAGE_EFFORT[st])
+        mdl = args.model or codex_cli.DEFAULT_MODEL
+        CODEX_CLI = (mdl, efforts)
+        MODEL = mdl + " effort=" + "/".join(
+            efforts[s] for s in ("tier_stage1", "tier_stage2", "tier_stage3")) + " (codex-cli)"
+        print(f"[provider] codex exec（ChatGPT 订阅）/ {MODEL}")
+        print(f"  {codex_cli.version()}；已锁死：忽略个人配置、空工作目录、只读沙箱、禁网与插件")
+    elif args.provider == "claude_cli":
         import claude_cli
         if not claude_cli.available():
             sys.exit("找不到 `claude` 命令。装 Claude Code，或改用 --provider openai")
@@ -820,6 +920,7 @@ def main() -> None:
         print(f"\n阶段一完成 {len(done)}/{len(items)} 件，累计 {len(s1)} 件已评。")
         print(f"产物：{p1}")
         print("全部批次跑完后再跑 --stage 2（一次性，按全馆 peer_group 分组）。")
+        record_model(out_dir, m.key)
         return
 
     # 阶段二/三要看全馆。若阶段一是分批跑的，这里必须已经全齐。
@@ -852,10 +953,7 @@ def main() -> None:
     else:
         s3 = read_done(p3)
 
-    # 型号落盘。tier_v3_load.py 的 SCORED_BY 是写死的 claude-opus-5，
-    # 换了供应商还照写就等于在库里伪造出处 —— scored_by 是判断「审计者与打分者
-    # 是否同源」的唯一依据，写错了整条追溯链就断了。
-    (out_dir / f"{m.key}.model").write_text(MODEL, encoding="utf-8")
+    record_model(out_dir, m.key)
 
     # 写审阅 CSV
     #

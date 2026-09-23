@@ -41,6 +41,7 @@ import difflib
 import unicodedata
 
 import meta_lib as M
+from tls import ssl_ctx
 
 # 每个馆在 Wikidata 里的收藏实体。哈佛给两个：一部分藏品挂在下属的 Fogg 名下，
 # 只查上位实体会漏。列表里任一命中即算该馆藏品。
@@ -72,7 +73,10 @@ def toks(s: str) -> set[str]:
 def fetch(url: str, timeout: int = 40) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": UA,
                                                "Accept": "application/sparql-results+json, text/html"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
+    # 走 tls.ssl_ctx()：python.org 版 Python 在 macOS 上不带根证书，裸 urlopen 会报
+    # CERTIFICATE_VERIFY_FAILED，而这个错看起来像网络问题（2026-09-22 在本机两个端点
+    # 一起失败，被误报成「WDQS 与 QLever 都取不到数据」）。绝不关闭证书校验。
+    with urllib.request.urlopen(req, timeout=timeout, context=ssl_ctx()) as r:
         return r.read().decode("utf-8", "ignore")
 
 

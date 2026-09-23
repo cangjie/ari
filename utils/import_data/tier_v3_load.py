@@ -46,6 +46,23 @@ def read_jsonl(p: Path) -> dict:
             (json.loads(l) for l in p.open(encoding="utf-8") if l.strip())}
 
 
+def grade(r: dict, g: dict, sn: dict | None) -> tuple[str, str, float, float]:
+    """
+    一件展品的 CR → Core → Tier。返回 (tier, 理由, cr, core)。
+
+    写库（本文件 main）与变档清单（tier_change_list.py）**共用这一个函数** ——
+    两边各算各的，清单上告诉用户的就可能和最后写进库的对不上，而且不报错。
+    """
+    cr = 0.5 * float(g["Q"]) + 0.3 * float(g["D"]) + 0.2 * float(g["G"])
+    core = core_of(r, cr)
+    tier, why = tier_of(core, r, sn)
+    # V3.0 第十二节：低可信度对象不得直接成为正式 S
+    if tier == "S" and r["confidence"] == "low":
+        tier = "A"
+        why += "；证据可信度 low，按第十二节不得直接定 S"
+    return tier, why, cr, core
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--museum", required=True, choices=sorted(MUSEUMS))
@@ -92,13 +109,7 @@ def main() -> None:
     rows, dist = [], {}
     for seq in sorted(items):
         r, g = s1[seq], s2[seq]
-        cr = 0.5 * float(g["Q"]) + 0.3 * float(g["D"]) + 0.2 * float(g["G"])
-        core = core_of(r, cr)
-        tier, why = tier_of(core, r, s3.get(seq))
-        # V3.0 第十二节：低可信度对象不得直接成为正式 S
-        if tier == "S" and r["confidence"] == "low":
-            tier = "A"
-            why += "；证据可信度 low，按第十二节不得直接定 S"
+        tier, why, cr, core = grade(r, g, s3.get(seq))
         dist[tier] = dist.get(tier, 0) + 1
         sn = s3.get(seq)
         rows.append((

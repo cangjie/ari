@@ -63,7 +63,8 @@
 `ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
 以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
-展品侧现有 **7 个 museum key、13348 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件）。
+展品侧现有 **7 个 museum key、13619 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
+2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条）。
 
 **管线覆盖到哪儿了（2026-09-06 实测）—— 四个馆跑过，三个馆一件没碰：**
 
@@ -573,7 +574,9 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
 - 馆级语境（喂给模型、直接决定 IU 与 CR 的判断方向）在 `museum_context.py`，
   `tier_v3.py` 与 `audit_meta.py` 共用。两边各存一份必然分叉，且不报错。
 
-**⚠ PEM 这 196 件里，179 件（91%）无法与 PEM 官方发布的藏品对应上。**
+**⚠ PEM 原有的那 196 件里，179 件（91%）无法与 PEM 官方发布的藏品对应上。**
+（2026-09-22 新增的 271 件不在此列 —— 那批带馆藏号或 Wikidata QID，可核验，见第 14 条。
+**两批的完备度分数不可直接比较**，下面这段说的只是原有的 196 件。）
 2026-08-31 抓全 18 个栏目页共 219 条官方编目记录后实测：95 件与官方记录**一个显著词
 都不重合**，84 件只重合 1 个词（screen/badge 这类巧合），最终只关联上 15 件。
 原因在源数据本身 —— 这 196 件的名称是**描述性转写**而非 PEM 编目题名
@@ -584,6 +587,10 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
 这两件事后果完全不同：前者补资料就能解决，后者得先把对象认出来。
 往后再看 PEM 的完备度分数、或考虑把管线推广到其余五馆时，先想清楚源数据的名称
 到底是不是能指向真实藏品的标识符。
+
+**2026-09-22 部分缓解**：新增的 271 件全部带馆藏号或 QID，PEM 的 Tier 1 来源
+由 15 件涨到 218 件。但原有 196 件里仍有约 180 件是 Tier 4，身份依旧不可核验 ——
+**缓解的是「馆里有没有可核验的东西」，不是「那 180 件认不认得出来」**。
 
 **⚠ 文本列的宽度按中文估的，一上英文就爆。** 两处踩过，都是 4464 件那轮暴露的：
 `content_text.text` 原为 `varchar(512)`，英译普遍比中文长，写到第 120 条就
@@ -799,6 +806,119 @@ Gemini 在 A 级基本没用：问到的 80 件只答出 1 件，另外 125 件�
   所以用一次 SPARQL 拉全量，Commons 请求间隔 ≥ 2 秒。
 - 馆藏号比对只能去前导零，**不能去尾零**：`12.15` 和 `12.150` 可能是两件东西。
 
+
+**14. PEM 扩充到 467 件：来源、去重、seq 稳定性、展厅证据分级（2026-09-21/22）。**
+
+原有 196 件来自一份来源不明的汇编清单（第 5 条）。本轮把官网与 Wikidata 抓回来，
+去重后把够不着现有展品的那些作为新展品入库，**单一 `pem` 馆 key，不另起 `pem_ext`**
+—— `gallery` 的唯一键是 `(museum_id, name_key)`，第二个馆 key 就得把 26 个展厅复制一份，
+游客站在俞吉濬展厅里只看得到一半展品。MFA 能分两个 key 是因为它没有展厅基准表。
+
+| 来源 | 数量 | 说明 |
+|---|---:|---|
+| `www.pem.org/the-pem-collection/<栏目>` | **219 条就是天花板** | 18 个栏目页，`collection` sitemap 里**没有任何单件页**。robots 只禁 `/craft/` 等四个路径，**没有 Crawl-delay**，与 MFA 的 CAPTCHA 墙完全不同 |
+| Wikidata `P195=Q3373790` | **73 条**（MFA 是 4429） | 48 条有馆藏号；**中文标签 0 条** —— 不要再建「从 Wikidata 取 PEM 中文」的代码路径 |
+| `explore-art.pem.org` | 停服 | 2026-09-21 复测仍超时，不要再试 |
+
+去重三轮，**全部复用现成的严格匹配器**：官网×Wikidata 按馆藏号（5 对）、
+现有×官网走 `meta_fill_official_pem.match()`（14 自动 + 1 VERIFIED，非循环校验 13/13 一致）、
+现有×Wikidata（0 对 —— 名称是描述性转写，对不上是预期）。**净增 271 件，seq 197–467。**
+
+**seq 稳定性靠四道机制，不靠约定**：模块头记源 Excel 的 SHA256 与行数、每行带显式 seq、
+按身份键（馆藏号/QID）幂等、行数或 seq 异常一律 `sys.exit`。
+**断号是允许的**：候选消失就留个洞，为了连续而重新编号会让它之后每一件都换号。
+
+**⚠ 入库之后再跑候选生成器，它会拿新行去匹配自己。** 新行入库后也在 PEM 名下，
+`load_existing()` 不限定 `source_seq <= 196` 的话，新行会匹配上自己、被当成「已认领」
+从候选里剔除。是件数断言拦下来的。
+
+**展厅按出处分四级，推断与证据分开存**（用户 09-21 授权批量推断，条件是单独成列）：
+
+| 级 | 依据 | 写到哪 | 件数 |
+|---|---|---|---:|
+| 3 | 在展原句逐字点名 26 个展厅之一 | `artwork.gallery_id` | 30 |
+| 2 | 展览页写明「Located in the X.」**且只点名一个** | `artwork.gallery_id` | 3 |
+| 1 | 旧主题标签经 `LABEL_MAP` | `artwork.gallery_id` | 106 |
+| **0u** | **按官网栏目推断** | `artwork_meta.gallery_inferred`，`pem_section`/INFERENCE/weak/low，**绝不写 `gallery_id`** | 48 |
+
+歧义一律留 NULL：*On This Ground* 横跨两个普特南展厅（馆方原话）、南亚有两个展厅、
+特展厅有 A 和 C。**17 个栏目里只有 5 个能映射到展厅。**
+反例就在数据里：`korean-art` 按门类指向俞吉濬展厅，可该栏目每一条有在展原文的记录
+写的都是「Salem Stories」或「Garden Atrium」—— 馆方自己的陈述与栏目推断打架。
+另有两处名字撞车：`phillips-library-collection` ≠ *James Duncan Phillips Trust Gallery*；
+源表把 `contemporary-art` 标成 Jurrien Timmer，而展览页写的是 Crosby Forbes。
+
+**抓取踩过的坑**（都不报错，只是结果悄悄不对）：
+· `oceanic-art` 的 9 条**在页面上换过顺序** —— 按 (栏目, 序号) 对齐会有 6 条张冠李戴。
+  对齐一律走 `pem_site_scrape.link_official()`：馆藏号为主、题名+年代兜底。
+· 1 条的编目原文被页面作者放进了 `onViewDescription` 格。判别靠「是不是以 `On view` 开头」
+  （93 条真在展全部符合，例外恰好这 1 条），**不是**「desc 缺了就往下找一格」。
+· **不要从 desc 行尾抽馆藏号**：219 条里 74 条抽错，`137986.1-3AB, 4` 被抽成 `4`。
+  馆藏号一律取 `pem_official_data.py`。图片的 `alt` 也不能当 desc 备用（195/219 不一致，有截断串字）。
+· Wikidata 的 **10 个匿名创作者节点**（`.well-known/genid/…`）不是人名；
+  `inception` 是 ISO 时间戳，只取年份（同第 12 条）；2 条没有任何语种标签的直接排除并留痕。
+
+
+**15. 评分改走 Codex 的 ChatGPT 订阅；型号漂移与合批的两个实测结论（2026-09-22）。**
+
+`codex_cli.py` 与 `claude_cli.py` 同构：`codex exec` 走 ChatGPT 订阅登录
+（`~/.codex/auth.json` 的 `auth_mode=chatgpt`，**没有 API key**，不按 token 计费，
+但受订阅速率限制）。本机 `codex` 不在 PATH 上，在 ChatGPT.app 与 VS Code 扩展里。
+**打分 OpenAI / 审计 Anthropic 构成跨厂商**，所以 `audit_meta.py` 的 `--provider`
+**刻意不开放 codex** —— 只给翻译类调用方用。
+
+**必须锁死，否则评分不可复现。** `codex exec` 是 agent，能执行命令、读文件、上网、调插件。
+每次调用都带 `--ignore-user-config`（用户 `config.toml` 设着 `xhigh`、默认型号
+`gpt-6-astra`、开着 browser 插件，**这些不在缓存键里**，改了配置就是换了判据却照样命中旧答案）、
+`--ignore-rules`、空工作目录、`--sandbox read-only`、`--ephemeral`、禁网与插件。
+**光靠开关不够**：解析 `--json` 事件流，出现 `agent_message` / `reasoning` 以外的
+任何 item 就报错退出。实测锁死后输入 token 从 16,815 降到 7,037。
+`-C` 会改工作目录，**schema 等路径一律传绝对路径**。
+
+**⚠ 结论一：`gpt-5.6-luna` 比 `gpt-5.6-sol` 系统性地打得低，与档位无关。**
+同一批 PEM 原 196 件、同样的提示词与证据，只换打分者：IU/VI/VA/CE 各降约 0.4，
+128–143 件（共 196）更低。把 CR 固定为旧值只换阶段一，**49 件降档、5 件升档**，
+9 件 S 候选里 5 件掉到 A。花 2 次调用把两个变量拆开（n=24）：
+
+    luna@xhigh − luna@high（只差档位）  五维平均 **+0.08**，一半以上逐项完全相同
+    luna@xhigh − sol@xhigh（只差型号）  五维平均 **−0.47**，每维 18–21 件都更低
+
+**是型号不是档位** —— 我先前拿第 10 条「降档位会让分数整体下移」去类比，类比错了。
+高评级展品差距更大（前 24 件 −0.55）。两个模型都不是标准答案，**选型等于选「跟谁站在同一把尺子上」**：
+sol 那把尺子上有 PEM 原 196 + 哈佛 204 + MFA 老 203；luna 那把上有 MFA ext 4464 件。
+用户 09-22 选 luna，PEM 全馆 467 件重跑，与 MFA ext 同口径。
+**luna 用 xhigh 不值得**：无效果，每次调用还多花约三成 token。
+
+**⚠ 结论二：阶段二的单件组不能合批。** PEM 467 件分成 354 组、**287 个是单件组（81%）**，
+逐组发请求要 354 次，而单件组没有组内对象可比。合批 A/B（20 个单件组，逐组 20 次
+对合批 2 次）实测：
+
+    合批 − 逐组   Q −0.61   D −0.68   G −0.29   CR −0.57
+    合批 − 合批   Q  0.15   D  0.35   G  0.23   CR  0.16   ← 噪声底
+
+合批自身很稳定，但**稳定地比逐组低**，三个分量全单边往下。提示词里明令
+「彼此之间不做比较」，模型还是比了，D（独特性）被压得最狠。**按预先写死的判据退回逐组。**
+
+**⚠ 判据要写在跑之前，而且要定得连对照组自己都过得了。** 这条 A/B 最初定的是
+「合批与逐组逐字节一致」—— 做不到：模型输出本身不确定，同一个单件组逐组问两遍都未必相同。
+拿一个连对照组自己都过不了的标准去卡实验组，结论只能是「永远不通过」，等于没有判据。
+改为量噪声底：偏差 ≤0.25 且平均绝对差 ≤1.5×max(噪声, 0.25)。
+
+**⚠ 订阅额度会在半途耗尽**（09-22 实测，阶段二跑到 88/354 组时
+`You've hit your usage limit … try again at 3:25 PM`）。每组是原子的，没有「跑一半」的组，
+已完成的进缓存，额度恢复后原命令续跑即可。**退避重试对额度耗尽无效**，4 次退避后如实报错停下。
+
+**⚠ 后台任务加 `; echo "退出码 $?"` 这类包装会骗过 harness 的完成通知** ——
+它看到的是包装的退出码，于是失败的任务显示成「completed (exit code 0)」。别加包装，或者一律读日志。
+
+**审计这一端仍然是 Claude。** `audit_meta.py --provider claude_cli --model claude-sonnet-5`
+走本机 Claude Code 订阅。`audit_translate.py` 2026-09-23 加了 codex 分支 ——
+**翻译走 ChatGPT 订阅，把 Claude 额度全留给审计本身**；翻译不是判断题，不构成自评。
+
+**⚠ `audit_bc_guard.py` 与 `audit_translate.py` 的 `--museum` 默认值是 `mfa_boston_ext`。**
+跑别的馆必须显式写 `--museum <mk>`，否则会去动 MFA 的产物（`audit_meta.py` 与
+`audit_load.py` 默认的是 `pem`，四个脚本默认值并不一致，不要靠记）。
+
 ---
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
@@ -941,6 +1061,16 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/fetch_dims.py` | 第 13 条的尺寸抓取：Wikidata → 本表简介 → Commons → Gemini 免费层（单独一列）。`--tier`、`--dry-run`、`--no-gemini` |
 | `utils/import_data/mfa_wikidata_dims.json` | MFA 名下 4429 个 Wikidata 条目的标签、馆藏号、作者和尺寸原值。跑别的 Tier 直接复用，`--refresh-wd` 才重新拉 |
 | `utils/import_data/dims_s.json` / `dims_a.json` / `dims_gemini_cache.jsonl` | 逐行证据（每个来源试过的结果、原始值、最终采用哪一个）与 Gemini 的缓存 |
+| `utils/import_data/pem_site_scrape.py` | 抓 PEM 官网：`--collections`（219 条+图片+在展原句）、`--exhibitions`（展览页的「Located in …」）、`--wikidata`（73 条）、`--verify`（与 2026-08-31 那份 capture 逐条对齐的非循环校验）。对齐走 `link_official()`，**不按位置** |
+| `utils/import_data/pem_site_data.py` / `pem_exhibition_data.py` / `pem_wikidata_data.py` | 上者产出的三份数据模块，提交进仓库 |
+| `utils/import_data/pem_ext_build.py` | 第 14 条的去重与新展品生成。`--review` 出候选 CSV 给人看，`--emit` 出 `pem_ext_data.py`。seq 按身份键幂等 |
+| `utils/import_data/pem_ext_data.py` | 新增的 271 件。`import_rows()` 给导入器、`tier_rows()` 给评分器 —— **两条腿必须同出一处** |
+| `utils/import_data/pem_gallery_data.py` | PEM 的 26 个实体展厅 + 四张映射表（`LABEL_MAP` 旧标签、`ONVIEW_MAP` 在展原句、`SECTION_MAP` 栏目推断）。契约一致：**没登记抛 KeyError，登记为 None 就是确实不对应** |
+| `utils/import_data/pem_gallery_assign.py` | 把栏目推断的展厅写进 `artwork_meta.gallery_inferred`，零 API。**有出处的 `gallery_id` 一律不覆盖** |
+| `utils/import_data/migrate_pem_galleries.py` | 展厅表定向迁移（不重灌全库），存储过程 + 前后置断言，任一不成立整体回滚 |
+| `utils/import_data/codex_cli.py` | 第 15 条：`codex exec` 走 ChatGPT 订阅。锁死 + 事件流核查，无工具调用才采用 |
+| `utils/import_data/stage2_singleton_ab.py` | 阶段二单件组合批的 A/B，判据写在文件头、跑之前定死。**2026-09-22 实测不通过** |
+| `utils/import_data/tier_change_list.py` | 写库前的旧件变档清单，标出主因推断。与 `tier_v3_load.grade()` 共用档位计算 |
 | `utils/import_data/validate/` | 审计选型的证据：两批 48 件样本（调参集/留出集，零重合）与各模型跑分 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |

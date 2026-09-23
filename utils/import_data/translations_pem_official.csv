@@ -9,54 +9,736 @@
 kind,key,zh,en,confidence
 pem_official,'Ulu (breadfruit) wood,'Ulu（面包果树）木材,'Ulu (breadfruit) wood,AI
 pem_official,1279,1279 年,1279,官方
+pem_official,1500-1530,1500—1530 年,1500-1530,AI
+pem_official,1500s,16 世纪早期,1500s,AI
+pem_official,1500s-1600s,16—17 世纪,1500s-1600s,AI
+pem_official,1550-1650,1550—1650 年,1550-1650,AI
+pem_official,1570-1620,1570—1620 年,1570-1620,AI
+pem_official,15th-early 16th century,15 世纪至 16 世纪早期,15th-early 16th century,AI
+pem_official,1679,1679 年,1679,AI
+pem_official,1690,1690 年,1690,AI
+pem_official,1690-1710,1690—1710 年,1690-1710,AI
+pem_official,1696,1696 年,1696,AI
+pem_official,1700-1730,1700—1730 年,1700-1730,AI
+pem_official,1700s,18 世纪早期,1700s,AI
+pem_official,1710-15,1710—1715 年,1710-15,AI
+pem_official,1710-50,1710—1750 年,1710-50,AI
+pem_official,1736-1795,1736—1795 年,1736-1795,AI
+pem_official,1740 or 1743,1740 年或 1743 年,1740 or 1743,AI
+pem_official,1744,1744 年,1744,AI
+pem_official,1748-76,1748—1776 年,1748-76,AI
+pem_official,1750-95,1750—1795 年,1750-95,AI
+pem_official,1760-70,1760—1770 年,1760-70,AI
+pem_official,1763-68,1763—1768 年,1763-68,AI
 pem_official,1764-1765,1764—1765 年,1764-1765,AI
+pem_official,1766,1766 年,1766,AI
+pem_official,1777,1777 年,1777,AI
+pem_official,1783,1783 年,1783,AI
+pem_official,1790,1790 年,1790,AI
+pem_official,1791,1791 年,1791,AI
+pem_official,1791-96,1791—1796 年,1791-96,AI
+pem_official,1795-98,1795—1798 年,1795-98,AI
+pem_official,17th-century Chinese and Japanese porcelain and Dutch delftware fragments,17 世纪中国和日本瓷器及荷兰代尔夫特陶器残片,17th-century Chinese and Japanese porcelain and Dutch delftware fragments,AI
+pem_official,1800-1819,1800—1819 年,1800-1819,AI
+pem_official,1800s,19 世纪早期,1800s,AI
+pem_official,1802,1802 年,1802,AI
+pem_official,1806,1806 年,1806,AI
+pem_official,1807,1807 年,1807,AI
+pem_official,1808,1808 年,1808,AI
+pem_official,1817,1817 年,1817,AI
+pem_official,1829,1829 年,1829,AI
+pem_official,1830s or earlier,1830 年代或更早,1830s or earlier,AI
+pem_official,1833,1833 年,1833,AI
+pem_official,1835,1835 年,1835,AI
+pem_official,1840,1840 年,1840,AI
+pem_official,1840-60,1840—1860 年,1840-60,AI
+pem_official,1843,1843 年,1843,AI
 pem_official,1849,1849 年,1849,官方
+pem_official,1850-68,1850—1868 年,1850-68,AI
+pem_official,1851,1851 年,1851,AI
+pem_official,1855-1865,1855—1865 年,1855-1865,AI
+pem_official,1858,1858 年,1858,AI
+pem_official,1860,1860 年,1860,AI
+pem_official,1862,1862 年,1862,AI
+pem_official,1863,1863 年,1863,AI
+pem_official,1865,1865 年,1865,AI
+pem_official,1872,1872 年,1872,AI
+pem_official,1873,1873 年,1873,AI
 pem_official,1880-89,1880—1889 年,1880-89,AI
+pem_official,1880s-1890s,1880 年代至 1890 年代,1880s-1890s,AI
+pem_official,1883,1883 年,1883,AI
+pem_official,1885,1885 年,1885,AI
+pem_official,1886,1886 年,1886,AI
+pem_official,1887-1892,1887—1892 年,1887-1892,AI
+pem_official,1889,1889 年,1889,AI
+pem_official,1893-95,1893—1895 年,1893-95,AI
+pem_official,18th century,18 世纪,18th century,AI
+pem_official,18th or 19th century,18 或 19 世纪,18th or 19th century,AI
+pem_official,1907-08,1907–08,1907-08,AI
+pem_official,1910,1910,1910,AI
+pem_official,1911,1911,1911,AI
+pem_official,1913,1913,1913,AI
+pem_official,1925,1925,1925,AI
+pem_official,1927,1927,1927,AI
+pem_official,1931,1931,1931,AI
+pem_official,1934,1934,1934,AI
+pem_official,1940s,20 世纪 40 年代,1940s,AI
+pem_official,1941,1941,1941,AI
+pem_official,1947-48,1947–48,1947-48,AI
+pem_official,1951,1951,1951,AI
+pem_official,1967-73,1967–73,1967-73,AI
+pem_official,1973,1973,1973,AI
+pem_official,"1975, printed 1977",1975 年，1977 年印制,"1975, printed 1977",AI
+pem_official,1978,1978,1978,AI
+pem_official,1979,1979,1979,AI
+pem_official,1980,1980,1980,AI
+pem_official,1981,1981,1981,AI
+pem_official,1983,1983,1983,AI
+pem_official,1984,1984,1984,AI
+pem_official,1987,1987,1987,AI
+pem_official,1989,1989,1989,AI
+pem_official,1993,1993,1993,AI
+pem_official,1995,1995,1995,AI
+pem_official,1998,1998,1998,AI
 pem_official,19th century,19 世纪,19th century,官方
+pem_official,2000,2000,2000,AI
+pem_official,2003,2003,2003,AI
+pem_official,2006,2006,2006,AI
 pem_official,2008,2008 年,2008,官方
+pem_official,2010s,21 世纪 10 年代,2010s,AI
+pem_official,2011-12,2011–12,2011-12,AI
+pem_official,2012,2012,2012,AI
+pem_official,2014,2014,2014,AI
+pem_official,2015,2015,2015,AI
 pem_official,2017,2017 年,2017,官方
+pem_official,2018,2018,2018,AI
+pem_official,2019,2019,2019,AI
+pem_official,2019-21,2019–21,2019-21,AI
+pem_official,2021,2021,2021,AI
+pem_official,20th century,20 世纪,20th century,AI
+pem_official,6th-5th century B.C.E.,公元前 6–5 世纪,6th-5th century B.C.E.,AI
+pem_official,"A. B. Cross Photography Studio, Salem, Massachusetts",A. B. Cross 摄影工作室，马萨诸塞州塞勒姆,"A. B. Cross Photography Studio, Salem, Massachusetts",AI
+pem_official,A. Elmer Crowell,A. Elmer Crowell,A. Elmer Crowell,AI
+pem_official,Acrylic and oil on canvas,丙烯和油彩画布,Acrylic and oil on canvas,AI
+pem_official,Acrylic on canvas,丙烯画布,Acrylic on canvas,AI
+pem_official,Acrylic paint,丙烯颜料,Acrylic paint,AI
+pem_official,"Acrylic, oil, and saponified wax on canvas",丙烯、油彩和皂化蜡画布,"Acrylic, oil, and saponified wax on canvas",AI
+pem_official,"Adam Dirckz (around 1500, Netherlands) and workshop",Adam Dirckz（约 1500 年，荷兰）及其作坊,"Adam Dirckz (around 1500, Netherlands) and workshop",AI
+pem_official,"Alan Michelson (Mohawk member of the Six Nations of the Grand River, b. 1953)",Alan Michelson（大河六族莫霍克族成员，生于 1953 年）,"Alan Michelson (Mohawk member of the Six Nations of the Grand River, b. 1953)",AI
+pem_official,"Albert Sands Southworth (1811-1894, United States) and Josiah Johnson Hawes (1808-1901, United States)",Albert Sands Southworth（1811–1894 年，美国）和 Josiah Johnson Hawes（1808–1901 年，美国）,"Albert Sands Southworth (1811-1894, United States) and Josiah Johnson Hawes (1808-1901, United States)",AI
+pem_official,Albumen print,蛋白印相,Albumen print,AI
+pem_official,Albumen print with hand coloring,手工着色蛋白印相,Albumen print with hand coloring,AI
+pem_official,Alison Saar,Alison Saar,Alison Saar,AI
 pem_official,Aluminum with powder coat and automotive paint,铝，粉末涂层与汽车漆,Aluminum with powder coat and automotive paint,官方
+pem_official,"Anonymous donor, 2000",2000 年匿名捐赠人捐赠,"Anonymous donor, 2000",AI
+pem_official,"Anonymous gift, 1922",1922 年匿名捐赠,"Anonymous gift, 1922",AI
+pem_official,"Anonymous gift, 2001",2001 年匿名捐赠,"Anonymous gift, 2001",AI
+pem_official,"Archival pigment print from wet plate collodion scan, printed 2021",根据湿版火棉胶扫描件制作的档案颜料印相，2021 年印制,"Archival pigment print from wet plate collodion scan, printed 2021",AI
+pem_official,Argillite,硅质页岩,Argillite,AI
+pem_official,Artist (possibly Makonde) near Lake Malawi,马拉维湖附近的艺术家（可能为马孔德族）,Artist (possibly Makonde) near Lake Malawi,AI
+pem_official,Artist in China,中国艺术家,Artist in China,AI
+pem_official,Artist in Ethiopia,埃塞俄比亚艺术家,Artist in Ethiopia,AI
 pem_official,Artist in Korea,韩国境内艺术家,Artist in Korea,AI
+pem_official,Artist in Massachusetts,马萨诸塞州艺术家,Artist in Massachusetts,AI
+pem_official,Artist in Mexico,墨西哥艺术家,Artist in Mexico,AI
+pem_official,"Artist in Salem, United States",美国塞勒姆艺术家,"Artist in Salem, United States",AI
+pem_official,Artist in South Africa,南非艺术家,Artist in South Africa,AI
+pem_official,"Artist in Virginia and Mary Scheier (1908-2007, United States)",弗吉尼亚州艺术家和 Mary Scheier（1908—2007，美国）,"Artist in Virginia and Mary Scheier (1908-2007, United States)",AI
+pem_official,Artist in the United Kingdom,英国艺术家,Artist in the United Kingdom,AI
+pem_official,Artist in the United States,美国艺术家,Artist in the United States,AI
+pem_official,Artist not identified,艺术家不详,Artist not identified,AI
+pem_official,"Artists from the North Shore, Massachusetts",来自马萨诸塞州北岸的艺术家,"Artists from the North Shore, Massachusetts",AI
+pem_official,"Artists in Arita, Japan",日本有田艺术家,"Artists in Arita, Japan",AI
+pem_official,"Artists in Beijing, China",中国北京艺术家,"Artists in Beijing, China",AI
+pem_official,Artists in China,中国艺术家,Artists in China,AI
+pem_official,Artists in England,英格兰艺术家,Artists in England,AI
+pem_official,"Artists in Goa, India, or Sri Lanka",印度果阿或斯里兰卡艺术家,"Artists in Goa, India, or Sri Lanka",AI
+pem_official,"Artists in Guangzhou, China",中国广州艺术家,"Artists in Guangzhou, China",AI
+pem_official,"Artists in Gujarat, India",印度古吉拉特邦艺术家,"Artists in Gujarat, India",AI
+pem_official,Artists in India,印度艺术家,Artists in India,AI
+pem_official,Artists in Italy,意大利艺术家,Artists in Italy,AI
 pem_official,Artists in Japan,日本境内艺术家,Artists in Japan,AI
+pem_official,"Artists in Jingdezhen, China",中国景德镇艺术家,"Artists in Jingdezhen, China",AI
+pem_official,"Artists in Jingdezhen, China, and Peter Wiber (active 1603-1641, Germany)",中国景德镇艺术家和 Peter Wiber（活跃于 1603—1641 年，德国）,"Artists in Jingdezhen, China, and Peter Wiber (active 1603-1641, Germany)",AI
+pem_official,"Artists in Kerala, India",印度喀拉拉邦艺术家,"Artists in Kerala, India",AI
+pem_official,"Artists in Kolkata, India",印度加尔各答艺术家,"Artists in Kolkata, India",AI
+pem_official,Artists in Korea,韩国艺术家,Artists in Korea,AI
+pem_official,Artists in Mexico,墨西哥艺术家,Artists in Mexico,AI
+pem_official,"Artists in Nagasaki, Japan",日本长崎艺术家,"Artists in Nagasaki, Japan",AI
+pem_official,Artists in Paris,巴黎艺术家,Artists in Paris,AI
+pem_official,"Artists in Visakhapatnam, India",印度维沙卡帕特南艺术家,"Artists in Visakhapatnam, India",AI
+pem_official,Artists in southern China,中国南方艺术家,Artists in southern China,AI
+pem_official,Artists in the United Kingdom and the United States,英国和美国艺术家,Artists in the United Kingdom and the United States,AI
+pem_official,Artists in the United States,美国艺术家,Artists in the United States,AI
+pem_official,"Artists on the Coromandel Coast, India",印度科罗曼德尔海岸艺术家,"Artists on the Coromandel Coast, India",AI
+pem_official,"Attributed to Vincent Chevalier (1771-1841, France)",传为 Vincent Chevalier（1771—1841，法国）所作,"Attributed to Vincent Chevalier (1771-1841, France)",AI
 pem_official,"Attributed to William Rush (1756-1833, United States)",传为威廉·拉什（1756—1833，美国）创作,"Attributed to William Rush (1756-1833, United States)",AI
+pem_official,"Attributed to the School of Giovanni Niccolo and the Jesuit Seminary workshop, Kyushu, Japan",传为 Giovanni Niccolo 画派及日本九州耶稣会神学院作坊所作,"Attributed to the School of Giovanni Niccolo and the Jesuit Seminary workshop, Kyushu, Japan",AI
+pem_official,Atul Dodiya,Atul Dodiya,Atul Dodiya,AI
+pem_official,"August 30, 1824",1824 年 8 月 30 日,"August 30, 1824",AI
+pem_official,Augustus Fowler,Augustus Fowler,Augustus Fowler,AI
+pem_official,Austral Islands,奥斯特拉尔群岛,Austral Islands,AI
+pem_official,Baganda artist in Uganda,乌干达巴干达人艺术家,Baganda artist in Uganda,AI
+pem_official,"Bamboo, rattan, wood, and bone",竹、藤、木和骨,"Bamboo, rattan, wood, and bone",AI
+pem_official,Basalt,玄武岩,Basalt,AI
+pem_official,"Bassett-Lowke Ltd (Northampton, United Kingdom)",Bassett-Lowke Ltd（英国北安普敦）,"Bassett-Lowke Ltd (Northampton, United Kingdom)",AI
+pem_official,"Bernice Akimine (Native Hawaiian, b. 1949)",Bernice Akimine（夏威夷原住民，1949 年生）,"Bernice Akimine (Native Hawaiian, b. 1949)",AI
+pem_official,Bethany Collins,Bethany Collins,Bethany Collins,AI
+pem_official,Biren De,Biren De,Biren De,AI
+pem_official,"Blown glass, cast glass, steel, cast resin, silicone, acrylic, polyvinyl chloride tubing, and water and rum essence, with multichannel sound installation",吹制玻璃、铸造玻璃、钢、铸造树脂、硅胶、丙烯酸、聚氯乙烯管，以及水和朗姆酒精华，配多声道声音装置,"Blown glass, cast glass, steel, cast resin, silicone, acrylic, polyvinyl chloride tubing, and water and rum essence, with multichannel sound installation",AI
+pem_official,Bombax wood,木棉木,Bombax wood,AI
+pem_official,Book with 100 laser-cut leaves,含 100 张激光切割书页的书,Book with 100 laser-cut leaves,AI
+pem_official,Book with leather cover and encased bullet,皮革封面、内嵌子弹的书,Book with leather cover and encased bullet,AI
+pem_official,Book; watercolor and ink on paper,书；纸本水彩、墨,Book; watercolor and ink on paper,AI
+pem_official,"Bouke de Vries (b. 1960, The Netherlands)",Bouke de Vries（1960 年生，荷兰）,"Bouke de Vries (b. 1960, The Netherlands)",AI
+pem_official,"Brass, mahogany, and glass",黄铜、桃花心木和玻璃,"Brass, mahogany, and glass",AI
+pem_official,"Broadcloth with gilt braid, buckskin, and wool felt",饰金线编带的呢料、鹿皮和羊毛毡,"Broadcloth with gilt braid, buckskin, and wool felt",AI
+pem_official,Carbon print,碳素印相,Carbon print,AI
+pem_official,"Carla Fernandez (Mexican, b. 1973)",Carla Fernandez（墨西哥人，1973 年生）,"Carla Fernandez (Mexican, b. 1973)",AI
+pem_official,Carved and painted pine,雕刻并彩绘的松木,Carved and painted pine,AI
+pem_official,Carved boxwood,雕刻黄杨木,Carved boxwood,AI
+pem_official,Cast bronze,铸 bronze,Cast bronze,AI
+pem_official,Chahta (Choctaw),Chahta（乔克托族）,Chahta (Choctaw),AI
+pem_official,"Chahta (Choctaw) artist, name once known",查塔（乔克托）艺术家，姓名曾为人所知,"Chahta (Choctaw) artist, name once known",AI
+pem_official,"Charles Osgood (1809-1890, United States)",Charles Osgood（1809—1890，美国）,"Charles Osgood (1809-1890, United States)",AI
+pem_official,Charles Sandison,Charles Sandison,Charles Sandison,AI
+pem_official,"Charles Sekano (born 1943, South Africa)",Charles Sekano（1943 年生，南非）,"Charles Sekano (born 1943, South Africa)",AI
+pem_official,"Charlotte Olympia, United Kingdom",Charlotte Olympia，英国,"Charlotte Olympia, United Kingdom",AI
+pem_official,Cherokee Nation,切罗基民族,Cherokee Nation,AI
+pem_official,Childe Hassam,奇尔德·哈萨姆,Childe Hassam,AI
+pem_official,"Chinese, Japanese, and French porcelain and French gilded bronze",中国、日本和法国瓷器及法国鎏金青铜,"Chinese, Japanese, and French porcelain and French gilded bronze",AI
+pem_official,Chumash,丘马什,Chumash,AI
+pem_official,"Chumash artist, name once known",丘马什艺术家，姓名曾为人所知,"Chumash artist, name once known",AI
+pem_official,"Claire McCardell, for Townley Frocks Inc.",Claire McCardell，为 Townley Frocks Inc. 设计,"Claire McCardell, for Townley Frocks Inc.",AI
+pem_official,Cockhill Pit Factory,Cockhill Pit 工厂,Cockhill Pit Factory,AI
+pem_official,"Coconut fiber, porpoise teeth, beads",椰壳纤维、鼠海豚牙齿、珠子,"Coconut fiber, porpoise teeth, beads",AI
+pem_official,"Coconut fiber, wood, shell",椰壳纤维、木材、贝壳,"Coconut fiber, wood, shell",AI
+pem_official,"Cody Sanderson (Dine (Navajo) and Hopi, b. 1964)",Cody Sanderson（迪内（纳瓦霍）和霍皮族，1964 年生）,"Cody Sanderson (Dine (Navajo) and Hopi, b. 1964)",AI
+pem_official,"Commission, 2012. Museum purchase, by exchange",委托制作，2012 年。博物馆购藏，以交换方式取得,"Commission, 2012. Museum purchase, by exchange",AI
+pem_official,"Commission, 2015. Museum purchase",委托制作，2015 年。博物馆购藏,"Commission, 2015. Museum purchase",AI
+pem_official,"Commissioned by Edward Sylvester Morse for PEM, 1883",Edward Sylvester Morse 为 PEM 委托制作，1883 年,"Commissioned by Edward Sylvester Morse for PEM, 1883",AI
+pem_official,"Commissioned by the East India Marine Society, 1835",东印度海洋协会委托制作，1835 年,"Commissioned by the East India Marine Society, 1835",AI
+pem_official,Commissioned by the Peabody Essex Museum in 2010 and reiterated in 2019,2010 年由皮博迪·埃塞克斯博物馆委托制作，2019 年再次确认,Commissioned by the Peabody Essex Museum in 2010 and reiterated in 2019,AI
+pem_official,Computer-generated data projection,计算机生成数据投影,Computer-generated data projection,AI
+pem_official,Cotton,棉,Cotton,AI
+pem_official,Cotton and silk,棉和丝绸,Cotton and silk,AI
+pem_official,Cotton embroidered with silk and metal,丝绸和金属刺绣棉布,Cotton embroidered with silk and metal,AI
+pem_official,"Cotton, hemp, copper alloy, and iron",棉、麻、铜合金和铁,"Cotton, hemp, copper alloy, and iron",AI
+pem_official,"Cotton, linen, and silk, assembled in the Netherlands",棉、亚麻和丝绸，在荷兰组装,"Cotton, linen, and silk, assembled in the Netherlands",AI
+pem_official,Cut glass,切割玻璃,Cut glass,AI
+pem_official,Cyanotype print,蓝晒照片,Cyanotype print,AI
+pem_official,"Daguerreotype, half plate",半板达盖尔银版照片,"Daguerreotype, half plate",AI
+pem_official,"Daguerreotype, whole plate",整板达盖尔银版照片,"Daguerreotype, whole plate",AI
+pem_official,Dakota,达科他,Dakota,AI
+pem_official,"Dakota artist, name once known",达科他艺术家，姓名曾为人所知,"Dakota artist, name once known",AI
+pem_official,Democratic Republic of the Congo,刚果民主共和国,Democratic Republic of the Congo,AI
+pem_official,Democratic Republic of the Congo or Republic of the Congo,刚果民主共和国或刚果共和国,Democratic Republic of the Congo or Republic of the Congo,AI
+pem_official,"Digital video, looped, edition 2/5",数字视频，循环播放，2/5 版,"Digital video, looped, edition 2/5",AI
+pem_official,"Dine, Navajo",迪内，纳瓦霍,"Dine, Navajo",AI
+pem_official,"Door hinges, wood doors, and metal armature",门铰链、木门和金属骨架,"Door hinges, wood doors, and metal armature",AI
+pem_official,"Dutch gilt leather and wool, European-printed cotton lining, and silk trim",荷兰鎏金皮革和羊毛、欧洲印花棉布衬里以及丝绸饰边,"Dutch gilt leather and wool, European-printed cotton lining, and silk trim",AI
+pem_official,E. Ambrose Webster,E. Ambrose Webster,E. Ambrose Webster,AI
+pem_official,"Ebony, inlaid ivory, cane, and lac",乌木、镶嵌象牙、藤条和虫胶,"Ebony, inlaid ivory, cane, and lac",AI
+pem_official,Edward Ludlow Mooney,Edward Ludlow Mooney,Edward Ludlow Mooney,AI
+pem_official,Edward Sylvester Morse Collection,Edward Sylvester Morse 收藏,Edward Sylvester Morse Collection,AI
+pem_official,"Edwin Hale Lincoln (1848-1938, United States)",Edwin Hale Lincoln（1848—1938，美国）,"Edwin Hale Lincoln (1848-1938, United States)",AI
+pem_official,Embroidered and appliqued silk,刺绣和贴花丝绸,Embroidered and appliqued silk,AI
+pem_official,Embroidered silk and metal fittings,刺绣丝绸和金属配件,Embroidered silk and metal fittings,AI
 pem_official,Embroidered silk threads on silk damask,丝质提花缎地丝线刺绣,Embroidered silk threads on silk damask,AI
+pem_official,Enamel on copper with ivory stand,铜胎珐琅，配象牙底座,Enamel on copper with ivory stand,AI
+pem_official,Ethiopia,埃塞俄比亚,Ethiopia,AI
+pem_official,Fall/Winter 2018,2018 年秋冬,Fall/Winter 2018,AI
+pem_official,"Felice Beato (1832-1909, United Kingdom, born in Italy)",费利斯·贝阿托（1832—1909，英国，生于意大利）,"Felice Beato (1832-1909, United Kingdom, born in Italy)",AI
+pem_official,Felrath Hines,Felrath Hines,Felrath Hines,AI
+pem_official,Fiberglass and gilding,玻璃纤维和鎏金,Fiberglass and gilding,AI
+pem_official,"Fiberglass coated with coal dust-infused resin, found metal and wood objects, and rope",涂覆掺入煤尘树脂的玻璃纤维、拾得的金属和木制物件以及绳索,"Fiberglass coated with coal dust-infused resin, found metal and wood objects, and rope",AI
 pem_official,Fidelia Bridges,Fidelia Bridges,Fidelia Bridges,AI
+pem_official,Fig tree bark and pigment,无花果树树皮和颜料,Fig tree bark and pigment,AI
+pem_official,Fiji,斐济,Fiji,AI
+pem_official,Fijian artist,斐济艺术家,Fijian artist,AI
+pem_official,Filet de verre,玻璃丝网,Filet de verre,AI
 pem_official,Fitz Henry Lane,菲茨·亨利·莱恩,Fitz Henry Lane,AI
+pem_official,"Fitz Henry Lane (1804-1865, United States)",菲茨·亨利·莱恩（1804—1865，美国）,"Fitz Henry Lane (1804-1865, United States)",AI
+pem_official,Frank G. Speck,Frank G. Speck,Frank G. Speck,AI
+pem_official,"Frank Weston Benson (American, 1862-1951)",弗兰克·韦斯顿·本森（美国，1862—1951）,"Frank Weston Benson (American, 1862-1951)",AI
+pem_official,"Frans Balthazar Solvyns (1760-1824, Belgium)",Frans Balthazar Solvyns（1760—1824，比利时）,"Frans Balthazar Solvyns (1760-1824, Belgium)",AI
+pem_official,"Frederick Myrick (1808-1862, United States)",Frederick Myrick（1808—1862，美国）,"Frederick Myrick (1808-1862, United States)",AI
+pem_official,G. Ravinder Reddy,G. Ravinder Reddy,G. Ravinder Reddy,AI
+pem_official,Ga artist in Ghana,加纳的加族艺术家,Ga artist in Ghana,AI
+pem_official,Gelatin silver print,明胶银盐照片,Gelatin silver print,AI
+pem_official,"Geoffrey Beene (1927-2004, United States)",杰弗里·比恩（1927—2004，美国）,"Geoffrey Beene (1927-2004, United States)",AI
+pem_official,"George Chinnery (1774-1852, United Kingdom)",乔治·钱纳利（1774—1852，英国）,"George Chinnery (1774-1852, United Kingdom)",AI
+pem_official,George Crowninshield Jr.,George Crowninshield Jr.,George Crowninshield Jr.,AI
+pem_official,"George Ropes (1788-1819, United States)",George Ropes（1788—1819，美国）,"George Ropes (1788-1819, United States)",AI
+pem_official,George Ropes Jr.,George Ropes Jr.,George Ropes Jr.,AI
+pem_official,"Gesso over paper, wood, and vegetable fiber",纸张、木材和植物纤维上的石膏涂层,"Gesso over paper, wood, and vegetable fiber",AI
+pem_official,Ghana,加纳,Ghana,AI
+pem_official,Gieve Patel,吉夫·帕特尔,Gieve Patel,AI
+pem_official,"Gift in honor of Mr. and Mrs. Austin Cheney by their daughters, 1991",1991 年 Austin Cheney 夫妇的女儿敬赠，以纪念 Austin Cheney 先生和夫人,"Gift in honor of Mr. and Mrs. Austin Cheney by their daughters, 1991",AI
+pem_official,"Gift of Alvin P. Johnson, 1950",1950 年 Alvin P. Johnson 捐赠,"Gift of Alvin P. Johnson, 1950",AI
+pem_official,"Gift of Annie L. Cutts, 1958",1958 年 Annie L. Cutts 捐赠,"Gift of Annie L. Cutts, 1958",AI
+pem_official,"Gift of Arthur C. Phillips, 1978",1978 年 Arthur C. Phillips 捐赠,"Gift of Arthur C. Phillips, 1978",AI
+pem_official,"Gift of Augustus Peabody Loring Jr., 1946",1946 年 Augustus Peabody Loring Jr. 捐赠,"Gift of Augustus Peabody Loring Jr., 1946",AI
+pem_official,"Gift of Captain Benjamin Carpenter, 1800-1802",1800—1802 年 Captain Benjamin Carpenter 捐赠,"Gift of Captain Benjamin Carpenter, 1800-1802",AI
+pem_official,"Gift of Captain Benjamin Carpenter, 1804",1804 年 Captain Benjamin Carpenter 捐赠,"Gift of Captain Benjamin Carpenter, 1804",AI
+pem_official,"Gift of Captain George Hodges, 1821",1821 年 Captain George Hodges 捐赠,"Gift of Captain George Hodges, 1821",AI
+pem_official,"Gift of Captain James Buffington Briggs/Capt. Benjamin Vanderford, 1823",1823 年 Captain James Buffington Briggs/Capt. Benjamin Vanderford 捐赠,"Gift of Captain James Buffington Briggs/Capt. Benjamin Vanderford, 1823",AI
+pem_official,"Gift of Captain John Bradshaw, 1832",1832 年 Captain John Bradshaw 捐赠,"Gift of Captain John Bradshaw, 1832",AI
+pem_official,"Gift of Captain Richard Wheatland, 1803",1803 年 Captain Richard Wheatland 捐赠,"Gift of Captain Richard Wheatland, 1803",AI
+pem_official,"Gift of Captain Samuel Dudley Tucker, 1807",1807 年 Captain Samuel Dudley Tucker 捐赠,"Gift of Captain Samuel Dudley Tucker, 1807",AI
+pem_official,"Gift of Captain Samuel G. Derby, 1803",1803 年 Captain Samuel G. Derby 捐赠,"Gift of Captain Samuel G. Derby, 1803",AI
+pem_official,"Gift of Captain William Story, about 1804",约 1804 年 Captain William Story 捐赠,"Gift of Captain William Story, about 1804",AI
+pem_official,Gift of Carl and Betty Pforzheimer,Carl 和 Betty Pforzheimer 捐赠,Gift of Carl and Betty Pforzheimer,AI
 pem_official,Gift of Carol and Jeffrey Horvitz,Carol 与 Jeffrey Horvitz 捐赠,Gift of Carol and Jeffrey Horvitz,官方
+pem_official,"Gift of Cecilia Colledge, 2003",2003 年 Cecilia Colledge 捐赠,"Gift of Cecilia Colledge, 2003",AI
+pem_official,Gift of Charles Franklin Sayre,Charles Franklin Sayre 捐赠,Gift of Charles Franklin Sayre,AI
+pem_official,"Gift of Charles R. and Elizabeth C. Langmuir, 1979",1979 年 Charles R. 和 Elizabeth C. Langmuir 捐赠,"Gift of Charles R. and Elizabeth C. Langmuir, 1979",AI
+pem_official,"Gift of Chester and Davida Herwitz, 2002",2002 年 Chester 和 Davida Herwitz 捐赠,"Gift of Chester and Davida Herwitz, 2002",AI
+pem_official,"Gift of Clifford Crowninshield and Matthew Folger, 1802",1802 年 Clifford Crowninshield 和 Matthew Folger 捐赠,"Gift of Clifford Crowninshield and Matthew Folger, 1802",AI
+pem_official,"Gift of Cunard Line Ltd., 1970",1970 年 Cunard Line Ltd. 捐赠,"Gift of Cunard Line Ltd., 1970",AI
+pem_official,"Gift of Cynthia M. Nadai, in memory and honor of Edwin Morgan",Cynthia M. Nadai 捐赠，以纪念并致敬 Edwin Morgan,"Gift of Cynthia M. Nadai, in memory and honor of Edwin Morgan",AI
+pem_official,"Gift of Dorothy Fisher, widow of the artist",艺术家遗孀 Dorothy Fisher 捐赠,"Gift of Dorothy Fisher, widow of the artist",AI
+pem_official,"Gift of Dr. Charles Goddard Weld, 1889",1889 年 Dr. Charles Goddard Weld 捐赠,"Gift of Dr. Charles Goddard Weld, 1889",AI
+pem_official,"Gift of Dr. Charles Goddard Weld, 1899",1899 年 Dr. Charles Goddard Weld 捐赠,"Gift of Dr. Charles Goddard Weld, 1899",AI
 pem_official,"Gift of Dr. Charles Goddard Weld, 1904",1904 年 Charles Goddard Weld 医生捐赠,"Gift of Dr. Charles Goddard Weld, 1904",官方
+pem_official,"Gift of Dr. Charles Goddard Weld, 1905",1905 年 Dr. Charles Goddard Weld 捐赠,"Gift of Dr. Charles Goddard Weld, 1905",AI
 pem_official,"Gift of Dr. Charles Goddard Weld, 1909",1909 年 Charles Goddard Weld 医生捐赠,"Gift of Dr. Charles Goddard Weld, 1909",官方
+pem_official,"Gift of Dr. Charles Goddard Weld, 1910",1910 年 Dr. Charles Goddard Weld 捐赠,"Gift of Dr. Charles Goddard Weld, 1910",AI
+pem_official,"Gift of Dr. Charles Heald, 1955",1955 年 Dr. Charles Heald 捐赠,"Gift of Dr. Charles Heald, 1955",AI
+pem_official,"Gift of Dr. E. D. Lovejoy, 1937",1937 年 Dr. E. D. Lovejoy 捐赠,"Gift of Dr. E. D. Lovejoy, 1937",AI
+pem_official,Gift of Dr. Frank G. Speck,Dr. Frank G. Speck 捐赠,Gift of Dr. Frank G. Speck,AI
+pem_official,"Gift of Dr. George A. Perkins, about 1859",约 1859 年 Dr. George A. Perkins 捐赠,"Gift of Dr. George A. Perkins, about 1859",AI
+pem_official,"Gift of Dr. Ralph W. Dexter, 1981",1981 年 Dr. Ralph W. Dexter 捐赠,"Gift of Dr. Ralph W. Dexter, 1981",AI
+pem_official,"Gift of Dr. William Sturgis Bigelow, 1921",1921 年 Dr. William Sturgis Bigelow 捐赠,"Gift of Dr. William Sturgis Bigelow, 1921",AI
+pem_official,"Gift of Edith Owen Robb, 1914",1914 年 Edith Owen Robb 捐赠,"Gift of Edith Owen Robb, 1914",AI
+pem_official,"Gift of Edward D. Ropes, 1859",1859 年 Edward D. Ropes 捐赠,"Gift of Edward D. Ropes, 1859",AI
+pem_official,"Gift of Edward S. Moseley, 1979",1979 年 Edward S. Moseley 捐赠,"Gift of Edward S. Moseley, 1979",AI
+pem_official,"Gift of Edward Sylvester Morse, 1900",1900 年 Edward Sylvester Morse 捐赠,"Gift of Edward Sylvester Morse, 1900",AI
+pem_official,"Gift of Elias Hasket Derby Jr., 1806",1806 年 Elias Hasket Derby Jr. 捐赠,"Gift of Elias Hasket Derby Jr., 1806",AI
+pem_official,"Gift of Elizabeth Sturgis Hinds, 1956",1956 年 Elizabeth Sturgis Hinds 捐赠,"Gift of Elizabeth Sturgis Hinds, 1956",AI
+pem_official,"Gift of Elizabeth Williams, Mary Ropes Trumbull, and Ruth Ropes, 1940",1940 年 Elizabeth Williams、Mary Ropes Trumbull 和 Ruth Ropes 捐赠,"Gift of Elizabeth Williams, Mary Ropes Trumbull, and Ruth Ropes, 1940",AI
 pem_official,"Gift of Ernest Goodrich Stillman, 1947",1947 年 Ernest Goodrich Stillman 捐赠,"Gift of Ernest Goodrich Stillman, 1947",官方
+pem_official,"Gift of F. Walter Bergmann, 1958",1958 年 F. Walter Bergmann 捐赠,"Gift of F. Walter Bergmann, 1958",AI
+pem_official,"Gift of Fay Chandler, 2008",2008 年 Fay Chandler 捐赠,"Gift of Fay Chandler, 2008",AI
+pem_official,"Gift of Francis Lee Higginson Jr., 1971",1971 年 Francis Lee Higginson Jr. 捐赠,"Gift of Francis Lee Higginson Jr., 1971",AI
+pem_official,"Gift of Francis Shaw, 1924",1924 年 Francis Shaw 捐赠,"Gift of Francis Shaw, 1924",AI
+pem_official,"Gift of Frank D. Hutchinson, 1908",1908 年 Frank D. Hutchinson 捐赠,"Gift of Frank D. Hutchinson, 1908",AI
+pem_official,Gift of Garrett Gunderson,Garrett Gunderson 捐赠,Gift of Garrett Gunderson,AI
+pem_official,"Gift of George Peirce, 1830",1830 年 George Peirce 捐赠,"Gift of George Peirce, 1830",AI
+pem_official,"Gift of George Wheatland, 1846",1846 年 George Wheatland 捐赠,"Gift of George Wheatland, 1846",AI
 pem_official,"Gift of Gustavus Goward, 1899",1899 年 Gustavus Goward 捐赠,"Gift of Gustavus Goward, 1899",AI
+pem_official,"Gift of Howard Corning, Albert Farley Heard Collection, before 1956",Howard Corning 捐赠，Albert Farley Heard Collection，1956 年前,"Gift of Howard Corning, Albert Farley Heard Collection, before 1956",AI
+pem_official,"Gift of Iris Barrel Apfel, in memory of Syd and Sam Barrel",Iris Barrel Apfel 捐赠，纪念 Syd 和 Sam Barrel,"Gift of Iris Barrel Apfel, in memory of Syd and Sam Barrel",AI
+pem_official,"Gift of Israel Albert Lee, 1910",Israel Albert Lee 捐赠，1910 年,"Gift of Israel Albert Lee, 1910",AI
+pem_official,"Gift of J. Tucker and T. Pickering, 1821",J. Tucker 和 T. Pickering 捐赠，1821 年,"Gift of J. Tucker and T. Pickering, 1821",AI
+pem_official,"Gift of Joan and Clark Worswick, 1999",Joan 和 Clark Worswick 捐赠，1999 年,"Gift of Joan and Clark Worswick, 1999",AI
+pem_official,Gift of Jody Sataloff in memory of Dr. and Mrs. Joseph Sataloff,Jody Sataloff 捐赠，纪念 Joseph Sataloff 博士及夫人,Gift of Jody Sataloff in memory of Dr. and Mrs. Joseph Sataloff,AI
+pem_official,"Gift of John Burley, 1858",John Burley 捐赠，1858 年,"Gift of John Burley, 1858",AI
+pem_official,"Gift of John H. Ricketson, 1961",John H. Ricketson 捐赠，1961 年,"Gift of John H. Ricketson, 1961",AI
+pem_official,"Gift of John Robinson, after 1865",John Robinson 捐赠，1865 年后,"Gift of John Robinson, after 1865",AI
 pem_official,"Gift of John T. Prince, 1846",1846 年 John T. Prince 捐赠,"Gift of John T. Prince, 1846",官方
+pem_official,"Gift of Joseph Winn Jr., 1835",Joseph Winn Jr. 捐赠，1835 年,"Gift of Joseph Winn Jr., 1835",AI
+pem_official,"Gift of Kang Collection, Korean Art, New York, 2004","Kang Collection, Korean Art，纽约，捐赠于 2004 年","Gift of Kang Collection, Korean Art, New York, 2004",AI
+pem_official,Gift of Katrina M. Carye,Katrina M. Carye 捐赠,Gift of Katrina M. Carye,AI
+pem_official,"Gift of Lucy L. Caller, 1938",Lucy L. Caller 捐赠，1938 年,"Gift of Lucy L. Caller, 1938",AI
+pem_official,"Gift of Marion H. Lieb, Elizabeth M. Ringquist, and Grace F. Agge, 1956",Marion H. Lieb、Elizabeth M. Ringquist 和 Grace F. Agge 捐赠，1956 年,"Gift of Marion H. Lieb, Elizabeth M. Ringquist, and Grace F. Agge, 1956",AI
+pem_official,"Gift of Miriam and Francis Shaw Jr., 1935",Miriam 和 Francis Shaw Jr. 捐赠，1935 年,"Gift of Miriam and Francis Shaw Jr., 1935",AI
+pem_official,"Gift of Miss Bessie Eaton, 1898",Bessie Eaton 小姐捐赠，1898 年,"Gift of Miss Bessie Eaton, 1898",AI
+pem_official,"Gift of Miss Bessom S. Harris, 1969",Bessom S. Harris 小姐捐赠，1969 年,"Gift of Miss Bessom S. Harris, 1969",AI
+pem_official,"Gift of Miss Cecilia R. Babcock, June 22, 1915",Cecilia R. Babcock 小姐捐赠，1915 年 6 月 22 日,"Gift of Miss Cecilia R. Babcock, June 22, 1915",AI
+pem_official,"Gift of Mr. Parsons, 1885",Parsons 先生捐赠，1885 年,"Gift of Mr. Parsons, 1885",AI
+pem_official,"Gift of Mr. Philip Hofer and Mr. Francis B. Lothrop, 1972",Philip Hofer 先生和 Francis B. Lothrop 先生捐赠，1972 年,"Gift of Mr. Philip Hofer and Mr. Francis B. Lothrop, 1972",AI
 pem_official,"Gift of Mr. and Mrs. Charles Edward Cotting, 1976",1976 年 Charles Edward Cotting 夫妇捐赠,"Gift of Mr. and Mrs. Charles Edward Cotting, 1976",官方
+pem_official,Gift of Mr. and Mrs. Thomas P. Beal,Thomas P. Beal 夫妇捐赠,Gift of Mr. and Mrs. Thomas P. Beal,AI
+pem_official,"Gift of Mrs. Anna Glen Butler Vietor, 1982",Anna Glen Butler Vietor 夫人捐赠，1982 年,"Gift of Mrs. Anna Glen Butler Vietor, 1982",AI
+pem_official,"Gift of Mrs. Edward Gates, 1970",Edward Gates 夫人捐赠，1970 年,"Gift of Mrs. Edward Gates, 1970",AI
+pem_official,"Gift of Mrs. John C. Dow, 1902",John C. Dow 夫人捐赠，1902 年,"Gift of Mrs. John C. Dow, 1902",AI
+pem_official,"Gift of Mrs. R. Keith Kane, 1974",R. Keith Kane 夫人捐赠，1974 年,"Gift of Mrs. R. Keith Kane, 1974",AI
+pem_official,"Gift of Mrs. William C. Endicott, in honor of William C. Endicott, 1911",William C. Endicott 夫人捐赠，以纪念 William C. Endicott，1911 年,"Gift of Mrs. William C. Endicott, in honor of William C. Endicott, 1911",AI
+pem_official,"Gift of Mrs. William P. McMullan, 1918",William P. McMullan 夫人捐赠，1918 年,"Gift of Mrs. William P. McMullan, 1918",AI
+pem_official,"Gift of Nathaniel Silsbee, 1800",Nathaniel Silsbee 捐赠，1800 年,"Gift of Nathaniel Silsbee, 1800",AI
+pem_official,"Gift of Nathaniel Silsbee, 1862",Nathaniel Silsbee 捐赠，1862 年,"Gift of Nathaniel Silsbee, 1862",AI
+pem_official,Gift of Peter S. Lynch in memory of Carolyn A. Lynch,Peter S. Lynch 捐赠，纪念 Carolyn A. Lynch,Gift of Peter S. Lynch in memory of Carolyn A. Lynch,AI
+pem_official,"Gift of Professor Richard C. Manning, 1933",Richard C. Manning 教授捐赠，1933 年,"Gift of Professor Richard C. Manning, 1933",AI
+pem_official,"Gift of Richard H. Derby, before 1900",Richard H. Derby 捐赠，1900 年前,"Gift of Richard H. Derby, before 1900",AI
+pem_official,"Gift of Robert Brookhouse, 1821",Robert Brookhouse 捐赠，1821 年,"Gift of Robert Brookhouse, 1821",AI
+pem_official,"Gift of Robert P. Gay, 1921",Robert P. Gay 捐赠，1921 年,"Gift of Robert P. Gay, 1921",AI
+pem_official,"Gift of Scott Offen, Herbert Offen Research Collection, 2004",Scott Offen 捐赠，Herbert Offen Research Collection，2004 年,"Gift of Scott Offen, Herbert Offen Research Collection, 2004",AI
 pem_official,"Gift of Serena M. Hatch in honor of Francis W. Hatch, 2014",2014 年 Serena M. Hatch 为纪念 Francis W. Hatch 捐赠,"Gift of Serena M. Hatch in honor of Francis W. Hatch, 2014",官方
+pem_official,"Gift of Stephen W. Phillips, 1919",Stephen W. Phillips 捐赠，1919 年,"Gift of Stephen W. Phillips, 1919",AI
+pem_official,"Gift of Strafford Morss, 1966",Strafford Morss 捐赠，1966 年,"Gift of Strafford Morss, 1966",AI
+pem_official,Gift of Susan Esco Chandler,Susan Esco Chandler 捐赠,Gift of Susan Esco Chandler,AI
+pem_official,"Gift of T. C. W. Nash, 1890",T. C. W. Nash 捐赠，1890 年,"Gift of T. C. W. Nash, 1890",AI
+pem_official,"Gift of Thomas Franklin Hunt, before 1898; or purchase, Ward Memorial Fund, after 1900",Thomas Franklin Hunt 捐赠，1898 年前；或购藏，Ward Memorial Fund，1900 年后,"Gift of Thomas Franklin Hunt, before 1898; or purchase, Ward Memorial Fund, after 1900",AI
+pem_official,"Gift of Thomas Meek, before 1821",Thomas Meek 捐赠，1821 年前,"Gift of Thomas Meek, before 1821",AI
+pem_official,"Gift of William Crowninshield Endicott, 1887",William Crowninshield Endicott 捐赠，1887 年,"Gift of William Crowninshield Endicott, 1887",AI
+pem_official,"Gift of Yamanaka and Company, in memory of Professor Edward S. Morse, 1930",Yamanaka and Company 捐赠，纪念 Edward S. Morse 教授，1930 年,"Gift of Yamanaka and Company, in memory of Professor Edward S. Morse, 1930",AI
+pem_official,"Gift of Yu Giljun, 1883",Yu Giljun 捐赠，1883 年,"Gift of Yu Giljun, 1883",AI
+pem_official,"Gift of the Chester and Davida Herwitz Collection, 1999",Chester and Davida Herwitz Collection 捐赠，1999 年,"Gift of the Chester and Davida Herwitz Collection, 1999",AI
+pem_official,"Gift of the Chester and Davida Herwitz Collection, 2001",Chester and Davida Herwitz Collection 捐赠，2001 年,"Gift of the Chester and Davida Herwitz Collection, 2001",AI
+pem_official,"Gift of the Chester and Davida Herwitz Collection, 2003",Chester and Davida Herwitz Collection 捐赠，2003 年,"Gift of the Chester and Davida Herwitz Collection, 2003",AI
+pem_official,"Gift of the Estate of Mrs. Anthony Rives, 1973",Anthony Rives 夫人遗产捐赠，1973 年,"Gift of the Estate of Mrs. Anthony Rives, 1973",AI
+pem_official,"Gift of the United States Naval Academy, 1923",美国海军学院捐赠，1923 年,"Gift of the United States Naval Academy, 1923",AI
+pem_official,Gift of the artist,艺术家捐赠,Gift of the artist,AI
 pem_official,"Gift of the artist, 1918",1918 年艺术家本人捐赠,"Gift of the artist, 1918",官方
+pem_official,"Gift of the artist, 2008",艺术家捐赠，2008 年,"Gift of the artist, 2008",AI
+pem_official,"Gift of the estate of Isabel Anderson, 1949",Isabel Anderson 遗产捐赠，1949 年,"Gift of the estate of Isabel Anderson, 1949",AI
+pem_official,"Gift of the estate of Mary Brooks, 1941",Mary Brooks 遗产捐赠，1941 年,"Gift of the estate of Mary Brooks, 1941",AI
+pem_official,"Gift of the estate of Stephen Wheatland, 1987",Stephen Wheatland 遗产捐赠，1987 年,"Gift of the estate of Stephen Wheatland, 1987",AI
+pem_official,"Gift of the estate of William F. Spinney, 1933",William F. Spinney 遗产捐赠，1933 年,"Gift of the estate of William F. Spinney, 1933",AI
+pem_official,"Gift of the heirs of Andrew Nichols, 1975",Andrew Nichols 继承人捐赠，1975 年,"Gift of the heirs of Andrew Nichols, 1975",AI
+pem_official,"Gift, the Copeland Collection, 2001",捐赠，Copeland Collection，2001 年,"Gift, the Copeland Collection, 2001",AI
+pem_official,"Gilded wood, metal, and wool and silk tapestry",鎏金木、金属以及羊毛和丝绸挂毯,"Gilded wood, metal, and wool and silk tapestry",AI
+pem_official,Gio Swaby,Gio Swaby,Gio Swaby,AI
+pem_official,Given in memory of Katherine Tiffany Abbott,为纪念 Katherine Tiffany Abbott 而捐赠,Given in memory of Katherine Tiffany Abbott,AI
+pem_official,Glass beads on boots designed by Christian Louboutin,克里斯蒂安·鲁布托设计的靴子上的玻璃珠,Glass beads on boots designed by Christian Louboutin,AI
+pem_official,"Glass, glass powder, dye, and sand",玻璃、玻璃粉、染料和沙,"Glass, glass powder, dye, and sand",AI
+pem_official,"Glass, silk, lame, metal",玻璃、丝绸、金银丝织物、金属,"Glass, silk, lame, metal",AI
+pem_official,Glazed earthenware,施釉陶器,Glazed earthenware,AI
+pem_official,"Gold, chrysoprase",金、绿玉髓,"Gold, chrysoprase",AI
+pem_official,Gouache on paper,纸本水粉,Gouache on paper,AI
+pem_official,Grace Hartigan,格蕾丝·哈蒂根,Grace Hartigan,AI
+pem_official,"Grebo or Kru artist near Cape Palmas, Liberia",利比里亚帕尔马斯角附近的格列博族或克鲁族艺术家,"Grebo or Kru artist near Cape Palmas, Liberia",AI
+pem_official,Haida,海达族,Haida,AI
+pem_official,"Haida artist, name once known",海达族艺术家，姓名曾为人所知,"Haida artist, name once known",AI
+pem_official,"Hair, lacquer, and bamboo",毛发、漆和竹,"Hair, lacquer, and bamboo",AI
+pem_official,Hand-pieced and quilted fabric scraps,手工拼接并绗缝的布料碎片,Hand-pieced and quilted fabric scraps,AI
+pem_official,Hanging scroll; ink and color on silk,立轴；绢本水墨设色,Hanging scroll; ink and color on silk,AI
 pem_official,Hank Willis Thomas,汉克·威利斯·托马斯,Hank Willis Thomas,AI
+pem_official,Heiltsuk or Coast Tsimshian,海尔楚克族或海岸钦西安族,Heiltsuk or Coast Tsimshian,AI
+pem_official,"Heiltsuk or Coast Tsimshian artist, name once known",海尔楚克族或海岸钦西安族艺术家，姓名曾为人所知,"Heiltsuk or Coast Tsimshian artist, name once known",AI
+pem_official,Henry Tiffin,Henry Tiffin,Henry Tiffin,AI
+pem_official,"High-definition video, bonded stone replica of Jean-Antoine Houdon's late 1700s bust of George Washington, antique surveyor's tripod, and artificial turf",高清录像、让-安托万·乌东于18世纪末创作的乔治·华盛顿半身像的粘结石复制品、古董测量员三脚架和人造草坪,"High-definition video, bonded stone replica of Jean-Antoine Houdon's late 1700s bust of George Washington, antique surveyor's tripod, and artificial turf",AI
+pem_official,Ho-Chunk,霍-琼克族,Ho-Chunk,AI
+pem_official,"Horsehair, bamboo, and paper",马鬃、竹和纸,"Horsehair, bamboo, and paper",AI
+pem_official,"Ignatius Sichelbarth (Ai Qimeng, 1708-1780, Bohemia), Yi Lantai (active about 1748-86, China), and possibly Wang Ruxue (active 18th century, China)",Ignatius Sichelbarth（艾启蒙，1708—1780年，波希米亚）、伊兰泰（约1748—1786年活跃于中国），以及可能为王汝学（18世纪活跃于中国）,"Ignatius Sichelbarth (Ai Qimeng, 1708-1780, Bohemia), Yi Lantai (active about 1748-86, China), and possibly Wang Ruxue (active 18th century, China)",AI
+pem_official,"Imperial Silk Manufactory, Suzhou, China",中国苏州御用丝织厂,"Imperial Silk Manufactory, Suzhou, China",AI
+pem_official,"Imperial Studios, Beijing",北京宫廷作坊,"Imperial Studios, Beijing",AI
+pem_official,Ink and color on paper,纸本水墨设色,Ink and color on paper,AI
+pem_official,Ink and pigment on silk,绢本水墨颜料,Ink and pigment on silk,AI
+pem_official,Ink on paper,纸本水墨,Ink on paper,AI
 pem_official,"Ink, color and gold leaf on paper",纸本墨、设色、金箔,"Ink, color and gold leaf on paper",官方
+pem_official,"Ink, watercolor, and pencil on paper",纸本水墨、水彩和铅笔,"Ink, watercolor, and pencil on paper",AI
+pem_official,Ito Chuta,伊东忠太,Ito Chuta,AI
 pem_official,Ivory,象牙,Ivory,官方
+pem_official,"Ivory, zitan (red sandalwood), and metal",象牙、紫檀（红檀）和金属,"Ivory, zitan (red sandalwood), and metal",AI
+pem_official,James Henry Emerton,James Henry Emerton,James Henry Emerton,AI
+pem_official,"James Symonds (b. 1633, modern-day United States)",James Symonds（生于1633年，今美国）,"James Symonds (b. 1633, modern-day United States)",AI
+pem_official,"Jamie Okuma (Luiseno and Shoshone-Bannock, born 1977)",Jamie Okuma（路易塞诺族和肖肖尼-班诺克族，生于1977年）,"Jamie Okuma (Luiseno and Shoshone-Bannock, born 1977)",AI
+pem_official,"Jean Baptiste Magnie (mid-18th century, France)",Jean Baptiste Magnie（18世纪中期，法国）,"Jean Baptiste Magnie (mid-18th century, France)",AI
+pem_official,"Jean-Maurice Rothschild (1902-1998, France), Baptistin Spade (1891-1969, France), Emile Gaudissart (1872-1956, France), and Aubusson Manufacturers",Jean-Maurice Rothschild（1902—1998年，法国）、Baptistin Spade（1891—1969年，法国）、Emile Gaudissart（1872—1956年，法国）和奥比松制造商,"Jean-Maurice Rothschild (1902-1998, France), Baptistin Spade (1891-1969, France), Emile Gaudissart (1872-1956, France), and Aubusson Manufacturers",AI
+pem_official,"Jeanne Adele Bernard Sacerdote (1868-1962, France) for Jenny, Paris",Jeanne Adele Bernard Sacerdote（1868—1962年，法国）为巴黎Jenny创作,"Jeanne Adele Bernard Sacerdote (1868-1962, France) for Jenny, Paris",AI
+pem_official,"John Claude White (1853-1918, United Kingdom)",John Claude White（1853—1918年，英国）,"John Claude White (1853-1918, United Kingdom)",AI
+pem_official,John Remond (about 1788-1874),John Remond（约1788—1874年）,John Remond (about 1788-1874),AI
+pem_official,John Robinson,John Robinson,John Robinson,AI
 pem_official,John Singleton Copley,约翰·辛格尔顿·科普利,John Singleton Copley,AI
+pem_official,"John Thomson (1837-1921, Scotland)",John Thomson（1837—1921年，苏格兰）,"John Thomson (1837-1921, Scotland)",AI
+pem_official,Joseph W. Lincoln,Joseph W. Lincoln,Joseph W. Lincoln,AI
+pem_official,Juncus rush and dye,灯心草和染料,Juncus rush and dye,AI
+pem_official,"Junxiu (life dates unknown, China)",Junxiu（生卒年不详，中国）,"Junxiu (life dates unknown, China)",AI
+pem_official,K.G. Subramanyan,K.G. Subramanyan,K.G. Subramanyan,AI
 pem_official,Kanaka Maoli (Native Hawaiian) artist,Kanaka Maoli（夏威夷原住民）艺术家,Kanaka Maoli (Native Hawaiian) artist,AI
+pem_official,Kashinath Pal in Krishnanagar,克里希纳纳加尔的Kashinath Pal,Kashinath Pal in Krishnanagar,AI
 pem_official,"Katsumata Chieko (b. 1950, Japan)",胜间田千惠子（生于 1950 年，日本）,"Katsumata Chieko (b. 1950, Japan)",AI
+pem_official,"Kay WalkingStick (Cherokee Nation, b. 1935)",Kay WalkingStick（切罗基民族，生于1935年）,"Kay WalkingStick (Cherokee Nation, b. 1935)",AI
+pem_official,"Kingfisher feathers, imitation pearls, coral, semiprecious stones, copper alloy with gilding, and silk threads",翠鸟羽毛、人造珍珠、珊瑚、半宝石、鎏金铜合金和丝线,"Kingfisher feathers, imitation pearls, coral, semiprecious stones, copper alloy with gilding, and silk threads",AI
+pem_official,Kiowa and Caddo,基奥瓦族和卡多族,Kiowa and Caddo,AI
+pem_official,Kongo artist in Loango region,洛安果地区的刚果族艺术家,Kongo artist in Loango region,AI
+pem_official,Korean artist,韩国艺术家,Korean artist,AI
+pem_official,Kuba artist in Democratic Republic of the Congo,刚果民主共和国的库巴族艺术家,Kuba artist in Democratic Republic of the Congo,AI
+pem_official,Kumamoto Ensai,熊本延彩,Kumamoto Ensai,AI
+pem_official,"Kusakabe Kimbei (1841-1934, Japan)",日下部金兵卫（1841—1934年，日本）,"Kusakabe Kimbei (1841-1934, Japan)",AI
 pem_official,Lacquer and shell inlay,漆与螺钿,Lacquer and shell inlay,官方
+pem_official,"Lacquer, mother of pearl, glass, and copper",漆、珍珠母、玻璃和铜,"Lacquer, mother of pearl, glass, and copper",AI
 pem_official,"Lacquered wood, gold leaf, pigments, copper alloy, and crystal",髹漆木胎，金箔、颜料、铜合金与水晶,"Lacquered wood, gold leaf, pigments, copper alloy, and crystal",官方
+pem_official,Lakota (Teton/Western Sioux),拉科塔族（提顿/西部苏族）,Lakota (Teton/Western Sioux),AI
+pem_official,Lakota (Teton/Western Sioux) artist,拉科塔族（提顿/西部苏族）艺术家,Lakota (Teton/Western Sioux) artist,AI
+pem_official,"Lala Deen Dayal (1844-1905, India)",拉拉·丁·达亚尔（1844—1905年，印度）,"Lala Deen Dayal (1844-1905, India)",AI
+pem_official,"Leather, velvet, glass, cotton, metal, and ink",皮革、天鹅绒、玻璃、棉、金属和墨,"Leather, velvet, glass, cotton, metal, and ink",AI
+pem_official,"Les Grands Magasins du Louvre, Paris",巴黎卢浮宫百货公司,"Les Grands Magasins du Louvre, Paris",AI
+pem_official,Liberia,利比里亚,Liberia,AI
+pem_official,"Likely Pawtucket band of Massachusett artist, name once known",可能为马萨诸塞特族波塔克特部落艺术家，姓名曾为人所知,"Likely Pawtucket band of Massachusett artist, name once known",AI
+pem_official,"Louis Le Breton (1818-1886, France)",Louis Le Breton（1818—1886年，法国）,"Louis Le Breton (1818-1886, France)",AI
+pem_official,"Lu Hongnian (John Lu, 1914-1989, China)",Lu Hongnian（John Lu，1914—1989，中国）,"Lu Hongnian (John Lu, 1914-1989, China)",AI
+pem_official,Luiseno and Shoshone-Bannock,路易塞诺人和肖松尼-班诺克人,Luiseno and Shoshone-Bannock,AI
+pem_official,"Mahogany and pine, brass movement",桃花心木和松木、黄铜机芯,"Mahogany and pine, brass movement",AI
+pem_official,Mahogany and reproduction upholstery,桃花心木和复制品室内装饰面料,Mahogany and reproduction upholstery,AI
+pem_official,"Mahogany, bird's-eye maple, satinwood veneer, brass, and glass",桃花心木、鸟眼枫木、缎木木皮、黄铜和玻璃,"Mahogany, bird's-eye maple, satinwood veneer, brass, and glass",AI
+pem_official,"Malawi, Mozambique, or Tanzania",马拉维、莫桑比克或坦桑尼亚,"Malawi, Mozambique, or Tanzania",AI
+pem_official,"Mammal intestine, esophagus, hair, and dye",哺乳动物肠、食管、毛发和染料,"Mammal intestine, esophagus, hair, and dye",AI
+pem_official,Maori,毛利人,Maori,AI
+pem_official,Maqbool Fida (M.F.) Husain,Maqbool Fida（M.F.）Husain,Maqbool Fida (M.F.) Husain,AI
+pem_official,Maria Magdalena Campos-Pons,Maria Magdalena Campos-Pons,Maria Magdalena Campos-Pons,AI
+pem_official,"Marie Watt (Seneca, born 1967)",Marie Watt（塞内卡人，1967年生）,"Marie Watt (Seneca, born 1967)",AI
+pem_official,Marquesan artist,马克萨斯群岛艺术家,Marquesan artist,AI
+pem_official,Marquesas Islands,马克萨斯群岛,Marquesas Islands,AI
+pem_official,"Mary Richardson (1772-1824, United States)",Mary Richardson（1772—1824，美国）,"Mary Richardson (1772-1824, United States)",AI
+pem_official,Massachusett,马萨诸塞特人,Massachusett,AI
+pem_official,Massachusetts General Court,马萨诸塞总法院,Massachusetts General Court,AI
+pem_official,Mende artist in Sierra Leone,塞拉利昂的门德族艺术家,Mende artist in Sierra Leone,AI
+pem_official,"Michael A. Smith (1942-2018, United States)",Michael A. Smith（1942—2018，美国）,"Michael A. Smith (1942-2018, United States)",AI
+pem_official,"Michael Banner (b. 1939, United States) and Maureen Banner (b. 1946, United States)",Michael Banner（1939年生，美国）和Maureen Banner（1946年生，美国）,"Michael Banner (b. 1939, United States) and Maureen Banner (b. 1946, United States)",AI
+pem_official,Michael Lin,Michael Lin,Michael Lin,AI
+pem_official,"Michele Felice Corne (1752-1845, Italian, American)",Michele Felice Corne（1752—1845，意大利裔、美国人）,"Michele Felice Corne (1752-1845, Italian, American)",AI
+pem_official,"Michelle Erickson (b. 1960, United States)",Michelle Erickson（1960年生，美国）,"Michelle Erickson (b. 1960, United States)",AI
+pem_official,"Mohawk, Six Nations of the Grand River",莫霍克人，大河六族,"Mohawk, Six Nations of the Grand River",AI
+pem_official,"Museum Purchase, 2002",博物馆购藏，2002年,"Museum Purchase, 2002",AI
 pem_official,"Museum Purchase, made possible by the Elizabeth Rogers Acquisition Fund",博物馆购藏，由 Elizabeth Rogers Acquisition Fund 资助,"Museum Purchase, made possible by the Elizabeth Rogers Acquisition Fund",AI
 pem_official,Museum collection,博物馆馆藏,Museum collection,AI
+pem_official,Museum commission,博物馆委托制作,Museum commission,AI
+pem_official,"Museum commission, 2005",博物馆委托制作，2005年,"Museum commission, 2005",AI
+pem_official,Museum purchase,博物馆购藏,Museum purchase,AI
+pem_official,Museum purchase by exchange,博物馆以交换方式购藏,Museum purchase by exchange,AI
+pem_official,"Museum purchase from Yamanaka and Company, 1927",博物馆购自山中商会，1927年,"Museum purchase from Yamanaka and Company, 1927",AI
+pem_official,"Museum purchase from the World's Columbian Exhibition, Chicago, 1893",博物馆购自1893年芝加哥世界哥伦布博览会,"Museum purchase from the World's Columbian Exhibition, Chicago, 1893",AI
+pem_official,"Museum purchase in honor of William R. Sargent, 2006",为纪念William R. Sargent，博物馆购藏，2006年,"Museum purchase in honor of William R. Sargent, 2006",AI
+pem_official,"Museum purchase in honor of the Museum's Bicentennial Year, 1999",为纪念博物馆建馆二百周年，博物馆购藏，1999年,"Museum purchase in honor of the Museum's Bicentennial Year, 1999",AI
+pem_official,"Museum purchase with funds donated anonymously, 1996",以匿名捐赠资金购藏，1996年,"Museum purchase with funds donated anonymously, 1996",AI
+pem_official,"Museum purchase, 1884",博物馆购藏，1884年,"Museum purchase, 1884",AI
+pem_official,"Museum purchase, 1911",博物馆购藏，1911年,"Museum purchase, 1911",AI
+pem_official,"Museum purchase, 1917",博物馆购藏，1917年,"Museum purchase, 1917",AI
+pem_official,"Museum purchase, 1919",博物馆购藏，1919年,"Museum purchase, 1919",AI
+pem_official,"Museum purchase, 1921",博物馆购藏，1921年,"Museum purchase, 1921",AI
+pem_official,"Museum purchase, 1927",博物馆购藏，1927年,"Museum purchase, 1927",AI
+pem_official,"Museum purchase, 1939",博物馆购藏，1939年,"Museum purchase, 1939",AI
+pem_official,"Museum purchase, 1972",博物馆购藏，1972年,"Museum purchase, 1972",AI
+pem_official,"Museum purchase, 1986",博物馆购藏，1986年,"Museum purchase, 1986",AI
+pem_official,"Museum purchase, 1994",博物馆购藏，1994年,"Museum purchase, 1994",AI
+pem_official,"Museum purchase, 2003",博物馆购藏，2003年,"Museum purchase, 2003",AI
+pem_official,"Museum purchase, 2008",博物馆购藏，2008年,"Museum purchase, 2008",AI
+pem_official,"Museum purchase, and gift of Jeremy Ltd., London, 1996",博物馆购藏，及伦敦Jeremy Ltd.捐赠，1996年,"Museum purchase, and gift of Jeremy Ltd., London, 1996",AI
+pem_official,"Museum purchase, by exchange",博物馆购藏，以交换方式取得,"Museum purchase, by exchange",AI
+pem_official,"Museum purchase, in honor of Dr. H. A. Crosby Forbes",为纪念H. A. Crosby Forbes博士，博物馆购藏,"Museum purchase, in honor of Dr. H. A. Crosby Forbes",AI
+pem_official,"Museum purchase, made possible by John O. and Olivia Hood Parker, 2001",得益于John O.和Olivia Hood Parker的资助，博物馆购藏，2001年,"Museum purchase, made possible by John O. and Olivia Hood Parker, 2001",AI
+pem_official,"Museum purchase, made possible by Nancy and George Putnam, 2007",得益于Nancy和George Putnam的资助，博物馆购藏，2007年,"Museum purchase, made possible by Nancy and George Putnam, 2007",AI
+pem_official,"Museum purchase, made possible by Ulf B. and Elizabeth C. Heide",得益于Ulf B.和Elizabeth C. Heide的资助，博物馆购藏,"Museum purchase, made possible by Ulf B. and Elizabeth C. Heide",AI
+pem_official,"Museum purchase, made possible by an anonymous donor",得益于匿名捐赠者的资助，博物馆购藏,"Museum purchase, made possible by an anonymous donor",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1985",得益于匿名捐赠者的资助，博物馆购藏，1985年,"Museum purchase, made possible by an anonymous donor, 1985",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1987",得益于匿名捐赠者的资助，博物馆购藏，1987年,"Museum purchase, made possible by an anonymous donor, 1987",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1988",得益于匿名捐赠者的资助，博物馆购藏，1988年,"Museum purchase, made possible by an anonymous donor, 1988",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1989",得益于匿名捐赠者的资助，博物馆购藏，1989年,"Museum purchase, made possible by an anonymous donor, 1989",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1993",得益于匿名捐赠者的资助，博物馆购藏，1993年,"Museum purchase, made possible by an anonymous donor, 1993",AI
 pem_official,"Museum purchase, made possible by an anonymous donor, 1994",1994 年博物馆购藏，由匿名捐赠者资助,"Museum purchase, made possible by an anonymous donor, 1994",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1996",得益于匿名捐赠者的资助，博物馆购藏，1996年,"Museum purchase, made possible by an anonymous donor, 1996",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1998",得益于匿名捐赠者的资助，博物馆购藏，1998年,"Museum purchase, made possible by an anonymous donor, 1998",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 1999",得益于匿名捐赠者的资助，博物馆购藏，1999年,"Museum purchase, made possible by an anonymous donor, 1999",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2000",2000 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2000",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2001",2001 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2001",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2002",2002 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2002",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2003",2003 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2003",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2004",2004 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2004",AI
+pem_official,"Museum purchase, made possible by an anonymous donor, 2007",2007 年博物馆购藏，得益于一位匿名捐赠者的资助,"Museum purchase, made possible by an anonymous donor, 2007",AI
+pem_official,"Museum purchase, made possible by anonymous donors, 2000",2000 年博物馆购藏，得益于匿名捐赠者的资助,"Museum purchase, made possible by anonymous donors, 2000",AI
+pem_official,"Museum purchase, made possible by the Anna Pingree Phillips Fund and the Edward Daland Lovejoy Fund, 1979",1979 年博物馆购藏，得益于 Anna Pingree Phillips Fund 和 Edward Daland Lovejoy Fund 的资助,"Museum purchase, made possible by the Anna Pingree Phillips Fund and the Edward Daland Lovejoy Fund, 1979",AI
+pem_official,"Museum purchase, made possible by the Asian Art Visiting Committee, 2003",2003 年博物馆购藏，得益于亚洲艺术访问委员会的资助,"Museum purchase, made possible by the Asian Art Visiting Committee, 2003",AI
+pem_official,"Museum purchase, made possible by the Ellen and Stephen Hoffman Fund for Native American Art Acquisitions",博物馆购藏，得益于 Ellen and Stephen Hoffman 美国原住民艺术购藏基金的资助,"Museum purchase, made possible by the Ellen and Stephen Hoffman Fund for Native American Art Acquisitions",AI
+pem_official,"Museum purchase, made possible by the Fellows and Friends Fund, 1961",1961 年博物馆购藏，得益于 Fellows and Friends Fund 的资助,"Museum purchase, made possible by the Fellows and Friends Fund, 1961",AI
 pem_official,"Museum purchase, made possible by the Maritime Visiting Committee",博物馆购藏，由 Maritime Visiting Committee 资助,"Museum purchase, made possible by the Maritime Visiting Committee",AI
+pem_official,"Museum purchase, made possible by the Piilani Cook Whittier Fund, 2002",2002 年博物馆购藏，得益于 Piilani Cook Whittier Fund 的资助,"Museum purchase, made possible by the Piilani Cook Whittier Fund, 2002",AI
 pem_official,"Museum purchase, made possible by the R. C. Billings Fund, 1914",1914 年博物馆购藏，由 R. C. Billings Fund 资助,"Museum purchase, made possible by the R. C. Billings Fund, 1914",AI
+pem_official,"Museum purchase, made possible by the Special Fund for Natural History, 1992",1992 年博物馆购藏，得益于自然历史特别基金的资助,"Museum purchase, made possible by the Special Fund for Natural History, 1992",AI
+pem_official,"Museum purchase, made possible by the Toplitz Hilborn Memorial Fund, 2001",2001 年博物馆购藏，得益于 Toplitz Hilborn Memorial Fund 的资助,"Museum purchase, made possible by the Toplitz Hilborn Memorial Fund, 2001",AI
+pem_official,"Museum purchase, made possible by the Willoughby Stuart Memorial Fund",博物馆购藏，得益于 Willoughby Stuart Memorial Fund 的资助,"Museum purchase, made possible by the Willoughby Stuart Memorial Fund",AI
+pem_official,"Museum purchase, made possible by the Willoughby Stuart Memorial Fund and the Native American Artist Fund",博物馆购藏，得益于 Willoughby Stuart Memorial Fund 和 Native American Artist Fund 的资助,"Museum purchase, made possible by the Willoughby Stuart Memorial Fund and the Native American Artist Fund",AI
+pem_official,"Museum purchase, the Veldman-Eecen Collection",博物馆购藏，Veldman-Eecen 收藏,"Museum purchase, the Veldman-Eecen Collection",AI
+pem_official,"N. C. Wyeth (1882-1945, United States)",N. C. Wyeth（1882—1945，美国）,"N. C. Wyeth (1882-1945, United States)",AI
 pem_official,"Naito Toyomasa (1773-1856, Japan)",内藤丰昌（1773—1856，日本）,"Naito Toyomasa (1773-1856, Japan)",AI
+pem_official,Nalini Malani,Nalini Malani,Nalini Malani,AI
+pem_official,"Nathaniel Gould (1734-1781, United States)",Nathaniel Gould（1734—1781，美国）,"Nathaniel Gould (1734-1781, United States)",AI
 pem_official,Native Hawaiian,夏威夷原住民,Native Hawaiian,AI
+pem_official,"Nicholas Galanin, Yeil Ya-Tseen (Tlingit and Unangax, b. 1979)",Nicholas Galanin、Yeil Ya-Tseen（特林吉特人和尤纳克斯人，1979 年生）,"Nicholas Galanin, Yeil Ya-Tseen (Tlingit and Unangax, b. 1979)",AI
+pem_official,"Nicolas Cammillieri (1773-1860, France)",Nicolas Cammillieri（1773—1860，法国）,"Nicolas Cammillieri (1773-1860, France)",AI
+pem_official,Oak,橡木,Oak,AI
+pem_official,"Oak, maple, iron, and paint",橡木、枫木、铁和颜料,"Oak, maple, iron, and paint",AI
+pem_official,Oil on board,木板油画,Oil on board,AI
 pem_official,Oil on canvas,布面油彩,Oil on canvas,官方
+pem_official,Oil on fiberboard,纤维板油画,Oil on fiberboard,AI
+pem_official,Oil on panel,画板油画,Oil on panel,AI
+pem_official,"Oil on wood panel, in a lacquered wood case with mother-of-pearl inlay",木板油画，置于嵌螺钿髹漆木盒中,"Oil on wood panel, in a lacquered wood case with mother-of-pearl inlay",AI
+pem_official,Oil pastel on paper,纸本油画棒,Oil pastel on paper,AI
+pem_official,"Olivia Parker (b. 1941, United States)",Olivia Parker（1941 年生，美国）,"Olivia Parker (b. 1941, United States)",AI
+pem_official,Opaque watercolor on mulberry paper,桑皮纸不透明水彩,Opaque watercolor on mulberry paper,AI
+pem_official,Paint and ink on silk,绢本设色水墨,Paint and ink on silk,AI
+pem_official,Paint on canvas,布面设色,Paint on canvas,AI
+pem_official,Painted iron,彩绘铁,Painted iron,AI
+pem_official,"Painted pine, iron",彩绘松木、铁,"Painted pine, iron",AI
+pem_official,"Paper, lacquer, and wood",纸、漆和木,"Paper, lacquer, and wood",AI
+pem_official,"Parchment, pigments, and leather",羊皮纸、颜料和皮革,"Parchment, pigments, and leather",AI
+pem_official,Patoromu Tamatea (19th century),Patoromu Tamatea（19 世纪）,Patoromu Tamatea (19th century),AI
+pem_official,Pen and ink on paper,纸本钢笔墨水画,Pen and ink on paper,AI
+pem_official,Photographic print,照片印相,Photographic print,AI
+pem_official,"Pierre Louis Dagoty (1771-1840, France)",Pierre Louis Dagoty（1771—1840，法国）,"Pierre Louis Dagoty (1771-1840, France)",AI
 pem_official,Pine and paint,松木，彩绘,Pine and paint,官方
+pem_official,Platinum print,铂金印相,Platinum print,AI
+pem_official,Porcelain,瓷,Porcelain,AI
+pem_official,Porcelain and marble,瓷和大理石,Porcelain and marble,AI
+pem_official,Porcelain with gilded-silver mounts,带鎏金银饰件的瓷器,Porcelain with gilded-silver mounts,AI
+pem_official,"Porcelain, stoneware, tin-glazed earthenware, and gold leaf",瓷、炻器、锡釉陶和金箔,"Porcelain, stoneware, tin-glazed earthenware, and gold leaf",AI
+pem_official,"Porcupine quill, metal, glass beads, leather, and wood",豪猪刺、金属、玻璃珠、皮革和木,"Porcupine quill, metal, glass beads, leather, and wood",AI
+pem_official,"Probably gift of Captain Samuel Lambert, 1800-1802",可能为 Samuel Lambert 船长于 1800—1802 年捐赠,"Probably gift of Captain Samuel Lambert, 1800-1802",AI
+pem_official,"Purchase, 2018",购藏，2018 年,"Purchase, 2018",AI
+pem_official,"Purchase, Elizabeth Rogers Fund, 2022",购藏，Elizabeth Rogers Fund，2022 年,"Purchase, Elizabeth Rogers Fund, 2022",AI
+pem_official,"Raffia, leopard cloth, leopard fur, cowrie shells, and glass beads",酒椰纤维、豹纹布、豹皮、海螺壳和玻璃珠,"Raffia, leopard cloth, leopard fur, cowrie shells, and glass beads",AI
+pem_official,Ramie,苎麻,Ramie,AI
+pem_official,"Rayon, acrylic paint",人造丝、丙烯颜料,"Rayon, acrylic paint",AI
+pem_official,Received before 1867,1867 年前 प्राप्त,Received before 1867,AI
+pem_official,Reclaimed wool blankets and embroidery thread,再生羊毛毯和刺绣线,Reclaimed wool blankets and embroidery thread,AI
+pem_official,Reverse painting on acrylic,亚克力板背面绘画,Reverse painting on acrylic,AI
+pem_official,Reverse painting on glass,玻璃背面绘画,Reverse painting on glass,AI
+pem_official,"Rhinestones, leather and silk satin",水钻、皮革和丝绸缎,"Rhinestones, leather and silk satin",AI
 pem_official,Robert Feke,Robert Feke,Robert Feke,AI
+pem_official,"Rock crystal with gold, rubies, and sapphires",水晶，饰金、红宝石和蓝宝石,"Rock crystal with gold, rubies, and sapphires",AI
+pem_official,Salt-glazed stoneware and cobalt,盐釉炻器和钴,Salt-glazed stoneware and cobalt,AI
+pem_official,Samuel McIntire,Samuel McIntire,Samuel McIntire,AI
+pem_official,"Samuel McIntire (1757-1811, United States), and Michele Felice Corne (1752-1845, United States)",Samuel McIntire（1757—1811 年，美国）和 Michele Felice Corne（1752—1845 年，美国）,"Samuel McIntire (1757-1811, United States), and Michele Felice Corne (1752-1845, United States)",AI
+pem_official,"Samuel Mulliken (1761-1847, United States)",Samuel Mulliken（1761—1847 年，美国）,"Samuel Mulliken (1761-1847, United States)",AI
+pem_official,"Satin brocade, lace, metal, and ribbon",缎纹织锦、蕾丝、金属和缎带,"Satin brocade, lace, metal, and ribbon",AI
+pem_official,Sayed Haider (S.H.) Raza,Sayed Haider（S.H.）Raza,Sayed Haider (S.H.) Raza,AI
+pem_official,Seneca,塞内卡,Seneca,AI
+pem_official,"Sennit, feather",编绳、羽毛,"Sennit, feather",AI
+pem_official,"Shi Jianmin (born 1962, China)",Shi Jianmin（1962 年生，中国）,"Shi Jianmin (born 1962, China)",AI
+pem_official,Sierra Leone,塞拉利昂,Sierra Leone,AI
+pem_official,Silk and cotton,丝绸和棉,Silk and cotton,AI
+pem_official,Silk damask and linen,丝绸提花织物和亚麻,Silk damask and linen,AI
+pem_official,"Silk, embroidered silk, and gold-wrapped thread",丝绸、刺绣丝绸和金包线,"Silk, embroidered silk, and gold-wrapped thread",AI
+pem_official,"Silk, linen",丝绸、亚麻,"Silk, linen",AI
+pem_official,"Silk, paint and ink",丝绸、颜料和墨,"Silk, paint and ink",AI
+pem_official,"Silk, paper, cotton, wool, and metallic thread",丝绸、纸、棉、羊毛和金属线,"Silk, paper, cotton, wool, and metallic thread",AI
+pem_official,Silver,银,Silver,AI
+pem_official,Silver and brass,银和黄铜,Silver and brass,AI
+pem_official,South Africa,南非,South Africa,AI
+pem_official,Stainless steel,不锈钢,Stainless steel,AI
+pem_official,Stoneware,炻器,Stoneware,AI
+pem_official,Stoneware and lacquered wood,炻器和髹漆木胎,Stoneware and lacquered wood,AI
 pem_official,Stoneware with matte glazes,炻器，亚光釉,Stoneware with matte glazes,官方
+pem_official,Studio of Mathew B. Brady,Mathew B. Brady 工作室,Studio of Mathew B. Brady,AI
+pem_official,Swahili artists in Zanzibar,桑给巴尔的斯瓦希里艺术家,Swahili artists in Zanzibar,AI
+pem_official,"T.C. Cannon (Kiowa and Caddo, 1946-1978)",T.C. Cannon（基奥瓦和卡多族，1946—1978 年）,"T.C. Cannon (Kiowa and Caddo, 1946-1978)",AI
+pem_official,"Tapa (processed inner tree bark), pigments",塔帕布（加工过的树皮内层）、颜料,"Tapa (processed inner tree bark), pigments",AI
 pem_official,Terada Tadatoyo,寺田忠丰,Terada Tadatoyo,官方
+pem_official,The Albert Szabo and Brenda Dyer Szabo Collection,Albert Szabo 和 Brenda Dyer Szabo 收藏,The Albert Szabo and Brenda Dyer Szabo Collection,AI
+pem_official,The Sheila W. and Samuel M. Robbins Collection,Sheila W. 和 Samuel M. Robbins 收藏,The Sheila W. and Samuel M. Robbins Collection,AI
+pem_official,"Thomas Dennis (1638-1706, modern-day United States)",Thomas Dennis（1638—1706 年，今美国）,"Thomas Dennis (1638-1706, modern-day United States)",AI
+pem_official,"Thomas Russell and Mr. Odell (active 19th century, United States)",Thomas Russell 和 Odell 先生（活跃于 19 世纪，美国）,"Thomas Russell and Mr. Odell (active 19th century, United States)",AI
+pem_official,"Thomas Seymour (1771-1848, United States), Carving attributed to Thomas Wightman (1759-1827)",Thomas Seymour（1771—1848 年，美国），雕刻归于 Thomas Wightman（1759—1827 年）,"Thomas Seymour (1771-1848, United States), Carving attributed to Thomas Wightman (1759-1827)",AI
+pem_official,"Thomas W. Commeraw (1771-1819, United States)",Thomas W. Commeraw（1771—1819 年，美国）,"Thomas W. Commeraw (1771-1819, United States)",AI
+pem_official,"Thread, machine-stitched on reverse of canvas with fabric applique",线，帆布背面机缝，织物贴花,"Thread, machine-stitched on reverse of canvas with fabric applique",AI
+pem_official,"Tiffany & Company (1837-present, United States)",蒂芙尼公司（1837 年至今，美国）,"Tiffany & Company (1837-present, United States)",AI
+pem_official,"Tilly Kettle (1734-1786, United Kingdom)",Tilly Kettle（1734—1786 年，英国）,"Tilly Kettle (1734-1786, United Kingdom)",AI
+pem_official,Tin-glazed earthenware,锡釉陶器,Tin-glazed earthenware,AI
+pem_official,Tlingit and Unangax,特林吉特和乌南加克斯,Tlingit and Unangax,AI
+pem_official,"Toots Zynsky (b. 1951, United States)",Toots Zynsky（1951 年生，美国）,"Toots Zynsky (b. 1951, United States)",AI
+pem_official,"Transferred to Peabody Essex Museum by the Andover Newton Theological School, 2017",2017 年由安多弗·牛顿神学院转交皮博迪埃塞克斯博物馆,"Transferred to Peabody Essex Museum by the Andover Newton Theological School, 2017",AI
+pem_official,"Truman Lowe (Ho-Chunk, 1944-2019)",Truman Lowe（霍-琼克族，1944—2019 年）,"Truman Lowe (Ho-Chunk, 1944-2019)",AI
+pem_official,Tyeb Mehta,Tyeb Mehta,Tyeb Mehta,AI
+pem_official,Uganda,乌干达,Uganda,AI
+pem_official,Unangax (Aleut),乌南加克斯（阿留申）,Unangax (Aleut),AI
+pem_official,"Unangax (Aleut) artist, name once known",乌南加克斯（阿留申）艺术家，姓名曾知,"Unangax (Aleut) artist, name once known",AI
+pem_official,"Unfired clay, paint, textile",未烧黏土、颜料、纺织物,"Unfired clay, paint, textile",AI
+pem_official,"Unfired clay, paint, wood, and human hair",未烧黏土、颜料、木材和人发,"Unfired clay, paint, wood, and human hair",AI
 pem_official,United States,美国,United States,AI
+pem_official,"Walker Evans (1903-1975, United States)",Walker Evans（1903—1975 年，美国）,"Walker Evans (1903-1975, United States)",AI
+pem_official,Walnut,胡桃木,Walnut,AI
+pem_official,Watercolor and ink on paper,纸本水彩和墨,Watercolor and ink on paper,AI
+pem_official,Watercolor and tin on paper,纸本水彩和锡,Watercolor and tin on paper,AI
+pem_official,Watercolor on paper,纸本水彩,Watercolor on paper,AI
+pem_official,Whale tooth,鲸牙,Whale tooth,AI
+pem_official,"White mahogany, gunmetal and brass",白色桃花心木、炮铜和黄铜,"White mahogany, gunmetal and brass",AI
+pem_official,White pine,白松,White pine,AI
+pem_official,Wild boar tusks and fiber,野猪獠牙和纤维,Wild boar tusks and fiber,AI
+pem_official,"Will Wilson (Dine, Navajo, b. 1969)",Will Wilson（迪内族、纳瓦霍族，1969 年生）,"Will Wilson (Dine, Navajo, b. 1969)",AI
+pem_official,"William Bradford (1823-1892, United States)",William Bradford（1823—1892 年，美国）,"William Bradford (1823-1892, United States)",AI
+pem_official,"Willow, monofilament, and metal",柳条、单丝和金属,"Willow, monofilament, and metal",AI
+pem_official,Wood,木材,Wood,AI
+pem_official,Wood and paint,木材和颜料,Wood and paint,AI
+pem_official,Wood and pigment,木材和颜料,Wood and pigment,AI
+pem_official,"Wood, bladder, and paint",木材、膀胱和颜料,"Wood, bladder, and paint",AI
+pem_official,"Wood, bone, and plant fiber",木材、骨和植物纤维,"Wood, bone, and plant fiber",AI
+pem_official,"Wood, ceramic, iron nails, and pigment",木材、陶瓷、铁钉和颜料,"Wood, ceramic, iron nails, and pigment",AI
+pem_official,"Wood, composite, and cotton",木材、复合材料和棉,"Wood, composite, and cotton",AI
+pem_official,"Wood, cordage and bronze",木材、绳索和青铜,"Wood, cordage and bronze",AI
+pem_official,"Wood, fiber, animal hide, and pigment",木材、纤维、动物皮和颜料,"Wood, fiber, animal hide, and pigment",AI
+pem_official,"Wood, iron, and brass",木材、铁和黄铜,"Wood, iron, and brass",AI
+pem_official,"Wood, iron, and glass beads",木材、铁和玻璃珠,"Wood, iron, and glass beads",AI
+pem_official,"Wood, ivory, mother of pearl, and cloisonne",木材、象牙、珍珠母和掐丝珐琅,"Wood, ivory, mother of pearl, and cloisonne",AI
+pem_official,"Wood, lacquer, and mother-of-pearl",木材、漆和珍珠母,"Wood, lacquer, and mother-of-pearl",AI
 pem_official,"Wood, lacquer, gilded brass, silk, paper, pigments, gold leaf, and bamboo",木、漆、鎏金铜、丝、纸、颜料、金箔与竹,"Wood, lacquer, gilded brass, silk, paper, pigments, gold leaf, and bamboo",官方
+pem_official,"Wood, lacquer, iron, and silk",木材、漆、铁和丝绸,"Wood, lacquer, iron, and silk",AI
 pem_official,"Wood, lacquer, pigments, gold, and metal",木、漆、颜料、金与金属,"Wood, lacquer, pigments, gold, and metal",官方
+pem_official,"Wood, mother-of-pearl, and brass",木材、珍珠母和黄铜,"Wood, mother-of-pearl, and brass",AI
+pem_official,"Wood, paint, glass, oyster shell, and metal",木材、颜料、玻璃、牡蛎壳和金属,"Wood, paint, glass, oyster shell, and metal",AI
+pem_official,"Wood, paint, metal",木材、颜料和金属,"Wood, paint, metal",AI
+pem_official,"Wood, paint, metal, and glass",木材、颜料、金属和玻璃,"Wood, paint, metal, and glass",AI
+pem_official,"Wood, pandanus, coconut fiber",木材、露兜树和椰子纤维,"Wood, pandanus, coconut fiber",AI
+pem_official,"Wood, paua shell",木材和鲍鱼壳,"Wood, paua shell",AI
+pem_official,"Wood, pigment",木材和颜料,"Wood, pigment",AI
+pem_official,Wool and silk crepe,羊毛和丝绉,Wool and silk crepe,AI
+pem_official,"Wool, silk, and glass beads",羊毛、丝绸和玻璃珠,"Wool, silk, and glass beads",AI
+pem_official,"Wool, silk, cotton, gold-wrapped thread, and metals",羊毛、丝绸、棉、金包线和金属,"Wool, silk, cotton, gold-wrapped thread, and metals",AI
+pem_official,Yoan Capote,Yoan Capote,Yoan Capote,AI
+pem_official,Yup'ik,尤皮克,Yup'ik,AI
+pem_official,"Yup'ik artist, name once known",尤皮克艺术家，姓名曾为人所知,"Yup'ik artist, name once known",AI
+pem_official,Zanzibar,桑给巴尔,Zanzibar,AI
+pem_official,Zulu artist in South Africa,南非祖鲁族艺术家,Zulu artist in South Africa,AI
+pem_official,about 1597,约 1597 年,about 1597,AI
+pem_official,about 1610,约 1610 年,about 1610,AI
+pem_official,about 1670,约 1670 年,about 1670,AI
+pem_official,about 1680,约 1680 年,about 1680,AI
+pem_official,about 1740,约 1740 年,about 1740,AI
+pem_official,about 1750,约 1750 年,about 1750,AI
+pem_official,about 1780,约 1780 年,about 1780,AI
+pem_official,about 1786,约 1786 年,about 1786,AI
+pem_official,about 1800,约 1800 年,about 1800,AI
+pem_official,about 1801,约 1801 年,about 1801,AI
+pem_official,about 1803,约 1803 年,about 1803,AI
+pem_official,about 1804,约 1804 年,about 1804,AI
 pem_official,about 1805,约 1805 年,about 1805,官方
+pem_official,about 1810,约 1810 年,about 1810,AI
+pem_official,about 1812,约 1812 年,about 1812,AI
+pem_official,about 1817,约 1817 年,about 1817,AI
+pem_official,about 1820,约 1820 年,about 1820,AI
+pem_official,about 1823,约 1823 年,about 1823,AI
+pem_official,about 1825,约 1825 年,about 1825,AI
+pem_official,about 1839,约 1839 年,about 1839,AI
+pem_official,about 1840,约 1840 年,about 1840,AI
+pem_official,about 1845,约 1845 年,about 1845,AI
+pem_official,about 1846,约 1846 年,about 1846,AI
+pem_official,about 1850,约 1850 年,about 1850,AI
+pem_official,about 1876,约 1876 年,about 1876,AI
+pem_official,about 1878,约 1878 年,about 1878,AI
+pem_official,about 1880,约 1880 年,about 1880,AI
+pem_official,about 1880-1911,约 1880—1911 年,about 1880-1911,AI
+pem_official,about 1890,约 1890 年,about 1890,AI
+pem_official,about 1895-97,约 1895—1897 年,about 1895-97,AI
+pem_official,about 1915,约 1915 年,about 1915,AI
+pem_official,about 1920,约 1920 年,about 1920,AI
+pem_official,about 1938,约 1938 年,about 1938,AI
+pem_official,about 2000,约 2000 年,about 2000,AI
+pem_official,after 1797,1797 年后,after 1797,AI
+pem_official,after 1858,1858 年以后,after 1858,AI
+pem_official,around 1883,约 1883 年,around 1883,AI
+pem_official,before 1800,1800 年以前,before 1800,AI
+pem_official,before 1807,1807 年以前,before 1807,AI
+pem_official,before 1883,1883 年以前,before 1883,AI
+pem_official,before 1899,1899 年以前,before 1899,AI
 pem_official,ca. 1750,约 1750 年,ca. 1750,AI
+pem_official,"constructed 1874, altered 1937",建于 1874 年，1937 年改建,"constructed 1874, altered 1937",AI
 pem_official,early 17th century,17 世纪初,early 17th century,官方
 pem_official,early 19th century,19 世纪早期,early 19th century,官方
+pem_official,early 21st century,21 世纪早期,early 21st century,AI
+pem_official,early to mid 19th century,19 世纪早期至中期,early to mid 19th century,AI
+pem_official,early to mid-20th century,20 世纪早期至中期,early to mid-20th century,AI
+pem_official,early-mid 19th century,19 世纪早期至中期,early-mid 19th century,AI
+pem_official,late 1700s,18 世纪晚期,late 1700s,AI
+pem_official,late 1800s,19 世纪晚期,late 1800s,AI
+pem_official,late 18th century,18 世纪晚期,late 18th century,AI
 pem_official,late 18th to early 19th century,18 世纪晚期至 19 世纪早期,late 18th to early 19th century,AI
 pem_official,late 18th-early 19th century,18 世纪晚期至 19 世纪早期,late 18th-early 19th century,AI
+pem_official,late 1990s-early 2000s,20 世纪 90 年代末至 21 世纪初,late 1990s-early 2000s,AI
+pem_official,late 19th century,19 世纪晚期,late 19th century,AI
+pem_official,late 19th-early 20th century,19 世纪晚期至 20 世纪早期,late 19th-early 20th century,AI
+pem_official,mid to late 20th century,20 世纪中期至晚期,mid to late 20th century,AI
+pem_official,mid-1700s,18 世纪中期,mid-1700s,AI
+pem_official,mid-1800s,19 世纪中期,mid-1800s,AI
+pem_official,mid-18th century,18 世纪中期,mid-18th century,AI
+pem_official,mid-19th century,19 世纪中期,mid-19th century,AI

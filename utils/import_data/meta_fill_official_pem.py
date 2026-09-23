@@ -45,6 +45,7 @@ import unicodedata
 from pathlib import Path
 
 import meta_lib as M
+import pem_ext_data as E
 import pem_official_data as P
 from meta_scrape import toks
 
@@ -152,6 +153,9 @@ def write_trans(rows: list[dict]) -> None:
             w.writerow(r)
 
 
+BATCH = 60     # 每次请求译多少条取值
+
+
 def translate(client, model, effort, todo: dict[str, str]) -> dict[str, str]:
     """英文取值 -> 中文。只译缓存里没有的。"""
     if not todo:
@@ -174,10 +178,25 @@ def translate(client, model, effort, todo: dict[str, str]) -> dict[str, str]:
         "'1846 年 John T. Prince 捐赠'\n"
         "- 材质按文物术语译：'Lacquered wood, gold leaf'→'髹漆木胎、金箔'\n"
         "**不要增补原文没有的信息，不要解释。** 逐条对应返回。")
-    user = "请翻译以下 %d 条：\n" % len(keys) + "\n".join(f"- {k}" for k in keys)
-    data = A.ask(client, model, system, user, "official_zh", schema, effort,
-                 museum_key="pem")
-    got = {d["en"]: d["zh"] for d in data["items"]}
+    # **分批**，每批单独进缓存：早先是全部取值塞进一次调用（新增 204 件后约 683 条），
+    # 一次失败就整轮重付，且输出越长越容易被截断。
+    # **校验在写缓存之前**（validate=）：原先「漏了几条」是在 ask 返回之后才查的，
+    # 那时坏答案已经进了缓存 —— 重跑必然命中同一个残缺答案、在同一处再崩
+    # （AGENTS.md 第 10 条，2026-09-05 那个跑了 5 小时的进程就是这么卡死的）。
+    got = {}
+    for i in range(0, len(keys), BATCH):
+        part = keys[i:i + BATCH]
+        user = "请翻译以下 %d 条：\n" % len(part) + "\n".join(f"- {k}" for k in part)
+
+        def ok(data, part=part):
+            back = {d["en"] for d in data["items"]}
+            return all(k in back for k in part) and all(
+                (d.get("zh") or "").strip() for d in data["items"])
+
+        data = A.ask(client, model, system, user, "official_zh", schema, effort,
+                     museum_key="pem", validate=ok)
+        got.update({d["en"]: d["zh"] for d in data["items"] if d["en"] in part})
+        print(f"  已译 {min(i + BATCH, len(keys))}/{len(keys)}")
     missing = [k for k in keys if k not in got]
     if missing:
         raise SystemExit(f"翻译漏了 {len(missing)} 条，例如：{missing[:3]}")
@@ -191,7 +210,17 @@ def main() -> None:
     ap.add_argument("--model", default="")
     ap.add_argument("--effort", default="medium")
     ap.add_argument("--key-file", default="~/.openai_key")
+    ap.add_argument("--provider", choices=["openai", "codex_cli"], default="openai",
+                    help="翻译走哪条路。codex_cli = 本机 codex exec 的 ChatGPT 订阅，"
+                         "不需要 API key、不按 token 计费；--model 缺省为 gpt-5.6-luna")
     args = ap.parse_args()
+    if args.provider == "codex_cli":
+        import audit_meta as _A
+        import codex_cli
+        if not codex_cli.available():
+            sys.exit("找不到 codex 可执行文件")
+        args.model = args.model or codex_cli.DEFAULT_MODEL
+        _A.CODEX_CLI = args.model
 
     recs = P.records()
     by_acc = {}
@@ -216,7 +245,12 @@ def main() -> None:
 
     # ---- 匹配 ----
     auto, mapped = {}, {}
+    # 自动匹配**只在源 Excel 那 196 件里做**。seq >= 197 的新行本身就是从官网
+    # 这批记录生成的（pem_ext_data.py），它们的题名就是官网题名 —— 拿去模糊匹配
+    # 只会匹配上自己。新行一律按馆藏号确定性挂接，见下方。
     for a in arts:
+        if a["seq"] > E.EXCEL_ROWS:
+            continue
         m = match(a, recs)
         if m:
             auto[a["seq"]] = m
@@ -245,6 +279,20 @@ def main() -> None:
         mapped[seq] = (r, f"verified accession={acc}")
     for seq, m in auto.items():
         mapped.setdefault(seq, m)
+    # 新行：按 pem_ext_data 记下的馆藏号挂接。取不到对应记录就停 ——
+    # 那说明 pem_ext_data 与 pem_official_data 已经对不上，不能凭题名去猜。
+    ext_n = 0
+    for r in E.ITEMS:
+        if r["kind"] != "official" or not r["accession"]:
+            continue
+        acc = r["accession"].split("; ")[0]
+        rec = by_acc.get(acc)
+        if rec is None:
+            sys.exit(f"pem_ext_data 里 seq {r['seq']} 的馆藏号 {acc} 在 "
+                     f"pem_official_data 中找不到 —— 两份数据已经对不上，先重跑 pem_ext_build.py")
+        mapped[r["seq"]] = (rec, f"pem_ext accession={acc}")
+        ext_n += 1
+    print(f"新增展品按馆藏号挂接 {ext_n} 件")
 
     name_of = {a["seq"]: a["name"] for a in arts}
     print(f"\n合计关联 {len(mapped)} 件（人工核实 {len(P.VERIFIED)} + "
