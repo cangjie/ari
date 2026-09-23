@@ -66,19 +66,21 @@
 展品侧现有 **7 个 museum key、13619 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
 2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条）。
 
-**管线覆盖到哪儿了（2026-09-06 实测）—— 四个馆跑过，三个馆一件没碰：**
+**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测）—— 四个馆跑过，三个馆一件没碰：**
 
 | 馆 | 展品 | V3 评分 | evidence | metadata | 审计口径 |
 |---|---:|---:|---:|---:|---|
 | `mfa_boston_ext` | 4464 | 4464 | 4464 | 14388 | S/A 599 件已用 sonnet-5 重审；B/C 3865 件仍是 luna 旧判据 |
 | `ham` | 204 | 204 | 204 | 437 | 完整（gpt-5.6-sol 旧判据） |
 | `mfa_boston` | 203 | 203 | 203 | 393 | S/A 101 件已用 sonnet-5 重审；其余仍是旧判据 |
-| `pem` | 196 | 196 | 196 | 612 | 完整（旧判据） |
+| `pem` | 467 | 467 | 467 | 1993 | 全馆 sonnet-5 **medium** 精简口径（09-23）；原 196 件的可信度等列仍是 sol 旧值 |
 | `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
 
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
-`claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件），
-`gpt-5.6-luna` / `gpt-5.6-sol` 是旧判据。差别极大 —— 旧判据下 B/C 段 3865 件
+`claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件，**档位不可考**，
+见第 9 条 `--effort`），`claude-sonnet-5 effort=medium (claude-cli)` 是 2026-09-23
+同一判据、显式 medium 档（PEM 467 件），`gpt-5.6-luna` / `gpt-5.6-sol` 是旧判据。
+差别极大 —— 旧判据下 B/C 段 3865 件
 **100% 标了需复核**（那个饱和的队列不携带任何信息），新判据下 S/A 段是 10%
 （S 2% / A 11%）。**读审计结论前先看这一列。**
 
@@ -86,7 +88,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十三条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十五条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -463,7 +465,8 @@ OpenAI 打分、OpenAI 审计。** `mfa_boston_ext` 更是两边同一型号：
 **不需要 API key、不产生 OpenAI 费用**。翻译这类廉价任务仍走 OpenAI
 （`audit_translate.py`）。
 
-**当前审计者：`claude-sonnet-5`，batch 48。** 2026-09-09 五个模型在同一批 48 件上
+**当前审计者：`claude-sonnet-5`，batch 48，档位 medium（09-23 起显式传，见下文 `--effort`）。**
+2026-09-09 五个模型在同一批 48 件上
 横评（同提示词同 schema），再用**零重合的留出样本**复核：
 
 | 审计者 | 输出 token/次 | 12 件进队列 | 事实错误 | 结论 |
@@ -486,11 +489,38 @@ OpenAI 打分、OpenAI 审计。** `mfa_boston_ext` 更是两边同一型号：
 
 选型证据全部留在 `utils/import_data/validate/`（含两批样本的 seq 清单，可复现）。
 
-**⚠ `claude -p` 有 `--effort low|medium|high|max`，早先这里写的「CLI 不暴露
-reasoning_effort」是错的，已更正。** 但它**对压输出量没用**：2026-09-09 在 haiku-4.5
+**⚠ `claude -p` 有 `--effort low|medium|high|xhigh|max`，早先这里写的「CLI 不暴露
+reasoning_effort」是错的，已更正。** 往**低**处拧对压输出量没用：2026-09-09 在 haiku-4.5
 同一批 12 件上实测，`low` 档输出 18,519 token（比默认的 14,137 还多 31%）**且 12 件
-全返回空 missing**，`medium` 与默认持平。因为这个错误认知，代码一直没传 `--effort`，
-`llm_call.effort` 全记 NULL —— 实际跑的是 CLI 默认档，**是哪一档不可考，这是复现盲区**。
+全返回空 missing**，`medium` 与默认持平。
+
+**⚠ 往高处拧却是致命的，而「CLI 默认档」根本不是一个固定值（2026-09-23 查清）。**
+不传 `--effort` 时，`claude -p` 用的是 **`~/.claude/settings.json` 的 `effortLevel`**
+—— 那是用户交互用的个人设置，不在缓存键里。本机设着全局 `xhigh`，于是 sonnet-5 审
+PEM 第 1–48 件时**第一轮思考就吃满 64,000 输出 token、一个字答案没写**
+（会话记录里 `stop_reason=max_tokens`、`thinking_tokens=64000`），CLI 自动续写
+「Output token limit hit. Resume directly…」，必然撞 1200 秒超时；另一台机器上同一批
+**连撞 4 次、每次正好 1200 秒**。缩小批次救不了 —— 缺的不是时间，是档位。
+与第 15 条 codex 的 `--ignore-user-config` 是同一个坑，`claude_cli` 一直没锁。
+
+现在 `claude_cli.ask(system, user, schema, model, effort)` **强制显式传档位**（不在
+`low…max` 里就报错），档位进缓存键、进 `audited_by`（形如
+`claude-sonnet-5 effort=medium (claude-cli)`）。审计精简口径按 `STAGE_EFFORT` 走
+**medium**：同一批 48 件 274 秒、输出 28,961 token，与 MFA 那 17 次成功调用
+（平均 305 秒、27k）同量级。**09-10 那 700 件跑的是当时那台机器的个人设置，档位不可考，
+与 medium 档的结果不能严格对比。**
+
+同时照 codex_cli 锁死运行环境：空临时目录（不读仓库 `CLAUDE.md`、项目技能与设置）、
+`--disable-slash-commands`（挡 13,754 字的技能列表）、`--strict-mcp-config`
+（挡 MCP 服务与说明）、**`--tools ""`**（原先的 `--disallowedTools` 黑名单只列了 11 个
+老工具名，CLI 升级后新增的 PowerShell、Agent、Artifact 等全不在上面，模型照样调得动，
+每轮还附带 10 万字工具说明）。锁死后每轮输入从约 1.7 万 token 降到约 1,200。
+haiku-4.5 不接受档位参数（会话记录里不出现 `effort` 字段），传了也无害。
+
+**诊断 CLI 调用看它自己的会话记录**：`~/.claude/projects/<cwd 转成的目录名>/<会话>.jsonl`，
+每条助手消息带 `stop_reason`、`effort`、`usage.output_tokens_details.thinking_tokens`，
+附件（`attachment`）列出被塞进上下文的东西。超时的调用 `llm_call` 里只剩一句
+「超过 1200s 未返回」，真正的原因只在这里。
 
 退回 `--provider openai` 需要显式写出来，而且**在打分仍是 OpenAI 的当下就是自评**，
 除非同时也把打分换到别处。打分目前仍是 OpenAI（`gpt-5.6-luna`），用户只改了审计这一端
@@ -523,6 +553,15 @@ slim 是为省钱设的精简口径：只问「缺哪些证据、有没有事实
 教训：**「没跑」和「跑出来是 0」必须在库里长得不一样。** NOT NULL DEFAULT 0 用在
 「测量结果」列上就是在制造这种混淆；新增此类列一律可空，让缺席保持可见。
 
+**slim 覆盖旧口径的行时，不碰的那几列保留旧值，同一行里混两套判据（用户 09-23 定：不改）。**
+PEM 原 196 件先由 `gpt-5.6-sol` 完整口径审过，09-23 用 sonnet-5 精简口径重审后，
+`audited_by` 改成了 sonnet-5，而 `tier_confidence`、潜在区间、`completeness_detail`
+等仍是 sol 当年的判定。读这几列时要知道它们不是 `audited_by` 那位审的。
+
+**「在不在展」不算缺失资料（用户 09-23 定：不改判据）。** 按规则 4/4b，新增的 PEM
+官网编目展品即使在展状态只有栏目推断（low），也判「资料已足」—— 271 件里 261 件
+一条缺口都没报。这是判据的边界，不是模型摆烂：同几批里它照样查出了 9 处事实错误。
+
 **⚠ 提示词就是判据，写错一句就等于伪造结论。** 本轮三次踩到，代价都是整轮重跑：
 
 1. **不要把结论写进提示词。** `COMMON_RULES` 里曾有一句「看到一件只有名称和一句套话
@@ -533,6 +572,9 @@ slim 是为省钱设的精简口径：只问「缺哪些证据、有没有事实
 2. **馆专属的事实不要放进通用规则。** 那段 PEM 实情（官方门户停服）被三个阶段、
    所有馆共用，而 MFA 与哈佛的官网都正常。现改为 `MUSEUM_NOTE` 按馆陈述事实、不给结论；
    缺某馆的条目直接报错退出，不许靠猜。
+   **⚠ 馆的数据一变，`MUSEUM_NOTE` 要跟着改** —— 它原样进审计提示词，缺条目会报错，
+   **过期的条目不会**。PEM 09-22 扩到 467 件，这段话到 09-23 开审时还写着
+   「196 件的官方链接为 0、其余外部来源为零」，等于告诉审计者新增 271 件没有出处。
 3. **一列一个判据，判据只放在一个地方。** `tier_confidence` / 潜在区间 / `tier_review_flag`
    曾同时由阶段一和阶段二输出，而 `audit_load.py` 让阶段二覆盖阶段一。改判据时只改了
    阶段一，阶段二仍用旧问法 —— 于是三馆 248 件 S/A 的可信度被整片冲成 `low`，
@@ -644,12 +686,24 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
 - **校验必须发生在写缓存之前**（`call(validate=...)`）。曾经模型漏返一个 `seq`，
   那条坏答案照样进了缓存 —— 于是重启后**每次都命中同一条坏答案，崩在同一个地方**，
   看起来像「代码没改对」。现在 `validate` 不过就抛 `Invalid` 并重试（默认 2 次），
-  连缓存里的旧答案也会重新校验、不过就删掉。三个评分阶段与 slim 审计都传了 `validate`。
+  连缓存里的旧答案也会重新校验、不过就删掉。三个评分阶段、slim 审计、**审计阶段三**
+  都传了 `validate`。阶段三是 2026-09-23 才补上的：sonnet-5 把 `seq` 填成 1..48 的流水号、
+  `key` 编成「seq1_yinyutang/sig_art_historical」，schema 只要求字符串就放行了，
+  坏答案照样进了缓存。现在 `key` 收成本批实际出现的键名枚举，并在写缓存前对号。
+  **新写调用方时，schema 里能枚举的字段一律枚举，能对号的一律交给 `validate`。**
 - **瞬时错误退避重试**（`_transient()`：连接/超时/限流/5xx，退避 5s、10s）。
   一次 `APIConnectionError` 曾直接打死跑了几小时的审计进程。
-- **`claude_cli` 的 token 计量目前是坏的**：库里那几行 `claude-opus-5` 调用
-  `prompt_tokens` 记成 4/8/12，显然没接上 CLI 的用量字段。不影响结果，但走
-  `claude_cli` 的那部分账目缺一块。**未修。**
+- **⚠ 规矩（用户 2026-09-23 定）：失败先查原因，不找到原因不许重跑。** 上面那条自动重试
+  只对网络抖动有意义；对「每次都会失败」的原因（档位、schema、额度）重试就是照付。
+  09-23 之前 PEM 审计同一批在另一台机器上连撞 4 次 1200 秒超时，全白花。长任务挂一个
+  守护进程拦住脚本自带的重试：`llm_call` 里一出现本任务的 `status='error'` 就
+  `taskkill /T`（或 `kill`）掉整棵进程树。**守护只认本任务**（按 `provider` + `stage`
+  过滤）—— 09-23 守护按「PEM 下任何失败」判，并行的 Gemini 翻译报了一次 503，
+  就把正在跑的审计阶段三误杀了。定位原因先看 CLI 的会话记录（见第 9 条）。
+- **`claude_cli` 的 token 计量目前是坏的**：库里 `claude_cli` 调用的
+  `prompt_tokens` 记成 2/4/6/8/12，`cached_tokens` 为 0 或不全，没接上 CLI 的
+  `cache_creation_input_tokens`。`completion_tokens` 是对的。走 `claude_cli` 的那部分
+  输入侧账目缺一块。**未修。**
 
 **⚠ 压输出 token 这条路走不通，三种办法全试过，别再试。**
 2026-09-09 实测（haiku-4.5，同一批 12 件）：
@@ -858,6 +912,15 @@ Gemini 在 A 级基本没用：问到的 80 件只答出 1 件，另外 125 件�
 · Wikidata 的 **10 个匿名创作者节点**（`.well-known/genid/…`）不是人名；
   `inception` 是 ISO 时间戳，只取年份（同第 12 条）；2 条没有任何语种标签的直接排除并留痕。
 
+**09-23 审计查出的管线缺陷（未修）** —— 13 条事实错误里这几条是我们自己造的：
+· seq 452 / 453 / 458 的 `artist` 存的是**未解析的 Wikidata QID**（`Q21497855` 等），
+  导出里显示成一串代码。genid 挡住了，没有标签的具名 QID 没挡。
+· seq 357 的 `acquisition` 中文译文是「1867 年前 प्राप्त」—— 混进了印地语。
+· seq 28 伊斯兰星盘的 `cultural_context` 被 `meta_fill_rule` 抽成「美国」。
+· seq 40 头盔的 `material` 是「漆与螺钿」，与「锻金」简介冲突，疑为那 15 条官网对应里有一条对错。
+另有一条关乎游客：**seq 374 Mary Esty 请愿书的原件归马萨诸塞州最高法院档案馆，
+PEM 只有数字图像**，却评了 A 级 —— 照着去会扑空。
+
 
 **15. 评分改走 Codex 的 ChatGPT 订阅；型号漂移与合批的两个实测结论（2026-09-22）。**
 
@@ -914,10 +977,32 @@ sol 那把尺子上有 PEM 原 196 + 哈佛 204 + MFA 老 203；luna 那把上�
 **审计这一端仍然是 Claude。** `audit_meta.py --provider claude_cli --model claude-sonnet-5`
 走本机 Claude Code 订阅。`audit_translate.py` 2026-09-23 加了 codex 分支 ——
 **翻译走 ChatGPT 订阅，把 Claude 额度全留给审计本身**；翻译不是判断题，不构成自评。
+**翻译的退路顺序（用户 09-23 定）：Codex → Gemini 免费层 → claude haiku。**
+09-23 那次 Codex 订阅额度耗尽（到 09-25 才恢复），Gemini `gemini-3.6-flash` 连 5 次 503，
+最后是 haiku 以 `--size 100` 译完 974 段（10 次调用，每次约 100 秒）。
+走 claude 时 `audit_translate.py` 固定传 `low` 档。免费层按请求数卡额度，
+`--size` 要调大（默认 40 时 974 段要 25 次，超过每天 20 次）。
 
 **⚠ `audit_bc_guard.py` 与 `audit_translate.py` 的 `--museum` 默认值是 `mfa_boston_ext`。**
 跑别的馆必须显式写 `--museum <mk>`，否则会去动 MFA 的产物（`audit_meta.py` 与
 `audit_load.py` 默认的是 `pem`，四个脚本默认值并不一致，不要靠记）。
+
+**在 Windows 上跑管线（2026-09-23 首次，本机 `D:\source\ari`）。五处与 macOS 不同：**
+
+· **子进程编码必须写死 UTF-8。** 中文 Windows 的 locale 编码是 cp936，
+  `subprocess.run(text=True)` 按 GBK 写 stdin：提示词里有 GBK 没有的字（「・」、部分日文汉字）
+  时写线程崩掉、CLI 收到空输入报错；**全是 GBK 字时更糟 —— 不报错，模型读到乱码**。
+  `claude_cli` / `codex_cli` 已改 `encoding="utf-8"`，新写调 CLI 的代码照做。
+· **`claude` 不在 PATH 上**，用 VS Code 扩展自带的：
+  `~/.vscode/extensions/anthropic.claude-code-<版本>-win32-x64/resources/native-binary/claude.exe`，
+  跑之前把这个目录加进 PATH。从 Claude Code 里嵌套调 `claude -p` 没问题。
+· **`codex` 也不在 PATH 上**，在 `%LOCALAPPDATA%\OpenAI\Codex\bin\<哈希>\codex.exe`，
+  用 `CODEX_BIN` 指过去（`codex_cli._binary()` 只找 macOS 的位置）。
+· **`~/.my.cnf` 要自己建**（`C:\Users\<用户>\.my.cnf`），`chmod` 在 NTFS 上无效，
+  用 `icacls <文件> /inheritance:r /grant:r <用户>:F` 收成只有本人可读。
+  另要 `pip install --user pymysql`（本机 Python 3.14 起初没装）。
+· **PowerShell 5.1 按 GBK 读无 BOM 的 `.ps1`**，脚本里有中文就解析失败。
+  辅助脚本一律用 Python 写。
 
 ---
 
@@ -1043,7 +1128,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/translate_artwork.py` | 给展品名称、**展厅名**与简介补英译，同时写 `content_text` 与译名表。中文源的馆导出英文版前必跑 |
 | `utils/import_data/gemini_api.py` | Google AI Studio（Gemini）provider。key 走 `~/.gemini_key` 与 `x-goog-api-key` 头。**flash 档实测不能做审计**。默认 `GEMINI_RPM=10`（免费层上限）。**Windows 下不查 600 权限**——NTFS 靠 ACL、`chmod` 是空操作、Python 恒报 `0o666`，硬查会让 `available()` 永远为 False |
 | `utils/import_data/audit_bc_guard.py` | B/C 段兜底：把没写明升档理由的 `tier_sensitive` 降为 false。零 API，原值留 `tier_sensitive_raw` |
-| `utils/import_data/audit_translate.py` | 给审计的中文自由文本批量补英译（默认走 OpenAI）。**写库前必跑** |
+| `utils/import_data/audit_translate.py` | 给审计的中文自由文本批量补英译。`--provider` 按 codex → gemini → claude_cli（haiku）的顺序退（第 15 条）。**写库前必跑** |
 | `utils/import_data/merge_confirm.py` | 判定 MFA 两批导入里哪些是同一件实物。启发式召回 + 模型逐对确认，结果落 `merge_pairs.json`。**已被第 12 条的 `dedupe_*` 取代** |
 | `utils/import_data/merge_mfa_xlsx.py` | 把 MFA 两份导出的 Excel 合成一份（重复以 ext 为准）。只动文件不碰库 |
 | `utils/import_data/verify_mfa_membership.py` | 按 Wikidata P195+P582 核实扩充清单展品是否**现藏** MFA，结果落 `mfa_membership.json` |
@@ -1073,7 +1158,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tier_change_list.py` | 写库前的旧件变档清单，标出主因推断。与 `tier_v3_load.grade()` 共用档位计算 |
 | `utils/import_data/validate/` | 审计选型的证据：两批 48 件样本（调参集/留出集，零重合）与各模型跑分 |
 | `utils/import_data/llm_cache.py` | LLM 调用的缓存与计量：`call()` 包住每次请求，`--refresh-ids` 刷新便利列，`python3 llm_cache.py` 出 token 账 |
-| `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**不要加 `--bare`**，那样读不到 OAuth |
+| `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**档位必须显式传**（否则沿用用户 `settings.json` 的 `effortLevel`），空目录 + `--tools ""` + 关技能与 MCP 锁死，见第 9 条。**不要加 `--bare`**，那样读不到 OAuth |
 | `utils/import_data/schema_llm_cache.sql` | `llm_call` / `llm_call_item` / `v_artwork_llm_call` 的建表与 ALTER |
 | `.claude/skills/onboard-museum/SKILL.md` 等三份 | 接入新馆的八步清单，含每步的通过判据与踩过的坑 |
 | `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |

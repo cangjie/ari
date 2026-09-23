@@ -33,6 +33,11 @@
    **low 档不但不省，反而多吐 31%，而且 12 件全返回空 missing**（与 gemini-flash
    同一种摆烂形态）。medium 与默认持平。三档下 num_turns 恒为 2。
 
+   ⚠ 但**往高处拧是真有用的** —— 2026-09-23 sonnet-5 在 xhigh 下审 48 件，第一轮
+   思考就吃满 64,000 输出 token 被截断（MFA 那 17 次成功调用两轮合计平均 27k）。
+   「默认档」也不是一个固定值，是用户 settings.json 里的 effortLevel，
+   所以 ask() 现在强制显式传档位。
+
 4. **`num_turns` 恒为 2，这是输出量的结构性来源。** 配 `--json-schema` 时 CLI
    要跑两轮（极可能是先作答、再按 schema 重排），同一份内容生成两次都计费。
    实测一次调用 output_tokens=14,137，而可见内容合计只有 3,780 字符
@@ -51,13 +56,17 @@ from __future__ import annotations
 import json
 import shutil
 import subprocess
+import tempfile
 
 # 打分是纯文本判断，不需要任何工具。全部禁掉：
 #   · 省掉工具调用的往返与 token
 #   · 更要紧的是防止模型跑去读文件/上网「补证据」—— 那会让这次评分的输入
 #     不再是我们喂进去的那些，llm_call 里存的 prompt 就不能复现结果了
-NO_TOOLS = ["Bash", "Edit", "Write", "Read", "Glob", "Grep",
-            "WebFetch", "WebSearch", "Task", "NotebookEdit", "TodoWrite"]
+#
+# **用 `--tools ""` 整体关掉，不列黑名单。** 早先是 `--disallowedTools` 加一张
+# 11 个工具的名单，CLI 升级后新增的 PowerShell、Agent、Artifact 等全不在名单上
+# —— 2026-09-23 实测每轮照样附带 10 万字的工具说明，模型也照样调得动它们。
+# 黑名单跟不上 CLI 的版本，白名单为空才是「一个都不给」。
 
 DEFAULT_MODEL = "claude-opus-5"
 
@@ -89,24 +98,50 @@ def available() -> bool:
 DEFAULT_TIMEOUT = 1200
 
 
-def ask(system: str, user: str, schema: dict, model: str = DEFAULT_MODEL,
+EFFORTS = ("low", "medium", "high", "xhigh", "max")
+
+
+def ask(system: str, user: str, schema: dict, model: str, effort: str,
         timeout: int = DEFAULT_TIMEOUT) -> tuple[dict, dict]:
     """一次结构化输出调用。返回 (解析好的 dict, usage 字典)。
 
     user 走 stdin —— 评分提示词动辄几千字符，塞进 argv 会撞 ARG_MAX，
     而且会整段出现在 ps 输出里。
+
+    **effort 必须显式给，没有默认值。** 不传 `--effort` 时 CLI 用的是
+    `~/.claude/settings.json` 的 `effortLevel` —— 那是用户交互用的个人设置，
+    不在缓存键里。2026-09-23 本机设着 xhigh：sonnet-5 审 PEM 48 件，第一轮
+    思考就用满 64,000 输出 token、一个字答案没写，CLI 自动续写，必然撞 1200 秒
+    超时；另一台机器同一批连撞 4 次。与 codex_cli 的 --ignore-user-config 同一个坑。
+
+    **锁死运行环境**，理由同 codex_cli：在空目录里跑（不读仓库的 CLAUDE.md、
+    项目技能与设置），`--disable-slash-commands` 挡掉技能列表，
+    `--strict-mcp-config` 挡掉 MCP 服务与其说明。09-23 那次调用里被塞进了
+    13,754 字的技能列表、Claude Docs 的 MCP 说明、机器环境与用户邮箱 ——
+    随机器、随会话变化，又不在缓存键里。
     """
+    if effort not in EFFORTS:
+        raise ValueError(f"effort 必须是 {'/'.join(EFFORTS)} 之一，收到 {effort!r}")
     cmd = [
         "claude", "-p",
         "--system-prompt", system,
         "--model", model,
+        "--effort", effort,
         "--json-schema", json.dumps(schema, ensure_ascii=False),
         "--output-format", "json",
-        "--disallowedTools", *NO_TOOLS,
+        "--disable-slash-commands",
+        "--strict-mcp-config",
+        "--tools", "",
     ]
+    # **encoding 必须写死 utf-8，不能用 text=True。** text=True 用的是 locale 编码，
+    # 中文 Windows 上是 cp936：提示词里有 GBK 没有的字（「・」、部分日文汉字）时
+    # 写线程崩掉、CLI 收到空 stdin 报错；全是 GBK 字时更糟 —— 不报错，模型读到的
+    # 是一串乱码。2026-09-23 在 Windows 上实测复现前一种。macOS 默认 UTF-8，所以
+    # 之前从没暴露。
     try:
-        r = subprocess.run(cmd, input=user, capture_output=True, text=True,
-                           timeout=timeout)
+        with tempfile.TemporaryDirectory(prefix="claude_cli_") as work:
+            r = subprocess.run(cmd, input=user, capture_output=True, encoding="utf-8",
+                               timeout=timeout, cwd=work)
     except subprocess.TimeoutExpired as e:
         raise Transient(f"claude CLI 超过 {timeout}s 未返回") from e
     if r.returncode != 0:

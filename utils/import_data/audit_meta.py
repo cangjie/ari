@@ -267,14 +267,16 @@ def ask(client, model: str, system: str, user: str, name: str, schema: dict,
         import claude_cli, llm_cache
 
         def _do_cli():
-            data, usage = claude_cli.ask(system, user, schema, CLAUDE_CLI)
+            data, usage = claude_cli.ask(system, user, schema, CLAUDE_CLI, effort)
             return data, claude_cli.Usage(usage)
 
-        # effort 记 NULL：CLI 不暴露 reasoning_effort，这条路径没有档位可调。
+        # effort 照实进缓存键（2026-09-23 起）。早先这里传 None，注释写着「CLI 不暴露
+        # reasoning_effort」—— 那是错的，CLI 有 --effort；不传时它用的是用户
+        # settings.json 的 effortLevel，于是本机 xhigh 的个人设置悄悄成了审计判据。
         # retries 比 OpenAI 那条路径高：CLI 走订阅账号，撞的是**并发/额度限**而不是
         # 网络抖动，恢复得慢。4 次退避是 5+10+20+40=75 秒，够跨过一次限流窗口。
         return llm_cache.call(_do_cli, provider="anthropic_cli", model=CLAUDE_CLI,
-                              effort=None, stage=name, system=system, user=user,
+                              effort=effort, stage=name, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
                               seqs=seqs, validate=validate, retries=4)
 
@@ -647,10 +649,19 @@ STAGE1_SYSTEM = COMMON_RULES + """
 # 而那两馆的官网根本没停服、库里也已有馆藏号。指定答案的提示词得到的不是审计结论，
 # 是提示词自己的回声。
 MUSEUM_NOTE = {
-    "pem": "PEM 官方藏品门户 explore-art.pem.org 已停服，196 件的官方页面链接为 0。"
-           "已从 pem.org 藏品栏目页核实 15 件、Wikidata 1 件，其余对象的外部来源为零。"
-           "另需知道：这批名称多是描述性转写而非编目题名，179/196 件无法与 PEM "
-           "官方发布的藏品对应上 —— 对这些对象，「身份可否核验」本身就是未知数。",
+    # 2026-09-23 改写：旧文只描述原有 196 件（「官方链接为 0、其余外部来源为零」），
+    # 扩到 467 件后对新增的 271 件是错的，而这段话原样进审计提示词。
+    "pem": "本馆 467 件分两批，性质差别很大，请按每件实际列出的来源判断，"
+           "不要因为同属一馆就一视同仁。"
+           "seq 1–196 来自一份来源不明的汇编清单：名称多是描述性转写而非编目题名，"
+           "179 件无法与 PEM 官方发布的任何藏品对应上 —— 对这些对象，"
+           "「身份可否核验」本身就是未知数；与官网编目记录对上的只有 15 件，"
+           "另有 1 件有 Wikidata 条目，其余 180 件没有任何外部来源。"
+           "seq 197–467 是新增的 271 件：204 件出自 pem.org 藏品栏目页的官方编目"
+           "（203 件带馆藏号，Tier 1），67 件出自 Wikidata（带 QID，其中 43 件有馆藏号，"
+           "Tier 3）。"
+           "PEM 官方藏品检索门户 explore-art.pem.org 已停服，官网也没有单件展品页，"
+           "栏目页上的 219 条编目就是目前能拿到的全部官方记录。",
     "mfa_boston": "MFA 官网与藏品检索库（collections.mfa.org）均可访问，但本轮未逐件查询。"
                   "已从 Wikidata 核实 20 件，拿到馆藏号、创作年、作者与材质；"
                   "其余 183 件目前只有源文件的名称、类别与一句简介。",
@@ -1242,6 +1253,14 @@ STAGE3_SCHEMA = {
 }
 
 
+def _stage3_ok(data: dict, want: set) -> bool:
+    """阶段三整批的校验，交给 llm_cache 在写缓存之前跑。与 _slim_ok 同理。"""
+    got = [f"{r['seq']}|{r['key']}" for r in data["results"]]
+    if len(got) != len(want) or set(got) != want:
+        return False
+    return all(r["evidence_type"] != "FACT" or r["real_source"] for r in data["results"])
+
+
 def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: int,
            mk: str) -> dict:
     """键用 "seq|key" —— 一件对象有 9 条 sig_*，光用 seq 会互相覆盖。"""
@@ -1264,9 +1283,19 @@ def stage3(client, model, effort, ctx, note, items, claims, out: Path, batch: in
                 f"  当前记录的来源: {c['source'] or '—'}｜可信度: {c['confidence']}")
         user = (f"博物馆语境：\n{ctx}\n\n本馆数据实情：\n{note}\n\n"
                 f"请逐条判定以下 {len(chunk)} 条取值：\n\n" + "\n\n".join(lines))
-        data = ask(client, model, STAGE3_SYSTEM, user, "audit_stage3", STAGE3_SCHEMA,
+        # key 收成本批实际出现的键名枚举，并在**写缓存之前**校验对号。
+        # 2026-09-23 sonnet-5 把 seq 填成 1..48 的流水号、key 编成
+        # 「seq1_yinyutang/sig_art_historical」—— schema 只要求 key 是字符串，
+        # 这就算合规；而校验写在拿到答案之后，坏答案已经进了缓存，
+        # 重跑必然命中它、必然崩在同一处（同阶段一当初栽过的那次）。
+        schema = json.loads(json.dumps(STAGE3_SCHEMA))
+        schema["properties"]["results"]["items"]["properties"]["key"] = {
+            "type": "string", "enum": sorted({c["key"] for c in chunk})}
+        want = {f"{c['seq']}|{c['key']}" for c in chunk}
+        data = ask(client, model, STAGE3_SYSTEM, user, "audit_stage3", schema,
                    effort, museum_key=mk, scope=f"{len(chunk)} 条取值",
-                   seqs=[c['seq'] for c in chunk])
+                   seqs=[c['seq'] for c in chunk],
+                   validate=lambda d, w=want: _stage3_ok(d, w))
         got = {f"{r['seq']}|{r['key']}" for r in data["results"]}
         miss = {f"{c['seq']}|{c['key']}" for c in chunk} - got
         if miss:
@@ -1375,7 +1404,8 @@ def main() -> None:
                  "  真要退回 OpenAI 得显式写 --provider openai —— 但那样审计与打分同源，"
                  "结论不能当独立验证用。")
         CLAUDE_CLI = args.model or claude_cli.DEFAULT_MODEL
-        print(f"[provider] claude CLI（订阅账号）/ {CLAUDE_CLI}；--effort 在此路径下无效")
+        print(f"[provider] claude CLI（订阅账号）/ {CLAUDE_CLI}；档位显式传 --effort，"
+              "不读 ~/.claude/settings.json 的 effortLevel")
 
     # 不给 --effort 就用分阶段推荐值；给了就一次覆盖全部阶段。
     eff = {s: norm_effort(args.effort or STAGE_EFFORT[s]) for s in STAGE_EFFORT}
@@ -1444,9 +1474,12 @@ def main() -> None:
     # 与 artwork_tier_v3.scored_by 对照，事后一眼能看出审计者与打分者是否同源。
     # audited_by 是判断「这批审计怎么来的」的唯一依据，分阶段档位必须记全。
     used = ("audit_stage1_slim",) if args.slim else ("audit_stage1", "audit_stage2")
+    # claude-cli 从 2026-09-23 起也记档位。此前的 `claude-sonnet-5 (claude-cli)`
+    # 没带档位，跑的是当时那台机器 settings.json 里的 effortLevel，已不可考。
+    efs = "/".join(eff[s] for s in used)
     tag = (f"{GEMINI} (google-ai-studio)" if GEMINI
-           else f"{CLAUDE_CLI} (claude-cli)" if CLAUDE_CLI
-           else args.model + " effort=" + "/".join(eff[s] for s in used))
+           else f"{CLAUDE_CLI} effort={efs} (claude-cli)" if CLAUDE_CLI
+           else args.model + " effort=" + efs)
     (out_dir / f"{mk}.model").write_text(tag, encoding="utf-8")
     print(f"审计者：{tag}")
 

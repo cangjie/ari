@@ -152,7 +152,10 @@ def main() -> None:
             user = ("逐条译成英文，共 %d 条：\n" % len(chunk)
                     + "\n".join(f"[{j}] {zh}" for j, (_, _, zh) in enumerate(chunk)))
             want = set(range(len(chunk)))
-            data = A.ask(client, model, SYS, user, "audit_trans", SCHEMA, None,
+            # claude_cli 必须显式给档位（claude_cli.ask 不再沿用个人设置的
+            # effortLevel）。翻译不是判断题，给最低档；其余路径维持原样。
+            effort = "low" if args.provider == "claude_cli" else None
+            data = A.ask(client, model, SYS, user, "audit_trans", SCHEMA, effort,
                          museum_key=args.museum,
                          scope=f"{f.parent.name} trans {i + 1}-{i + len(chunk)}",
                          validate=lambda d, w=want: w <= {x["i"] for x in d["items"]})

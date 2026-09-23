@@ -321,15 +321,17 @@ def ask(client, system: str, user: str, schema: dict, *,
     if CLAUDE_CLI is not None:
         import claude_cli, llm_cache
         model = CLAUDE_CLI
+        effort = STAGE_EFFORT.get(stage)    # 不在表里就是 None，claude_cli.ask 会报错
 
         def _do():
-            data, usage = claude_cli.ask(system, user, schema, model)
+            data, usage = claude_cli.ask(system, user, schema, model, effort)
             return data, claude_cli.Usage(usage)
 
-        # effort 传 None：CLI 不暴露 reasoning_effort，这条路径没有档位可调，
-        # 记 NULL 比记一个想当然的值诚实。
+        # effort 照实进缓存键（2026-09-23 起）。早先传 None、注释说「CLI 不暴露
+        # reasoning_effort」—— 错的：不传 --effort 时用的是用户 settings.json 的
+        # effortLevel，个人设置悄悄成了判据。见 claude_cli.ask 的说明。
         return llm_cache.call(_do, provider="anthropic_cli", model=model,
-                              effort=None, stage=stage, system=system, user=user,
+                              effort=effort, stage=stage, system=system, user=user,
                               schema=schema, museum_key=museum_key, scope=scope,
                               seqs=seqs, validate=validate)
 

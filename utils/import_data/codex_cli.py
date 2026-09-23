@@ -135,8 +135,9 @@ def ask(system: str, user: str, schema: dict, model: str = DEFAULT_MODEL,
         for feat in DISABLE:
             cmd += ["--disable", feat]
 
+        # encoding 必须写死 utf-8，不能用 text=True —— 理由见 claude_cli.ask 同一处。
         try:
-            r = subprocess.run(cmd, input=prompt, capture_output=True, text=True,
+            r = subprocess.run(cmd, input=prompt, capture_output=True, encoding="utf-8",
                                timeout=timeout)
         except subprocess.TimeoutExpired as e:
             raise Transient(f"codex exec 超过 {timeout}s 未返回") from e
