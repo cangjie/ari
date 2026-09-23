@@ -1,0 +1,1202 @@
+博物馆语境：
+美国马萨诸塞州塞勒姆的皮博迪埃塞克斯博物馆（PEM）。身份特征：全美最早的博物馆之一，起家于塞勒姆的远洋贸易，因此海事艺术、亚洲外销艺术（Asian Export Art）、大洋洲与东亚收藏构成其不可替代性的核心；荫余堂是海外唯一整体搬迁重建的清代徽州民居，为全馆身份标志。相对而言，其欧洲绘画与美国主流艺术藏品在全美范围内并非顶尖。
+
+本馆数据实情：
+PEM 官方藏品门户 explore-art.pem.org 已停服，196 件的官方页面链接为 0。已从 pem.org 藏品栏目页核实 15 件、Wikidata 1 件，其余对象的外部来源为零。另需知道：这批名称多是描述性转写而非编目题名，179/196 件无法与 PEM 官方发布的藏品对应上 —— 对这些对象，「身份可否核验」本身就是未知数。
+
+请逐件列出以下 48 件对象缺什么：
+
+[seq 1] 当前 Tier: S
+名称(EN): Yin Yu Tang, Chinese Merchant House
+名称(CN): 荫余堂 清代徽州商人古宅
+类别: 木构古建筑
+简介: The only complete relocated Qing‑dynasty Huizhou merchant house outside China; 16‑room timber structure dismantled in Anhui and reassembled at PEM, requires timed ticket.
+V3.0 评分: HS=9.0 IU=10.0 VI=10.0 VA=10.0 CE=10.0 ER=10.0 CR=10.00 Core=9.850
+  判定: Core 9.850，峰值 10.0，S-ness 3/3｜打分时自评可信度: medium
+  同类组: 海外迁建中国历史建筑（对象类型 node）
+  打分依据原文: 这是海外唯一整体迁建的清代徽州民居，兼具完整空间体验、徽商社会叙事和全馆最高的身份辨识度。
+  类别代表性理由: 组内唯一且无可替代的海外整体迁建清代徽州民居，兼具典范品质、极高非重复性与全馆核心叙事补位价值。
+  S-ness Test 理由: 三项均为真：荫余堂是全馆身份标志，海外唯一整体迁建的清代徽州民居；两小时仍应优先安排，错过明显可惜，失去会直接削弱 PEM 的辨识度。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木构古建筑  [source_file / 源文件 Category 列 / high]
+  - period = 清  [rule / 名称与英文简介解析 / medium]
+  - sig_art_historical = 徽派民居的典型形制：马头墙、天井、木雕门罩与厅堂梁架，是研究中国南方民居营造技艺的完整实例。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 本馆唯一的整体建筑类藏品，与其余 195 件可移动文物不构成同类竞争，在「迁建历史建筑」这一类别中独占。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 可穿行体验，能同时解释徽商经济、宗族制度、风水观念与中国传统家庭起居，叙事承载力远超单件器物。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 清代徽州商人黄氏家族宅第，反映 18–19 世纪徽商的家族结构与聚居形态；2003 年整体迁建入 PEM，是中美文化遗产合作的标志性案例。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = PEM 对外宣传与游客动线的第一目的地，需分时预约单独入场；失去它，本馆最具辨识度的单一资产随之消失。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 由黄氏后人出让，经中美两国文物部门批准，拆解编号后运抵塞勒姆复原，迁建过程本身有完整记录，构成独立的当代文献价值。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 海外唯一一座整体拆迁复原的清代中国民居。同类整体迁建的中国建筑在西方博物馆中无第二例。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 庭院、天井、厅堂、厢房构成完整的空间序列与轴线关系；现存于 Yin Yu Tang Courtyard 独立院落，与馆内其他展厅在空间上分离。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 16 间木构两层宅院，含天井与庭院，游客可入内行走；空间尺度与材质观感是全馆最强的现场体验。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=high VA=high CE=high CR=high ER=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺PEM迁建档案所载原址村名、建造阶段与黄氏家族使用史
+缺原构件、替换构件及修复构件比例的工程清单
+
+[seq 2] 当前 Tier: S
+名称(EN): Nanban Byobu, Portuguese Trade Arrival Screen
+名称(CN): 南蛮屏风：葡萄牙商船到来六曲屏风
+展厅: 日本艺术展厅
+类别: 屏风画
+简介: Iconic early‑17th‑century Japanese folding screen documenting European arrival and Nanban trade; supreme example of nanban art.
+V3.0 评分: HS=9.0 IU=9.0 VI=9.0 VA=9.0 CE=9.0 ER=0.0 CR=9.60 Core=9.060
+  判定: Core 9.060，峰值 9.0，S-ness 3/3｜打分时自评可信度: medium
+  同类组: 日本南蛮贸易屏风画（对象类型 object）
+  打分依据原文: 南蛮屏风以金地大幅图像记录早期欧日接触与贸易，是日本馆及本馆跨洋交流叙事的核心展品。
+  类别代表性理由: 组内唯一对象，且为南蛮贸易屏风的典范性实物，在本馆日本艺术及跨洋贸易叙事中均具不可替代性。
+  S-ness Test 理由: 兼具日本艺术核心性与亚洲外销、跨洋接触叙事价值；两小时仍应安排，错过明显可惜，失去会明显削弱 PEM 以海贸连接东亚的身份。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E200727  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 1994 年博物馆购藏，由匿名捐赠者资助  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 日本境内艺术家  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - date_text = 17 世纪初  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 纸本墨、设色、金箔  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 六曲屏风（南蛮屏风）  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 屏风画  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 南蛮屏风是桃山至江户初期的特殊画科，以金地浓彩描绘异国人物与船舶；本件为该画科的高水平例证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 本馆唯一的日本屏风绘画，在该类别中无竞争者。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释一整段历史进程：欧洲人东来、南蛮文化流行、以及随后的锁国政策，教育承载力强。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 记录 16 世纪末至 17 世纪初葡萄牙商船抵达日本的场景，是南蛮贸易与欧日首次持续接触的图像史料。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 日本艺术板块的核心展件，同时支撑 PEM「跨洋接触与贸易」的主叙事，与本馆的塞勒姆远洋贸易身份直接呼应。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 入藏途径与递藏链未见于现有资料，需查证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 传世南蛮屏风数量有限且多藏于日本；美国收藏中达到此规格与保存状况者少见。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 屏风为独立可移动器物，与展厅空间无固定关系。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 六曲金地大屏风，尺幅可观、色彩浓丽，现场辨识度与冲击力在日本馆居首。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=high VA=medium CE=high CR=medium
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺学术图录对E200727画派归属及其在南蛮屏风谱系中位置的评述
+缺1994年购藏以前的收藏地点与完整递藏记录
+缺尺寸、各扇保存状况及金箔颜料检测资料
+
+[seq 3] 当前 Tier: S
+名称(EN): Hawaiian Kū War God Figure
+名称(CN): 夏威夷库战神木雕
+类别: 木雕造像
+简介: Monumental pre‑contact Hawaiian Kū sculpture; one of the most important Oceanic ritual figures in North‑American collections.
+V3.0 评分: HS=9.0 IU=9.0 VI=9.0 VA=9.0 CE=10.0 ER=0.0 CR=10.00 Core=9.250
+  判定: Core 9.250，峰值 10.0，S-ness 3/3｜打分时自评可信度: medium
+  同类组: 夏威夷仪式木雕人像（对象类型 object）
+  打分依据原文: 这件大型库神木雕连接夏威夷宗教、王权与卡普制度，在PEM大洋洲收藏中兼具稀缺性、视觉焦点和解释力。
+  类别代表性理由: 组内唯一对象，且为PEM大洋洲仪式木雕中兼具纪念碑尺度、宗教王权内涵与稀缺性的核心代表，几乎无重复项，并直接补足本馆海事贸易与太平洋文明叙事。
+  S-ness Test 理由: 它是大洋洲收藏的重要仪式性锚点，并连接 PEM 的早期远洋贸易来源；两小时仍应安排，错过罕见的 Kū 实物明显可惜，失去会显著损伤本馆的大洋洲身份。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E12071  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - acquisition = 1846 年 John T. Prince 捐赠  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - artist = Kanaka Maoli（夏威夷原住民）艺术家  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - cultural_context = 夏威夷原住民  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - cultural_context = 夏威夷  [rule / 名称与英文简介解析 / medium]
+  - date_text = 19 世纪早期  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - material = 'Ulu（面包果树）木材  [pem_official / https://www.pem.org/the-pem-collection/oceanic-art / high]
+  - object_form = 木雕造像  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 夏威夷木雕神像以夸张的口部、突出的眉弓与紧绷的身体姿态著称，本件为该风格的纪念碑式例证。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_category = 大洋洲仪式人像雕刻中的首位，质量与稀缺性均居组内之冠。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_cultural = 能解释波利尼西亚的神系、卡普禁忌制度与酋长政治，并牵出 1819 年宗教改革这一转折点。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_historical = 库（Kū）是夏威夷四大主神之一，掌战争；此类神像用于战前仪式与祭祀，是夏威夷宗教与王权制度的物证。**断代已更正**：源数据称「前接触期」，但 PEM 官方记录为 19 世纪早期、1846 年 John T. Prince 捐赠，属接触后作品；Wikidata 同一馆藏号 E12071 标 1825 年，与官方一致。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_institutional = PEM 的大洋洲收藏源自塞勒姆早期远洋航行，是本馆立馆根基之一；本件为该板块的视觉与学术双重锚点，失去则整个板块塌陷。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_provenance = 1846 年由 John T. Prince 捐赠（PEM 官方记录）。此前「早期航海者带回」的说法未见官方佐证，捐赠人如何取得该像仍待查。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_rarity = 夏威夷大型木雕神像传世极少，多数在 1819 年废除卡普制度时被毁；本件为其后不久之作，北美收藏中同级者屈指可数。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_relations = 独立展陈的可移动雕像，与展厅空间无固有关系。  [evidence / Evidence Packet source_tier=1 / medium]
+  - sig_visual = 纪念碑尺度木雕，造型威慑力强，是大洋洲馆的现场焦点；即使不了解背景的普通观众也会驻足。  [evidence / Evidence Packet source_tier=1 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=high VA=high CE=high CR=high
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺本件在全球夏威夷库神像存世谱系中的数量与质量比较
+缺John T. Prince在1846年捐赠前取得该像的地点、时间与方式
+缺馆方断代依据及1825年具体年份的原始出处
+
+[seq 4] 当前 Tier: A
+名称(EN): Spilum, Pair Portraits of Captain Wheatland & Wife
+名称(CN): 斯波伦 惠特兰船长夫妇外销肖像
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 布面油画
+简介: Rare surviving oil portraits painted in Canton for Salem sea‑captain; landmark China‑trade oil painting by Chinese western‑style artist Spilum.
+V3.0 评分: HS=8.0 IU=9.0 VI=6.0 VA=7.0 CE=9.0 ER=0.0 CR=9.50 Core=8.100
+  判定: Core 8.100 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 中国外销肖像油画（对象类型 object）
+  打分依据原文: 成对的史贝霖肖像把广州画师、西洋油画技法与塞勒姆船长贸易网络结合起来，是两大馆藏身份的交叉物证。
+  类别代表性理由: 组内首位：成对且身份明确的惠特兰夫妇肖像兼具史贝霖代表性与中美海贸叙事的独特补位价值，明显高于单件商人肖像。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Spilum  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 布面油画  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 史贝霖是已知最早以西洋油画技法作肖像的中国画师之一，本件为中国外销油画肖像的里程碑作品。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 中国外销西洋画法油画肖像组内的首位，尺幅与成对完整性均居先。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释广州十三行时期的订制机制：西方客户、中国画师、西洋技法、本地作坊，四者如何在一件作品上交汇。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 广州画师史贝霖（Spilum/Spoilum）为塞勒姆船长惠特兰夫妇所绘，是中美早期直接贸易中人际往来的实物证据，约 18 世纪末至 19 世纪初。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 同时落在 PEM 两大支柱上——亚洲外销艺术与塞勒姆航海身份，是把两条叙事缝合起来的关键物证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 被绘者为塞勒姆船长惠特兰，与东印度海洋学会圈层直接相关；具体入藏年份与途径待查。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 成对留存且被绘者身份明确的外销油画肖像极少；多数外销肖像已失去与具体人物的对应关系。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 成对关系本身是构图与展陈的组成部分，两件须并置理解。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 成对肖像并置展陈，人物尺度接近真人半身，但画法平实、色彩克制，视觉张力不及大型器物。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=medium VA=medium CE=high CR=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、正式题名、藏品图像及两位被绘者的官方身份记录
+[影响定级] 缺将两幅肖像归于Spilum并断代至广州贸易时期的技术或文献依据
+[影响定级] 缺证明两幅为原始配对且确由惠特兰夫妇委托的家族或贸易档案
+
+[seq 5] 当前 Tier: B
+名称(EN): Fitz Henry Lane, Twilight on the Kennebec
+名称(CN): 菲茨·亨利·莱恩：肯尼贝克河暮色
+展厅: 西曼斯展厅
+类别: 油画
+简介: Greatest luminist marine painting in PEM collection; quintessential New England sunset maritime scene.
+V3.0 评分: HS=8.0 IU=6.0 VI=7.0 VA=7.0 CE=7.0 ER=0.0 CR=7.85 Core=7.035
+  判定: Core 7.035 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 美国光亮主义海景油画（对象类型 object）
+  打分依据原文: 莱恩是美国光亮主义的重要画家，本作质量突出且有新英格兰海运叙事，但美国绘画并非PEM最不可替代的身份核心。
+  类别代表性理由: 组内唯一对象，作为PEM藏品中最具代表性的莱恩光亮主义海景，D取高；但美国绘画并非本馆核心身份，G中等偏低。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = M22672  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - acquisition = 2014 年 Serena M. Hatch 为纪念 Francis W. Hatch 捐赠  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = 菲茨·亨利·莱恩  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = Fitz Henry Lane  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 1849 年  [pem_customprints / https://customprints.pem.org/detail/509204/lane-twilight-on-the-kennebec-1849 / medium]
+  - date_text = 1849 年  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - image_url = https://customprints.pem.org/vitruvius/render/1200/509204.jpg  [pem_customprints / https://customprints.pem.org/detail/509204/lane-twilight-on-the-kennebec-1849 / high]
+  - material = 布面油彩  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 光亮主义（Luminism）代表画家的成熟期作品，以静谧水面与低平光线著称，被视为其艺术视野的重要表达之一。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_category = 美国光亮主义海景组两件之首，与同组的莱恩小稿差距显著。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_cultural = 能解释光亮主义的美学取向与新英格兰海运经济，但叙事面较窄。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_historical = 莱恩 1849 年作，描绘缅因州肯尼贝克河下游的运木帆船，是研究 19 世纪中叶新英格兰木材水运的图像材料。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_institutional = 美国绘画板块的最佳单件，但 PEM 的身份并不建立在美国绘画上；莱恩精品在 Cape Ann 与波士顿另有分布。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_provenance = 2014 年 Serena M. Hatch 为纪念 Francis W. Hatch 捐赠。这是本馆少数有明确捐赠记录的作品之一。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_rarity = 莱恩传世作品数量可观，本件并非孤品；稀缺性在于它是 PEM 藏莱恩作品中质量最高者。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_relations = 独立画作，与展厅空间无固有关系。  [evidence / Evidence Packet source_tier=3 / medium]
+  - sig_visual = 中等尺幅油画，暮色调性统一，现场观感安静而非震撼。  [evidence / Evidence Packet source_tier=3 / medium]
+已记录的逐维度证据可信度: HS=high IU=medium VI=medium VA=medium CE=medium CR=high
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺Fitz Henry Lane作品目录对本件创作生涯位置与质量的具体评述
+缺2014年捐赠以前的完整递藏记录
+缺尺寸、保存状况及画框是否原配的资料
+
+[seq 6] 当前 Tier: A
+名称(EN): John Singleton Copley, Portrait of Sarah Erving Waldo
+名称(CN): 科普利：莎拉·欧文·沃尔多肖像
+展厅: 西曼斯展厅
+类别: 油画
+简介: Superb major Copley colonial American portrait, brilliant fabric rendering, museum‑level colonial masterpiece.
+V3.0 评分: HS=9.0 IU=6.0 VI=7.0 VA=7.0 CE=7.0 ER=0.0 CR=7.90 Core=7.240
+  判定: Core 7.240 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 美国殖民地肖像油画（对象类型 object）
+  打分依据原文: 科普利的殖民地肖像具有国家级艺术史地位，能说明精英身份与服饰文化，但同类顶级资源在波士顿等馆更集中。
+  类别代表性理由: 组内唯一对象，作为科普利殖民地肖像的高品质代表，D偏高；但该类并非PEM身份核心，G中等。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = M12561  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - acquisition = 1976 年 Charles Edward Cotting 夫妇捐赠  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = 约翰·辛格尔顿·科普利  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = John Singleton Copley  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 1764—1765 年  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - material = 布面油彩  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 科普利是北美殖民地时期最重要的肖像画家，本件的织物质感处理是其技法标志。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 美国殖民地肖像画组四件之首。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释殖民地精英的身份表达与服饰礼仪。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 科普利殖民地时期肖像，被绘者为波士顿名门沃尔多家族女性，反映独立战争前新英格兰上层的社会形象建构。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 质量高，但科普利在邻近的波士顿 MFA 藏量与等级更强；PEM 的身份并不依赖它。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 递藏与入藏记录缺失。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 科普利传世肖像数量较多，本件非孤品。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 独立画作。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 接近真人尺度的半身像，织物描绘精致，但构图与色调保守。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=medium VI=medium VA=medium CE=medium CR=high
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺科普利作品目录对M12561归属、年代及创作生涯位置的著录
+缺Sarah Erving Waldo的完整传记、家族关系与委托背景
+缺1976年捐赠以前的家族递藏及交易记录
+
+[seq 7] 当前 Tier: S
+名称(EN): Rush Figurehead, USS Frigate
+名称(CN): rushing船头木雕人像
+展厅: 伯恩家族航海艺术展厅
+类别: 木雕造像
+简介: Monumental American war‑ship figurehead, national maritime treasure, carved for early US navy frigate.
+V3.0 评分: HS=8.0 IU=9.0 VI=10.0 VA=10.0 CE=9.0 ER=0.0 CR=9.50 Core=9.150
+  判定: Core 9.150，峰值 10.0，S-ness 3/3｜打分时自评可信度: medium
+  同类组: 美国早期海军船首像（对象类型 object）
+  打分依据原文: 纪念碑尺度的早期美国海军船首像同时承载国家海权、塞勒姆港史与海事馆的视觉核心。
+  类别代表性理由: 组内唯一对象，且为大型、完整的美国早期海军船首像，兼具威廉·拉什传统与PEM海事身份的代表性，因此D取组内最高。
+  S-ness Test 理由: 大型早期美国海军船首像集中承载塞勒姆海事传统、国家海权与海事馆叙事；两小时仍应安排，错过明显可惜，失去会明显削弱 PEM 的海事身份。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = M27741  [pem_official / https://www.pem.org/the-pem-collection/maritime-art-and-history / high]
+  - acquisition = 博物馆购藏，由 Maritime Visiting Committee 资助  [pem_official / https://www.pem.org/the-pem-collection/maritime-art-and-history / high]
+  - artist = 传为威廉·拉什（1756—1833，美国）创作  [pem_official / https://www.pem.org/the-pem-collection/maritime-art-and-history / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 约 1805 年  [pem_official / https://www.pem.org/the-pem-collection/maritime-art-and-history / high]
+  - material = 松木，彩绘  [pem_official / https://www.pem.org/the-pem-collection/maritime-art-and-history / high]
+  - object_form = 木雕造像  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 威廉·拉什（William Rush）是美国最早的本土雕塑家之一，船首像是其主要创作门类，在美国雕塑史上有开创地位。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 本馆唯一的大型船首像，在该类别中无竞争者。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释船首像的功能、美国早期海军的象征表达，以及塞勒姆港与国家海权的关系。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 为美国早期海军护卫舰所雕的船首像，属美国建国初期海军建设的实物遗存。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 海事馆的体量与视觉核心，直接承载 PEM 的塞勒姆航海身份，是该板块无可替代的实物。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 归属拉什的依据未见说明，需核实是否有档案或款识佐证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 18 世纪末至 19 世纪初的美国大型船首像存世极少，船只退役后多随船解体；本件为纪念碑尺度的完整例证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 原为船体构件，现脱离母体单独展陈，与原船的关系仅存于文献。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 纪念碑尺度木雕，仰视观看，是海事馆一进门的视觉焦点。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=high VA=high CE=medium CR=high
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺M27741的正式题名、雕刻形象、原属舰名及该舰服役档案
+[影响定级] 缺归属威廉·拉什的款识、账簿、合同或系统性风格比较
+[影响定级] 缺尺寸、当前展陈图像及与约1800年美国大型船首像的比较
+缺脱离原舰至博物馆购藏之间的完整递藏链
+
+[seq 8] 当前 Tier: A
+名称(EN): Chinese Export Mandarin Punch Bowl
+名称(CN): 中国外销纹章大潘趣碗
+展厅: 伯恩家族航海艺术展厅
+类别: 瓷器
+简介: Massive documented Canton export punch bowl owned by East India Marine Society founding captains, museum founding relic.
+V3.0 评分: HS=7.0 IU=10.0 VI=7.0 VA=8.0 CE=9.0 ER=0.0 CR=9.45 Core=8.445
+  判定: Core 8.445 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 中国外销纹章瓷（对象类型 object）
+  打分依据原文: 器物本身属于大量生产的外销瓷，但与东印度海洋学会创始船长及PEM建馆源流相连，具有极高的机构身份价值。
+  类别代表性理由: 组内唯一对象，且以大型纹章潘趣碗结合清代外销贸易与PEM创馆船长旧藏，代表性和叙事补位价值均居首。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 瓷器  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 广彩大型潘趣碗是清代外销瓷中规格最高的器类之一，纹章定制反映西方客户的身份表达需求。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 中国外销瓷组四件之首，与量产广彩盘、茶杯组拉开本质差距。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能同时解释广州外销贸易、纹章定制习俗，以及美国早期博物馆由船长收藏起家的形成过程。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 东印度海洋学会创始船长旧藏。该学会 1799 年成立，其收藏即 PEM 的起点，本件因此是博物馆自身来历的实物凭证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 建馆信物。若失去，PEM 失去的不是一件藏品，而是自身来历的物证，IU 在全部外销瓷中最高。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 递藏链是本件价值的核心：由学会创始船长携回并入藏，构成 PEM 藏品序列的起点之一。具体船长姓名待查。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 外销瓷本身量大，但**来源可考证到具体船长与学会**的极少；本件的稀缺性来自来源链而非器物本身。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 独立器物，与展厅空间无固有关系；但与馆内其他东印度海洋学会旧藏构成来源上的成组关系。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 大尺寸瓷碗，粉彩纹饰繁密，但器物本身高度有限，现场冲击力不及大型雕塑或建筑。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=medium VA=medium CE=high CR=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、正式题名、藏品照片及目录记录
+[影响定级] 缺创始船长携回并向东印度海洋学会原始入藏该碗的档案
+[影响定级] 缺纹章辨识及其与具体船长、家族或委托人的对应证据
+缺确切年代、尺寸、胎釉彩绘技术与保存状况
+
+[seq 9] 当前 Tier: A
+名称(EN): Edo Jizō Bosatsu Wood Sculpture, 1279
+名称(CN): 1279年地藏菩萨木雕
+展厅: 路易丝·杜邦·克劳宁希尔德展厅
+类别: 木胎金漆造像
+简介: Monumental Kamakura‑period Japanese Jizō, original gilded lacquer, rare well‑preserved Japanese Buddhist monumental sculpture in US.
+V3.0 评分: HS=9.0 IU=7.0 VI=9.0 VA=8.0 CE=9.0 ER=0.0 CR=9.10 Core=8.360
+  判定: Core 8.360 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 日本镰仓佛教木雕（对象类型 object）
+  打分依据原文: 带确切纪年的镰仓地藏大型金漆木雕稀有且现场效果强，能集中解释日本佛教信仰与木雕工艺。
+  类别代表性理由: 组内唯一对象，无同类竞争者；其带确切纪年的镰仓时期纪念碑式日本佛教木雕具有高度典范性与不可替代性，并补足本馆东亚宗教艺术叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E12068.1AB-.4AB  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 1909 年 Charles Goddard Weld 医生捐赠  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 日本境内艺术家  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - date_text = 1279 年  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 髹漆木胎，金箔、颜料、铜合金与水晶  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 木胎金漆造像  [source_file / 源文件 Category 列 / high]
+  - period = 镰仓时代  [rule / 名称与英文简介解析 / medium]
+  - sig_art_historical = 镰仓造像以写实倾向与庆派技法著称，本件保留原装金漆，可见当时的表面工艺。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 本馆唯一的日本佛教雕塑，类别内无竞争者。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释地藏信仰、镰仓佛教的世俗化，以及日本木雕的髹漆工艺。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 1279 年镰仓时期地藏菩萨像，带纪年，是日本镰仓佛教造像在美国的重要遗存。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 日本佛教雕塑在本馆仅此一件，但 PEM 的核心身份是贸易与航海，宗教造像不属支柱板块。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 原属寺院与流出经过未见记载——此类造像的来源问题近年受关注，需查证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 美国境内保存完好的日本纪念碑式佛教木雕数量有限，带确切纪年者更少。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 原为寺院供奉的一组之一，现单独展陈，与原语境脱离。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 纪念碑尺度立像，金漆表面在展陈灯光下有明显效果。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=medium VI=high VA=medium CE=high CR=high
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺1279年纪年铭文全文、位置及释读记录
+缺金箔与漆层是否原装的保存科学和修复报告
+缺原属寺院、离寺时间及1909年以前的递藏记录
+缺与美国及日本带纪年镰仓地藏像的数量和质量比较
+
+[seq 10] 当前 Tier: A
+名称(EN): Samuel McIntire, Gardner‑Pingree House architectural carvings
+名称(CN): 塞缪尔·麦金太尔 加德纳‑平格里宅木雕构件
+类别: 木构建筑饰件
+简介: Surviving original neoclassical wood carvings by Salem’s most celebrated Federal‑era architect‑carver McIntire.
+V3.0 评分: HS=7.0 IU=8.0 VI=6.0 VA=6.0 CE=8.0 ER=9.0 CR=9.20 Core=7.470
+  判定: Core 7.470 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 塞勒姆联邦风格原位建筑木雕（对象类型 node）
+  打分依据原文: 麦金太尔原位木雕构件必须结合加德纳—平格里宅观看，能把塞勒姆地方建筑、商人阶层品味与联邦风格联系起来。
+  类别代表性理由: 本组唯一对象，且为麦金太尔原位成组保存的代表性木雕；虽非其作品孤例，但在塞勒姆联邦建筑与PEM地方身份叙事中不可替代。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Samuel McIntire  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木构建筑饰件  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 塞缪尔·麦金太尔是美国联邦风格最负盛名的建筑师兼木雕师，其雕饰母题（麦穗、瓮、花篮）已成为该风格的标识。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 麦金太尔建筑木雕组五件之首，是唯一的原位成组构件。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释联邦风格的古典母题来源与塞勒姆商人阶层的居住品味。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 麦金太尔为加德纳-平格里宅所作的木雕构件，该宅 1804–05 年建成，是塞勒姆联邦时期建筑的代表。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 麦金太尔属塞勒姆本地身份，与 PEM 的城市根基直接相关；且该宅由 PEM 管理，构成馆藏与historic house 的连接。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 原位保存，来源明确，无流转问题。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 麦金太尔作品多存于塞勒姆各宅，本件非孤例；但原位成组保存者较少。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = **原位构件**，与加德纳-平格里宅的空间、门窗、壁炉位置构成整体关系，是全馆少数 ER 真正适用的对象之一。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 建筑构件，需在宅内语境中观看；单看木雕本身尺度有限。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=medium VA=medium CE=high CR=high ER=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺评级对象所含构件的逐件清单、位置、馆号及正式对象边界
+[影响定级] 缺证明麦金太尔本人或其工作室设计、雕刻这些构件的账簿、合同或图纸
+[影响定级] 缺区分原作、后配、复制与修复构件的建筑考古报告
+缺与塞勒姆其他麦金太尔原位木雕系统的完整性比较
+
+[seq 11] 当前 Tier: B
+名称(EN): Josh Simpson, Mega‑Megaplanet Glass Sphere
+名称(CN): 乔希·辛普森：巨型星球艺术玻璃球
+类别: 艺术玻璃
+简介: Iconic monumental studio‑glass globe, signature PEM contemporary object, internationally recognized glass art.
+V3.0 评分: HS=6.0 IU=7.0 VI=9.0 VA=9.0 CE=4.0 ER=0.0 CR=7.35 Core=6.985
+  判定: Core 6.985 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 美国当代艺术玻璃（对象类型 object）
+  打分依据原文: 巨型玻璃球是PEM当代板块的醒目标志，灯光下即时吸引力很强，但艺术史与时代制度叙事相对有限。
+  类别代表性理由: 组内唯一对象，作为PEM美国当代艺术玻璃的标志性大型作品代表性最高；D因本馆同类组内无可替代对象而偏高，但其星球母题仍有持续复制性，独特性主要来自巨型尺度。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Josh Simpson  [rule / 名称解析（作者, 作品名） / high]
+  - object_form = 艺术玻璃  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 星球系列是其个人标志母题，在美国工作室玻璃中知名度较高，但未构成艺术史上的转折。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 美国艺术玻璃组四件之首，体量与知名度居先。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 教育与叙事承载力弱，难以借它解释某个时代或制度。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 辛普森为当代在世玻璃艺术家，作品属 20 世纪末以来的工作室玻璃运动，历史纵深有限。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = PEM 当代板块的标志物，宣传中常用；但与本馆的历史身份（贸易、航海、亚洲）无关联。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 入藏方式与年份未见记载。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 艺术家仍在创作，同母题作品持续产出；本件的稀缺性来自尺寸而非母题。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 独立器物。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 大型玻璃球，内部气泡与色彩层次在灯光下效果突出，对普通观众的即时吸引力是全馆最强之一。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=medium VI=high VA=high CE=high CR=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、官方题名、创作年份、材质、精确尺寸及藏品图像
+[影响定级] 缺本件在Mega-Planet或Planet系列中是唯一作、版本作还是常规变体的说明
+[影响定级] 缺艺术家作品目录及本件的重要展览与出版记录
+缺PEM陈列史或宣传档案对其机构标志地位的证明
+
+[seq 12] 当前 Tier: A
+名称(EN): Korean Joseon Governor Welcoming Banquet Screen
+名称(CN): 朝鲜朝鲜时代 平壤道牧使欢迎宴会屏风
+展厅: 俞吉濬韩国艺术与文化展厅
+类别: 屏风画
+简介: Large rare Joseon official banquet screen, one of most important Korean painted screens in United States collections.
+V3.0 评分: HS=8.0 IU=8.0 VI=8.0 VA=8.0 CE=9.0 ER=0.0 CR=9.31 Core=8.281
+  判定: Core 8.281 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 朝鲜官署纪事屏风画（对象类型 object）
+  打分依据原文: 大幅朝鲜官署宴会屏风以高信息密度呈现地方治理、官阶制度与礼仪，是韩国馆代表性较强的叙事型精品。
+  类别代表性理由: 组内唯一对象，作为朝鲜官署纪事大幅屏风的代表性例证，兼具稀缺性与对官僚制度、地方礼仪叙事的强补位价值。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 朝鲜  [rule / 名称与英文简介解析 / medium]
+  - object_form = 屏风画  [source_file / 源文件 Category 列 / high]
+  - period = 朝鲜王朝  [rule / 名称与英文简介解析 / medium]
+  - sig_art_historical = 朝鲜宫廷与官署纪事屏风（記錄畫）是独立画科，以俯瞰式构图铺陈人物与建筑，本件属该画科的大幅例证。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 朝鲜屏风绘画组两件之首，信息量与工坊等级均高于同组的山水屏风。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释朝鲜的官阶制度、地方治理与宴飨礼仪，叙事密度在全馆东亚藏品中居前。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 描绘朝鲜王朝地方长官到任的欢迎宴会，是研究朝鲜官僚制度、地方礼仪与宴飨规格的图像史料。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 韩国艺术是 PEM 的明确强项，本件为该板块的代表作；失去则韩国收藏的代表性显著受损。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 入藏途径未见记载，需查证是否与 PEM 早期东亚收藏同源。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 此类大幅纪事屏风多藏于韩国，美国收藏中规格与保存状况俱佳者屈指可数。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 独立可移动器物；多曲连屏内部构成横向展开的叙事序列。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 大幅多曲屏风，人物众多、场面铺陈，现场可读性强，但需要一定时间辨认细节。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=high VA=medium CE=high CR=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、官方题名、藏品图像或权威图录记录
+[影响定级] 缺题跋印章释读及所绘牧使姓名、宴会地点和事件年份
+[影响定级] 缺与韩国及美国主要官署纪事屏风的数量和质量比较
+缺原收藏者、离开朝鲜半岛的经过及PEM入藏记录
+
+[seq 13] 当前 Tier: A
+名称(EN): Maori War Treasure Jade Mere
+名称(CN): 毛利玉质战争权杖
+类别: 软玉兵器
+简介: High‑rank pre‑contact Māori nephrite mere, sacred chief status weapon, exceptional provenance from early New England voyagers.
+V3.0 评分: HS=8.0 IU=8.0 VI=6.0 VA=7.0 CE=8.0 ER=0.0 CR=9.00 Core=7.650
+  判定: Core 7.650 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 大洋洲玉石武器（对象类型 object）
+  打分依据原文: 前接触期高阶毛利软玉 mere 兼具酋长威权、玉料圣性与传家宝制度意义，是 PEM 大洋洲核心收藏中具有代表性的器物；但手持尺度限制现场冲击力，早期采集来源尚未充分核实。
+  类别代表性理由: 组内唯一对象，作为高阶前接触期毛利软玉 mere，兼具玉石工艺典范性、毛利 mana 文化代表性及与 PEM 早期航海收藏史的连接，故在本组中无可替代。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 毛利  [rule / 名称与英文简介解析 / medium]
+  - object_form = 软玉兵器  [source_file / 源文件 Category 列 / high]
+  - sig_art_historical = 软玉（pounamu）加工需长时间研磨，器形对称、刃缘薄利，是毛利石作工艺的最高体现。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_category = 大洋洲武器组两件之首，材质等级与来源可考性均高于塔希提战棒。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_cultural = 能解释毛利的 mana（威权）观念、玉料的圣性，以及传家宝（taonga）在世代间的传递制度。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_historical = 前接触期毛利高阶权杖（mere pounamu），是酋长身份与战争权威的象征物，属毛利社会等级制度的核心器物。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_institutional = 来源为新英格兰早期航海者，与 PEM 大洋洲收藏的形成史直接相关；是毛利一支的代表，与夏威夷库神像分属不同文化支脉、互不替代。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_provenance = 「exceptional provenance from early New England voyagers」为源数据表述，但未给出航次、采集者与年份，是本件最需要补的一环。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_rarity = 前接触期且有明确早期采集来源的 mere pounamu 存世稀少；多数流散品已失去采集脉络。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_relations = 独立器物，与展厅空间无固有关系。  [evidence / Evidence Packet source_tier=4 / medium]
+  - sig_visual = 手持尺度的扁平玉器，温润有光泽，但体量小，需近距离观看，现场冲击力有限。  [evidence / Evidence Packet source_tier=4 / medium]
+已记录的逐维度证据可信度: HS=high IU=high VI=medium VA=medium CE=high CR=high
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆藏记录以确认馆号、规范题名、年代、尺寸及软玉材质鉴定。
+[影响定级] 缺采集者姓名、航次、采集年份及后续所有者构成的来源链。
+[影响定级] 缺毛利或相关专业学者对其前接触年代、高阶身份、taonga属性及玉料来源的鉴定。
+[影响定级] 缺同类mere pounamu存世数量、可比馆藏与质量等级资料。
+
+[seq 14] 当前 Tier: B
+名称(EN): Childe Hassam, New England Autumn Landscape
+名称(CN): 柴尔德·哈萨姆：新英格兰秋景
+展厅: 西曼斯展厅
+类别: 油画
+简介: High‑quality American Impressionist autumn canvas, representative of Hassam mature period, not absolute top signature work.
+V3.0 评分: HS=7.0 IU=4.0 VI=7.0 VA=7.0 CE=6.0 ER=0.0 CR=7.15 Core=6.115
+  判定: Core 6.115 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 美国油画（对象类型 object）
+  打分依据原文: 哈萨姆成熟期的高质量美国印象派作品，画面季节感和地方性较强，但并非其顶尖代表作，在 PEM 身份体系中也不如海事、亚洲外销与大洋洲藏品不可替代。
+  类别代表性理由: 组内品质与代表性居第二，作为成熟期哈萨姆的新英格兰风景代表，独特性高于同组另一件自然风景画。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Childe Hassam  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、规范题名、创作年份、尺寸和材质记录，以确认对象身份。
+[影响定级] 缺哈萨姆作品总目条目以确认作者归属、真伪和年代。
+[影响定级] 缺权威资料说明该画是否属于哈萨姆成熟期的重要作品。
+缺可核实图像、保存状况及现场陈列尺度。
+
+[seq 15] 当前 Tier: B
+名称(EN): Robert Feke, Portrait of Judge Richard Saltonstall
+名称(CN): 罗伯特·费克：理查德·索尔顿斯托尔法官肖像
+展厅: 西曼斯展厅
+类别: 油画
+简介: Strong colonial American formal portrait; one of finest Feke surviving canvases.
+V3.0 评分: HS=8.0 IU=5.0 VI=7.0 VA=7.0 CE=8.0 ER=0.0 CR=8.80 Core=7.030
+  判定: Core 7.030 落在 5.5–7.19｜打分时自评可信度: high
+  同类组: 美国油画（对象类型 object）
+  打分依据原文: 费克约1750年的殖民地美国正式肖像属于其存世佳作，能具体呈现殖民时期精英肖像制度与社会身份，但单件作品并非 PEM 最不可替代的馆藏核心。
+  类别代表性理由: 组内综合代表性第一，是费克最出色的存世肖像之一，并以殖民地美国肖像补足PEM的早期美国叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = 100183  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - accession_no = M11043  [wikidata / wikidata:Q65083684 matched=judge/richard/saltonstall / high]
+  - artist = Robert Feke  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = Robert Feke  [rule / 名称解析（作者, 作品名） / high]
+  - artist = Robert Feke  [wikidata / wikidata:Q65083684 matched=judge/richard/saltonstall / high]
+  - cultural_context = 美国  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 约 1750 年  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - date_text = 1750 年  [wikidata / wikidata:Q65083684 matched=judge/richard/saltonstall / medium]
+  - material = 布面油彩  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺馆方说明100183与Wikidata所载M11043分别属于何种编号。
+缺费克作品总目或学术出版对该画质量及生涯位置的评价。
+缺原始委托、悬挂地点、历任所有者及入藏经过。
+缺理查德·索尔顿斯托尔生平及肖像历史用途资料。
+
+[seq 16] 当前 Tier: B
+名称(EN): Fidelia Bridges, Pastures by the Sea
+名称(CN): 菲德莉娅·布里奇斯：海边牧场
+展厅: 西曼斯展厅
+类别: 油画
+简介: Delicate 19th‑century American nature landscape, bird‑and‑wildflower theme, high‑quality woman‑artist example.
+V3.0 评分: HS=6.0 IU=5.0 VI=6.0 VA=6.0 CE=7.0 ER=0.0 CR=6.35 Core=5.935
+  判定: Core 5.935 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 美国油画（对象类型 object）
+  打分依据原文: 布里奇斯的海滨自然画面精致，兼具19世纪美国自然观与女性艺术家创作史价值，但视觉尺度和艺术史地位均属优质常规品。
+  类别代表性理由: 组内综合代表性第三，虽品质与典范性较弱，但女性艺术家、鸟花主题及海边景观使其区别于两件男性名家肖像。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = 106746  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - acquisition = 1918 年艺术家本人捐赠  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = Fidelia Bridges  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = Fidelia Bridges  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 1880 年  [pem_customprints / https://customprints.pem.org/detail/509142/bridges-pastures-by-the-sea-1880-1889 / medium]
+  - date_text = 1880—1889 年  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - image_url = https://customprints.pem.org/vitruvius/render/1200/509142.jpg  [pem_customprints / https://customprints.pem.org/detail/509142/bridges-pastures-by-the-sea-1880-1889 / high]
+  - material = 布面油彩  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺权威作品目录对该画在布里奇斯创作生涯中位置的说明。
+缺展览史、出版史及专业评论记录。
+缺确切尺寸、保存状况和当前陈列方式。
+缺对画中鸟类、野花及地点的可靠识别。
+
+[seq 17] 当前 Tier: A
+名称(EN): Samuel McIntire, carved fireplace surround
+名称(CN): 塞缪尔·麦金太尔雕刻壁炉围板
+类别: 木构建筑雕刻
+简介: Finely carved Federal‑era mantel by McIntire workshop; neoclassical foliate motif.
+V3.0 评分: HS=7.0 IU=8.0 VI=7.0 VA=7.0 CE=8.0 ER=0.0 CR=7.60 Core=7.460
+  判定: Core 7.460 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 塞勒姆联邦时期建筑木雕（对象类型 object）
+  打分依据原文: 麦金太尔工作坊的联邦时期新古典主义壁炉雕刻体现塞勒姆地方工艺传统，并与 Gardner-Pingree House 的历史空间直接相连，因此本馆语境中的不可替代性和叙事价值较高。
+  类别代表性理由: 组内唯一对象，作为麦金太尔工坊的塞勒姆联邦时期建筑木雕代表，典范性与本馆地方建筑史叙事补位价值较高。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Samuel McIntire  [rule / 名称解析（作者, 作品名） / high]
+  - object_form = 木构建筑雕刻  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺建筑调查或构件清单确认围板是否为加德纳-平格里宅原构件及其原房间。
+[影响定级] 缺档案或形式学研究确认塞缪尔·麦金太尔本人、工作室或后世仿作的归属。
+[影响定级] 缺后期改动、拆装、修复及现存完整性记录。
+[影响定级] 缺与其他完整麦金太尔壁炉围板的质量和稀缺性比较。
+
+[seq 18] 当前 Tier: B
+名称(EN): John Singer Sargent, Portrait of Sarah Lawrence Brooks
+名称(CN): 萨金特：萨拉·劳伦斯·布鲁克斯肖像
+展厅: 西曼斯展厅
+类别: 油画
+简介: Beautiful late Sargent society portrait, brilliant brushwork, secondary compared to his absolute masterpieces.
+V3.0 评分: HS=8.0 IU=5.0 VI=8.0 VA=8.0 CE=6.0 ER=0.0 CR=6.65 Core=6.815
+  判定: Core 6.815 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 美国油画（对象类型 object）
+  打分依据原文: 萨金特晚期肖像以大尺幅和出色笔触具有强烈观赏性，作者本身属国际一流，但这件社交肖像相较其绝对杰作次一级，社会史解释力也较有限。
+  类别代表性理由: 组内品质居第二、知名度突出，但作为晚期萨金特社会肖像且与费克同属肖像类型，组内非重复性和PEM补位价值相对较低。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - acquisition = 2002 年匿名捐赠  [incollect / https://incollect.com/articles/a-world-of-connections-at-the-peabody-essex-museum / high]
+  - artist = John Singer Sargent  [rule / 名称解析（作者, 作品名） / high]
+  - date_text = 1890 年  [incollect / https://incollect.com/articles/a-world-of-connections-at-the-peabody-essex-museum / high]
+  - dimensions = 61¼ × 51¼ 英寸（约 155.6 × 130.2 cm）  [incollect / https://incollect.com/articles/a-world-of-connections-at-the-peabody-essex-museum / high]
+  - material = 布面油彩  [incollect / https://incollect.com/articles/a-world-of-connections-at-the-peabody-essex-museum / high]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 3（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、规范题名及正式作者归属记录。
+[影响定级] 缺萨金特作品总目条目确认真伪、年代及作品编号。
+[影响定级] 缺权威评价说明该画在萨金特肖像创作中的质量与位置。
+缺萨拉·劳伦斯·布鲁克斯身份、委托背景及原始用途资料。
+缺2002年以前的来源链、展览史和出版史。
+
+[seq 19] 当前 Tier: B
+名称(EN): Josh Simpson, smaller planet glass orb
+名称(CN): 乔希·辛普森 中小型星球玻璃球
+类别: 艺术玻璃
+简介: Beautiful studio‑glass planet orb, same artist as Mega‑Megaplanet, smaller scale.
+V3.0 评分: HS=6.0 IU=5.0 VI=7.0 VA=7.0 CE=5.0 ER=0.0 CR=6.90 Core=5.990
+  判定: Core 5.990 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 当代艺术玻璃（对象类型 object）
+  打分依据原文: 辛普森的星球玻璃球色彩和内部微观景观具有直接吸引力，但本件尺寸较小，艺术史与 PEM 身份关联主要属于当代艺术玻璃收藏的补充。
+  类别代表性理由: 组内代表性最高，规模与观赏性均明显优于同作者的小型弹珠，更能代表当代艺术玻璃的完整作品形态。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Josh Simpson  [rule / 名称解析（作者, 作品名） / high]
+  - object_form = 艺术玻璃  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、规范题名、年份、尺寸、材质和入藏记录，以确认具体对象。
+[影响定级] 缺该球与Mega-Megaplanet的确切关系，包括独件、版次、系列或习作性质。
+[影响定级] 缺该作在乔希·辛普森创作生涯及星球系列中的位置。
+缺可核实图像、制作技法、保存状况和现场展示信息。
+
+[seq 20] 当前 Tier: A
+名称(EN): Chinese Export porcelain dinner service partial set
+名称(CN): 中国外销瓷餐具套件残套
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 瓷器
+简介: Partial large‑size Canton export dinner service for American market, fine famille rose decoration.
+V3.0 评分: HS=7.0 IU=8.0 VI=7.0 VA=7.0 CE=8.0 ER=0.0 CR=8.15 Core=7.515
+  判定: Core 7.515 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 亚洲外销瓷（对象类型 object）
+  打分依据原文: 大尺幅广彩中国外销瓷餐具能清楚说明广州贸易、美国市场与跨文化消费，契合 PEM 亚洲外销艺术核心身份；但残套状态削弱了完整性和单件展示力度。
+  类别代表性理由: 组内排序第1：虽为残套，但美国市场广式外销餐具直接对应PEM远洋贸易与亚洲外销核心叙事，品质与补位价值最高；相较另一件有田盘，独特性略低。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 瓷器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、逐件清单、总件数、年代、尺寸、款识和保存状况。
+[影响定级] 缺技术或图录资料确认广东制作、粉彩装饰及面向美国市场。
+[影响定级] 缺原订购者、美国使用家族、贸易路径及入藏经过。
+[影响定级] 缺原套规模、残存比例及与其他外销餐具完整度的比较。
+[影响定级] 缺PEM对该套在亚洲外销艺术收藏中地位的说明。
+
+[seq 21] 当前 Tier: A
+名称(EN): Japanese Arita blue‑and‑white charger plate
+名称(CN): 日本有田烧青花大盘
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 瓷器
+简介: Monumental Arita blue‑and‑white charger for European trade, rich figural decoration.
+V3.0 评分: HS=7.0 IU=7.0 VI=8.0 VA=8.0 CE=7.0 ER=0.0 CR=7.90 Core=7.390
+  判定: Core 7.390 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 亚洲外销瓷（对象类型 object）
+  打分依据原文: 大型有田青花外销盘以尺度、繁密人物纹饰和欧洲贸易背景形成较强现场吸引力，是 PEM 亚洲外销艺术语境中的重要日本案例，但类别代表性不及最顶尖孤品。
+  类别代表性理由: 组内排序第2：有田烧青花大盘以巨型尺度和日本对欧贸易背景形成组内最强单件辨识度，D高于中式餐具，但对PEM核心远洋贸易叙事的补位略次。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - object_form = 瓷器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆号、规范题名、制作年代、精确直径、材质和款识记录。
+[影响定级] 缺技术分析或权威图录确认有田产地、具体窑口和制作时期。
+[影响定级] 缺可核图像及图像学资料确认人物纹样和欧洲市场用途。
+[影响定级] 缺与PEM及其他机构大型有田外销盘的尺寸、质量和稀缺性比较。
+缺历任所有者、贸易路线和PEM入藏经过。
+
+[seq 22] 当前 Tier: A
+名称(EN): Japanese netsuke rabbit by Naito Toyomasa
+名称(CN): 内藤丰正 兔子根付
+展厅: 日本艺术展厅
+类别: 象牙雕
+简介: Famous signed netsuke masterpiece; exemplary Edo‑period ivory miniature carving.
+V3.0 评分: HS=8.0 IU=7.0 VI=6.0 VA=8.0 CE=7.0 ER=0.0 CR=8.80 Core=7.380
+  判定: Core 7.380 落在 7.2–8.49｜打分时自评可信度: high
+  同类组: 日本根付（对象类型 object）
+  打分依据原文: 内藤丰正署名兔根付属于江户晚期至19世纪初的名家精品，微型雕刻技巧和兔题材带来很强亲和力；其尺寸限制远观冲击，但对 PEM 日本艺术收藏具有明确代表性。
+  类别代表性理由: 组内唯一对象，且为署名的江户晚期象牙根付名作，在日本根付类别中兼具典范性与本馆东亚收藏叙事的独特补位价值。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E26721  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 1947 年 Ernest Goodrich Stillman 捐赠  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 内藤丰昌（1773—1856，日本）  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - date_text = 18 世纪晚期至 19 世纪早期  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 象牙  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 象牙雕  [source_file / 源文件 Category 列 / high]
+  - period = 江户时代  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺对Toyomasa日文写法、署名原文及“丰正／丰昌”差异的权威核对。
+缺作品尺寸、各面图像、签名位置、保存状况和修复记录。
+缺根付图录对作品质量及内藤丰昌生涯位置的评价。
+缺1947年以前的来源链及同作者兔形根付比较。
+
+[seq 23] 当前 Tier: A
+名称(EN): Edo period medicine‑shop kanban signboard
+名称(CN): 江户药铺漆绘看板
+展厅: 日本艺术展厅
+类别: 彩绘木招牌
+简介: Vibrant painted wooden commercial signboard, rare surviving Edo‑period advertising object.
+V3.0 评分: HS=7.0 IU=7.0 VI=8.0 VA=8.0 CE=8.0 ER=0.0 CR=8.30 Core=7.580
+  判定: Core 7.580 落在 7.2–8.49｜打分时自评可信度: high
+  同类组: 江户商业招牌（对象类型 object）
+  打分依据原文: 江户药铺漆绘招牌色彩醒目且存世稀少，能同时讲解商业广告、民众医疗和城市日常生活，是日本艺术展中叙事效率很高的非典型器物。
+  类别代表性理由: 组内唯一对象，且作为罕见留存的江户商业广告实物，代表性与非重复性最高。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E15898  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 1914 年博物馆购藏，由 R. C. Billings Fund 资助  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 日本境内艺术家  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - date_text = 19 世纪  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 木、漆、颜料、金与金属  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 彩绘木招牌  [source_file / 源文件 Category 列 / high]
+  - period = 江户时代  [rule / 名称与英文简介解析 / medium]
+  - subject = 胃痛药广告招牌  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺看板全部文字、药品名称、店铺名称及原使用城市的释读。
+缺日本公私收藏中同类药铺看板的存世数量与比较。
+缺尺寸、正反面图像、保存状况、修复史和现场展示资料。
+缺1914年卖方、此前所有者及从日本流出的经过。
+
+[seq 24] 当前 Tier: B
+名称(EN): Katsumata Chieko, Pumpkin ceramic sculpture
+名称(CN): 胜田千惠子：南瓜陶塑
+展厅: 日本艺术展厅
+类别: 炻质陶瓷
+简介: Well‑known contemporary Japanese organic‑form ceramic sculpture, internationally exhibited artist.
+V3.0 评分: HS=7.0 IU=6.0 VI=7.0 VA=7.0 CE=6.0 ER=0.0 CR=8.05 Core=6.705
+  判定: Core 6.705 落在 5.5–7.19｜打分时自评可信度: high
+  同类组: 当代日本陶瓷雕塑（对象类型 object）
+  打分依据原文: 胜田千惠子的有机形陶塑体现当代日本陶艺的材料与形态探索，南瓜题材易于产生视觉和情感联系，但其馆藏身份与历史叙事权重低于江户及外销艺术。
+  类别代表性理由: 组内唯一对象，作为国际展出的当代日本有机形陶塑，承担本馆日本陶瓷雕塑门类的代表性与叙事补位。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = 2015.42.5  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = Carol 与 Jeffrey Horvitz 捐赠  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 胜间田千惠子（生于 1950 年，日本）  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = Katsumata Chieko  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - date_text = 2008 年  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 炻器，亚光釉  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 炻质陶瓷  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺馆方核对Katsumata Chieko的规范中文姓名及作品正式题名。
+缺艺术家作品目录说明该作所属系列、独件性质及生涯位置。
+缺支持“国际展出艺术家”说法的具体展览及出版记录。
+缺作品尺寸、各面图像、制作技法、保存状况及现场展示资料。
+缺确切捐赠年份及捐赠前来源记录。
+
+[seq 25] 当前 Tier: B
+名称(EN): Joseon folding screen landscape painting
+名称(CN): 朝鲜时代山水六曲屏风
+展厅: 俞吉濬韩国艺术与文化展厅
+类别: 屏风画
+简介: Beautiful Joseon‑dynasty landscape screen, high‑quality provincial official workshop work.
+V3.0 评分: HS=7.0 IU=5.5 VI=7.0 VA=6.5 CE=6.5 ER=0.0 CR=7.30 Core=6.505
+  判定: Core 6.505 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 朝鲜山水屏风画（对象类型 object）
+  打分依据原文: 朝鲜时代高质量地方官营作坊屏风，画面与空间效果较好，但在PEM身份中不如海事、亚洲外销和大洋洲收藏核心。
+  类别代表性理由: 组内唯一对象，承担馆内朝鲜山水屏风画的代表性位置；虽为高质量地方官营作坊作品，典范性略逊于宫廷名作，但非重复性较高并能补足东亚艺术叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 朝鲜  [rule / 名称与英文简介解析 / medium]
+  - object_form = 屏风画  [source_file / 源文件 Category 列 / high]
+  - period = 朝鲜王朝  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺能将该描述名对应到PEM具体馆藏的藏号、正式题名与对象记录。
+[影响定级] 缺馆方或学术来源确认制作年代、朝鲜地区或工坊归属，尤其是“地方官署工坊”说法。
+[影响定级] 缺可核验图像及与已发表朝鲜山水屏风的质量比较，以验证其艺术水准。
+[影响定级] 缺PEM对该屏风在韩国艺术收藏或陈列中代表地位的说明。
+
+[seq 26] 当前 Tier: A
+名称(EN): Hank Willis Thomas, Rich Black Specimen #460
+名称(CN): 汉克·威利斯·托马斯：黑色标本#460
+类别: 金属剪影雕塑
+简介: Important contemporary silhouette sculpture exploring race history, major modern‑acquisition for PEM.
+V3.0 评分: HS=8.0 IU=6.5 VI=8.0 VA=7.5 CE=8.0 ER=0.0 CR=8.60 Core=7.610
+  判定: Core 7.610 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 美国当代观念雕塑（对象类型 object）
+  打分依据原文: 重要当代艺术家关于种族历史的剪影雕塑，兼具强烈轮廓视觉和社会叙事价值，但美国当代艺术并非PEM最不可替代的领域。
+  类别代表性理由: 组内唯一对象，作为重要当代美国观念雕塑代表性较强；其种族历史主题为PEM的美国当代艺术与社会叙事补入独特一环。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = 2019.23.1ab  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - acquisition = 博物馆购藏，由 Elizabeth Rogers Acquisition Fund 资助  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = 汉克·威利斯·托马斯  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - artist = Hank Willis Thomas  [rule / 名称解析（作者, 作品名） / high]
+  - cultural_context = 美国  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - date_text = 2017 年  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - material = 铝，粉末涂层与汽车漆  [pem_official / https://www.pem.org/the-pem-collection/american-art / high]
+  - object_form = 金属剪影雕塑  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM或学术出版物对该作在汉克·威利斯·托马斯创作生涯及《Rich Black Specimen》系列中位置的说明。
+[影响定级] 缺该系列及本件的作品数量、版次或独件性质资料。
+[影响定级] 缺PEM是否将其明确称为重大购藏、代表作或优先展示对象的资料。
+缺作品尺寸、安装方式与展厅现场图像。
+
+[seq 27] 当前 Tier: A
+名称(EN): Salem ship portrait: “Friendship of Salem”
+名称(CN): 塞勒姆商船《友谊号》船舶肖像
+展厅: 伯恩家族航海艺术展厅
+类别: 油画
+简介: Historic ship portrait painting of famous Salem trading vessel, key document of local seafaring history.
+V3.0 评分: HS=7.0 IU=9.0 VI=7.0 VA=7.5 CE=8.5 ER=0.0 CR=8.65 Core=7.965
+  判定: Core 7.965 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 塞勒姆海事船舶肖像画（对象类型 object）
+  打分依据原文: 记录著名塞勒姆贸易船及地方航海史，艺术等级并非顶尖，但与PEM海事起源和地方身份高度不可替代。
+  类别代表性理由: 组内代表性首位：《友谊号》作为著名塞勒姆贸易船，兼具地方航海史文献价值与海事叙事核心地位。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺能对应到PEM具体馆藏的藏号、正式题名、作者、年代与对象记录。
+[影响定级] 缺画中船只确为哪一艘“Friendship”及其图像或铭文辨识依据。
+[影响定级] 缺作品与该船航行、船主、委托者或塞勒姆贸易史存在直接关系的档案。
+[影响定级] 缺PEM将该画列为重要船舶肖像的说明及与馆内同类作品的比较。
+
+[seq 28] 当前 Tier: A
+名称(EN): Brass Pakistani Astrolabe
+名称(CN): 巴基斯坦黄铜星盘
+展厅: 伯恩家族航海艺术展厅
+类别: 刻纹黄铜科学仪器
+简介: Finely engraved Islamic astrolabe for celestial navigation, collected by Salem sea‑captain.
+V3.0 评分: HS=8.0 IU=7.0 VI=7.0 VA=7.5 CE=8.5 ER=0.0 CR=8.60 Core=7.660
+  判定: Core 7.660 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 伊斯兰科学与航海仪器（对象类型 object）
+  打分依据原文: 精细刻纹的伊斯兰星盘连接天文、航海与塞勒姆远洋贸易，历史教育价值强，但具体器物的顶级地位未有充分证据。
+  类别代表性理由: 组内唯一对象，兼具伊斯兰科学仪器与海事航海功能，在本馆海事贸易叙事中具有较高的类别代表性与补位价值。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 刻纹黄铜科学仪器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号及馆方对正式题名、年代、产地、制造者和铭文的记录，并需解决“巴基斯坦”与“美国”字段冲突。
+[影响定级] 缺专业释读确认铭文、刻度、天文功能、完整性与是否后期仿制。
+[影响定级] 缺所称塞勒姆船长的姓名、航次、取得地点、时间及入藏档案。
+[影响定级] 缺与已发表伊斯兰星盘及PEM航海仪器在年代、质量和稀缺性上的比较。
+
+[seq 29] 当前 Tier: A
+名称(EN): Valerie Hagerty, Shipwrecked Armoire with Barnacles
+名称(CN): 瓦莱丽·哈格蒂：附藤壶沉船主题立柜
+展厅: 伯恩家族航海艺术展厅
+类别: 综合材质家具雕塑
+简介: Iconic mixed‑media installation mixing maritime ruin and furniture art, signature PEM contemporary work.
+V3.0 评分: HS=7.5 IU=8.5 VI=9.0 VA=8.5 CE=7.5 ER=0.0 CR=8.80 Core=8.255
+  判定: Core 8.255 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 海事主题当代家具雕塑（对象类型 object）
+  打分依据原文: 以藤壶、沉船和立柜构成鲜明的海事遗墟意象，是PEM具有辨识度的当代作品，现场冲击和记忆点很强。
+  类别代表性理由: 组内唯一的海事主题当代家具雕塑，兼具标志性综合材质语言与沉船意象，在本组中代表性和非重复性最高，并补充PEM海事叙事的当代维度。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - artist = Valerie Hagerty  [rule / 名称解析（作者, 作品名） / high]
+  - object_form = 综合材质家具雕塑  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM馆藏号及馆方对正式题名、年代、材料、尺寸和购藏信息的对象记录。
+[影响定级] 缺艺术家资料、作品目录或学术出版物对该作真实性及其在哈格蒂创作生涯中位置的确认。
+[影响定级] 缺PEM将其称为标志性当代作品或重要海事主题购藏的直接说明。
+[影响定级] 缺尺寸、安装方式和展厅图像，以核验其被赋予的高视觉与体验价值。
+
+[seq 30] 当前 Tier: A
+名称(EN): 1803 ship‑wreck calendar stick
+名称(CN): 1803海难记事刻木杖
+展厅: 伯恩家族航海艺术展厅
+类别: 木雕民俗器物
+简介: Notched wooden stick recording ship‑wreck survival days, unique American maritime folk artifact.
+V3.0 评分: HS=7.5 IU=8.0 VI=5.5 VA=7.5 CE=8.5 ER=0.0 CR=9.00 Core=7.625
+  判定: Core 7.625 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 美国海事民俗器物（对象类型 object）
+  打分依据原文: 1803年海难幸存者以刻痕记录时间的独特器物，视觉朴素但地方海事史和叙事教育价值突出。
+  类别代表性理由: 组内唯一对象，作为记录1803年海难幸存经历的美国海事民俗木刻器物，代表性与非重复性最高，并强力补足PEM以远洋贸易为核心的海事叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - date_text = 1803 年  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木雕民俗器物  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式名称、尺寸、材质、刻痕内容与馆方对象记录。
+[影响定级] 缺同期档案或专业释读证明刻痕确用于记录海难生还日数。
+[影响定级] 缺对应海难的船名、地点、航次、幸存者及该木杖与事件的直接联系。
+[影响定级] 缺同类海难记事器物的存世数量及比较研究，以验证其独特性。
+
+[seq 31] 当前 Tier: A
+名称(EN): Tahitian carved war club
+名称(CN): 塔希提雕花战棒
+类别: 木雕兵器
+简介: Well‑carved Polynesian war club, good provenance from Salem‑era voyage, not top‑rank royal example.
+V3.0 评分: HS=7.5 IU=7.5 VI=7.5 VA=7.0 CE=7.5 ER=0.0 CR=7.90 Core=7.465
+  判定: Core 7.465 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 大洋洲木雕武器（对象类型 object）
+  打分依据原文: 保存良好的塔希提雕花战棒体现波利尼西亚武器与工艺传统，并有塞勒姆时代航海来源，但并非王室顶级范例。
+  类别代表性理由: 组内唯一对象，作为塔希提木雕战棒代表性较高，但因非顶级王室实例，品质与典范程度略有限。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 波利尼西亚  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木雕兵器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、定年、当地器名、材质、尺寸与对象记录。
+[影响定级] 缺大洋洲武器专家对塔希提文化归属、用途及礼仪或身份等级的鉴定。
+[影响定级] 缺所称塞勒姆时代航次、船长或采集者、取得地点及入藏档案。
+[影响定级] 缺与已发表塔希提战棒在年代、雕工和身份等级上的比较，以验证“非王室级”判断。
+
+[seq 32] 当前 Tier: A
+名称(EN): Fiji carved spirit figure
+名称(CN): 斐济祖先神灵木雕
+类别: 木雕造像
+简介: Powerful Fijian ancestor sculpture, collected early‑19th‑century New England voyage.
+V3.0 评分: HS=8.0 IU=8.0 VI=8.5 VA=8.0 CE=8.5 ER=0.0 CR=8.65 Core=8.215
+  判定: Core 8.215 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 大洋洲祖灵木雕（对象类型 object）
+  打分依据原文: 具有力量感的斐济祖灵雕像兼具早期新英格兰航海采集史、宗教意义和显著现场视觉效果。
+  类别代表性理由: 组内唯一的大洋洲祖灵木雕，兼具斐济文化代表性与早期航海收藏背景，在本馆同类中无可替代。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 斐济  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木雕造像  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、定年、斐济具体社群、当地名称及对象记录。
+[影响定级] 缺斐济艺术专家确认该像究竟表现祖先、神灵或其他存在及其原有功能。
+[影响定级] 缺所称十九世纪初新英格兰航次、采集者、取得地点和入藏记录。
+[影响定级] 缺与已发表斐济人像在年代、稀缺性、雕工和文化地位上的比较及PEM馆藏定位。
+
+[seq 33] 当前 Tier: A
+名称(EN): New Zealand Māori carved treasure box (waka huia)
+名称(CN): 毛利雕花珍宝木盒waka huia
+类别: 木雕容器
+简介: Classic Māori feather‑treasure container, fine surface whorl‑style carving.
+V3.0 评分: HS=8.5 IU=8.0 VI=8.5 VA=8.5 CE=8.5 ER=0.0 CR=8.80 Core=8.405
+  判定: Core 8.405 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 毛利雕刻珍宝盒（对象类型 object）
+  打分依据原文: 经典waka huia珍宝盒以精细旋涡式雕刻呈现毛利礼制、身份与珍藏文化，是大洋洲馆中兼具美感和解释力的代表。
+  类别代表性理由: 组内唯一的毛利雕刻珍宝盒，waka huia形制与精细旋涡纹雕刻具有鲜明代表性，并为大洋洲文明叙事提供不可替代的一环。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 毛利  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木雕容器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、制作年代、材质、尺寸、保存状况与对象记录。
+[影响定级] 缺毛利具体部族、地区、雕刻传统或制作者归属的专业鉴定。
+[影响定级] 缺与已发表waka huia在年代、构图、雕工和稀缺性上的系统比较。
+[影响定级] 缺PEM是否将其列为毛利收藏代表作或优先展示对象的说明。
+
+[seq 34] 当前 Tier: A
+名称(EN): Chinese export gouache painting set of trades
+名称(CN): 中国外销水粉百工图组画
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 纸本水粉
+简介: Set of gouache paintings showing Chinese craftsmen trades; popular export visual series.
+V3.0 评分: HS=7.5 IU=8.5 VI=7.5 VA=8.0 CE=8.5 ER=0.0 CR=7.85 Core=8.010
+  判定: Core 8.010 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 中国外销水粉画（对象类型 object）
+  打分依据原文: 百工图组画直接展示中国工艺劳动与面向西方市场的视觉生产，契合PEM亚洲外销艺术核心并具有较强叙事性。
+  类别代表性理由: 组内唯一的中国外销水粉百工图，虽属常见出口题材，但在本馆外销艺术与中国贸易叙事中具有明确的代表性和补位价值。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 纸本水粉  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、画幅数量、尺寸、装帧、完整性与对象记录。
+[影响定级] 缺制作年代、广州作坊或画师归属及图像母本关系的研究。
+[影响定级] 缺与PEM及其他机构百工图组画在规模、完整性、年代和质量上的比较。
+缺原委托者、外销路径和入藏记录。
+
+[seq 35] 当前 Tier: B
+名称(EN): Canton painted fan for western lady
+名称(CN): 广州外销西洋女士彩绘折扇
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 象牙纸扇
+简介: Hand‑painted Canton folding fan made for American female customer, fine ivory mount.
+V3.0 评分: HS=6.5 IU=6.5 VI=7.0 VA=7.0 CE=7.5 ER=0.0 CR=7.80 Core=6.930
+  判定: Core 6.930 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 中国外销折扇（对象类型 object）
+  打分依据原文: 广州为西方女性顾客制作的彩绘折扇能说明跨文化消费与外销工艺，精美易懂但同类器物可替代性较高。
+  类别代表性理由: 组内唯一对象，作为广州外销折扇代表具有较高独特性；其精细象牙纸扇与面向西洋女性消费者的外销语境，补充了PEM海上贸易与亚洲外销艺术叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 象牙纸扇  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、制作年代、尺寸、材质鉴定、保存状况与对象记录。
+[影响定级] 缺证明其为美国女性客户订制的姓名、铭文、订单、通信或家族档案。
+[影响定级] 缺广州具体作坊或生产中心归属及与同类外销扇在工艺、图像和稀缺性上的比较。
+缺该扇进入PEM前后的完整流传与入藏记录。
+
+[seq 36] 当前 Tier: A
+名称(EN): Spilum portrait of Chinese merchant
+名称(CN): 斯波伦绘制中国商人肖像
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 布面油画
+简介: Western‑style oil portrait of a Cantonese merchant by the artist Spilum; rare subject.
+V3.0 评分: HS=7.5 IU=8.0 VI=7.5 VA=7.0 CE=8.5 ER=0.0 CR=7.80 Core=7.730
+  判定: Core 7.730 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 中国外销肖像油画（对象类型 object）
+  打分依据原文: 罕见的广州商人肖像以西式油画呈现中西交流、商业身份与外销语境，在PEM亚洲外销收藏中具有代表性。
+  类别代表性理由: 组内次位：题材为中国商人且较少见，但作为史贝霖单件外销肖像，在成对完整性、人物对应性和海贸叙事覆盖上重复并弱于惠特兰夫妇肖像。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 中国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 布面油画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM藏号、正式题名、年代、尺寸、材料及Spilum作者归属依据。
+[影响定级] 缺被绘中国商人的姓名、身份及其与广州贸易关系的档案证据。
+[影响定级] 缺Spilum已知肖像作品目录及其中中国商人被绘者数量，以验证题材稀缺性。
+[影响定级] 缺PEM或学术出版物对该作艺术质量、馆藏地位及外销绘画代表性的说明。
+
+[seq 37] 当前 Tier: B
+名称(EN): Mughal painted manuscript leaf
+名称(CN): 莫卧儿细密画册页
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 纸本不透明水彩
+简介: High‑quality Mughal court‑style miniature painting leaf, collected via Salem trade routes.
+V3.0 评分: HS=8.0 IU=6.5 VI=6.5 VA=6.5 CE=7.5 ER=0.0 CR=8.05 Core=7.105
+  判定: Core 7.105 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 南亚宫廷绘画与外销艺术（对象类型 object）
+  打分依据原文: 莫卧儿宫廷细密画本身具有较高艺术与文明史价值，但单页尺度有限，且在PEM身份体系中不如东亚和海事核心藏品不可替代。
+  类别代表性理由: 组内唯一对象，作为南亚宫廷绘画及塞勒姆贸易关联的代表性藏品，独特性高；虽非荫余堂或东亚海贸核心，但能补足馆内南亚宫廷艺术叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 印度  [rule / 名称与英文简介解析 / medium]
+  - object_form = 纸本不透明水彩  [source_file / 源文件 Category 列 / high]
+  - period = 莫卧儿  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式馆藏记录、登录号及可核验题名
+[影响定级] 缺精确断代、画师或作坊及原手稿归属
+[影响定级] 缺“经塞勒姆贸易路线入藏”的可靠记录
+[影响定级] 缺与已编目莫卧儿册页的画工、品相及稀缺性比较
+[影响定级] 缺PEM是否将其列为南亚收藏代表作的说明
+
+[seq 38] 当前 Tier: B
+名称(EN): Sinhalese ivory combs, export set
+名称(CN): 斯里兰卡外销象牙梳子套件
+展厅: 肖恩·M·希利家族亚洲外销艺术展厅
+类别: 象牙雕
+简介: Ornately carved Sinhalese ivory combs made for European‑American clientele.
+V3.0 评分: HS=6.5 IU=6.5 VI=6.5 VA=6.0 CE=7.0 ER=0.0 CR=7.80 Core=6.630
+  判定: Core 6.630 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 南亚外销工艺品（对象类型 object）
+  打分依据原文: 斯里兰卡象牙梳子兼具精细工艺与面向欧美市场的贸易叙事，符合PEM外销艺术特色，但类别代表性和视觉冲击有限。
+  类别代表性理由: 组内唯一对象，作为斯里兰卡南亚外销象牙雕的代表，兼具地域与材质工艺的独特性，并补充PEM亚洲外销艺术叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 斯里兰卡  [rule / 名称与英文简介解析 / medium]
+  - object_form = 象牙雕  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、登录号、正式题名及套件件数
+[影响定级] 缺制作年代、具体产地及象牙材质鉴定
+[影响定级] 缺各梳具原配成套及保存完整性的证据
+[影响定级] 缺证明其为欧美市场外销品的同期记录或编目依据
+[影响定级] 缺其他公藏斯里兰卡完整象牙梳套件的数量比较
+
+[seq 39] 当前 Tier: A
+名称(EN): Edo period noblewoman palanquin (onna norimono)
+名称(CN): 江户贵族女子轿舆
+展厅: 日本艺术展厅
+类别: 漆木交通器具
+简介: Well‑preserved portable lacquered palanquin for high‑rank Edo‑period lady.
+V3.0 评分: HS=8.0 IU=8.5 VI=8.5 VA=8.5 CE=8.5 ER=0.0 CR=8.88 Core=8.438
+  判定: Core 8.438 落在 7.2–8.49｜打分时自评可信度: high
+  同类组: 日本江户时代贵族生活与漆器器物（对象类型 object）
+  打分依据原文: 保存良好的江户高等级女性漆轿体量、装饰和社会等级信息突出，是日本艺术展厅中少见且能强烈说明贵族生活的器物。
+  类别代表性理由: 组内唯一对象，作为保存良好的江户高阶贵族女子漆轿，兼具典范品质与本馆日本贵族生活及漆器叙事的唯一代表性。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E37812  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 博物馆馆藏  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 日本境内艺术家  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - date_text = 19 世纪  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 木、漆、鎏金铜、丝、纸、颜料、金箔与竹  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 漆木交通器具  [source_file / 源文件 Category 列 / high]
+  - period = 江户时代  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺E37812原主人、具体使用阶层及使用史
+缺入藏日期、捐赠者或购藏来源记录
+缺尺寸、保存状况及实际展陈记录
+缺美国公藏女性轿舆的数量及比较资料
+
+[seq 40] 当前 Tier: A
+名称(EN): 18‑century Japanese dragonfly‑design kabuto helmet
+名称(CN): 18世纪蜻蜓纹饰武士兜头盔
+展厅: 日本艺术展厅
+类别: 金属头盔
+简介: Decorative high‑quality samurai helmet with dragonfly motif, fine metal forging.
+V3.0 评分: HS=7.5 IU=7.5 VI=8.0 VA=7.5 CE=7.5 ER=0.0 CR=7.80 Core=7.605
+  判定: Core 7.605 落在 7.2–8.49｜打分时自评可信度: high
+  同类组: 日本武家甲胄与武具（对象类型 object）
+  打分依据原文: 晚江户至近代早期的精工蜻蜓纹兜兼具武家制度、工艺技术和鲜明造型价值，在日本馆中具有较强吸引力。
+  类别代表性理由: 组内唯一对象，作为日本武家甲胄与武具的单件代表，凭18世纪蜻蜓纹金属兜及精细工艺具有较高品质与补位价值。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - accession_no = E7559  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - acquisition = 1904 年 Charles Goddard Weld 医生捐赠  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - artist = 寺田忠丰  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - date_text = 18 世纪晚期至 19 世纪早期  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - material = 漆与螺钿  [pem_official / https://www.pem.org/the-pem-collection/japanese-art / high]
+  - object_form = 金属头盔  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 1（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: 缺E7559完整官方器名及结构材质记录
+缺尺寸、保存状况及修复记录
+缺该作在寺田忠丰作品中的位置与比较
+缺蜻蜓母题及螺钿装饰的学术分析
+缺PEM武具藏品及公藏同类器的比较
+
+[seq 41] 当前 Tier: A
+名称(EN): Japanese ukiyo‑e complete Hokusai print set partial
+名称(CN): 葛饰北斋浮世绘组画残套
+展厅: 日本艺术展厅
+类别: 木刻版画
+简介: Partial series of Hokusai woodblock prints, good impression, rotating print display.
+V3.0 评分: HS=8.5 IU=6.5 VI=6.5 VA=7.5 CE=7.5 ER=0.0 CR=7.86 Core=7.336
+  判定: Core 7.336 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 日本江户时代浮世绘版画（对象类型 object）
+  打分依据原文: 北斋及其浮世绘艺术具有国际一流地位，良好印刷质量提升观赏性，但组画残套削弱了完整叙事和本馆不可替代性。
+  类别代表性理由: 组内代表性较高：北斋名家组画虽为残套，仍以鲜明个人风格提供日本江户版画的重要代表。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木刻版画  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、系列名称、各张登录号及现存张数
+[影响定级] 缺“完整组画”与“残套”矛盾的编目解释
+[影响定级] 缺北斋归属、版元、初版年代及版次或状态鉴定
+[影响定级] 缺各张印刷质量、褪色、裁切及保存状况报告
+缺来源史、入藏记录及实际轮换展出记录
+
+[seq 42] 当前 Tier: A
+名称(EN): Hiroshige Tokaido set partial
+名称(CN): 歌川广重东海道五十三次部分版画
+展厅: 日本艺术展厅
+类别: 木刻版画
+简介: Selection from famous Tokaido print series, classic Edo‑period ukiyo‑e.
+V3.0 评分: HS=8.5 IU=6.5 VI=7.0 VA=7.5 CE=8.0 ER=0.0 CR=7.54 Core=7.454
+  判定: Core 7.454 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 日本江户时代浮世绘版画（对象类型 object）
+  打分依据原文: 《东海道五十三次》是江户旅行文化与浮世绘史的重要系列，部分版画仍具较高观看和教育价值，但不完整限制其优先级。
+  类别代表性理由: 组内次于北斋：广重《东海道五十三次》题材经典，但仅为部分版画，与北斋组画共同构成江户浮世绘叙事，重复性略高。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 日本  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木刻版画  [source_file / 源文件 Category 列 / high]
+  - period = 江户时代  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、各画面题名、登录号及现存张数
+[影响定级] 缺《东海道五十三次》的具体版本、版元与年代
+[影响定级] 缺广重归属及各张版次或状态鉴定
+[影响定级] 缺印刷质量、色彩、裁切及保存状况报告
+缺来源史及入藏记录
+
+[seq 43] 当前 Tier: B
+名称(EN): Joseon dynasty brass ritual incense burner
+名称(CN): 朝鲜王朝黄铜礼式香炉
+展厅: 俞吉濬韩国艺术与文化展厅
+类别: 黄铜错嵌金工
+简介: Elegant cast‑brass Korean ceremonial burner, fine inlaid silver decoration.
+V3.0 评分: HS=7.0 IU=7.0 VI=7.0 VA=6.5 CE=8.0 ER=0.0 CR=7.70 Core=7.145
+  判定: Core 7.145 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 朝鲜王朝礼仪金工器（对象类型 object）
+  打分依据原文: 朝鲜王朝礼式香炉以错嵌银饰体现仪式制度和金工技术，叙事价值较强，但普通游客的即时吸引力中等。
+  类别代表性理由: 组内唯一对象，作为朝鲜王朝礼仪金工的代表性器物独特性高，但在全馆海事与亚洲外销叙事中属补充环节。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 朝鲜  [rule / 名称与英文简介解析 / medium]
+  - object_form = 黄铜错嵌金工  [source_file / 源文件 Category 列 / high]
+  - period = 朝鲜王朝  [rule / 名称与英文简介解析 / medium]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式馆藏记录、登录号、尺寸及图像
+[影响定级] 缺精确年代、制作地区、作坊及铭文释读
+[影响定级] 缺黄铜合金及错银装饰的技术鉴定
+[影响定级] 缺同形朝鲜香炉的存世量及公藏比较
+缺礼式用途及具体使用环境的权威说明
+缺可靠的来源史与入藏记录
+
+[seq 44] 当前 Tier: A
+名称(EN): Nam June Paik small video‑art sculpture
+名称(CN): 白南准小型影像雕塑
+类别: 综合材质影像雕塑
+简介: Representative small‑scale Nam June Paik media‑art object, pioneer Korean‑American video‑art.
+V3.0 评分: HS=8.0 IU=7.0 VI=6.5 VA=7.5 CE=8.5 ER=0.0 CR=9.30 Core=7.655
+  判定: Core 7.655 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 韩国现代媒体艺术（对象类型 object）
+  打分依据原文: 白南准是影像艺术史上的关键先驱，小型作品的现场冲击虽有限，却能有效连接韩国身份、跨媒介创新与全球当代艺术史。
+  类别代表性理由: 组内唯一对象，白南准作为影像艺术先驱具有最高典范性与不可替代性，并为馆内东亚叙事补足韩国现代媒体艺术一环。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 朝鲜  [rule / 名称与英文简介解析 / medium]
+  - object_form = 综合材质影像雕塑  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式题名、登录号、创作年代及完整媒介清单
+[影响定级] 缺签名、证书、版本号及白南准归属记录
+[影响定级] 缺该作在白南准创作生涯及影像雕塑中的位置
+[影响定级] 缺显示设备原配性、运行状态及保存方案
+缺来源史、入藏记录及PEM官方馆藏定位
+
+[seq 45] 当前 Tier: B
+名称(EN): American Federal mahogany sideboard
+名称(CN): 美国联邦时代桃花心木餐边柜
+类别: 木家具
+简介: Well‑proportioned Salem‑area Federal‑era mahogany sideboard, high‑quality cabinet‑maker work.
+V3.0 评分: HS=7.0 IU=7.5 VI=7.0 VA=6.5 CE=7.5 ER=0.0 CR=6.05 Core=7.030
+  判定: Core 7.030 落在 5.5–7.19｜打分时自评可信度: medium
+  同类组: 塞勒姆与新英格兰联邦时期家具（对象类型 object）
+  打分依据原文: 塞勒姆地区联邦式桃花心木餐边柜将地方贸易社会与高水平木作联系起来，但美国联邦家具在全国范围并非PEM独占强项。
+  类别代表性理由: 组内相对而言排名第二；虽为比例优良的塞勒姆联邦式餐边柜，但与另一件地方家具在美国装饰艺术叙事上有一定重复，独特性较弱。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木家具  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、登录号、正式题名、尺寸及材质
+[影响定级] 缺具体年代、制作者或作坊及结构鉴定
+[影响定级] 缺证明塞勒姆制作的标签、结构特征或家族来源
+[影响定级] 缺原始表面、修复情况及保存状况报告
+[影响定级] 缺与已出版塞勒姆餐边柜的工艺及稀缺性比较
+缺PEM对其馆内代表地位的说明
+
+[seq 46] 当前 Tier: A
+名称(EN): Chippendale‑style Salem high‑boy chest
+名称(CN): 齐本德尔风格塞勒姆高斗柜
+类别: 木家具
+简介: Local Salem‑made Chippendale tall chest, rich carved rococo detail.
+V3.0 评分: HS=7.0 IU=7.5 VI=7.5 VA=7.0 CE=7.5 ER=0.0 CR=7.00 Core=7.275
+  判定: Core 7.275 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 塞勒姆与新英格兰联邦时期家具（对象类型 object）
+  打分依据原文: 塞勒姆本地制作、齐本德尔风格和丰富洛可可雕刻强化了地方工艺与社会史价值，视觉表现也高于一般家具。
+  类别代表性理由: 组内排名第一；塞勒姆本地制作且带有丰富洛可可雕饰，在两件新英格兰家具中辨识度和代表性更突出，可补充地方工匠与风格演变叙事。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 木家具  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、登录号、年代、尺寸及木材记录
+[影响定级] 缺制作者或作坊及塞勒姆归属的技术依据
+[影响定级] 缺雕刻细节、结构、原始表面及修复报告
+[影响定级] 缺家族来源或原主人记录以验证地方归属
+[影响定级] 缺与其他塞勒姆齐本德尔高斗柜的稀缺性比较
+缺PEM对其类别代表性的正式说明
+
+[seq 47] 当前 Tier: A
+名称(EN): Paint‑decorated grandfather clock, New England folk
+名称(CN): 新英格兰民间彩绘落地大钟
+类别: 彩绘木家具
+简介: Colorful folk‑art painted tall clock, important American vernacular decorative art.
+V3.0 评分: HS=7.0 IU=7.0 VI=8.0 VA=7.5 CE=7.5 ER=0.0 CR=7.60 Core=7.360
+  判定: Core 7.360 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 新英格兰民间装饰艺术家具（对象类型 object）
+  打分依据原文: 彩绘落地钟具有醒目的体量和色彩，并能说明新英格兰民间审美与日常生活，是较易被普通游客记住的地方艺术品。
+  类别代表性理由: 组内唯一对象，在新英格兰民间装饰艺术家具中无可替代；其彩绘落地大钟具有鲜明地域与民俗代表性，但对PEM核心海事及亚洲外销叙事的补位作用有限。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - cultural_context = 美国  [rule / 名称与英文简介解析 / medium]
+  - object_form = 彩绘木家具  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、登录号、正式题名、年代及尺寸
+[影响定级] 缺钟匠、彩绘者及具体制作地点的归属依据
+[影响定级] 缺机芯与钟壳是否原配及运行状况的鉴定
+[影响定级] 缺彩绘是否原始、修复范围及保存状况报告
+[影响定级] 缺新英格兰彩绘落地钟的存世量及公藏比较
+缺原主人、家族来源及入藏记录
+
+[seq 48] 当前 Tier: A
+名称(EN): Paul Revere silver creamer sugar bowl pair
+名称(CN): 保罗·里维尔银奶壶糖碗成对
+类别: 银器
+简介: Signed Revere silver creamer‑sugar bowl set; smaller than his grand tankard masterpiece.
+V3.0 评分: HS=8.0 IU=7.0 VI=6.5 VA=7.5 CE=7.5 ER=0.0 CR=7.50 Core=7.325
+  判定: Core 7.325 落在 7.2–8.49｜打分时自评可信度: medium
+  同类组: 美国殖民与联邦时期银器（对象类型 object）
+  打分依据原文: 保罗·里维尔署名使这对银器具有国家级工艺史和革命时代人物关联，但体量较小且低于其代表性大型杰作。
+  类别代表性理由: 组内唯一对象，作为有保罗·里维尔签名的殖民时期银器具有较高典范性与本馆此类唯一性，但在全馆核心的海事及亚洲外销叙事中补位价值中等。
+库中已有的 metadata 取值（来源标识 / 来源 / 该条可信度）：
+  - object_form = 银器  [source_file / 源文件 Category 列 / high]
+已记录的最高来源等级: Tier 4（1=馆方官方/UNESCO 2=图录/学术 3=专业数据库/拍卖行 4=一般网络资料）
+上一轮记下的缺失证据: [影响定级] 缺PEM正式记录、登录号、题名、年代、尺寸及重量
+[影响定级] 缺款识照片、释读及保罗·里维尔归属鉴定
+[影响定级] 缺奶壶与糖碗是否原配成对的编目记录
+[影响定级] 缺该组在里维尔银器生涯中的位置及同类比较
+缺委托人、原主人、家族来源及入藏记录
+缺PEM对其美国银器馆藏地位的说明
