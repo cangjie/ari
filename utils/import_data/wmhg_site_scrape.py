@@ -666,9 +666,10 @@ ITEM_KEYWORDS = ("赏析", "上新", "珍宝", "珍品", "藏品", "展品", "�
 EXCLUDE_TITLE = re.compile(r"询价|采购|磋商|招标|中标|比选|遴选|招聘|消防|安全生产|廉政|党建|党史|"
                            r"讲解员|志愿|培训|会议|研讨|座谈|签约|调研|通知|要点|办法|条例|总结|年鉴")
 ARTICLE_CAP = 150          # 入选超过这个数就停下来问 —— 多半是排除规则漏了一大类
+# 临时展览不在这里：它的列表链向文章式页面 /detail/<id>.html，不是 /exhib/detail/<id>.html。
+# 第一次正式抓取（09-24 13:24）照常设的格式去认，结果是「临时展览 0 个」—— 见 scrape_tempo()
 EXHIB_LISTS = (("常设展览", "/permanent.html", "permanent"),
-               ("专题展览", "/special_exhib.html", "special_exhib"),
-               ("临时展览", "/tempo.html", "tempo"))
+               ("专题展览", "/special_exhib.html", "special_exhib"))
 MC_NAME_CHECK = ("兰花御纹章", "伪满建国功劳章", "景仁宫御用地毯")
 
 
@@ -712,6 +713,21 @@ def _banner_title(page: str) -> str:
 
 def _imgs_in(fragment: str) -> list[str]:
     return _imgs(fragment or "")
+
+
+def _article_body(page: str) -> dict:
+    """文章式页面（文章、临时展览）的正文。正文通常在 `.cont`；取不到就依次换容器，
+    都取不到就记下附件与内嵌页 —— 第一次正式抓取有 6 篇正文为空，其中两篇是「赏析」，
+    模板没见过（存档里也没有），所以空的那几页另存样本。"""
+    for marker in ('<div class="cont">', '<div class="text">'):
+        blk = _div_block(page, marker)
+        if blk and (text := _para_text(blk)):
+            return dict(text=text, images=_imgs_in(blk))
+    main = _div_block(page, '<div class="x-container"') or ""
+    return dict(text="", images=_imgs_in(main),
+                attachments=[h for h, _ in _links(main)
+                             if re.search(r"\.(pdf|docx?|pptx?|xlsx?|zip)(\?|$)", h, re.I)],
+                iframes=re.findall(r'<iframe\b[^>]*?src\s*=\s*"([^"]+)"', main, re.I))
 
 
 def scrape_collection(f: Fetcher, base: str, r: Report, lang: str) -> dict[str, dict]:
@@ -830,7 +846,7 @@ def scrape_exhibitions(f: Fetcher, base: str, r: Report) -> tuple[dict, dict]:
 def scrape_articles(f: Fetcher, base: str, r: Report, exhibitions: dict) -> tuple[dict, dict]:
     kws = list(ITEM_KEYWORDS)
     for e in exhibitions.values():
-        if {"专题展览", "临时展览"} & set(e["kinds"]):
+        if "专题展览" in e["kinds"]:
             m = re.search(r"[《“「](.+?)[》”」]", e["title"])
             name = (m.group(1) if m else e["title"]).strip()
             if name and name not in kws:
@@ -866,13 +882,45 @@ def scrape_articles(f: Fetcher, base: str, r: Report, exhibitions: dict) -> tupl
         if st != 200:
             r.say(f"  ⚠ 文章 {path} 返回 HTTP {st}，跳过")
             continue
-        body = _div_block(pg, '<div class="cont">') or ""
         recs[path] = dict(path=path, title=_banner_title(pg) or selected[path]["title"],
                           keywords=selected[path]["keywords"], url=base + path,
-                          images=_imgs_in(body), text=_para_text(body))
+                          **_article_body(pg))
         if not recs[path]["text"]:
-            r.say(f"  ⚠ 文章 {path} 正文为空：{recs[path]['title']!r}")
+            aid = re.search(r"(\d+)\.html$", path).group(1)
+            _write(f.samples / f"article_empty_{aid}.html", pg)
+            r.say(f"  ⚠ 文章 {path} 正文为空（样本 article_empty_{aid}.html）：{recs[path]['title']!r}，"
+                  f"附件 {recs[path]['attachments']}，内嵌页 {recs[path]['iframes']}")
     return recs, excluded
+
+
+def scrape_tempo(f: Fetcher, base: str, r: Report) -> dict[str, dict]:
+    """临时展览。列表链向文章式页面 /detail/<id>.html（2024 年存档核实），详情按文章解析。
+    **是否仍在展不在这里判断** —— 展期写在正文里，由 wmhg_build.py 读。"""
+    st, first = f.get(base + "/tempo.html", sample="tempo.html")
+    if st != 200:
+        _die(r, f"临时展览列表 /tempo.html 返回 HTTP {st}")
+    items: dict[str, str] = {}
+    for p in _walk_pages(f, base, first, r'href="(/tempo/p/\d+\.html)"'):
+        for href, text in _links(p[max(p.find('<div class="x-container"'), 0):]):
+            m = re.fullmatch(r"/detail/(\d+)\.html", href)
+            if m and (text or m.group(1) not in items):
+                items[m.group(1)] = items.get(m.group(1)) or text
+    if not items:
+        _die(r, "临时展览列表上一个 /detail/<id>.html 都没认出来，看样本 tempo.html")
+    recs: dict[str, dict] = {}
+    for i, k in enumerate(sorted(items, key=int)):
+        url = f"{base}/detail/{k}.html"
+        st, pg = f.get(url, sample=f"tempo_detail_{k}.html" if i < 2 else None)
+        if st != 200:
+            r.say(f"  ⚠ 临时展览 {url} 返回 HTTP {st}，跳过")
+            continue
+        recs[k] = dict(id=k, title=_banner_title(pg), list_title=items[k], url=url,
+                       **_article_body(pg))
+        if not recs[k]["text"]:
+            _write(f.samples / f"tempo_empty_{k}.html", pg)
+            r.say(f"  ⚠ 临时展览 {k} 正文为空（样本 tempo_empty_{k}.html）：{recs[k]['title']!r}")
+    r.say(f"临时展览：{len(recs)} 个")
+    return recs
 
 
 def _emit(path: pathlib.Path, doc: str, blocks: list[tuple[str, str, object]]) -> None:
@@ -896,6 +944,7 @@ def scrape(f: Fetcher, base: str, r: Report, out: pathlib.Path) -> None:
     zh = scrape_collection(f, base, r, "zh")
     en = scrape_collection(f, base, r, "en")
     ex, review = scrape_exhibitions(f, base, r)
+    tempo = scrape_tempo(f, base, r)
     arts, excluded = scrape_articles(f, base, r, ex)
 
     # 抓取日期取自缓存清单，从缓存重跑时逐字节不变
@@ -916,13 +965,16 @@ url、images（详情页轮播图）、desc（简介正文，按段落分行；�
     _emit(out / "wmhg_exhibition_data.py", f"""伪满皇宫博物院官网的展览（节点候选）。
 
 {src}
-EXHIBITIONS：常设展览、专题展览、临时展览列表上的全部展览及其详情页，{len(ex)} 个。
+EXHIBITIONS：常设展览、专题展览列表上的全部展览及其详情页（/exhib/detail/<id>），{len(ex)} 个。
   kinds 是它出现在哪几张列表上（「从皇帝到公民」同时在常设与专题）；captions 是详情页轮播图的
   图注，多为子空间名（同德殿广间、同德殿日本间）；desc 是简介正文。
+  **专题列表上有已闭幕的展**（1310、1312 同时在 REVIEW 里），列表上有 ≠ 在展。
+TEMPO：临时展览，{len(tempo)} 个。列表链向文章式页面 /detail/<id>，**与 EXHIBITIONS 的 id 不是一套**。
+  text 是详情正文，展期写在里面；是否仍在展由 wmhg_build.py 读展期判断，这里不判断。
 REVIEW：「展览回顾」列表上的 id 与标题，{len(review)} 个。**只用来判断某个展是否已闭幕**，
   不抓详情，不当节点。
-""", [("EXHIBITIONS", "dict[str, dict]", ex), ("REVIEW", "dict[str, dict]",
-                                               {k: {"title": v} for k, v in review.items()})])
+""", [("EXHIBITIONS", "dict[str, dict]", ex), ("TEMPO", "dict[str, dict]", tempo),
+      ("REVIEW", "dict[str, dict]", {k: {"title": v} for k, v in review.items()})])
     _emit(out / "wmhg_article_data.py", f"""伪满皇宫博物院官网上介绍藏品的文章（候选）。
 
 {src}
@@ -931,10 +983,11 @@ ARTICLES：入选的 {len(arts)} 篇全文，text 按段落分行，images 是�
 EXCLUDED：被排除的 {len(excluded)} 篇的标题与理由（why 是命中的排除词），**排除得对不对可以复核**。
 
 用法（用户 2026-09-24 定）：只从**当前在展**的展览文章里补展品，单独的 source_key，
-每件的身份逐篇确认。文章里提到的展是否已闭幕，对照 wmhg_exhibition_data.REVIEW。
+每件的身份逐篇确认。文章里提到的展是否已闭幕，对照 wmhg_exhibition_data.REVIEW 与 TEMPO 的展期。
+正文取不到的几篇另有 attachments（附件链接）与 iframes（内嵌页），整页存在 wmhg_samples/article_empty_*。
 """, [("ARTICLES", "dict[str, dict]", arts), ("EXCLUDED", "dict[str, dict]", excluded)])
     r.say(f"\n写出：wmhg_site_data.py（中 {len(zh)} / 英 {len(en)}）、"
-          f"wmhg_exhibition_data.py（{len(ex)} 个展览 + {len(review)} 个回顾）、"
+          f"wmhg_exhibition_data.py（{len(ex)} 个展览 + {len(tempo)} 个临时展 + {len(review)} 个回顾）、"
           f"wmhg_article_data.py（{len(arts)} 篇 + 排除 {len(excluded)}）")
 
     # 两项顺带的核对，只进报告。「博物中国」要求间隔 5 秒，放在最后，免得拖慢官网那部分
