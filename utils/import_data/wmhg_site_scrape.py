@@ -61,6 +61,14 @@ UA = "ari-metadata-research/1.0 (museum visit-planning dataset; contact via repo
 MIN_SLEEP = 1.5
 HERE = pathlib.Path(__file__).resolve().parent
 
+# 证书已过期、用户同意只跳过有效期检查的域名（--allow-expired-cert 才生效）。
+# 两张都是真过期，不是本机时钟的问题 —— 2026-09-24 查证书透明度日志（crt.sh），
+# 之后都没有签发过新证书：
+#   wmhg.com.cn       RapidSSL（DigiCert）*.wmhg.com.cn，2026-03-02 到期
+#   museumschina.cn   WoTrus DV www.museumschina.cn，2026-04-21 到期
+# 加域名要先查一遍、再问用户，不要为了跑通顺手往里塞
+EXPIRED_CERT_HOSTS = ("wmhg.com.cn", "museumschina.cn")
+
 # 人机验证或限流页的字样。只在「状态码可疑」或「页面很短」时才认 ——
 # 正常页头部的登录弹窗里也可能写着「验证码」，见字就停会把探路卡死在第一页
 BLOCK_PAT = re.compile(r"验证码|人机验证|安全验证|滑块|访问过于频繁|请求过于频繁|"
@@ -105,8 +113,7 @@ class Fetcher:
         self.n_live = 0
         self._last = 0.0
         self._ctx = ssl_ctx()
-        # 2026-09-24 官网证书已过期（Mac 上国内网络实测 CERTIFICATE_VERIFY_FAILED:
-        # certificate has expired）。只对本馆域名、只跳过有效期，要显式开关才用
+        # 只对 EXPIRED_CERT_HOSTS 登记过的域名、只跳过有效期，要显式开关才用
         self._ctx_expired_ok = ssl_ctx_allow_expired() if allow_expired else None
 
     def get(self, url: str, *, ajax: bool = False, referer: str | None = None,
@@ -147,7 +154,8 @@ class Fetcher:
         req = urllib.request.Request(url, headers=headers)
         host = urllib.parse.urlsplit(url).hostname or ""
         ctx = (self._ctx_expired_ok
-               if self._ctx_expired_ok and (host == "wmhg.com.cn" or host.endswith(".wmhg.com.cn"))
+               if self._ctx_expired_ok and any(host == d or host.endswith("." + d)
+                                               for d in EXPIRED_CERT_HOSTS)
                else self._ctx)
         try:
             with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
@@ -587,12 +595,19 @@ def probe_mc(f: Fetcher, r: Report) -> None:
 def probe_articles(f: Fetcher, base: str, r: Report) -> None:
     r.say("\n# 官网文章（找介绍单件藏品的）")
     art_re = r"/detail/\d+\.html"
+    # 搜索页 /searchs/keywords/<词> 只是空壳，结果由内联脚本 AJAX 灌入（第一轮补探只拿到空壳）：
+    #   GET /searchs/archives.html?category_id=&tpl_file=search&pagesize=7&title=<词>&status_id=1
+    # 按**标题**搜，不搜正文。页面注释写着「不设置 category_id 会出错」
     for i, kw in enumerate(("藏品", "文物", "馆藏", "珍品", "赏析"), 1):
-        st, pg = f.get(f"{base}/searchs/keywords/{urllib.parse.quote(kw)}",
-                       sample=f"search_kw{i}.html")
+        q = urllib.parse.urlencode(dict(category_id="", tpl_file="search", pagesize=50,
+                                        title=kw, status_id=1))
+        st, pg = f.get(f"{base}/searchs/archives.html?{q}", ajax=True,
+                       referer=f"{base}/searchs/keywords/{urllib.parse.quote(kw)}",
+                       sample=f"search_ajax_kw{i}.html")
         arts = [(h, t) for h, t in dict.fromkeys(_links(pg)) if re.search(art_re, h) and t]
-        r.say(f"  站内搜「{kw}」：HTTP {st}，文章链接 {len(arts)} 个；{_totals(pg)}")
-        for h, t in arts[:12]:
+        r.say(f"  站内搜「{kw}」：HTTP {st}，{len(pg)} 字节，结果链接 {len(arts)} 个 "
+              f"{Counter(map(_shape, (h for h, _ in arts))).most_common(3)}；{_totals(pg)}")
+        for h, t in arts[:15]:
             r.say(f"      {h}  {t[:40]}")
     for path in ("/information.html", "/focusnews.html", "/achievements.html", "/papers.html"):
         st, pg = f.get(base + path, sample=f"list_{path[1:-5]}.html")
@@ -629,7 +644,7 @@ def main() -> None:
     ap.add_argument("--out", default=str(HERE), help="wmhg_raw/ 与 wmhg_samples/ 的上级目录")
     ap.add_argument("--refresh", action="store_true", help="不读本地缓存，全部重新请求")
     ap.add_argument("--allow-expired-cert", action="store_true",
-                    help="官网证书过期时用：只对 *.wmhg.com.cn 跳过有效期检查，"
+                    help="只对 EXPIRED_CERT_HOSTS 里登记的域名跳过证书有效期检查，"
                          "证书链与域名照常校验（tls.ssl_ctx_allow_expired）")
     args = ap.parse_args()
     if args.probe == args.probe_extra:
@@ -642,8 +657,8 @@ def main() -> None:
                 allow_expired=args.allow_expired_cert)
     r = Report()
     if args.allow_expired_cert:
-        r.say("⚠ 本次对 *.wmhg.com.cn 跳过了证书有效期检查（--allow-expired-cert），"
-              "证书链与域名照常校验")
+        r.say(f"⚠ 本次对 {'、'.join(EXPIRED_CERT_HOSTS)} 跳过了证书有效期检查"
+              f"（--allow-expired-cert），证书链与域名照常校验")
     code = 0
     try:
         run(f, args.base.rstrip("/"), r)
