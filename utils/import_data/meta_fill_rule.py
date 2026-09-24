@@ -98,7 +98,8 @@ DESC_NOT_ARTIST = {"Boston", "Museum", "America", "North", "China", "Japan", "Eu
 #   ham         94 -> 92    「Rembrandt, Bust of an Old Man」，混着少量器物名
 #   mfa_boston  18 ->  3    「Vase, Ming Yong-le」「Aphrodite, "Boston Aphrodite"」
 #                            前缀基本是器型或题材，开了净是错的
-NAME_ARTIST_PREFIX = {"pem": True, "ham": True, "mfa_boston": False}
+#   wmhg         —        中文题名，作者写成「渡边华山《寒林群鸦图》」而不是「作者, 题名」
+NAME_ARTIST_PREFIX = {"pem": True, "ham": True, "mfa_boston": False, "wmhg": False}
 
 # 器型 / 材质 / 题材 / 风格词。人名里不会出现，题名前缀里很常见，
 # 用来兜住 NAME_ARTIST_PREFIX 为真的馆里混进来的器物名（如「Bronze Owl Zun」）。

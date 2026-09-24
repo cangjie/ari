@@ -35,6 +35,7 @@ import csv
 import json
 import os
 import sys
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -79,12 +80,16 @@ class Museum:
     col_name_cn: int | None
     col_gallery: int | None
     col_desc: int | None
-    col_category: int | None
+    col_category: int | tuple[int, ...] | None   # 给元组就把几列非空的值用「·」拼起来
     col_tier_old: int        # 入库用的那一列 tier（AGENTS.md 数据库约定第 5 条）
     context: str             # 交给模型的馆级语境，直接影响 IU 与 CR 的判断
     # 源 Excel 之外的展品行（目前只有 PEM）。必须与 import_artworks 同出一处，
     # 否则库里有、评分器看不见 —— 那两条腿就对不上了。
     extra: object = None
+    # 源表自带序号列时指向它。import_artworks.read_museum 一直是「有序号列就用序号列」，
+    # 这边原先只会按过滤后的计数编 —— 序号连续时两者碰巧一致，**一旦有空号就整体错位**。
+    # 伪满皇宫的序号按身份键幂等、允许空号（wmhg_seq_map.csv），所以必须按列取
+    col_seq: int | None = None
 
 
 MUSEUMS = {
@@ -141,6 +146,23 @@ MUSEUMS = {
         # 的定义，两份数据的评分不可比，而且不会报错。
         context=CONTEXTS["mfa_boston_ext"],
     ),
+    "wmhg": Museum(
+        key="wmhg",
+        label="Museum of the Imperial Palace of Manchukuo (Changchun)",
+        path="artworks/伪满皇宫_展品清单.xlsx",
+        sheet="展品清单",
+        # 由 wmhg_build.py 生成，中文馆格式：表头在第 4 行（0 基下标 3）
+        header_row=3,
+        # 英文名是馆方机翻（日本人名按拼音音译），照样给模型看：中文名在前，且有一件
+        # （九谷盘，en/1636）只有英文名 —— 不读这一列它会被当空行跳过，而导入器不跳，两边就错位
+        col_name_en=10, col_name_cn=2, col_gallery=1,
+        col_desc=3,
+        # 「对象层级·类目」，如「原状陈列·常设展览」「藏品·纪念章」—— 让模型据此判 object 还是 node
+        col_category=(8, 9),
+        col_tier_old=7,           # 源表不带评级，这一列恒空
+        col_seq=0,                # 序号按身份键幂等、允许空号，必须按列取
+        context=CONTEXTS["wmhg"],
+    ),
     # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
     # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
 }
@@ -175,18 +197,28 @@ def load_items(m: Museum, base: Path, limit: int | None) -> list[dict]:
         if name_en in ("ArtWorkName_EN", "Name (English)") or name_cn == "展品名称":
             continue                       # MFA Master 页中间混着的表头行
         seq_auto += 1
+        seq = seq_auto
+        if m.col_seq is not None:
+            try:
+                seq = int(float(cell(row, m.col_seq)))
+            except ValueError:
+                sys.exit(f"[fatal] {m.key} 序号列不是整数：{cell(row, m.col_seq)!r}（{name_cn or name_en}）")
+        cats = m.col_category if isinstance(m.col_category, tuple) else (m.col_category,)
         items.append({
-            "seq": seq_auto,
+            "seq": seq,
             "name_en": name_en,
             "name_cn": name_cn,
             "gallery": cell(row, m.col_gallery),
             "description": cell(row, m.col_desc),
-            "category": cell(row, m.col_category),
+            "category": "·".join(v for v in (cell(row, i) for i in cats) if v),
             "tier_old": cell(row, m.col_tier_old),
         })
+    dup = [s for s, n in Counter(it["seq"] for it in items).items() if n > 1]
+    if dup:
+        sys.exit(f"[fatal] {m.key} 源表序号重复：{dup[:10]} —— 评分会贴到别的展品上")
     if m.extra is not None:
         extra = m.extra.tier_rows()
-        if extra and min(x["seq"] for x in extra) <= seq_auto:
+        if extra and min(x["seq"] for x in extra) <= max((it["seq"] for it in items), default=0):
             sys.exit(f"[fatal] {m.key} 追加行的最小 seq 与 Excel 那批重叠 —— "
                      f"评分会贴到别的展品上，且不报错。")
         items += extra

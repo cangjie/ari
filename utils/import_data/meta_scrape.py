@@ -49,6 +49,9 @@ MUSEUM_QID = {
     "pem":        ["Q3373790"],              # Peabody Essex Museum
     "mfa_boston": ["Q49133"],                # Museum of Fine Arts, Boston
     "ham":        ["Q3783572", "Q809600"],   # Harvard Art Museums / Fogg Museum
+    # 伪满皇宫博物院。2026-09-24 实测名下藏品 0 件（P195 为 0，P276 只有建筑「建国神庙」），
+    # 登记上只为不 KeyError；跑了也抓不到东西
+    "wmhg":       ["Q83332"],
 }
 UA = "ari-metadata-research/1.0 (museum visit-planning dataset; contact via repo)"
 WDQS = "https://query.wikidata.org/sparql"

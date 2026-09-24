@@ -187,6 +187,23 @@ MUSEUMS = [
         on_view=lambda r, c: ON_VIEW_YES if "在展" in (s(r[c["on_view"]]) or "")
                              and "未知" not in (s(r[c["on_view"]]) or "") else ON_VIEW_UNKNOWN,
     ),
+    dict(
+        # 伪满皇宫博物院（长春）。源表由 wmhg_build.py 从官网抓取的三个数据模块生成，
+        # 中文馆格式另加 6 列；**放在列表末尾**，免得前面七个馆的 museum.id / artwork.id 平移。
+        # 表里有两种东西：藏品（object）与宫廷原状陈列、展区等节点（node），见「对象层级」列
+        key="wmhg", name_zh="伪满皇宫博物院", name_en="Museum of the Imperial Palace of Manchukuo",
+        site_key=None,                     # 不在城市榜单的 cultural_site 里
+        file="伪满皇宫_展品清单.xlsx", sheet="展品清单", header_row=4,
+        # 序号按身份键幂等、允许空号（wmhg_seq_map.csv），所以必须读序号列；
+        # 英文名与英文简介是馆方原文（机翻也照录，用户 2026-09-24 定），经 collect_pairs 记为「原始」
+        cols=dict(seq=0, gallery=1, name_zh=2, desc_zh=3, image_url=4, on_view=5,
+                  official_url=6, tier=7, name_en=10, desc_en=11),
+        # 只认 wmhg_build.py 写的两种在展措辞：「常设展览·当前在展」「当前在展（…据 … 官网文章）」。
+        # 「馆藏（在展状态未知）」「2023 年馆方导览列出（现状未核实）」一律未知 ——
+        # 后者虽然含「列出」，不含「当前在展」，不会被误判
+        on_view=lambda r, c: ON_VIEW_YES if "当前在展" in (s(r[c["on_view"]]) or "")
+                             else ON_VIEW_UNKNOWN,
+    ),
 ]
 
 
@@ -400,7 +417,11 @@ def build_content_rows(buckets, trans, pairs, id_base=CONTENT_ID_BASE):
             if en and LANG_EN not in texts:
                 texts[LANG_EN] = (en, src)
             for lang, (text, source) in texts.items():
-                text_rows.append((next_id, lang, text[:512], source))
+                # 不截断。这里原先写着 text[:512]，是建库那天（a521191）按 VARCHAR(512) 留下的；
+                # 列 2026-09-06 已改 TEXT（schema_meta.sql），AGENTS.md 第 9 条也写明「宁可报错，
+                # 不许静默存一半」，但这一处一直没删 —— 2026-09-24 接伪满皇宫时查出，
+                # 该馆 3 条中文、19 条英文简介超过 512 字，照旧会被悄悄截断
+                text_rows.append((next_id, lang, text, source))
                 stats[source] += 1
             if len(texts) < 2:
                 stats["缺译"] += 1
