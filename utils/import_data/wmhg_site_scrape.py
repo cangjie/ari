@@ -5,6 +5,10 @@
 
     python3 wmhg_site_scrape.py --probe --allow-expired-cert        # 阶段 1：探路
     python3 wmhg_site_scrape.py --probe-extra --allow-expired-cert  # 补探：「博物中国」、官网文章
+    python3 wmhg_site_scrape.py --scrape --allow-expired-cert       # 阶段 2：写出三个数据模块
+
+`--scrape` 已用离线夹具（样本页冒充官网）跑通全流程，且从缓存重跑逐字节不变。
+结构对不上（类目并集≠全部、data-id 对不上、一页没取完）一律退出码 5，报告里写明看到了什么。
 
 **必须在国内网络下跑。** 2026-09-24 实测：境外出口（美国 IP）连官网一律超时，
 WebFetch 直接被拒（61.138.187.2:443 ECONNREFUSED）；国家文物局「博物中国」、
@@ -111,6 +115,7 @@ class Fetcher:
         self.robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self.delay = MIN_SLEEP
         self.n_live = 0
+        self.used: set[str] = set()     # 本次用到的 URL（含命中缓存的），数据模块的抓取日期从这里取
         self._last = 0.0
         self._ctx = ssl_ctx()
         # 只对 EXPIRED_CERT_HOSTS 登记过的域名、只跳过有效期，要显式开关才用
@@ -122,6 +127,7 @@ class Fetcher:
         rp = self.robots.get(urllib.parse.urlsplit(url).netloc)
         if rp is not None and not rp.can_fetch(UA, url):
             return 0, ""
+        self.used.add(url)
         ent = self.manifest.get(url)
         if ent and not self.refresh and (self.raw / ent["file"]).exists():
             status, text = ent["status"], (self.raw / ent["file"]).read_text("utf-8")
@@ -632,12 +638,322 @@ def probe_extra(f: Fetcher, base: str, r: Report) -> None:
     probe_articles(f, base, r)
 
 
+# ---------------------------------------------------------------- 阶段 2：正式抓取（--scrape）
+# 用户 2026-09-24 定的范围：官网藏品栏目的全部藏品（中文 29 件、英文约 24 条）+ 常设/专题/临时
+# 展览（节点）+ 介绍藏品的文章（只从**当前在展**的展览文章里补展品，单独的 source_key，
+# 身份逐篇确认）。本步只把原文逐字落进三个数据模块，**不做配对、不定身份、不拆字段**：
+#   wmhg_site_data.py        藏品（中英两套，id 不相通）
+#   wmhg_exhibition_data.py  展览（含展览回顾的标题清单，用来判断文章说的展是否已闭幕）
+#   wmhg_article_data.py     文章（入选的全文 + 被排除的标题与理由）
+
+# 文章检索词：只用面向单件藏品的词。「文物」「馆藏」太泛（「文物」50 条一页有 9 页，
+# 多是采购公告与会议新闻），不用。当前专题/临时展览的名称另外自动加进来
+ITEM_KEYWORDS = ("赏析", "上新", "珍宝", "珍品", "藏品", "展品", "御纹章")
+# 标题命中这些词就不抓正文 —— 行政、采购、人事类，不会介绍单件文物。
+# 被排除的标题连同命中的词一起落进 wmhg_article_data.EXCLUDED，排除得对不对可以复核
+EXCLUDE_TITLE = re.compile(r"询价|采购|磋商|招标|中标|比选|遴选|招聘|消防|安全生产|廉政|党建|党史|"
+                           r"讲解员|志愿|培训|会议|研讨|座谈|签约|调研|通知|要点|办法|条例|总结|年鉴")
+ARTICLE_CAP = 150          # 入选超过这个数就停下来问 —— 多半是排除规则漏了一大类
+EXHIB_LISTS = (("常设展览", "/permanent.html", "permanent"),
+               ("专题展览", "/special_exhib.html", "special_exhib"),
+               ("临时展览", "/tempo.html", "tempo"))
+MC_NAME_CHECK = ("兰花御纹章", "伪满建国功劳章", "景仁宫御用地毯")
+
+
+def _die(r: Report, msg: str) -> None:
+    r.say(f"\n[fatal] {msg}")
+    raise SystemExit(5)
+
+
+def _div_block(page: str, marker: str) -> str | None:
+    """正文区里 marker（某个 `<div …>` 开标签原文）起，按 div 嵌套配平取出整块。取不到返回 None。
+
+    **从 `<div class="x-container"` 之后才开始找** —— 页头的搜索框里也有
+    `<div class="text">`，从头找会把「请输入关键字」当成展览简介（离线自测时撞上的）。"""
+    body = page.find('<div class="x-container"')
+    i = page.find(marker, max(body, 0))
+    if i < 0:
+        return None
+    depth = 0
+    for m in re.finditer(r"<div\b|</div\s*>", page[i:], re.I):
+        depth += 1 if m.group(0).lower().startswith("<div") else -1
+        if depth == 0:
+            return page[i:i + m.end()]
+    return None
+
+
+def _para_text(fragment: str) -> str:
+    """HTML 片段 -> 按段落分行的纯文本。只压缩空白，不改字。"""
+    s = re.sub(r"<script\b.*?</script>|<style\b.*?</style>|<!--.*?-->", "", fragment,
+               flags=re.S | re.I)
+    s = re.sub(r"<br\s*/?>|</p\s*>|</div\s*>|</h\d\s*>|</li\s*>", "\n", s, flags=re.I)
+    s = html_mod.unescape(re.sub(r"<[^>]+>", "", s)).replace("\xa0", " ")
+    lines = (re.sub(r"[ \t　]+", " ", ln).strip() for ln in s.split("\n"))
+    return "\n".join(ln for ln in lines if ln)
+
+
+def _banner_title(page: str) -> str:
+    m = re.search(r'<div class="t_bannar[^"]*">\s*<div class="x-wrap">\s*<div class="h30">(.*?)</div>',
+                  page, re.S)
+    return _txt(m.group(1)) if m else ""
+
+
+def _imgs_in(fragment: str) -> list[str]:
+    return _imgs(fragment or "")
+
+
+def scrape_collection(f: Fetcher, base: str, r: Report, lang: str) -> dict[str, dict]:
+    if lang == "zh":
+        prefix, tpl, ep = "", "collection_list", "/searchs/collection.html"
+        id_re, detail = r"/collection/detail/(\d+)\.html", "/collection/detail/{}.html"
+        # 中文类目页 2026-09-24 已 404，类目 id 只能沿用 2022 年存档的值；下面用「各类目并集
+        # 等于『全部』」来验证这组 id 仍然有效，不等就停
+        cats = ZH_CATS_2022
+    else:
+        prefix, tpl, ep = "/en", "collection_listen", "/searchs/collectionen.html"
+        id_re, detail = r"/en/collection/detail/(\d+)\.html", "/en/collection/detail/{}.html"
+        _, page = f.get(f"{base}/en/collection_list.html")
+        cats = _categories(page)
+        if not cats:
+            _die(r, "英文藏品页上没找到类目")
+    ref = f"{base}{prefix}/collection_list.html"
+
+    def coll(cat: str) -> dict[str, str]:
+        q = urllib.parse.urlencode(dict(tpl_file=tpl, pagesize=60, category_id=cat, site_id=0))
+        st, frag = f.get(f"{base}{ep}?{q}", ajax=True, referer=ref)
+        if st != 200:
+            _die(r, f"{lang} 藏品接口 category_id={cat!r} 返回 HTTP {st}")
+        # pagesize=60 必须一次取完。片段里还有第 2 页的链接，说明没取完，按页走又要另写逻辑
+        if re.search(r"/p/2\.html", frag):
+            _die(r, f"{lang} 类目 {cat!r} 一页 60 条没取完，看缓存里的原文")
+        return _coll_items(frag, id_re)
+
+    allitems = coll("")
+    cat_of: dict[str, tuple[str, str]] = {}
+    for cid, cname in cats:
+        for k in coll(cid):
+            if k in cat_of:
+                _die(r, f"{lang} 藏品 {k} 同时出现在类目 {cat_of[k]} 与 {cid}")
+            cat_of[k] = (cid, cname)
+    if set(cat_of) != set(allitems):
+        _die(r, f"{lang} 各类目并集与「全部」不一致：只在全部 {sorted(set(allitems) - set(cat_of))}，"
+                f"只在类目 {sorted(set(cat_of) - set(allitems))}")
+    r.say(f"{lang} 藏品 {len(allitems)} 件，类目 {Counter(c for _, c in cat_of.values())}")
+
+    recs: dict[str, dict] = {}
+    for k in sorted(allitems, key=int):
+        url = base + detail.format(k)
+        st, pg = f.get(url)
+        if st != 200:
+            _die(r, f"{lang} 藏品详情 {url} 返回 HTTP {st}")
+        title = _banner_title(pg)
+        if lang == "zh":
+            # 中文详情页的「收藏」按钮带 data-id 与 data-lable，拿来核对抓到的页就是这一件
+            m = re.search(r'id="soucang"\s+data-id="(\d+)"\s+data-lable="([^"]*)"', pg)
+            if not m or m.group(1) != k:
+                _die(r, f"中文藏品详情 {url} 的 data-id 对不上：{m and m.group(1)}")
+        block = _div_block(pg, '<div class="slick-cont">')
+        desc = _para_text(block) if block else ""
+        lines = desc.split("\n") if desc else []
+        # 「简介」「Introduction」是栏目标签，不是正文
+        label = lines[0] if lines and lines[0] in ("简介", "Introduction") else None
+        if label:
+            desc = "\n".join(lines[1:])
+        recs[k] = dict(
+            id=k, name=title, list_name=allitems[k], category_id=cat_of[k][0],
+            category=cat_of[k][1], url=url,
+            images=_imgs_in(_div_block(pg, '<div class="slick-mod">')), desc=desc)
+        if not title or not desc:
+            r.say(f"  ⚠ {lang} {k} 标题或简介为空：title={title!r} desc={len(desc)} 字")
+        if title != allitems[k]:
+            r.say(f"  · {lang} {k} 详情页标题与列表名不同：{title!r} / {allitems[k]!r}")
+    return recs
+
+
+def scrape_exhibitions(f: Fetcher, base: str, r: Report) -> tuple[dict, dict]:
+    kinds: dict[str, list[str]] = {}
+    list_title: dict[str, str] = {}
+    for kind, path, stem in EXHIB_LISTS:
+        st, first = f.get(base + path)
+        if st != 200:
+            _die(r, f"{kind}列表 {path} 返回 HTTP {st}")
+        mine: set[str] = set()
+        for p in _walk_pages(f, base, first, rf'href="(/{stem}/p/\d+\.html)"'):
+            for k, v in _exhibs(p).items():
+                mine.add(k)
+                if kind not in kinds.setdefault(k, []):
+                    kinds[k].append(kind)
+                if v and not list_title.get(k):
+                    list_title[k] = v
+        r.say(f"{kind}：{len(mine)} 个")
+    # 展览回顾只收标题，不抓详情 —— 用来判断文章里说的展是不是已经闭幕
+    st, first = f.get(base + "/exhib_review.html")
+    review: dict[str, str] = {}
+    if st == 200:
+        for p in _walk_pages(f, base, first, r'href="(/exhib_review/p/\d+\.html)"'):
+            for k, v in _exhibs(p).items():
+                if v or k not in review:
+                    review[k] = v or review.get(k, "")
+    r.say(f"展览回顾（只收标题）：HTTP {st}，{len(review)} 个")
+
+    recs: dict[str, dict] = {}
+    for k in sorted(kinds, key=int):
+        url = f"{base}/exhib/detail/{k}.html"
+        st, pg = f.get(url)
+        if st != 200:
+            _die(r, f"展览详情 {url} 返回 HTTP {st}")
+        focus = _div_block(pg, '<div class="focus">') or ""
+        captions = [_txt(c) for c in re.findall(
+            r'<div class="mask">\s*<div class="p">(.*?)(?:<!--|</div>)', focus, re.S)]
+        text = _div_block(pg, '<div class="text">')
+        recs[k] = dict(id=k, kinds=kinds[k], title=_banner_title(pg), list_title=list_title.get(k, ""),
+                       url=url, captions=[c for c in captions if c], images=_imgs_in(focus),
+                       desc=_para_text(text) if text else "")
+        if not recs[k]["title"] or not recs[k]["desc"]:
+            r.say(f"  ⚠ 展览 {k} 标题或简介为空（模板可能不同）：{recs[k]['title']!r}，"
+                  f"简介 {len(recs[k]['desc'])} 字")
+    return recs, review
+
+
+def scrape_articles(f: Fetcher, base: str, r: Report, exhibitions: dict) -> tuple[dict, dict]:
+    kws = list(ITEM_KEYWORDS)
+    for e in exhibitions.values():
+        if {"专题展览", "临时展览"} & set(e["kinds"]):
+            m = re.search(r"[《“「](.+?)[》”」]", e["title"])
+            name = (m.group(1) if m else e["title"]).strip()
+            if name and name not in kws:
+                kws.append(name)
+    r.say(f"文章检索词 {len(kws)} 个：{kws}")
+    hits: dict[str, dict] = {}
+    for kw in kws:
+        q = urllib.parse.urlencode(dict(category_id="", tpl_file="search", pagesize=50,
+                                        title=kw, status_id=1))
+        ref = f"{base}/searchs/keywords/{urllib.parse.quote(kw)}"
+        st, first = f.get(f"{base}/searchs/archives.html?{q}", ajax=True, referer=ref)
+        if st != 200:
+            _die(r, f"站内搜索「{kw}」返回 HTTP {st}")
+        for p in _walk_pages(f, base, first, r'href="(/searchs/archives/[^"]*?/p/\d+\.html)"',
+                             ajax=True, referer=ref):
+            for m in re.finditer(r'<div class="h18">\s*<a href="([^"]+)"[^>]*>(.*?)</a>', p, re.S):
+                h = hits.setdefault(m.group(1), dict(title=_txt(m.group(2)), keywords=[]))
+                if kw not in h["keywords"]:
+                    h["keywords"].append(kw)
+    art = re.compile(r"^/(?:activity/)?detail/\d+\.html$")
+    selected, excluded = {}, {}
+    for path, h in hits.items():
+        why = ("不是文章页" if not art.match(path)
+               else (m.group(0) if (m := EXCLUDE_TITLE.search(h["title"])) else None))
+        (excluded if why else selected)[path] = {**h, **({"why": why} if why else {})}
+    r.say(f"检索命中 {len(hits)} 篇，入选 {len(selected)}，排除 {len(excluded)}")
+    if len(selected) > ARTICLE_CAP:
+        _die(r, f"入选文章 {len(selected)} 篇超过上限 {ARTICLE_CAP}，排除规则可能漏了一大类")
+
+    recs: dict[str, dict] = {}
+    for path in sorted(selected, key=lambda p: int(re.search(r"(\d+)\.html$", p).group(1))):
+        st, pg = f.get(base + path)
+        if st != 200:
+            r.say(f"  ⚠ 文章 {path} 返回 HTTP {st}，跳过")
+            continue
+        body = _div_block(pg, '<div class="cont">') or ""
+        recs[path] = dict(path=path, title=_banner_title(pg) or selected[path]["title"],
+                          keywords=selected[path]["keywords"], url=base + path,
+                          images=_imgs_in(body), text=_para_text(body))
+        if not recs[path]["text"]:
+            r.say(f"  ⚠ 文章 {path} 正文为空：{recs[path]['title']!r}")
+    return recs, excluded
+
+
+def _emit(path: pathlib.Path, doc: str, blocks: list[tuple[str, str, object]]) -> None:
+    """写一个数据模块：文档串 + 若干个 `名字: 类型 = 值`。值用 repr 逐项写，便于 git diff。"""
+    out = ['#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n', '"""' + doc.rstrip() + '\n"""\n']
+    for name, typ, val in blocks:
+        out.append(f"\n{name}: {typ} = {{\n")
+        for k, v in val.items():
+            out.append(f"    {k!r}: {{\n")
+            for fk, fv in v.items():
+                out.append(f"        {fk!r}: {fv!r},\n")
+            out.append("    },\n")
+        out.append("}\n")
+    path.write_text("".join(out), "utf-8")
+
+
+def scrape(f: Fetcher, base: str, r: Report, out: pathlib.Path) -> None:
+    r.say(f"# 伪满皇宫博物院正式抓取 {dt.datetime.now().isoformat(timespec='seconds')}")
+    r.say(f"base = {base}")
+    probe_robots(f, base, r)
+    zh = scrape_collection(f, base, r, "zh")
+    en = scrape_collection(f, base, r, "en")
+    ex, review = scrape_exhibitions(f, base, r)
+    arts, excluded = scrape_articles(f, base, r, ex)
+
+    # 抓取日期取自缓存清单，从缓存重跑时逐字节不变
+    days = sorted({f.manifest[u]["fetched_at"][:10] for u in f.used if u in f.manifest})
+    when = days[0] if len(days) == 1 else f"{days[0]} 至 {days[-1]}" if days else "?"
+    src = f"来源：{base}（抓取 {when}，`wmhg_site_scrape.py --scrape` 生成，**勿手工编辑**）"
+    _emit(out / "wmhg_site_data.py", f"""伪满皇宫博物院官网「藏品」栏目的全部藏品。
+
+{src}
+中文 {len(zh)} 件、英文 {len(en)} 条。**两套 id 不相通**（中文 /collection/detail/<id>，
+英文 /en/collection/detail/<id>），英文是中文那批的机翻，配对在 wmhg_build.py 里做，不在这里。
+
+每条字段逐字照录：name（详情页标题）、list_name（列表上的名称）、category_id/category（类目）、
+url、images（详情页轮播图）、desc（简介正文，按段落分行；开头的「简介」「Introduction」标签已去掉）。
+**desc 不拆字段** —— 尺寸、作者、年代都写在正文里，写法不一（AGENTS.md 第 7 条）。
+英文 1793 标题是「Collection testdata Porcelain …」，照录，由 wmhg_build.py 处理。
+""", [("ZH", "dict[str, dict]", zh), ("EN", "dict[str, dict]", en)])
+    _emit(out / "wmhg_exhibition_data.py", f"""伪满皇宫博物院官网的展览（节点候选）。
+
+{src}
+EXHIBITIONS：常设展览、专题展览、临时展览列表上的全部展览及其详情页，{len(ex)} 个。
+  kinds 是它出现在哪几张列表上（「从皇帝到公民」同时在常设与专题）；captions 是详情页轮播图的
+  图注，多为子空间名（同德殿广间、同德殿日本间）；desc 是简介正文。
+REVIEW：「展览回顾」列表上的 id 与标题，{len(review)} 个。**只用来判断某个展是否已闭幕**，
+  不抓详情，不当节点。
+""", [("EXHIBITIONS", "dict[str, dict]", ex), ("REVIEW", "dict[str, dict]",
+                                               {k: {"title": v} for k, v in review.items()})])
+    _emit(out / "wmhg_article_data.py", f"""伪满皇宫博物院官网上介绍藏品的文章（候选）。
+
+{src}
+按标题站内搜索（/searchs/archives.html，**只搜标题**），检索词见 keywords。
+ARTICLES：入选的 {len(arts)} 篇全文，text 按段落分行，images 是正文配图。
+EXCLUDED：被排除的 {len(excluded)} 篇的标题与理由（why 是命中的排除词），**排除得对不对可以复核**。
+
+用法（用户 2026-09-24 定）：只从**当前在展**的展览文章里补展品，单独的 source_key，
+每件的身份逐篇确认。文章里提到的展是否已闭幕，对照 wmhg_exhibition_data.REVIEW。
+""", [("ARTICLES", "dict[str, dict]", arts), ("EXCLUDED", "dict[str, dict]", excluded)])
+    r.say(f"\n写出：wmhg_site_data.py（中 {len(zh)} / 英 {len(en)}）、"
+          f"wmhg_exhibition_data.py（{len(ex)} 个展览 + {len(review)} 个回顾）、"
+          f"wmhg_article_data.py（{len(arts)} 篇 + 排除 {len(excluded)}）")
+
+    # 两项顺带的核对，只进报告。「博物中国」要求间隔 5 秒，放在最后，免得拖慢官网那部分
+    r.say("\n## 顺带核对")
+    try:
+        st, pg = f.get("https://3d.wmhgbwy.cn/router/", sample="3d_router.html")
+        js = re.findall(r'src="([^"]+\.js[^"]*)"', pg)[:4]
+        r.say(f"藏品详情页链到的三维展示 3d.wmhgbwy.cn/router/：HTTP {st}，{len(pg)} 字节，"
+              f"<title> {_title(pg)!r}，脚本 {js}")
+    except (Unreachable, CertError) as e:
+        r.say(f"三维展示取不到：{e}")
+    try:
+        probe_robots(f, MC_BASE, r, paths=("/Collection",), sample="mc_robots.txt")
+        for kw in MC_NAME_CHECK:
+            st, pg = f.get(f"{MC_BASE}/Collection?" + urllib.parse.urlencode({"searchkey": kw}))
+            units = Counter(_txt(u) for u in re.findall(
+                r'class="ex_info_address">\s*<a[^>]*>(.*?)</a>', pg, re.S))
+            r.say(f"「博物中国」按名称搜「{kw}」：HTTP {st}，收藏单位 {units.most_common(5)}")
+    except (Unreachable, CertError) as e:
+        r.say(f"「博物中国」取不到：{e}")
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK，--help 也要
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--probe", action="store_true", help="阶段 1：探路，只存原始响应与样本")
     ap.add_argument("--probe-extra", action="store_true",
                     help="补探：中文藏品补齐、「博物中国」本馆藏品、官网介绍藏品的文章")
+    ap.add_argument("--scrape", action="store_true",
+                    help="阶段 2：正式抓取，写出 wmhg_site_data / wmhg_exhibition_data / "
+                         "wmhg_article_data 三个数据模块（写到 --out 目录）")
     ap.add_argument("--base", default=BASE,
                     help="只在离线自测时改，例如 Wayback 存档："
                          "https://web.archive.org/web/2024id_/https://www.wmhg.com.cn")
@@ -647,12 +963,14 @@ def main() -> None:
                     help="只对 EXPIRED_CERT_HOSTS 里登记的域名跳过证书有效期检查，"
                          "证书链与域名照常校验（tls.ssl_ctx_allow_expired）")
     args = ap.parse_args()
-    if args.probe == args.probe_extra:
-        ap.error("--probe 与 --probe-extra 二选一。字段解析要等看过样本再写")
-    run, report_name = ((probe, "probe_report.txt") if args.probe
-                        else (probe_extra, "probe_extra_report.txt"))
-
+    if args.probe + args.probe_extra + args.scrape != 1:
+        ap.error("--probe / --probe-extra / --scrape 三选一")
     out = pathlib.Path(args.out)
+    run, report_name = (
+        (probe, "probe_report.txt") if args.probe else
+        (probe_extra, "probe_extra_report.txt") if args.probe_extra else
+        (lambda f_, b_, r_: scrape(f_, b_, r_, out), "scrape_report.txt"))
+
     f = Fetcher(out / "wmhg_raw", out / "wmhg_samples", args.refresh,
                 allow_expired=args.allow_expired_cert)
     r = Report()
