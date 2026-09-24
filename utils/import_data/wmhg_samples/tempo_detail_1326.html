@@ -1,0 +1,389 @@
+<!doctype html>
+<html >
+<head>
+<!-- 静态化时间： 2026-02-02 22:16:13 -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="author" content="http://www.fractal-technology.com">
+		<meta name="keywords" content="溥仪宫廷旧址" />
+			<meta name="description" content="　　历经八十年的同德殿，是“满洲国”皇宫建筑群中体量最大的建筑，也是伪满皇宫博物院中最具代表性的建筑之一。2018年4月18日，国际古迹遗址日，伪满皇宫博物院缉熙楼、同德殿保护修缮工程获评“2018年全国优秀古迹遗址保护项目”奖项，全国仅有..." />
+	
+
+<title>殿上——同德殿保护修缮纪实展 - 伪满皇宫博物院 - 溥仪宫廷旧址</title><link rel="stylesheet" type="text/css" href="/Public/static/themes/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" type="text/css" href="/Public/static/themes/css/video-js.css">
+<link rel="stylesheet" type="text/css" href="/Public/static/themes/css/global.css">
+<link rel="stylesheet" type="text/css" href="/Public/static/themes/css/page.css">
+<script src="/Public/static/themes/js/plugs/jquery-1.11.3.min.js"></script>
+<script src="/Public/static/themes/js/plugs/jquery.placeholder.min.js"></script>
+<script src="/Public/static/themes/js/plugs/jquery.ba-throttle-debounce.min.js"></script>
+<script src="/Public/static/themes/js/plugs/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/Public/static/themes/js/plugs/imagesloaded.pkgd.min.js"></script>
+<script src="/Public/static/themes/js/plugs/masonry.pkgd.min.js"></script>
+<script src="/Public/static/themes/js/plugs/TweenMax.min.js"></script>
+<script src="/Public/static/themes/js/plugs/raphael.js"></script>
+<script src="/Public/static/themes/js/plugs/video.js"></script>
+<script src="/Public/static/themes/js/plugs/slick.js"></script>
+<script src="/Public/static/themes/js/plugs/xRoll.js"></script>
+<script src="/Public/static/themes/js/global.js"></script>
+<script>
+// $.ajaxSetup({
+// 	data: {
+// 		"lang": "LANG_SET"
+// 	}
+// });
+function mqfix () {}
+</script>
+</head>
+
+<body>
+        <style>
+#myalert{ display:none; }
+.recruit .block1{ height: auto}
+.layer{background:url(/Public/static/themes/image/con_mask.png);;position:fixed;left:0;right: 0;top:0;bottom: 0;width:100%;height:100%;z-index: 1000000;}
+.layer .myalert{padding:30px;background:#fff;width:240px;position:absolute;margin-top:-100px;top:50%;left:50%;margin-left:-120px;text-align:center; z-index: 100000}
+.layer .guan{background:url(/Public/static/themes/image/clos.png) no-repeat center; display:block;width:23px;height:23px;position:absolute;top:10px;right:10px;}
+.layer .text{padding-bottom:15px;font-size:16px;color:#474747;}
+.layer .button{background:none;border:1px solid #bbbbbb;width:91px;height:29px;font:14px/100% "Microsoft YaHei", Arial, Tahoma, Helvetica, sans-serif;color: #707070;}
+</style>
+<div id="myalert" class="layer">
+    <div class="myalert">
+        <a href="javascript:;" onclick="myalert_hide();" class="guan"></a>
+        <div class="text">请输入关键字</div>
+        <a><button class="button" id="my_ok" style="cursor:pointer ;opacity: 1;transform: translateY(0px);">确定</button></a>
+    </div>
+</div>
+<script>
+function my_alert(text,callback) {
+    $('#myalert').show();
+    $('#myalert .myalert div').html(text);
+
+    $('#my_ok').click( function() {
+        $('#myalert').hide();
+
+        if (typeof(callback) == 'function') {
+            callback();
+            return false;
+        }
+    });
+}
+
+function myalert_hide(){
+    $('#myalert').hide();
+}
+</script>
+    <span class="gotop js-gotop js-scroller">top</span>
+<div class="x-sider" id="header_header">
+    <div class="logo"><a href="/"><img src="/Uploads/Picture/2025/12/24/s694bb74f08811.png" alt="" title=""></a></div>    <div class="tools">
+        <div class="tools-item icon-menu"></div>
+        <div class="share-box bdsharebuttonbox">
+            <div><a class="share-item icon-wchat" href="javascript:;" title="分享到微信"><span class="code"><img src="/Uploads/Picture/2023/01/31/s63d8d4ac9f22a.png" alt="" title=""></span></a></div>            <a href="javascript:;" class="share-item icon-sinawb" data-cmd="tsina" title="分享到新浪微博"></a>
+        </div>
+        <div class="search-trigger">
+            <div class="search-box">
+                <div class="search-txt">
+                    <input placeholder="search..." type="text" onkeydown="keydown(event,'#buoon')" id="searchpc">
+                </div>
+                <button class="search-btn" type="submit" id="buoon">&#xe854;</button>
+            </div>
+        </div>
+        <div class="user" id="logins">
+            <a class="tools-item icon-user nolog" href="/passport/login.html"></a>
+            <!-- <a class="tools-item icon-logout" href="/passport/logout.html"></a> -->
+        </div>
+    </div>
+    <div class="other">
+        <div class="weather">
+            <div class="icon">
+                <img src="" alt=""></div>
+                <div class="p">
+                    <!-- <span class="en" id="dushu"></span><span id="yun"></span><div class="en">2026.02.02</div> -->
+                </div>
+            </div>
+            <div class="lang">
+<!--                <a href="/tr/index.html" class="lang-item">繁</a>-->
+<!--                <a href="/ja/index.html" class="lang-item">日</a>-->
+                <a href="/en/index.html" class="lang-item"><span class="en">EN</span></a>
+            </div>
+        </div>
+        <div class="nav-mod"><div class="nav-lv1">
+   <div class="nav-item fri">
+            <a href="/index.html"   class="nav-link fria">首页</a>
+                    </div><div class="nav-item fri">
+            <a href="/guide.html"   class="nav-link fria">导览</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/notice_of_visit.html"  class="nav-link">参观须知</a></div><div class="nav-item"><a href="/tickets.html"  class="nav-link">参观门票</a></div><div class="nav-item"><a href="/tour_service.html"  class="nav-link">游览服务</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/exhibtion.html"   class="nav-link fria">展览</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/permanent.html"  class="nav-link">常设展览</a></div><div class="nav-item"><a href="/special_exhib.html"  class="nav-link">专题展览</a></div><div class="nav-item"><a href="/cooper.html"  class="nav-link">展览合作</a></div><div class="nav-item"><a href="/tempo.html"  class="nav-link">临时展览</a></div><div class="nav-item"><a href="/exhib_review.html"  class="nav-link">展览回顾</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/Article/Index/detail.html"   class="nav-link fria">藏品</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="https://3d.wmhgbwy.cn/"  class="nav-link">藏品类目</a></div><div class="nav-item"><a href="/solicitation.html"  class="nav-link">藏品征集</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/server.html"   class="nav-link fria">服务</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/demeanor.html"  class="nav-link">讲解员风采</a></div><div class="nav-item"><a href="/horse.html"  class="nav-link">御用马场</a></div><div class="nav-item"><a href="/palace.html"  class="nav-link">皇宫剧场</a></div><div class="nav-item"><a href="/volunteer.html"  class="nav-link">志愿者</a></div><div class="nav-item"><a href="/winchance.html"  class="nav-link">文创产品</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/learnings.html"   class="nav-link fria">学术</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/achievements.html"  class="nav-link">学术成果</a></div><div class="nav-item"><a href="/forim.html"  class="nav-link">文博讲坛</a></div><div class="nav-item"><a href="/research.html"  class="nav-link">长春溥仪研究会</a></div><div class="nav-item"><a href="/latest_summarize.html"  class="nav-link">旧址保护</a></div><div class="nav-item"><a href="/historys.html"  class="nav-link">历史</a></div><div class="nav-item"><a href="/papers.html"  class="nav-link">学术论文</a></div><div class="nav-item"><a href="/achievements1.html"  class="nav-link">年鉴</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/activityies.html"   class="nav-link fria">活动资讯</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/notice.html"  class="nav-link">公告</a></div><div class="nav-item"><a href="/information.html"  class="nav-link">博物院资讯</a></div><div class="nav-item"><a href="/focusnews.html"  class="nav-link">文博要闻</a></div><div class="nav-item"><a href="/video_list.html"  class="nav-link">视频列表</a></div><div class="nav-item"><a href="/message/my_love.html"  class="nav-link">我爱博物馆</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="/news_activity.html"   class="nav-link fria">教育</a>
+            <div class="nav-lv2">
+                    <div class="nav-item"><a href="/news_activity.html"  class="nav-link">最新活动</a></div><div class="nav-item"><a href="/center_activity.html"  class="nav-link">中小学假期活动</a></div><div class="nav-item"><a href="/education_activity.html"  class="nav-link">教育培训</a></div><div class="nav-item"><a href="/culture.html"  class="nav-link">文化交流</a></div>                </div>        </div><div class="nav-item fri">
+            <a href="javascript:void(0);"   class="nav-link fria">关于我们</a>
+                    </div><div class="nav-item fri">
+            <a href="/question.html"   class="nav-link fria">常见问题</a>
+                    </div><div class="nav-item fri">
+            <a href="/ques_answer.html"   class="nav-link fria">问卷调查</a>
+                    </div> 
+</div>
+<script type="text/javascript">
+// 高亮
+function navgl() {
+    var category = "/tempo.html";
+    var now = (category != 'javascript:void(0);') ? category : window.location.pathname;
+    now2 = now + window.location.hash;
+    category_top_id = "2";
+    var categoryURL = "/tempo.html" ;
+    var cateparentid = "3";
+    var cateid = "52";
+    var href = ''; 
+    $('.nav-lv1 .nav-item.fri').each(function(index) {
+        var _this = $(this);
+        var _index = index;
+        href = _this.find('a.fria').attr('href'); 
+        if (now == '/index.html' || now == '/index' || now == '/') {
+            $('.nav-link.fria:first').parents().addClass('cur');
+            
+            return false;
+        }
+        // 一级
+        try {
+           if (href.indexOf(now) > -1) {
+                _this.addClass('cur');
+            }
+        } catch (e) {}
+        var isShow = true;
+        // 二级
+        if (_this.find('.nav-lv2 div').size() > 0) {
+            _this.find('.nav-lv2 a').each(function(i) {
+                href = $(this).attr('href');
+                if (isShow && href.indexOf(now2) > -1) {
+                    _this.addClass("cur").siblings().removeClass('cur');
+                    $(this).parent().addClass('cur').siblings().removeClass('cur');
+                    isShow = false;
+                }
+            })
+        }
+    })
+}
+navgl();
+</script></div>    </div>
+</div>
+<script type="text/javascript">
+$(function() {
+    window.ISLONGIN = false;
+    $.get("/Site/Index/get_user_info.html" + '?' + Math.random(), function(data) {
+        if (data.status == 1) {
+            $('#logins').html('<a class="tools-item icon-user" href="/member/index.html"></a><a class="tools-item icon-logout" href="/passport/logout.html"></a>');
+            window.ISLONGIN = true;
+        } else {
+            $('#logins').html('<a class="tools-item icon-user nolog" href="/passport/login.html"></a>');
+        }
+    })
+});
+</script>
+<script type="text/javascript">
+// $.get("/Site/Index/get_tq.html",'',function(data){
+//     $('#dushu').html(data['name'][0]['temperature']);
+//     $('#yun').html(data['name'][0]['weather']);
+//     now = new Date(),hour = now.getHours();
+//     if ( hour < 18 && hour > 6){
+//         var tiqni = data['name'][0]['dayPictureUrl'].split('/');
+//     }else{
+//         var tiqni = data['name'][0]['nightPictureUrl'].split('/');
+//     }
+//     $('.weather img').attr('src','/Public/static/themes/image/tianqi/'+tiqni['6'])
+// })
+$(function(){
+    $('.search-box .search-btn').click(function(){
+        var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+        var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; 
+        if(isIE){
+                 var keywords = document.getElementById('searchpc').value;
+        }else{
+                 var keywords =  $("#searchpc").val();
+        };
+        if(keywords == '' || keywords == 'search...' || keywords == '.' || keywords == ' ' ){
+            my_alert("请输入搜索关键词"); return false;
+        }
+
+                     window.location.href = "/searchs/keywords/" + encodeURI(keywords);    });
+   
+})
+function keydown(e, but) {
+    var currKey=0,e=e||event;
+    var _this = $(but);
+
+    if(e.keyCode==13)
+    {
+        _this.click();
+        return false;
+    }
+}
+window.onload=function (){
+  if($(window).width()<1025){
+    $('a').removeAttr('target');
+  }
+};
+</script>
+
+        <div class="pop-mod pop-info">
+	
+	<script src="/Public/static/guestbook.js"></script><form id="form_66b8730cecd6086d0168edfea99de45b" data-action="https://www.wmhgbwy.cn//guestbook/message/forim.html"><div class="pop-dialog">
+		<span class="pop-close"></span>
+	<div class="pop-cont">
+		<div class="form">
+			<label class="form-item" >
+    						<span class="xlabel">姓名：</span>
+    						<div class="input"><input type="text" id="form_66b8730cecd6086d0168edfea99de45b_name" name="form_66b8730cecd6086d0168edfea99de45b_name"></div>
+    					</label>
+    				                                        <label class="form-item" >
+    						<span class="xlabel">联系方式：</span>
+    						<div class="input"><input type="text" id="form_66b8730cecd6086d0168edfea99de45b_tel" name="form_66b8730cecd6086d0168edfea99de45b_tel"></div>
+    					</label>
+    				                                        <label class="form-item" >
+    						<span class="xlabel">讲坛名字：</span>
+    						<div class="input"><input type="text" id="form_66b8730cecd6086d0168edfea99de45b_detailtitle" name="form_66b8730cecd6086d0168edfea99de45b_detailtitle"></div>
+    					</label>
+    				                    <script type="text/javascript">
+                            $("#form_66b8730cecd6086d0168edfea99de45b_detailtitle").parent().parent().remove();
+                        </script>                    <label class="form-item" >
+    						<span class="xlabel">文章id：</span>
+    						<div class="input"><input type="text" id="form_66b8730cecd6086d0168edfea99de45b_detail_id" name="form_66b8730cecd6086d0168edfea99de45b_detail_id"></div>
+    					</label>
+    				                                        <script type="text/javascript">
+                            $("#form_66b8730cecd6086d0168edfea99de45b_detail_id").parent().parent().remove();
+                        </script>            <input type="hidden" id="detailtitletwo" name="form_66b8730cecd6086d0168edfea99de45b_detailtitle">
+            <input type="hidden" id="detailthree_id"  name="form_66b8730cecd6086d0168edfea99de45b_detail_id" value="">
+		</div>
+		<a href="javascript:;" class="t_more s_border submitButton" onClick="popHide();" id="submit">提交</a>
+	</div>
+</div>
+<script type="text/javascript">
+new Guestbook({"name":{"fieldname":"name","fieldtype":"text","itemname":"姓名","strlen":"0,11","valid":"1","valdefault":"","preg":null,"token":"form_66b8730cecd6086d0168edfea99de45b_name"},"tel":{"fieldname":"tel","fieldtype":"text","itemname":"联系方式","strlen":"0,11","valid":"1","valdefault":"","preg":[{"reg":"\/(^(\\d{3,4}([-|\\s])?)\\d{7,8})$|(1[3-9][0-9]{9})\/","msg":"请输入正确的电话号码"}],"token":"form_66b8730cecd6086d0168edfea99de45b_tel"},"detailtitle":{"fieldname":"detailtitle","fieldtype":"text","itemname":"讲坛名字","strlen":"","valid":"0","valdefault":"","preg":null,"token":"form_66b8730cecd6086d0168edfea99de45b_detailtitle"},"detail_id":{"fieldname":"detail_id","fieldtype":"text","itemname":"文章id","strlen":"","valid":"0","valdefault":null,"preg":null,"token":"form_66b8730cecd6086d0168edfea99de45b_detail_id"}}, 'form_66b8730cecd6086d0168edfea99de45b', {
+    // 绑定验证事件, 主要使用于非弹窗信息提示; 友情提示：弹窗提示时使用可能会存在小瑕疵
+    validate: function(gb, trigger) {
+
+    },
+    // 绑定提交事件
+    trigger: function(gb, trigger) {
+        // document.getElementById('submit').onclick = trigger;
+        $('#form_66b8730cecd6086d0168edfea99de45b').find('.submitButton')[0].onclick = trigger;
+    },
+    // 验证规则, true: 返回全部错误信息, false: 返回第一条错误信息
+    allError: false,
+   
+    onSuccess: function(success) {
+        // {status: 1, 'info': "成功信息", field: "字段名"}
+        my_alert('信息已提交', function() {
+            $('#form_66b8730cecd6086d0168edfea99de45b')[0].reset();
+            window.location.reload();
+        });
+
+        $('#my_ok1').click(function(){
+            $('#form_66b8730cecd6086d0168edfea99de45b')[0].reset();
+        });
+    },
+    // 提交失败回调方法
+    onError: function(error) {
+        // {status: 0, 'info': "错误信息", field: "字段名"}
+        my_alert(error.info);
+    }
+}, function(valid, gb) {
+    // 验证失败返回错误信息
+    if (valid !== true) {
+        for (i in valid) {
+            my_alert(valid[i]);
+        }
+        return false; // 不提交
+    }
+
+    return true; // 提交表单
+});
+</script>
+
+</form></div>
+<div class="x-container" data-ch=".exhibition_img">
+	<div class="exhibition_img ribbon r3">
+		<div class="t_bannar g">
+			<div class="x-wrap">
+				<div class="h30">殿上——同德殿保护修缮纪实展</div>
+			</div>
+		</div>
+		<div class="section1">
+			<div class="x-wrap">
+					<div class="cont">	
+						
+						<div class="p">
+							<p>
+	<span style="font-family:Microsoft YaHei;font-size:16px;">　　历经八十年的同德殿，是“满洲国”皇宫建筑群中体量最大的建筑，也是伪满皇宫博物院中最具代表性的建筑之一。2018年4月18日，国际古迹遗址日，伪满皇宫博物院缉熙楼、同德殿保护修缮工程获评“2018年全国优秀古迹遗址保护项目”奖项，全国仅有六项工程获奖，东北三省仅此一项。</span> 
+</p>
+<p style="text-align:center;">
+	<img src="/Uploads/Picture/2019/06/03/u5cf4c1ed23235.jpg" alt="" /> 
+</p>
+<p>
+	<span style="font-family:Microsoft YaHei;font-size:16px;">　　经过2年的精心策划，“殿上——同德殿保护修缮纪实展”，将于2018年8月22日，正式开展。该展览是此项优秀古迹遗址保护项目的工作成果展。展览以殿上建筑构件的研究、保护、工艺复原内容为主，集中呈现了本项修缮工程的各个细节，同时也揭示了“满洲国”建筑设计中鲜为人知的文化秘语。</span> 
+</p>
+<p>
+	<span style="font-family:Microsoft YaHei;font-size:16px;">　　2018年8月22日，走进伪满皇宫博物院，“殿上”展览欢迎您！</span> 
+</p>
+<p>
+	<br />
+</p>						</div>
+											</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+
+$('.sbqt').on('click',function(){
+	$('#detailtitletwo').val($(this).attr('title'));
+	$('#detailthree_id').val($(this).attr('detail-id'));
+})
+// 高亮
+function navgldetail() {
+    var categoryURL = "/tempo.html" ;
+    if(categoryURL == '/elegant/demeanor.html' || categoryURL == '/feeling.html'){
+    	$('.nav-lv1 .fri').eq(4).addClass('cur');
+		$('.nav-lv1 .fri').eq(4).find('.nav-item').eq(4).addClass('cur');
+    }
+    if(categoryURL == '/latest_protect.html' || categoryURL == '/latest_recover.html'){
+    	$('.nav-lv1 .fri').eq(5).addClass('cur');
+        $('.nav-lv1 .fri').eq(5).find('.nav-item').eq(3).addClass('cur');
+    }
+}
+navgldetail();
+</script>
+    <div class="x-footer" id="footer_footer">
+    <div class="link fl">
+        <div><div class="link-item"><a href="/sitemap.html">网站地图</a></div><div class="link-item"><a href="/single/detail/1815.html">版权所有</a></div><div class="link-item"><a href="/question.html">常见问题</a></div><div class="link-item"><a href="/ques_answer.html">调查问卷</a></div><div class="link-item"><a href="http://221.8.67.90:8297/creditchangchun/">信用长春</a></div><div class="link-item"><a href="http://www.neabridge.com">中国彩虹网</a></div></div>    </div>
+    <div class="fr">
+       	<span class="copy">吉ICP备16003892号-16   吉公网安备22010302000132号</span>
+		<span class="ftbj"><a href="http://www.fractal-technology.com" target="_blank">网站建设</a>：<a href="http://www.fractal-technology.com" target="_blank">北京分形科技</a></span>
+    </div>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?45dbe5d8e095ee28f2cc0c7283964632";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>

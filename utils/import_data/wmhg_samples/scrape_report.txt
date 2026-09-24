@@ -1,5 +1,5 @@
 ⚠ 本次对 wmhg.com.cn、museumschina.cn 跳过了证书有效期检查（--allow-expired-cert），证书链与域名照常校验
-# 伪满皇宫博物院正式抓取 2026-09-24T13:24:08
+# 伪满皇宫博物院正式抓取 2026-09-24T20:08:46
 base = https://www.wmhg.com.cn
 
 ## robots.txt（www.wmhg.com.cn）
@@ -14,20 +14,20 @@ zh 藏品 29 件，类目 Counter({'宫廷文物': 7, '瓷器': 6, '日本画': 
 en 藏品 24 件，类目 Counter({'Porcelain': 6, 'Commemorative Medal': 5, 'Cultural Relic': 5, 'Japanese Painting': 4, 'Bronze Mirror': 3, 'Pictorial': 1})
 常设展览：18 个
 专题展览：3 个
-临时展览：0 个
 展览回顾（只收标题）：HTTP 200，16 个
   ⚠ 展览 1310 标题或简介为空（模板可能不同）：'影藏百年 末代皇帝民国京津旧影展'，简介 0 字
   ⚠ 展览 1312 标题或简介为空（模板可能不同）：'殿上——同德殿保护修缮纪实展'，简介 0 字
+临时展览：21 个
 文章检索词 10 个：['赏析', '上新', '珍宝', '珍品', '藏品', '展品', '御纹章', '从皇帝到公民', '影藏百年 末代皇帝民国京津旧影展', '殿上——同德殿保护修缮纪实展']
 检索命中 199 篇，入选 146，排除 53
-  ⚠ 文章 /detail/541.html 正文为空：'宫院纪事（第十六集）——展陈春秋之从皇帝到公民'
-  ⚠ 文章 /detail/557.html 正文为空：'《从皇帝到公民》展览'
-  ⚠ 文章 /detail/578.html 正文为空：'《博物馆藏品的数字化管理》'
-  ⚠ 文章 /detail/722.html 正文为空：'《“日本的景泰蓝”七宝烧珍品赏析》'
-  ⚠ 文章 /detail/736.html 正文为空：'《借鉴与融合中国画风的渡边华山—渡边华山遗作<寒林群鸦图>赏析》'
-  ⚠ 文章 /detail/2207.html 正文为空：'在元宇宙邂逅伪满皇宫博物院数字藏品！东北三省博物馆界首款数字藏品中秋上线！'
+  ⚠ 文章 /detail/541.html 正文为空（样本 article_empty_541.html）：'宫院纪事（第十六集）——展陈春秋之从皇帝到公民'，附件 []，内嵌页 []
+  ⚠ 文章 /detail/557.html 正文为空（样本 article_empty_557.html）：'《从皇帝到公民》展览'，附件 []，内嵌页 []
+  ⚠ 文章 /detail/578.html 正文为空（样本 article_empty_578.html）：'《博物馆藏品的数字化管理》'，附件 []，内嵌页 []
+  ⚠ 文章 /detail/722.html 正文为空（样本 article_empty_722.html）：'《“日本的景泰蓝”七宝烧珍品赏析》'，附件 []，内嵌页 []
+  ⚠ 文章 /detail/736.html 正文为空（样本 article_empty_736.html）：'《借鉴与融合中国画风的渡边华山—渡边华山遗作<寒林群鸦图>赏析》'，附件 []，内嵌页 []
+  ⚠ 文章 /detail/2207.html 正文为空（样本 article_empty_2207.html）：'在元宇宙邂逅伪满皇宫博物院数字藏品！东北三省博物馆界首款数字藏品中秋上线！'，附件 []，内嵌页 []
 
-写出：wmhg_site_data.py（中 29 / 英 24）、wmhg_exhibition_data.py（20 个展览 + 16 个回顾）、wmhg_article_data.py（146 篇 + 排除 53）
+写出：wmhg_site_data.py（中 29 / 英 24）、wmhg_exhibition_data.py（20 个展览 + 21 个临时展 + 16 个回顾）、wmhg_article_data.py（146 篇 + 排除 53）
 
 ## 顺带核对
 藏品详情页链到的三维展示 3d.wmhgbwy.cn/router/：HTTP 200，1036 字节，<title> '伪满皇宫博物院'，脚本 []
@@ -61,4 +61,4 @@ HTTP 200，Crawl-delay=5，实际间隔 5.0s
 「博物中国」按名称搜「伪满建国功劳章」：HTTP 200，收藏单位 []
 「博物中国」按名称搜「景仁宫御用地毯」：HTTP 200，收藏单位 []
 
-本次实际请求 251 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
+本次实际请求 15 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
