@@ -1,0 +1,82 @@
+⚠ 本次对 *.wmhg.com.cn 跳过了证书有效期检查（--allow-expired-cert），证书链与域名照常校验
+# 伪满皇宫博物院官网探路 2026-09-24T12:03:13
+base = https://www.wmhg.com.cn
+
+## robots.txt
+HTTP 404，Crawl-delay=None，实际间隔 1.5s
+  /collection_list.html: 允许
+  /searchs/collection.html: 允许
+  /permanent.html: 允许
+  /exhib/detail/1.html: 允许
+  /en/collection_list.html: 允许
+
+## 藏品（zh）/collection_list.html
+HTTP 404，<title> '系统发生错误'
+类目 0 个：[]
+脚本参数：tpl_file=collection_list pagesize=9 site_id=0，接口 /searchs/collection.html
+⚠ 页面上没找到 data-category —— 结构变了，看样本 collection_list_zh.html
+  [全部] 全部: HTTP 200，6457 字节；详情链接 9 个 [('/collection/detail/N.html', 9)]；翻页链接 3 个 ['/searchs/collection/tpl_file/collection_list/pagesize/9/site_id/0/p/2.html', '/searchs/collection/tpl_file/collection_list/pagesize/9/site_id/0/p/3.html', '/searchs/collection/tpl_file/collection_list/pagesize/9/site_id/0/p/4.html']；['翻页最大页码 4']
+
+## 藏品（en）/en/collection_list.html
+HTTP 200，<title> 'Collection Category - Palace Museum of The Puppet Manchuko - The predecessor of the Palace Museum of The Puppet Manchuko was the Jilin-Heilongjiang Transport Bureau, which managed salt affairs in Jilin and Heilongjiang provinces during the Republic of China.'
+类目 7 个：[('252', 'Porcelain'), ('253', 'Japanese Painting'), ('254', 'Memorial'), ('255', 'Commemorative Medal'), ('256', 'Cultural Relic'), ('257', 'Bronze Mirror'), ('258', 'Pictorial')]
+脚本参数：tpl_file=collection_listen pagesize=9 site_id=0，接口 /searchs/collectionen.html
+  [全部] 全部: HTTP 200，7114 字节；详情链接 9 个 [('/en/collection/detail/N.html', 9)]；翻页链接 2 个 ['/searchs/collectionen/tpl_file/collection_listen/pagesize/9/site_id/0/p/2.html', '/searchs/collectionen/tpl_file/collection_listen/pagesize/9/site_id/0/p/3.html']；['翻页最大页码 3']
+  [252] Porcelain: HTTP 200，4568 字节；详情链接 6 个 [('/en/collection/detail/N.html', 6)]；翻页链接 0 个 []；[]
+  [253] Japanese Painting: HTTP 200，3778 字节；详情链接 4 个 [('/en/collection/detail/N.html', 4)]；翻页链接 0 个 []；[]
+  [254] Memorial: HTTP 200，2206 字节；详情链接 0 个 []；翻页链接 0 个 []；[]
+  [255] Commemorative Medal: HTTP 200，4461 字节；详情链接 5 个 [('/en/collection/detail/N.html', 5)]；翻页链接 0 个 []；[]
+  [256] Cultural Relic: HTTP 200，4397 字节；详情链接 5 个 [('/en/collection/detail/N.html', 5)]；翻页链接 0 个 []；[]
+  [257] Bronze Mirror: HTTP 200，3433 字节；详情链接 3 个 [('/en/collection/detail/N.html', 3)]；翻页链接 0 个 []；[]
+  [258] Pictorial: HTTP 200，2519 字节；详情链接 1 个 [('/en/collection/detail/N.html', 1)]；翻页链接 0 个 []；[]
+  详情 [252] Porcelain /en/collection/detail/1793.html: HTTP 200，<title> 'Collection testdata Porcelain Blue and white color flower bottle - Palace Museum of The Manchurian Regime - The predecessor of thePalace Museum of The Manchurian Regime was the Jilin-Heilongjiang Transport Bureau, which managed salt affairs in Jilin and Heilongjiang provinces during the Republic of China.'
+      标题：[]
+      带标签的字段：['Manchukuo Share：Site Map About Us Contact Us Copyright R']
+      正文图片：['/Uploads/Picture/2021/06/18/s60cc3bb90e9e1.jpg', '/Uploads/Picture/2019/08/29/s5d6784f66aa88.jpg', '/Uploads/Picture/2019/09/06/s5d71f945e74a4.png']
+
+中英两版各类目第 1 页的详情 id：中 9，英 24，交集 0
+
+## 日文版
+HTTP 200，类目 [('175', '陶磁器'), ('176', '日本画'), ('177', '書類'), ('178', '記念メダル'), ('179', '文化財'), ('180', '銅鏡'), ('181', 'グラフ')]，site_id=0
+
+## 常设展览 /permanent.html
+HTTP 200，<title> '原状复原陈列 - 伪满皇宫博物院 - 溥仪宫廷旧址'，本页展览 4 个
+共 5 页（其中取不到的 无），展览 18 个。列表页上的标题会截断，全称以详情页为准：
+       55  同德殿
+     2424  “东御花园”
+     2425  “御用防空洞”
+     2426  “御用游泳池”
+     2427  “建国神庙”
+     2428  “天照大神”防空洞
+     2429  书画楼
+      367  缉熙楼
+      267  勤民楼
+     2430  怀远楼
+     2431  “西御花园”
+     2433  畅春轩
+     1353  伪满政权官吏展
+     2432  植秀轩
+     2434  宫内府
+     1890  伪满皇宫博物院概览
+     1888  铭记与传承 ——向东北抗战英雄...
+       54  从皇帝到公民
+  详情 55: HTTP 200，<title> '同德殿 - 伪满皇宫博物院 - 溥仪宫廷旧址'
+      标题：[]
+      带标签的字段：[]
+      正文图片 5 张：['/Uploads/Picture/2025/12/24/s694bb74f08811.png', '/Uploads/Picture/2023/01/31/s63d8d4ac9f22a.png']
+  详情 2424: HTTP 200，<title> '“东御花园” - 伪满皇宫博物院 - 溥仪宫廷旧址'
+      标题：[]
+      带标签的字段：[]
+      正文图片 5 张：['/Uploads/Picture/2025/12/24/s694bb74f08811.png', '/Uploads/Picture/2023/01/31/s63d8d4ac9f22a.png']
+
+## 专题展览 /special_exhib.html
+HTTP 200，<title> '专题展览 - 伪满皇宫博物院 - 溥仪宫廷旧址'，本页展览 2 个
+共 2 页（其中取不到的 无），展览 3 个。列表页上的标题会截断，全称以详情页为准：
+       54  《 从皇帝到公民 》
+     1310  《 影藏百年 末代皇帝民国京津...
+     1312  《殿上——同德殿保护修缮纪实展...
+
+## 三维藏品站 https://3d.wmhg.com.cn/
+取不到：https://3d.wmhg.com.cn/: [Errno 8] nodename nor servname provided, or not known
+
+本次实际请求 23 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）

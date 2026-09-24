@@ -1,0 +1,118 @@
+<div class="list-box3">
+ 	<div class="list-item">
+			<a href="/en/collection/detail/1793.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/09/06/s5d71f9251ddc6.png" alt="11" title="1"></span>
+				<span class="p" title="Collection testdata Porcelain Blue and white color flower bottle">Collection testdata Porcelain Blue and white color flower bo...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1654.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663bb23b6e2.jpg" alt="" title=""></span>
+				<span class="p" title="Bronze Mirror of Zhongling Tower">Bronze Mirror of Zhongling Tower</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1653.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663c2a943fa.jpg" alt="" title=""></span>
+				<span class="p" title="Bronze Mirror in Memory of Guandong Church of Yueyue Religion">Bronze Mirror in Memory of Guandong Church of Yueyue Religio...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1652.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663c6cb36b1.jpg" alt="" title=""></span>
+				<span class="p" title="Premier Yuweng Zhou went to think about Memorial bronze mirrors">Premier Yuweng Zhou went to think about Memorial bronze mirr...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1651.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663c6cb36b1.jpg" alt="" title=""></span>
+				<span class="p" title="Pictorial of the Greater East Asian War">Pictorial of the Greater East Asian War</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1650.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d66301916f69_338_233_54_0.jpg" alt="" title=""></span>
+				<span class="p" title="Silver Cup with Chrysanthemum Imperial Emblem in Showa, Japan">Silver Cup with Chrysanthemum Imperial Emblem in Showa, Japa...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1649.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663c6cb36b1.jpg" alt="" title=""></span>
+				<span class="p" title="Japans Showa and Sannian Chrysanthemum Imperial Emblem Spear Sugar Box">Japans Showa and Sannian Chrysanthemum Imperial Emblem Spear...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1648.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663bb23b6e2.jpg" alt="" title=""></span>
+				<span class="p" title="Cuboid Sugar Box with Imperial Emblem of Pseudo-Manchurian Orchid">Cuboid Sugar Box with Imperial Emblem of Pseudo-Manchurian O...</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/en/collection/detail/1647.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/08/28/s5d663c6cb36b1.jpg" alt="" title=""></span>
+				<span class="p" title="Silver wine cup with imperial emblem of pseudo-orchid">Silver wine cup with imperial emblem of pseudo-orchid</span>
+			</a>
+		</div></div>
+<div class="page-mod">
+        <ul class="page-box p-show clear">
+                                                                    <li class="page-item"><a href="javascript:void(0);" class="cur" >01</a></li>
+                                                                                <li class="page-item"><a href="/searchs/collectionen/tpl_file/collection_listen/pagesize/9/site_id/0/p/2.html" onClick="getPage($(this));return false;" >02</a></li>                                                            <li class="page-item"><a href="/searchs/collectionen/tpl_file/collection_listen/pagesize/9/site_id/0/p/3.html" onClick="getPage($(this));return false;" >03</a></li>                                                    <li class="page-item xfont"><a href="/searchs/collectionen/tpl_file/collection_listen/pagesize/9/site_id/0/p/2.html" onClick="getPage($(this));return false;" >&#xe822;</a></li>        </ul>
+    </div><script>
+function getPage( obj ) {
+    var url = obj.attr('href')+'?'+Math.random();
+    if( url == 'javascript:void(0);' ) {
+        return false;
+    }
+    // $.ajaxSetup({cache:false});
+    $.get( url , {} , function( data ) {
+      $('#datalist').html( data );
+      creatBorder();
+      $('html,body').animate({ scrollTop : parseInt( $('#datalist').offset().top - 230 )} , 500 );
+    })
+}
+
+    
+function creatBorder(){
+    $('.s_border').each(function(index, element){
+        if($(this).length < 1) return;
+        var dom = '<div id="line'+index+'" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0;"></div>';
+        $(this).append(dom);
+        cline('#line'+index);
+    });
+}
+
+function cline(obj){
+    var $this = $(obj);
+    var par = $this.closest('.s_border');
+    var paper = Raphael($this[0]);
+    var w = $this.width();
+    var h = $this.height();
+    var lw = w - 9;
+    var lh = h - 9;
+    
+    var sc = par.data('sc') || '#a6937f';
+    var ec = par.data('ec') || '#6a312c';
+    
+    var line1, line2;
+    
+    if(w > h){
+        line1 = paper.path("M5, 9h3, v4, h-6, v-8, h3, v-4, h" + lw + ", v4, h3, v8, h-6, v-4, h3");
+        line2 = paper.path("M5, " + (h - 10) + "h3, v-4, h-6, v8, h3, v4, h" + lw + ", v-4, h3, v-8, h-6, v4, h3");
+    }else{
+        line1 = paper.path("M9, 5v3, h4, v-6, h-8, v3, h-4, v" + lh + ", h4, v3, h8, v-6, h-4, v3");
+        line2 = paper.path("M" + (w - 10) + ", 5v3, h-4, v-6, h8, v3, h4, v" + lh + ", h-4, v3, h-8, v-6, h4, v3");
+    }
+    
+    if(par.hasClass('cur')){
+        line1.attr({stroke: ec});
+        line2.attr({stroke: ec});
+    }else{
+        line1.attr({stroke: sc});
+        line2.attr({stroke: sc});
+    }
+    
+    line1.attr({'stroke-width': 2});
+    line2.attr({'stroke-width': 2});
+    
+    par.on('click', function(){
+        $(this).siblings().find('path').attr({stroke: sc});
+    });
+
+    par.on('mouseenter', function(){
+        line1.attr({stroke: ec});
+        line2.attr({stroke: ec});
+    });
+}
+</script>
