@@ -1,5 +1,5 @@
 ⚠ 本次对 wmhg.com.cn、museumschina.cn 跳过了证书有效期检查（--allow-expired-cert），证书链与域名照常校验
-# 伪满皇宫博物院正式抓取 2026-09-24T20:08:46
+# 伪满皇宫博物院正式抓取 2026-09-24T20:14:40
 base = https://www.wmhg.com.cn
 
 ## robots.txt（www.wmhg.com.cn）
@@ -61,4 +61,4 @@ HTTP 200，Crawl-delay=5，实际间隔 5.0s
 「博物中国」按名称搜「伪满建国功劳章」：HTTP 200，收藏单位 []
 「博物中国」按名称搜「景仁宫御用地毯」：HTTP 200，收藏单位 []
 
-本次实际请求 15 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
+本次实际请求 0 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
