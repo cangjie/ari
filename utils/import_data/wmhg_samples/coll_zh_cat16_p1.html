@@ -1,0 +1,99 @@
+<div class="list-box3">
+ 	<div class="list-item">
+			<a href="/collection/detail/507.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/05/29/s5cee33c49cdea.jpg" alt="" title=""></span>
+				<span class="p" title="伪满国势调查纪念章  ">伪满国势调查纪念章  </span>
+			</a>
+		</div><div class="list-item">
+			<a href="/collection/detail/483.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/05/29/s5cee34f893434.jpg" alt="" title=""></span>
+				<span class="p" title="伪满建国功劳章">伪满建国功劳章</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/collection/detail/482.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/05/29/s5cee3587cd52e.jpg" alt="" title=""></span>
+				<span class="p" title="伪满皇帝访日纪念章">伪满皇帝访日纪念章</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/collection/detail/481.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/05/29/s5cee37564e3ad.jpg" alt="" title=""></span>
+				<span class="p" title="伪满建国神庙创建纪念章 ">伪满建国神庙创建纪念章 </span>
+			</a>
+		</div><div class="list-item">
+			<a href="/collection/detail/480.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/06/27/s5d14568f75c5e.jpg" alt="" title=""></span>
+				<span class="p" title="伪满东边道讨伐纪念章">伪满东边道讨伐纪念章</span>
+			</a>
+		</div><div class="list-item">
+			<a href="/collection/detail/479.html" target="_blank" class="list-link">
+				<span class="img scaleimg"><img style="width:100%;height:100%" class="i" data-object-fit="none" src="/Uploads/Picture/2019/05/29/s5cee39e9a11f0.jpg" alt="" title=""></span>
+				<span class="p" title="伪满大典纪念章">伪满大典纪念章</span>
+			</a>
+		</div></div>
+<script>
+function getPage( obj ) {
+    var url = obj.attr('href')+'?'+Math.random();
+    if( url == 'javascript:void(0);' ) {
+        return false;
+    }
+    // $.ajaxSetup({cache:false});
+    $.get( url , {} , function( data ) {
+      $('#datalist').html( data );
+      creatBorder();
+      $('html,body').animate({ scrollTop : parseInt( $('#datalist').offset().top - 230 )} , 500 );
+    })
+}
+
+    
+function creatBorder(){
+    $('.s_border').each(function(index, element){
+        if($(this).length < 1) return;
+        var dom = '<div id="line'+index+'" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0;"></div>';
+        $(this).append(dom);
+        cline('#line'+index);
+    });
+}
+
+function cline(obj){
+    var $this = $(obj);
+    var par = $this.closest('.s_border');
+    var paper = Raphael($this[0]);
+    var w = $this.width();
+    var h = $this.height();
+    var lw = w - 9;
+    var lh = h - 9;
+    
+    var sc = par.data('sc') || '#a6937f';
+    var ec = par.data('ec') || '#6a312c';
+    
+    var line1, line2;
+    
+    if(w > h){
+        line1 = paper.path("M5, 9h3, v4, h-6, v-8, h3, v-4, h" + lw + ", v4, h3, v8, h-6, v-4, h3");
+        line2 = paper.path("M5, " + (h - 10) + "h3, v-4, h-6, v8, h3, v4, h" + lw + ", v-4, h3, v-8, h-6, v4, h3");
+    }else{
+        line1 = paper.path("M9, 5v3, h4, v-6, h-8, v3, h-4, v" + lh + ", h4, v3, h8, v-6, h-4, v3");
+        line2 = paper.path("M" + (w - 10) + ", 5v3, h-4, v-6, h8, v3, h4, v" + lh + ", h-4, v3, h-8, v-6, h4, v3");
+    }
+    
+    if(par.hasClass('cur')){
+        line1.attr({stroke: ec});
+        line2.attr({stroke: ec});
+    }else{
+        line1.attr({stroke: sc});
+        line2.attr({stroke: sc});
+    }
+    
+    line1.attr({'stroke-width': 2});
+    line2.attr({'stroke-width': 2});
+    
+    par.on('click', function(){
+        $(this).siblings().find('path').attr({stroke: sc});
+    });
+
+    par.on('mouseenter', function(){
+        line1.attr({stroke: ec});
+        line2.attr({stroke: ec});
+    });
+}
+</script>
