@@ -1,0 +1,42 @@
+# 伪满皇宫博物院 源表生成
+
+## 中英配对（英文 id -> 中文 id，锚点重合数）
+   1631 ->   478  3  Qibao Fengwen Bottle                           日本黄釉凤纹七宝烧瓶               自动
+   1632 ->   471  5  Blue and White Colored Flower Vase             日本今右卫门青花加彩花卉纹尊           自动
+   1634 ->   470  5  Blue and white spherical tank                  日本青花开光盆景纹小罐              自动
+   1635 ->   466  4  Qibao Burning Chrysanthemum Vase               日本七宝烧菊花纹大瓶               自动
+   1636 ->     —  0  Jiugu Colorful Flower and Bird Plate                                    只有英文：Jiugu Colorful Flower and Bird Plate（九谷烧彩绘花鸟盘），中文栏目里没有这一件
+   1637 ->   477  2  Xiduochuan Turtle Bran Travel Map              喜多川龟麿《出游图》               人工核对：锚点只有 38.5、97 两个（尺寸一致）；题名是逐字机翻：喜多川龟麿《出游图》 ↔ Xiduochuan Turtle Bran Travel Map（龟麿 → Turtle Bran，出游图 → Travel Map）
+   1638 ->   476  6  Watanabe Huashan's Pictures of Crows in Cold   渡边华山 《寒林群鸦图》             自动
+   1639 ->   475  4  Watanabe Huashan The Daughter of the Knight    渡边华山《武士之女》               自动
+   1640 ->   474  4  Songcun Jingwen's Zen Fox Picture              松村景文《禅狐图》                自动
+   1641 ->   507  1  Memorial Medallion for the Investigation of    伪满国势调查纪念章                人工核对：锚点只有 0.3、3 两个；正文核对：伪满国势调查纪念章 ↔ Memorial Medallion for the Investigation of Puppet Manchukuo Situation
+   1642 ->   483  4  Puppet Manchukuo's Meritorious Medal of Foun   伪满建国功劳章                  自动
+   1643 ->   482  5  Memorial Medallion of Emperor Puppet Manchu'   伪满皇帝访日纪念章                自动
+   1644 ->   481  2  Establishment of Memorial Medals in the Temp   伪满建国神庙创建纪念章              人工核对：锚点只有 0.3、15 两个；正文核对：溥仪《国本奠定诏书》定天照大神为「国神」↔ Puyi issued the Imperial Letter of Establishment of the Nation … God of State
+   1645 ->   480  2  Commemorative Medallion of the Puppet Manchu   伪满东边道讨伐纪念章               人工核对：锚点只有 1937.3、27 两个（即纪念章上的「1937.3.27」）；正文核对：东边道「大讨伐」与王凤阁 ↔ Commemorative Medallion of the Puppet Manchu East[ern Border Road Crusade]
+   1646 ->   497  3  Artificial Manchurian Imperial Emblem Alloy    伪满兰花御纹章浆汁斗               自动
+   1647 ->   496  4  Silver wine cup with imperial emblem of pseu   伪满兰花御纹章银酒杯               自动
+   1648 ->   495  6  Cuboid Sugar Box with Imperial Emblem of Pse   伪满兰花御纹章长方型糖盒             自动
+   1649 ->   494  4  Japans Showa and Sannian Chrysanthemum Imper   日本昭和三年菊花御纹章矛型糖盒          自动
+   1650 ->   493  7  Silver Cup with Chrysanthemum Imperial Emble   日本昭和三年菊花御纹章银杯            自动
+   1651 ->   498  4  Pictorial of the Greater East Asian War        《大东亚战争画报》                自动
+   1652 ->   491  3  Premier Yuweng Zhou went to think about Memo   玉翁周县长去思纪念铜镜              自动
+   1653 ->   489  4  Bronze Mirror in Memory of Guandong Church o   御岳教关东大教会纪念铜镜             自动
+   1654 ->   488  6  Bronze Mirror of Zhongling Tower               忠灵塔铜镜                    自动
+   1793 ->     —  0  Collection testdata Porcelain Blue and white                            剔除：标题含 testdata，数字锚点与 1632（今右卫门青花加彩花卉纹尊）完全相同
+配上 22 对；中文没有英文版的 7 件；只有英文的 1 件；剔除测试记录 1 条
+
+## 序号：沿用 61，新增 0，本次不再出现（留空号，不回收）0 []
+
+## 体检
+总 61 行：藏品 34，节点 27 Counter({'原状陈列': 17, '专题陈列': 4, '展区': 4, '基本陈列': 2})
+  藏品：有中文名 33/34，有中文简介 33/34（中位 281.0 字），有图 30/34，有英文名 23/34，官方页面 34/34
+    出处 Counter({'wmhg_official': 30, 'wmhg_article': 4})；陈列状态 Counter({'馆藏（在展状态未知）': 29, '当前在展（兰徽幻影——溥仪“御纹章”文物展，据 2026-01-20 官网文章）': 5})
+  节点：有中文名 27/27，有中文简介 27/27（中位 112 字），有图 17/27，有英文名 0/27，官方页面 27/27
+    出处 Counter({'wmhg_official': 16, 'wmhg_guide_2023': 10, 'wmhg_article': 1})；陈列状态 Counter({'常设展览·当前在展': 16, '2023 年馆方导览列出（现状未核实）': 10, '当前在展（兰徽幻影——溥仪“御纹章”文物展，据 2026-01-20 官网文章）': 1})
+  藏品简介里写了尺寸的 24/34；馆藏号：官网与文章都不给（0/34）
+  名称性质：藏品名是馆方编目式题名（器型+纹饰+年代，或「作者《题名》」），能指向具体一件；不是 PEM 那种描述性转写
+  ⚠ 节点简介不足 60 字：['薰南楼']
+
+写出 artworks\伪满皇宫_展品清单.xlsx（61 行）
