@@ -1,0 +1,22 @@
+User-agent: *
+Disallow: /api/  # 禁止爬虫访问所有API接口
+Allow: /api/common/getExhibitForHome  # 允许首页推荐接口爬取
+Allow: /api/common/area  # 允许地区接口爬取
+Crawl-delay: 5  # 全局爬取延迟5秒
+
+User-agent: GPTBot
+Disallow: /  # 禁止GPTBot爬取所有内容
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 3  # 搜狗爬虫爬取延迟3秒
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 4  # Bing爬虫爬取延迟4秒
+
+# 静态资源禁止索引
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /lib/
