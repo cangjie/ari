@@ -3,7 +3,8 @@
 """
 抓伪满皇宫博物院官网（www.wmhg.com.cn）的藏品与展览，产出提交进仓库的数据模块。
 
-    python3 wmhg_site_scrape.py --probe        # 阶段 1：探路
+    python3 wmhg_site_scrape.py --probe --allow-expired-cert        # 阶段 1：探路
+    python3 wmhg_site_scrape.py --probe-extra --allow-expired-cert  # 补探：「博物中国」、官网文章
 
 **必须在国内网络下跑。** 2026-09-24 实测：境外出口（美国 IP）连官网一律超时，
 WebFetch 直接被拒（61.138.187.2:443 ECONNREFUSED）；国家文物局「博物中国」、
@@ -98,7 +99,8 @@ class Fetcher:
         self.mf_path = raw / "manifest.json"
         self.manifest = (json.loads(self.mf_path.read_text("utf-8"))
                          if self.mf_path.exists() else {})
-        self.robots: urllib.robotparser.RobotFileParser | None = None
+        # 按主机分别记：官网与「博物中国」各有各的 robots
+        self.robots: dict[str, urllib.robotparser.RobotFileParser] = {}
         self.delay = MIN_SLEEP
         self.n_live = 0
         self._last = 0.0
@@ -110,7 +112,8 @@ class Fetcher:
     def get(self, url: str, *, ajax: bool = False, referer: str | None = None,
             sample: str | None = None) -> tuple[int, str]:
         """-> (HTTP 状态, 正文)。状态 0 表示 robots 不许，没有发请求。"""
-        if self.robots is not None and not self.robots.can_fetch(UA, url):
+        rp = self.robots.get(urllib.parse.urlsplit(url).netloc)
+        if rp is not None and not rp.can_fetch(UA, url):
             return 0, ""
         ent = self.manifest.get(url)
         if ent and not self.refresh and (self.raw / ent["file"]).exists():
@@ -287,21 +290,25 @@ class Report:
         print(line, flush=True)
 
 
-def probe_robots(f: Fetcher, base: str, r: Report) -> None:
-    r.say("\n## robots.txt")
-    st, text = f.get(base + "/robots.txt", sample="robots.txt")
+SITE_PATHS = ("/collection_list.html", "/searchs/collection.html", "/permanent.html",
+              "/exhib/detail/1.html", "/en/collection_list.html", "/searchs/keywords/x")
+
+
+def probe_robots(f: Fetcher, base: str, r: Report, paths=SITE_PATHS,
+                 sample: str = "robots.txt") -> None:
+    r.say(f"\n## robots.txt（{urllib.parse.urlsplit(base).netloc}）")
+    st, text = f.get(base + "/robots.txt", sample=sample)
     rp = urllib.robotparser.RobotFileParser()
     # 404 按惯例等于全部允许；其余非 200 也按空规则处理，但在报告里写明
     rp.parse(text.splitlines() if st == 200 else [])
-    f.robots = rp
+    f.robots[urllib.parse.urlsplit(base).netloc] = rp
     cd = rp.crawl_delay(UA)
-    f.delay = max(MIN_SLEEP, float(cd or 0))
+    f.delay = max(f.delay, float(cd or 0))
     r.say(f"HTTP {st}，Crawl-delay={cd}，实际间隔 {f.delay}s")
     if st == 200:
         for line in text.splitlines()[:40]:
             r.say("    " + line)
-    for path in ("/collection_list.html", "/searchs/collection.html", "/permanent.html",
-                 "/exhib/detail/1.html", "/en/collection_list.html"):
+    for path in paths:
         r.say(f"  {path}: {'允许' if rp.can_fetch(UA, base + path) else '⚠ 禁止'}")
 
 
@@ -431,10 +438,191 @@ def probe(f: Fetcher, base: str, r: Report) -> None:
     probe_3d(f, r)
 
 
+# ---------------------------------------------------------------- 补探（--probe-extra）
+# 第一轮（2026-09-24）的结论：官网只发布了约 30 件藏品，中文类目页已 404
+# （「系统发生错误」），但 AJAX 接口还通。用户决定先补探两处再定规模：
+#   ① 国家文物局「博物中国」—— 可移动文物普查的馆方报送数据，详情页带「级别」
+#   ② 官网资讯/学术栏目里介绍单件藏品的文章
+# 顺带把第一轮缺的中文详情页样本补上（写解析器要用）。
+
+MC_BASE = "https://www.museumschina.cn"
+# 「博物中国」上本馆介绍页的 id（WebSearch 结果）。**列表筛选用的 museums= 是另一套
+# 14 位编号**（存档里的形如 61072721800224），不能拿这个直接筛，要现场找
+MC_MUSEUM_PAGE = "202208231954219157"
+# 2022 年存档里中文类目的 id；现在类目页 404，只能照旧值试接口认不认
+ZH_CATS_2022 = [("13", "瓷器"), ("14", "日本画"), ("15", "奏折"), ("16", "纪念章"),
+                ("17", "宫廷文物"), ("18", "铜镜"), ("19", "画报")]
+
+
+def _coll_items(frag: str, id_re: str) -> dict[str, str]:
+    """藏品列表片段 -> {官网 id: 名称}。名称优先取 `<span class="p" title="…">` 的属性值 ——
+    标签里的文字过长会被截成「…」，英文版尤其如此。"""
+    out: dict[str, str] = {}
+    for m in re.finditer(r'<div class="list-item">(.*?)</a>', frag, re.S):
+        h = re.search(id_re, m.group(1))
+        name = re.search(r'<span class="p"(?:[^>]*?title="([^"]*)")?[^>]*>(.*?)</span>',
+                         m.group(1), re.S)
+        if h:
+            out[h.group(1)] = (html_mod.unescape(name.group(1) or "").strip()
+                               or _txt(name.group(2))) if name else ""
+    return out
+
+
+def _excerpt(page: str, key: str, n: int = 500) -> str:
+    """正文摘录：key 出现两次以上时取第二次之后（第一次多半在 <title> 或面包屑里）。"""
+    x = _txt(page)
+    i = x.find(key)
+    j = x.find(key, i + 1) if i >= 0 else -1
+    k = j if j >= 0 else i
+    return x[k:k + n] if k >= 0 else x[:n]
+
+
+def _walk_pages(f: Fetcher, base: str, first: str, page_re: str, *, ajax=False,
+                referer=None, cap: int = 60) -> list[str]:
+    """从第一页出发，边抓边发现翻页链接（翻页器只显示邻近几页）。-> 各页正文"""
+    pages, seen, todo = [first], set(), set()
+    while True:
+        todo |= set(re.findall(page_re, pages[-1])) - seen
+        if not todo or len(seen) >= cap:
+            return pages
+        href = min(todo, key=lambda h: int(re.search(r"(\d+)\D*$", h).group(1)))
+        todo.discard(href)
+        seen.add(href)
+        _, text = f.get(_abs(base, html_mod.unescape(href)), ajax=ajax, referer=referer)
+        pages.append(text)
+
+
+def probe_zh_more(f: Fetcher, base: str, r: Report) -> None:
+    r.say("\n# 中文藏品补探")
+    ep, ref = base + "/searchs/collection.html", base + "/collection_list.html"
+
+    def coll(cat: str, pagesize=9, sample=None):
+        q = urllib.parse.urlencode(dict(tpl_file="collection_list", pagesize=pagesize,
+                                        category_id=cat, site_id=0))
+        return f.get(f"{ep}?{q}", ajax=True, referer=ref, sample=sample)
+
+    _, first = coll("")
+    pages = _walk_pages(f, base, first, r'href="(/searchs/collection/[^"]*?/p/\d+\.html)"',
+                        ajax=True, referer=ref)
+    allitems: dict[str, str] = {}
+    for p in pages:
+        allitems.update(_coll_items(p, r"/collection/detail/(\d+)\.html"))
+    r.say(f"「全部」共 {len(pages)} 页，藏品 {len(allitems)} 件：")
+    for k, v in allitems.items():
+        r.say(f"    {k:>5}  {v}")
+    st, frag = coll("", 60)
+    r.say(f"pagesize=60 一次取「全部」：HTTP {st}，{len(_coll_items(frag, r'/collection/detail/(\d+)\.html'))} 件")
+
+    union: set[str] = set()
+    for cid, name in ZH_CATS_2022:
+        st, frag = coll(cid, 60, sample=f"coll_zh_cat{cid}_p1.html")
+        got = _coll_items(frag, r"/collection/detail/(\d+)\.html")
+        union |= set(got)
+        r.say(f"  类目 {cid} {name}：HTTP {st}，{len(got)} 件 {list(got.values())[:4]}")
+    r.say(f"各类目并集 {len(union)} 件；不在任何类目里的 {sorted(set(allitems) - union)}；"
+          f"类目里有而「全部」没有的 {sorted(union - set(allitems))}")
+
+    ids = sorted(allitems, key=int)
+    for k in dict.fromkeys([ids[0], ids[len(ids) // 2], ids[-1]] if ids else []):
+        st, pg = f.get(f"{base}/collection/detail/{k}.html", sample=f"coll_detail_zh_{k}.html")
+        r.say(f"  详情 {k} {allitems[k]}：HTTP {st}，<title> {_title(pg)!r}")
+        r.say(f"      带标签的字段：{_labels(pg)}")
+        r.say(f"      正文图片 {len(_imgs(pg))} 张：{_imgs(pg)[:2]}")
+        r.say(f"      正文摘录：{_excerpt(pg, allitems[k])}")
+
+
+def probe_mc(f: Fetcher, r: Report) -> None:
+    r.say("\n# 博物中国 museumschina.cn（国家文物局数据中心）")
+    probe_robots(f, MC_BASE, r, paths=("/Collection", "/collection/details", "/museums/details"),
+                 sample="mc_robots.txt")
+    st, page = f.get(f"{MC_BASE}/museums/details?id={MC_MUSEUM_PAGE}", sample="mc_museum.html")
+    r.say(f"本馆介绍页：HTTP {st}，<title> {_title(page)!r}")
+    r.say(f"  摘录：{_excerpt(page, '藏品', 300)}")
+    mids = Counter(re.findall(r"museums=(\d+)", page))
+    r.say(f"  页面上出现的 museums= 取值：{mids.most_common(5)}")
+    mid = mids.most_common(1)[0][0] if mids else None
+    if not mid:
+        # 退路：拿官网上已知的藏品名去搜，结果里「收藏单位」链接的 museums= 就是本馆编号
+        for kw in ("兰花御纹章", "伪满国势调查纪念章", "伪满"):
+            st, pg = f.get(f"{MC_BASE}/Collection?" + urllib.parse.urlencode({"searchkey": kw}))
+            hit = [re.search(r"museums=(\d+)", h).group(1) for h, t in _links(pg)
+                   if "museums=" in h and "伪满皇宫" in t]
+            r.say(f"  搜「{kw}」：HTTP {st}，{'本馆编号 ' + hit[0] if hit else '结果里没有本馆'}")
+            if hit:
+                mid = hit[0]
+                break
+    if not mid:
+        r.say("⚠ 没找到本馆在「博物中国」上的筛选编号，看样本 mc_museum.html")
+        return
+
+    def lst(extra: dict, sample=None):
+        q = urllib.parse.urlencode(dict(museums=mid, **extra))
+        st, pg = f.get(f"{MC_BASE}/Collection?{q}", sample=sample)
+        det = list(dict.fromkeys(re.findall(r'href="(/collection/details\?id=[^"]+)"', pg, re.I)))
+        maxp = max((int(n) for n in re.findall(r"pages=(\d+)", pg)), default=0)
+        return st, pg, det, maxp
+
+    st, pg, det, maxp = lst(dict(pages=1, size=20), sample="mc_list_p1.html")
+    units = Counter(_txt(u) for u in re.findall(
+        r'class="ex_info_address">\s*<a[^>]*>(.*?)</a>', pg, re.S))
+    r.say(f"museums={mid}：HTTP {st}，本页 {len(det)} 件，翻页最大页码 {maxp}（每页 20）；"
+          f"收藏单位 {units.most_common(3)}")
+    st2, _, det2, maxp2 = lst(dict(pages=1, size=100))
+    r.say(f"  size=100 试探：HTTP {st2}，本页 {len(det2)} 件，翻页最大页码 {maxp2}")
+
+    # 按「级别」各取第 1 页，估各级件数。级别的取值码从筛选栏的链接里读，不写死
+    levels = {t: re.search(r"level=(\d+)", h).group(1) for h, t in _links(pg)
+              if "level=" in h and t in ("一级", "二级", "三级", "一般", "未定级")}
+    r.say(f"  级别筛选码：{levels}")
+    for name, code in levels.items():
+        st, _, d, mp = lst(dict(level=code, pages=1, size=20))
+        r.say(f"    {name}：HTTP {st}，第 1 页 {len(d)} 件，翻页最大页码 {mp}")
+
+    for i, href in enumerate(det[:2], 1):
+        st, dp = f.get(MC_BASE + href, sample=f"mc_detail_{i}.html")
+        r.say(f"  详情 {href}：HTTP {st}，<title> {_title(dp)!r}")
+        r.say(f"      摘录：{_excerpt(dp, '收藏单位', 400)}")
+
+
+def probe_articles(f: Fetcher, base: str, r: Report) -> None:
+    r.say("\n# 官网文章（找介绍单件藏品的）")
+    art_re = r"/detail/\d+\.html"
+    for i, kw in enumerate(("藏品", "文物", "馆藏", "珍品", "赏析"), 1):
+        st, pg = f.get(f"{base}/searchs/keywords/{urllib.parse.quote(kw)}",
+                       sample=f"search_kw{i}.html")
+        arts = [(h, t) for h, t in dict.fromkeys(_links(pg)) if re.search(art_re, h) and t]
+        r.say(f"  站内搜「{kw}」：HTTP {st}，文章链接 {len(arts)} 个；{_totals(pg)}")
+        for h, t in arts[:12]:
+            r.say(f"      {h}  {t[:40]}")
+    for path in ("/information.html", "/focusnews.html", "/achievements.html", "/papers.html"):
+        st, pg = f.get(base + path, sample=f"list_{path[1:-5]}.html")
+        arts = [(h, t) for h, t in dict.fromkeys(_links(pg)) if re.search(art_re, h) and t]
+        hit = [(h, t) for h, t in arts if re.search(r"藏|文物|赏|珍|器|瓷|画|章", t)]
+        r.say(f"  {path}：HTTP {st}，<title> {_title(pg)!r}，文章 {len(arts)} 篇，"
+              f"题目沾边的 {len(hit)} 篇；{_totals(pg)}")
+        for h, t in hit[:10]:
+            r.say(f"      {h}  {t[:40]}")
+
+
+def probe_extra(f: Fetcher, base: str, r: Report) -> None:
+    r.say(f"# 伪满皇宫博物院补探 {dt.datetime.now().isoformat(timespec='seconds')}")
+    r.say(f"base = {base}")
+    probe_robots(f, base, r)
+    probe_zh_more(f, base, r)
+    try:
+        probe_mc(f, r)
+    except (Unreachable, CertError) as e:
+        # 两处补探互不依赖：「博物中国」取不到不妨碍看官网文章
+        r.say(f"⚠ 「博物中国」取不到：{e}")
+    probe_articles(f, base, r)
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK，--help 也要
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--probe", action="store_true", help="阶段 1：探路，只存原始响应与样本")
+    ap.add_argument("--probe-extra", action="store_true",
+                    help="补探：中文藏品补齐、「博物中国」本馆藏品、官网介绍藏品的文章")
     ap.add_argument("--base", default=BASE,
                     help="只在离线自测时改，例如 Wayback 存档："
                          "https://web.archive.org/web/2024id_/https://www.wmhg.com.cn")
@@ -444,8 +632,10 @@ def main() -> None:
                     help="官网证书过期时用：只对 *.wmhg.com.cn 跳过有效期检查，"
                          "证书链与域名照常校验（tls.ssl_ctx_allow_expired）")
     args = ap.parse_args()
-    if not args.probe:
-        ap.error("目前只实现了 --probe（阶段 1）。字段解析要等看过样本再写")
+    if args.probe == args.probe_extra:
+        ap.error("--probe 与 --probe-extra 二选一。字段解析要等看过样本再写")
+    run, report_name = ((probe, "probe_report.txt") if args.probe
+                        else (probe_extra, "probe_extra_report.txt"))
 
     out = pathlib.Path(args.out)
     f = Fetcher(out / "wmhg_raw", out / "wmhg_samples", args.refresh,
@@ -456,7 +646,7 @@ def main() -> None:
               "证书链与域名照常校验")
     code = 0
     try:
-        probe(f, args.base.rstrip("/"), r)
+        run(f, args.base.rstrip("/"), r)
     except CertError as e:
         r.say(f"\n[fatal] 证书校验失败：{e}")
         r.say("连上了，是对方证书的问题，不是出口问题。若上面写的是「certificate has expired」，"
@@ -478,7 +668,7 @@ def main() -> None:
         code = 3
     finally:
         r.say(f"\n本次实际请求 {f.n_live} 次，其余命中本地缓存（{f.raw}）")
-        (f.samples / "probe_report.txt").write_text("\n".join(r.lines) + "\n", "utf-8")
+        (f.samples / report_name).write_text("\n".join(r.lines) + "\n", "utf-8")
     sys.exit(code)
 
 
