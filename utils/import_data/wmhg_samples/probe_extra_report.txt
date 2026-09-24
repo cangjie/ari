@@ -1,5 +1,5 @@
 ⚠ 本次对 wmhg.com.cn、museumschina.cn 跳过了证书有效期检查（--allow-expired-cert），证书链与域名照常校验
-# 伪满皇宫博物院补探 2026-09-24T12:30:38
+# 伪满皇宫博物院补探 2026-09-24T13:06:28
 base = https://www.wmhg.com.cn
 
 ## robots.txt（www.wmhg.com.cn）
@@ -106,7 +106,7 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
     未定级：HTTP 200，第 1 页 0 件，翻页最大页码 0
 
 # 官网文章（找介绍单件藏品的）
-  站内搜「藏品」：HTTP 200，17354 字节，结果链接 45 个 [('/detail/N.html', 39), ('/activity/detail/N.html', 5), ('/collection/detail/N.html', 1)]；['翻页最大页码 2']
+  站内搜「藏品」：HTTP 200，16973 字节，结果链接 45 个 [('/detail/N.html', 39), ('/activity/detail/N.html', 5), ('/collection/detail/N.html', 1)]；['翻页最大页码 2']
       /detail/3406.html  用法治守护文脉，用服务惠及民生——伪满皇宫博物院举办文化和自然遗产日系列活动
       /detail/3337.html  文化下午茶（三）| 吉林省博物馆协会2026年度会员代表大会暨 藏品 管理培训会
       /detail/3299.html  国家文物局关于组织开展2026年国际博物馆日活动的通知
@@ -122,7 +122,7 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
       /detail/2972.html  喜报||“点亮文博之光”再获十佳案例殊荣！
       /activity/detail/2935.html  【活动回顾】伪满皇宫博物院相约博物馆·教你讲故事系列活动之书画的魅力
       /detail/2930.html  伪满皇宫博物院与您相约第十届博博会！
-  站内搜「文物」：HTTP 200，19003 字节，结果链接 49 个 [('/detail/N.html', 46), ('/activity/detail/N.html', 3)]；['翻页最大页码 9']
+  站内搜「文物」：HTTP 200，18617 字节，结果链接 49 个 [('/detail/N.html', 46), ('/activity/detail/N.html', 3)]；['翻页最大页码 9']
       /detail/3527.html  伪满皇宫博物院“物华天宝 金玉锦绣——清宫御用珍品集萃”展览图录出版项目公开询价
       /detail/3526.html  伪满皇宫博物院文博实践基地升级项目询价公告
       /detail/3525.html  伪满皇宫博物院宫内府弱电线缆采购项目询价公告
@@ -138,7 +138,7 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
       /detail/3479.html  中外联合考古工作会议于长春举行 国家 文物 局调研组到我院开展专题调研
       /detail/3475.html  伪满皇宫博物院“铁血丹心——东北抗联将士抗战追忆展”展览设计服务公开询价公告（第
       /detail/3471.html  伪满皇宫博物院“铁血丹心——东北抗联将士抗战追 忆展”展览设计服务公开询价公告
-  站内搜「馆藏」：HTTP 200，17619 字节，结果链接 45 个 [('/detail/N.html', 39), ('/activity/detail/N.html', 5), ('/exhib/detail/N.html', 1)]；['翻页最大页码 2']
+  站内搜「馆藏」：HTTP 200，17244 字节，结果链接 45 个 [('/detail/N.html', 39), ('/activity/detail/N.html', 5), ('/exhib/detail/N.html', 1)]；['翻页最大页码 2']
       /detail/3522.html  礼仪展风采 文博显担当｜伪满皇宫博物院讲解员亮相长春市旅游协会第六届会员代表大会
       /activity/detail/3517.html  【活动预告】月满山河，家国同辉｜伪满皇宫博物院中秋国庆活动预告
       /detail/3513.html  关爱孤困儿童 文博传递温情｜长春市手牵手志愿服务中心向伪满皇宫博物院公众服务部赠
@@ -154,7 +154,7 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
       /detail/3242.html  伪满皇宫博物院有这样一个“特殊”的团队
       /detail/3088.html  伪满皇宫博物院开展5•18国际博物馆日民间藏品 公益鉴定活动的公告
       /detail/3014.html  各地文物工作回眸与展望
-  站内搜「珍品」：HTTP 200，6894 字节，结果链接 19 个 [('/detail/N.html', 16), ('/activity/detail/N.html', 2), ('/exhib/detail/N.html', 1)]；[]
+  站内搜「珍品」：HTTP 200，6754 字节，结果链接 19 个 [('/detail/N.html', 16), ('/activity/detail/N.html', 2), ('/exhib/detail/N.html', 1)]；[]
       /detail/3527.html  伪满皇宫博物院“物华天宝 金玉锦绣——清宫御用 珍品 集萃”展览图录出版项目公开
       /detail/3516.html  伪满皇宫博物院“物华天宝 金玉锦绣——清宫御用 珍品 特展”展览布展项目竞争性磋
       /detail/3507.html  伪满皇宫博物院“物华天宝 金玉锦绣——清宫御用 珍品 特展” 展览采购公开询价公
@@ -170,7 +170,7 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
       /detail/2479.html  上新啦～快来伪满皇宫博物院 打卡你与这里的专属“印”记！
       /exhib/detail/1289.html  《清宫遗珍——沈阳故宫院藏文物珍宝展》
       /detail/1252.html  《瓷上园林》、《仁德藏珍》展览在我院展出
-  站内搜「赏析」：HTTP 200，1461 字节，结果链接 5 个 [('/detail/N.html', 4), ('/exhib/detail/N.html', 1)]；[]
+  站内搜「赏析」：HTTP 200，1438 字节，结果链接 5 个 [('/detail/N.html', 4), ('/exhib/detail/N.html', 1)]；[]
       /exhib/detail/1295.html  《鲁迅生平与创作》展览
       /detail/799.html  赏春踏青 古韵纳今——伪满皇宫博物院国际劳动节系列活动取得圆满成功
       /detail/791.html  鲁迅生平与创作展览在我院展出
@@ -186,4 +186,4 @@ museums=202208231954219157：HTTP 200，本页 0 件，翻页最大页码 0（�
       /detail/2640.html  《日本秘藏侵华战争照...
   /papers.html：HTTP 200，<title> '学术论文 - 伪满皇宫博物院 - 溥仪宫廷旧址'，文章 1 篇，题目沾边的 0 篇；['翻页最大页码 30']
 
-本次实际请求 14 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
+本次实际请求 0 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/wmhg_raw）
