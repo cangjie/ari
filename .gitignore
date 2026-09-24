@@ -59,6 +59,10 @@ utils/import_data/_superseded/
 # 本地留一份复用即可；要更新用 meta_scrape_pem.py --refresh-wikidata
 utils/import_data/meta_cache/
 
+# 伪满皇宫官网的原始响应缓存（wmhg_site_scrape.py）。只为重跑时不再打扰官网。
+# 挑出来的样本在 wmhg_samples/，**那个要入仓库** —— 写解析器的机器连不上官网（境外出口）
+utils/import_data/wmhg_raw/
+
 # 去重的中间产物：零 API、几秒可重生成（dedupe_recall.py / dedupe_group.py --dry-run），
 # 且 dedupe_groups.json 每次空跑都被覆盖，与实际跑过的 dedupe_clusters.json 的组号对不上。
 # 花过钱或联网抓来的（dedupe_facts.json、dedupe_llm_cache.jsonl、dedupe_clusters.json）照常入库。
