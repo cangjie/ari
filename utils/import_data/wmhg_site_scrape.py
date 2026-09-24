@@ -43,6 +43,7 @@ import json
 import pathlib
 import re
 import socket
+import ssl
 import sys
 import time
 import urllib.error
@@ -51,7 +52,7 @@ import urllib.request
 import urllib.robotparser
 from collections import Counter
 
-from tls import ssl_ctx
+from tls import ssl_ctx, ssl_ctx_allow_expired
 
 BASE = "https://www.wmhg.com.cn"
 HOST_3D = "https://3d.wmhg.com.cn/"
@@ -81,11 +82,16 @@ class Blocked(Exception):
     """人机验证或限流。不绕，停。"""
 
 
+class CertError(Exception):
+    """证书校验失败。连上了，只是证书不对 —— 与出口问题是两回事，别报成「连不上」。"""
+
+
 # ---------------------------------------------------------------- 请求
 class Fetcher:
     """带缓存与限速的 GET。同一 URL 第二次直接读盘。"""
 
-    def __init__(self, raw: pathlib.Path, samples: pathlib.Path, refresh: bool):
+    def __init__(self, raw: pathlib.Path, samples: pathlib.Path, refresh: bool,
+                 allow_expired: bool = False):
         self.raw, self.samples, self.refresh = raw, samples, refresh
         raw.mkdir(parents=True, exist_ok=True)
         samples.mkdir(parents=True, exist_ok=True)
@@ -97,6 +103,9 @@ class Fetcher:
         self.n_live = 0
         self._last = 0.0
         self._ctx = ssl_ctx()
+        # 2026-09-24 官网证书已过期（Mac 上国内网络实测 CERTIFICATE_VERIFY_FAILED:
+        # certificate has expired）。只对本馆域名、只跳过有效期，要显式开关才用
+        self._ctx_expired_ok = ssl_ctx_allow_expired() if allow_expired else None
 
     def get(self, url: str, *, ajax: bool = False, referer: str | None = None,
             sample: str | None = None) -> tuple[int, str]:
@@ -133,13 +142,23 @@ class Fetcher:
         if referer:
             headers["Referer"] = referer
         req = urllib.request.Request(url, headers=headers)
+        host = urllib.parse.urlsplit(url).hostname or ""
+        ctx = (self._ctx_expired_ok
+               if self._ctx_expired_ok and (host == "wmhg.com.cn" or host.endswith(".wmhg.com.cn"))
+               else self._ctx)
         try:
-            with urllib.request.urlopen(req, timeout=30, context=self._ctx) as r:
+            with urllib.request.urlopen(req, timeout=30, context=ctx) as r:
                 status, body, ctype = r.status, r.read(), r.headers.get("Content-Type", "")
         except urllib.error.HTTPError as e:
             status, body, ctype = e.code, e.read(), e.headers.get("Content-Type", "")
-        except (urllib.error.URLError, socket.timeout, TimeoutError, ConnectionError) as e:
-            raise Unreachable(f"{url}: {getattr(e, 'reason', e)}") from e
+        except urllib.error.URLError as e:
+            if isinstance(e.reason, ssl.SSLCertVerificationError):
+                raise CertError(f"{url}: {e.reason.verify_message}") from e
+            raise Unreachable(f"{url}: {e.reason}") from e
+        except ssl.SSLCertVerificationError as e:
+            raise CertError(f"{url}: {e.verify_message}") from e
+        except (socket.timeout, TimeoutError, ConnectionError) as e:
+            raise Unreachable(f"{url}: {e}") from e
         finally:
             self._last = time.monotonic()
         self.n_live += 1
@@ -377,8 +396,8 @@ def probe_3d(f: Fetcher, r: Report) -> None:
     r.say(f"\n## 三维藏品站 {HOST_3D}")
     try:
         st, page = f.get(HOST_3D, sample="3d_index.html")
-    except Unreachable as e:
-        r.say(f"连不上：{e}")
+    except (Unreachable, CertError) as e:
+        r.say(f"取不到：{e}")
         return
     js = re.findall(r'<script\b[^>]*?src\s*=\s*"([^"]+\.js[^"]*)"', page, re.I)
     frames = re.findall(r'<iframe\b[^>]*?src\s*=\s*"([^"]+)"', page, re.I)
@@ -413,6 +432,7 @@ def probe(f: Fetcher, base: str, r: Report) -> None:
 
 
 def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK，--help 也要
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--probe", action="store_true", help="阶段 1：探路，只存原始响应与样本")
     ap.add_argument("--base", default=BASE,
@@ -420,17 +440,29 @@ def main() -> None:
                          "https://web.archive.org/web/2024id_/https://www.wmhg.com.cn")
     ap.add_argument("--out", default=str(HERE), help="wmhg_raw/ 与 wmhg_samples/ 的上级目录")
     ap.add_argument("--refresh", action="store_true", help="不读本地缓存，全部重新请求")
+    ap.add_argument("--allow-expired-cert", action="store_true",
+                    help="官网证书过期时用：只对 *.wmhg.com.cn 跳过有效期检查，"
+                         "证书链与域名照常校验（tls.ssl_ctx_allow_expired）")
     args = ap.parse_args()
     if not args.probe:
         ap.error("目前只实现了 --probe（阶段 1）。字段解析要等看过样本再写")
-    sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK
 
     out = pathlib.Path(args.out)
-    f = Fetcher(out / "wmhg_raw", out / "wmhg_samples", args.refresh)
+    f = Fetcher(out / "wmhg_raw", out / "wmhg_samples", args.refresh,
+                allow_expired=args.allow_expired_cert)
     r = Report()
+    if args.allow_expired_cert:
+        r.say("⚠ 本次对 *.wmhg.com.cn 跳过了证书有效期检查（--allow-expired-cert），"
+              "证书链与域名照常校验")
     code = 0
     try:
         probe(f, args.base.rstrip("/"), r)
+    except CertError as e:
+        r.say(f"\n[fatal] 证书校验失败：{e}")
+        r.say("连上了，是对方证书的问题，不是出口问题。若上面写的是「certificate has expired」，"
+              "加 --allow-expired-cert 重跑（只跳过有效期，证书链与域名照常校验）；"
+              "其他证书错误不要绕，停下来问用户。")
+        code = 4
     except Unreachable as e:
         r.say(f"\n[fatal] 连不上官网：{e}")
         if f.n_live or len(f.manifest) > 1:
