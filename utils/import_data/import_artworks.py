@@ -480,10 +480,11 @@ def stale_tier_guard(t) -> None:
     if not bad:
         print("  artwork.tier 与 artwork_tier_v3 一致 ✓")
         return
-    print("\n  ⚠ 以下馆的 artwork.tier 已退回源表评级，**必须重跑 --apply-tier**：")
+    # 建议 --apply-only 而不是 --apply-tier：后者会按 JSONL 删了重写评分表（JSONL 不进仓库，
+    # 换台机器要么没有、要么是旧的），还会清掉 tier_override。重灌后要恢复的只是 artwork.tier
+    print("\n  ⚠ 以下馆的 artwork.tier 已退回源表评级，**必须刷回评分表的结论**：")
     for k, n in bad:
-        print(f"       {k:16s} {n} 件不一致 -> "
-              f"python3 tier_v3_load.py --museum {k} --out-dir <该馆的 out-dir> --apply-tier")
+        print(f"       {k:16s} {n} 件不一致 -> python3 tier_v3_load.py --museum {k} --apply-only")
     print("     不跑的话库里的 tier 就不是 V3 的结论了，而且**不会有任何报错**。")
 
 

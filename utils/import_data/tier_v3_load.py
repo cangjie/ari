@@ -63,14 +63,70 @@ def grade(r: dict, g: dict, sn: dict | None) -> tuple[str, str, float, float]:
     return tier, why, cr, core
 
 
+APPLY_SQL = """
+    UPDATE artwork a
+      JOIN museum m ON m.id = a.museum_id
+      JOIN artwork_tier_v3 v
+        ON v.museum_key = m.key_name AND v.source_seq = a.source_seq
+       SET a.tier = COALESCE(v.tier_override, v.tier)
+     WHERE m.key_name = %s
+"""
+
+
+def apply_only(key: str, dry_run: bool) -> None:
+    """重灌展品之后，只把 artwork.tier 刷回评分表已有的结论。
+
+    **不读 JSONL、不动 artwork_tier_v3。** 完整的 --apply-tier 会先按 --out-dir 里的
+    JSONL 把该馆评分整批删了重写 —— 那些 JSONL 不进仓库，换台机器要么没有、要么是旧的；
+    重写时也不带 tier_override，人工改过的评级会被清空。而重灌后要恢复的只是 artwork.tier
+    这一列，评分表本身一行没变（2026-09-24 接伪满皇宫、重灌全库时加的）。
+    """
+    conn = pymysql.connect(read_default_file=os.path.expanduser("~/.my.cnf"),
+                           charset="utf8mb4", autocommit=False)
+    cur = conn.cursor()
+    cur.execute("SELECT COUNT(*) FROM artwork_tier_v3 WHERE museum_key = %s", (key,))
+    scored = cur.fetchone()[0]
+    if not scored:
+        raise SystemExit(f"artwork_tier_v3 里没有 {key} 的评分，没有可刷回的结论")
+    cur.execute("""SELECT COUNT(*) FROM artwork_tier_v3 v
+                    WHERE v.museum_key = %s AND NOT EXISTS (
+                          SELECT 1 FROM artwork a JOIN museum m ON m.id = a.museum_id
+                           WHERE m.key_name = v.museum_key AND a.source_seq = v.source_seq)""", (key,))
+    orphan = cur.fetchone()[0]
+    if orphan:
+        raise SystemExit(f"{key} 有 {orphan} 条评分在 artwork 里找不到对应 source_seq —— 先查重灌是否错位")
+    cur.execute(APPLY_SQL, (key,))
+    changed = cur.rowcount
+    cur.execute("""SELECT COUNT(*) FROM artwork a JOIN museum m ON m.id = a.museum_id
+                     JOIN artwork_tier_v3 v ON v.museum_key = m.key_name AND v.source_seq = a.source_seq
+                    WHERE m.key_name = %s AND NOT (a.tier <=> COALESCE(v.tier_override, v.tier))""", (key,))
+    left = cur.fetchone()[0]
+    if left:
+        conn.rollback()
+        raise SystemExit(f"{key} 刷完仍有 {left} 件不一致，已回滚")
+    print(f"{key}：评分 {scored} 件，artwork.tier 改动 {changed} 行，与评分表逐件一致")
+    if dry_run:
+        conn.rollback()
+        print("--dry-run：已回滚，库未改动")
+    else:
+        conn.commit()
+    conn.close()
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--museum", required=True, choices=sorted(MUSEUMS))
     ap.add_argument("--out-dir", default="./tier_v3_out")
     ap.add_argument("--apply-tier", action="store_true",
                     help="同时把 tier 刷进 artwork.tier（覆盖原表评级）")
+    ap.add_argument("--apply-only", action="store_true",
+                    help="重灌展品后用：只把 artwork.tier 刷回评分表已有的结论，"
+                         "不读 JSONL、不动 artwork_tier_v3")
     ap.add_argument("--dry-run", action="store_true", help="只打印，不提交")
     args = ap.parse_args()
+    if args.apply_only:
+        apply_only(args.museum, args.dry_run)
+        return
 
     base = Path(__file__).resolve().parent
     out = Path(args.out_dir)
@@ -132,14 +188,7 @@ def main() -> None:
     print(f"artwork_tier_v3 写入 {cur.rowcount} 行  {dict(sorted(dist.items()))}")
 
     if args.apply_tier:
-        cur.execute("""
-            UPDATE artwork a
-              JOIN museum m ON m.id = a.museum_id
-              JOIN artwork_tier_v3 v
-                ON v.museum_key = m.key_name AND v.source_seq = a.source_seq
-               SET a.tier = COALESCE(v.tier_override, v.tier)
-             WHERE m.key_name = %s
-        """, (m.key,))
+        cur.execute(APPLY_SQL, (m.key,))
         print(f"artwork.tier 覆盖 {cur.rowcount} 行")
 
     if args.dry_run:
