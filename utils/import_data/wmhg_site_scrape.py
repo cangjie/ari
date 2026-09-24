@@ -130,11 +130,11 @@ class Fetcher:
         self.used.add(url)
         ent = self.manifest.get(url)
         if ent and not self.refresh and (self.raw / ent["file"]).exists():
-            status, text = ent["status"], (self.raw / ent["file"]).read_text("utf-8")
+            status, text = ent["status"], _read(self.raw / ent["file"])
         else:
             status, text = self._live(url, ajax, referer)
             fname = _fname(url)
-            (self.raw / fname).write_text(text, "utf-8")
+            _write(self.raw / fname, text)
             self.manifest[url] = dict(
                 file=fname, status=status, bytes=len(text.encode("utf-8")),
                 fetched_at=dt.datetime.now().isoformat(timespec="seconds"))
@@ -144,7 +144,7 @@ class Fetcher:
             raise Blocked(f"{url} -> HTTP {status}，{len(text)} 字节："
                           f"{_txt(text)[:200]!r}")
         if sample:
-            (self.samples / sample).write_text(text, "utf-8")
+            _write(self.samples / sample, text)
         return status, text
 
     def _live(self, url: str, ajax: bool, referer: str | None) -> tuple[int, str]:
@@ -181,6 +181,18 @@ class Fetcher:
         self.n_live += 1
         m = re.search(r"charset=([\w-]+)", ctype or "")
         return status, body.decode(m.group(1) if m else "utf-8", "replace")
+
+
+# 缓存与样本一律原样保留换行符。官网原文是 CRLF，默认的文本模式读回来会变成 LF ——
+# 2026-09-24 从缓存重跑补探，9 个样本整篇被改写（增删各 1951 行），内容一字未变
+def _read(path: pathlib.Path) -> str:
+    with open(path, encoding="utf-8", newline="") as fh:
+        return fh.read()
+
+
+def _write(path: pathlib.Path, text: str) -> None:
+    with open(path, "w", encoding="utf-8", newline="") as fh:
+        fh.write(text)
 
 
 def _fname(url: str) -> str:
