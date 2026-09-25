@@ -63,10 +63,11 @@
 `ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
 以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
-展品侧现有 **7 个 museum key、13619 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
-2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条）。
+展品侧现有 **8 个 museum key、13680 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
+2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条；2026-09-24 新增伪满皇宫 `wmhg` 61 件，见第 16 条）。
 
-**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测）—— 四个馆跑过，三个馆一件没碰：**
+**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测，wmhg 2026-09-24 实测）
+—— 四个馆跑完，wmhg 做到 metadata，三个馆一件没碰：**
 
 | 馆 | 展品 | V3 评分 | evidence | metadata | 审计口径 |
 |---|---:|---:|---:|---:|---|
@@ -74,6 +75,7 @@
 | `ham` | 204 | 204 | 204 | 437 | 完整（gpt-5.6-sol 旧判据） |
 | `mfa_boston` | 203 | 203 | 203 | 393 | S/A 101 件已用 sonnet-5 重审；其余仍是旧判据 |
 | `pem` | 467 | 467 | 467 | 1993 | 全馆 sonnet-5 **medium** 精简口径（09-23）；原 196 件的可信度等列仍是 sol 旧值 |
+| `wmhg` | 61（藏品 34 + 节点 27） | **0** | 61 | 135 | 未跑 —— 评分与审计按 `docs/WMHG_RUNBOOK.md` 做 |
 | `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
 
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
@@ -88,7 +90,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十五条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十六条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -340,7 +342,7 @@ PEM 自己一个字都没改。加在列表末尾这次能躲过，下次躲不�
 | 表 | 装什么 | 由谁写 |
 |---|---|---|
 | `artwork_tier_v3` | V3.0 七维分、Core、S-ness、评分依据 | `tier_v3_load.py` |
-| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_fill_rule.py` / `meta_scrape.py` / `meta_fill_official_pem.py` |
+| `meta_key` / `artwork_meta` | metadata 键字典与取值（纯 key-value） | `meta_seed*.py` / `meta_fill_rule.py` / `meta_scrape.py` / `meta_fill_official_pem.py` / `meta_fill_official_wmhg.py` |
 | `artwork_evidence` | 完备度、研究优先级、逐维度可信度、缺失证据 | `evidence_score.py` + `evidence_fill.py` |
 | `artwork_evidence` 的审计列 | Tier 可信度、潜在 Tier 区间、需复核、研究问题 | `audit_load.py` |
 | `llm_call` / `llm_call_item` | 每次 LLM 调用的问答原文、token 用量、覆盖了哪些展品 | `llm_cache.py` |
@@ -348,7 +350,7 @@ PEM 自己一个字都没改。加在列表末尾这次能躲过，下次躲不�
 **⚠ 每次跑完 `import_artworks.py`，必须接着跑两件事：**
 
 ```
-python3 tier_v3_load.py --museum <mk> --apply-tier   # 否则 artwork.tier 退回源表评级
+python3 tier_v3_load.py --museum <mk> --apply-only   # 每个评过分的馆各一次，否则 artwork.tier 退回源表评级
 python3 llm_cache.py --refresh-ids                    # 否则 llm_call_item 的便利列指向错行
 ```
 
@@ -358,6 +360,14 @@ python3 llm_cache.py --refresh-ids                    # 否则 llm_call_item 的
 而人只会想到自己刚动过的那个馆 —— 2026-09-04 加 `mfa_boston_ext` 时就只给新馆
 跑了 `--apply-tier`，另外三馆 187 件（PEM 56 / MFA 76 / 哈佛 55）悄悄退回源表评级，
 两天后从导出的 tier 分布里才偶然看出来。**第二条仍然靠人记，忘了不报错。**
+
+**重灌之后用 `--apply-only`，不要用 `--apply-tier`（2026-09-24 改）。** `--apply-tier` 会先按
+`--out-dir` 里的 JSONL 把该馆评分**整批删了重写**：`tier_v3_out/` 不进仓库，换台机器要么没有、
+要么是旧的（PEM 09-22 用 luna 重评过）；重写时也不带 `tier_override`，人工改过的评级会被清空。
+重灌后要恢复的只是 `artwork.tier` 这一列，`--apply-only` 只跑那句 UPDATE，前查孤儿评分、
+后查逐件一致，不一致回滚。`--apply-tier` 只在**刚评完分、评分表要从 JSONL 写入**时用。
+09-24 重灌全库后实跑：pem 370 / ham 55 / mfa_boston 76 / mfa_boston_ext 2527 行刷回，
+与导入器报出的不一致数逐馆吻合。
 
 `artwork_evidence` 现在有**三个**写入者分写不同列，职责必须互斥，`evidence_score.py`
 必须用 UPSERT —— 早先它用先删后插，把 `evidence_fill.py` 刚写的可信度与缺失证据
@@ -639,7 +649,10 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
 `1406 Data too long`；审计的 `top_missing_en` 等 6 列原为 `varchar(255)`，同因。
 两处都已 ALTER 成 `TEXT`（记在 `schema_meta.sql` / `schema_audit.sql`）。
 **当时的应急做法是在写入前 `[:512]` 截断 —— 那是错的**，它把「存不下」变成
-「静默存了一半」，已删掉。宁可报错。
+「静默存了一半」。宁可报错。**⚠ 早先这里写「已删掉」不准确（2026-09-24 更正）**：
+`import_artworks.build_content_rows` 里还有一处 `text[:512]`，是建库那天（a521191）留下的，
+一直没删 —— 接伪满皇宫时查出该馆 3 条中文、19 条英文简介超 512 字。09-24 已删，
+同日重灌后所有馆的长文本都已完整入库。改这类「截断/兜底」要全仓 grep，不要只改一处。
 
 **⚠ 这两张表不能 DROP 重建，改结构一律走 `schema_audit.sql` 那样的 ALTER。**
 2026-08-31 发现 `artwork_meta` 与 `artwork_evidence` 里有仓库脚本复现不出来的数据：
@@ -700,6 +713,15 @@ catalogue raisonné 条目、专家之间的归属之争、内部装藏物。
   `taskkill /T`（或 `kill`）掉整棵进程树。**守护只认本任务**（按 `provider` + `stage`
   过滤）—— 09-23 守护按「PEM 下任何失败」判，并行的 Gemini 翻译报了一次 503，
   就把正在跑的审计阶段三误杀了。定位原因先看 CLI 的会话记录（见第 9 条）。
+  **守护已固定成工具 `llm_guard.py`（2026-09-24）**：`llm_guard.py --provider <p> --stage "<LIKE>"
+  [--museum <mk>] -- <命令>`，由它启动命令，只看启动后新增的、provider/stage/museum 都对上的
+  失败记录，发现即结束整棵进程树、退出码 3。各流水线的名字：评分 `openai_codex` + `tier_stage%`，
+  审计 `anthropic_cli` + `audit_%`，展品翻译 `openai_codex` + `trans_artwork%`（museum_key 可能为空）。
+- **同样适用于写线上库**（2026-09-24）：不要把一次写入和「再跑一遍验证幂等」用 `&&`、管道
+  串在同一条命令里 —— `| tail` 返回 0，第一次失败了第二次照跑。当天 `meta_fill_official_wmhg.py`
+  第一版逐条写，跨公网断线（2013），**服务器端会话挂着未提交事务锁住 174 行、睡到 `wait_timeout`
+  （8 小时）**，紧接的第二次运行等锁超时（1205）。写库失败先查 `information_schema.innodb_trx`
+  与 `processlist`，确认是自己的残留会话再 `KILL`；写入一律批量、单事务（同 `meta_fill_official_mfa.py`）。
 - **`claude_cli` 的 token 计量目前是坏的**：库里 `claude_cli` 调用的
   `prompt_tokens` 记成 2/4/6/8/12，`cached_tokens` 为 0 或不全，没接上 CLI 的
   `cache_creation_input_tokens`。`completion_tokens` 是对的。走 `claude_cli` 的那部分
@@ -1004,6 +1026,58 @@ sol 那把尺子上有 PEM 原 196 + 哈佛 204 + MFA 老 203；luna 那把上�
 · **PowerShell 5.1 按 GBK 读无 BOM 的 `.ps1`**，脚本里有中文就解析失败。
   辅助脚本一律用 Python 写。
 
+
+**16. 伪满皇宫博物院（`wmhg`）：境外连不上的中文馆，第一个成批带节点的馆（2026-09-22 至 24）。**
+
+**来源实情**（09-24 逐项核实）：
+
+| 来源 | 实情 |
+|---|---|
+| 官网 `www.wmhg.com.cn` | **境外出口一律超时或被拒**（Windows 那台出口是美国 IP；WebFetch 同样被拒），抓取只能在国内网络的机器上跑。「博物中国」、首博、故宫的站也一样 |
+| 官网证书 | **真过期**：crt.sh 核实 wmhg 2026-03-02、`museumschina.cn` 2026-04-21，之后都没签新证书，不是本机时钟问题 |
+| 官网藏品 | 只发布了**中文 29 件**（中文类目页已 404，AJAX 接口 `/searchs/collection.html` 仍通，类目 id 13–19）+ **英文 24 条**（馆方机翻，id 与中文不相通，含 1 条 `testdata` 测试副本）。馆方自称馆藏 5.2–7 万件 |
+| Wikidata | P195=Q83332 **0 件** |
+| 国家文物局「博物中国」 | 本馆 **0 条**（用平台自己的筛选链接、按藏品名搜索都核实过）。robots 要求间隔 5 秒 |
+
+**证书只跳过有效期，不关校验**（用户 09-24 同意）：`tls.ssl_ctx_allow_expired()` 只关 OpenSSL 的
+时间检查，证书链与域名照常校验；只对 `wmhg_site_scrape.EXPIRED_CERT_HOSTS` 登记的域名生效，
+且要显式 `--allow-expired-cert`。**加域名要先查 crt.sh、再问用户。** 本机的自动权限审查拒绝用
+badssl 测试站验这条宽松路径，所以「其他坏证书照样被拒」只是按原理成立，没有实测。
+
+**两台机器协作的做法**：境外机写代码，国内机（Mac）跑 `wmhg_site_scrape.py --probe / --probe-extra / --scrape`。
+原始响应缓存在 `wmhg_raw/`（gitignore，重跑不再打扰官网），样本页与报告提交到 `wmhg_samples/`，
+境外机拿样本离线写解析器；推送前先用离线夹具（样本冒充官网）把全流程跑一遍。
+三处坑：① 缓存读写要 `newline=""`，否则官网的 CRLF 读回变 LF，重跑把样本整篇改写；
+② **临时展览列表链向文章式页面 `/detail/<id>`**，不是常设的 `/exhib/detail/<id>`，第一次正式抓取
+就报了「临时展览 0 个」；③ 站内搜索页是空壳，结果由 `/searchs/archives.html?title=<词>` 灌入，只搜标题。
+**官网列表上有 ≠ 在展**：专题列表挂着已闭幕的 1310、1312（同时在「展览回顾」里），常设列表挂着
+2020 年的过期临时展 1888。
+
+**范围（用户逐项定）**：官网藏品全收；英文当馆方原文入库（记「原始」，机翻照录）；
+从文章补展品**只收当前在展**的展 —— 实际只有御纹章展（怀远楼二楼清宴堂，2026-01-20 上新）的 5 件，
+其中凤纹瓶与官网 478 是同一件（用户确认），只给 478 补在展证据；节点 = 官网常设在展 16 个 +
+御纹章展 + 2023 年馆方导览（文章 2657）另列的 10 个（东北沦陷史陈列馆 3 个陈列、百年机车馆等，
+在展状态记「未核实」）。合计藏品 34 件、节点 27 个。
+`museum_context["wmhg"]` 只写事实：草稿里一句「纪念章、画报的意义在见证傀儡性质而非工艺」
+被用户删掉 —— 那是判断，会把分数往一个方向推。
+
+**源表与序号**：`wmhg_build.py` 从三个抓取数据模块确定性地生成 `artworks/伪满皇宫_展品清单.xlsx`
+（中文馆格式，另加对象层级、类目、英文、官网 ID、出处 6 列），序号按身份键幂等（`wmhg_seq_map.csv`，
+空号不回收）。中英配对只在同类目内比简介里的数字锚点（≥3 个且互为唯一最佳），不够的 4 对逐条核对后
+登记在 `EN_MANUAL`。为此 `tier_v3.Museum` 加了 `col_seq`（有序号列就按列取并查重 —— 原先只会按过滤后
+计数编，序号一有空号就整体错位）和元组形式的 `col_category`（拼出「对象层级·类目」，让模型判 object/node）。
+
+**metadata：`meta_fill_rule.py` 不能用在本馆。** 它解析英文，而本馆英文是机翻。试跑 22 件一半以上写错：
+作者抽出「Yesterday / People / Kant / Manchuria」，纪年取文中最早的年份（《寒林群鸦图》得作者生年 1793），
+伪满纪念章因为简介写着「Japanese aggressors」被判成日本。改用 `meta_fill_official_wmhg.py`：
+只从中文题名、官网类目、带单位的尺寸片段取，含「原本 / 原来」的句子整句不取尺寸
+（景仁宫御用地毯写的是裁剪前的尺寸）。建国功劳章官网原文「直径30厘米」疑为单位写错，照录，留给审计。
+**换一个英文是机翻的馆，先试跑 `meta_fill_rule.py --dry-run` 逐件看，别直接写库。**
+
+**现状**：入库、metadata（135 条）、证据分（61 行，全 Tier 1）已完成；**评分与审计未跑**，
+执行步骤在 `docs/WMHG_RUNBOOK.md`（写给 Codex，含两个必须停下问用户的关卡）。
+`audit_meta.MUSEUM_NOTE["wmhg"]` 写死了「61 条分四批」，**源表一变要跟着改**（同第 9 条）。
+
 ---
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
@@ -1117,6 +1191,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成**尚未实现**（所需 metadata 全为空） |
+| `docs/WMHG_RUNBOOK.md` | 伪满皇宫第 7–8 阶段（评分、审计、翻译、导出）的执行指引，写给 Codex。含 G3/G4 两个必须停下问用户的关卡 |
 | `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
 | `utils/import_data/README.md` | `ari` 库的建表、导入、多语种机制与已知数据问题 |
 | `utils/import_data/museum_context.py` | 馆级语境，`tier_v3.py` 与 `audit_meta.py` 共用 |
@@ -1140,7 +1215,13 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/gallery_precision_guard.py` | 对照基准工作簿，把展厅列里被改粗的行按 `(来源表,来源行)` 还原。零 API，幂等 |
 | `utils/import_data/merged_xlsx.py` | 解析合并版工作簿的路径（`export/`、`exports/`、`exports/zh-CN/` 三处都找），**找到两份就停**，不去猜该改哪一份 |
 | `utils/import_data/copy_sheet.py` / `move_column.py` / `fit_columns.py` | Excel 小工具：抽一张 sheet 成新文件（断言行序不变）、按列名挪列、按 p95 内容长度定列宽（中日韩字符按两格计） |
-| `utils/import_data/tls.py` | 所有 HTTPS 共用的 TLS 上下文。缺根证书时改用 certifi，缺 certifi 就报错退出，**不关闭证书校验** |
+| `utils/import_data/tls.py` | 所有 HTTPS 共用的 TLS 上下文。缺根证书时改用 certifi，缺 certifi 就报错退出，**不关闭证书校验**。另有 `ssl_ctx_allow_expired()`：只跳过有效期、链与域名照常校验，只能按域名显式选用（第 16 条） |
+| `utils/import_data/wmhg_site_scrape.py` | 第 16 条：伪满皇宫官网抓取，`--probe` / `--probe-extra` / `--scrape`。**只能在国内网络跑**。原始响应缓存 `wmhg_raw/`（gitignore），结构对不上退出码 5 |
+| `utils/import_data/wmhg_site_data.py` / `wmhg_exhibition_data.py` / `wmhg_article_data.py` | 上者产出的三个数据模块（藏品中英两套、展览与展览回顾、文章全文与被排除的标题），入仓库，勿手改 |
+| `utils/import_data/wmhg_samples/` | 抓取样本页与探路/抓取/生成报告。境外机写解析器全靠它 |
+| `utils/import_data/wmhg_build.py` / `wmhg_seq_map.csv` | 从数据模块生成伪满皇宫源 Excel：中英按数字锚点配对、节点组装、序号按身份键幂等。`--check` 只配对与体检 |
+| `utils/import_data/meta_fill_official_wmhg.py` | 伪满皇宫的 metadata：只从中文题名、官网类目、尺寸片段确定性抽取，批量单事务写入。**本馆不用 `meta_fill_rule.py`** |
+| `utils/import_data/llm_guard.py` | 长任务守护：包住命令运行，本任务（provider + stage + museum）一出现失败记录就结束整棵进程树 |
 | `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
 | `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
 | `utils/import_data/fetch_dims.py` | 第 13 条的尺寸抓取：Wikidata → 本表简介 → Commons → Gemini 免费层（单独一列）。`--tier`、`--dry-run`、`--no-gemini` |
