@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
+    <title>藏品 - 博物中国</title>
+    <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> -->
+	
+	<link rel="stylesheet" type="text/css" href="/css/reset.css?202208" />
+	<link rel="stylesheet" type="text/css" href="/css/layout.css?202208" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css?20221207" />
+	<link rel="stylesheet" href="/css/swiper.min2.css">
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	<script src="/js/swiper.min2.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?f763032a07bde3b2ba5a7177317b5bbe";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+<body>	
+	
+    <div class="header_wrap">
+    	<div>
+    		<div class="header">
+    			<div class="header_left">
+    				<div class="logo">
+    					<a href="/"><img src="/images/logo.png"></a>
+    				</div>
+    				<div class="pos">
+    					<div class="pos_top">
+    						<img src="/images/pos_i.png">
+    						<span id="areaName">北京</span>
+    					</div>
+    					<ul class="pos_con">
+    						
+    					</ul>
+    				</div>
+    				
+					<ul class="nav">
+						<div class="nav_icon">
+							<img src="/images/close.png" alt="">
+						</div>
+						<li class="nav_li" id="News">
+							<a href="/news">资讯</a>
+						</li>
+    					<li class="nav_li" id="Exhibit">
+    						<a href="/exhibit">展讯</a>
+    					</li>
+    					<li class="nav_li" id="Museums">
+    						<a href="/museums">博物馆</a>
+    					</li>
+    					<li class="nav_li" id="Collection">
+    						<a href="/collection">藏品</a>
+    					</li>
+    					<li class="nav_li" id="Special">
+    						<a href="/special">专题</a>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="header_right">
+					<div class="nav_icon">
+						<img src="/images/nav_icon.png" alt="">
+					</div>
+    				<form action="/search/index" class="nav_search">
+						<!-- <div> -->
+						
+							<input type="text" name="key" placeholder="搜索博物馆、藏品、展讯.....">
+							<!-- <div class="nav_search_icon"> -->
+								<button class="nav_search_icon" style="line-height: 0;"><img src="/images/search.png"></button>
+							<!-- </div> -->
+						
+    				<!-- </div> -->
+					</form>
+    				<div class="login_wrap">
+    					<img src="/images/peo.png" alt="">
+    					<div class="login_right">
+								<a href="/Account/Login">登录</a>
+								<span>|</span>
+								<a href="/Account/Reg">注册</a>
+
+    						<!-- <a href="javascript:;" onclick="show_login()">登录</a>
+    						<span>|</span>
+    						<a href="javascript:;" onclick="show_reg()">注册</a> 
+							<a href="/Account/Login">登录</a>
+							<span>|</span>
+							<a href="/Account/Reg">注册</a>-->
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="mian_wrapper">
+		
+        <main role="main" class="pb-3">
+            	<link rel="stylesheet" type="text/css" href="/css/collection.css?202208" />
+	<style>
+		#Collection{
+			border-bottom: 2px solid #997143;
+		}
+	</style>
+<div class="postion">
+	当前位置：<a href="/">首页</a> > 藏品
+</div>
+
+<div class="wrapper">
+	<div class="tools">
+		<dl>
+			<dt>搜索</dt>
+			<dd>
+				<div class="search_mu_wrap">
+					<form action="/collection/index" class="search_mu">
+						<input type="text" name="searchkey" placeholder="搜索藏品名称" value="洞庭春色">
+						<div class="nav_search_icon2">
+							<button type="submit">搜索</button>
+						</div>
+						<input type="hidden" name="province" value="" />
+						<input type="hidden" name="level" value="" />
+						<input type="hidden" name="category" value="" />
+						<input type="hidden" name="quality" value="" />
+						<input type="hidden" name="yearType" value="" />
+						<input type="hidden" name="museums" value="" />
+					</form>
+				</div>
+			</dd>
+		</dl>
+		<dl>
+			<dt>藏品分类</dt>
+			<dd>
+				<a class="current" href="/Collection?searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">不限</a>
+					<a class="" href="/Collection?category=10&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">书画</a>
+					<a class="" href="/Collection?category=2&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">陶器</a>
+					<a class="" href="/Collection?category=3&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">瓷器</a>
+					<a class="" href="/Collection?category=4&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">铜器</a>
+					<a class="" href="/Collection?category=1&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">玉石</a>
+					<a class="" href="/Collection?category=5&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">金银器</a>
+					<a class="" href="/Collection?category=25&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">档案文书</a>
+					<a class="" href="/Collection?category=26&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">名人遗物</a>
+					<a class="" href="/Collection?category=22&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">武器</a>
+					<a class="" href="/Collection?category=14&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">钱币</a>
+					<a class="" href="/Collection?category=31&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">票据</a>
+					<a class="" href="/Collection?category=9&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">石器拓片</a>
+					<a class="" href="/Collection?category=6&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">金属器</a>
+					<a class="" href="/Collection?category=24&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">报刊证件</a>
+					<a class="" href="/Collection?category=12&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">甲骨</a>
+					<a class="" href="/Collection?category=13&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">玺印符牌</a>
+					<a class="" href="/Collection?category=27&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">玻璃器</a>
+					<a class="" href="/Collection?category=8&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">雕塑造像</a>
+					<a class="" href="/Collection?category=19&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">织绣</a>
+					<a class="" href="/Collection?category=15&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">牙骨角器</a>
+					<a class="" href="/Collection?category=11&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">文具</a>
+					<a class="" href="/Collection?category=7&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">漆器</a>
+					<a class="" href="/Collection?category=20&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">古籍图书</a>
+					<a class="" href="/Collection?category=18&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">珐琅器</a>
+					<a class="" href="/Collection?category=33&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">度量衡器</a>
+					<a class="" href="/Collection?category=17&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">家具</a>
+					<a class="" href="/Collection?category=16&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">竹木雕</a>
+					<a class="" href="/Collection?category=28&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">乐器法器</a>
+					<a class="" href="/Collection?category=21&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">碑帖拓本</a>
+					<a class="" href="/Collection?category=29&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">皮革</a>
+					<a class="" href="/Collection?category=23&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">邮品</a>
+					<a class="" href="/Collection?category=32&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">交通工具</a>
+					<a class="" href="/Collection?category=30&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">音像制品</a>
+					<a class="" href="/Collection?category=34&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">标本化石</a>
+					<a class="" href="/Collection?category=38&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">岩石矿物</a>
+					<a class="" href="/Collection?category=35&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">古生物化石</a>
+					<a class="" href="/Collection?category=36&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">古人类化石</a>
+					<a class="" href="/Collection?category=37&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">现生动物和现生植物</a>
+					<a class="" href="/Collection?category=39&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他</a>
+			</dd>
+			<div class="tools_icon">更多</div>
+		</dl>
+		<dl>
+			<dt>所属年代</dt> 
+			<dd>
+				<a class="current" href="/Collection?searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">不限</a>
+					<a class="" href="/Collection?yearType=44&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">旧石器时代</a>
+					<a class="" href="/Collection?yearType=45&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">新石器时代</a>
+					<a class="" href="/Collection?yearType=47&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">夏</a>
+					<a class="" href="/Collection?yearType=48&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">商</a>
+					<a class="" href="/Collection?yearType=49&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">周</a>
+					<a class="" href="/Collection?yearType=54&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">秦</a>
+					<a class="" href="/Collection?yearType=55&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">汉</a>
+					<a class="" href="/Collection?yearType=58&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">三国</a>
+					<a class="" href="/Collection?yearType=62&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">西晋</a>
+					<a class="" href="/Collection?yearType=63&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">东晋十六国</a>
+					<a class="" href="/Collection?yearType=66&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">南北朝</a>
+					<a class="" href="/Collection?yearType=78&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">隋</a>
+					<a class="" href="/Collection?yearType=79&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">唐</a>
+					<a class="" href="/Collection?yearType=80&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">五代十国</a>
+					<a class="" href="/Collection?yearType=87&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">宋</a>
+					<a class="" href="/Collection?yearType=90&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">辽</a>
+					<a class="" href="/Collection?yearType=91&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">西夏</a>
+					<a class="" href="/Collection?yearType=92&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">金</a>
+					<a class="" href="/Collection?yearType=93&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">元</a>
+					<a class="" href="/Collection?yearType=94&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">明</a>
+					<a class="" href="/Collection?yearType=95&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">清</a>
+					<a class="" href="/Collection?yearType=96&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">民国</a>
+					<a class="" href="/Collection?yearType=97&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">当代</a>
+					<a class="" href="/Collection?yearType=143&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">年代不详</a>
+					<a class="" href="/Collection?yearType=142&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他</a>
+
+				
+			</dd>
+			<div class="tools_icon">更多</div>
+		</dl>
+		<dl>
+			<dt>级别</dt> 
+			<dd>				
+				<a class="current" href="/Collection?searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">不限</a>
+
+					<a class="" href="/Collection?level=1&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">一级</a>
+					<a class="" href="/Collection?level=2&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">二级</a>
+					<a class="" href="/Collection?level=3&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">三级</a>
+					<a class="" href="/Collection?level=4&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">一般</a>
+					<a class="" href="/Collection?level=5&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">未定级</a>
+			</dd>
+			<!-- <div class="tools_icon">更多</div> -->
+		</dl>
+		<dl>
+			<dt>质地</dt> 
+			<dd>				
+				<a class="current" href="/Collection?searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">不限</a>
+
+					<a class="" href="/Collection?quality=111010&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">木</a>
+					<a class="" href="/Collection?quality=111020&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">竹</a>
+					<a class="" href="/Collection?quality=111030&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">纸</a>
+					<a class="" href="/Collection?quality=111040&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">毛</a>
+					<a class="" href="/Collection?quality=111050&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">丝</a>
+					<a class="" href="/Collection?quality=111060&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">皮革</a>
+					<a class="" href="/Collection?quality=111070&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">骨角牙</a>
+					<a class="" href="/Collection?quality=111080&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">棉麻纤维</a>
+					<a class="" href="/Collection?quality=111090&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他植物质</a>
+					<a class="" href="/Collection?quality=111100&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他动物质</a>
+					<a class="" href="/Collection?quality=111110&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他有机质</a>
+					<a class="" href="/Collection?quality=112010&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">石</a>
+					<a class="" href="/Collection?quality=112020&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">瓷</a>
+					<a class="" href="/Collection?quality=112030&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">砖瓦</a>
+					<a class="" href="/Collection?quality=112040&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">泥</a>
+					<a class="" href="/Collection?quality=112050&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">陶</a>
+					<a class="" href="/Collection?quality=112060&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">玻璃</a>
+					<a class="" href="/Collection?quality=112070&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">铁</a>
+					<a class="" href="/Collection?quality=112080&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">铜</a>
+					<a class="" href="/Collection?quality=112090&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">宝玉石</a>
+					<a class="" href="/Collection?quality=112100&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">金</a>
+					<a class="" href="/Collection?quality=112110&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">银</a>
+					<a class="" href="/Collection?quality=112120&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他金属</a>
+					<a class="" href="/Collection?quality=112130&amp;searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2">其他无机质</a>
+			</dd>
+			<div class="tools_icon">更多</div>
+		</dl>
+	</div>
+	<div class="exhibit_ul">
+		<div class="exhibit_li">
+			
+				<div class="coll_img">
+					<a href="/collection/details?id=a2EC507C624884556B85A8D0B4271A1BA" target="_blank">
+						<img src="http://www.museumschina.cn/img/waterMark/2019-01-02-14-28-22/yipu/da/37/17/22/21800003/00000773/3717222180000300000773-A-0001_wm.jpg">
+					</a>
+				</div>
+				<div class="exhibit_info">
+					<div class="ex_info_tit">					
+						<a href="/collection/details?id=a2EC507C624884556B85A8D0B4271A1BA" target="_blank">中华民国拓洞庭春色赋中山松醪赋拓片</a></div>
+					<div class="ex_info_address">
+						<a href="?museums=37172221800003">单县博物馆</a>
+					</div>
+					<div class="ex_info_type">
+						类别：碑帖拓本 
+					</div>
+					<div class="ex_info_bottom">
+						<div class="ex_info_year">
+							年代：中华民国
+						</div>
+						<!-- <div class="ex_info_num">
+							<span class="zan">0</span>
+							<span class="collect">0</span>
+						</div> -->
+					</div>
+				</div>
+			
+		</div>
+		<div class="exhibit_li">
+			
+				<div class="coll_img">
+					<a href="/collection/details?id=8ac4ecdeeaae40cabaae9793ff031c72" target="_blank">
+						<img src="http://www.museumschina.cn/img/waterMark/2019-01-02-14-28-22/yipu/da/53/04/02/21800104/00000011/5304022180010400000011-A-0001_wm.jpg">
+					</a>
+				</div>
+				<div class="exhibit_info">
+					<div class="ex_info_tit">					
+						<a href="/collection/details?id=8ac4ecdeeaae40cabaae9793ff031c72" target="_blank">清洞庭春色拓片横幅</a></div>
+					<div class="ex_info_address">
+						<a href="?museums=53040221800104">云南省玉溪市红塔区数字博物馆</a>
+					</div>
+					<div class="ex_info_type">
+						类别：书法、绘画 
+					</div>
+					<div class="ex_info_bottom">
+						<div class="ex_info_year">
+							年代：清
+						</div>
+						<!-- <div class="ex_info_num">
+							<span class="zan">0</span>
+							<span class="collect">0</span>
+						</div> -->
+					</div>
+				</div>
+			
+		</div>
+
+	</div>
+
+	
+	<div>
+		<div class="pagelist">
+
+
+
+    <!-- <div class="pageNum"> -->
+            <a class="current" href="/Collection?searchkey=%E6%B4%9E%E5%BA%AD%E6%98%A5%E8%89%B2&amp;pages=1&amp;size=20">1</a>
+    <!-- </div> -->
+
+
+</div>
+	</div>
+</div>
+			
+        </main>
+		<script src="/js/common.js?t=20221017"></script>
+    </div>
+
+    <div class="foot">
+    	<div class="footer">
+    		<div class="foot_l">
+    			<div class="bottomnav">
+    				<a href="/public/about">关于我们</a>    |
+    				<a href="/public/copyright">版权声明</a>    | 
+    				<a href="/public/privacy">隐私条款</a>    |
+    				<a href="/public/agreement">用户协议</a>    
+    			</div>
+    			<p>咨询电话：86-10-84849810</p>
+    			<p>京ICP备 10033605号-3</p>
+    			<p>技术支持 中国文物信息咨询中心(国家文物局数据中心)</p>
+    		</div>
+    		<div class="foot_r">
+    			<div class="foot_code">
+							<img src="/images/code_07.png" >
+							<p>博物中国 微信公众号</p>
+						</div>
+						<div class="foot_code">
+							<img src="/images/code_wx.jpg?02" >
+							<p>博物中国 微信小程序</p>
+						</div>
+    		</div>
+    	</div>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+	
+	<script type="text/javascript">
+		$(".pos").mouseover(function() {
+			$(".pos_con").show()
+		})
+		$(".pos_con").mouseleave(function() {
+			$(".pos_con").hide()
+		})
+	</script>
+	
+	<script src="/js/index.js"></script>
+	<!-- <script src="/js/login.js"></script> -->
+	<!-- <script src="/js/common.js"></script> -->
+    
+</body>
+</html>

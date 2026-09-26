@@ -1,0 +1,26 @@
+{
+	"data":{
+		"content":"<section style='width: 95%; flex: 0 0 95%; margin-left: auto; margin-right: auto; max-width: 95% !important;'><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u9AD8\u53E5\u4E3D\u662F\u4E2D\u56FD\u4E1C\u5317\u5730\u533A\u7684\u53E4\u8001\u6C11\u65CF\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u65E9\u671F\u6D3B\u52A8\u4E8E\u6D51\u6C5F\u6D41\u57DF\u548C\u9E2D\u7EFF\u6C5F\u4E2D\u6E38\u5730\u533A\u3002<\/span><\/p><p style='text-align:center;line-height: 1;'><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u9AD8\u53E5\u4E3D\u662F\u4E2D\u534E\u6C11\u65CF\u6709\u673A\u7EC4\u6210\u90E8\u5206\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u9AD8\u53E5\u4E3D\u653F\u6743\u957F\u671F\u8FDE\u7EED\u5730\u63A5\u53D7\u4E2D\u592E\u653F\u6743\u518C\u5C01\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u662F\u4E2D\u56FD\u4E1C\u5317\u53E4\u4EE3\u8FB9\u7586\u653F\u6743\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u5176\u5386\u53F2\u8109\u7EDC\u4E0E\u6587\u5316\u5370\u8BB0\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u8D53\u7EED\u7740\u4E2D\u534E\u6587\u660E\u7684\u5386\u53F2\u57FA\u56E0\u3002<\/span><\/p><p style='line-height:2;'><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u5C55\u89C8\u4EE5\u9AD8\u53E5\u4E3D\u5386\u53F2\u6587\u5316\u4E3A\u6838\u5FC3\u4E3B\u9898\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u4F9D\u6258\u5B9E\u7269\u9648\u5217\u3001\u56FE\u6587\u5C55\u677F\u7B49\u591A\u5143\u8F7B\u91CF\u5316\u5C55\u9648\u5F62\u5F0F\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u91CD\u70B9\u9610\u91CA\u9AD8\u53E5\u4E3D\u8FB9\u7586\u6587\u8109\u4EF7\u503C\uFF0C<\/span><\/p><p style='text-align:center;line-height: 2;'><span style='font-family: \u5B8B\u4F53;'>\u5145\u5206\u5F70\u663E\u5409\u6797\u5728\u4E2D\u534E\u6587\u660E\u591A\u5143\u4E00\u4F53\u683C\u5C40\u4E2D\u7684\u72EC\u7279\u5730\u4F4D\u4E0E\u91CD\u8981\u8D21\u732E\u3002<\/span><\/p><\/section>",
+		"createDate":"2026-07-21 14:27:15",
+		"createId":5,
+		"createUser":null,
+		"delFlag":false,
+		"exhibitionFlag":1,
+		"exhibitionTime":"2026.07.21",
+		"id":1320,
+		"marks":"",
+		"name":"\u7FE9\u7FE9\u821E\u5E7F\u8896 \u4F3C\u9E1F\u6D77\u4E1C\u6765\u2014\u4E2D\u56FD\u9AD8\u53E5\u4E3D\u5386\u53F2\u6587\u5316\u5C55",
+		"place":"1\u697CC\u533A\uFF08\u5409\u6797\u7701\u535A\u7269\u9662\uFF09",
+		"remarks":"",
+		"showPic":"\/files\/museumWeb\/\/static\/upload\/173869aa-8e7a-4ef5-b123-917f9f08c4b9.png",
+		"status":1,
+		"type":"2",
+		"updateDate":"2026-07-21 14:59:38",
+		"updateId":5,
+		"updateUser":null,
+		"virtualExhibition":"",
+		"xwzxStatus":0
+	},
+	"success":true,
+	"message":"\u6210\u529F"
+}

@@ -1,0 +1,36 @@
+{
+	"data":{
+		"content":"\u91D1\u90FD\u7EDF\u6240\u5370\u94DC\u5B98\u5370\r\n",
+		"contentNoHtml":"\u91D1\u90FD\u7EDF\u6240\u5370\u94DC\u5B98\u5370\r\n",
+		"createDate":null,
+		"createId":0,
+		"createUser":null,
+		"delFlag":false,
+		"exhibitionList":[],
+		"id":0,
+		"imgList":[
+			"https:\/\/www.jlsdmu.com\/sf202312\/back\/picture\/wenwu\/d9af9de5f55f477aa563b070e953a8c9_wm.PNG"
+		],
+		"isRecommend":false,
+		"isTreasure":false,
+		"level":"",
+		"levelName":"",
+		"loveNum":0,
+		"mainImgUrl":"",
+		"name":"\u91D1\u90FD\u7EDF\u6240\u5370\u94DC\u5B98\u5370",
+		"recommend":false,
+		"remarks":"",
+		"size":"",
+		"texture":"",
+		"threedUrl":"https://www.jlmuseum.net\/threeD\/jilinsanwei120\/cangpin_url\/%E9%87%91%E9%83%BD%E7%BB%9F%E6%89%80%E5%8D%B0%E9%93%9C%E5%AE%98%E5%8D%B0.html",
+		"type":"",
+		"typeName":"\u5176\u4ED6",
+		"updateDate":null,
+		"updateId":0,
+		"updateUser":null,
+		"yearType":"",
+		"yearTypeName":"\u5176\u4ED6"
+	},
+	"success":true,
+	"message":"\u6210\u529F"
+}
