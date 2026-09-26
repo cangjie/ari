@@ -190,6 +190,17 @@ def _desc(text: str) -> str:
     return LABEL_RE.sub("", text, count=1).strip()
 
 
+def _en_text(text: str) -> str:
+    """英文版取来的文本。**一个拉丁字母都没有的，不当英文用。**
+
+    馆方英文版有的页面没翻译，直接放了中文原文：en/1639（《武士之女》）标题是英文，
+    简介是整段中文（332 个汉字、0 个字母）。照录进「英文简介」列会让人以为馆方有英译；
+    入库时 detect_lang 判中文、丢掉这一格（判得对）。2026-09-26 我曾把这误诊成
+    「detect_lang 把夹汉字的英文判成中文」，看了原文才知道那段本来就是中文。"""
+    t = _desc(text)
+    return t if re.search(r"[A-Za-z]", t) else ""
+
+
 def _abs(u: str) -> str:
     return BASE + u if u.startswith("/") else u
 
@@ -208,9 +219,11 @@ def build_rows(r) -> list[dict]:
             src = f"wmhg_official + 文章 {YWZ_ARTICLE}（在展证据）"
         rows.append(dict(key=f"c:{k}", hall=hall, name=v["name"], desc=_desc(v["desc"]),
                          image=_abs(v["images"][0]) if v["images"] else "", on=on, url=v["url"],
-                         level="藏品", cat=v["category"], name_en=e.get("name", ""),
-                         desc_en=_desc(e.get("desc", "")), oid=f"collection/{k}" + (f" · en/{en_of[k]}" if k in en_of else ""),
+                         level="藏品", cat=v["category"], name_en=_en_text(e.get("name", "")),
+                         desc_en=_en_text(e.get("desc", "")), oid=f"collection/{k}" + (f" · en/{en_of[k]}" if k in en_of else ""),
                          src=src))
+        if e.get("desc") and not rows[-1]["desc_en"]:
+            r.say(f"  · 英文版 en/{en_of[k]} 的简介里没有一个英文字母（馆方没翻译），英文简介留空：{v['name']}")
     for ek in sorted(EN_ONLY, key=int):
         e = site.EN[ek]
         rows.append(dict(key=f"en:{ek}", hall="", name="", desc="", image=_abs(e["images"][0]) if e["images"] else "",
