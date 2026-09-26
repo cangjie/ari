@@ -14,7 +14,7 @@
 
 所以这里只从**中文题名、官网类目、简介里带单位的尺寸片段**取，每个字段的规则都能在原文里
 逐字指认。宁可漏，不可错（AGENTS.md 第 7 条）：
-    object_form       官网类目（瓷器、日本画……），只给官网藏品
+    object_form       官网类目（瓷器、日本画……）；题名含「七宝烧」的按题名记为七宝烧（馆方把它归在瓷器类目下）
     artist            日本画题名「作者《题名》」里《之前的部分，只在日本画类目里用
     polity            题名以「伪满」开头 -> 伪满洲国
     cultural_context  题名以「日本」开头，或类目是日本画 -> 日本
@@ -46,6 +46,10 @@ CAT_EN = {"瓷器": "Porcelain", "日本画": "Japanese painting", "纪念章": 
           "宫廷文物": "Court relic", "铜镜": "Bronze mirror", "画报": "Pictorial magazine"}
 POLITY = ("伪满洲国", "Manchukuo")
 JAPAN = ("日本", "Japanese")                     # 与 meta_fill_rule 已写入库的取值同形，便于去重
+# **官网类目 ≠ 器型。** 馆方把七宝烧（金属胎掐丝珐琅）归在「瓷器」类目下，第一版照搬类目，
+# 2026-09-26 审计据简介查出 seq 3/5/13 的 object_form「瓷器」与「铜胎/银胎七宝烧」矛盾 ——
+# 又是拿一列代理另一件事。题名里写着「七宝烧」的，器型按题名记（确定性：七宝烧就是珐琅器）
+SHIPPO = ("七宝烧（金属胎珐琅）", "Shippō ware (cloisonné enamel)")
 
 ERA = {"明治": (1867, "Meiji"), "大正": (1911, "Taishō"), "昭和": (1925, "Shōwa"),
        "大同": (1931, "Datong"), "康德": (1933, "Kangde")}
@@ -147,7 +151,9 @@ def collect() -> list[tuple[int, str, str, tuple[str, str], str, str, str]]:
         official = k.startswith(("c:", "en:"))
         sk = "wmhg_official" if official else "wmhg_article"
         src = "伪满皇宫博物院官网藏品栏目" if official else f"伪满皇宫博物院官网文章 {B.YWZ_ARTICLE}"
-        if official:
+        if "七宝烧" in name:
+            add(row, "object_form", SHIPPO, sk, src + "（题名）")
+        elif official:
             add(row, "object_form", (cat, CAT_EN[cat]), sk, src + "（类目）")
         if cat == "日本画" and (m := re.match(r"^(.+?)\s*《", name)):
             add(row, "artist", (m.group(1), m.group(1)), sk, src + "（题名）")

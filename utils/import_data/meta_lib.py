@@ -32,10 +32,18 @@ KIND_VALUE = "meta_value_text"
 SRC_ZH, SRC_EN = "原始", "AI翻译"
 
 
+# 读写超时（秒）。pymysql 默认不设，跨公网时连接被中间设备悄悄掐断、又没收到 RST，
+# 查询就会**永远**等下去：2026-09-26 审计开跑时正赶上网络抖动，audit_meta 卡在加载数据
+# 那一步 6 分钟无输出、没有派生任何 claude 进程，只挂着一条「Established」的死连接。
+# 设上之后这种情况变成超时报错。本仓库单条语句都是秒级，600 秒远够用
+NET_TIMEOUT = 600
+
+
 def connect(defaults_file: str = "~/.my.cnf", autocommit: bool = False):
     """按 AGENTS.md 硬性约定，口令走选项文件，不进命令行也不进 shell 历史。"""
     return pymysql.connect(read_default_file=os.path.expanduser(defaults_file),
-                           charset="utf8mb4", autocommit=autocommit)
+                           charset="utf8mb4", autocommit=autocommit,
+                           read_timeout=NET_TIMEOUT, write_timeout=NET_TIMEOUT)
 
 
 def _next_cid(cur) -> int:

@@ -332,6 +332,15 @@ def append(path: Path, rec: dict) -> None:
 # ---------------------------------------------------------------------------
 CONF_DIMS = ("hs", "iu", "vi", "va", "ce", "cr", "er")
 
+# 喂给审计者的简介先取哪种语言。**默认英文**（PEM、哈佛、MFA 老清单的原文就是英文；
+# MFA 扩充清单是中文源，但审计前英译已齐，改了会让它们的提示词全变、缓存全失效）。
+# 取不到首选语言就退到另一种 —— 原先只取英文，缺英文时显示「（源数据无简介）」。
+# 2026-09-26 伪满皇宫第一轮审计就栽在这：中文源、英文只有 22 条馆方机翻，
+# 另 39 件（含全部节点）审计者看到的都是「无简介」，于是把「输入里没有」判成了
+# 「馆方没有」—— 说《武士之女》无简介（官网 1351 字）、景仁宫地毯缺馆方介绍（575 字）。
+# 中文源的馆应读中文原文：评分那侧（tier_v3 读源 Excel）本来就是中文。
+DESC_LANG = {"wmhg": "zh-CN"}
+
 
 def load_items(cur, mk: str, limit: int | None,
                seq_from: int | None = None, seq_to: int | None = None,
@@ -365,7 +374,7 @@ def load_items(cur, mk: str, limit: int | None,
 
     cur.execute("""
         SELECT a.source_seq, tn_en.text, tn_zh.text, tg.text,
-               td_en.text, tm.text, a.tier
+               td_en.text, tm.text, a.tier, td_zh.text
         FROM artwork a
         JOIN museum m ON m.id = a.museum_id AND m.key_name = %s
         LEFT JOIN gallery g ON g.id = a.gallery_id
@@ -373,11 +382,14 @@ def load_items(cur, mk: str, limit: int | None,
         LEFT JOIN content_text tn_en ON tn_en.content_id = a.name_cid        AND tn_en.lang='en'
         LEFT JOIN content_text tn_zh ON tn_zh.content_id = a.name_cid        AND tn_zh.lang='zh-CN'
         LEFT JOIN content_text td_en ON td_en.content_id = a.description_cid AND td_en.lang='en'
+        LEFT JOIN content_text td_zh ON td_zh.content_id = a.description_cid AND td_zh.lang='zh-CN'
         LEFT JOIN content_text tm    ON tm.content_id    = a.medium_cid      AND tm.lang='zh-CN'
         WHERE 1=1""" + R("a.source_seq") + tier_sql + """
         ORDER BY a.source_seq""", (mk, *rng_a, *tier_args))
+    zh_first = DESC_LANG.get(mk) == "zh-CN"
     items = {r[0]: {"seq": r[0], "name_en": r[1], "name_zh": r[2], "gallery": r[3],
-                    "description": r[4], "category": r[5], "tier": r[6],
+                    "description": (r[7] or r[4]) if zh_first else (r[4] or r[7]),
+                    "category": r[5], "tier": r[6],
                     "v3": None, "meta": [], "conf": {}, "src_tier": None, "missing": None}
              for r in cur.fetchall()}
 
@@ -1093,23 +1105,41 @@ def derive_top_missing(rec: dict) -> str | None:
 # 同「材质子串规则把音译人名判成材质」是一类错误：子串匹配不能用来做否定判断。
 VAGUE_WORDS = ("更多资料", "信息不足", "资料不足", "缺乏资料")
 VAGUE_MAXLEN = 30          # 超过这个长度就认为它已经说清了缺什么
+# 最短字数。原为 8：2026-09-24 伪满皇宫第一批因 seq 30 的「缺少年代信息」（6 字）被判空话，
+# 整批 48 件、约 4 分钟的答案作废。中文 6 个字完全可以具体 —— 长度只是「具体不具体」的代理，
+# 同「拿一列代理另一件事」。用户 09-25 定降到 4：只挡「不详」「待考」这类
+VAGUE_MINLEN = 4
+
+
+def is_vague(zh: str) -> bool:
+    zh = zh.strip()
+    return len(zh) < VAGUE_MINLEN or (len(zh) <= VAGUE_MAXLEN
+                                      and any(w in zh for w in VAGUE_WORDS))
 
 
 def check1_slim(rec: dict) -> None:
-    """精简版只剩两条硬检查 —— 其余判定已经不由模型出了。
+    """精简版的结构性硬检查：报了事实错误就必须写明。
+
+    **空话不在这里拦，改由 clean_slim 就地剔除（用户 2026-09-25 定）。** 原先一条空话就让
+    整批作废重问 —— 正是 AGENTS.md 第 12 条「校验太严会导致反复重付，只有结构性问题才重试，
+    细节问题就地清洗」。结构性问题（漏返 seq、报了事实错误却没写明）仍然整批重问。
 
     **刻意不限制条数。** 2026-09-09 加过「最多 2 条」的上限，结果模型直接
     12 件全给空列表 —— 限量与提示词里「资料足够时给空列表是正常结果」叠加，
     对轻量模型就是放行摆烂。而实测限量并不省 token（输出成本主要是思考），
     等于白白拿判断质量去换零收益。
     """
-    for m in rec["missing"]:
-        zh = m["zh"].strip()
-        if len(zh) < 8 or (len(zh) <= VAGUE_MAXLEN
-                           and any(w in zh for w in VAGUE_WORDS)):
-            raise RuntimeError(f"seq {rec['seq']} 的缺失证据太空泛：{zh}")
     if rec["found_factual_error"] and not rec["error_note_zh"]:
         raise RuntimeError(f"seq {rec['seq']} 说发现事实错误却没写明")
+
+
+def clean_slim(rec: dict) -> list[str]:
+    """剔除空话缺口，返回被剔除的原文（调用方留痕）。「需复核」由剩下的缺口导出。"""
+    keep, dropped = [], []
+    for m in rec.get("missing") or []:
+        (dropped if is_vague(m["zh"]) else keep).append(m)
+    rec["missing"] = keep
+    return [m["zh"] for m in dropped]
 
 
 def _slim_ok(data: dict, want: set) -> bool:
@@ -1149,6 +1179,11 @@ def stage1_slim(client, model, effort, ctx, note, items, out: Path, batch: int,
                    validate=lambda d, w=want: _slim_ok(d, w))
         for r in data["results"]:
             check1_slim(r)          # 这里只剩兜底，正常路径已在 validate 里过了
+            dropped = clean_slim(r)
+            if dropped:
+                # 留痕：被当作空话剔除的原文。下游只读 missing，这个键不影响写库
+                r["missing_dropped_vague"] = dropped
+                print(f"    seq {r['seq']} 剔除空话缺口：{dropped}")
             # top_missing 由代码导出，不问模型（见 STAGE1_SLIM_SCHEMA 上方说明）。
             # 落进 JSONL 的字段名与旧口径保持一致，audit_load 那侧不必改读法。
             # **两个键都要写，哪怕值是 None。** 只写 zh 的话，missing 为空的记录
