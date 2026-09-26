@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0">
+    <title>吉林省博物院博物馆详情 - 博物中国</title>
+    <!-- <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" /> -->
+	
+	<link rel="stylesheet" type="text/css" href="/css/reset.css?202208" />
+	<link rel="stylesheet" type="text/css" href="/css/layout.css?202208" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css?20221207" />
+	<link rel="stylesheet" href="/css/swiper.min2.css">
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	<script src="/js/swiper.min2.js"></script>
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?f763032a07bde3b2ba5a7177317b5bbe";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</head>
+<body>	
+	
+    <div class="header_wrap">
+    	<div>
+    		<div class="header">
+    			<div class="header_left">
+    				<div class="logo">
+    					<a href="/"><img src="/images/logo.png"></a>
+    				</div>
+    				<div class="pos">
+    					<div class="pos_top">
+    						<img src="/images/pos_i.png">
+    						<span id="areaName">北京</span>
+    					</div>
+    					<ul class="pos_con">
+    						
+    					</ul>
+    				</div>
+    				
+					<ul class="nav">
+						<div class="nav_icon">
+							<img src="/images/close.png" alt="">
+						</div>
+						<li class="nav_li" id="News">
+							<a href="/news">资讯</a>
+						</li>
+    					<li class="nav_li" id="Exhibit">
+    						<a href="/exhibit">展讯</a>
+    					</li>
+    					<li class="nav_li" id="Museums">
+    						<a href="/museums">博物馆</a>
+    					</li>
+    					<li class="nav_li" id="Collection">
+    						<a href="/collection">藏品</a>
+    					</li>
+    					<li class="nav_li" id="Special">
+    						<a href="/special">专题</a>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="header_right">
+					<div class="nav_icon">
+						<img src="/images/nav_icon.png" alt="">
+					</div>
+    				<form action="/search/index" class="nav_search">
+						<!-- <div> -->
+						
+							<input type="text" name="key" placeholder="搜索博物馆、藏品、展讯.....">
+							<!-- <div class="nav_search_icon"> -->
+								<button class="nav_search_icon" style="line-height: 0;"><img src="/images/search.png"></button>
+							<!-- </div> -->
+						
+    				<!-- </div> -->
+					</form>
+    				<div class="login_wrap">
+    					<img src="/images/peo.png" alt="">
+    					<div class="login_right">
+								<a href="/Account/Login">登录</a>
+								<span>|</span>
+								<a href="/Account/Reg">注册</a>
+
+    						<!-- <a href="javascript:;" onclick="show_login()">登录</a>
+    						<span>|</span>
+    						<a href="javascript:;" onclick="show_reg()">注册</a> 
+							<a href="/Account/Login">登录</a>
+							<span>|</span>
+							<a href="/Account/Reg">注册</a>-->
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="mian_wrapper">
+		
+        <main role="main" class="pb-3">
+            	<link rel="stylesheet" type="text/css" href="/css/collection.css?202208" />
+	<link rel="stylesheet" type="text/css" href="/css/museum.css?20221207" />
+	<style>
+		#Museums{
+			border-bottom: 2px solid #997143;
+		}
+	</style>
+<div class="postion">
+	当前位置：<a href="/">首页</a> > <a href="/museums">博物馆</a> > 吉林省博物院
+</div>
+
+<div class="details_con">
+	<div class="swiper-container details_img_wrap">
+		<div class="swiper-wrapper">
+			
+			<div class="swiper-slide details_img">
+				<img src="/upload/museums/2026/3/202603061026053845278.png">
+				
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<!-- <div class="details_img">
+		<img src="/upload/museums/2026/3/202603061026053845278.png">
+	</div> -->
+	
+	<script>
+		// 图集
+		var mySwiper = new Swiper('.details_img_wrap', {
+			autoplay: true,
+			pagination: {
+				el: '.swiper-pagination',
+				bulletActiveClass: 'details_img_active',
+				clickable: true,
+			},
+			
+		})
+	</script>
+	<div class="details_info">
+		<div class="ex_info_bottom">
+			<div class="info_tit">吉林省博物院</div>
+			<div class="ex_info_num">
+				
+					<span class="zan" title="点赞" onclick="setlikeWithLogin(1,'202208231954172117')">0</span>
+					<span class="collect" title="收藏" onclick="setcollectWithLogin(1,'202208231954172117')">0</span>
+			</div>
+		</div>		
+		<p><span>地区</span>吉林省 长春市 南关区 </p>
+		<p><span>开放时间</span>9：00—16：30(周一闭馆)</p>
+		<p><span>电话</span>0431-88917353  81959582</p>
+		<p><span>地址</span>吉林省长春市南关区永顺路1666号</p>
+		<div class="mu_info_btn">
+			<a href="http://www.jlmuseum.org/" target="_blank">官方网站</a>
+		</div>
+	</div>
+</div>
+<div class="details_con">
+	<ul class="details_tab">
+		<li class="details_tab_li details_tab_act">
+			<a href="javascript:;">场馆介绍</a>
+		</li>
+		<li class="details_tab_li">
+			<a href="javascript:;">视频</a>
+		</li>
+		<li class="details_tab_li">
+			<a href="javascript:;">历史沿革</a>
+		</li>			
+		
+		<li class="details_tab_li">
+			<a href="javascript:;">展览概况</a>
+		</li>			
+		
+		<li class="details_tab_li">
+			<a href="javascript:;">藏品介绍</a>
+		</li>			
+		
+		<li class="details_tab_li">
+			<a href="javascript:;">参观指南</a>
+		</li>			
+	</ul>
+	<div class="tab_list"><p><br/><img src="http://www.jlmuseum.org/Uploads/201603/56fa90c877b1a.jpg"/></p><p>&nbsp;</p><p><br/></p><p>&nbsp;&nbsp; &nbsp; &nbsp; 吉林省博物院，原名吉林省博物馆，1951年经吉林省人民政府批准建立，1952年在松花江畔的吉林市正式开放，1954年，随省政府迁至长春市。现位于长春市净月国家高新技术产业开发区永顺路1666号，建筑面积3.2万平方米，是直属于吉林省文化和旅游厅的国家一级博物馆。&nbsp;<br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; 吉林省博物院是一座历史与艺术博物馆，现有文物藏品12万余件，其中一级文物295件、二级文物3379件、三级文物14280件、其它文物近10万件，始自远古，及至现代，精华荟萃，内涵丰富。其中高句丽、渤海、辽金时期的文物以及中国历代书法绘画、东北抗日联军文物在全国占有重要地位，另外，中国历代陶瓷器、萨满民俗文物品也有一定的收藏，其中代表性的文物有北宋苏轼《洞庭春色赋·中山松醪赋》行书卷、南宋杨婕妤《百花图》卷、金张瑀《文姬归汉图》、元张渥临李公麟《九歌图》卷、明董其昌《昼锦堂并书记》卷、清丁观鹏《法界源流图》卷等；近现代著名画家吴昌硕、齐白石、张大千、徐悲鸿、溥心畬等人的作品也收藏颇丰，此外，还有东汉错金银“丙午神钩”铜带钩、汉白玉耳杯、辽契丹文八角铜镜、辽石雕彩绘塔、辽库伦辽墓壁画、金定窑紫釉印花碗、宋汝窑天青釉水仙盆、宋官窑贯耳瓶、宋“松风清节”琴等重要收藏。近现代文物中，以新民主主义革命时期的文物为主要收藏，重要的文物有：清中国一统舆地全图、《淮军阵图》、吉林省全图、吉林青年团印发的反对二十一条传单、辽宁民众自卫军使用的电台、陈正人给彭真的《对当前东北及其周围形势的认识和我们的方针的建议》手稿等。&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 拥有七十年历史的吉林省博物院，自1951年建馆以来，先后举办各类陈列展览800余个，接待观众达1300余万人次；编辑出版各类专业著述758篇（部），约2200万字。涌现出王承礼、张伯驹、段成桂等一批文化名人和专家学者。&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2010年以来，在文化大发展大繁荣的历史背景下，在博物馆免费开放的政策鼓舞下，吉林省博物院迎来了新的发展机遇，特别是在科学研究、陈列展览、宣传教育领域都取得了可喜的成果。2010年以来，博物院共举办精品陈列展览150多个，其中《黑土军魂——东北抗日联军军史陈列》荣获全国博物馆陈列展览十大精品奖；此外，博物院还出版学术专著10余部，完成国家级、省级科研课题10余项，发表专业学术论文400余篇；每年接待观众达60余万人次。相继被政府和社会各界命名为爱国主义教育基地、教学实践基地、军民共建单位。我院举办的送展下乡、亲子教育、公众博览大课堂等活动更赢得了社会公众的广泛赞誉，体现了奉献社会的责任与担当。凤凰卫视、凤凰资讯、吉林电视台、长春电视台，中国文化报、中国文物报、吉林日报，新华网、中国新闻网、吉和网等众多新闻媒体对我院开展的活动进行争相报道。&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 在伟大中国梦的感召下，吉林省博物院新一届领导班子着眼长远，务实工作，近两年相继开展了管理年和开放年建设。为适应新形势，吉林省博物院进一步完善建章立制、科学部署，确立了新意识形态下的工作重点，强化内部科学管理。2015年12月，吉林省博物院整体迁入新院。2016年4月28日，吉林省博物院面向社会开放试运行。新院建筑面积3.2万平方米，包含陈列展览区、藏品库房区、文物保护技术区、公众服务区和办公区五部分。其中陈列展览区建筑面积17700平方米，藏品库房区建筑面积6614平方米，文物保护技术区建筑面积1510平方米，公共服务区建筑面积2190平方米。主要展览有《白山松水的记忆——吉林省历史文化陈列》《吉林故事——吉林省非物质文化遗产展》《张伯驹夫妇捐献书画作品展》《瓷苑掇英——吉林省博物院院藏瓷器展》以及其它临展等。&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 伴随着党和国家对文化事业发展的关注和支持，吉林省博物院将以文化兴国战略为指导，以保护和传承优秀的民族文化为已任，不断丰富和深化人们对历史文化的理解和认识，为发展吉林省的博物馆事业和社会主义精神文明建设做出新的贡献。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 在伟大中国梦的感召下，吉林省博物院新一届领导班子着眼长远，务实工作，近两年相继开展了管理年和开放年建设。为适应新形势，吉林省博物院进一步完善建章立制、科学部署，确立了新意识形态下的工作重点，强化内部科学管理。2015年12月，吉林省博物院整体迁入新院。2016年4月28日，吉林省博物院面向社会开放试运行。新院建筑面积3.2万平方米，包含陈列展览区、藏品库房区、文物保护技术区、公众服务区和办公区五部分。其中陈列展览区建筑面积17700平方米，藏品库房区建筑面积6614平方米，文物保护技术区建筑面积1510平方米，公共服务区建筑面积2190平方米。主要展览有《白山松水的记忆——吉林省历史文化陈列》《吉林故事——吉林省非物质文化遗产展》《张伯驹夫妇捐献书画作品展》《瓷苑掇英——吉林省博物院院藏瓷器展》以及其它临展等。&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 伴随着党和国家对文化事业发展的关注和支持，吉林省博物院将以文化兴国战略为指导，以保护和传承优秀的民族文化为已任，不断丰富和深化人们对历史文化的理解和认识，为发展吉林省的博物馆事业和社会主义精神文明建设做出新的贡献。</p></div>
+	<div class="tab_list" style="text-align: center;">
+
+			<div style="line-height:100px;">暂无内容</div>
+
+		
+	</div>
+		<div class="tab_list"><p>&nbsp; &nbsp; &nbsp; &nbsp; 1951年5月，吉林省政府批准筹建吉林省博物馆。12月，吉林省博物馆竣工，位于吉林省<a target="_blank" href="https://baike.baidu.com/item/%E5%90%89%E6%9E%97%E5%B8%82/182763">吉林市</a>江湾路12号。</p><p><span style="font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>1952年1月27日，吉林省博物馆正式开馆。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1954年9月，吉林省博物馆随<a target="_blank" href="https://baike.baidu.com/item/%E5%90%89%E6%9E%97%E7%9C%81%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C/1584272">吉林省人民政府</a>迁至长春市<a target="_blank" href="https://baike.baidu.com/item/%E4%BC%AA%E6%BB%A1%E7%9A%87%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2/2151196">伪满皇宫博物院</a>。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1955年，吉林省博物馆主要业务部门迁至长春市西安大路7号办公。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1964年7月，吉林省博物馆和伪满皇宫合署办公，内设七个机构，职工112名。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1978年12月，革命史部单独分离，成立<a target="_blank" href="https://baike.baidu.com/item/%E5%90%89%E6%9E%97%E7%9C%81%E9%9D%A9%E5%91%BD%E5%8D%9A%E7%89%A9%E9%A6%86/2504640">吉林省革命博物馆</a>；吉林省博物馆全部回到伪满皇宫。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1982年，伪满皇宫陈列馆筹备处从吉林省博物馆分离，成立伪满皇宫陈列馆；吉林省博物馆在伪满皇宫东侧同德殿等处办公。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1983年，文物工作队从吉林省博物馆分离，成立<a target="_blank" href="https://baike.baidu.com/item/%E5%90%89%E6%9E%97%E7%9C%81%E6%96%87%E7%89%A9%E8%80%83%E5%8F%A4%E7%A0%94%E7%A9%B6%E6%89%80/8779671">吉林省文物考古研究所</a>。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 1987年5月12日，自然历史部从吉林省博物馆分离，成立<a target="_blank" href="https://baike.baidu.com/item/%E5%90%89%E6%9E%97%E7%9C%81%E8%87%AA%E7%84%B6%E5%8D%9A%E7%89%A9%E9%A6%86/7701684">吉林省自然博物馆</a>。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2003年9月，吉林省博物院在原吉林省博物馆和吉林省近现代史博物馆基础上组建。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2007年5月8日，吉林省博物院新院奠基。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2015年12月，吉林省博物院整体迁入新院。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2016年4月28日，吉林省博物院新院面向社会开放试运行。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; 2018年10月31日，吉林省博物院被评为2018年全国中小学生研学实践教育基地。</p></div>
+		<div class="tab_list"><p>&nbsp; &nbsp; &nbsp; &nbsp; 吉林省博物院是吉林省科技文化中心综合馆建筑群内的一组建筑，由德国<a target="_blank" href="https://baike.baidu.com/item/GMP/1598002" style="background-color: rgb(255, 255, 255);">GMP</a>公司设计，建筑采用大立面通透式、庭院花园式布局。建筑群体风格典雅古朴，集实用功能，艺术特色为一体。<br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; 综合馆的三座展馆呈三角形排列，中间由一座圆形大厅连接，“三馆合一”在全国省级城市中还属首例。整体工程采用白色调，窗户的设计则是典型的德国风格，呈细长形状。虽然三座展馆的设计风格一致，不过建筑的高度却各不相同；其中，科技馆最高，地上建筑大约高50米；其次是博物馆；最低的是美术馆。另外，每座展馆都是正方形建筑，建设尺寸均为81×81米，并且每层的举架都高达8.1米，内部空间非常大。另外，三座展馆的内部设计风格也一样，每个展馆内部都采用了白色石材，每个馆内都分为四个区域，中心区是一个天井，天井的高度与展馆高度一致。</p></div>
+		<div class="tab_list"><p>&nbsp; &nbsp; &nbsp; &nbsp; 吉林省博物院代表性的馆藏文物有北宋<a target="_blank" href="https://baike.baidu.com/item/%E8%8B%8F%E8%BD%BC/53906">苏轼</a>《洞庭春色赋·中山松醪赋》行书卷、南宋<a target="_blank" href="https://baike.baidu.com/item/%E6%9D%A8%E5%A9%95%E5%A6%A4/8886302">杨婕妤</a>《<a target="_blank" href="https://baike.baidu.com/item/%E7%99%BE%E8%8A%B1%E5%9B%BE/10823472">百花图</a>》卷、金<a target="_blank" href="https://baike.baidu.com/item/%E5%BC%A0%E7%91%80/1827240">张瑀</a>《<a target="_blank" href="https://baike.baidu.com/item/%E6%96%87%E5%A7%AC%E5%BD%92%E6%B1%89%E5%9B%BE/3648986">文姬归汉图</a>》、元<a target="_blank" href="https://baike.baidu.com/item/%E5%BC%A0%E6%B8%A5/2507627">张渥</a>临<a target="_blank" href="https://baike.baidu.com/item/%E6%9D%8E%E5%85%AC%E9%BA%9F/940134">李公麟</a>《<a target="_blank" href="https://baike.baidu.com/item/%E4%B9%9D%E6%AD%8C%E5%9B%BE/4728646">九歌图</a>》卷、明<a target="_blank" href="https://baike.baidu.com/item/%E8%91%A3%E5%85%B6%E6%98%8C/1188668">董其昌</a>《昼锦堂并书记》卷、清<a target="_blank" href="https://baike.baidu.com/item/%E4%B8%81%E8%A7%82%E9%B9%8F/3533664">丁观鹏</a>《<a target="_blank" href="https://baike.baidu.com/item/%E6%B3%95%E7%95%8C%E6%BA%90%E6%B5%81%E5%9B%BE/4655044">法界源流图</a>》卷等；近现代著名画家<a target="_blank" href="https://baike.baidu.com/item/%E5%90%B4%E6%98%8C%E7%A1%95/572030">吴昌硕</a>、<a target="_blank" href="https://baike.baidu.com/item/%E9%BD%90%E7%99%BD%E7%9F%B3/234940">齐白石</a>、<a target="_blank" href="https://baike.baidu.com/item/%E5%BC%A0%E5%A4%A7%E5%8D%83/321675">张大千</a>、<a target="_blank" href="https://baike.baidu.com/item/%E5%BE%90%E6%82%B2%E9%B8%BF/327754">徐悲鸿</a>、溥心畲等人的作品也收藏颇丰，此外，还有<a target="_blank" href="https://baike.baidu.com/item/%E4%B8%9C%E6%B1%89/395223">东汉</a>错金银“丙午神钩”铜带钩、<a target="_blank" href="https://baike.baidu.com/item/%E6%B1%89%E7%99%BD%E7%8E%89%E8%80%B3%E6%9D%AF/22314474">汉白玉耳杯</a>、辽契丹文八角铜镜、辽<a target="_blank" href="https://baike.baidu.com/item/%E7%9F%B3%E9%9B%95%E5%BD%A9%E7%BB%98%E5%A1%94/369499">石雕彩绘塔</a>、辽<a target="_blank" href="https://baike.baidu.com/item/%E5%BA%93%E4%BC%A6%E8%BE%BD%E5%A2%93%E5%A3%81%E7%94%BB/4402102">库伦辽墓壁画</a>、金<a target="_blank" href="https://baike.baidu.com/item/%E5%AE%9A%E7%AA%91/327545">定窑</a>紫釉印花碗、宋<a target="_blank" href="https://baike.baidu.com/item/%E6%B1%9D%E7%AA%91/885397">汝窑</a>天青釉水仙盆、宋<a target="_blank" href="https://baike.baidu.com/item/%E5%AE%98%E7%AA%91/329622">官窑</a>贯耳瓶、宋“松风清节”琴等重要收藏。近现代文物中，以新民主主义革命时期的文物为主要收藏，重要的文物有：清中国一统舆地全图、《淮军阵图》、吉林省全图、吉林青年团印发的反对二十一条传单、辽宁民众自卫军使用的电台、<a target="_blank" href="https://baike.baidu.com/item/%E9%99%88%E6%AD%A3%E4%BA%BA/5580694">陈正人</a>给<a target="_blank" href="https://baike.baidu.com/item/%E5%BD%AD%E7%9C%9F/115871">彭真</a>的《对当前东北及其周围形势的认识和我们的方针的建议》手稿等。<br/></p><p><br/></p><p><b>东北人民革命军第一军少年营使用的单刀</b></p><p>刀呈扁月形，钢质，刀口有钝痕。杨靖宇将军创建的磐石抗日游击队少年营使用的武器。“九·一八”事变后，东北抗日斗争风起云涌。1933年5月，在对敌斗争中日益壮大的磐石游击队武器装备得以改善，遂将缴获敌人的部分武器拨给少年营使用，这把单刀就是其中之一。1964年，当地农民开荒翻地时发现了这把刀。经当年少年营队员认定，少年营初建时有两把单刀，这是其中一把。单刀现由吉林省革命博物馆收藏，为馆藏一级品。</p><p><br/></p><p><b>龙泉窑豆青釉琮式瓶</b></p><p>年代：辽（宋）。高18厘米、口径3厘米。</p><p>1975年吉林省扶余县班德古城出土。胎质洁白，釉色青碧，光泽柔和。上部仿古代玉琮形式，下部为方形座，整器状如一座小塔。座身四壁均饰相同的卷曲纹和草叶纹。线条流畅，清新明快。在施釉较薄处，显出胎质的白痕，俗称“出筋”。此器当为中原传人。</p><p><br/></p><p><b>漩涡纹铜环</b></p><p>年代：东汉。外径12.8厘米、最厚处0.5厘米。</p><p>1981年吉林省榆树县老河深墓葬出土。截面呈橄榄形，两面分别阴刻八个相同的漩涡纹。线条流畅，表现出娴熟的雕刻技巧。</p><p><br/></p><p><b>石雕彩绘塔</b></p><p>年代：辽。残高96.5厘米、基座边长33.5厘米、宽25.8厘米。</p><p>1970年吉林省农安县万金塔塔基出土。灰色砂岩雕制。实心，四角三层。基座是仿砖石结构的须弥座。束腰部分雕有宝瓶式角柱、问柱：壶门、狮子，上缘施仰莲。塔刹仅存莲座、莲珠及球状“覆钵”。中间三层基本上仿木结构。绿檐红柱，雕琢精细，四面浮雕花朵、奔羊、怪兽、门扉、佛像等。并在浮雕的物体上施以红、绿、黑、白、蓝等色彩。形象生动，色彩绚丽。从造型与技法看，它与北宋塔的建筑风格颇多相似之处。同时出土的还有铁质小塔和木桌等，应为礼佛之物。</p><p><br/></p><p><b>青花云龙纹高足碗</b></p><p>年代：元。高11.4厘米、口径13厘米。</p><p>侈口，深腹。高圈足上有三道凸弦纹，呈竹节状。口沿为青花唐草纹。内壁暗花印行龙二条。外壁用青花绘一游龙，并衬以火焰纹。青花色泽青翠浓艳，线条流畅有力，堪称元代青花瓷器中的珍品。</p><p><br/></p><p><b>玛瑙项饰</b></p><p>年代：东汉。悬长约98厘米。</p><p>1981年吉林省榆树县老河深1号墓出土。由266颗玛瑙珠和6根金管组成。玛瑙珠为圆形，大小不一，桔红色。金管呈圆筒状，相间穿于玛瑙珠之间。红黄相映，晶莹夺目，显得华贵异常。1号墓是榆树老河深墓地的一座大型墓葬。随葬品相当丰富，出土有金耳饰、金银指饰(双手十指均有金或银指环)、银腕饰以及铁马镳、铁马衔和铜节约等。死者生前为一地位高、拥有大量财富的女性<sup>&nbsp;</sup>。</p><p><br/></p><p><b>鎏金神兽铜牌饰</b></p><p>年代：东汉。长11.5厘米、宽7.2厘米、厚0.15厘米。</p><p>1981年吉林省榆树县老河深墓葬出土。正面铸一形如飞马的神兽，吻部作弯角上翘，形似犀牛。昂首扬尾，四蹄腾空，双翼伸展，作奔翔状。背面于神兽臀部作一横鼻。出土时牌面朝下，粘有纺织品和皮革残迹。</p><p><br/></p><p><b>定窑紫釉印花碗</b></p><p>年代：金。高5厘米、口径17厘米。</p><p>1974年吉林省哲里木盟奈曼旗白音昌出土、胎薄而细。芒口，矮圈足。釉色滋润柔和，莹洁可鉴，内壁饰花纹六组，每组内容不同，有牵牛花、牡丹花、荷花、梅花等图案。构图井然有序而又富于变化。施紫釉的定窑瓷器，传世极少，因而弥足珍贵<sup>&nbsp;</sup>。</p><p><br/></p><p><b>错金银“丙午神钩”铜带钩</b></p><p>年代：东汉。长15.7厘米。</p><p>1968年吉林省榆树县刘家乡出土。首部似鹰，眼窝嵌两颗黑色玉石珠，前额嵌一绿松右，羽用金银丝错成。钩身作鸟喙神人，眼窝嵌蓝色宝石，额镶一滴水状绿松石，双手抱鱼，作舂食状。鱼身通体以金丝填成鳞片，体侧嵌二银片，似滴水状。鱼置于“神人”怀中，能活动而不脱出。尾部作飞鸟，口含一蓝色宝石；双足、双翅卷曲向后成环形。背面中部有一凸起的圆钮，钮面错银，作卷云状，中心嵌一红宝石。上部腹面错金铭文“丙午神钩，君必高迁”八字。下部饰飞凤，头足<a target="_blank" href="https://baike.baidu.com/item/%E9%94%99%E9%87%91/2219418">错金</a>，翅、尾和体部错银。造型优美，铸工精巧。加之通体错金银，镶嵌宝石，是一件十分罕见的珍贵工艺品<sup>&nbsp;</sup>&nbsp;。</p><p><br/></p><p><b>石狮</b></p><p>年代：渤海（唐）。通高64厘米。</p><p>1949年吉林省敦化县贞惠公主墓出土。用花岗岩雕琢而成。渤海匠师以洗练而又细致的刀法，把守墓石狮刻画得威武雄健。石狮造型与陕西省唐乾陵的大石狮颇相一致，可以看出渤海的石雕艺术，与唐代一脉相承的关系&nbsp;。</p><p><br/></p><p><b>契丹文铜镜</b></p><p>年代：辽、直径26.2厘米。</p><p>1971年吉林省大安县红岗出土。镜作八角形。镜背铸契丹小字五行，陈述先生对镜铭作过释读。大意是：时不再来，命数由天；及时解脱，天相吉人。镜边刻汉文“济州录事完颜通”七字。据《金史》记载，天眷三年(1140年)改辽黄龙府为济州，大定二十九年(1189年)更为隆州，贞祜初升隆安府。此镜称“济州录事”，当为金初官职。完颜通不见史籍记载。此镜为辽代旧物，后经完颜通签刻发放使用。</p><p><br/></p><p><b>白玉耳杯</b></p><p>年代：高句丽（汉）。高3.2厘米、口长13厘米、口宽9.5厘米。</p><p>1958年吉林省集安县城内粮库出土。在古代，耳杯用于盛酒或羹，亦称“<a target="_blank" href="https://baike.baidu.com/item/%E7%BE%BD%E8%A7%9E/2030553">羽觞</a>”。实用耳杯多为漆器，亦有陶质的，玉制耳杯为数甚少。此耳杯玉质光润晶莹，富丽端庄，系用新疆和田玉磨制而成。其形制与<a target="_blank" href="https://baike.baidu.com/item/%E6%BB%A1%E5%9F%8E%E6%B1%89%E5%A2%93/172133">满城汉墓</a>出土的料耳杯相似，当为汉代畿内工匠的杰作。可能是中央王朝馈赠之物&nbsp;。</p><p><br/></p><p><b>“禾屯吉卫指挥使司印”铜印</b></p><p>年代：明。边长9厘米。</p><p>1974年吉林省洮安县玉城村明代遗址出。铜质。九叠篆阳文：“禾屯吉卫指挥使司印”。印背刻“禾屯吉卫指挥使司印”、“礼部造”、“永乐七年九月日’’侧边刻“礼字四十三号”。明代在都指挥使司下设卫指挥司，相当于县一级地方机关。永乐七年公元1409年。这是研究明代东北地区历史的重要实物&nbsp;。</p><p><br/></p><p><b>辽宁民众自卫军使用的电台</b></p><p>铁合金制品，纵24厘米，横40厘米，是一部旧式电台。1931年“九·一八”事变后，东北民众抗日救国会为支援东北民众抗日斗争，于1932年从北平给辽宁民众自卫军唐聚伍部队秘密送来这部电台，在该部队的抗日斗争中，起到了重要的通讯联络作用。后唐聚伍部撤离临江时，将这部电台掩埋在板石沟，成为东北义勇军与日本侵略军浴血奋战的历史见证。建国后，该电台在临江板石沟被发掘出土，现由吉林省革命博物馆收藏，为馆藏一级品&nbsp;。</p><p><br/></p><p><b>东北抗日斗争时期中共吉林特支第二交通站隐藏文件用的花瓶</b></p><p>花瓶为一对，高24厘米，底径9.5厘米，玻璃制。1933年初，吉林特支在吉林市河南街富裕胡同7号邓晓春家建立了秘密交通站，负责接待满洲省委领导干部途径吉林去南满抗日游击区。负责人邓晓春经常将党的文件和传单隐藏在这对花瓶中，上面插满鲜花，遮掩敌人耳目，以保存和传递党的文件。该站是当时连接中共满洲省委与吉林地方党组织的重要纽带，这对花瓶也成为中共满洲省委领导吉林人民坚持反满抗日斗争的历史见证。1963年，邓晓春夫人闫庆莲将花瓶捐赠吉林省博物馆。现由吉林省博物院收藏，为馆藏一级品。</p><p><br/></p><p><b>龙泉窑刻花食盒</b></p><p>年代：清。通高21厘米、口径29厘米。</p><p>盖面等距刻蝙蝠五只。盒身以系耳为界，分为两区：一区为牡丹与荷花，另一区为菊花和梅花。并分别配以五言诗句：“春牡百花王，夏荷满池中，秋菊多佳色，冬梅映雪芳”。象征“五蝠（福）临门”、“四季平安”<sup>&nbsp;</sup><a>&nbsp;</a>&nbsp;。</p><p><br/></p><p><b>龙泉窑湖绿釉贴菊花纹洗</b></p><p>年代：元。高2.5厘米、口径16.5厘米。</p><p>釉色呈浅湖绿色，柔和淡雅。矮圈足。内底中心贴一朵深红色菊花，图案规整却无板滞之感。红绿相映，显得典雅秀美<sup>&nbsp;</sup>&nbsp;。</p><p><br/></p><p><b>搅釉瓷盒</b></p><p>年代：辽。高4厘米、盖径8厘米。</p><p>1953年吉林省农安县辽塔内发现。胎质坚密洁白。盖与器作子母口扣合。矮圈足。内外均施白褐两色釉，纹饰由盖顶旋转展开，犹如孔雀开屏，静中有动。釉色典雅，晶莹润洁。小巧玲珑，活泼自然。如此精美的搅釉瓷器，极为罕见<sup>&nbsp;</sup>&nbsp;。</p><p><br/></p><p><b>无上光荣锦旗</b></p><p>用染有红色的家织布制成，长方形。旗上用墨笔楷体书有“秋季攻势和龙县担架队无上光荣 东北民主联军第六纵队政治部赠”。1947年10月15日，东北民主联军在东北战场发动了秋季攻势，主要战场在辽南一线。吉林解放区主要是担负支援前线任务。和龙县担架队跟随东北民主联军第六纵队开赴前线。他们以子弟兵为榜样，一面上前沿抢救伤员，一面开展各项群众工作，受到了部队和地方的欢迎，得到六纵队政治部的表彰<sup>&nbsp;</sup>。</p><p><br/></p><p><b>龙泉窑观音像</b></p><p>年代：元。通高24.2厘米。</p><p>观音为堆塑素烧坐像，头戴花冠，身披璎珞，庄严肃穆，神态安详。像前左右有子作侍奉状，显得虔诚毕敬。右侧置一净瓶。背龛以丛镂空卷云纹成顶罩，当为民间所供奉之遗物。顶罩略有残损<sup>&nbsp;</sup><a>&nbsp;</a>&nbsp;。</p><p><br/></p><p><b><a target="_blank" href="https://baike.baidu.com/item/%E9%93%B6%E9%87%89%E9%B8%A1%E5%86%A0%E5%A3%B6/4341445">银釉鸡冠壶</a></b></p><p>年代：辽。高25厘米、口径6厘米。</p><p>1975年吉林省哲里木盟奈曼旗沙力好来出土。淡黄陶胎。扁身，短管口，口唇微侈。上有马鞍状双孔泉，供穿绳用。体侧有皮条及针痕装饰。通体施绿釉，壶身呈现光艳悦目的银斑。壶身两面压划卷草纹，纹饰简洁明快，优美自然。鸡冠壶是辽瓷中的典型器物，它适应游猎生活的需要，具有浓郁的民族风格。从造型与装饰看，此壶应为辽代早中期的作品<sup>&nbsp;</sup>&nbsp;。</p><p><b>乾隆款仿钧窑双耳瓶</b></p><p>年代：清。通高29.8厘米。</p><p>鼓腹，贯耳，圈足。造型仿宋官窑，釉色仿钧窑。造型端庄稳重，釉色青、白、蓝、紫交相辉映，艳丽夺目。<a target="_blank" href="https://baike.baidu.com/item/%E4%B9%BE%E9%9A%86/129924">乾隆</a>时期（1736―1795年）是我国清代瓷器工艺的鼎盛时期，达到了“制作日巧，无物不备”的地步。仿古器物更是超越前代，此器是仿钧瓷的佳品<sup>&nbsp;</sup>。</p><p><br/></p><p><b>董其昌书《昼锦堂记》卷（局部）</b></p><p>年代：明。纵42厘米、横1312厘米。绢本。</p><p>董其昌，字玄宰，号思白，又号香光。华亭（今上海市松江区）人。明嘉靖三十四年（1555年）生，崇祯九年（1636年）卒。书法博采众家之长，融于一炉，自成风格。其分行布白，疏宕秀逸，对明末清初书坛影响甚大。</p><p>《昼锦堂记》乃北宋大文学家<a target="_blank" href="https://baike.baidu.com/item/%E6%AC%A7%E9%98%B3%E4%BF%AE/127825">欧阳修</a>为<a target="_blank" href="https://baike.baidu.com/item/%E9%9F%A9%E7%90%A6/16830">韩琦</a>所作，董氏作《昼锦堂图》，并书此记于后，书画相得益彰。通篇笔调清新爽利，活泼自然。牵连引带处，简捷痛快，有一气呵成之势。为董氏行书之精品&nbsp;。</p><p><br/></p><p><b>郑燮竹石图轴</b></p><p>年代：清。纵130.5厘米、横71.5厘米。纸本，设色。</p><p><a target="_blank" href="https://baike.baidu.com/item/%E9%83%91%E7%87%AE/615852">郑燮</a>，字克柔，号板桥。江苏兴化人，居扬州。清康熙三十二年（1693年）生，乾隆三十年（1765年）卒。乾隆丙辰进士，曾任山东范县、潍县知县，因助农民胜讼和救济灾民，得罪豪绅而罢官。为官清正，关心民间疾苦。工诗文，善书画，尤长兰竹。以草书中竖、长撇运之，多不乱，少不疏。脱尽时俗，秀劲绝伦。书法隶楷参半，自谓“六分半书”，独具风格。诗文通俗流畅，格调清新，自然真率，为世所称。为“扬州八怪”之一。有《板桥全集》行世，</p><p>此幅竹石，笔墨不多而别有风韵。自题七绝一首，实为作者的自我写照。此涛原为题画兰，作者曾在几幅画上题写，只是个别字略有不同，如“立根”或作“扎根”，“乱崖”或作“破崖”、“乱岩”，其余均同。“千磨万击还坚劲，任尔东西南北风”。兰竹如此，为人则更应如此。</p><p><br/></p><p><b>王铎自书诗册（局部）</b></p><p>年代：明。纵25厘米、横17厘米。绫本。</p><p><a target="_blank" href="https://baike.baidu.com/item/%E7%8E%8B%E9%93%8E/7860">王铎</a>，字觉斯，号嵩樵、痴庵，又号痴仙道人。河南孟津人。明万历二十年（1592年）生，清顺治九年（1652年）卒。博学好古，工诗文，有“神笔王铎”之称。以行、草书见长，深得“二王”笔法。</p><p>全册共三十页。行笔有痴有徐，顿挫转折，有迹可寻。册后题记“天启乙丑仲冬”，即明天启五年（1625年），时王氏才三十四岁，但书法却毫无稚嫩之感。当是他早年佳作之一。</p><p><br/></p><p><b>张渥临李公麟九歌图卷（局部）</b></p><p>年代：元。纵29厘米、横523.3厘米。纸本、墨笔。</p><p>张渥，字叔厚，号贞期生。淮南人。生年不详，约卒于元至正十六年（1356年）后不久。博学多才艺，善画人物，尤精白描。他继承了宋代李公麟的画法，被誉为“李龙眠后一人”。</p><p>此图根据《<a target="_blank" href="https://baike.baidu.com/item/%E4%B9%9D%E6%AD%8C/67994">九歌</a>》内容，卷首先绘屈画像，然后依次绘东皇太一、云中君、湘君、湘夫人、大司命、少司命、东君、河伯、山鬼、国殇。当时著名书法家吴睿书辞。可谓书画合壁，相得益彰。此卷是张渥于至正六年（1346年）冬十月为其好友言思齐所绘。虽说是临李公麟，实际上是再创造。所画人物状貌各异，生动自然。把<a target="_blank" href="https://baike.baidu.com/item/%E5%B1%88%E5%8E%9F/6109">屈原</a>那种忧国忧民、憔悴枯槁的精神气质再现出来。全卷忠实地表现了《九歌》的辞意，是一件极为珍贵的艺术精品。屈原是战国时期的伟大爱国诗人，有《离骚》、《九歌》、《天问》等不朽诗篇传世。著名书画家<a target="_blank" href="https://baike.baidu.com/item/%E5%80%AA%E7%93%92/1457379">倪瓒</a>于明洪武五年（1372年）在言思齐家看到了这件作品，深有感慨地题云：“张督厚（张渥）画法，吴孟思（<a target="_blank" href="https://baike.baidu.com/item/%E5%90%B4%E7%9D%BF/6133432">吴睿</a>）八分，俱有古人风流。今又何可得哉！壬子六月廿九日，观于思齐西斋。”说明此时张渥、吴睿均已作古<span style="font-size: 12px;"> </span>。</p><p><br/></p><p><b>丁观鹏摹张胜温法界源流图卷（局部）</b></p><p>年代：清。纵33厘米、横1635厘米。纸本，设色。</p><p>丁观鹏，北京人。生卒年不详，乾隆时供奉南薰殿。善道释、人物。初学丁云鹏，有出蓝之誉。后曾从郎世宁学画，深受其影响。</p><p>此卷用工笔重彩大描金法，画佛界诸形象，有卫护神、观音、禅宗六祖、十八罗汉及各种佛会。场面宏大，人物繁多，洋洋大观。原本为宋代大理国描工张胜温所画（现藏台湾故宫博物院），乾隆认为原件诸神祗错讹不伦，于是聘章嘉国师为顾问，对该画进行整理，命丁观鹏将首尾部分摹成《蛮王礼佛图》，中间部分为《法界源流图》。此卷完成于乾隆三十二年（1767年），用笔细致非凡，设色浓丽，端庄典雅，为其精心杰作。《秘殿珠林续编》、《国朝院画录》著录<sup>&nbsp;</sup><a>&nbsp;</a>&nbsp;。</p><p><br/></p><p><b>苏轼《洞庭春色赋・中山松醪赋》卷（局部）</b></p><p>年代：北宋。纵28.3厘米、横306.3厘米。纸本。</p><p><a target="_blank" href="https://baike.baidu.com/item/%E8%8B%8F%E8%BD%BC/53906">苏轼</a>，字子瞻，号东坡居士。四川眉山人。宋景祜三年十二月十九日（1037年1月8日）生，建中靖国元年（1101年）卒。北宋著名文学家、诗人和书画家，为“唐宋八大家”之一。其行、楷书得力于李邕、颜真卿和杨凝式，而自成一家。用笔丰腴跌宕，有天真烂漫之趣。后人称他与黄庭坚，米芾、蔡襄为“北宋四大家”。著作丰富，有《东坡全集》等传世。</p><p>此卷是苏轼白书的《洞庭春色赋》和《中山松醪峨》。“涮庭春色”和“中山松醪”均为酒名。苏轼藉此抒发他因仕途坎坷而郁结在心中的不平：“曾日饮之几何，觉天刑之可逃。”文章豪放畅达，想象丰富：书法沉雄劲健，一气呵成，珠联璧合，堪称双绝。苏轼在后记中写道：“……绍圣元年（1094年）闰四月廿一日，将适岭表，遇大雨留襄邑（今河南睢县）书此。”<a target="_blank" href="https://baike.baidu.com/item/%E6%8B%96%E5%B0%BE/10986552">拖尾</a>有元人<a target="_blank" href="https://baike.baidu.com/item/%E5%BC%A0%E5%AD%94%E5%AD%99/4005933">张孔孙</a>。明人黄蒙、<a target="_blank" href="https://baike.baidu.com/item/%E6%9D%8E%E4%B8%9C%E9%98%B3/18287">李东阳</a>、王辞登、<a target="_blank" href="https://baike.baidu.com/item/%E7%8E%8B%E4%B8%96%E6%87%8B/3670046">王世懋</a>、<a target="_blank" href="https://baike.baidu.com/item/%E7%8E%8B%E4%B8%96%E8%B4%9E/506737">王世贞</a>、<a target="_blank" href="https://baike.baidu.com/item/%E5%BC%A0%E5%AD%9D%E6%80%9D/4000481">张孝思</a>题跋，以及乾隆皇帝的题跋和题诗。乾隆时入清内府，在此之前，流传有绪，钤诸家鉴藏印记数十方。《平生壮观》、《书画记》、《墨缘舡观》、《石渠宝笈续编》、《壮陶阁书而录》等书著录。并刊刻于《秋碧堂帖》、《敬一堂帖》、《三希堂帖》、《壮陶阁帖》等丛帖中，有影印本传世。溥仪出宫时将此卷携出，藏于长春伪宫。1945年伪满洲国覆亡，此件国宝下落不明，吉林省博物馆为此寻访了三十多年，终于在1982年12月于一位中学教师家里找到了它，使这什珍宝重新得到了国家的保护，这是一件值得庆幸的大喜事<sup>&nbsp;</sup><a>&nbsp;</a>&nbsp;。</p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p></div>
+		<div class="tab_list"><p><strong>免费开放须知</strong><strong></strong></p><p><strong>亲爱的观众朋友：</strong></p><p><strong>根据上级部门指示精神，为加强疫情防控工作,减少馆内人员流动性，吉林省博物院开闭馆时间进行调整。</strong></p><p><strong></strong></p><p><strong>（一）开闭馆时间</strong></p><p><strong>开馆时间：周二至周日9:00—16:00（15:30停止入馆）</strong></p><p><strong>闭馆时间：周一闭馆（国家法定节假日除外）</strong></p><p><strong><br/></strong></p><p><strong>（二）参观预约</strong></p><p><strong>请参观观众提前在吉林省科技文化中心公众号或美团APP上进行预约，并按预约时间入场参观，参观时请携带好预约人身份证原件（预约码）、持本人吉祥码（绿码）、行程码，原则上不允许未接种人员（有禁忌症人员需出示相关证明）进入，并佩戴好口罩。</strong></p><p><strong>9：00-11：00(1000人)</strong></p><p><strong>11：00-13：00(1000人)</strong></p><p><strong>13：00-15：30(1000人)</strong></p><p><strong>&nbsp;</strong></p><p><strong>（三）注意事项</strong></p><p><strong>1.谢绝在展室内长时间逗留、聚集，当馆内人员密度较大时，我院将根据具体情况采取相应措施，请配合工作人员疏导。请观众自觉遵守相关防疫工作要求，听从指挥，避免人员聚集。</strong></p><p><strong>2.我院将定时对各展厅及公共服务设施进行全面消毒，为公众提供一个安全的参观环境，感谢您对吉林省博物院工作的理解和支持。</strong></p><p><br/></p></div>
+</div>
+
+<div class="details_con">
+	<div class="details_titWrap">
+		<span class="details_tit">馆内收藏</span>
+		<div class="more">
+			<a href="/collection/?museums=202208231954172117" target="_blank">更多</a>
+		</div>
+	</div>
+	<div class="exhibit_ul">
+		
+	</div>
+</div>
+
+<div class="details_con">
+	<div class="details_titWrap">
+		<span class="details_tit">展览</span>
+		<div class="more">
+			<a href="/exhibit?museumsid=202208231954172117">更多</a>
+		</div>
+	</div>
+	<div class="zl_ul">
+
+		
+	</div>
+</div>
+
+<div class="details_con" style="display:none;">
+	<div class="details_titWrap">
+		<span class="details_tit">地方推介</span>
+	</div>
+	<div class="video">
+		<video src=""></video>
+	</div>
+</div>
+
+<script>
+	$(".tab_list").hide();
+	$(".tab_list").eq(0).show();
+	$(".details_tab_li").mouseover(function(){
+		$(".details_tab_li").each(function(){
+			$(this).removeClass("details_tab_act");
+		})
+		$(".tab_list").each(function(){
+			$(this).hide();
+		})
+		$(this).addClass("details_tab_act");
+		$(".tab_list").eq($(this).index()).show();
+	})
+</script>
+
+			
+        </main>
+		<script src="/js/common.js?t=20221017"></script>
+    </div>
+
+    <div class="foot">
+    	<div class="footer">
+    		<div class="foot_l">
+    			<div class="bottomnav">
+    				<a href="/public/about">关于我们</a>    |
+    				<a href="/public/copyright">版权声明</a>    | 
+    				<a href="/public/privacy">隐私条款</a>    |
+    				<a href="/public/agreement">用户协议</a>    
+    			</div>
+    			<p>咨询电话：86-10-84849810</p>
+    			<p>京ICP备 10033605号-3</p>
+    			<p>技术支持 中国文物信息咨询中心(国家文物局数据中心)</p>
+    		</div>
+    		<div class="foot_r">
+    			<div class="foot_code">
+							<img src="/images/code_07.png" >
+							<p>博物中国 微信公众号</p>
+						</div>
+						<div class="foot_code">
+							<img src="/images/code_wx.jpg?02" >
+							<p>博物中国 微信小程序</p>
+						</div>
+    		</div>
+    	</div>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18"></script>
+	
+	<script type="text/javascript">
+		$(".pos").mouseover(function() {
+			$(".pos_con").show()
+		})
+		$(".pos_con").mouseleave(function() {
+			$(".pos_con").hide()
+		})
+	</script>
+	
+	<script src="/js/index.js"></script>
+	<!-- <script src="/js/login.js"></script> -->
+	<!-- <script src="/js/common.js"></script> -->
+    
+</body>
+</html>

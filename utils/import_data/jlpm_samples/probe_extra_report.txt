@@ -1,0 +1,50 @@
+⚠ 本次对 wmhg.com.cn、museumschina.cn 跳过了证书有效期检查，证书链与域名照常校验
+# 吉林省博物院补探 2026-09-26T21:34:02
+
+# 博物中国 museumschina.cn（国家文物局数据中心）
+
+## robots.txt（www.museumschina.cn）
+HTTP 200，Crawl-delay=5
+    User-agent: *
+    Disallow: /api/  # 禁止爬虫访问所有API接口
+    Allow: /api/common/getExhibitForHome  # 允许首页推荐接口爬取
+    Allow: /api/common/area  # 允许地区接口爬取
+    Crawl-delay: 5  # 全局爬取延迟5秒
+    
+    User-agent: GPTBot
+    Disallow: /  # 禁止GPTBot爬取所有内容
+    
+    User-agent: Sogou web spider
+    Allow: /
+    Crawl-delay: 3  # 搜狗爬虫爬取延迟3秒
+    
+    User-agent: Bingbot
+    Allow: /
+    Crawl-delay: 4  # Bing爬虫爬取延迟4秒
+    
+    # 静态资源禁止索引
+    User-agent: *
+    Disallow: /css/
+    Disallow: /js/
+    Disallow: /lib/
+实际间隔 5.0s
+  /Collection: 允许
+  /collection/details: 允许
+  /museums/details: 允许
+本馆介绍页：HTTP 200，<title> '吉林省博物院博物馆详情 - 博物中国'
+  摘录：藏品介绍 参观指南 吉林省博物院，原名吉林省博物馆，1951年经吉林省人民政府批准建立，1952年在松花江畔的吉林市正式开放，1954年，随省政府迁至长春市。现位于长春市净月国家高新技术产业开发区永顺路1666号，建筑面积3.2万平方米，是直属于吉林省文化和旅游厅的国家一级博物馆。 吉林省博物院是一座历史与艺术博物馆，现有文物藏品12万余件，其中一级文物295件、二级文物3379件、三级文物14280件、其它文物近10万件，始自远古，及至现代，精华荟萃，内涵丰富。其中高句丽、渤海、辽金时期的文物以及中国历代书法绘画、东北抗日联军文物在全国占有重要地位，另外，中国历代陶瓷器、萨满民俗文物品也有一
+  页面上出现的 museums= 取值：[('202208231954172117', 1)]
+museums=202208231954172117：HTTP 200，本页 0 件，翻页最大页码 0（每页 20）；收藏单位 []
+  级别筛选码：{'一级': '1', '二级': '2', '三级': '3', '一般': '4', '未定级': '5'}
+    一级：HTTP 200，第 1 页 0 件，翻页最大页码 0
+    二级：HTTP 200，第 1 页 0 件，翻页最大页码 0
+    三级：HTTP 200，第 1 页 0 件，翻页最大页码 0
+    一般：HTTP 200，第 1 页 0 件，翻页最大页码 0
+    未定级：HTTP 200，第 1 页 0 件，翻页最大页码 0
+
+# 全国馆藏文物名录查询页 http://app.gjzwfw.gov.cn/jmopen/webapp/html5/gjwwjqggcwwmlcx/index.html
+HTTP 404，1286 字节，<title> '您所访问的页面不存在'
+引用的 js：[]
+脚本里出现的路径与字样（前 40）：
+
+本次实际请求 9 次，其余命中本地缓存（/Users/cangjie/source/ari/utils/import_data/jlpm_raw）

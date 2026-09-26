@@ -1,0 +1,507 @@
+# 吉林省博物院官网探路 2026-09-26T21:30:28
+base = https://www.jlmuseum.net
+
+## robots.txt（www.jlmuseum.net）
+HTTP 404，Crawl-delay=None
+实际间隔 1.5s
+  /: 允许
+  /api/: 允许
+  /js/: 允许
+
+## 首页与脚本
+HTTP 200，4746 字节，<title> '吉林省博物院'
+页面引用的 js 39 个，其中 app：['js/app.5f4c5e43.js']
+app.js：HTTP 200，59455 字节
+axios baseURL：['/api']
+分块 37 个（app.js 分块表 有；首页 prefetch 链接补充）
+路由 36 条：
+    /demo1                           ['chunk-8bc46982']
+    /demo2                           ['chunk-39426414']
+    /demo3                           ['chunk-2d0d6909']
+    /demo4                           ['chunk-7575ab0e']
+    /demo5                           ['chunk-40557420']
+    /demo/detail                     ['chunk-2d0a3a87']
+    /home                            ['chunk-219dc404', 'chunk-4ccdce53']
+    /search                          ['chunk-75f8931f']
+    /exhibition                      ['chunk-2032cca0']
+    /visit                           ['chunk-4d1ec652']
+    /leaveWord                       ['chunk-528859f2']
+    /overview                        ['chunk-547555f4']
+    /calendar                        ['chunk-219dc404', 'chunk-7c1992a0']
+    /exhibition/detail               ['chunk-6f43c3da']
+    /research                        ['chunk-f437dabe']
+    /research/detail                 ['chunk-e3972b16']
+    /dynamic                         ['chunk-219dc404', 'chunk-3938ea81']
+    /dynamic/detail                  ['chunk-2bc35ac0']
+    /publicity                       ['chunk-219dc404', 'chunk-e230882e']
+    /publicity/detail                ['chunk-be59d03e']
+    /notice                          ['chunk-219dc404', 'chunk-3a2ee79a']
+    /notice/detail                   ['chunk-09de18e2']
+    /video                           ['chunk-4bd65e4e']
+    /video/detail                    ['chunk-5e553e64']
+    /creative                        ['chunk-5e64edee']
+    /creative/detail                 ['chunk-3e431f28']
+    /collect                         ['chunk-5c627cee']
+    /collect/detail                  ['chunk-219dc404', 'chunk-89a702f4']
+    /collect/collectionDatabase      ['chunk-219dc404', 'chunk-0c42ab12']
+    /activity                        ['chunk-1954aa1f']
+    /activity/detail                 ['chunk-15d618bd']
+    /overview/detail                 ['chunk-6883adbe']
+    /volunteer                       ['chunk-1d2ffb31']
+    /about                           ['about']
+    /login                           ['chunk-2da0ae12']
+    /link/detail                     ['chunk-27ce823c']
+  [chunk-2032cca0] 带中文的小对象 4 个（前 30）：
+      {name:"基本陈列",val:"1"}
+      {name:"临时展览",val:"2"}
+      {name:"虚拟展厅",val:"3"}
+      {name:"H5展览",val:"4"}
+  [chunk-0c42ab12] 带中文的小对象 2 个（前 30）：
+      {e.success?(t.$notify("点赞成功"),t.isLike=!0,localStorage.setItem("tj_like_"+t.detailData.id,!0),t.$emit("refresh")):t.$notify(e.message)}
+      {name:"曾经展出",val:"1"}
+  [chunk-4ccdce53] 带中文的小对象 12 个（前 30）：
+      {name:"陈列展览",val:"1"}
+      {name:"临时展览",val:"2"}
+      {name:"虚拟展厅",val:"3"}
+      {name:"H5展览",val:"4"}
+      {name:"参观指南"}
+      {name:"最新动态"}
+      {name:"吉博展览"}
+      {name:"最新活动"}
+      {name:"数字吉博"}
+      {dt_tzgg:"[通知公告]",dt_xwzx:"[新闻动态]",dt_mtxc:"[媒体宣传]"}
+      {name:"吉林省博物院",val:"1"}
+      {name:"吉林省近现代史展",val:"2"}
+  [chunk-89a702f4] 带中文的小对象 2 个（前 30）：
+      {e.success?(t.$notify("点赞成功"),t.isLike=!0,localStorage.setItem("tj_like_"+t.detailData.id,!0),t.$emit("refresh")):t.$notify(e.message)}
+      {name:"曾经展出",val:"1"}
+  [chunk-4d1ec652] 带中文的小对象 2 个（前 30）：
+      {name:"吉林省博物院",val:"1"}
+      {name:"吉林省近现代史展",val:"2"}
+  [chunk-5c627cee] 带中文的小对象 9 个（前 30）：
+      {solo:"",flat:"","hide-details":"",clearable:"",items:t.yearList,"item-text":"name","item-value":"id",label:"文物年代"}
+      {solo:"",flat:"","hide-details":"",clearable:"",items:t.typeList,"item-text":"name","item-value":"id",label:"文物类别"}
+      {solo:"",flat:"","hide-details":"",clearable:"",label:"请输入关键词","prepend-inner-icon":"mdi-card-search",autocomplete:"off"}
+      {solo:"",flat:"","hide-details":"",clearable:"",height:40,label:"请输入关键词",autocomplete:"off"}
+      {name:"文物年代",arr:t.yearList||[],type:"blog_collect_year_type"}
+      {name:"文物类别",arr:e.data||[],type:"blog_collect_type"}
+      {name:"藏品数据库",val:"2",index:3}
+      {name:"藏品征集",val:"3",index:4}
+      {e.success?(console.log(e,"字典接口返回数据"),t.typeList=e.data.typeList,t.yearList=e.data.yearList):t.$notify(e.message)}
+  [chunk-6883adbe] 带中文的小对象 4 个（前 30）：
+      {text:"首页",href:"/#/home"}
+      {text:"概览",href:"/#/overview"}
+      {text:"管理与建设",href:"/#/overview?type=2"}
+      {text:"党群活动",disabled:!0}
+  [chunk-6f43c3da] 带中文的小对象 1 个（前 30）：
+      {name:"展厅实景",val:"1",index:0}
+  [chunk-75f8931f] 带中文的小对象 1 个（前 30）：
+      {placeholder:"请输入您要搜索的内容"}
+
+## 接口调用（axios 前缀 /api）
+  [app] ['（全站）'] GET /common/site
+        上下文：=e.commit;n("TOGGLE_HEADER",t)},settingData:function(e){var t=e.commit;this._vm.$http.get("/common/site",{name:"name,url,version,address,git,weibo,qq,github,phone,email,logo,description,powerby,record,contactUs,remarks,privacyPolicy"}).then((function(e){e.success&&(console.log(e.data,"二维码数据"),t("SETTING_DATA",e.data))}))},
+  [app] ['（全站）'] GET /wx/wxIsLogin.do
+        上下文：uth:function(e,t){var n=this,r=e.commit;return new Promise((function(e,i){n._vm.$http.get("/wx/wxIsLogin.do",{key:t}).then((function(t){if(t.success){var n=t.result;r("SET_USERID",n.id),r("SET_TOKEN",n.token),r("SET_USERINFO",{nickName:n.nickName}),X.a.set("userId",n.id,{expires:7}),X.a.set("token",n.token,{expires:7}),X.a.set
+  [app] ['（全站）'] POST /login/webLogin
+        上下文：ser:function(e,t){var n=this,r=e.commit;return new Promise((function(e,i){n._vm.$http.post("/login/webLogin",ee({},t)).then((function(t){t.success?(r("SET_USER_INFO",{userId:t.result.id,activityEdit:"1",userImg:t.result.userImg,userName:t.result.userName}),X.a.set("userId",t.result.id),X.a.set("activityEdit","1"),X.a.set("user
+  [app] ['（全站）'] GET /bsPubUser/loginOut
+        上下文：()):i()}),(function(e){i(e)}))}))},LoginOut:function(e){var t=e.commit;this._vm.$http.get("/bsPubUser/loginOut",{}).then((function(e){e.success&&(t("SET_USER_INFO",""),X.a.remove("userId"))}))}}},ae=ie,oe={token:function(e){return e.user.token},userInfo:function(e){return e.user.userInfo}},ce=oe;r["default"].use(V["a"]);var se=ne
+  [chunk-09de18e2] ['/notice/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var A=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(t){t.success?A.detailData=t.data:A.$notify(t.message)}))}},created:function(){this.getDetailData()}}),B=a,s=(E("0dc1"),E("829d")),Q=Object(s["a"])(B
+  [chunk-15d618bd] ['/activity/detail'] GET /activity/detail
+        上下文：p?id="+this.$route.query.id}},methods:{getDetailData:function(){var t=this;this.$http.get("/activity/detail",{id:this.detailId}).then((function(a){a.success?(t.detailData=a.data,t.viewList=t.detailData.enrollList.slice(0,t.showLen)):t.$notify(a.message)}))},toggleShow:function(){this.showAll=!this.showAll,this.showAll?this.vie
+  [chunk-1954aa1f] ['/activity'] GET /activity/list
+        上下文：activity"}},methods:{getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/activity/list",l(l({},this.listQuery),{},{type:"null"===this.activeVal?"":this.activeVal})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))},getDictData:function(){var t=this;th
+  [chunk-1954aa1f] ['/activity'] GET /common/dict
+        上下文：.total=e.total):t.$notify(e.message)}))},getDictData:function(){var t=this;this.$http.get("/common/dict",{type:"blog_activity_type"}).then((function(e){e.success?(console.log(e.data),e.data.forEach((function(t){t.name=t.label,t.val=t.value,t.busType="activity"})),e.data=e.data.reverse(),t.tabList=[{name:"社教活动",val:"null"}]
+  [chunk-1954aa1f] ['/activity'] GET /common/article
+        上下文：eerData()):t.$notify(e.message)}))},getVolunteerData:function(){var t=this;this.$http.get("/common/article",{category:"zyz"}).then((function(e){e.success?e.data.length&&(e.data.forEach((function(t){t.val=String(t.id),t.name=t.title,t.busType="volunteer"})),t.tabList=t.tabList.concat(e.data)):t.$notify(e.message)}))},eventChan
+  [chunk-1d2ffb31] ['/volunteer'] GET /common/article
+        上下文：ction(t,a){this.currentData=this.tabList[a]},getData:function(){var t=this;this.$http.get("/common/article",{category:"zyz"}).then((function(a){a.success?a.data.length&&(a.data.forEach((function(t){t.val=t.id,t.name=t.title})),t.tabList=a.data,"2"==t.type?(t.currentData=a.data[1],t.activeVal=a.data[1].val):(t.currentData=a.da
+  [chunk-2032cca0] ['/exhibition'] GET /exhibition/list
+        上下文：1,h5ExhibitionList:[]}},methods:{getH5ExhibitionData:function(){var t=this;this.$http.get("/exhibition/list",u({},this.h5ListQuery)).then((function(e){e.success?(console.log("H5展览数据",e.data),e.data.map((function(t){t.showQrCode=!1})),t.h5ExhibitionList=e.data,t.h5Total=e.total):t.$notify(e.message)}))},posterIn:function(t){thi
+  [chunk-0c42ab12] ['/collect/collectionDatabase'] POST /collect/love
+        上下文：)}}),e.$previewRefresh()}))},handleLike:function(){var t=this;this.isLike||this.$http.post("/collect/love",{id:this.detailData.id}).then((function(e){e.success?(t.$notify("点赞成功"),t.isLike=!0,localStorage.setItem("tj_like_"+t.detailData.id,!0),t.$emit("refresh")):t.$notify(e.message)}))},handleMax:function(){console.log(this.
+  [chunk-0c42ab12] ['/collect/collectionDatabase'] GET /collectdb/detail
+        上下文：ist:[{name:"曾经展出",val:"1"}]}},methods:{getDetailData:function(){var t=this;this.$http.get("/collectdb/detail",{id:this.detailId}).then((function(e){e.success?(t.detailData=e.data,t.$nextTick((function(){t.$refs.cmpSwiper.init(e.data)}))):t.$notify(e.message)}))},initSwiper:function(){var t=new Swiper(".gallery-top",{spaceBetwee
+  [chunk-3938ea81] ['/dynamic'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",m(m({},this.listQuery),{},{category:this.objTabVal[this.activeNav]})).then((function(a){t.listLoading=!1,a.success?(t.dataList=a.data,t.total=a.total):t.$notify(a.message)}))},getYjDataList:function(){var t=this;this.li
+  [chunk-3938ea81] ['/dynamic'] GET /common/zdgg
+        上下文：ta,t.total=a.total):t.$notify(a.message)}))},getData:function(){var t=this;this.$http.get("/common/zdgg",{}).then((function(a){a.success?(t.exiDataList=a.data,t.initSwiperExhibition()):t.$notify(a.message)}))},initSwiperExhibition:function(){var t=this,a=this;this.$nextTick((function(){t.swiperExi=new l.a(".swiper-containe
+  [chunk-3a2ee79a] ['/notice'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",p(p({},this.listQuery),{},{category:"dt_tzgg"})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))},getData:function(){var t=this;this.$http.get("/common/zdgg",{}).
+  [chunk-3a2ee79a] ['/notice'] GET /common/zdgg
+        上下文：ta,t.total=e.total):t.$notify(e.message)}))},getData:function(){var t=this;this.$http.get("/common/zdgg",{}).then((function(e){e.success?(t.exiDataList=e.data,t.topDataLoaded=!0,setTimeout((function(){t.initSwiperExhibition()}),500)):t.$notify(e.message)}))},initSwiperExhibition:function(){var t=this,e=this;this.$nextTick(
+  [chunk-4ccdce53] ['/home'] GET /activity/list
+        上下文：{id:t.id,breadType:this.activeExiVal}})},getDataList:function(){var t=this;this.$http.get("/activity/list",{page:1,size:3}).then((function(i){i.success?(i.data.map((function(t){t.year=t.activityTime.split(" ")[0].split("-")[0],t.month=t.activityTime.split(" ")[0].split("-")[1],t.day=t.activityTime.split(" ")[0].split("-")[2]
+  [chunk-4ccdce53] ['/home'] GET /common/index
+        上下文：.push("/visit?routeType="+this.activeRoute)},getData:function(){var t=this;this.$http.get("/common/index",{}).then((function(i){i.success?(t.data=i.data,t.tabDataList=i.data.dt_tzgg,t.exiDataList=i.data.staticExhibit,t.currentBanner=t.data.indexBanner[0],t.currentCollect=i.data.recommentCollect[0],t.topItem=i.data.dt_zygg[0
+  [chunk-4ccdce53] ['/home'] GET /exhibition/list
+        上下文：lect()):t.$notify(i.message)}))},getH5ExhibitionData:function(){var t=this;this.$http.get("/exhibition/list",{page:1,size:3,type:4}).then((function(i){i.success?(console.log("H5展览数据",i.data),i.data.map((function(t){t.showQrCode=!1})),t.h5ExhibitionList=i.data):t.$notify(i.message)}))},getCollectCount:function(){var t=this;this
+  [chunk-4ccdce53] ['/home'] GET /collectdb/list.do?page=1&size=9&s_yearType=&s_type=&s_name=
+        上下文：ist=i.data):t.$notify(i.message)}))},getCollectCount:function(){var t=this;this.$http.get("/collectdb/list.do?page=1&size=9&s_yearType=&s_type=&s_name=",{}).then((function(i){i.success?t.collectNum=i.total:t.$notify(i.message)}))},initSwiperBanner:function(){var t=this;this.$nextTick((function(){new c.a(".swiper-container1",{effect:"fade",autoplay:5e3,loop:!0,pagination
+  [chunk-7c1992a0] ['/calendar'] POST /collect/love
+        上下文：)}}),e.$previewRefresh()}))},handleLike:function(){var t=this;this.isLike||this.$http.post("/collect/love",{id:this.detailData.id}).then((function(e){e.success?(t.$notify("点赞成功"),t.isLike=!0,localStorage.setItem("tj_like_"+t.detailData.id,!0),t.$emit("refresh")):t.$notify(e.message)}))},handleMax:function(){if(console.log(th
+  [chunk-7c1992a0] ['/calendar'] GET /calendar/yearList
+        上下文：his.listQuery.page=1,this.getDataList()},getYearData:function(){var t=this;this.$http.get("/calendar/yearList",{}).then((function(e){e.success?(e.data.map((function(e){t.tabList.push({name:e,val:e})})),t.activeVal=t.tabList[0].val,t.getDataList()):t.$notify(e.message)}))},eventChangePage:function(t){this.listQuery.page=t,this.ge
+  [chunk-7c1992a0] ['/calendar'] GET /calendar/list
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/calendar/list",b(b({},this.listQuery),{},{year:this.activeVal})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total,t.$nextTick((function(){t.dataList.forEach((function(e,i){t.$refs["cmpSwiper"+i][0].init(
+  [chunk-89a702f4] ['/collect/detail'] POST /collect/love
+        上下文：)}}),e.$previewRefresh()}))},handleLike:function(){var t=this;this.isLike||this.$http.post("/collect/love",{id:this.detailData.id}).then((function(e){e.success?(t.$notify("点赞成功"),t.isLike=!0,localStorage.setItem("tj_like_"+t.detailData.id,!0),t.$emit("refresh")):t.$notify(e.message)}))},handleMax:function(){if(console.log(th
+  [chunk-89a702f4] ['/collect/detail'] GET /collect/detail
+        上下文：t:[{name:"曾经展出",val:"1"}]}},methods:{getZgDetailData:function(){var t=this;this.$http.get("/collect/detail",{id:this.detailId}).then((function(e){e.success?(t.detailData=e.data,t.$nextTick((function(){t.$refs.cmpSwiper.init(e.data)}))):t.$notify(e.message)}))},initSwiper:function(){var t=new Swiper(".gallery-top",{spaceBetwee
+  [chunk-e230882e] ['/publicity'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",p(p({},this.listQuery),{},{category:"dt_mtxc"})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))},initSwiperExhibition:function(){var t=this,e=this;this.$nextTick
+  [chunk-27ce823c] ['/link/detail'] GET /common/linkList
+        上下文：y.breadType].text,dataList:[]}},methods:{getDataList:function(){var t=this;this.$http.get("/common/linkList",{}).then((function(A){A.success?t.dataList=A.data:t.$notify(A.message)}))},goLink:function(t){window.open(t.outLinkUrl)}},created:function(){this.getDataList()}},r=i,n=(e("b3ab"),e("829d")),E=Object(n["a"])(r,s,a,!1,nul
+  [chunk-2bc35ac0] ['/dynamic/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var A=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(t){t.success?A.detailData=t.data:A.$notify(t.message)}))}},created:function(){this.getDetailData()}}),B=i,s=(E("aeb1"),E("829d")),Q=Object(s["a"])(B
+  [chunk-2d0d6909] ['/demo3'] GET /pc/activity/getActivityListByType.do
+        上下文：oading:!1}},methods:{getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/pc/activity/getActivityListByType.do",c({},this.listQuery)).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.page.totalPage):t.$notify(e.message)}))},handleCurrentChange:function(){this.getDataList()}},created:function(){this.getDat
+  [chunk-3e431f28] ['/creative/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var t=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(a){a.success?t.detailData=a.data:t.$notify(a.message)}))}},created:function(){this.getDetailData()}}),r=c,l=(s("0f89"),s("829d")),d=Object(l["a"])(r
+  [chunk-4bd65e4e] ['/video'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",l(l({},this.listQuery),{},{category:this.$route.query.category||"dt_spzy"})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))}},created:function(){this.pageType=th
+  [chunk-4d1ec652] ['/visit'] GET /common/article
+        上下文：this.getDataList()},getDataList:function(t){var e=this;this.listLoading=!0,this.$http.get("/common/article",l(l({},this.listQuery),{},{category:t.category})).then((function(t){e.listLoading=!1,t.success?(e.dataList=t.data,e.total=t.total):e.$notify(t.message)}))},getData:function(){var t=this;this.listLoading=!0,this.$http.ge
+  [chunk-4d1ec652] ['/visit'] GET /common/bwggk
+        上下文：e.$notify(t.message)}))},getData:function(){var t=this;this.listLoading=!0,this.$http.get("/common/bwggk",{}).then((function(e){if(e.success){var a=e.data;t.data=e.data.gl_cgfw,a.gl_cgfw.forEach((function(t){t.name=t.title,t.val=String(t.id)})),t.tabList=a.gl_cgfw,t.currentTabData=a.gl_cgfw[0]||{},t.activeVal=t.currentTabDa
+  [chunk-528859f2] ['/leaveWord'] GET /common/dict
+        上下文：his.listQuery.page=t,this.getDataList()},getTypeList:function(){var t=this;this.$http.get("/common/dict",{type:"web_msg_type"}).then((function(e){e.success?(console.log(e),t.typeList=e.data):t.$notify(e.message)}))},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/webMsg/list.do",l({},this.listQuery))
+  [chunk-528859f2] ['/leaveWord'] GET /webMsg/list.do
+        上下文：otify(e.message)}))},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/webMsg/list.do",l({},this.listQuery)).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))},verifyPhone:function(){if(""!=this.paramsList.phone){var t=/^1[3578]\d{9}$|^147\d{8}$/;this
+  [chunk-528859f2] ['/leaveWord'] POST /webMsg/add.do
+        上下文：msList.code&&this.sumbitLeaveWord()},sumbitLeaveWord:function(){var t=this;this.$http.post("/webMsg/add.do",l({},this.paramsList)).then((function(e){e.success?(console.log(e),t.show=!0):t.$notify(e.message)}))}},created:function(){this.getDataList(),this.getTypeList()}},v=m,d=(a("ed9f"),a("829d")),g=Object(d["a"])(v,i,s,!1,nu
+  [chunk-547555f4] ['/overview'] GET /common/bwggk
+        上下文：TabData=this.tabList[e]},getData:function(){var t=this;this.listLoading=!0,this.$http.get("/common/bwggk",{}).then((function(e){if(e.success){var a=e.data;a.gl_gywg.forEach((function(t,e){t.name=t.title,t.val=e.toString()})),t.tabList=a.gl_gywg,console.log(t.tabList),t.currentTabData=t.tabList[0]}else t.$notify(e.message)})
+  [chunk-5c627cee] ['/collect'] GET /common/dict
+        上下文：e,"active",!1)}))})),this.handleSure()},getDictData1:function(){var t=this;this.$http.get("/common/dict",{type:"blog_collect_year_type"}).then((function(e){e.success?(t.yearList=e.data,t.getDictData2()):t.$notify(e.message)}))},getDictData2:function(){var t=this;this.$http.get("/common/dict",{type:"blog_collect_type"}).the
+  [chunk-5c627cee] ['/collect'] GET /collect/list
+        上下文：nditionPanel.show()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/collect/list",N(N({},this.listQuery),{},{isTreasure:"1"})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))},infiniteHandler:function(t){var e=this;this.isFirst=!1,this.$http.ge
+  [chunk-5c627cee] ['/collect'] GET /collectdb/list.do
+        上下文：tify(e.message)}))},infiniteHandler:function(t){var e=this;this.isFirst=!1,this.$http.get("/collectdb/list.do",N(N({},this.listQuery),this.params)).then((function(i){if(i.success){var n,o=i.data;if(e.total=i.total,o.length)e.listQuery.page+=1,o.forEach((function(t){t.src=t.mainImgUrl,t.pictureId=t.mainImgUrl})),(n=e.dataList2).p
+  [chunk-5c627cee] ['/collect'] GET /common/article
+        上下文： t.complete()}else e.$notify(i.message)}))},getData3:function(){var t=this;this.$http.get("/common/article",{category:"collectSetting"}).then((function(e){if(e.success){var i=e.data;t.tabHtmlList=i,"3"===t.activeVal?t.currentHtml=i[0]&&i[0].content:"4"===t.activeVal&&(t.currentHtml=i[1]&&i[1].content)}else t.$notify(e.message
+  [chunk-5c627cee] ['/collect'] GET /collectdb/dict.do
+        上下文：].content)}else t.$notify(e.message)}))},getDictData:function(){var t=this;this.$http.get("/collectdb/dict.do",{}).then((function(e){e.success?(console.log(e,"字典接口返回数据"),t.typeList=e.data.typeList,t.yearList=e.data.yearList):t.$notify(e.message)}))},handleCurrentChange:function(){this.getDataList()}},created:function(){"1"==this
+  [chunk-5e553e64] ['/video/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var A=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(t){t.success?(A.detailData=t.data,A.$nextTick((function(){A.initVideo()}))):A.$notify(t.message)}))},initVideo:function(){this.$video(myVideo,{contr
+  [chunk-5e64edee] ['/creative'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",l(l({},this.listQuery),{},{category:"wenchuang"})).then((function(e){t.listLoading=!1,e.success?(t.dataList=e.data,t.total=e.total):t.$notify(e.message)}))}},created:function(){this.getDataList()}},p=d,m=(a("f96e"),a("8
+  [chunk-6883adbe] ['/overview/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var A=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(t){t.success?(A.detailData=t.data,A.$store.dispatch("app/changeBread",[{text:"首页",href:"/#/home"},{text:"概览",href:"/#/overview"},{text:"管理与建设",href:
+  [chunk-6f43c3da] ['/exhibition/detail'] GET /exhibition/detail
+        上下文：{},dataList:[],dataList2:[]}},methods:{getDetailData:function(){var t=this;this.$http.get("/exhibition/detail",{id:this.detailId}).then((function(a){a.success?t.detailData=a.data:t.$notify(a.message)}))},getDataList1:function(){var t=this;this.$http.get("/common/imgList",{type:"blog_exhibition",id:this.detailId}).then((function(
+  [chunk-6f43c3da] ['/exhibition/detail'] GET /common/imgList
+        上下文：ailData=a.data:t.$notify(a.message)}))},getDataList1:function(){var t=this;this.$http.get("/common/imgList",{type:"blog_exhibition",id:this.detailId}).then((function(a){a.success?(t.dataList=a.data,t.$previewRefresh()):t.$notify(a.message)}))},getDataList2:function(){var t=this;this.listLoading=!0,this.$http.get("/exhibition/
+  [chunk-6f43c3da] ['/exhibition/detail'] GET /exhibition/collect
+        上下文：tify(a.message)}))},getDataList2:function(){var t=this;this.listLoading=!0,this.$http.get("/exhibition/collect",{id:this.detailId}).then((function(a){t.listLoading=!1,a.success?t.dataList2=a.data:t.$notify(a.message)}))},clickTab:function(t){"item.val"!==this.activeVal&&(this.activeVal=t.val)},viewPic:function(t){console.log(t)},
+  [chunk-be59d03e] ['/publicity/detail'] GET /common/articleDetail
+        上下文：oute.query.id,detailData:{}}},methods:{getDetailData:function(){var A=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(t){t.success?A.detailData=t.data:A.$notify(t.message)}))},goOut:function(){window.open(this.detailData.outLinkUrl)},initVideo:function(){this.$video
+  [chunk-e3972b16] ['/research/detail'] GET /common/articleDetail
+        上下文：ery.breadType,detailData:{}}},methods:{getDetailData:function(){var t=this;this.$http.get("/common/articleDetail",{id:this.detailId,category:this.$route.query.category}).then((function(a){a.success?(t.detailData=a.data,console.log(a.data)):t.$notify(a.message)}))}},created:function(){this.getDetailData()}}),l=s,r=(e("46ec"),e("829d
+  [chunk-f437dabe] ['/research'] GET /common/article
+        上下文：,this.getDataList()},getDataList:function(){var t=this;this.listLoading=!0,this.$http.get("/common/article",o(o({},this.listQuery),{},{category:this.objTabVal[this.activeVal]})).then((function(a){t.listLoading=!1,a.success?(t.dataList=a.data,t.total=a.total):t.$notify(a.message)}))}},created:function(){this.getDataList()}},v=
+
+## 试调只读接口（https://www.jlmuseum.net/api）
+  GET /activity/list {'page': 1, 'size': 3}: HTTP 200，3846 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 3 条；总数字段 ['total=23']
+      第 1 条的字段（25 个）：
+          activityStatus: '3'
+          activityTime: '2025-05-27 00:00:00 - 2025-05-27 00:00:00'
+          activityTimeStr: '2025年05月27日（星期二）00:00-00:00'
+          cancelEnrollCount: '0'
+          cost: '0'
+          createDate: '2025-06-14 13:42:23'
+          createId: '3'
+          createUser: 'null'
+          delFlag: 'false'
+          demand: ''
+          description: ''…（共 116 字符）
+          enrollCount: '0'
+          enrollList: '[]'
+          id: '29'
+          name: '【馆校合作·课程剪影】“打破博物馆空间边界 探索文化传承新路径”吉林省博物院将“旗装雅韵”教育课程送进长春市第一实验银河小学'
+          place: ' 长春市第一实验银河小学'
+          quota: '0'
+          remarks: ''
+          showPic: '/files/museumWeb//static/upload/25f9edab-6034-40bf-b00b-9d7c5a5848bb.j'…（共 73 字符）
+          status: '0'
+          type: '2'
+          typeName: '讲座'
+          updateDate: '2025-06-24 14:40:26'
+          updateId: '3'
+          updateUser: 'null'
+      本页标题：['【馆校合作·课程剪影】“打破博物馆空间边界 探索文化传承新路', '【活动·剪影】吉林省博物院“博物馆里赏民俗之五彩纳吉”系列活', '【活动·剪影】“扇影花香过六一 博物馆里的童梦奇缘”儿童节系']
+  GET /activity/list {'page': 1, 'size': 100}: HTTP 200，64497 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 23 条；总数字段 ['total=23']
+      第 1 条的字段（25 个）：
+          activityStatus: '3'
+          activityTime: '2025-05-27 00:00:00 - 2025-05-27 00:00:00'
+          activityTimeStr: '2025年05月27日（星期二）00:00-00:00'
+          cancelEnrollCount: '0'
+          cost: '0'
+          createDate: '2025-06-14 13:42:23'
+          createId: '3'
+          createUser: 'null'
+          delFlag: 'false'
+          demand: ''
+          description: ''…（共 116 字符）
+          enrollCount: '0'
+          enrollList: '[]'
+          id: '29'
+          name: '【馆校合作·课程剪影】“打破博物馆空间边界 探索文化传承新路径”吉林省博物院将“旗装雅韵”教育课程送进长春市第一实验银河小学'
+          place: ' 长春市第一实验银河小学'
+          quota: '0'
+          remarks: ''
+          showPic: '/files/museumWeb//static/upload/25f9edab-6034-40bf-b00b-9d7c5a5848bb.j'…（共 73 字符）
+          status: '0'
+          type: '2'
+          typeName: '讲座'
+          updateDate: '2025-06-24 14:40:26'
+          updateId: '3'
+          updateUser: 'null'
+      本页标题：['【馆校合作·课程剪影】“打破博物馆空间边界 探索文化传承新路', '【活动·剪影】吉林省博物院“博物馆里赏民俗之五彩纳吉”系列活', '【活动·剪影】“扇影花香过六一 博物馆里的童梦奇缘”儿童节系', '【课程·剪影】“穹庐帷帐”博物馆教育课程圆满结束~', '吉林省博物院“志愿者团队”2025年5月服务时长公示', '“咫尺匠心 焕发新生”博物馆教育课程', '“一闪一闪亮晶晶”博物馆教育课程', '“安和常乐——博物馆里的吉祥纹样”博物馆教育课程', '元宵节特别活动：“趣说十二生肖”博物馆教育课程', '“在历史中找点有趣的”博物馆教育课程', '“龙行中华”博物馆教育课程', '吉林省博物院“中华优秀传统文化我来讲”之“小小讲解员”202', '“咫尺匠心 焕发新生”博物馆教育课程', '国庆节特别活动：“大国礼赞 月满华诞”博物馆教育课程', '吉林省博物院“诗词邀明月 风雅颂中秋”诗词大会预报名', '处暑时节稻花香', '时光机器 时间简史', '礼仪之邦 汉家衣裳', '汉著玉杯 幻彩世界', '多彩扎染', '面朝大海 春暖花开 博物馆教育课程', '“石生花”博物馆教育课程', '“曲水流觞”博物馆教育课程']
+  GET /common/index {}: HTTP 200，194997 字节
+      顶层键 ['data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data.staticExhibit，本页 3 条；总数字段 无
+      第 1 条的字段（20 个）：
+          content: '讲清讲活讲好吉林故事 —— 历经半年多的精心筹备， 吉林省近现代史展览于 8 月 19 日在长春市北京大街西历史文化街区 A6 、 A7 栋'…（共 17427 字符）
+          createDate: '2026-07-07 12:55:18'
+          createId: '5'
+          createUser: 'null'
+          delFlag: 'false'
+          exhibitionFlag: '1'
+          exhibitionTime: '2025.08.19'
+          id: '1319'
+          marks: ''
+          name: '吉林省近现代史展'
+          place: '吉林省近现代史展（春京西）'
+          remarks: ''
+          showPic: '/files/museumWeb//static/upload/db6f2421-31fd-471e-b0cf-58484239afd1.p'…（共 72 字符）
+          status: '1'
+          type: '1'
+          updateDate: '2026-07-07 12:55:38'
+          updateId: '5'
+          updateUser: 'null'
+          virtualExhibition: ''
+          xwzxStatus: '0'
+      本页标题：['吉林省近现代史展', '瓷语千年——吉林省博物院藏古代陶瓷精品展', '破晓——吉林人民革命斗争史陈列']
+  GET /exhibition/list {'page': 1, 'size': 3, 'type': 4}: HTTP 200，1952 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 3 条；总数字段 ['total=12']
+      第 1 条的字段（20 个）：
+          content: ''
+          createDate: '2024-12-05 13:32:20'
+          createId: '2'
+          createUser: 'null'
+          delFlag: 'false'
+          exhibitionFlag: '1'
+          exhibitionTime: ''
+          id: '1299'
+          marks: ''
+          name: '疏影浮暗香 ——“花舞春城”系列之梅花主题展'
+          place: 'http://hwcc.jlsdmu.com/'
+          remarks: ''
+          showPic: '/files/museumWeb//static/upload/cce95870-378f-4790-9384-6b76987ec400.p'…（共 72 字符）
+          status: '1'
+          type: '4'
+          updateDate: '2024-12-05 13:32:27'
+          updateId: '2'
+          updateUser: 'null'
+          virtualExhibition: ''
+          xwzxStatus: '1'
+      本页标题：['疏影浮暗香 ——“花舞春城”系列之梅花主题展', ' 饰戴风华——吉林省博物院藏出土饰品集萃', '万年永宝——院藏先秦青铜器']
+  GET /exhibition/list {'page': 1, 'size': 100, 'type': 4}: HTTP 200，7609 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 12 条；总数字段 ['total=12']
+      第 1 条的字段（20 个）：
+          content: ''
+          createDate: '2024-12-05 13:32:20'
+          createId: '2'
+          createUser: 'null'
+          delFlag: 'false'
+          exhibitionFlag: '1'
+          exhibitionTime: ''
+          id: '1299'
+          marks: ''
+          name: '疏影浮暗香 ——“花舞春城”系列之梅花主题展'
+          place: 'http://hwcc.jlsdmu.com/'
+          remarks: ''
+          showPic: '/files/museumWeb//static/upload/cce95870-378f-4790-9384-6b76987ec400.p'…（共 72 字符）
+          status: '1'
+          type: '4'
+          updateDate: '2024-12-05 13:32:27'
+          updateId: '2'
+          updateUser: 'null'
+          virtualExhibition: ''
+          xwzxStatus: '1'
+      本页标题：['疏影浮暗香 ——“花舞春城”系列之梅花主题展', ' 饰戴风华——吉林省博物院藏出土饰品集萃', '万年永宝——院藏先秦青铜器', '御瓷撷珍——清代官窑瓷器展', '万里雪飘——吉林省博物院藏冰雪题材书画展', '山河已无恙，赤血映忠魂', '大道纵横——东北传统（陆上）交通展', '从见义勇为到见“疫”勇为——致敬“长春市见义勇为英雄公益消杀', '辽国映像：梦回松漠峥嵘', '镜里乾坤——吉林省博物院藏玻璃画中的传统图案解读', '春风拂过百花闹', '春节·雅事——书画茶香二三事']
+  GET /collectdb/list.do?page=1&size=9&s_yearType=&s_type=&s_name= {}: HTTP 200，3944 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 9 条；总数字段 ['total=17709']
+      第 1 条的字段（6 个）：
+          threedUrl: 'https://www.jlmuseum.net/threeD/jilinsanwei120/cangpin_url/%E9%87%91%E'…（共 136 字符）
+          yearTypeName: '其他'
+          name: '金都统所印铜官印'
+          typeName: '其他'
+          mainImgUrl: 'https://www.jlsdmu.com/sf202312/back/picture/wenwu/d9af9de5f55f477aa56'…（共 90 字符）
+          id: 'b0cb55b591b84fbfb7154b9209a91d94'
+      本页标题：['金都统所印铜官印', '西周青铜戈', '战国铜代钩', '明富贵铜镜', '战国青铜戈', '清光绪31年铸银元宝', '清光绪31年左侧款银元宝', '周口父丁簋', '战国四山铜镜']
+  GET /exhibition/list {}: HTTP 200，63 字节
+      顶层键 ['success', 'message']；success=False code=None message='type不能为空'
+      没有列表；data/result：'null'
+  GET /common/dict {'type': 'blog_collect_year_type'}: HTTP 200，82239 字节
+      顶层键 ['data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 142 条；总数字段 无
+      第 1 条的字段（15 个）：
+          createDate: '2021-06-01 14:58:00'
+          createId: '1'
+          createUser: 'null'
+          delFlag: 'false'
+          description: '藏品表-藏品年代(此数据为系统自动创建:数据表【blog_collect】中的字段【year_type】对应的值)'
+          id: '282'
+          label: '年代不详'
+          parentId: '0'
+          remarks: ''
+          sort: '141'
+          type: 'blog_collect_year_type'
+          updateDate: '2021-01-11 14:58:00'
+          updateId: '1'
+          updateUser: 'null'
+          value: '600000'
+      本页标题：['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  GET /collect/list {}: HTTP 200，27885 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 10 条；总数字段 ['total=17']
+      第 1 条的字段（28 个）：
+          content: '元 高11．4、口径13厘米 侈口，深腹。高圈足上有三道凸弦纹，呈竹节状。口沿为青花唐草纹。内壁暗花印行龙二条。外壁用青花绘一游龙，并衬以火'…（共 378 字符）
+          contentNoHtml: '元  高11．4、口径13厘米  侈口，深腹。高圈足上有三道凸弦纹，呈竹节状。口沿为青花唐草纹。内壁暗花印行龙二条。外壁用青花绘一游龙，并衬'…（共 104 字符）
+          createDate: '2021-04-15 14:57:46'
+          createId: '1'
+          createUser: 'null'
+          delFlag: 'false'
+          exhibitionList: '[]'
+          id: '5'
+          imgList: '[]'
+          isRecommend: 'false'
+          isTreasure: 'true'
+          level: '1'
+          levelName: '一级'
+          loveNum: '3'
+          mainImgUrl: '/files/museumWeb//uploadfile/20133512412815900000092_Smallpic.jpg'
+          name: '青花云龙纹高足碗'
+          recommend: 'false'
+          remarks: ''
+          size: '高11．4、口径13厘米'
+          texture: '瓷器'
+          threedUrl: ''
+          type: '3'
+          typeName: '瓷器'
+          updateDate: '2023-03-28 00:36:19'
+          updateId: '2'
+          updateUser: 'null'
+          yearType: '317000'
+          yearTypeName: '元'
+      本页标题：['青花云龙纹高足碗', '鎏金神兽铜牌饰', '白玉耳杯', '石雕彩绘塔', '玛瑙项饰', '契丹文铜镜', '“禾屯吉卫指挥使司印”铜印', '漩涡纹铜环', '石狮', '龙泉窑豆青釉琮式瓶']
+  GET /collectdb/list.do {}: HTTP 200，4368 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 10 条；总数字段 ['total=17709']
+      第 1 条的字段（6 个）：
+          threedUrl: 'https://www.jlmuseum.net/threeD/jilinsanwei120/cangpin_url/%E9%87%91%E'…（共 136 字符）
+          yearTypeName: '其他'
+          name: '金都统所印铜官印'
+          typeName: '其他'
+          mainImgUrl: 'https://www.jlsdmu.com/sf202312/back/picture/wenwu/d9af9de5f55f477aa56'…（共 90 字符）
+          id: 'b0cb55b591b84fbfb7154b9209a91d94'
+      本页标题：['金都统所印铜官印', '西周青铜戈', '战国铜代钩', '明富贵铜镜', '战国青铜戈', '清光绪31年铸银元宝', '清光绪31年左侧款银元宝', '周口父丁簋', '战国四山铜镜', '辽契丹文铜镜']
+  GET /common/article {'category': 'collectSetting'}: HTTP 200，13464 字节
+      顶层键 ['total', 'data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data，本页 1 条；总数字段 ['total=1']
+      第 1 条的字段（17 个）：
+          category: 'collectSetting'
+          click: '0'
+          content: '吉林省博物院藏品征集管理办法（试行） 一、为贯彻“保护为主、抢救第一”的文物工作方针，加强文物的征集、保护和管理，服务陈列展示、宣传教育、科'…（共 750 字符）
+          exta: '吉林省博物院藏品征集管理办法（试行）一、为贯彻“保护为主、抢救第一”的文物工作方针，加强文物的征集、保护和管理，服务陈列展示、宣传教育、科学'…（共 542 字符）
+          extb: ''
+          extc: '吉林省博物院藏品征集管理办法（试行）一、为贯彻“保护为主、抢救第一”的文物工作方针，加强文物的征集、保护和管理，服务陈列展示、宣传教育、科学'…（共 542 字符）
+          fileUrl: ''
+          id: '24'
+          isRecommend: 'false'
+          marks: ''
+          outLinkUrl: ''
+          publistTime: '2021-01-11 08:00:00'
+          resources: ''
+          showPicUrl: ''
+          subTitle: ''
+          text: '吉林省博物院藏品征集管理办法（试行）一、为贯彻“保护为主、抢救第一”的文物工作方针，加强文物的征集、保护和管理，服务陈列展示、宣传教育、科学'…（共 541 字符）
+          title: '藏品征集'
+      本页标题：['藏品征集']
+  GET /collectdb/dict.do {}: HTTP 200，34809 字节
+      顶层键 ['data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data.typeList，本页 35 条；总数字段 无
+      第 1 条的字段（10 个）：
+          sequence: '1000'
+          createTime: '2017-01-17 00:15:20.0'
+          logRemark: ''
+          name: '书法、绘画'
+          fcCounts: '1419'
+          openCounts: '1438'
+          id: '10'
+          shortName: '书画'
+          type: '文物'
+          status: '1'
+      本页标题：['书法、绘画', '陶器', '瓷器', '铜器', '玉石器、宝石', '金银器', '档案文书', '名人遗物', '武器', '钱币', '票据', '石器、石刻、砖瓦', '铁器、其他金属器', '文件、宣传品', '甲骨', '玺印符牌', '玻璃器', '雕塑、造像', '织绣', '牙骨角器', '文具', '漆器', '古籍图书', '珐琅器', '度量衡器', '乐器、法器', '家具', '竹木雕', '碑帖拓本', '皮革', '邮品', '交通、运输工具', '音像制品', '标本、化石', '其他']
+  未试：POST /collect/love（看不出是只读查询）
+  未试：POST /collect/love（看不出是只读查询）
+  GET /common/bwggk {}: HTTP 200，56218 字节
+      顶层键 ['data', 'success', 'message']；success=True code=None message='成功'
+      列表在 data.gl_gywg，本页 5 条；总数字段 无
+      第 1 条的字段（17 个）：
+          category: 'gl_gywg'
+          click: '0'
+          content: '吉林省博物院，原名吉林省博物馆，1951年经吉林省人民政府批准建立，1952年在松花江畔的吉林市正式开放，1954年，随省政府迁至长春市。现'…（共 3884 字符）
+          exta: ''
+          extb: ''
+          extc: ''
+          fileUrl: ''
+          id: '16'
+          isRecommend: 'false'
+          marks: ''
+          outLinkUrl: ''
+          publistTime: '2021-01-08 08:00:00'
+          resources: ''
+          showPicUrl: ''
+          subTitle: ''
+          text: '\n\t&nbsp;\n\n\t吉林省博物院，原名吉林省博物馆，1951年经吉林省人民政府批准建立，1952年在松花江畔的吉林市正式开放，1954年，'…（共 1712 字符）
+          title: '概况'
+      本页标题：['概况', '历史沿革', '馆长致辞', '组织机构', '院领导']
+  /common/articleDetail：丢掉的参数 ['category=this.$route.query.category']
+  GET /common/article {}: HTTP 200，67 字节
+      顶层键 ['success', 'message']；success=False code=None message='category不能为空'
+      没有列表；data/result：'null'
+  GET /common/site {'name': 'name,url,version,address,git,weibo,qq,github,phone,email,logo,description,powerby,record,contactUs,remarks,privacyPolicy'}: HTTP 200，2169 字节
+      顶层键 ['data', 'success', 'message']；success=True code=None message='成功'
+      没有列表；data/result：'{"qq": "/files/museumWeb//static/upload/8e8e2a4f-4eb9-4d04-939b-c0089c330f60.jpg", "contactUs": " 联系电话： 0431-88917353 投诉电话： 0431-81959582 地址 ：长春净月国家高新技术产业开发区永顺路1666号 新浪微博 ： https://weibo.com/jlsbwy ", "github": "/files/museumWeb//static/upload/3a8b9f82-e45a-4b5a-8e16-e5697d7655b8.png", "address": "长'…（共 1123 字符）
+
+## 试调详情接口（用同一家族各列表页的第 1 个 id）
+  未试：GET /exhibition/detail（/exhibition/detail）—— 家族 exhibition 的列表没取到 id
+  未试：GET /common/imgList（/exhibition/detail）—— 家族 exhibition 的列表没取到 id
+  未试：GET /exhibition/collect（/exhibition/detail）—— 家族 exhibition 的列表没取到 id
+  /collect/detail（/collect/detail）用 /collect 列表的 id 282：
+  GET /collect/detail {'id': 282}: HTTP 200，71 字节
+      顶层键 ['success', 'message']；success=False code=None message='获取数据为空'
+      没有列表；data/result：'null'
+  /collectdb/detail（/collect/collectionDatabase）用 /collect 列表的 id 282：
+  GET /collectdb/detail {'id': 282}: HTTP 200，17 字节
+      顶层键 ['success']；success=False code=None message=''
+      没有列表；data/result：'null'
+  /common/articleDetail（/overview/detail）用 /overview 列表的 id 16：
+  GET /common/articleDetail {'id': 16}: HTTP 200，83 字节
+      顶层键 ['success', 'message']；success=False code=None message='必要信息不能为空'
+      没有列表；data/result：'null'
+
+本次实际请求 58 次，其余命中本地缓存（/Users/cangjie/source/ari/utils/import_data/jlpm_raw）
