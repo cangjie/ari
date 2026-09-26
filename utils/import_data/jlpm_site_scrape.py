@@ -6,7 +6,8 @@
     python3 jlpm_site_scrape.py --probe          # 阶段 1：探路 —— 先弄清有哪些展厅、接口长什么样
     python3 jlpm_site_scrape.py --probe-extra    # 补探：「博物中国」本馆藏品、国家文物局名录查询页
     python3 jlpm_site_scrape.py --probe2         # 第二轮：展览全列与展品清单、镇馆之宝、藏品数据库、「博物中国」
-    （--scrape 等探路样本回来、看清接口之后再写，现在写等于猜）
+    python3 jlpm_site_scrape.py --scrape --db-limit 50   # 正式抓取先小量试跑（没抓完不写数据模块，退出码 6）
+    python3 jlpm_site_scrape.py --scrape         # 正式抓取：约 7.5 小时，断点续抓；范围见「阶段 2」一节
 
 **必须在国内网络下跑。** 2026-09-26 实测：境外出口（美国 IP）连 www.jlmuseum.net 一律超时，
 WebFetch 同样被拒 —— 与伪满皇宫同一种情况（AGENTS.md 第 16 条）。证书没问题：crt.sh 上
@@ -740,6 +741,244 @@ def probe2(f: JlFetcher, base: str, r: Report) -> None:
         r.say(f"⚠ 「博物中国」取不到：{e}")
 
 
+# ---------------------------------------------------------------- 阶段 2：正式抓取（--scrape）
+# 用户 2026-09-26 在 G1 定的范围：
+#   · 藏品：镇馆之宝 17 件 + 藏品数据库 17709 件的列表与详情**全抓**，评分范围抓完再定；
+#   · 节点：当前在展的实体展览（exhibitionFlag 1/2），另加「白山松水的记忆」（299：标记已结束、
+#     时间栏却写「正在展出」，收为一个节点、在展记「未核实」）。
+# 本步只把原文逐字落盘，**不挑范围、不定身份、不拆字段**（挑节点、配名录、定在展都在 jlpm_build.py）：
+#   jlpm_site_data.py      TREASURE（镇馆之宝）、EXHIBITIONS（三类展览全列；入选候选的带详情全文）
+#   jlpm_collectdb.jsonl   藏品数据库，一行一件，按 id 排序（1.7 万件放不进 .py 数据模块）
+# 两处**不能用**的字段，照录前先剔掉并在文档串里写明：
+#   · 镇馆之宝详情的 exhibitionList：两件不同的东西（元青花碗、东汉铜牌饰）给出同一串 id，恰是最新的
+#     5 个展览（含董必武手迹展）—— 是「最新展览」挂件，不是这件东西的展出记录；
+#   · /exhibition/collect：10 个展览全部返回 0 件。官网给不出「哪件东西在哪个展」。
+# 详情逐件请求 1.7 万次，按 1.5 秒一次约 7.5 小时。原文逐行追加进断点文件 jlpm_raw/collectdb_detail.jsonl，
+# 中断后重跑从断点接着抓；不走 Fetcher 的逐 URL 缓存（1.7 万个小文件，且每次请求都要重写 manifest）。
+DB_PAGE = 100
+DB_CKPT = "collectdb_detail.jsonl"
+RETRY_WAIT = (10, 30, 90)               # 网络抖动的退避（秒）；人机验证/限流不重试，直接停
+TREASURE_DROP = ("exhibitionList", "createDate", "createId", "createUser", "updateId", "updateUser",
+                 "delFlag", "loveNum", "remarks")
+EXHIB_KEEP = ("id", "name", "type", "exhibitionFlag", "place", "exhibitionTime", "marks", "status",
+              "showPic", "virtualExhibition", "updateDate")
+DB_DETAIL_KEEP = ("content", "size", "texture", "level", "levelName", "yearType", "type", "imgList",
+                  "isTreasure", "name", "typeName", "yearTypeName", "threedUrl")
+
+
+class Incomplete(Exception):
+    """详情没抓完（--db-limit 或中途停下）。不写数据模块，重跑接着抓。"""
+
+
+def _paged(f: JlFetcher, base: str, path: str, params: dict, r: Report, ref: str,
+           size: int = DB_PAGE) -> tuple[list[dict], int]:
+    """翻页取全。-> (全部条目, total)。条数与 total 不符、id 重复一律退出码 5。"""
+    rows, total, page = [], None, 1
+    while True:
+        js = _api(f, base, path, dict(params, page=page, size=size), r, ref=ref)
+        if not js or not js.get("success"):
+            raise SystemExit(f"{path} 第 {page} 页取不到：{(js or {}).get('message')!r}")
+        t = int(js.get("total") or 0)
+        if total is not None and t != total:
+            raise SystemExit(f"{path} 翻页途中 total 变了：{total} -> {t}（官网数据在变，稍后重跑）")
+        total, data = t, js.get("data") or []
+        rows += data
+        if len(rows) >= total or not data:
+            break
+        page += 1
+    ids = [str(x.get("id")) for x in rows]
+    dup = [i for i, c in collections.Counter(ids).items() if c > 1]
+    if len(rows) != total or dup:
+        raise SystemExit(f"{path} {params}：取到 {len(rows)} 条，total={total}，重复 id {dup[:10]}")
+    return rows, total
+
+
+def scrape_exhibitions(f: JlFetcher, base: str, r: Report) -> dict[str, dict]:
+    r.say("\n## 展览（三类全列）")
+    out: dict[str, dict] = {}
+    for t, tname in EXHIB_TYPES:
+        rows, total = _paged(f, base, "/exhibition/list", dict(type=t), r, ref=f"/#/exhibition?type={t}")
+        flags = collections.Counter(FLAG.get(str(x.get("exhibitionFlag")), "?") for x in rows)
+        r.say(f"  {tname}：{total} 个 {dict(flags)}")
+        for x in rows:
+            k = str(x["id"])
+            e = out.setdefault(k, {kk: x.get(kk) for kk in EXHIB_KEEP})
+            e.setdefault("lists", [])
+            e["lists"].append(tname)          # 同一个展可能同时在基本陈列与虚拟展厅（1288、859）
+    # 节点候选：基本陈列全部 + 其余展出中/即将展出的实体展（虚拟展厅是线上展，不算）。挑选在 jlpm_build.py
+    cand = [k for k, e in out.items()
+            if "基本陈列" in e["lists"] or (str(e["exhibitionFlag"]) in ("1", "2") and e["lists"] != ["虚拟展厅"])]
+    r.say(f"  取详情全文的候选 {len(cand)} 个：{[out[k]['name'][:16] for k in cand]}")
+    for k in cand:
+        js = _api(f, base, "/exhibition/detail", dict(id=k), r, ref=f"/#/exhibition/detail?id={k}")
+        d = (js or {}).get("data") or {}
+        if not d:
+            raise SystemExit(f"展览 {k} 的详情取不到")
+        for kk in ("place", "exhibitionTime", "exhibitionFlag", "name"):
+            if str(d.get(kk)) != str(out[k].get(kk)):
+                r.say(f"  ⚠ 展览 {k} 的 {kk} 列表与详情不一致：{out[k].get(kk)!r} / {d.get(kk)!r}（照录详情）")
+                out[k][kk] = d.get(kk)
+        out[k]["content"] = d.get("content") or ""
+    return out
+
+
+def scrape_treasure(f: JlFetcher, base: str, r: Report) -> dict[str, dict]:
+    rows, total = _paged(f, base, "/collect/list", dict(isTreasure=1), r, ref="/#/collect")
+    r.say(f"\n## 镇馆之宝：{total} 件")
+    return {str(x["id"]): {k: v for k, v in x.items() if k not in TREASURE_DROP} for x in rows}
+
+
+def _db_detail_live(f: JlFetcher, url: str, ref: str, r: Report) -> tuple[int, str]:
+    """一件详情：限速请求，网络抖动按 RETRY_WAIT 退避；人机验证/限流立即停。"""
+    for i, wait in enumerate((0,) + RETRY_WAIT):
+        if wait:
+            r.say(f"  网络抖动，{wait} 秒后第 {i} 次重试：{url}")
+            time.sleep(wait)
+        try:
+            st, text = f._live(url, True, ref)
+        except Unreachable:
+            if i == len(RETRY_WAIT):
+                raise
+            f.n_retry += 1
+            continue
+        if st in W.BLOCK_STATUS or (len(text) < 5000 and W.BLOCK_PAT.search(text)):
+            raise Blocked(f"{url} -> HTTP {st}，{len(text)} 字节：{_txt(text)[:200]!r}")
+        return st, text
+    raise AssertionError("unreachable")
+
+
+def scrape_collectdb(f: JlFetcher, base: str, r: Report, limit: int | None) -> list[dict]:
+    rows, total = _paged(f, base, "/collectdb/list.do", dict(s_yearType="", s_type="", s_name=""),
+                         r, ref="/#/collect")
+    r.say(f"\n## 藏品数据库：列表 {total} 件（每页 {DB_PAGE}）")
+    ckpt = f.raw / DB_CKPT
+    done: dict[str, dict] = {}
+    if ckpt.exists():
+        with open(ckpt, encoding="utf-8") as fh:
+            for line in fh:
+                if line.strip():
+                    x = json.loads(line)
+                    done[x["id"]] = x
+    todo = [x for x in rows if str(x["id"]) not in done]
+    r.say(f"  详情：断点里已有 {len(done)} 件，待抓 {len(todo)} 件"
+          + (f"（本次只抓 {limit} 件）" if limit is not None else "")
+          + f"，按 {f.delay}s 一次约 {len(todo[:limit] if limit is not None else todo) * f.delay / 3600:.1f} 小时")
+    f.n_retry = 0
+    t0 = time.monotonic()
+    rp = f.robots.get(urllib.parse.urlsplit(base).netloc)
+    with open(ckpt, "a", encoding="utf-8", newline="") as fh:
+        for n, x in enumerate(todo[:limit] if limit is not None else todo, 1):
+            i = str(x["id"])
+            url = f"{base}/api/collectdb/detail?" + urllib.parse.urlencode(dict(id=i))
+            if rp is not None and not rp.can_fetch(W.UA, url):
+                raise SystemExit(f"robots 不许请求详情：{url}")
+            st, text = _db_detail_live(f, url, f"{base}/#/collect/collectionDatabase?id={i}", r)
+            rec = dict(id=i, status=st, fetched_at=dt.datetime.now().isoformat(timespec="seconds"),
+                       text=text)
+            fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            fh.flush()
+            done[i] = rec
+            if n % 500 == 0:
+                el = time.monotonic() - t0
+                left = (len(todo) - n) * el / n
+                r.say(f"  …{n}/{len(todo)}，已用 {el / 60:.0f} 分，预计还要 {left / 3600:.1f} 小时"
+                      f"（重试 {f.n_retry} 次）")
+    missing = [str(x["id"]) for x in rows if str(x["id"]) not in done]
+    if missing:
+        raise Incomplete(f"藏品数据库详情还差 {len(missing)} 件，重跑 --scrape 从断点接着抓")
+
+    out, bad, renamed = [], [], []
+    for x in rows:
+        rec = done[str(x["id"])]
+        js = _json(rec["text"]) if rec["status"] == 200 else None
+        d = (js or {}).get("data") or {}
+        item = {k: x.get(k) for k in ("id", "name", "typeName", "yearTypeName", "mainImgUrl", "threedUrl")}
+        item["detail_ok"] = bool(js and js.get("success") and d)
+        if not item["detail_ok"]:
+            bad.append((x["id"], rec["status"], (js or {}).get("message")))
+        for k in DB_DETAIL_KEEP:
+            v = d.get(k)
+            if k in item:
+                # 列表与详情同名字段：相同就不重复存；不同则详情那份另存 detail_<键>
+                if v not in (None, "") and v != item[k]:
+                    item[f"detail_{k}"] = v
+                    if k == "name":
+                        renamed.append((x["name"], v))
+            elif v not in (None, "", []):
+                item[k] = v
+        if d.get("contentNoHtml") not in (None, "", d.get("content")):
+            item["contentNoHtml"] = d["contentNoHtml"]
+        item["fetched_at"] = rec["fetched_at"][:10]
+        out.append(item)
+    r.say(f"  详情成功 {len(out) - len(bad)} / {len(out)}；失败 {len(bad)} {bad[:10]}")
+    r.say(f"  列表名与详情名不同的 {len(renamed)} 件 {renamed[:10]}")
+    return sorted(out, key=lambda x: str(x["id"]))
+
+
+def _health(tre: dict, db: list[dict], ex: dict, r: Report) -> None:
+    r.say("\n## 体检（只进报告）")
+    def clen(x):
+        return len(_txt(str(x.get("content") or "")))
+    bins = collections.Counter()
+    for x in db:
+        c, nm = clen(x), len(x["name"] or "")
+        bins["介绍为空" if c == 0 else "介绍≈名称" if c <= nm + 4 else
+             "<50 字" if c < 50 else "50–199 字" if c < 200 else "≥200 字"] += 1
+    r.say(f"藏品数据库介绍长度：{dict(bins)}")
+    for k in ("size", "texture", "levelName"):
+        r.say(f"  有 {k} 的 {sum(1 for x in db if x.get(k))} 件")
+    r.say(f"  类别 {collections.Counter(x['typeName'] for x in db).most_common(12)}")
+    r.say(f"  年代 {collections.Counter(x['yearTypeName'] for x in db).most_common(12)}")
+    names = collections.Counter(x["name"] for x in db)
+    r.say(f"  名称唯一 {sum(1 for c in names.values() if c == 1)}，重名 {sum(1 for c in names.values() if c > 1)} 个名字")
+    tn = {v["name"] for v in tre.values()}
+    r.say(f"镇馆之宝 {len(tre)} 件里，名称与藏品数据库逐字相同的 {len(tn & set(names))} 件")
+    cat = HERE / "jlpm_wikidata_catalog.json"
+    if cat.exists():
+        cn = collections.Counter(x["name"] for x in json.loads(cat.read_text("utf-8"))["items"])
+        both = [n for n, c in names.items() if c == 1 and cn.get(n) == 1]
+        r.say(f"与 Wikidata 名录（{sum(cn.values())} 条）逐字相同、且两边都唯一的名称 {len(both)} 个"
+              f"（身份核对的上限；规则在 jlpm_build.py 定）")
+    cur = [e for e in ex.values() if str(e["exhibitionFlag"]) in ("1", "2") and e["lists"] != ["虚拟展厅"]]
+    r.say(f"展览：共 {len(ex)} 个，展出中/即将展出的实体展 {len(cur)} 个：")
+    for e in cur:
+        r.say(f"  {e['id']:>5} [{FLAG.get(str(e['exhibitionFlag']))}] {e['name']} | {e['place']} | {e['exhibitionTime']}")
+
+
+def scrape(f: JlFetcher, base: str, r: Report, out: pathlib.Path, db_limit: int | None) -> None:
+    r.say(f"# 吉林省博物院正式抓取 {dt.datetime.now().isoformat(timespec='seconds')}")
+    r.say(f"base = {base}")
+    probe_robots(f, base, r, ("/api/",))
+    ex = scrape_exhibitions(f, base, r)
+    tre = scrape_treasure(f, base, r)
+    db = scrape_collectdb(f, base, r, db_limit)
+    _health(tre, db, ex, r)
+
+    # 抓取日期取自缓存清单与断点文件，从缓存重跑时逐字节不变
+    days = sorted({f.manifest[u]["fetched_at"][:10] for u in f.used if u in f.manifest}
+                  | {x["fetched_at"] for x in db})
+    when = days[0] if len(days) == 1 else f"{days[0]} 至 {days[-1]}" if days else "?"
+    src = f"来源：{base}/api（抓取 {when}，`jlpm_site_scrape.py --scrape` 生成，**勿手工编辑**）"
+    W._emit(out / "jlpm_site_data.py", f"""吉林省博物院官网的镇馆之宝与展览。
+
+{src}
+TREASURE：「镇馆之宝」{len(tre)} 件（/collect/list?isTreasure=1），字段逐字照录官网接口：
+  name、levelName（文物级别）、yearTypeName（年代）、typeName（类别）、texture（质地）、size（尺寸，写法不一）、
+  content（介绍，含 HTML）、contentNoHtml、mainImgUrl、imgList、threedUrl。
+  **已剔除 exhibitionList**：详情接口给每件东西的都是同一串「最新 5 个展览」，不是它的展出记录。
+EXHIBITIONS：基本陈列、临时展览、虚拟展厅三张列表上的全部展览，{len(ex)} 个。lists 是它出现在哪几张列表上。
+  exhibitionFlag 是馆方的状态标记（前端：2 即将展出、1 展出中、0 已结束）；place、exhibitionTime 照录。
+  content 只有节点候选（基本陈列全部 + 展出中/即将展出的实体展）才有，取自详情接口。
+  **「白山松水的记忆」（299）标记 0（已结束），时间栏却写「正在展出」**，照录，由 jlpm_build.py 按用户决定处理。
+  /exhibition/collect（展品清单）对所有展览都返回 0 件，官网给不出「哪件东西在哪个展」。
+藏品数据库 {len(db)} 件在 jlpm_collectdb.jsonl（同一次抓取，一行一件）。
+""", [("TREASURE", "dict[str, dict]", tre), ("EXHIBITIONS", "dict[str, dict]", ex)])
+    with open(out / "jlpm_collectdb.jsonl", "w", encoding="utf-8", newline="\n") as fh:
+        for x in db:
+            fh.write(json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n")
+    r.say(f"\n写出：jlpm_site_data.py（镇馆之宝 {len(tre)}、展览 {len(ex)}）、jlpm_collectdb.jsonl（{len(db)} 件）")
+
+
 # ---------------------------------------------------------------- 入口
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK
@@ -749,6 +988,10 @@ def main() -> None:
                     help="补探：「博物中国」本馆藏品、国家文物局名录查询页")
     ap.add_argument("--probe2", action="store_true",
                     help="第二轮探路：展览全列（含展品清单）、镇馆之宝、藏品数据库的规模与详情、「博物中国」")
+    ap.add_argument("--scrape", action="store_true",
+                    help="阶段 2：正式抓取，写出 jlpm_site_data.py 与 jlpm_collectdb.jsonl（约 7.5 小时，可断点续抓）")
+    ap.add_argument("--db-limit", type=int, default=None,
+                    help="本次最多抓多少件藏品数据库详情（先小量试跑用）；没抓完不写数据模块，退出码 6")
     ap.add_argument("--base", default=BASE,
                     help="只在离线自测时改，例如 Wayback 存档："
                          "http://web.archive.org/web/20250912052641id_/https://jlmuseum.net")
@@ -759,13 +1002,15 @@ def main() -> None:
                          "只对 wmhg_site_scrape.EXPIRED_CERT_HOSTS 登记的域名跳过有效期，"
                          "证书链与域名照常校验。官网 jlmuseum.net 的证书有效，用不着")
     args = ap.parse_args()
-    if args.probe + args.probe_extra + args.probe2 != 1:
-        ap.error("--probe / --probe-extra / --probe2 三选一")
+    if args.probe + args.probe_extra + args.probe2 + args.scrape != 1:
+        ap.error("--probe / --probe-extra / --probe2 / --scrape 四选一")
     out = pathlib.Path(args.out)
     base = args.base.rstrip("/")
-    run, report_name = ((probe, "probe_report.txt") if args.probe
-                        else (probe_extra, "probe_extra_report.txt") if args.probe_extra
-                        else (probe2, "probe2_report.txt"))
+    run, report_name = (
+        (probe, "probe_report.txt") if args.probe else
+        (probe_extra, "probe_extra_report.txt") if args.probe_extra else
+        (probe2, "probe2_report.txt") if args.probe2 else
+        (lambda f_, b_, r_: scrape(f_, b_, r_, out, args.db_limit), "scrape_report.txt"))
 
     f = JlFetcher(out / "jlpm_raw", out / "jlpm_samples", args.refresh,
                   allow_expired=args.allow_expired_cert,
@@ -797,6 +1042,9 @@ def main() -> None:
         r.say(f"\n[stop] 碰到人机验证或限流：{e}")
         r.say("不绕。已抓到的留在缓存里，停下来问用户。")
         code = 3
+    except Incomplete as e:
+        r.say(f"\n[未完成] {e}")
+        code = 6
     finally:
         r.say(f"\n本次实际请求 {f.n_live} 次，其余命中本地缓存（{f.raw}）")
         (f.samples / report_name).write_text("\n".join(r.lines) + "\n", "utf-8")
