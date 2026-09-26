@@ -62,6 +62,8 @@ utils/import_data/meta_cache/
 # 伪满皇宫官网的原始响应缓存（wmhg_site_scrape.py）。只为重跑时不再打扰官网。
 # 挑出来的样本在 wmhg_samples/，**那个要入仓库** —— 写解析器的机器连不上官网（境外出口）
 utils/import_data/wmhg_raw/
+# 吉林省博物院同理（jlpm_site_scrape.py），样本在 jlpm_samples/，入仓库
+utils/import_data/jlpm_raw/
 
 # 去重的中间产物：零 API、几秒可重生成（dedupe_recall.py / dedupe_group.py --dry-run），
 # 且 dedupe_groups.json 每次空跑都被覆盖，与实际跑过的 dedupe_clusters.json 的组号对不上。
