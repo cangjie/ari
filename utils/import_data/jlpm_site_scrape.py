@@ -5,6 +5,7 @@
 
     python3 jlpm_site_scrape.py --probe          # 阶段 1：探路 —— 先弄清有哪些展厅、接口长什么样
     python3 jlpm_site_scrape.py --probe-extra    # 补探：「博物中国」本馆藏品、国家文物局名录查询页
+    python3 jlpm_site_scrape.py --probe2         # 第二轮：展览全列与展品清单、镇馆之宝、藏品数据库、「博物中国」
     （--scrape 等探路样本回来、看清接口之后再写，现在写等于猜）
 
 **必须在国内网络下跑。** 2026-09-26 实测：境外出口（美国 IP）连 www.jlmuseum.net 一律超时，
@@ -525,15 +526,21 @@ def probe_mc(f: JlFetcher, r: Report) -> None:
     st, page = f.get(f"{MC_BASE}/museums/details?id={MC_MUSEUM_PAGE}", sample="mc_museum.html")
     r.say(f"本馆介绍页：HTTP {st}，<title> {_title(page)!r}")
     r.say(f"  摘录：{W._excerpt(page, '藏品', 300)}")
-    mids = collections.Counter(re.findall(r"museums=(\d+)", page))
-    r.say(f"  页面上出现的 museums= 取值：{mids.most_common(5)}")
+    # 介绍页上唯一的 museums= 是介绍页自己的 id（18 位），**不是**列表筛选用的 14 位编号 ——
+    # 2026-09-26 第一轮拿它去筛，五个级别全是 0 件。只认 14 位的
+    mids = collections.Counter(m for m in re.findall(r"museums=(\d+)", page) if len(m) == 14)
+    r.say(f"  页面上出现的 14 位 museums= 取值：{mids.most_common(5)}")
     mid = mids.most_common(1)[0][0] if mids else None
     if not mid:
-        for kw in ("洞庭春色赋", "文姬归汉图", "丙午神钩"):
-            st, pg = f.get(f"{MC_BASE}/Collection?" + urllib.parse.urlencode({"searchkey": kw}))
-            hit = [re.search(r"museums=(\d+)", h).group(1) for h, t in W._links(pg)
-                   if "museums=" in h and MC_NAME in t]
-            r.say(f"  搜「{kw}」：HTTP {st}，{'本馆编号 ' + hit[0] if hit else '结果里没有本馆'}")
+        # 退路：拿官网镇馆之宝的名称去搜（名录里的写法），结果里「收藏单位」链接的 museums= 就是本馆编号
+        for i, kw in enumerate(("文姬归汉图", "洞庭春色", "丙午神钩", "契丹文八角铜镜", "吉林省博物院"), 1):
+            st, pg = f.get(f"{MC_BASE}/Collection?" + urllib.parse.urlencode({"searchkey": kw}),
+                           sample=f"mc_search_{i}.html")
+            units = collections.Counter((re.search(r"museums=(\d+)", h).group(1), t)
+                                        for h, t in W._links(pg) if "museums=" in h and t)
+            hit = [m for (m, t) in units if MC_NAME in t]
+            r.say(f"  搜「{kw}」：HTTP {st}，{'本馆编号 ' + hit[0] if hit else '结果里没有本馆'}；"
+                  f"结果里的收藏单位 {units.most_common(5)}")
             if hit:
                 mid = hit[0]
                 break
@@ -601,6 +608,138 @@ def probe_extra(f: JlFetcher, base: str, r: Report) -> None:
             r.say(f"⚠ {name}取不到：{e}")
 
 
+# ---------------------------------------------------------------- 第二轮探路（--probe2）
+# 第一轮（2026-09-26）摸清的接口，全在 /api 下，GET，响应 {success, message, data, total}：
+#   /exhibition/list      page, size, type（必填：1 基本陈列 2 临时展览 3 虚拟展厅 4 H5 展览）
+#                         每条带 exhibitionFlag（前端：2 即将展出、1 展出中、0 已结束）、place、exhibitionTime
+#   /exhibition/detail    id
+#   /exhibition/collect   id    —— 该展的展品清单（展览详情页「展品」标签）
+#   /collect/list         page, size, isTreasure=1 —— 镇馆之宝，第一轮 17 件，带级别、尺寸、介绍、exhibitionList
+#   /collect/detail       id（镇馆之宝的数字 id）
+#   /collectdb/list.do    page, size, s_yearType, s_type, s_name —— 藏品数据库，第一轮 total=17709，
+#                         列表每条只有 id（32 位十六进制）、name、typeName、yearTypeName、mainImgUrl、threedUrl
+#   /collectdb/detail     id（32 位十六进制）；前端显示 content、levelName、size、texture 等
+# 第一轮的详情都没试成：拿去试的 id 是字典条目的（282），不是展品的。这一轮全部按接口定点请求。
+EXHIB_TYPES = (("1", "基本陈列"), ("2", "临时展览"), ("3", "虚拟展厅"))
+FLAG = {"0": "已结束", "1": "展出中", "2": "即将展出"}
+# 名录里的镇馆之宝（jlpm_wikidata_catalog.json 的写法），用来试藏品数据库的按名搜索
+DB_PROBE_NAMES = ("文姬归汉", "洞庭春色", "丙午神钩", "百花图", "契丹文八角铜镜", "松风清节")
+
+
+def _api(f: JlFetcher, base: str, path: str, params: dict, r: Report, sample: str | None = None,
+         ref: str = "/#/home"):
+    """GET /api<path>，-> 解析后的 JSON（success 为假时照样返回，由调用方报告）或 None。"""
+    q = urllib.parse.urlencode(params)
+    st, text = f.get(f"{base}/api{path}" + ("?" + q if q else ""), ajax=True,
+                     referer=base + ref, sample=sample)
+    js = _json(text) if st == 200 and not _is_html(text) else None
+    if js is None:
+        r.say(f"  ⚠ {path} {params}: HTTP {st}，不是 JSON：{text[:160]!r}")
+    elif not js.get("success"):
+        r.say(f"  ⚠ {path} {params}: success=False，message={js.get('message')!r}")
+    return js
+
+
+def _fields(item: dict, n: int = 50) -> list[str]:
+    return [f"{k}={_preview(v, 40)}" for k, v in list(item.items())[:n]]
+
+
+def probe2(f: JlFetcher, base: str, r: Report) -> None:
+    r.say(f"# 吉林省博物院第二轮探路 {dt.datetime.now().isoformat(timespec='seconds')}")
+    r.say(f"base = {base}")
+    probe_robots(f, base, r, ("/api/",))
+
+    # ---- 展览：三类全列，展出中/即将展出的与全部基本陈列再取详情与展品清单
+    r.say("\n# 展览")
+    exhibs: list[dict] = []
+    for t, tname in EXHIB_TYPES:
+        js = _api(f, base, "/exhibition/list", dict(page=1, size=100, type=t), r,
+                  sample=f"p2_exhibition_list_type{t}.json", ref=f"/#/exhibition?type={t}")
+        data = (js or {}).get("data") or []
+        r.say(f"\n## {tname}（type={t}）：{len(data)} 个，total={(js or {}).get('total')}")
+        if js and len(data) < int(js.get("total") or 0):
+            r.say(f"  ⚠ 一页没取完（{len(data)}/{js.get('total')}），正式抓取要翻页")
+        for e in data:
+            flag = FLAG.get(str(e.get("exhibitionFlag")), f"flag={e.get('exhibitionFlag')!r}")
+            r.say(f"  {e.get('id'):>5}  [{flag}]  {e.get('name')}  | 地点：{e.get('place')}"
+                  f"  | 时间：{e.get('exhibitionTime')}")
+            exhibs.append(dict(e, _type=t))
+    if exhibs:
+        r.say(f"\n展览条目的字段：{list(exhibs[0])}")
+    pick = [e for e in exhibs if e["_type"] == "1" or str(e.get("exhibitionFlag")) in ("1", "2")]
+    r.say(f"\n## 取详情与展品清单：基本陈列全部 + 其余展出中/即将展出的，共 {len(pick)} 个")
+    for e in pick:
+        i = e.get("id")
+        js = _api(f, base, "/exhibition/detail", dict(id=i), r, sample=f"p2_exhibition_detail_{i}.json",
+                  ref=f"/#/exhibition/detail?id={i}")
+        d = (js or {}).get("data") or {}
+        body = _txt(str(d.get("content") or ""))
+        r.say(f"\n  {i} {e.get('name')}")
+        r.say(f"      详情字段 {list(d)[:30]}")
+        r.say(f"      地点：{d.get('place')!r}；时间：{d.get('exhibitionTime')!r}；介绍 {len(body)} 字："
+              f"{body[:160]!r}")
+        # 介绍里点到展厅、楼层、单元的句子，另列出来 —— 展厅清单主要靠它和 place
+        hits = list(dict.fromkeys(re.findall(r"[^。；！？]{0,40}(?:展厅|展区|楼|单元|部分)[^。；！？]{0,40}", body)))
+        for h in hits[:8]:
+            r.say(f"      · {h.strip()}")
+        js = _api(f, base, "/exhibition/collect", dict(id=i), r, sample=f"p2_exhibition_collect_{i}.json",
+                  ref=f"/#/exhibition/detail?id={i}")
+        items = (js or {}).get("data") or []
+        r.say(f"      展品清单 {len(items) if isinstance(items, list) else type(items).__name__} 件"
+              f"（total={(js or {}).get('total')}）")
+        if isinstance(items, list) and items:
+            r.say(f"      展品字段 {_fields(items[0])}")
+            r.say(f"      展品名 {[str(x.get('name'))[:24] for x in items[:40]]}")
+
+    # ---- 镇馆之宝
+    r.say("\n# 镇馆之宝 /collect/list?isTreasure=1")
+    js = _api(f, base, "/collect/list", dict(page=1, size=100, isTreasure=1), r,
+              sample="p2_collect_list_treasure.json", ref="/#/collect")
+    tre = (js or {}).get("data") or []
+    r.say(f"{len(tre)} 件，total={(js or {}).get('total')}")
+    for x in tre:
+        r.say(f"  {x.get('id'):>4}  {x.get('name')}  | {x.get('levelName')} · {x.get('yearTypeName')} · "
+              f"{x.get('typeName')} · {x.get('size')}  | 曾经展出 {len(x.get('exhibitionList') or [])} 个"
+              f"  | 介绍 {len(_txt(str(x.get('content') or '')))} 字")
+    for x in tre[:2]:
+        i = x.get("id")
+        js = _api(f, base, "/collect/detail", dict(id=i), r, sample=f"p2_collect_detail_{i}.json",
+                  ref=f"/#/collect/detail?id={i}")
+        d = (js or {}).get("data") or {}
+        r.say(f"  详情 {i}：字段 {list(d)}")
+        for ex in (d.get("exhibitionList") or [])[:5]:
+            r.say(f"      曾经展出：{ {k: ex.get(k) for k in ('id', 'name', 'place', 'exhibitionFlag')} }")
+
+    # ---- 藏品数据库
+    r.say("\n# 藏品数据库 /collectdb/list.do")
+    q = dict(page=1, size=100, s_yearType="", s_type="", s_name="")
+    js = _api(f, base, "/collectdb/list.do", q, r, sample="p2_collectdb_list_size100.json", ref="/#/collect")
+    lst = (js or {}).get("data") or []
+    r.say(f"size=100：本页 {len(lst)} 条，total={(js or {}).get('total')}"
+          f"{'（服务器限了每页条数）' if js and len(lst) < 100 else ''}")
+    ids = [x.get("id") for x in lst[:2]]
+    for kw in DB_PROBE_NAMES:
+        js = _api(f, base, "/collectdb/list.do", dict(q, size=20, s_name=kw), r, ref="/#/collect")
+        got = (js or {}).get("data") or []
+        r.say(f"  按名搜「{kw}」：{len(got)} 条 {[(x.get('name'), x.get('yearTypeName')) for x in got[:5]]}")
+        if got:
+            ids.append(got[0].get("id"))
+    for i in list(dict.fromkeys(ids))[:6]:
+        js = _api(f, base, "/collectdb/detail", dict(id=i), r, sample=f"p2_collectdb_detail_{i}.json",
+                  ref=f"/#/collect/collectionDatabase?id={i}")
+        d = (js or {}).get("data") or {}
+        r.say(f"  详情 {i} {d.get('name')!r}：{d.get('levelName')!r} · {d.get('yearTypeName')!r} · "
+              f"{d.get('typeName')!r} · 尺寸 {d.get('size')!r} · 质地 {d.get('texture')!r} · "
+              f"介绍 {len(_txt(str(d.get('content') or '')))} 字 · 图 {len(d.get('imgList') or [])} 张")
+        r.say(f"      字段 {_fields(d)}")
+
+    # ---- 博物中国：第一轮拿错了筛选编号，这轮按名称搜
+    try:
+        probe_mc(f, r)
+    except (Unreachable, CertError) as e:
+        r.say(f"⚠ 「博物中国」取不到：{e}")
+
+
 # ---------------------------------------------------------------- 入口
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")        # 中文 Windows 控制台默认 GBK
@@ -608,6 +747,8 @@ def main() -> None:
     ap.add_argument("--probe", action="store_true", help="阶段 1：探路，只存原始响应与样本")
     ap.add_argument("--probe-extra", action="store_true",
                     help="补探：「博物中国」本馆藏品、国家文物局名录查询页")
+    ap.add_argument("--probe2", action="store_true",
+                    help="第二轮探路：展览全列（含展品清单）、镇馆之宝、藏品数据库的规模与详情、「博物中国」")
     ap.add_argument("--base", default=BASE,
                     help="只在离线自测时改，例如 Wayback 存档："
                          "http://web.archive.org/web/20250912052641id_/https://jlmuseum.net")
@@ -618,12 +759,13 @@ def main() -> None:
                          "只对 wmhg_site_scrape.EXPIRED_CERT_HOSTS 登记的域名跳过有效期，"
                          "证书链与域名照常校验。官网 jlmuseum.net 的证书有效，用不着")
     args = ap.parse_args()
-    if args.probe + args.probe_extra != 1:
-        ap.error("--probe / --probe-extra 二选一")
+    if args.probe + args.probe_extra + args.probe2 != 1:
+        ap.error("--probe / --probe-extra / --probe2 三选一")
     out = pathlib.Path(args.out)
     base = args.base.rstrip("/")
     run, report_name = ((probe, "probe_report.txt") if args.probe
-                        else (probe_extra, "probe_extra_report.txt"))
+                        else (probe_extra, "probe_extra_report.txt") if args.probe_extra
+                        else (probe2, "probe2_report.txt"))
 
     f = JlFetcher(out / "jlpm_raw", out / "jlpm_samples", args.refresh,
                   allow_expired=args.allow_expired_cert,
