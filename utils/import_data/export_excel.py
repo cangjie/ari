@@ -83,6 +83,20 @@ VALUE_MAPS = {
         "名称与英文简介解析": "Parsed from name and English description",
         "名称解析（作者, 作品名）": "Parsed from name (Artist, Title)",
         "英文简介所有格解析": "Parsed from possessive in English description",
+        # 伪满皇宫（meta_fill_official_wmhg.py 生成的来源串，**改那边的措辞要同步改这里**，
+        # 否则英文版照样漏中文 —— 2026-09-26 首次导出就因为没登记漏了 137 处）
+        "伪满皇宫博物院官网藏品栏目（类目）": "Museum website, collection section (category)",
+        "伪满皇宫博物院官网藏品栏目（题名）": "Museum website, collection section (title)",
+        "伪满皇宫博物院官网藏品栏目（题名年号）": "Museum website, collection section (era year in title)",
+        "伪满皇宫博物院官网藏品栏目（简介）": "Museum website, collection section (description)",
+        "伪满皇宫博物院官网常设展览栏目（对象层级）": "Museum website, permanent exhibitions (object level)",
+        "伪满皇宫博物院官网文章 /detail/3263.html（题名）": "Museum website article /detail/3263.html (title)",
+        "伪满皇宫博物院官网文章 /detail/3263.html（年代行）": "Museum website article /detail/3263.html (date line)",
+        "伪满皇宫博物院官网文章 /detail/3263.html（尺寸行）": "Museum website article /detail/3263.html (dimensions line)",
+        "伪满皇宫博物院官网文章 /detail/3263.html（展览信息）": "Museum website article /detail/3263.html (exhibition info)",
+        "伪满皇宫博物院官网文章 /detail/3263.html（对象层级）": "Museum website article /detail/3263.html (object level)",
+        "伪满皇宫博物院 2023 年官方导览 /detail/2657.html（对象层级）":
+            "Museum's official 2023 visitor guide /detail/2657.html (object level)",
     },
     "yes_no": {"是": "Yes", "否": "No"},
 }
