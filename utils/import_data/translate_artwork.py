@@ -188,6 +188,67 @@ def missing_en2zh(cur, museum: str) -> dict[str, list[tuple[int, str]]]:
     return out
 
 
+# 库里已有、译名表里没有的 AI 译文（只查中译英方向，键与 missing() 取法一致）。
+# 为什么要有：译文是逐批写库、逐批提交的，而早先译名表要等一类全部译完才写 ——
+# 2026-09-27 吉林省博物院译到名称 3100/5822 时网络断开、进程退出，库里已有约 3000 条英文名，
+# 译名表里一条都没有；续跑只挑「库里缺英文」的行，这 3000 条就永远进不了译名表，
+# 下次重灌（导入器清空重灌）全部丢失，且不报错。现在每批都写译名表，这里再兜一层。
+# 只收 source 为 AI翻译/存疑 的：馆方原文英文（记「原始」）不是译文，不进译名表。
+_DB_TRANSLATED = {
+    "artwork_name": """SELECT DISTINCT a.name_key, e.text, e.source FROM artwork a
+        JOIN museum m ON m.id = a.museum_id AND m.key_name = %s
+        JOIN content_text e ON e.content_id = a.name_cid AND e.lang = 'en'""",
+    "gallery_name": """SELECT DISTINCT g.name_key, e.text, e.source FROM gallery g
+        JOIN museum m ON m.id = g.museum_id AND m.key_name = %s
+        JOIN content_text e ON e.content_id = g.name_cid AND e.lang = 'en'""",
+    "artwork_description": """SELECT DISTINCT z.text, e.text, e.source FROM artwork a
+        JOIN museum m ON m.id = a.museum_id AND m.key_name = %s
+        JOIN content_text z ON z.content_id = a.description_cid AND z.lang = 'zh-CN'
+        JOIN content_text e ON e.content_id = a.description_cid AND e.lang = 'en'""",
+    "artwork_medium": """SELECT DISTINCT z.text, e.text, e.source FROM artwork a
+        JOIN museum m ON m.id = a.museum_id AND m.key_name = %s
+        JOIN content_text z ON z.content_id = a.medium_cid AND z.lang = 'zh-CN'
+        JOIN content_text e ON e.content_id = a.medium_cid AND e.lang = 'en'""",
+}
+
+
+def backfill_csv(cur, museum: str, base: pathlib.Path, write: bool) -> int:
+    """把库里有、译名表里没有的 AI 译文补进译名表。零 API。-> 补了多少行"""
+    by_file: dict[str, list[str]] = {}
+    for kind in _DB_TRANSLATED:
+        by_file.setdefault(FILES[kind][0], []).append(kind)
+    total = 0
+    for fname, kinds in by_file.items():
+        path = base / fname
+        head, csv_rows, have = read_csv(path)
+        add = []
+        for kind in kinds:
+            cur.execute(_DB_TRANSLATED[kind] + " WHERE e.source IN ('AI翻译', '存疑')"
+                        " AND e.text NOT REGEXP '[一-鿿]'", (museum,))
+            for key, en, src in cur.fetchall():
+                key = (key or "").strip()
+                if key and key not in have:
+                    add.append({"kind": kind, "key": key, "zh": key, "en": en,
+                                "confidence": "存疑" if src == "存疑" else "AI"})
+                    have.add(key)
+        if add:
+            print(f"  译名表 {fname}：库里有、表里没有的 AI 译文 {len(add)} 条"
+                  + ("，已补入" if write else "（--dump，未写）"))
+            if write:
+                write_csv(path, head, csv_rows + add)
+        total += len(add)
+    return total
+
+
+def write_csv(path: pathlib.Path, head: list[str], rows: list[dict]) -> None:
+    cols = ["kind", "key", "zh", "en", "confidence"]
+    with path.open("w", encoding="utf-8", newline="") as f:
+        f.writelines(head)
+        w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore", lineterminator="\n")
+        w.writeheader()
+        w.writerows(rows)
+
+
 def read_csv(path: pathlib.Path) -> tuple[list[str], list[dict], set[str]]:
     """返回 (注释行, 数据行, 已有 key 集合)。文件不存在时给空骨架。"""
     if not path.exists():
@@ -223,6 +284,9 @@ def main() -> None:
     word = "英译" if args.direction == "zh2en" else "中译"
     for kind, rows in need.items():
         print(f"{kind:22s} 缺{word} {len(rows)} 段")
+    if args.direction == "zh2en":
+        # 英译中方向的键取法不同（见 missing_en2zh），这层兜底暂只覆盖中译英
+        backfill_csv(cur, args.museum, base, write=not args.dump)
     if args.dump:
         return
     if not args.model:
@@ -293,14 +357,9 @@ def main() -> None:
                     csv_rows.append({"kind": kind, "key": key, **row, "confidence": conf})
                     have.add(key)
             conn.commit()
+            # 每批提交后立刻写译名表：库与表始终一致，中途断开也不丢（见 backfill_csv 的注释）
+            write_csv(path, head, csv_rows)
             print(f"  {kind} {min(i + args.size, len(rows))}/{len(rows)}")
-        cols = ["kind", "key", "zh", "en", "confidence"]
-        with path.open("w", encoding="utf-8", newline="") as f:
-            f.writelines(head)
-            w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore",
-                               lineterminator="\n")
-            w.writeheader()
-            w.writerows(csv_rows)
         print(f"  -> {fname} 共 {len(csv_rows)} 行"
               + (f"，其中本轮 {n_doubt} 条标了存疑" if n_doubt else ""))
     conn.commit()
