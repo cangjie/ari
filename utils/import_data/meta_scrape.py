@@ -52,6 +52,9 @@ MUSEUM_QID = {
     # 伪满皇宫博物院。2026-09-24 实测名下藏品 0 件（P195 为 0，P276 只有建筑「建国神庙」），
     # 登记上只为不 KeyError；跑了也抓不到东西
     "wmhg":       ["Q83332"],
+    # 吉林省博物院。P195 名下 11947 条全是《全国馆藏文物名录》条目，只有中文标签、没有年代与作者 ——
+    # 本脚本按英文标签匹配，抓不到东西；身份核对走 jlpm_wikidata.py + jlpm_build.py。登记上只为不 KeyError
+    "jlpm":       ["Q18111051"],
 }
 UA = "ari-metadata-research/1.0 (museum visit-planning dataset; contact via repo)"
 WDQS = "https://query.wikidata.org/sparql"

@@ -90,6 +90,11 @@ class Museum:
     # 这边原先只会按过滤后的计数编 —— 序号连续时两者碰巧一致，**一旦有空号就整体错位**。
     # 伪满皇宫的序号按身份键幂等、允许空号（wmhg_seq_map.csv），所以必须按列取
     col_seq: int | None = None
+    # 评分范围：(列号, 取值) —— 只评这一列等于该值的行，其余行照样入库但不评分。
+    # 吉林省博物院 17723 行全部入库、只评有介绍的 107 行（用户 2026-09-27 定）。
+    # **过滤放在这里而不是命令行**：阶段二按全体分组、阶段三从全体挑 S 候选、tier_v3_load 按全体对账，
+    # 三处读的都是 load_items，「全体」在这一处定义才不会各说各话。必须配 col_seq（过滤不能改动序号）
+    scope: tuple[int, str] | None = None
 
 
 MUSEUMS = {
@@ -163,6 +168,23 @@ MUSEUMS = {
         col_seq=0,                # 序号按身份键幂等、允许空号，必须按列取
         context=CONTEXTS["wmhg"],
     ),
+    "jlpm": Museum(
+        key="jlpm",
+        label="Jilin Provincial Museum (Changchun)",
+        path="artworks/吉林省博物院_展品清单.xlsx",
+        sheet="展品清单",
+        # 由 jlpm_build.py 生成，中文馆格式：表头在第 4 行（0 基下标 3）。官网没有英文
+        header_row=3,
+        col_name_en=None, col_name_cn=2, col_gallery=1,
+        col_desc=3,
+        # 「对象层级·类目·年代」，如「藏品·书法、绘画·清」「基本陈列·展览」—— 让模型判 object/node；
+        # 数据库藏品的名称多带朝代前缀，年代列另给一份，免得模型只能从名称里猜
+        col_category=(8, 9, 15),
+        col_tier_old=7,           # 源表不带评级，这一列恒空
+        col_seq=0,                # 序号按身份键幂等、允许空号，必须按列取
+        scope=(14, "评分"),       # 只评「评分范围」列为「评分」的 107 行
+        context=CONTEXTS["jlpm"],
+    ),
     # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
     # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
 }
@@ -198,6 +220,11 @@ def load_items(m: Museum, base: Path, limit: int | None) -> list[dict]:
             continue                       # MFA Master 页中间混着的表头行
         seq_auto += 1
         seq = seq_auto
+        if m.scope is not None:
+            if m.col_seq is None:
+                sys.exit(f"[fatal] {m.key} 设了 scope 却没有 col_seq —— 过滤会让按计数编的序号整体错位")
+            if cell(row, m.scope[0]) != m.scope[1]:
+                continue
         if m.col_seq is not None:
             try:
                 seq = int(float(cell(row, m.col_seq)))

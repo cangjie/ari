@@ -99,7 +99,8 @@ DESC_NOT_ARTIST = {"Boston", "Museum", "America", "North", "China", "Japan", "Eu
 #   mfa_boston  18 ->  3    「Vase, Ming Yong-le」「Aphrodite, "Boston Aphrodite"」
 #                            前缀基本是器型或题材，开了净是错的
 #   wmhg         —        中文题名，作者写成「渡边华山《寒林群鸦图》」而不是「作者, 题名」
-NAME_ARTIST_PREFIX = {"pem": True, "ham": True, "mfa_boston": False, "wmhg": False}
+#   jlpm         —        名录式中文题名「朝代+作者+题名」（「清郑燮竹石图轴」），没有英文
+NAME_ARTIST_PREFIX = {"pem": True, "ham": True, "mfa_boston": False, "wmhg": False, "jlpm": False}
 
 # 器型 / 材质 / 题材 / 风格词。人名里不会出现，题名前缀里很常见，
 # 用来兜住 NAME_ARTIST_PREFIX 为真的馆里混进来的器物名（如「Bronze Owl Zun」）。

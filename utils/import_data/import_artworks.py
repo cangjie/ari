@@ -204,6 +204,21 @@ MUSEUMS = [
         on_view=lambda r, c: ON_VIEW_YES if "当前在展" in (s(r[c["on_view"]]) or "")
                              else ON_VIEW_UNKNOWN,
     ),
+    dict(
+        # 吉林省博物院（长春）。源表由 jlpm_build.py 从官网接口的抓取结果生成（中文馆格式另加 9 列），
+        # **放在列表末尾**。17723 行全部入库（用户 2026-09-27 定），只有「评分范围」列为「评分」的
+        # 107 行进评分 —— 那个过滤在 tier_v3.Museum.scope，这里不管
+        key="jlpm", name_zh="吉林省博物院", name_en="Jilin Provincial Museum",
+        site_key=None,                     # 不在城市榜单的 cultural_site 里
+        file="吉林省博物院_展品清单.xlsx", sheet="展品清单", header_row=4,
+        # 序号按身份键幂等、允许空号（jlpm_seq_map.csv），必须读序号列。官网没有英文，英文两列恒空
+        cols=dict(seq=0, gallery=1, name_zh=2, desc_zh=3, image_url=4, on_view=5,
+                  official_url=6, tier=7, name_en=10, desc_en=11),
+        # 只认 jlpm_build.py 写的「展出中（馆方标记）」。藏品一律「馆藏（在展状态未知）」；
+        # 「白山松水的记忆」是「在展状态未核实（…时间栏写「正在展出」）」—— 含「展出」不含「展出中」，不会被误判
+        on_view=lambda r, c: ON_VIEW_YES if "展出中（馆方标记）" in (s(r[c["on_view"]]) or "")
+                             else ON_VIEW_UNKNOWN,
+    ),
 ]
 
 
