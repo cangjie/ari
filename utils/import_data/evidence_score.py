@@ -198,14 +198,17 @@ def main() -> None:
     # evidence_fill.py 写逐维度可信度、missing_evidence、best_source_tier。
     # 早先这里用的是先删后插，结果把 evidence_fill 刚写的那几列一并冲掉，
     # 且不报错 —— 只是下次查询时它们全变成 NULL。
+    # generated_by 的 'rule' 必须走参数，不能写成 SQL 字面量：pymysql 只在 VALUES 里全是 %s 时
+    # 才把 executemany 改写成一条多值 INSERT，否则退回逐行执行。2026-09-27 吉林省博物院 17723 行
+    # 跨公网逐行写，20 分钟只写了 3066 行（约 0.4 秒一行）；以前的馆件数少，没暴露。
     cur.executemany(
         "INSERT INTO artwork_evidence (museum_key, source_seq, completeness,"
         " potential_ceiling, boundary_prox, research_priority, is_preliminary, generated_by)"
-        " VALUES (%s,%s,%s,%s,%s,%s,%s,'rule')"
+        " VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
         " ON DUPLICATE KEY UPDATE completeness=VALUES(completeness),"
         " potential_ceiling=VALUES(potential_ceiling), boundary_prox=VALUES(boundary_prox),"
         " research_priority=VALUES(research_priority), is_preliminary=VALUES(is_preliminary)",
-        rows)
+        [r + ("rule",) for r in rows])
     print(f"\nartwork_evidence 写入 {len(rows)} 行")
 
     # best_source_tier：按库里**实际存在**的来源重算，只升不降。
