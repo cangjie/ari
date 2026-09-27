@@ -719,11 +719,14 @@ def main():
     args = ap.parse_args()
 
     import pymysql
+    # 读写超时同 meta_lib.connect()：pymysql 默认不设，连接被网络悄悄掐断时查询会永远等下去。
+    # 2026-09-27 导出吉林省博物院时英文版卡死：服务器端会话已 Sleep、本机进程 CPU 不动，就这样挂着
+    from meta_lib import NET_TIMEOUT
     if args.defaults_file:
         # 优先走选项文件：口令不进命令行，也不进 shell 历史与权限系统的 allow 列表
         conn = pymysql.connect(
             read_default_file=os.path.expanduser(args.defaults_file),
-            charset="utf8mb4")
+            charset="utf8mb4", read_timeout=NET_TIMEOUT, write_timeout=NET_TIMEOUT)
     else:
         pw = args.password
         if args.password_file:
@@ -733,7 +736,8 @@ def main():
                      "或环境变量 MYSQL_PASSWORD")
         conn = pymysql.connect(host=args.host, port=args.port, user=args.user,
                                password=pw, database=args.database,
-                               charset="utf8mb4")
+                               charset="utf8mb4", read_timeout=NET_TIMEOUT,
+                               write_timeout=NET_TIMEOUT)
     ex = Exporter(conn)
     print(f"多语种文本已载入 {len(ex.text)} 条")
 

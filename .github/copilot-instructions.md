@@ -63,11 +63,12 @@
 `ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
 以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
-展品侧现有 **8 个 museum key、13680 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
-2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条；2026-09-24 新增伪满皇宫 `wmhg` 61 件，见第 16 条）。
+展品侧现有 **9 个 museum key、31403 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
+2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条；2026-09-24 新增伪满皇宫 `wmhg` 61 件，见第 16 条；
+2026-09-27 新增吉林省博物院 `jlpm` 17723 件，其中只有 107 行进评分，见第 17 条）。
 
-**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测，wmhg 2026-09-26 实测）
-—— 五个馆跑完，三个馆一件没碰：**
+**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测，wmhg 2026-09-26 实测，jlpm 2026-09-27 实测）
+—— 六个馆跑完（jlpm 只评有介绍的 107 行），三个馆一件没碰：**
 
 | 馆 | 展品 | V3 评分 | evidence | metadata | 审计口径 |
 |---|---:|---:|---:|---:|---|
@@ -76,6 +77,7 @@
 | `mfa_boston` | 203 | 203 | 203 | 393 | S/A 101 件已用 sonnet-5 重审；其余仍是旧判据 |
 | `pem` | 467 | 467 | 467 | 1993 | 全馆 sonnet-5 **medium** 精简口径（09-23）；原 196 件的可信度等列仍是 sol 旧值 |
 | `wmhg` | 61（藏品 34 + 节点 27） | 61 | 61 | 137 | 全馆 sonnet-5 **medium** 精简口径（09-26）；需复核 4 件，全是官网原文自身的错误。V3 打分为 luna（藏品 S0/A3/B28/C3，节点 S4/A15/B7/C1） |
+| `jlpm` | 17723（藏品 17715 + 节点 8） | **107** | 17723 | 569 | 评分范围 107 行 sonnet-5 **medium** 精简口径（09-27）；需复核 8 件，7 件是官网原文自身的矛盾。V3 打分为 luna（藏品 S8/A51/B39/C1，节点 S2/A3/B3）。其余 17616 行只入库、不评分不审计 |
 | `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
 
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
@@ -90,7 +92,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十六条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十七条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -1037,7 +1039,11 @@ sol 那把尺子上有 PEM 原 196 + 哈佛 204 + MFA 老 203；luna 那把上�
   `~/.vscode/extensions/anthropic.claude-code-<版本>-win32-x64/resources/native-binary/claude.exe`，
   跑之前把这个目录加进 PATH。从 Claude Code 里嵌套调 `claude -p` 没问题。
 · **`codex` 也不在 PATH 上**，在 `%LOCALAPPDATA%\OpenAI\Codex\bin\<哈希>\codex.exe`，
-  用 `CODEX_BIN` 指过去（`codex_cli._binary()` 只找 macOS 的位置）。
+  用 `CODEX_BIN` 指过去（`codex_cli._binary()` 只找 macOS 的位置）。那里**可能有好几个哈希目录，
+  只有一个里有 `codex.exe`**（09-27 是 `13995fba801849b0`）；指错了报 `WinError 193 不是有效的 Win32 应用程序`。
+· **在 Git Bash 里给 PATH 加 `claude.exe` 的目录，要写成 `/c/Users/...`**：`$USERPROFILE` 是 `C:\Users\...`，
+  那个冒号会把 PATH 从中截断，`audit_meta` 报「找不到 claude」（09-27 就这样白启动一次，好在没调用模型）。
+  用 `export PATH="$(cygpath -u "$USERPROFILE")/.vscode/extensions/anthropic.claude-code-<版本>-win32-x64/resources/native-binary:$PATH"`。
 · **`~/.my.cnf` 要自己建**（`C:\Users\<用户>\.my.cnf`），`chmod` 在 NTFS 上无效，
   用 `icacls <文件> /inheritance:r /grant:r <用户>:F` 收成只有本人可读。
   另要 `pip install --user pymysql`（本机 Python 3.14 起初没装）。
@@ -1106,6 +1112,65 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 `wmhg_build.py` 现在把一个字母都没有的「英文」留空并写进报告。⚠ 09-26 我曾不看原文就把它诊断成
 「`detect_lang` 把夹汉字的英文判成中文」—— 全部 8 个馆成对文本离线复查，这样误判的一条都没有。
 `audit_meta.MUSEUM_NOTE["wmhg"]` 写死了「61 条分四批」，**源表一变要跟着改**（同第 9 条）。
+
+
+**17. 吉林省博物院（`jlpm`）：全部入库、只评有介绍的；官网给不出任何藏品的展出位置（2026-09-26 至 27）。**
+
+**来源实情**（09-26 探路两轮实测）：
+
+| 来源 | 实情 |
+|---|---|
+| 官网 `www.jlmuseum.net` | Vue 单页应用，数据全从 `/api` 取（GET 查询串，响应 `{success, data, total}`），接口路径藏在按路由拆分的 JS 分块里。**境外连不上**，抓取在国内网络的 Mac 上跑（同伪满皇宫）。证书有效（新网 OV，2027-03-28 到期） |
+| ⚠ 旧域名 `jlmuseum.org` | **已被人占用，现在是盗版影视站**；Wikidata 本馆（Q18111051）的 P856 仍指向它。`jlpm_site_scrape.py` 按白名单拒绝访问 |
+| 展览 `/exhibition/list?type=1/2/3` | 基本陈列 5、临时展览 237、虚拟展厅 23。`exhibitionFlag` 0/1/2 = 已结束/展出中/即将展出（前端代码写明）。**「地点」字段就是展厅**（「1楼C区（吉林省博物院）」），官网没有展厅分布图 |
+| 镇馆之宝 `/collect/list?isTreasure=1` | 17 件，带文物级别、年代、质地、尺寸与介绍 |
+| 藏品数据库 `/collectdb/list.do` + `/detail` | 17709 件，**17514 件介绍为空**、105 件介绍只是重复名称，有实质介绍的约 90 件；**没有文物级别**。详情逐件抓，1.5 秒一次实跑 10.5 小时，断点续抓 |
+| Wikidata | P195=Q18111051 共 11947 条，全部出自国家文物局《全国馆藏文物名录》，只有名称与可移动文物编号（P11699）。**只用来核对身份，不入库**（用户定） |
+| 「博物中国」 | 本馆 0 条；名录查询页 `app.gjzwfw.gov.cn` 已 404 |
+
+**两处不能用的字段，抓取时剔除**：镇馆之宝详情的「曾经展出」（`exhibitionList`）对每件都是同一串「最新 5 个展览」—— 元青花碗也「展出于」董必武手迹展，是挂件不是展出记录；`/exhibition/collect`（展品清单）所有展览都返回 0 件。
+所以**官网给不出任何一件藏品在哪个展厅**，藏品一律「在展状态未知」、展厅留空。出现在镇馆之宝里 ≠ 在展（第 5 条 MFA 那条）。
+
+**范围（用户逐项定）**：17723 行全部入库（镇馆之宝 17 + 数据库 17709 − 合并 11 + 节点 8），**只评有介绍的 107 行**
+（镇馆之宝 17 + 数据库有实质介绍的 82 + 节点 8）。节点 = 馆方标记「展出中」的 7 个实体展（含另一处场馆春京西的
+「吉林省近现代史展」）+「白山松水的记忆」—— 标记已结束、时间栏却写正在展出，收为**一个**节点，在展记「未核实」。
+已闭幕的与虚拟展厅不收。
+
+**「只评一部分」靠 `tier_v3.Museum.scope`**（(列号, 取值)）：过滤放在 `load_items` 一处 —— 阶段二分组、阶段三挑 S、
+`tier_v3_load` 对账读的都是它，「全体」只在一处定义；必须配 `col_seq`，否则过滤会让按计数编的序号错位。
+审计用 `--tier S,A,B,C` 只审评过分的；metadata 也只写评分范围（`meta_fill_official_jlpm.py`）。
+**不评分的 17616 行 evidence 完备度为 0、`best_source_tier` 为空** —— 那是真测量（它们没有 metadata），不是占位值。
+
+**身份**：镇馆之宝 ↔ 数据库 11 对**逐对核实**后合并（尺寸、出土地、铭文），依据写在 `jlpm_build.TWIN`。
+按名称包含去配会配错：「契丹文铜镜」能包含进「辽契丹文铜镜」（只有名称）也能包含进「辽契丹文八角铜镜」，真正对上的是后者。
+名录编号：名称逐字相同且两边唯一才挂（3370 件；评分范围 35/99），键 `relic_id`、source_key=wikidata、取值带 QID。
+挂不上的多是 Wikidata 名录本身没收（辽石雕彩绘塔、汉白玉耳杯）。21 件吴大澂作品列表上是具体题名、详情里是名录通称，
+通称进「别名」；「篆书藉甚湛然七言对联」两个名字自相矛盾（篆/行、七言/八言），照录。
+
+**结果（09-27）**：评分 S10/A54/B42/C1（luna，Codex）。S 是百花图卷、夫余鎏金面具、文姬归汉图卷、丙午神钩、
+吉林省近现代史展、白山松水的记忆、石雕彩绘塔、银釉鸡冠壶、契丹文铜镜、赵孟頫书札；大金得胜陀颂碑（复制品）S 候选判回 A。
+审计（sonnet-5 medium 精简口径）需复核 8 件：7 件事实错误**全是官网原文自身的矛盾**，逐条对过抓取原文，照录不改 ——
+石雕彩绘塔两组基座尺寸、丙午神钩鹰首/龙首、东夏印年代字段写「西夏」、石磨盘质地字段写「铜」、渤海金带銙年代字段写「辽」、
+元百户印题名与印文不符、白山松水在展状态；另 1 件是明铜火铳铭文未释读（B 段写明了升档理由，`audit_bc_guard` 保留）。
+
+**已知问题（未修）**：① 同类组是阶段一逐批命名的，吴大澂 13 件散在 4 个名字相近的组里，组内 CR 比较被削弱 ——
+流程通病，不是本馆特有；② 银釉鸡冠壶冒烟 A（8.475）、全量 S（8.700），门槛附近对同批上下文敏感；
+③ 董必武手迹展 10-28 闭幕，节点届时过期；④ 英文版中文残留：导出报 146 处，全在译文里 —— 无评级表的名称列
+（生僻人名模型不敢拼音、多标了存疑；印文币文照录）、3 段简介、展厅名里的「春京西」；metadata 与来源说明两列 0 处。
+名称英译里模型自标存疑的有 369 条。
+
+**顺带修掉的两处通用缺陷**：
+① `evidence_score.py` 的 INSERT 在 VALUES 里写死 `'rule'`，pymysql 的 `executemany` 认不出、**退回逐行执行**：
+17723 行跨公网 20 分钟只写 3066 行，改成参数后 2 分 49 秒。**`executemany` 的 VALUES 里一律只用 `%s`，常量也走参数**
+（`pymysql.cursors.RE_INSERT_VALUES` 可以离线验证）。
+② `translate_artwork.py` 译文逐批写库、译名表却要等一类译完才写：译到 3100/5822 断网退出，库里约 3000 条英文、表里 0 条；
+续跑只挑库里缺英文的，这些译文就永远进不了译名表，重灌即丢且不报错。现在每批写表，启动时 `backfill_csv`
+把库里有、表里没有的 AI 译文补回（这次 2944 条，零 API）。断网还在服务器上留下挂着的事务（86 行未提交），
+确认是本机会话后 KILL —— 同第 10 条：**写库进程异常退出，先查 `innodb_trx`**。
+③ `export_excel.py` 自己 `pymysql.connect`，**没设读写超时**：导出英文版时连接被网络悄悄掐断，服务器端会话已 Sleep、
+本机进程 CPU 不动，就这么挂着。改成同 `meta_lib.NET_TIMEOUT`（600 秒无数据即报错；数据在慢慢流的长查询不受影响）。
+**凡是直接 `pymysql.connect` 的地方都要带这两个超时**，或者改用 `meta_lib.connect()`。
+导出本身也比以前慢得多：预载 `content_text`（约 7 万行）09-27 晚上花了约 10 分钟。
 
 ---
 
@@ -1252,6 +1317,12 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/wmhg_samples/` | 抓取样本页与探路/抓取/生成报告。境外机写解析器全靠它 |
 | `utils/import_data/wmhg_build.py` / `wmhg_seq_map.csv` | 从数据模块生成伪满皇宫源 Excel：中英按数字锚点配对、节点组装、序号按身份键幂等。`--check` 只配对与体检 |
 | `utils/import_data/meta_fill_official_wmhg.py` | 伪满皇宫的 metadata：只从中文题名、官网类目、尺寸片段确定性抽取，批量单事务写入。**本馆不用 `meta_fill_rule.py`** |
+| `utils/import_data/jlpm_site_scrape.py` | 第 17 条：吉林省博物院官网抓取，`--probe`（从 JS 分块抽接口）/ `--probe-extra` / `--probe2` / `--scrape`（断点续抓，`--db-limit` 先小量试跑）。**只能在国内网络跑**。复用 `wmhg_site_scrape.Fetcher`，加主机白名单（拒绝 `jlmuseum.org`）与 POST JSON |
+| `utils/import_data/jlpm_site_data.py` / `jlpm_collectdb.jsonl` | 上者产出：镇馆之宝与展览（数据模块）、藏品数据库 17709 件（一行一件）。入仓库，勿手改 |
+| `utils/import_data/jlpm_samples/` | 探路样本与探路/抓取/生成报告 |
+| `utils/import_data/jlpm_wikidata.py` / `jlpm_wikidata_catalog.json` | Wikidata 上本馆 11947 条《全国馆藏文物名录》条目（名称 + 可移动文物编号），分页取、与 COUNT 核对。只用来核对身份 |
+| `utils/import_data/jlpm_build.py` / `jlpm_seq_map.csv` | 生成吉林省博物院源 Excel：镇馆之宝 ↔ 数据库逐对核实合并（`TWIN`）、名录逐字唯一匹配、节点、「评分范围」列、序号按身份键幂等。`--check` 只检查 |
+| `utils/import_data/meta_fill_official_jlpm.py` | 吉林省博物院 metadata：只写评分范围，取官网接口本来就分好的字段 + 官网 ID + 名录编号；翻译表外的取值直接报错。新键 `relic_grade`、`relic_id` |
 | `utils/import_data/llm_guard.py` | 长任务守护：包住命令运行，本任务（provider + stage + museum）一出现失败记录就结束整棵进程树 |
 | `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
 | `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
