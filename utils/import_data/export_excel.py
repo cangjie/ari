@@ -97,6 +97,17 @@ VALUE_MAPS = {
         "伪满皇宫博物院官网文章 /detail/3263.html（对象层级）": "Museum website article /detail/3263.html (object level)",
         "伪满皇宫博物院 2023 年官方导览 /detail/2657.html（对象层级）":
             "Museum's official 2023 visitor guide /detail/2657.html (object level)",
+        # 吉林省博物院（meta_fill_official_jlpm.py 的 SRC / SRC_WD 拼出来的来源串，**改那边要同步改这里**）
+        **{f"吉林省博物院官网{part}（{field}）": f"Museum website, {part_en} ({field_en})"
+           for part, part_en, fields in (
+               ("镇馆之宝栏目", "treasures section", ("类别", "年代", "质地", "尺寸", "栏目", "文物级别", "官网 ID")),
+               ("藏品数据库", "collection database", ("类别", "年代", "质地", "尺寸", "官网 ID")),
+               ("展览栏目", "exhibitions section", ("对象层级", "官网 ID")))
+           for field, field_en in ((f, {"类别": "category", "年代": "period", "质地": "material",
+                                        "尺寸": "dimensions", "栏目": "section", "文物级别": "relic grade",
+                                        "官网 ID": "website ID", "对象层级": "object level"}[f]) for f in fields)},
+        "Wikidata《全国馆藏文物名录》条目（名称逐字相同）":
+            "Wikidata entry from the National Catalog of Museum Collections (exact name match)",
     },
     "yes_no": {"是": "Yes", "否": "No"},
 }
