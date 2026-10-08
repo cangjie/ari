@@ -287,31 +287,44 @@ def columns_of(tr: dict[str, dict]) -> dict[str, dict]:
     return cols
 
 
+def _list_page(f: BhFetcher, base: str, cid: str, page: int, size: int, r: Report,
+               sample: str | None = None) -> tuple[int, list]:
+    js = api(f, base, "/smart-bhpark/modules/busSecurityArticle/list",
+             dict(fdColumnId=cid, pageNo=page, pageSize=size), r, sample=sample)
+    res = js.get("result") or {}
+    return int(res.get("total") or 0), res.get("records") or []
+
+
 def list_column(f: BhFetcher, base: str, cid: str, col: dict, r: Report, *, max_pages: int,
                 sample: str | None = None) -> dict:
-    rows, total, page = [], None, 1
-    truncated = False
-    while True:
-        js = api(f, base, "/smart-bhpark/modules/busSecurityArticle/list",
-                 dict(fdColumnId=cid, pageNo=page, pageSize=PAGE_SIZE), r,
-                 sample=sample if page == 1 else None)
-        res = js.get("result") or {}
-        t = int(res.get("total") or 0)
-        if total is not None and t != total:
-            raise SystemExit(f"栏目 {col['name']}（{cid}）翻页途中 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
-        total = t
-        recs = res.get("records") or []
-        rows += recs
-        if len(rows) >= total or not recs:
-            break
-        if page >= max_pages:
-            truncated = True
-            break
-        page += 1
+    total, rows = _list_page(f, base, cid, 1, PAGE_SIZE, r, sample=sample)
+    want = min(total, max_pages * PAGE_SIZE)
+    truncated = want < total
+    if len(rows) < want:
+        # 一页装不下就按总数一次取全，不翻页。2026-10-08 实测「公园动态」53 条按 50 条一页翻，
+        # 第 2 页的 3 条全是第 1 页已有的 —— 跨页排序不稳定（置顶与同一发布时间的并列），
+        # 翻页会漏掉 3 条。服务器若限制每页条数，再退回翻页，重复照样报错
+        t, big = _list_page(f, base, cid, 1, want, r)
+        if t != total:
+            raise SystemExit(f"栏目 {col['name']}（{cid}）两次请求之间 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
+        if len(big) == want:
+            rows = big
+        else:
+            r.say(f"  栏目 {col['name']}：要 {want} 条只给了 {len(big)} 条（服务器限制每页条数），改为翻页")
+            page = 1
+            while len(rows) < want:
+                page += 1
+                t, recs = _list_page(f, base, cid, page, PAGE_SIZE, r)
+                if t != total:
+                    raise SystemExit(f"栏目 {col['name']}（{cid}）翻页途中 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
+                if not recs:
+                    break
+                rows += recs
     ids = [str(x.get("id")) for x in rows]
     dup = [i for i, c in collections.Counter(ids).items() if c > 1]
-    if dup or (not truncated and len(rows) != total):
-        raise SystemExit(f"栏目 {col['name']}（{cid}）：取到 {len(rows)} 条，total={total}，重复 id {dup[:10]}")
+    if dup or len(rows) != want:
+        raise SystemExit(f"栏目 {col['name']}（{cid}）：取到 {len(rows)} 条，应取 {want} 条（total={total}），"
+                         f"重复 id {dup[:10]}")
     return dict(column_id=cid, code=col["code"], name=col["name"], tree=col["tree"],
                 total=total, truncated=truncated, records=rows)
 
