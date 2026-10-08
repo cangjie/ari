@@ -1,4 +1,4 @@
-# 北海公园官网探路 2026-10-08T16:08:58
+# 北海公园官网探路 2026-10-08T19:29:37
 base = https://www.beihaipark.com.cn
 
 ## robots.txt（www.beihaipark.com.cn）
@@ -9,6 +9,351 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
 
 首页 HTTP 200，2489 字符；baseUrl 写的是 'https://www.beihaipark.com.cn/api'
 
-[stop] 取访客令牌失败：HTTP 404，'{"success":false,"message":"404 NOT_FOUND \\"No static resource jeecg-summary/userUtil/NoLoginToken.\\"","code":500,"result":null,"timestamp":1791446941169}'
+## 栏目树 homePage（12 个栏目）
+  home-ycfw-mtfb   id=ebd2e76e11a6441d8d910bc106268c1a 名称='码头分布' articleList=10 篇 extendInfo=无
+  home-dbdht       id=e3aad5fb211b4f0fa39f4deef23d9174 名称='底部导航图' articleList=5 篇 extendInfo=无
+  home-ylkp        id=8d236ef4bd0e4cb1adb92a23132a725e 名称='科普知识' articleList=6 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  home-hdzl        id=7eeb980b41a346c88dab83e4b71d4f51 名称='展览资讯' articleList=4 篇 extendInfo=无
+  home-bhwc        id=7c46fa9e0a2841e8ab840b81b405e62f 名称='北海文创' articleList=6 篇 extendInfo=无
+  home-zt          id=e2b9bbd6738f4bc6ac23edff4d017cf3 名称='首页' articleList=0 篇 extendInfo=有
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  home-ycfw-pj     id=e0cff94a70ca4024a4da705249084358 名称='游船类型及票价' articleList=7 篇 extendInfo=无
+  home-gydt        id=04888d60432f49bbb9968c5c34425517 名称='公园动态' articleList=9 篇 extendInfo=无
+  home-ycfw        id=efe82c35185445d481d310f8412e3053 名称='游船服务' articleList=0 篇 extendInfo=有
+  home-kfsj        id=60fe1cedd6a74c60aabcd8baf81e2507 名称='开放时间' articleList=6 篇 extendInfo=有
 
-本次实际请求 3 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
+## 栏目树 explore（8 个栏目）
+  explore-tyjy     id=fa4c521ad4624f5092feddb4aa2101ad 名称='太液旧影' articleList=6 篇 extendInfo=无
+  explore          id=ba27373124604a0a8f882da30f926ebc 名称='探索' articleList=0 篇 extendInfo=有
+  explore-jdjs     id=5e2445348bd448f08d7fd9835aec5df8 名称='景点介绍' articleList=21 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  explore-hycs     id=f949dcc802b84bd7b429707bd8a3552a 名称='花园城市' articleList=0 篇 extendInfo=无
+  explore-kpbh     id=8589478f692e4184901c0f775bc3aee8 名称='科普北海' articleList=0 篇 extendInfo=无
+  explore-lsgk     id=092d21767c414b5d920b89242d1f5e9f 名称='历史概括' articleList=0 篇 extendInfo=有
+
+## 栏目树 culture（8 个栏目）
+  culture-bxt      id=9024fc9b0bd14c439818630312102c20 名称='毛毡笔记本' articleList=1 篇 extendInfo=无
+  culture-zt       id=d9ebb668aa0a47d9acf3a319040adb38 名称='文创' articleList=0 篇 extendInfo=有
+  culture-lzy      id=f103a8afe0d946ae9b1ddb80cd26be4b 名称='摆件冰箱贴' articleList=1 篇 extendInfo=无
+  culture-bhck     id=6982cf99da8a4d49945afe824eabc54f 名称='北海茶咖' articleList=4 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  culture-fscs     id=496b6bcb9e7f4ebf9dae76c3627a668a 名称='仿膳茶社' articleList=4 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  culture-wcxg     id=31356588554e43e0aee8fb266f2f7786 名称='文创雪糕' articleList=1 篇 extendInfo=无
+
+## 栏目树 guide（9 个栏目）
+  guide-kfsj       id=60fe1cedd6a74c60aabcd8baf81e2507 名称='开放时间' articleList=2 篇 extendInfo=有
+  guide-bhqh       id=d8489cfc7f4d4ac180143213ed56bef4 名称='北海之旅，即刻起航' articleList=6 篇 extendInfo=无
+  guide-zxgp       id=66dbecff8f334542acd6203b29369a4e 名称='在线购票' articleList=5 篇 extendInfo=有
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  guide-dldt       id=0c668da563d240318a5784fee5abc330 名称='导览地图' articleList=0 篇 extendInfo=无
+  guide-yyxz       id=5996836996c6440eb1cf1a93dafa9b02 名称='游园须知' articleList=1 篇 extendInfo=无
+  guide            id=0efba9e380404f849b92d81ce688ac23 名称='导览' articleList=0 篇 extendInfo=有
+  guide-kfgg       id=a54e3c3d93d94421a314ed742afdd371 名称='开放公告' articleList=2 篇 extendInfo=无
+
+## 栏目树 about（11 个栏目）
+  about-xxgk-zwgk-xxgk id=e418495a1dc44dd58d389b9e42d0e544 名称='政务信息公开' articleList=5 篇 extendInfo=无
+  about-xxgk       id=27390955a3364ab3a6968ae9d34474c8 名称='信息公开' articleList=0 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  about-wmly       id=9ae99dc74cda4e25ab3c558ca4bd5bae 名称='文明旅游' articleList=3 篇 extendInfo=无
+  about-xxgk-cwgk  id=0d9f70c8a38746cda18a07c74e00709f 名称='财务信息公开' articleList=5 篇 extendInfo=无
+  about-xxgk-cggk  id=8e262fde31944382849dba3527d78a60 名称='采购意向公开' articleList=5 篇 extendInfo=无
+  about-xxgk-zwgk-zzjg id=30382213c6bb4346b9b34c98e1b6b0f6 名称='领导成员、组织机构' articleList=0 篇 extendInfo=有
+  about            id=9b60cacf24df405a87be7f2772c0921d 名称='关于' articleList=0 篇 extendInfo=有
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  about-xxgk-zwgk  id=216da9ba7dbd4c1fa16d8461a57a72c0 名称='政务公开' articleList=0 篇 extendInfo=无
+  about-gydt       id=04888d60432f49bbb9968c5c34425517 名称='公园动态' articleList=7 篇 extendInfo=无
+
+## 栏目树 activity（11 个栏目）
+  activity-zlzx    id=7eeb980b41a346c88dab83e4b71d4f51 名称='展览资讯' articleList=4 篇 extendInfo=无
+  activity-bnbh-bnsy id=6f5f5d8064924c81b3c25df2f27850d8 名称='百年瞬影' articleList=5 篇 extendInfo=无
+  activity-bnbh-jlp id=9128840dd9584c18b9254a741da12248 名称='纪录片' articleList=2 篇 extendInfo=无
+  activity         id=f4253251eb8641ca8ae0d9881cf7fd1e 名称='活动' articleList=0 篇 extendInfo=有
+  activity-bnbh    id=8350f13077a9464d9e0c7af5cbdd492c 名称='百年北海' articleList=0 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  activity-bnbh-twzj id=1b9a29f2d39246c3a8b398025ce5ab43 名称='"我与北海公园的故事"100周年图文征集活动' articleList=29 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  activity-bnbh-ztzj-sy id=0fc8412656634f2e831f39941d31eb65 名称='摄影' articleList=5 篇 extendInfo=无
+  activity-hdzm    id=ec1ad17befde4f66bc841c4fadad5ce4 名称='活动招募' articleList=5 篇 extendInfo=无
+  activity-bnbh-ztzj id=f8ebd93c7db049fd9b3231c979bd541e 名称='公园开放100周年主题征集活动' articleList=0 篇 extendInfo=无
+
+## 栏目树 yingwen（5 个栏目）
+  yingwen-jdjs     id=5bca430d9a0543a891842c965e280941 名称='景点介绍' articleList=8 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  yingwen-home     id=841d292f126843b1957ee49396ed95ac 名称='英文首页' articleList=2 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  yingwen          id=0dfd8ec29bdc46209057f7bb1f1603a6 名称='英文' articleList=0 篇 extendInfo=有
+
+# 每个栏目第 1 页 + 第 1 篇详情（共 50 个栏目）
+
+## home-ycfw-mtfb '码头分布' id=ebd2e76e11a6441d8d910bc106268c1a：total=11
+    e965c00a22604ecb84c3e6df95053c14 2025-10-11 13:23:08 '漪澜堂码头：提供大摆渡船'
+    43107ba1acf44d7aa6f512559a278871 2025-09-11 16:34:50 '琳光殿码头：提供电瓶船、小摆渡船和仿古船'
+    83c2d0f9139d4d34aa6fe5985e919525 2025-09-11 16:34:09 '西岸码头：提供小摆渡船和手划船'
+    b2074586b7fb42e4bff9841896f32655 2025-09-11 16:33:28 '大船码头：提供大摆渡船'
+    efc6f9af81134f41a802a9dbc5fb9f48 2025-09-11 16:33:03 '龙舟码头：提供环湖龙舟'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 72 字，简介 0 字，图片 0 张
+
+## home-dbdht '底部导航图' id=e3aad5fb211b4f0fa39f4deef23d9174：total=5
+    df06de23d7d34c59be0b17cd8bf31fb7 2025-10-17 13:48:05 '游船服务'
+    74c2c3cb4b4a4801ba1d2936b414fb6e 2025-11-21 10:23:27 '数字典藏' [外链 /#/detail/3552509b88c646968037c55cbd5e8a21]
+    b310949a858d438d94754eed1bdecff5 2025-10-11 14:04:14 '虚拟现实' [外链 https://www.720yun.com/vr/133jt0yyzf1]
+    ce4ace1f85d744bd939ea4f822ce0e31 2025-10-17 13:48:39 '时空穿梭' [外链 /#/index/timeTravel]
+    847b081e39654677aaf6396ff3d1b1b7  '公园导览'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 569 字，简介 0 字，图片 1 张
+
+## home-ylkp '科普知识' id=8d236ef4bd0e4cb1adb92a23132a725e：total=6
+    cee9e22cfb494e179dfbc132bc0f663c 2026-09-02 17:55:00 '北海荷花'
+    A14DBBE97BE249EAB0574DBC1CEABA84 2026-01-07 14:50:00 '团城古树与园林智慧的对话'
+    b945f353d74a48b9bee631a6dd664d8f 2026-01-07 14:50:02 '团城古树系列——大自然传粉的奇妙智慧'
+    57f6f6c61f6748e49973a2864e324344 2026-01-07 14:47:38 '科普北海丨品味标本菊的审美之道' [外链 https://mp.weixin.qq.com/s/ALOAG93gZzXGRFD8a8zMMg]
+    06bbbc500ebc420aaa2dcd3b3de271b1 2026-01-07 14:45:56 '白塔之约·北海研学‖“北海菊韵”传统插花文化体验，邂逅千年风雅与当代新意' [外链 https://mp.weixin.qq.com/s/Y5fCyYWGW1JgPNbAruY7Eg]
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## home-hdzl '展览资讯' id=7eeb980b41a346c88dab83e4b71d4f51：total=4
+    a1721ade98d74e1488dd049676bec753 2026-04-30 09:12:55 '第三届“文化原乡 福地壤塘—2026北京行”展览在北海公园阐福寺开幕' [外链 https://mp.weixin.qq.com/s/iVpk_4VhiH2WL129L4snxA]
+    0bd94a1480fe4e479ccf04dda19737f3 2026-04-30 09:09:30 '“我与北海公园的故事”—北海公园开放100周年主题展览今日启幕' [外链 https://mp.weixin.qq.com/s/_gcOJyZHGaiS_dU3PqD91Q]
+    9E07F6882C134348AE7DC3F04FD271B6 2026-04-30 09:09:23 '御苑菊香已至！2025京津冀豫四地联展逛展全攻略，藏在北海的秋日盛宴开席了' [外链 https://mp.weixin.qq.com/s/J9BcxwADzAEDwd9tiQ7FGQ]
+    50191E4F97BB474AB8E4086B57B17CAD 2026-04-30 09:09:14 '菊香氤氲，秋色正浓！沉浸式体验皇家园林里的金秋菊花盛会吧' [外链 https://mp.weixin.qq.com/s/EyBRu2HKCS0WWparBV5UlQ]
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 0 字，图片 1 张
+
+## home-bhwc '北海文创' id=7c46fa9e0a2841e8ab840b81b405e62f：total=6
+    e7c53e1db5ed4140934b4519e2b19ae9 2025-11-20 17:27:54 '花开北海 文创雪糕'
+    471c6df62651474b8802e0d16e2be2a7 2025-11-21 09:43:14 '北海文创'
+    efeeb259d069434a8a3a915f10c79b10 2025-12-09 17:00:41 '北海岁时'
+    912d53fe93f04b5ba1f11fe2e967b862 2025-11-20 17:36:14 '北海宝贝'
+    17b22652a60c4ed5b3216feded6cc58a 2025-11-20 17:30:59 '冰箱贴'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 0 字，图片 1 张
+
+## home-zt '首页' id=e2b9bbd6738f4bc6ac23edff4d017cf3：total=30
+    df06de23d7d34c59be0b17cd8bf31fb7 2025-10-17 13:48:05 '游船服务'
+    e7c53e1db5ed4140934b4519e2b19ae9 2025-11-20 17:27:54 '花开北海 文创雪糕'
+    471c6df62651474b8802e0d16e2be2a7 2025-11-21 09:43:14 '北海文创'
+    efeeb259d069434a8a3a915f10c79b10 2025-12-09 17:00:41 '北海岁时'
+    912d53fe93f04b5ba1f11fe2e967b862 2025-11-20 17:36:14 '北海宝贝'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 569 字，简介 0 字，图片 1 张
+
+## home-ycfw-pj '游船类型及票价' id=e0cff94a70ca4024a4da705249084358：total=7
+    49d851208e0d47b3b02787378c2fad4a 2025-09-11 15:42:19 '摇橹船'
+    fe964006eb3c455f9fdb04fe30cdc91a 2026-05-17 11:26:41 '摆渡'
+    c343eee62af74613b557df9e847f8d44 2025-09-11 15:21:48 '环湖游船'
+    b7feb791158543f185859b12c2b24d12 2025-09-11 15:21:11 '手划船'
+    14aa6bb792244588906d893e1946cca4 2025-09-11 15:20:19 '造型电瓶船'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 55 字，图片 1 张
+
+## home-gydt '公园动态' id=04888d60432f49bbb9968c5c34425517：total=53，只取了第 1 页
+    df87b9a409444b80b0838e7d428f880a 2026-07-24 15:35:07 '关于快雪堂院落及画舫斋古柯庭院落临时关闭的温馨提示'
+    f20cbb9232c64466a8ea25a657d34a5f 2026-07-24 15:34:13 '关于小西天建筑群保护修封闭施工的公告'
+    843b3ed6abbb43cab7f226a1651f74dc 2026-07-24 15:32:33 '北海公园临时关闭阐福寺景区的通告'
+    846beaed7542452e9d90ca54d3e8ed7f 2026-07-12 08:47:08 '北海公园恢复开放通告'
+    7dde508aaa9748068674811388573046 2026-07-09 18:28:03 '北海公园临时闭园通告'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## home-ycfw '游船服务' id=efe82c35185445d481d310f8412e3053：total=18
+    e965c00a22604ecb84c3e6df95053c14 2025-10-11 13:23:08 '漪澜堂码头：提供大摆渡船'
+    43107ba1acf44d7aa6f512559a278871 2025-09-11 16:34:50 '琳光殿码头：提供电瓶船、小摆渡船和仿古船'
+    83c2d0f9139d4d34aa6fe5985e919525 2025-09-11 16:34:09 '西岸码头：提供小摆渡船和手划船'
+    b2074586b7fb42e4bff9841896f32655 2025-09-11 16:33:28 '大船码头：提供大摆渡船'
+    efc6f9af81134f41a802a9dbc5fb9f48 2025-09-11 16:33:03 '龙舟码头：提供环湖龙舟'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 72 字，简介 0 字，图片 0 张
+
+## home-kfsj '开放时间' id=60fe1cedd6a74c60aabcd8baf81e2507：total=6
+    c2659d8ab9fc4b529e4fe6b15176ce84  '游览路线'
+    f3be683de1e944a6a89c13dcfe87c624  '停车场信息'
+    ee8335921a9341e1b4e036a2699fee29  '服务项目'
+    51fe1529d35b4e428c57787ba7c27f62  '游客须知'
+    801a3cbce2b5437797a029e1cdd7eaf9  '导游服务'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## explore-tyjy '太液旧影' id=fa4c521ad4624f5092feddb4aa2101ad：total=6
+    d45e227e2abc455998aee68e1de58069 2026-09-02 17:48:58 '望北海'
+    a61a12d8cf5b47e2985ebe07025701c3 2025-11-19 17:27:58 '琼华岛西南'
+    6f7d1b94ee034dea90a4b27f08d10d90 2025-11-19 17:28:36 '琼华岛西南'
+    0bfbc8a132484429b9fd472f962bb75d 2025-11-19 17:29:11 '东南岸边望琼华岛'
+    db99529066b543d3952cccfa5ea6e88d 2025-11-19 17:29:47 '琼华岛北部'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 37 字，简介 37 字，图片 1 张
+
+## explore '探索' id=ba27373124604a0a8f882da30f926ebc：total=56，只取了第 1 页
+    cee9e22cfb494e179dfbc132bc0f663c 2026-09-02 17:55:00 '北海荷花'
+    d45e227e2abc455998aee68e1de58069 2026-09-02 17:48:58 '望北海'
+    c17d5bc7465547c4964b9496826154c3  '历史概括111'
+    ea4127706ab54e02ad34563dc92a3306 2025-11-20 13:48:37 '北海金秋'
+    00b25ba23de94308bbafcc3e63b35251 2025-11-20 19:34:29 '风窃棠香'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## explore-jdjs '景点介绍' id=5e2445348bd448f08d7fd9835aec5df8：total=21
+    e19c2fef4cca4b41895e7c89d17c3cdf 2025-11-20 12:26:53 '漪澜堂  Yi Lan Tang'
+    2caa452e24d44f1b9edbe5d8d4b7e207 2025-11-20 12:27:59 '静心斋 Jing Xin Zhai'
+    57ec180c97c844fba0ebbd17de5cacdf 2025-11-20 12:28:14 '琼岛春阴碑  Qiongdao spring Yin monument'
+    9C8802BA1A4249818ED0A95DDA5653FD 2025-11-20 11:17:09 '遮荫候  Shading'
+    a1a20493b83b4ff28793958fdd8aa39f 2025-10-28 11:28:31 '玉瓮  Jade urn'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 335 字，简介 131 字，图片 3 张
+
+## explore-hycs '花园城市' id=f949dcc802b84bd7b429707bd8a3552a：total=4
+    ea4127706ab54e02ad34563dc92a3306 2025-11-20 13:48:37 '北海金秋'
+    00b25ba23de94308bbafcc3e63b35251 2025-11-20 19:34:29 '风窃棠香'
+    f4445c0f3bab482a96869407ee7073f6 2025-11-21 10:58:12 '南门荷花湖-荷花'
+    79bcae367628479784b5d9e2bf2b48e0 2025-11-21 10:57:19 '万佛楼遗址-硫华菊'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## explore-kpbh '科普北海' id=8589478f692e4184901c0f775bc3aee8：total=24
+    cee9e22cfb494e179dfbc132bc0f663c 2026-09-02 17:55:00 '北海荷花'
+    A14DBBE97BE249EAB0574DBC1CEABA84 2026-01-07 14:50:00 '团城古树与园林智慧的对话'
+    9e65366419bf4261a789b549ee9f807a 2025-11-05 09:47:39 '科普北海丨品味标本菊的审美之道' [外链 https://mp.weixin.qq.com/s/ALOAG93gZzXGRFD8a8zMMg]
+    8309e7cef212404485ec675bf336b410 2025-11-05 09:44:14 '科普北海 | “仲秋同欢·古风趣味运动会”科普活动回顾' [外链 https://mp.weixin.qq.com/s/tqzPSTW4Qomw0M6Uzrwy0A]
+    b945f353d74a48b9bee631a6dd664d8f 2026-01-07 14:50:02 '团城古树系列——大自然传粉的奇妙智慧'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## explore-lsgk '历史概括' id=092d21767c414b5d920b89242d1f5e9f：total=1
+    c17d5bc7465547c4964b9496826154c3  '历史概括111'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 7 字，简介 0 字，图片 0 张
+
+## culture-bxt '毛毡笔记本' id=9024fc9b0bd14c439818630312102c20：total=1
+    2f77ce64a49843cd8a74d0d9543742ec 2025-12-02 13:20:56 '北海文创趣味随心贴毛毡笔记本'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 11 字，图片 1 张
+
+## culture-zt '文创' id=d9ebb668aa0a47d9acf3a319040adb38：total=14
+    740ab0271e1e4044aa4e0b211e88f323  '所属栏目-文创--文创征集'
+    4ef4d91776464df196b9b21c01f3c2f8  '仿膳茶社1'
+    d0f8af1f48ba464fad024ba41f4bbde7  '北海福塔琼华'
+    52f0200aa3d943a2b6a302434b5349f4  '仿膳茶社2'
+    7908d6387807405ab67db012f0ebef84  '北海福塔星高'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1718 字，简介 0 字，图片 0 张
+
+## culture-lzy '摆件冰箱贴' id=f103a8afe0d946ae9b1ddb80cd26be4b：total=1
+    30a6445f0c5743ed86e2a99bfc52e5b1 2025-11-20 12:48:11 '北海文创树脂白塔摆件冰箱贴'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 8 字，图片 1 张
+
+## culture-bhck '北海茶咖' id=6982cf99da8a4d49945afe824eabc54f：total=4
+    d0f8af1f48ba464fad024ba41f4bbde7  '北海福塔琼华'
+    7908d6387807405ab67db012f0ebef84  '北海福塔星高'
+    5a223167c26b4e8e8d2d10eb2c860417  '如梦令'
+    a02955d09a064ef8922fc2c1e200d3a8  '冰淇淋圣代'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## culture-fscs '仿膳茶社' id=496b6bcb9e7f4ebf9dae76c3627a668a：total=4
+    4ef4d91776464df196b9b21c01f3c2f8  '仿膳茶社1'
+    52f0200aa3d943a2b6a302434b5349f4  '仿膳茶社2'
+    a8393b3782234dd69d9d2164bc756236  '仿膳茶社3'
+    88c2d5a78232425eab746603d4387847  '仿膳茶社4'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 0 字，图片 1 张
+
+## culture-wcxg '文创雪糕' id=31356588554e43e0aee8fb266f2f7786：total=1
+    16931456100440e2931b0792d18179ef 2025-12-02 13:20:24 '“花开北海”文创雪糕'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 101 字，图片 1 张
+
+## guide-bhqh '北海之旅，即刻起航' id=d8489cfc7f4d4ac180143213ed56bef4：total=6
+    fb564c16b5514842a637abb177fd2f50 2025-10-27 18:04:22 '【开放时间】'
+    75692af0dfe7429c9dfd61d555ee2c31 2025-10-27 18:04:44 '【在线订票】'
+    fed8a21179ee4d2cbbdaef2b6585b9ef 2025-10-27 18:04:57 '【导览地图】'
+    dc24088cb51544eca917dea7cd195867 2025-10-27 18:05:12 '【手语讲解】'
+    a0d2dd4e660b4c1eb6a094050571fb76 2025-12-05 13:29:24 '【全景北海】' [外链 https://www.720yun.com/vr/133jt0yyzf1]
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 10 字，图片 1 张
+
+## guide-zxgp '在线购票' id=66dbecff8f334542acd6203b29369a4e：total=5
+    fef31ed14bf74230a745931183b7bf1a 2025-09-02 17:22:23 '票价及优惠政策'
+    1264f82633e94df2aa7b310994897dd0 2025-09-02 17:22:44 '行车路线'
+    8442817200484bcdb552765a3f6bcce9 2025-09-02 17:18:45 '服务项目'
+    44ced7a0dc0e4c06aec9a22d3b7bb4e8 2025-09-02 17:17:44 '导游服务'
+    9b5013c116b048d2aa9b464be0f62a89 2025-09-02 17:17:29 '停车场信息'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 0 字，简介 98 字，图片 0 张
+
+## guide-dldt '导览地图' id=0c668da563d240318a5784fee5abc330：total=0
+
+## guide-yyxz '游园须知' id=5996836996c6440eb1cf1a93dafa9b02：total=1
+    e2bbf76399b34d149a08b43fadb40f8e 2025-11-21 16:17:20 '游园须知'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 649 字，简介 0 字，图片 0 张
+
+## guide '导览' id=0efba9e380404f849b92d81ce688ac23：total=20
+    fb564c16b5514842a637abb177fd2f50 2025-10-27 18:04:22 '【开放时间】'
+    7a801d005b1a420eac7e1f5263f37681 2025-11-19 18:19:18 '关于2025年游船冬季停航的温馨提示' [外链 https://mp.weixin.qq.com/s/u3vJw_6nK9CvfWYp0xc05g]
+    fef31ed14bf74230a745931183b7bf1a 2025-09-02 17:22:23 '票价及优惠政策'
+    75692af0dfe7429c9dfd61d555ee2c31 2025-10-27 18:04:44 '【在线订票】'
+    c2659d8ab9fc4b529e4fe6b15176ce84  '游览路线'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 1 字，简介 10 字，图片 1 张
+
+## guide-kfgg '开放公告' id=a54e3c3d93d94421a314ed742afdd371：total=2
+    7a801d005b1a420eac7e1f5263f37681 2025-11-19 18:19:18 '关于2025年游船冬季停航的温馨提示' [外链 https://mp.weixin.qq.com/s/u3vJw_6nK9CvfWYp0xc05g]
+    47ab136ae9aa4bc58e571e355501351e 2025-11-19 18:21:39 '关于万佛楼遗址及阐福寺景区暂停开放的温馨提示' [外链 https://mp.weixin.qq.com/s/alNFohOACButUy3H-s-Rjw]
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 5 字，简介 109 字，图片 0 张
+
+## about-xxgk-zwgk-xxgk '政务信息公开' id=e418495a1dc44dd58d389b9e42d0e544：total=6
+    e2ac12ce-1c4d-43f0-95de-9d19f4f754ed 2018-08-24 18:01:23 '北京市古树名木保护管理条例'
+    8eb98083-fbc5-4a78-8948-346602345f68 2018-08-24 18:00:11 '北京市城市河湖保护管理条例'
+    cd27618b-5a3c-4005-ac8b-0f233326f64d 2018-08-24 17:55:17 '北京市控制吸烟条例'
+    b9a17b6e-1b33-4c6a-9e1c-71e34958634c 2018-08-24 17:54:21 '北京市旅游条例'
+    0a820b6a-e965-4825-99b5-5e6d531a8038 2018-08-24 17:53:07 '北京市湿地保护条例'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 2494 字，简介 0 字，图片 1 张
+
+## about-xxgk '信息公开' id=27390955a3364ab3a6968ae9d34474c8：total=102，只取了第 1 页
+    d491612bcc7d4168be264a419c9a629e 2026-09-24 17:17:35 '2026年京津冀豫菊花联展采购意向公开'
+    dc42abcd726d4a5cb56cebd902ef418f 2026-09-24 13:49:11 '北海公园外文翻译设备购置采购意向结果公示'
+    fdefdc56952c423e8f1d8a70ad6f94e7 2026-09-24 13:46:51 '北海公园文化展示橱窗升级改造项目比价采购结果公示'
+    adee9c8ded8246b48d9fe4cb07cc7023 2026-09-21 16:18:52 '北海公园文化展示橱窗升级改造项目采购意向公开'
+    209e2d83defa4edc8cc2601684b63adf 2026-09-21 16:17:05 '北海公园外文翻译设备购置采购意向公开'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 225 字，简介 0 字，图片 1 张
+
+## about-wmly '文明旅游' id=9ae99dc74cda4e25ab3c558ca4bd5bae：total=13
+    2e8498b0-ea69-4332-968c-38a500d6f781 2025-11-04 10:31:51 '2024年元旦假日期间北海公园开展“文明游北海 快乐迎新年”主题宣传活动'
+    7a6ce7ab-5f6b-4707-afe2-e0e930d46eaf 2023-06-30 07:58:57 '端午佳节，公园党委开展“文明游北海 端午共安康”主题宣传活动'
+    60efb241-4121-4f14-9ee2-382f0035b48d 2023-05-11 13:34:13 '北海公园认定为第二批国家级文明旅游示范单位'
+    25911bdb-d9b1-479a-ba2c-dfe7184f5a5d 2023-05-05 12:41:08 '北海公园五一假期文明游园活动'
+    512fdf7a-6352-41ea-8352-0e929bc054df 2023-03-07 16:29:03 '北海公园开展“弘扬雷锋精神，赓续精神血脉”主题宣传活动'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 113 字，简介 0 字，图片 0 张
+
+## about-xxgk-cwgk '财务信息公开' id=0d9f70c8a38746cda18a07c74e00709f：total=11
+    87bb8846a2b644c3a6e62ab7266cd1b1 2026-09-14 10:14:19 '北京市北海公园管理处2025年度决算公开'
+    006d30ad7b4f4e528ee6b46047e1e2b3 2026-03-20 10:00:50 '北京市北海公园管理处2026年度单位预算信息公开'
+    140a8f86-3ecc-4f0f-af2f-db95148e9390 2025-09-12 09:56:04 '北京市北海公园管理处2024年度部门决算'
+    428716ad-c03e-4806-a735-915f1b8534d1 2025-03-07 10:11:10 '北京市北海公园管理处2025年度单位预算信息公开'
+    547b3b15-ac4a-4e4b-bf5c-3d203b89ffcc 2024-09-12 10:06:58 '北京市北海公园管理处2023年度部门决算'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 75 字，简介 0 字，图片 1 张
+
+## about-xxgk-cggk '采购意向公开' id=8e262fde31944382849dba3527d78a60：total=85，只取了第 1 页
+    d491612bcc7d4168be264a419c9a629e 2026-09-24 17:17:35 '2026年京津冀豫菊花联展采购意向公开'
+    dc42abcd726d4a5cb56cebd902ef418f 2026-09-24 13:49:11 '北海公园外文翻译设备购置采购意向结果公示'
+    fdefdc56952c423e8f1d8a70ad6f94e7 2026-09-24 13:46:51 '北海公园文化展示橱窗升级改造项目比价采购结果公示'
+    adee9c8ded8246b48d9fe4cb07cc7023 2026-09-21 16:18:52 '北海公园文化展示橱窗升级改造项目采购意向公开'
+    209e2d83defa4edc8cc2601684b63adf 2026-09-21 16:17:05 '北海公园外文翻译设备购置采购意向公开'
+    详情字段：['createBy', 'createTime', 'delFlag', 'fdAnnex', 'fdAuditStatus', 'fdColumnId', 'fdContent', 'fdExternalLinksUrl', 'fdFlowdesc', 'fdFlowstatus', 'fdH5Picture', 'fdIsExternalLinks', 'fdIsPicture', 'fdKeywordQuery', 'fdLabelId', 'fdPicture', 'fdPictureHeight', 'fdPictureWidth', 'fdPublishTime', 'fdPublisher', 'fdPublishingUnit', 'fdRangeId', 'fdReadingTimes', 'fdReviewedBy', 'fdSiteId', 'fdSubTitle', 'fdSubTitleTwo', 'fdSynopsis', 'fdTitle', 'fdTitleTwo', 'fdTopSorting', 'fdTopping', 'fdUpPicture', 'id', 'nextId', 'previousId', 'realname', 'sysOrgCode', 'tenantId', 'updateBy', 'updateTime']
+    正文 225 字，简介 0 字，图片 1 张
+
+## about-xxgk-zwgk-zzjg '领导成员、组织机构' id=30382213c6bb4346b9b34c98e1b6b0f6：total=0
+
+[stop] 栏目 关于（9b60cacf24df405a87be7f2772c0921d）：取到 50 条，total=169，重复 id ['d636bb7a43dc432daf677ee182bd088f']
+
+本次实际请求 68 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）

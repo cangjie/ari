@@ -1,4 +1,4 @@
-# 北海公园官网正式抓取 2026-10-08T16:09:17
+# 北海公园官网正式抓取 2026-10-08T19:32:39
 base = https://www.beihaipark.com.cn
 
 ## robots.txt（www.beihaipark.com.cn）
@@ -7,6 +7,91 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   /api/smart-bhpark/modules/busSecurityArticle/list: 允许
   /api/smart-bhpark/index/busSecurityIndex/queryById/x: 允许
 
-[stop] 取访客令牌失败：HTTP 404，'{"success":false,"message":"404 NOT_FOUND \\"No static resource jeecg-summary/userUtil/NoLoginToken.\\"","code":500,"result":null,"timestamp":1791446958060}'
+## 栏目树 homePage（12 个栏目）
+  home-ycfw-mtfb   id=ebd2e76e11a6441d8d910bc106268c1a 名称='码头分布' articleList=10 篇 extendInfo=无
+  home-dbdht       id=e3aad5fb211b4f0fa39f4deef23d9174 名称='底部导航图' articleList=5 篇 extendInfo=无
+  home-ylkp        id=8d236ef4bd0e4cb1adb92a23132a725e 名称='科普知识' articleList=6 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  home-hdzl        id=7eeb980b41a346c88dab83e4b71d4f51 名称='展览资讯' articleList=4 篇 extendInfo=无
+  home-bhwc        id=7c46fa9e0a2841e8ab840b81b405e62f 名称='北海文创' articleList=6 篇 extendInfo=无
+  home-zt          id=e2b9bbd6738f4bc6ac23edff4d017cf3 名称='首页' articleList=0 篇 extendInfo=有
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  home-ycfw-pj     id=e0cff94a70ca4024a4da705249084358 名称='游船类型及票价' articleList=7 篇 extendInfo=无
+  home-gydt        id=04888d60432f49bbb9968c5c34425517 名称='公园动态' articleList=9 篇 extendInfo=无
+  home-ycfw        id=efe82c35185445d481d310f8412e3053 名称='游船服务' articleList=0 篇 extendInfo=有
+  home-kfsj        id=60fe1cedd6a74c60aabcd8baf81e2507 名称='开放时间' articleList=6 篇 extendInfo=有
+
+## 栏目树 explore（8 个栏目）
+  explore-tyjy     id=fa4c521ad4624f5092feddb4aa2101ad 名称='太液旧影' articleList=6 篇 extendInfo=无
+  explore          id=ba27373124604a0a8f882da30f926ebc 名称='探索' articleList=0 篇 extendInfo=有
+  explore-jdjs     id=5e2445348bd448f08d7fd9835aec5df8 名称='景点介绍' articleList=21 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  explore-hycs     id=f949dcc802b84bd7b429707bd8a3552a 名称='花园城市' articleList=0 篇 extendInfo=无
+  explore-kpbh     id=8589478f692e4184901c0f775bc3aee8 名称='科普北海' articleList=0 篇 extendInfo=无
+  explore-lsgk     id=092d21767c414b5d920b89242d1f5e9f 名称='历史概括' articleList=0 篇 extendInfo=有
+
+## 栏目树 culture（8 个栏目）
+  culture-bxt      id=9024fc9b0bd14c439818630312102c20 名称='毛毡笔记本' articleList=1 篇 extendInfo=无
+  culture-zt       id=d9ebb668aa0a47d9acf3a319040adb38 名称='文创' articleList=0 篇 extendInfo=有
+  culture-lzy      id=f103a8afe0d946ae9b1ddb80cd26be4b 名称='摆件冰箱贴' articleList=1 篇 extendInfo=无
+  culture-bhck     id=6982cf99da8a4d49945afe824eabc54f 名称='北海茶咖' articleList=4 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  culture-fscs     id=496b6bcb9e7f4ebf9dae76c3627a668a 名称='仿膳茶社' articleList=4 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  culture-wcxg     id=31356588554e43e0aee8fb266f2f7786 名称='文创雪糕' articleList=1 篇 extendInfo=无
+
+## 栏目树 guide（9 个栏目）
+  guide-kfsj       id=60fe1cedd6a74c60aabcd8baf81e2507 名称='开放时间' articleList=2 篇 extendInfo=有
+  guide-bhqh       id=d8489cfc7f4d4ac180143213ed56bef4 名称='北海之旅，即刻起航' articleList=6 篇 extendInfo=无
+  guide-zxgp       id=66dbecff8f334542acd6203b29369a4e 名称='在线购票' articleList=5 篇 extendInfo=有
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  guide-dldt       id=0c668da563d240318a5784fee5abc330 名称='导览地图' articleList=0 篇 extendInfo=无
+  guide-yyxz       id=5996836996c6440eb1cf1a93dafa9b02 名称='游园须知' articleList=1 篇 extendInfo=无
+  guide            id=0efba9e380404f849b92d81ce688ac23 名称='导览' articleList=0 篇 extendInfo=有
+  guide-kfgg       id=a54e3c3d93d94421a314ed742afdd371 名称='开放公告' articleList=2 篇 extendInfo=无
+
+## 栏目树 about（11 个栏目）
+  about-xxgk-zwgk-xxgk id=e418495a1dc44dd58d389b9e42d0e544 名称='政务信息公开' articleList=5 篇 extendInfo=无
+  about-xxgk       id=27390955a3364ab3a6968ae9d34474c8 名称='信息公开' articleList=0 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  about-wmly       id=9ae99dc74cda4e25ab3c558ca4bd5bae 名称='文明旅游' articleList=3 篇 extendInfo=无
+  about-xxgk-cwgk  id=0d9f70c8a38746cda18a07c74e00709f 名称='财务信息公开' articleList=5 篇 extendInfo=无
+  about-xxgk-cggk  id=8e262fde31944382849dba3527d78a60 名称='采购意向公开' articleList=5 篇 extendInfo=无
+  about-xxgk-zwgk-zzjg id=30382213c6bb4346b9b34c98e1b6b0f6 名称='领导成员、组织机构' articleList=0 篇 extendInfo=有
+  about            id=9b60cacf24df405a87be7f2772c0921d 名称='关于' articleList=0 篇 extendInfo=有
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  about-xxgk-zwgk  id=216da9ba7dbd4c1fa16d8461a57a72c0 名称='政务公开' articleList=0 篇 extendInfo=无
+  about-gydt       id=04888d60432f49bbb9968c5c34425517 名称='公园动态' articleList=7 篇 extendInfo=无
+
+## 栏目树 activity（11 个栏目）
+  activity-zlzx    id=7eeb980b41a346c88dab83e4b71d4f51 名称='展览资讯' articleList=4 篇 extendInfo=无
+  activity-bnbh-bnsy id=6f5f5d8064924c81b3c25df2f27850d8 名称='百年瞬影' articleList=5 篇 extendInfo=无
+  activity-bnbh-jlp id=9128840dd9584c18b9254a741da12248 名称='纪录片' articleList=2 篇 extendInfo=无
+  activity         id=f4253251eb8641ca8ae0d9881cf7fd1e 名称='活动' articleList=0 篇 extendInfo=有
+  activity-bnbh    id=8350f13077a9464d9e0c7af5cbdd492c 名称='百年北海' articleList=0 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  activity-bnbh-twzj id=1b9a29f2d39246c3a8b398025ce5ab43 名称='"我与北海公园的故事"100周年图文征集活动' articleList=29 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  activity-bnbh-ztzj-sy id=0fc8412656634f2e831f39941d31eb65 名称='摄影' articleList=5 篇 extendInfo=无
+  activity-hdzm    id=ec1ad17befde4f66bc841c4fadad5ce4 名称='活动招募' articleList=5 篇 extendInfo=无
+  activity-bnbh-ztzj id=f8ebd93c7db049fd9b3231c979bd541e 名称='公园开放100周年主题征集活动' articleList=0 篇 extendInfo=无
+
+## 栏目树 yingwen（5 个栏目）
+  yingwen-jdjs     id=5bca430d9a0543a891842c965e280941 名称='景点介绍' articleList=8 篇 extendInfo=无
+  siteSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  yingwen-home     id=841d292f126843b1957ee49396ed95ac 名称='英文首页' articleList=2 篇 extendInfo=无
+  pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
+  yingwen          id=0dfd8ec29bdc46209057f7bb1f1603a6 名称='英文' articleList=0 篇 extendInfo=有
+  home-ycfw-mtfb   码头分布                     total=11    只取列表
+  home-dbdht       底部导航图                    total=5     只取列表
+  home-ylkp        科普知识                     total=6     只取列表
+  home-hdzl        展览资讯                     total=4     只取列表
+  home-bhwc        北海文创                     total=6     只取列表
+  home-zt          首页                       total=30    只取列表
+  home-ycfw-pj     游船类型及票价                  total=7     只取列表
+
+[stop] 栏目 公园动态（04888d60432f49bbb9968c5c34425517）：取到 53 条，total=53，重复 id ['8183d447-799a-4e6b-bfe7-1eabfcec6604', '7107e5ca-9c15-4319-8982-7d9892bdc0f5', 'b54e34ce-ad14-4ac5-a25c-7b59ee70fcb2']
 
 本次实际请求 1 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
