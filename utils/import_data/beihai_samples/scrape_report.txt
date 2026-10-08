@@ -1,4 +1,4 @@
-# 北海公园官网正式抓取 2026-10-08T19:46:18
+# 北海公园官网正式抓取 2026-10-08T19:50:43
 base = https://www.beihaipark.com.cn
 
 ## robots.txt（www.beihaipark.com.cn）
@@ -84,6 +84,8 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   yingwen-home     id=841d292f126843b1957ee49396ed95ac 名称='英文首页' articleList=2 篇 extendInfo=无
   pageSetting      id=None 名称=None articleList=0 篇 extendInfo=无
   yingwen          id=0dfd8ec29bdc46209057f7bb1f1603a6 名称='英文' articleList=0 篇 extendInfo=有
+
+跳过的汇总栏目与信息公开（文章都在子栏目里，或与游园无关）：about、about-xxgk、about-xxgk-cggk、about-xxgk-cwgk、about-xxgk-zwgk、about-xxgk-zwgk-xxgk、about-xxgk-zwgk-zzjg、activity、activity-bnbh、activity-bnbh-ztzj、explore、guide、home-ycfw、yingwen
   home-ycfw-mtfb   码头分布                     total=11    只取列表
   home-dbdht       底部导航图                    total=5     只取列表
   home-ylkp        科普知识                     total=6     只取列表
@@ -92,10 +94,8 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   home-zt          首页                       total=30    只取列表
   home-ycfw-pj     游船类型及票价                  total=7     只取列表
   home-gydt        公园动态                     total=53    只取列表
-  home-ycfw        游船服务                     total=18    只取列表
   home-kfsj        开放时间                     total=6     只取列表
   explore-tyjy     太液旧影                     total=6     列表+详情
-  explore          探索                       total=56    列表+详情
   explore-jdjs     景点介绍                     total=21    列表+详情
   explore-hycs     花园城市                     total=4     列表+详情
   explore-kpbh     科普北海                     total=24    列表+详情
@@ -110,11 +110,55 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   guide-zxgp       在线购票                     total=5     列表+详情
   guide-dldt       导览地图                     total=0     列表+详情
   guide-yyxz       游园须知                     total=1     列表+详情
-  guide            导览                       total=20    列表+详情
   guide-kfgg       开放公告                     total=2     列表+详情
   about-wmly       文明旅游                     total=13    只取列表
-  栏目 关于：pageSize=169 返回 total=1、1 条，改为每页 50 条翻页
+  activity-bnbh-bnsy 百年瞬影                     total=6     只取列表
+  activity-bnbh-jlp 纪录片                      total=2     只取列表
+  activity-bnbh-twzj "我与北海公园的故事"100周年图文征集活动   total=29    只取列表
+  activity-bnbh-ztzj-sy 摄影                       total=5     只取列表
+  activity-hdzm    活动招募                     total=5     只取列表
+  yingwen-jdjs     景点介绍                     total=8     列表+详情
+  yingwen-home     英文首页                     total=2     列表+详情
+  (写死)             科普活动（探索页）                total=3     只取列表
+  (写死)             研学（探索页）                  total=13    只取列表
+  (写死)             文化页列表组件                  total=3     只取列表
+  补详情：guide-kfsj 的 articleList 里有 c2659d8ab9fc4b529e4fe6b15176ce84，不在栏目列表中
+  补详情：guide-kfsj 的 articleList 里有 f3be683de1e944a6a89c13dcfe87c624，不在栏目列表中
 
-[stop] 栏目 关于（9b60cacf24df405a87be7f2772c0921d）翻页途中 total 变了：169 -> 1（官网在更新，稍后重跑）
+## 体检（只进报告）
+景点介绍（explore-jdjs）21 篇：
+  e19c2fef4cca4b41895e7c89d17c3cdf 漪澜堂 | Yi Lan Tang | 简介 131 字 | 正文 335 字
+  2caa452e24d44f1b9edbe5d8d4b7e207 静心斋 | Jing Xin Zhai | 简介 55 字 | 正文 284 字
+  57ec180c97c844fba0ebbd17de5cacdf 琼岛春阴碑 | Qiongdao spring Yin monument | 简介 18 字 | 正文 143 字
+  9C8802BA1A4249818ED0A95DDA5653FD 遮荫候 | Shading | 简介 57 字 | 正文 111 字
+  a1a20493b83b4ff28793958fdd8aa39f 玉瓮 | Jade urn | 简介 27 字 | 正文 254 字
+  0a5cc638e98f4f93834b69aaf9160234 白袍将军 | White robe general | 简介 44 字 | 正文 94 字
+  e7e394a842ae498ab7884c2aaa08abde 承光殿 | Chengguang Temple | 简介 0 字 | 正文 198 字
+  a5a1a9ebfd9c4a1a8c4f0c28068e70a3 团城 | Mission City | 简介 35 字 | 正文 322 字
+  d382dab53c1442f49c5299e2f03442ff 阅古楼 | unknow | 简介 56 字 | 正文 150 字
+  e61f3858b4654c42948bee513d1f733f 永安寺 | Yongan Temple | 简介 29 字 | 正文 351 字
+  4d8a6c27a86d4746948af8b1f85e18e8 先蚕坛 | First silkworm altar | 简介 32 字 | 正文 75 字
+  d9d392e933884262bff657fca64602a6 画舫斋 | Painting zhai fasting | 简介 40 字 | 正文 301 字
+  1eec059c1d0d46d5848c836684de754f 濠濮间 | Ho Pu between | 简介 74 字 | 正文 118 字
+  e5a54b29853949c8b919f2eb2a29337a 五龙亭 | Wulong Ting | 简介 59 字 | 正文 66 字
+  3d515bb55280465c9bf0b6bb0f6bbb5b 西天梵境 | West Vatican | 简介 52 字 | 正文 207 字
+  88c99c368b504ecc9835a745fd168d25 快雪堂书法博物馆 | Quick snow hall | 简介 200 字 | 正文 137 字
+  0f640d0a13234781be93c9aa2797852a 九龙壁 | Kowloon wall | 简介 71 字 | 正文 99 字
+  845f0705cde44c51a0afe1fd2d2f5566 铜仙承露盘 | Tongxian exposed plate | 简介 52 字 | 正文 116 字
+  51faaa2e109843ef86d85ea8e47ecd5d 铁影壁 | Iron wall | 简介 37 字 | 正文 97 字
+  26b8aa802284431c82905aed52581a75 小西天 | Little West | 简介 66 字 | 正文 135 字
+  8d8a18c6964743309fd6688a83af3a04 智珠殿 | Pearl house | 简介 43 字 | 正文 147 字
+英文景点（yingwen-jdjs）8 篇：
+  a99c01c264474b00a041a438926959c7 'Jade Islet' | 正文 1445 字
+  3714fd4d4fcb4e5390eb071dd6b80c2b 'Minor Western Heaven' | 正文 1159 字
+  7be5fbb37fac4fa8b0c1baad27ff4303 'Painted Boat Hall' | 正文 648 字
+  1d7c20bd4abc4595aa285bb303b1d97a 'White Dagoba' | 正文 904 字
+  4ad695a57fb54e1c95e7cc07c5614961 'Western Heaven Temple' | 正文 2056 字
+  66ad74c150d5459198fa4fc66d8ca6a3 'Temple of Eternal Peace' | 正文 1093 字
+  eacdf5911e8542a5982f210e37b7f609 'Stele of the Jade Islet in Spring Shade Stele of the Jade Islet in Spring Shade' | 正文 349 字
+  ab3ed1e3276d47f2a32012c1f0a414c4 'Round City' | 正文 1368 字
+详情共 96 篇：外链 22 篇，正文为空 24 篇
 
-本次实际请求 2 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
+写出：beihai_site_data.json（栏目树 7、栏目列表 36、详情 96 篇）
+
+本次实际请求 20 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
