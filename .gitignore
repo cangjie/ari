@@ -64,6 +64,8 @@ utils/import_data/meta_cache/
 utils/import_data/wmhg_raw/
 # 吉林省博物院同理（jlpm_site_scrape.py），样本在 jlpm_samples/，入仓库
 utils/import_data/jlpm_raw/
+# 北海公园同理（beihai_site_scrape.py），样本在 beihai_samples/，入仓库
+utils/import_data/beihai_raw/
 
 # 去重的中间产物：零 API、几秒可重生成（dedupe_recall.py / dedupe_group.py --dry-run），
 # 且 dedupe_groups.json 每次空跑都被覆盖，与实际跑过的 dedupe_clusters.json 的组号对不上。
