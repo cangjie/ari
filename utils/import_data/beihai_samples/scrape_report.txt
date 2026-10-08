@@ -1,4 +1,4 @@
-# 北海公园官网正式抓取 2026-10-08T19:40:01
+# 北海公园官网正式抓取 2026-10-08T19:46:18
 base = https://www.beihaipark.com.cn
 
 ## robots.txt（www.beihaipark.com.cn）
@@ -112,8 +112,9 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   guide-yyxz       游园须知                     total=1     列表+详情
   guide            导览                       total=20    列表+详情
   guide-kfgg       开放公告                     total=2     列表+详情
-  about-xxgk-zwgk-xxgk 政务信息公开                   total=6     只取列表
+  about-wmly       文明旅游                     total=13    只取列表
+  栏目 关于：pageSize=169 返回 total=1、1 条，改为每页 50 条翻页
 
-[stop] 栏目 信息公开（27390955a3364ab3a6968ae9d34474c8）两次请求之间 total 变了：102 -> 0（官网在更新，稍后重跑）
+[stop] 栏目 关于（9b60cacf24df405a87be7f2772c0921d）翻页途中 total 变了：169 -> 1（官网在更新，稍后重跑）
 
-本次实际请求 77 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
+本次实际请求 2 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
