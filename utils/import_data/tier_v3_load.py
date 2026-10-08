@@ -31,7 +31,7 @@ from pathlib import Path
 
 import pymysql
 
-from tier_v3 import MUSEUMS, DIMS_WITH_ER, core_of, tier_of, load_items
+from tier_v3 import MUSEUMS, DIMS_WITH_ER, apply_peer_merge, core_of, tier_of, load_items
 
 # 打分者的默认值。tier_v3.py 会把本轮实际用的型号写进 <out-dir>/<museum>.model，
 # 有那个文件就以它为准 —— 写死一个型号，换了供应商之后库里记的出处就是假的，
@@ -133,7 +133,7 @@ def main() -> None:
     m = MUSEUMS[args.museum]
 
     items = {it["seq"]: it for it in load_items(m, base, None)}
-    s1 = read_jsonl(out / f"{m.key}_stage1.jsonl")
+    s1 = apply_peer_merge(m, read_jsonl(out / f"{m.key}_stage1.jsonl"))    # 写进库的是归并后的组名
     s2 = read_jsonl(out / f"{m.key}_stage2.jsonl")
     s3 = read_jsonl(out / f"{m.key}_stage3.jsonl")
 

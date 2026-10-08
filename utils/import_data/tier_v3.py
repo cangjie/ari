@@ -97,6 +97,38 @@ class Museum:
     # **过滤放在这里而不是命令行**：阶段二按全体分组、阶段三从全体挑 S 候选、tier_v3_load 按全体对账，
     # 三处读的都是 load_items，「全体」在这一处定义才不会各说各话。必须配 col_seq（过滤不能改动序号）
     scope: tuple[int, str] | None = None
+    # 同类组归并：{seq: 组名}，阶段一跑完后、阶段二分组前套用（apply_peer_merge）。
+    # 阶段一给公园景点起的组名太细：北海公园 23 个景点一批跑出 19 组、16 个单件组，永安寺、西天梵境、
+    # 小西天、白塔各成一组 —— 组内没有对手，CR 的防膨胀机制就失效了。V3.0 给颐和园举的同类组是
+    # 「桥梁、亭阁、宗教建筑、观景点」这个粒度。**对照表由用户审定**（北海公园 2026-10-08），
+    # 按序号登记而不按组名：组名重跑会变，序号不会。模型的原组名留在 peer_group_raw
+    peer_merge: dict[int, str] | None = None
+
+
+def apply_peer_merge(m: Museum, s1: dict) -> dict:
+    """套用 Museum.peer_merge。阶段二分组、阶段三提示词、写库（tier_v3_load）、变档清单都读归并后的组名。"""
+    if not m.peer_merge:
+        return s1
+    if set(s1) != set(m.peer_merge):
+        sys.exit(f"[fatal] {m.key} 的 peer_merge 与阶段一结果对不上：缺 {sorted(set(s1) - set(m.peer_merge))}，"
+                 f"多 {sorted(set(m.peer_merge) - set(s1))}")
+    return {s: {**r, "peer_group_raw": r.get("peer_group_raw", r["peer_group"]),
+                "peer_group": m.peer_merge[s]} for s, r in s1.items()}
+
+
+# 北海公园的同类组（用户 2026-10-08 审定）。键是 source_seq，见 beihai_seq_map.csv
+_BEIHAI_GROUPS = {
+    "皇家寺庙与祭坛": (10, 15, 20, 23, 11),    # 永安寺 西天梵境 小西天 白塔 先蚕坛
+    "园中园": (1, 2, 12, 13),                  # 漪澜堂 静心斋 画舫斋 濠濮间
+    "书法石刻楼院": (9, 16),                   # 阅古楼 快雪堂书法博物馆
+    "殿宇与亭台": (7, 21, 14),                 # 承光殿 智珠殿 五龙亭
+    "影壁": (17, 19),                          # 九龙壁 铁影壁
+    "碑刻、雕塑与玉器": (3, 18, 5),            # 琼岛春阴碑 铜仙承露盘 玉瓮
+    "古树": (4, 6),                            # 遮荫候 白袍将军
+    "岛与城台（整体）": (8, 22),               # 团城 琼华岛
+}
+BEIHAI_PEER_MERGE = {s: g for g, seqs in _BEIHAI_GROUPS.items() for s in seqs}
+assert len(BEIHAI_PEER_MERGE) == sum(len(v) for v in _BEIHAI_GROUPS.values()), "北海公园同类组有序号重复登记"
 
 
 MUSEUMS = {
@@ -203,6 +235,7 @@ MUSEUMS = {
         col_tier_old=7,           # 源表不带评级，这一列恒空
         col_seq=0,                # 序号按身份键幂等、允许空号，必须按列取
         context=CONTEXTS["beihai"],
+        peer_merge=BEIHAI_PEER_MERGE,
     ),
     # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
     # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
@@ -1006,6 +1039,10 @@ def main() -> None:
 
     # 阶段二/三要看全馆。若阶段一是分批跑的，这里必须已经全齐。
     missing1 = {it["seq"] for it in items} - set(s1)
+    if not missing1 and m.peer_merge and not args.only_seq and not args.limit:
+        s1 = apply_peer_merge(m, s1)
+        print(f"  同类组按登记的对照表归并：{len({r['peer_group_raw'] for r in s1.values()})} 组 -> "
+              f"{len({r['peer_group'] for r in s1.values()})} 组")
     if missing1:
         sys.exit(f"阶段一还缺 {len(missing1)} 件（如 seq={sorted(missing1)[:10]}），"
                  f"先把 --stage 1 的批次跑完再跑阶段二。")

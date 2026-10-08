@@ -28,6 +28,7 @@ from collections import Counter
 from pathlib import Path
 
 import meta_lib as M
+from tier_v3 import MUSEUMS, apply_peer_merge
 from tier_v3_load import grade, read_jsonl
 
 ORDER = ["S", "A", "B", "C"]
@@ -46,6 +47,7 @@ def main():
 
     mk, new = a.museum, Path(a.new)
     n1, n2, n3 = (read_jsonl(new / f"{mk}_stage{i}.jsonl") for i in (1, 2, 3))
+    n1 = apply_peer_merge(MUSEUMS[mk], n1)
     miss = set(n1) - set(n2)
     if miss:
         sys.exit(f"新一轮阶段二还缺 {len(miss)} 件（如 {sorted(miss)[:5]}），先跑完再出清单")
