@@ -274,18 +274,29 @@ def trees(f: BhFetcher, base: str, r: Report) -> dict[str, dict]:
 
 
 def columns_of(tr: dict[str, dict]) -> dict[str, dict]:
-    """栏目树里出现的全部栏目 + 前端写死的栏目 -> {栏目 id: {code, name, detail}}。"""
+    """栏目树里出现的全部栏目 + 前端写死的栏目 -> {栏目 id: {code, name, detail}}。
+
+    **汇总栏目不取**：栏目代码是同一棵树里别的栏目代码的前缀（about 之于 about-wmly），
+    它的列表就是各子栏目的合集 —— explore 的 total=56 正好等于五个子栏目之和。
+    2026-10-08 实测这类栏目的 total 前后不一致（关于：169 -> 1；信息公开：102 -> 0），
+    取它只会出错，而文章都在子栏目里，不取不漏。"""
     cols: dict[str, dict] = {}
+    skipped: set[str] = set()
     for code, res in tr.items():
+        codes = [k for k in res if _col_id(((res[k] or {}).get("columnInfo") or {}))]
         for k, v in res.items():
             info = (v or {}).get("columnInfo") or {}
             cid = _col_id(info)
-            if not cid or k.startswith(SKIP_PREFIX):
+            if not cid:
+                continue
+            if k.startswith(SKIP_PREFIX) or any(o.startswith(k + "-") for o in codes):
+                skipped.add(cid)
                 continue
             cols.setdefault(cid, dict(code=k, name=info.get("fdColumnName"),
                                       detail=k.startswith(DETAIL_PREFIX), tree=code))
     for cid, name in KNOWN_COLUMNS.items():
-        cols.setdefault(cid, dict(code=None, name=name, detail=False, tree=None))
+        if cid not in skipped:
+            cols.setdefault(cid, dict(code=None, name=name, detail=False, tree=None))
     return cols
 
 
@@ -316,7 +327,11 @@ def list_column(f: BhFetcher, base: str, cid: str, col: dict, r: Report, *, max_
             for page in range(2, -(-want // PAGE_SIZE) + 1):
                 t, recs = _list_page(f, base, cid, page, PAGE_SIZE, r)
                 if t != total:
-                    raise SystemExit(f"栏目 {col['name']}（{cid}）翻页途中 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
+                    msg = f"栏目 {col['name']}（{cid}）翻页途中 total 变了：{total} -> {t}"
+                    if col["detail"]:
+                        raise SystemExit(msg + "（官网在更新，或这是个汇总栏目，看报告）")
+                    r.say(f"  ⚠ {msg}，停止翻页")
+                    break
                 if not recs:
                     break
                 rows += recs
@@ -380,6 +395,9 @@ def scrape(f: BhFetcher, base: str, r: Report, out: pathlib.Path) -> None:
     probe_robots(f, base, r)
     tr = trees(f, base, r)
     cols = columns_of(tr)
+    skipped = sorted({k for res in tr.values() for k, v in res.items()
+                      if (i := _col_id((v or {}).get("columnInfo") or {})) and i not in cols})
+    r.say(f"\n跳过的汇总栏目与信息公开（文章都在子栏目里，或与游园无关）：{'、'.join(skipped)}")
 
     lists: dict[str, dict] = {}
     details: dict[str, dict] = {}
