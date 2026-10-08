@@ -219,6 +219,21 @@ MUSEUMS = [
         on_view=lambda r, c: ON_VIEW_YES if "展出中（馆方标记）" in (s(r[c["on_view"]]) or "")
                              else ON_VIEW_UNKNOWN,
     ),
+    dict(
+        # 北海公园（北京）。景点按展品入库，一行一个景点（用户 2026-10-08 定）。源表由 beihai_build.py
+        # 从官网接口的抓取结果生成，**放在列表末尾**。「展厅」列是所在景点（团城、琼华岛），只在官网原文写明时才填
+        key="beihai", name_zh="北海公园", name_en="Beihai Park",
+        site_key=None,                     # 不在城市榜单的 cultural_site 里
+        file="北海公园_景点清单.xlsx", sheet="展品清单", header_row=4,
+        # 序号按身份键幂等、允许空号（beihai_seq_map.csv），必须读序号列。英文名与英文简介只有英文站那 8 条有，
+        # 是馆方原文，经 collect_pairs 记为「原始」；白塔、琼华岛只有英文，中文名留给 translate_artwork.py
+        cols=dict(seq=0, gallery=1, name_zh=2, desc_zh=3, image_url=4, on_view=5,
+                  official_url=6, tier=7, name_en=10, desc_en=11),
+        # 只认 beihai_build.py 写的「向游人开放（官网原文：…）」。「开放状态未知（官网未写明）」也含「开放」，
+        # 所以按开头判，不按包含判
+        on_view=lambda r, c: ON_VIEW_YES if (s(r[c["on_view"]]) or "").startswith("向游人开放（官网原文")
+                             else ON_VIEW_UNKNOWN,
+    ),
 ]
 
 

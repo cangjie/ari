@@ -55,6 +55,9 @@ MUSEUM_QID = {
     # 吉林省博物院。P195 名下 11947 条全是《全国馆藏文物名录》条目，只有中文标签、没有年代与作者 ——
     # 本脚本按英文标签匹配，抓不到东西；身份核对走 jlpm_wikidata.py + jlpm_build.py。登记上只为不 KeyError
     "jlpm":       ["Q18111051"],
+    # 北海公园。2026-10-08 按坐标查园内条目只有先蚕坛、仿膳两个，白塔、九龙壁、团城都没有带坐标的条目；
+    # 本馆是景点不是藏品，P195 名下本来就没有东西。登记上只为不 KeyError
+    "beihai":     ["Q133650"],
 }
 UA = "ari-metadata-research/1.0 (museum visit-planning dataset; contact via repo)"
 WDQS = "https://query.wikidata.org/sparql"

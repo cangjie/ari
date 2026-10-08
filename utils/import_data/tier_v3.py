@@ -79,7 +79,9 @@ class Museum:
     col_name_en: int | None
     col_name_cn: int | None
     col_gallery: int | None
-    col_desc: int | None
+    # 给元组就按顺序取第一个非空的。北海公园有 2 个景点只有英文站有（白塔、琼华岛），
+    # 中文简介列为空，只读中文那列模型就看不到任何介绍 —— 审计那侧（audit_meta.DESC_LANG）也是取不到就退到另一种语言
+    col_desc: int | tuple[int, ...] | None
     col_category: int | tuple[int, ...] | None   # 给元组就把几列非空的值用「·」拼起来
     col_tier_old: int        # 入库用的那一列 tier（AGENTS.md 数据库约定第 5 条）
     context: str             # 交给模型的馆级语境，直接影响 IU 与 CR 的判断
@@ -185,6 +187,23 @@ MUSEUMS = {
         scope=(14, "评分"),       # 只评「评分范围」列为「评分」的 107 行
         context=CONTEXTS["jlpm"],
     ),
+    "beihai": Museum(
+        key="beihai",
+        label="Beihai Park (Beijing)",
+        path="artworks/北海公园_景点清单.xlsx",
+        sheet="展品清单",
+        # 由 beihai_build.py 生成，中文馆格式：表头在第 4 行（0 基下标 3）。一行一个景点
+        header_row=3,
+        # 英文名只有英文站那 8 条是馆方的，其余为空（中文站标题里的机翻英文没收）。
+        # 白塔、琼华岛只有英文：中文名与中文简介都空，名称读第 10 列、简介退到第 11 列
+        col_name_en=10, col_name_cn=2, col_gallery=1,
+        col_desc=(3, 11),
+        # 「景点·官网景点介绍」—— 不替模型判 object 还是 node：九龙壁、玉瓮、古树与殿宇同在一个栏目
+        col_category=(8, 9),
+        col_tier_old=7,           # 源表不带评级，这一列恒空
+        col_seq=0,                # 序号按身份键幂等、允许空号，必须按列取
+        context=CONTEXTS["beihai"],
+    ),
     # 故宫、国博、首博待填。故宫需特别注意：1757 件共用 7 段展厅级套话简介，
     # 逐件评分只能依据名称——源文件「评级标准」页自己写明了这一点。
 }
@@ -236,7 +255,8 @@ def load_items(m: Museum, base: Path, limit: int | None) -> list[dict]:
             "name_en": name_en,
             "name_cn": name_cn,
             "gallery": cell(row, m.col_gallery),
-            "description": cell(row, m.col_desc),
+            "description": next((v for v in (cell(row, i) for i in (m.col_desc if isinstance(m.col_desc, tuple)
+                                                                   else (m.col_desc,))) if v), ""),
             "category": "·".join(v for v in (cell(row, i) for i in cats) if v),
             "tier_old": cell(row, m.col_tier_old),
         })

@@ -1,0 +1,58 @@
+# 北海公园 源表生成
+
+## 序号：沿用 0，新增 23，本次不再出现（留空号，不回收）0 []
+
+## 体检
+总 23 行：中文站 21（其中有馆方英文 6），仅英文站 2
+中文简介：中位 191 字，最短 107，最长 463；有图 23/23
+馆方英文简介 8 条：中位 1125.0 字符，最短 347，最长 2056
+开放状态 {'开放状态未知（官网未写明）': 20, '向游人开放（原文写明）': 3}
+所在景点 {'琼华岛': 5, '（空）': 14, '团城': 4}
+    1 漪澜堂      | —                                    | 琼华岛  | 中  463 字 英    0 | 开放状态未知（官网未写明）
+    2 静心斋      | —                                    | —    | 中  337 字 英    0 | 开放状态未知（官网未写明）
+    3 琼岛春阴碑    | Stele of the Jade Islet in Spring Shade | 琼华岛  | 中  161 字 英  347 | 开放状态未知（官网未写明）
+    4 遮荫候      | —                                    | 团城   | 中  169 字 英    0 | 开放状态未知（官网未写明）
+    5 玉瓮       | —                                    | 团城   | 中  252 字 英    0 | 开放状态未知（官网未写明）
+    6 白袍将军     | —                                    | 团城   | 中  138 字 英    0 | 开放状态未知（官网未写明）
+    7 承光殿      | —                                    | 团城   | 中  197 字 英    0 | 开放状态未知（官网未写明）
+    8 团城       | Round City                           | —    | 中  358 字 英 1368 | 开放状态未知（官网未写明）
+    9 阅古楼      | —                                    | —    | 中  150 字 英    0 | 开放状态未知（官网未写明）
+   10 永安寺      | Temple of Eternal Peace              | 琼华岛  | 中  349 字 英 1093 | 开放状态未知（官网未写明）
+   11 先蚕坛      | —                                    | —    | 中  107 字 英    0 | 开放状态未知（官网未写明）
+   12 画舫斋      | Painted Boat Hall                    | —    | 中  342 字 英  648 | 向游人开放（官网原文：「画舫斋经修缮面向游人开放」）
+   13 濠濮间      | —                                    | —    | 中  187 字 英    0 | 开放状态未知（官网未写明）
+   14 五龙亭      | —                                    | —    | 中  125 字 英    0 | 开放状态未知（官网未写明）
+   15 西天梵境     | Western Heaven Temple                | —    | 中  258 字 英 2056 | 开放状态未知（官网未写明）
+   16 快雪堂书法博物馆 | —                                    | —    | 中  338 字 英    0 | 向游人开放（官网原文：「改为“快雪堂书法石刻博物馆”面向游人
+   17 九龙壁      | —                                    | —    | 中  169 字 英    0 | 开放状态未知（官网未写明）
+   18 铜仙承露盘    | —                                    | —    | 中  116 字 英    0 | 开放状态未知（官网未写明）
+   19 铁影壁      | —                                    | —    | 中  135 字 英    0 | 开放状态未知（官网未写明）
+   20 小西天      | Minor Western Heaven                 | —    | 中  202 字 英 1157 | 向游人开放（官网原文：「1993年重塑须弥山向游人开放」）
+   21 智珠殿      | —                                    | 琼华岛  | 中  191 字 英    0 | 开放状态未知（官网未写明）
+   22 —        | Jade Islet                           | —    | 中    0 字 英 1445 | 开放状态未知（官网未写明）
+   23 —        | White Dagoba                         | 琼华岛  | 中    0 字 英  904 | 开放状态未知（官网未写明）
+  备注   1 漪澜堂：中文站标题附带的机翻英文「Yi Lan Tang」未采用；所在景点据本条原文：「坐落于北海公园琼华岛北侧」
+  备注   2 静心斋：中文站标题附带的机翻英文「Jing Xin Zhai」未采用
+  备注   3 琼岛春阴碑：中文站标题附带的机翻英文「Qiongdao spring Yin monument」未采用；所在景点据本条原文：「立于琼华岛东坡」；英文对应凭据：「“Qiong Dao Chun Yin”（Jade Islet in Spring Shade）」；官网英文标题把自己重复了一遍（「Stele of the Jade Islet in Spring Shade Stele of the Jade Islet in Spring Shade」），去重为「Stele of the Jade Islet in Spring Shade」
+  备注   4 遮荫候：中文站标题附带的机翻英文「Shading」未采用；所在景点据本条原文：「一年盛夏清乾隆皇帝来游团城，宫人摆案于树下」
+  备注   5 玉瓮：中文站标题附带的机翻英文「Jade urn」未采用；所在景点据团城条原文：「院中有玉瓮亭，亭中有元代遗物玉瓮」
+  备注   6 白袍将军：中文站标题附带的机翻英文「White robe general」未采用；所在景点据本条原文：「守护在团城上」
+  备注   7 承光殿：中文站标题附带的机翻英文「Chengguang Temple」未采用；所在景点据本条原文：「承光殿是团城的主要建筑」
+  备注   8 团城：中文站标题附带的机翻英文「Mission City」未采用；英文对应凭据：「The Round City (Tuancheng)」
+  备注   9 阅古楼：中文站标题附带的机翻英文「unknow」未采用
+  备注  10 永安寺：中文站标题附带的机翻英文「Yongan Temple」未采用；所在景点据英文站 Jade Islet 条原文：「Temple of Eternal Peace (Yong’an), a main building on the same north-south axis as the dagoba, stands to the south of the White Dagoba Hill」；英文对应凭据：「The Temple of Eternal Peace (Yong’an Temple)」
+  备注  11 先蚕坛：中文站标题附带的机翻英文「First silkworm altar」未采用
+  备注  12 画舫斋：中文站标题附带的机翻英文「Painting zhai fasting」未采用；英文对应凭据：「inspired by the essay Painted Boat Hall by Song Dynasty writer Ouyang Xiu」
+  备注  13 濠濮间：中文站标题附带的机翻英文「Ho Pu between」未采用
+  备注  14 五龙亭：中文站标题附带的机翻英文「Wulong Ting」未采用
+  备注  15 西天梵境：中文站标题附带的机翻英文「West Vatican」未采用；英文对应凭据：「the Western Heaven Temple (also named Great Western Heaven)」
+  备注  16 快雪堂书法博物馆：中文站标题附带的机翻英文「Quick snow hall」未采用
+  备注  17 九龙壁：中文站标题附带的机翻英文「Kowloon wall」未采用
+  备注  18 铜仙承露盘：中文站标题附带的机翻英文「Tongxian exposed plate」未采用
+  备注  19 铁影壁：中文站标题附带的机翻英文「Iron wall」未采用
+  备注  20 小西天：中文站标题附带的机翻英文「Little West」未采用；英文对应凭据：「The Minor Western Heaven (Xiaoxitian)」
+  备注  21 智珠殿：中文站标题附带的机翻英文「Pearl house」未采用；所在景点据本条原文：「位于琼岛东麓山脚下」
+  备注  22 Jade Islet：中文站景点介绍里没有这一条：Jade Islet（琼华岛）；中文名与中文简介由 translate_artwork.py 补译
+  备注  23 White Dagoba：中文站景点介绍里没有这一条：White Dagoba（白塔）；中文名与中文简介由 translate_artwork.py 补译；所在景点据英文站 Jade Islet 条原文：「The Islet’s principal site is the Tibetan style White Dagoba」
+
+写出 artworks\北海公园_景点清单.xlsx（23 行）
