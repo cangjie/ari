@@ -14,8 +14,9 @@
 
     Vue 单页应用（Vite 构建），后台是 JeecgBoot。页面本身没有内容，数据由 axios 从
     `https://www.beihaipark.com.cn/api` 取，响应形如 {success, code, message, result}。
-    请求头带 X-Access-Token：访客令牌由 GET /jeecg-summary/userUtil/NoLoginToken 取得
-    （前端碰到 401 或「Token失效」时自动去取，本脚本开头就取）。
+    前端只在碰到 401 或「Token失效」时才去 GET /jeecg-summary/userUtil/NoLoginToken 取访客令牌，
+    放进 X-Access-Token 头。**2026-10-08 实测这个接口在后台已经不存在**（HTTP 404「No static
+    resource」），所以本脚本照前端的做法：先不带令牌请求，被拒了才去取，取不到就停。
 
     GET /smart-bhpark/modules/busSecurityColumn/queryBySiteIdAndDataCode?siteId=<站点>&dataCode=<栏目代码>
         一个页面的栏目树。result 是 {栏目代码: {columnInfo: {…, articleList: […]}}}。
@@ -162,7 +163,8 @@ class BhFetcher(W.Fetcher):
         st, text = self._send(req, url)
         js = _json(text)
         if st != 200 or not js or not js.get("success") or not isinstance(js.get("result"), str):
-            raise SystemExit(f"取访客令牌失败：HTTP {st}，{text[:200]!r}")
+            raise SystemExit(f"站点要求令牌，但取访客令牌失败：HTTP {st}，{text[:200]!r} —— "
+                             f"前端的登录方式可能变了，停下来看报告，不要绕")
         self.token = js["result"]
         r.say(f"访客令牌：取到（{len(self.token)} 字符，不落盘）")
 
@@ -331,7 +333,6 @@ def probe(f: BhFetcher, base: str, r: Report) -> None:
     st, home = f.get(base + "/", sample="home.html")
     m = re.search(r'baseUrl"\]\s*=\s*"([^"]+)', home)
     r.say(f"\n首页 HTTP {st}，{len(home)} 字符；baseUrl 写的是 {m.group(1) if m else '?'!r}")
-    f.fetch_token(base, r)
     tr = trees(f, base, r)
     cols = columns_of(tr)
     r.say(f"\n# 每个栏目第 1 页 + 第 1 篇详情（共 {len(cols)} 个栏目）")
@@ -355,7 +356,6 @@ def scrape(f: BhFetcher, base: str, r: Report, out: pathlib.Path) -> None:
     r.say(f"# 北海公园官网正式抓取 {dt.datetime.now().isoformat(timespec='seconds')}")
     r.say(f"base = {base}")
     probe_robots(f, base, r)
-    f.fetch_token(base, r)
     tr = trees(f, base, r)
     cols = columns_of(tr)
 
