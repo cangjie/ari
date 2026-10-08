@@ -108,6 +108,14 @@ VALUE_MAPS = {
                                         "官网 ID": "website ID", "对象层级": "object level"}[f]) for f in fields)},
         "Wikidata《全国馆藏文物名录》条目（名称逐字相同）":
             "Wikidata entry from the National Catalog of Museum Collections (exact name match)",
+        # 北海公园（meta_fill_official_beihai.py 的 SRC_ZH_SITE / SRC_EN_SITE 拼出来的来源串，**改那边要同步改这里**）
+        **{f"北海公园官网{site}景点介绍（{field}）": f"Park website, {site_en} attractions section ({field_en})"
+           for site, site_en in (("中文站", "Chinese"), ("英文站", "English"))
+           for field, field_en in (("官网 ID", "website ID"), ("年代", "date"), ("尺寸", "dimensions"),
+                                   ("所在景点，据本条原文", "parent site, per this entry"),
+                                   ("所在景点，据团城条原文", "parent site, per the Round City entry"),
+                                   ("所在景点，据英文站 Jade Islet 条原文",
+                                    "parent site, per the English-site Jade Islet entry"))},
     },
     "yes_no": {"是": "Yes", "否": "No"},
 }
