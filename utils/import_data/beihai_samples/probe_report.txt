@@ -1,0 +1,14 @@
+# 北海公园官网探路 2026-10-08T16:08:58
+base = https://www.beihaipark.com.cn
+
+## robots.txt（www.beihaipark.com.cn）
+HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 robots」处理
+实际间隔 1.5s
+  /api/smart-bhpark/modules/busSecurityArticle/list: 允许
+  /api/smart-bhpark/index/busSecurityIndex/queryById/x: 允许
+
+首页 HTTP 200，2489 字符；baseUrl 写的是 'https://www.beihaipark.com.cn/api'
+
+[stop] 取访客令牌失败：HTTP 404，'{"success":false,"message":"404 NOT_FOUND \\"No static resource jeecg-summary/userUtil/NoLoginToken.\\"","code":500,"result":null,"timestamp":1791446941169}'
+
+本次实际请求 3 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
