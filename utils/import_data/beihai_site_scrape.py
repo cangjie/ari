@@ -70,6 +70,8 @@ SITE_EN = "5a4edcbec072478ea6009131d7578f5e"
 DATA_CODES = ("homePage", "explore", "culture", "guide", "about", "activity", "yingwen")
 # 这几棵树下的栏目：列表取全、每篇取详情
 DETAIL_PREFIX = ("explore", "culture", "guide", "yingwen")
+# 不抓的栏目：「信息公开」下的政务、财务、采购公开，与游园无关（栏目树本身照存）
+SKIP_PREFIX = ("about-xxgk",)
 # 前端代码里写死、可能不在栏目树里的栏目 id（取自哪个页面的组件）。只取列表
 KNOWN_COLUMNS = {
     "04888d60432f49bbb9968c5c34425517": "公园动态（/index/parkNews）",
@@ -278,7 +280,7 @@ def columns_of(tr: dict[str, dict]) -> dict[str, dict]:
         for k, v in res.items():
             info = (v or {}).get("columnInfo") or {}
             cid = _col_id(info)
-            if not cid:
+            if not cid or k.startswith(SKIP_PREFIX):
                 continue
             cols.setdefault(cid, dict(code=k, name=info.get("fdColumnName"),
                                       detail=k.startswith(DETAIL_PREFIX), tree=code))
@@ -303,30 +305,37 @@ def list_column(f: BhFetcher, base: str, cid: str, col: dict, r: Report, *, max_
     if len(rows) < want:
         # 一页装不下就按总数一次取全，不翻页。2026-10-08 实测「公园动态」53 条按 50 条一页翻，
         # 第 2 页的 3 条全是第 1 页已有的 —— 跨页排序不稳定（置顶与同一发布时间的并列），
-        # 翻页会漏掉 3 条。服务器若限制每页条数，再退回翻页，重复照样报错
+        # 翻页会漏掉 3 条。
+        # 一次取全也有上限：同日「信息公开」102 条，pageSize=102 返回 total=0、0 条（53 条那次是好的）。
+        # 所以大页被拒（total 或条数对不上）就退回翻页 —— 这不是「官网在更新」，别报成那个
         t, big = _list_page(f, base, cid, 1, want, r)
-        if t != total:
-            raise SystemExit(f"栏目 {col['name']}（{cid}）两次请求之间 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
-        if len(big) == want:
+        if t == total and len(big) == want:
             rows = big
         else:
-            r.say(f"  栏目 {col['name']}：要 {want} 条只给了 {len(big)} 条（服务器限制每页条数），改为翻页")
-            page = 1
-            while len(rows) < want:
-                page += 1
+            r.say(f"  栏目 {col['name']}：pageSize={want} 返回 total={t}、{len(big)} 条，改为每页 {PAGE_SIZE} 条翻页")
+            for page in range(2, -(-want // PAGE_SIZE) + 1):
                 t, recs = _list_page(f, base, cid, page, PAGE_SIZE, r)
                 if t != total:
                     raise SystemExit(f"栏目 {col['name']}（{cid}）翻页途中 total 变了：{total} -> {t}（官网在更新，稍后重跑）")
                 if not recs:
                     break
                 rows += recs
+            rows = rows[:want] if truncated else rows
     ids = [str(x.get("id")) for x in rows]
     dup = [i for i, c in collections.Counter(ids).items() if c > 1]
-    if dup or len(rows) != want:
-        raise SystemExit(f"栏目 {col['name']}（{cid}）：取到 {len(rows)} 条，应取 {want} 条（total={total}），"
-                         f"重复 id {dup[:10]}")
+    uniq = list({str(x.get("id")): x for x in rows}.values())
+    incomplete = len(uniq) != want
+    if dup and not incomplete:
+        r.say(f"  栏目 {col['name']}：翻页有 {len(dup)} 条重复，去重后 {len(uniq)} 条，与 total 相符")
+    if incomplete:
+        msg = (f"栏目 {col['name']}（{cid}）：取到 {len(uniq)} 条不重复的，应取 {want} 条（total={total}），"
+               f"重复 id {dup[:10]}")
+        if col["detail"]:
+            raise SystemExit(msg)
+        # 只取列表的新闻类栏目：缺几条不影响景点，照实标 incomplete 往下走，不能悄悄当成全的
+        r.say(f"  ⚠ {msg} —— 只取列表的栏目，标 incomplete，继续")
     return dict(column_id=cid, code=col["code"], name=col["name"], tree=col["tree"],
-                total=total, truncated=truncated, records=rows)
+                total=total, truncated=truncated, incomplete=incomplete, records=uniq)
 
 
 def detail(f: BhFetcher, base: str, aid: str, r: Report, sample: str | None = None) -> dict:
@@ -379,7 +388,8 @@ def scrape(f: BhFetcher, base: str, r: Report, out: pathlib.Path) -> None:
         lists[cid] = lst
         tag = "列表+详情" if col["detail"] else "只取列表"
         r.say(f"  {col['code'] or '(写死)':<16} {str(col['name'])[:24]:<24} total={lst['total']:<5} "
-              f"{tag}{'（只取了前 ' + str(LIST_PAGE_CAP) + ' 页）' if lst['truncated'] else ''}")
+              f"{tag}{'（只取了前 ' + str(LIST_PAGE_CAP) + ' 页）' if lst['truncated'] else ''}"
+              f"{'（⚠ 不完整：' + str(len(lst['records'])) + ' 条）' if lst['incomplete'] else ''}")
         if not col["detail"]:
             continue
         if lst["total"] > DETAIL_CAP:
