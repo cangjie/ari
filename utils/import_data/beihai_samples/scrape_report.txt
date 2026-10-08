@@ -1,4 +1,4 @@
-# 北海公园官网正式抓取 2026-10-08T19:32:39
+# 北海公园官网正式抓取 2026-10-08T19:40:01
 base = https://www.beihaipark.com.cn
 
 ## robots.txt（www.beihaipark.com.cn）
@@ -91,7 +91,29 @@ HTTP 200，但返回的是 HTML —— 单页应用的兜底页，按「没有 r
   home-bhwc        北海文创                     total=6     只取列表
   home-zt          首页                       total=30    只取列表
   home-ycfw-pj     游船类型及票价                  total=7     只取列表
+  home-gydt        公园动态                     total=53    只取列表
+  home-ycfw        游船服务                     total=18    只取列表
+  home-kfsj        开放时间                     total=6     只取列表
+  explore-tyjy     太液旧影                     total=6     列表+详情
+  explore          探索                       total=56    列表+详情
+  explore-jdjs     景点介绍                     total=21    列表+详情
+  explore-hycs     花园城市                     total=4     列表+详情
+  explore-kpbh     科普北海                     total=24    列表+详情
+  explore-lsgk     历史概括                     total=1     列表+详情
+  culture-bxt      毛毡笔记本                    total=1     列表+详情
+  culture-zt       文创                       total=14    列表+详情
+  culture-lzy      摆件冰箱贴                    total=1     列表+详情
+  culture-bhck     北海茶咖                     total=4     列表+详情
+  culture-fscs     仿膳茶社                     total=4     列表+详情
+  culture-wcxg     文创雪糕                     total=1     列表+详情
+  guide-bhqh       北海之旅，即刻起航                total=6     列表+详情
+  guide-zxgp       在线购票                     total=5     列表+详情
+  guide-dldt       导览地图                     total=0     列表+详情
+  guide-yyxz       游园须知                     total=1     列表+详情
+  guide            导览                       total=20    列表+详情
+  guide-kfgg       开放公告                     total=2     列表+详情
+  about-xxgk-zwgk-xxgk 政务信息公开                   total=6     只取列表
 
-[stop] 栏目 公园动态（04888d60432f49bbb9968c5c34425517）：取到 53 条，total=53，重复 id ['8183d447-799a-4e6b-bfe7-1eabfcec6604', '7107e5ca-9c15-4319-8982-7d9892bdc0f5', 'b54e34ce-ad14-4ac5-a25c-7b59ee70fcb2']
+[stop] 栏目 信息公开（27390955a3364ab3a6968ae9d34474c8）两次请求之间 total 变了：102 -> 0（官网在更新，稍后重跑）
 
-本次实际请求 1 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
+本次实际请求 77 次，其余命中本地缓存（/Users/cangjie/Projects/ari/utils/import_data/beihai_raw）
