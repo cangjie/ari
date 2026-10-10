@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<!-- 页面自身不缩放：地图的双指缩放由 app.js 接管 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f3f2f2">
+<meta name="format-detection" content="telephone=no">
+<title>Ari Travel · 导游地图</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%236b4f1d'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23f5efe2'%3EAT%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- 目的地列表 -->
+  <section id="list" class="screen">
+    <div class="list-head">
+      <div class="kicker">园林 · 古迹导览</div>
+      <div class="list-title"><h1>Ari Travel</h1><em>Gardens &amp; Sites</em></div>
+      <p class="list-lede">选择一处目的地，进入后即显示导游地图；走进景点热区时，Ari Travel 会推送讲解消息。</p>
+    </div>
+    <div class="rule" style="margin:16px 22px 0"></div>
+    <div id="cards"><p class="load-note">正在载入…</p></div>
+  </section>
+
+  <!-- 导游地图 -->
+  <section id="tour" class="screen" hidden>
+    <header class="topbar">
+      <button id="back" class="btn btn-icon" type="button" aria-label="返回">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      </button>
+      <div class="topbar-title">
+        <strong id="tour-name"></strong>
+        <div class="kicker" id="tour-sub"></div>
+      </div>
+      <button id="bell" class="btn btn-icon" type="button" aria-label="消息">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+        <span id="unread" class="badge" hidden></span>
+      </button>
+    </header>
+
+    <div id="mapwrap">
+      <!-- 只有 #map 接管触摸手势；路线条等浮层是它的兄弟节点，横向滑动不受影响 -->
+      <div id="map">
+        <div id="pan">
+          <svg id="base">
+            <defs>
+              <pattern id="pat-water" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="var(--color-neutral-200)"/><path d="M0 3h6" stroke="var(--color-neutral-400)" stroke-width=".6"/></pattern>
+              <pattern id="pat-wood" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.1" fill="var(--color-neutral-500)"/><circle cx="7" cy="7" r="1.1" fill="var(--color-neutral-500)"/></pattern>
+            </defs>
+            <path id="ly-roads" fill="none" stroke="var(--color-neutral-300)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path id="ly-woods" fill="url(#pat-wood)" opacity=".55"/>
+            <path id="ly-walls" fill="none" stroke="var(--color-neutral-700)" stroke-width="1.3" stroke-linejoin="round"/>
+            <path id="ly-water" fill="url(#pat-water)" stroke="var(--color-neutral-500)" stroke-width=".9"/>
+            <path id="ly-track" fill="none" stroke="var(--color-neutral-600)" stroke-width="1"/>
+            <path id="ly-blocks" fill="var(--color-neutral-300)" stroke="var(--color-neutral-600)" stroke-width=".8" fill-rule="evenodd" stroke-linejoin="round"/>
+            <path id="ly-paths" fill="none" stroke="var(--color-neutral-600)" stroke-width="1.1" stroke-dasharray="3 3"/>
+            <path id="ly-route" fill="none" stroke="var(--color-accent-700)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+          </svg>
+          <div id="overlay"></div>
+          <div id="me" class="off">
+            <div class="halo"></div>
+            <div class="pulse"></div>
+            <div class="grip"><div class="dot"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="routes" id="routes">
+        <div class="chips" id="chips"></div>
+        <div class="route-summary" id="route-summary"></div>
+      </div>
+      <div class="compass">
+        <svg id="compass-arrow" width="12" height="26" viewBox="0 0 12 26"><path d="M6 0 L11 14 L6 11 L1 14 Z" fill="none" stroke="currentColor"/><path d="M6 11 V26" stroke="currentColor"/></svg>
+        <span id="compass-n">北</span>
+      </div>
+      <div class="credit" id="credit"></div>
+      <div id="debug" hidden></div>
+    </div>
+
+    <footer class="bottombar">
+      <div class="bottombar-text">
+        <div class="visited" id="visited"></div>
+        <div class="status" id="status"></div>
+      </div>
+      <button id="locate" class="btn btn-primary" type="button">
+        <svg id="locate-icon-go" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        <svg id="locate-icon-pause" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" hidden><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+        <span id="locate-label"></span>
+      </button>
+    </footer>
+
+    <button id="banner" type="button">
+      <span class="banner-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+      <span class="banner-text">
+        <span class="banner-top"><span>Ari Travel · 已进入热区</span><span>刚刚</span></span>
+        <strong id="banner-title"></strong>
+        <small>点击打开消息，查看景点介绍</small>
+      </span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-600)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+
+    <div id="backdrop"></div>
+
+    <div class="sheet" id="sheet" aria-live="polite">
+      <div class="sheet-grab"></div>
+      <button class="btn btn-icon sheet-close" type="button" data-close aria-label="关闭">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div id="sheet-body"></div>
+    </div>
+
+    <div class="sheet" id="msgs">
+      <div class="sheet-grab"></div>
+      <div class="msgs-head"><h3>消息</h3><small id="msgs-park"></small></div>
+      <div class="rule" style="margin:10px 0 0"></div>
+      <div id="msgs-body"></div>
+    </div>
+  </section>
+
+</div>
+<noscript><p style="padding:40px 22px;text-align:center">此页面需要开启 JavaScript。</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>
