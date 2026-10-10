@@ -215,7 +215,7 @@ server {
 | 外部 `/data/wmhg.json` | 200，gzip 后 13 KB（原 43 KB），`Cache-Control: no-cache` |
 | 外部字体 | 200，`font/woff2`，缓存 30 天 |
 | 线上页面，无头 Chrome 模拟定位 | `isSecureContext = true`；同德殿 → 黑点与横幅；北京 → 灰点、「不在景区范围内 · 距入口 862 公里」；拒绝授权 → 「未获得定位授权」 |
-| 线上首次打开（本机到美国，无缓存） | 约 5 秒出地图，其中建连接与首字节占 2.3 秒 |
+| 线上首次打开（本机到美国，无缓存） | 约 3 秒出地图，其中建连接与首字节占 2 秒；数据文件改成预先下载之前是约 5 秒 |
 | `ai.snowmeet.top`、`ari.goldenma.xyz`（直连服务器） | 200，证书校验通过 —— 未受影响 |
 
 只开 HTTP 的那几个小时里也验过：`isSecureContext = false` 时底栏写「需 HTTPS 才能定位」，圆点灰。
