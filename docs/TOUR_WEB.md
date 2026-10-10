@@ -84,13 +84,18 @@ python3 tour_images.py --museum wmhg --allow-expired-cert   # 下载官网图片
 - **不经过 FastAPI**，与 `ari-web-api` 服务无关
 - 更新 = `cd /home/ubuntu/ari && git pull --ff-only`，不用重启任何服务
 
-### ⚠ 目前只有 HTTP
+### 证书
 
-2026-10-10 用户提供的证书包 `~/Desktop/tour-snowmeet-top-nginx-1010093039.zip` 是 **0 字节的空文件**
-（同类证书包约 5.7 KB），没法装。站点先只开了 80。
+- 签发机构：TrustAsia LiteSSL RSA CA 2025，RSA，只签给 `tour.snowmeet.top` 一个域名
+- 证书链（3 张，叶子在前）：`/etc/ssl/tour/tour.snowmeet.top.crt`，`644 root:root`
+- 私钥：`/etc/ssl/tour/tour.snowmeet.top.key`，`600 root:root`，目录 `700`
+- **有效期 2026-10-10 至 2027-01-07，只有 90 天**
 
-**浏览器的 Geolocation API 只在 HTTPS 下可用**，所以现在线上能看地图、路线和介绍，
-定位不可用：圆点是灰的，底栏写「需 HTTPS 才能定位」。真机 GPS 验收要等证书装上。
+证书由用户手动申请，**没有自动续期**。到期前需重新下载并替换，或改用 Let's Encrypt + certbot。
+
+2026-10-10 的经过：用户先给的 `~/Desktop/tour-snowmeet-top-nginx-1010093039.zip` 是 0 字节的空文件，
+站点先只开了 80 上线；同名文件在 `~/Downloads/` 里是完整的（5728 字节），当天下午装上并切到 HTTPS。
+**同名文件在两个目录里可能不是同一份，装之前先看大小。**
 
 ### Nginx
 
@@ -101,6 +106,24 @@ server {
     listen 80;
     listen [::]:80;
     server_name tour.snowmeet.top;
+
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name tour.snowmeet.top;
+
+    # TrustAsia 手动签发，2027-01-07 到期，没有自动续期
+    ssl_certificate     /etc/ssl/tour/tour.snowmeet.top.crt;
+    ssl_certificate_key /etc/ssl/tour/tour.snowmeet.top.key;
+
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_session_cache   shared:SSL:10m;
+    ssl_session_timeout 1d;
+    ssl_session_tickets off;
 
     root  /home/ubuntu/ari/web_api/tour;
     index index.html;
@@ -129,41 +152,42 @@ server {
 }
 ```
 
-同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）本次没有改动。
+同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）没有改动。
 
-### 证书到位后要做的
+### 换证书的步骤
 
 1. **本机核对，不解压进仓库、不输出私钥内容**：
 
    ```sh
-   Z=~/Desktop/<证书包>.zip
+   Z=~/Downloads/<证书包>.zip
+   ls -la "$Z"                      # 先看大小，正常约 5.7 KB
    unzip -l "$Z"
-   unzip -p "$Z" <证书文件> | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
-   unzip -p "$Z" <证书文件> | grep -c 'BEGIN CERTIFICATE'          # 链的张数，叶子在前
-   unzip -p "$Z" <证书文件> | openssl x509 -pubkey -noout | openssl md5
-   unzip -p "$Z" <私钥文件> | openssl pkey -pubout | openssl md5     # 两个摘要必须相同
+   unzip -p "$Z" tour.snowmeet.top_cert_chain.pem | openssl x509 -noout -subject -issuer -dates -ext subjectAltName
+   unzip -p "$Z" tour.snowmeet.top_cert_chain.pem | grep -c 'BEGIN CERTIFICATE'     # 链的张数，叶子在前
+   unzip -p "$Z" tour.snowmeet.top_cert_chain.pem | openssl x509 -pubkey -noout | openssl sha256
+   unzip -p "$Z" tour.snowmeet.top_key.key | openssl pkey -pubout | openssl sha256   # 两个摘要必须相同
    ```
 
    主体或 SAN 不含 `tour.snowmeet.top`、已过期、摘要不同，任一项不过就停下。
 
-2. **管道直写到服务器**，不在 `/tmp` 留副本：
+2. **管道直写到服务器**，不在 `/tmp` 留副本，私钥从创建那一刻起就是 600：
 
    ```sh
-   ssh ubuntu@44.207.251.65 'sudo install -d -m 700 /etc/ssl/tour'
-   unzip -p "$Z" <证书文件> | ssh ubuntu@44.207.251.65 \
-     'sudo install -m 644 /dev/stdin /etc/ssl/tour/tour.snowmeet.top.crt'
-   unzip -p "$Z" <私钥文件> | ssh ubuntu@44.207.251.65 \
-     'sudo install -m 600 /dev/stdin /etc/ssl/tour/tour.snowmeet.top.key'
+   unzip -p "$Z" tour.snowmeet.top_cert_chain.pem | ssh ubuntu@44.207.251.65 \
+     'sudo sh -c "umask 022 && cat > /etc/ssl/tour/tour.snowmeet.top.crt"'
+   unzip -p "$Z" tour.snowmeet.top_key.key | ssh ubuntu@44.207.251.65 \
+     'sudo sh -c "umask 077 && cat > /etc/ssl/tour/tour.snowmeet.top.key"'
    ```
 
-   服务器上再验一次配对与 `openssl verify`。
+   服务器上再验一次配对与证书链（`openssl verify -untrusted`，中间证书取同一文件的第 2、3 张）。
 
-3. **改 Nginx**：把上面的 `server` 块的 `listen 80` 换成 443 那一套
-   （`listen 443 ssl; listen [::]:443 ssl; http2 on; ssl_certificate…; ssl_protocols TLSv1.2 TLSv1.3;`，
-   照 `ari-web-api` 的写法），另加一个 80 的 `server` 块 `return 301 https://$host$request_uri;`。
-   `sudo nginx -t` 通过后再 `sudo systemctl reload nginx`。
+3. `sudo nginx -t` 通过后再 `sudo systemctl reload nginx`，两条分开执行。
 
-4. 把证书的签发机构与**到期日**补进本文和 `AGENTS.md`。手动签发的证书没有自动续期。
+4. 把新的到期日改进本文和 `AGENTS.md`。
+
+**这台服务器的 22 端口偶尔连不上**（新连接超时，80/443 同时是通的，过一两分钟自己恢复；
+2026-08-21 装环境时也遇到过）。一次部署要连好几回时，用 `ControlMaster` 复用同一条连接：
+`ssh -o ControlMaster=auto -o ControlPath=~/.ssh/cm-%C -o ControlPersist=900 …`。
 
 ## 验收记录
 
@@ -182,18 +206,27 @@ server {
 | · 拒绝授权 | 圆点灰，「未获得定位授权」，按钮「重新授权」 |
 | · 国测局坐标 | 不换算判在院外 750 米；加 `?crs=gcj02` 回到同德殿 |
 | · 触摸 | 单指拖动、双指缩放、点按标记开介绍、路线条横滑不带动地图 |
+| 证书与私钥配对 | 公钥 sha256 一致，本机与服务器各验一次 |
+| 证书链校验 | `openssl verify` → OK |
 | 服务器 `nginx -t` | 通过 |
-| 外部 `http://tour.snowmeet.top/` | 200，`text/html; charset=utf-8` |
+| 外部 `https://tour.snowmeet.top/` | 200，HTTP/2，`text/html; charset=utf-8` |
+| 客户端 TLS 校验 | `Verify return code: 0 (ok)` |
+| 外部 HTTP 80 | `301` → `https://tour.snowmeet.top/` |
 | 外部 `/data/wmhg.json` | 200，gzip 后 13 KB（原 43 KB），`Cache-Control: no-cache` |
 | 外部字体 | 200，`font/woff2`，缓存 30 天 |
-| 线上页面（HTTP） | 列表与地图正常；`isSecureContext = false`，底栏「需 HTTPS 才能定位」，圆点灰 |
-| `ari.goldenma.xyz`（直连服务器） | `/health` 200，HTTP/2，证书校验通过 —— 未受影响 |
+| 线上页面，无头 Chrome 模拟定位 | `isSecureContext = true`；同德殿 → 黑点与横幅；北京 → 灰点、「不在景区范围内 · 距入口 862 公里」；拒绝授权 → 「未获得定位授权」 |
+| 线上首次打开（本机到美国，无缓存） | 约 5 秒出地图，其中建连接与首字节占 2.3 秒 |
+| `ai.snowmeet.top`、`ari.goldenma.xyz`（直连服务器） | 200，证书校验通过 —— 未受影响 |
 
-**没验的**：真机 GPS。要等 HTTPS。
+只开 HTTP 的那几个小时里也验过：`isSecureContext = false` 时底栏写「需 HTTPS 才能定位」，圆点灰。
+
+**没验的**：真机 GPS。无头浏览器里的定位是模拟出来的，走的是浏览器真实的 `watchPosition`，
+但手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
 
 ## 待办
 
-- **证书**：重新下载证书包，按上面四步装上。在此之前定位不可用。
+- **证书 2027-01-07 到期**，没有自动续期。
+- **真机 GPS 验收**还没做。
 - **照片**：库里有 17 个条目的官网图片地址，`tour_images.py` 已写好。2026-10-10 本机连
   `wmhg.com.cn` 超时，一张没下到。换到能连上官网的网络跑一次，再跑 `tour_build.py` 并提交。
   另有 13 个条目库里没有图片地址（52–61 号节点与 4 件在展藏品）。

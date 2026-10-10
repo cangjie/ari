@@ -791,7 +791,9 @@
   // ------------------------------------------------------------ 启动
   function loadAll() {
     return Promise.all(MUSEUMS.map(function (key) {
-      return fetch("data/" + key + ".json", { cache: "no-cache" }).then(function (r) {
+      // 不带额外参数：这样才能直接用上 index.html 里预先下载的那一份。
+      // 要不要重新向服务器确认由响应头决定（Nginx 对 JSON 发的是 Cache-Control: no-cache）
+      return fetch("data/" + key + ".json").then(function (r) {
         if (!r.ok) throw new Error(key + ".json HTTP " + r.status);
         return r.json();
       }).then(function (j) { data[key] = j; });
