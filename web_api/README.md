@@ -90,6 +90,16 @@ python3 -m http.server 8098 --bind 127.0.0.1 --directory tour
 
 参数写在 `#` 前面，例如 `/?fix=43.90398,125.34323#wmhg`。
 
+改了页面之后跑两层验收（`tests/` 下）：
+
+```sh
+./.venv/bin/python -m pytest tests/ -q        # 数据自己对不对得上，不连库
+node tests/tour_browser_check.mjs             # 无头 Chrome 模拟手机视口与 GPS，把页面真跑一遍
+```
+
+后者只要 Node 22 以上与本机 Chrome，没有别的依赖；自己起一个本地静态服务，
+`BASE=https://tour.snowmeet.top` 可改成对着线上跑，`SHOTS=<目录>` 另存截图。
+
 数据变了（重新评分、改了路线数据）之后重新生成并提交：
 
 ```sh

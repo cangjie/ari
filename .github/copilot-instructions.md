@@ -20,9 +20,11 @@
 ### 子目录
 
 - `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `docs/WEB_API.md`
+  - `web_api/tour/` —— 手机导览站，第一个面向游客的客户端。纯静态，线上由 Nginx 以 `tour.snowmeet.top` 直接提供，
+    **不经过 FastAPI**。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
 - `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
-- 客户端子目录尚未创建，待产品定位与客户端范围明确后再定
+- 其余客户端子目录尚未创建，待产品定位与客户端范围明确后再定
 
 **子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。
 
@@ -35,40 +37,51 @@
 - Nginx 反向代理
 - systemd 管理服务进程
 
-客户端技术选型仍待产品定位与客户端范围确定后再决定。
+客户端技术选型仍待产品定位与客户端范围确定后再决定。已有的导览站是原生 HTML/CSS/JS，
+无框架、无构建步骤、不引用任何站外资源。
 
 ### 服务器环境
 
 - AWS 主机：`44.207.251.65`
 - 系统：Ubuntu 26.04，ARM64（aarch64）
 - SSH：`ubuntu@44.207.251.65`
-- 域名：`ari.goldenma.xyz`，A 记录指向 `44.207.251.65`
-- 公网入口：HTTPS `443`（web_api 正式入口）、HTTP `80`（301 跳转到 443）、MySQL `3306`、Nginx 环境验证 `8000`
+- 域名：`ari.goldenma.xyz`（web_api）与 `tour.snowmeet.top`（导览站），A 记录都指向 `44.207.251.65`
+- **⚠ `goldenma.xyz` 整个域名解析不出来**（2026-10-10 发现，10-11 复查仍是 NXDOMAIN，多半是域名到期）。
+  服务器上的 `ari.goldenma.xyz` 站点本身正常（`curl --resolve ari.goldenma.xyz:443:44.207.251.65` 直连 200、证书校验通过），
+  只是按域名访问不到。**待用户处理**；同机的 `snowmeet.goldenma.xyz` 同理
+- 公网入口：HTTPS `443`（web_api 与导览站，按域名分流）、HTTP `80`（301 跳转到 443）、MySQL `3306`、Nginx 环境验证 `8000`
 - 本机入口：Uvicorn `127.0.0.1:8002`（web_api）、`127.0.0.1:8001`（smoke）、MySQL X Protocol `127.0.0.1:33060`
 - 服务：`mysql`、`nginx`、`ari-web-api`、`ari-smoke` 均由 systemd 管理并开机启动
+- Nginx 站点：`ari-web-api`、`ari-smoke`、`ari-tour`（导览站，静态根目录 `/home/ubuntu/ari/web_api/tour`）。
+  **同一台机器上还有别的项目的站点 `reqai`（`ai.snowmeet.top`、`snowmeet.goldenma.xyz`），不归本仓库管，不要动**
 - 代码：仓库 clone 在 `/home/ubuntu/ari`，属主 `ubuntu`；服务以 `ari` 用户运行，对代码**只读**
 - `/home/ubuntu` 权限为 `755`，否则 `ari` 用户穿不进去读不到代码
-- 部署方式：`cd /home/ubuntu/ari && git pull --ff-only` + `sudo systemctl restart ari-web-api`
+- 部署方式：`cd /home/ubuntu/ari && git pull --ff-only` + `sudo systemctl restart ari-web-api`；导览站只需 `git pull`，不用重启任何服务
 - Python 虚拟环境：`/opt/ari/.venv`（Python 3.14），web_api 与 smoke 共用
-- TLS 证书：`/etc/ssl/ari/`，TrustAsia 手动签发，**2026-11-19 到期且无自动续期**
+- TLS 证书都是 TrustAsia 手动签发、**无自动续期**：`/etc/ssl/ari/`（`ari.goldenma.xyz`）**2026-11-19 到期**；
+  `/etc/ssl/tour/`（`tour.snowmeet.top`）**2027-01-07 到期**，只有 90 天。换证书的步骤在 `docs/TOUR_WEB.md`
+- **22 端口偶尔新连接超时**（80/443 同时是通的，一两分钟后自己恢复；2026-08-21 与 2026-10-10 都遇到过）。
+  一次部署要连好几回时复用同一条连接：`ssh -o ControlMaster=auto -o ControlPath=~/.ssh/cm-%C -o ControlPersist=900 …`
 - 临时健康检查：`/opt/ari/smoke`，仍在 8000 上跑，作为环境自检对照；web_api 稳定后可退役
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
 - 业务库 `ari`（utf8mb4 / utf8mb4_0900_ai_ci），账号 `ari` 有 `ari`.* 全部权限，`localhost` 与 `%` 两个 host 都建了。密码不进仓库
 - MySQL 8.4 用 `caching_sha2_password`。命令行客户端默认 `ssl-mode=PREFERRED` 可直连；JDBC 之类的客户端首次连接可能要加 `allowPublicKeyRetrieval=true`
 - GitHub Deploy key：服务器 `ubuntu` 使用 `~/.ssh/id_ed25519`，指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，已验证可访问 `cangjie/ari`
-- 基础环境的设计、实施计划与部署记录见 `docs/SERVER_ENVIRONMENT.md`、`docs/SERVER_ENVIRONMENT_PLAN.md`、`docs/SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `docs/WEB_API.md`
+- 基础环境的设计、实施计划与部署记录见 `docs/SERVER_ENVIRONMENT.md`、`docs/SERVER_ENVIRONMENT_PLAN.md`、`docs/SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `docs/WEB_API.md`；导览站的部署记录见 `docs/TOUR_WEB.md`
 
 ### 数据库设计约定
 
 `ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
 以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
-展品侧现有 **9 个 museum key、31403 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
+展品侧现有 **10 个 museum key、31426 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
 2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条；2026-09-24 新增伪满皇宫 `wmhg` 61 件，见第 16 条；
-2026-09-27 新增吉林省博物院 `jlpm` 17723 件，其中只有 107 行进评分，见第 17 条）。
+2026-09-27 新增吉林省博物院 `jlpm` 17723 件，其中只有 107 行进评分，见第 17 条；
+2026-10-08 新增北海公园 `beihai` 23 个景点 —— **那一轮没走收工流程**，本文件里只有下表那一行与文件地图里的一行，
+范围、来源与踩过的坑在 `git log --grep beihai` 与 `beihai_*` 各文件的文件头里）。
 
-**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测，wmhg 2026-09-26 实测，jlpm 2026-09-27 实测）
-—— 六个馆跑完（jlpm 只评有介绍的 107 行），三个馆一件没碰：**
+**管线覆盖到哪儿了（MFA/哈佛 2026-09-06 实测，PEM 2026-09-23 实测，wmhg 2026-09-26 实测，jlpm 2026-09-27 实测，
+beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍的 107 行），三个馆一件没碰：**
 
 | 馆 | 展品 | V3 评分 | evidence | metadata | 审计口径 |
 |---|---:|---:|---:|---:|---|
@@ -78,6 +91,7 @@
 | `pem` | 467 | 467 | 467 | 1993 | 全馆 sonnet-5 **medium** 精简口径（09-23）；原 196 件的可信度等列仍是 sol 旧值 |
 | `wmhg` | 61（藏品 34 + 节点 27） | 61 | 61 | 137 | 全馆 sonnet-5 **medium** 精简口径（09-26）；需复核 4 件，全是官网原文自身的错误。V3 打分为 luna（藏品 S0/A3/B28/C3，节点 S4/A15/B7/C1） |
 | `jlpm` | 17723（藏品 17715 + 节点 8） | **107** | 17723 | 569 | 评分范围 107 行 sonnet-5 **medium** 精简口径（09-27）；需复核 8 件，7 件是官网原文自身的矛盾。V3 打分为 luna（藏品 S8/A51/B39/C1，节点 S2/A3/B3）。其余 17616 行只入库、不评分不审计 |
+| `beihai` | 23（景点：site 2 + node 18 + object 3） | 23 | 23 | 66 | 全馆 sonnet-5 **medium** 精简口径（10-08）；需复核 1 件。V3 打分为 luna（S4/A12/B7） |
 | `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
 
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
@@ -92,7 +106,7 @@
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十七条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十八条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -789,7 +803,7 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 阶段一 `high`、阶段二 `medium`、阶段三 `xhigh`。
 
 **⚠ 「取不到就退而求其次」是本仓库最高频的缺陷模式，一律改成「取不到就喊」。**
-同一个形状已经出现过十二次，每次都是**不报错、只是结果悄悄不对**：
+同一个形状已经出现过十三次，每次都是**不报错、只是结果悄悄不对**：
 
 | 现场 | 退而求其次的写法 | 后果 |
 |---|---|---|
@@ -805,6 +819,7 @@ token，是输出的 5.4 倍，且**按次收费**。`llm_call` 至今没记 `ca
 | 合并表里定位行 | 拿 `序号` 建 行映射 | `序号` 在合并表里**不唯一**（两个 museum key 各自从 1 编号），A 件的答案写进 B 件的行且不报错 |
 | 审计读简介 | 只取英文，缺了就写「源数据无简介」 | 伪满皇宫 38 件被判「馆方没有介绍」，其实官网有中文原文（见第 9 条） |
 | 伪满皇宫器型 | 拿官网类目当器型 | 七宝烧（金属胎珐琅）被记成「瓷器」—— 馆方把珐琅器归在瓷器类目下，是审计查出来的 |
+| 导览页的介绍出处 | 拿路线数据的「地点出处」列当介绍的出处 | 同德殿的官网常设展原文被标成「2023 年导览」（见第 18 条） |
 
 判断状态优先用**客观量**（进度增量、行数），关键词与子串只能做辅助；
 找不到必需的东西就 `sys.exit` 并把实际看到的内容打印出来。
@@ -1172,6 +1187,92 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 **凡是直接 `pymysql.connect` 的地方都要带这两个超时**，或者改用 `meta_lib.connect()`。
 导出本身也比以前慢得多：预载 `content_text`（约 7 万行）09-27 晚上花了约 10 分钟。
 
+**18. 路线生成与手机导览站：先有路线数据，再有地图；地图上的每个点都要有出处（2026-10-09/10）。**
+
+**路线**（`route_plan.py`，V3.0 第九、十节的第一版，只做了伪满皇宫）。评级、Core、在展状态、名称从库里读；
+参观顺序、坐标、停留时间放在 `<馆>_route_data.py` —— 库里没有、排路线又必需的东西只放那里。
+
+    VisitScore   = G × clamp(Core + Ma + Mc + Mr, 0, 10)      G：「未在展」为 0，其余为 1
+    RouteUtility = VisitScore × AudienceFit ÷ (停留 + 新增步行)
+
+- Ma / Mc / Mr 一律取 0、AudienceFit 取 1：只做 General Visitor，季节、拥挤、同类重复都没有数据。
+- **先按评级**（S 全部考虑完才轮到 A），同一档内出两条：`utility`（第十节原公式）与 `score`（不除以时间）。
+  用户 2026-10-09 定两条都出 —— 分数按「一站」给、与内容多少无关，除以时间后 45 分钟的大展排在 5 分钟的
+  小景点之后，《从皇帝到公民》按 utility 要到全日才排得进。
+- 选中的站按馆方推荐顺序走，入口出发、回到入口。步行 = OSM 直线距离 × 1.4 ÷ 60 米/分，**系数与步速是估计**；
+  **停留时间全部是估计**（按官网写的面积、展线、展品数推的，无实测）。
+- 伪满皇宫：27 个节点里 25 站进路线，嘉乐殿并入《从皇帝到公民》（殿与展只算一次），伪满政权官吏展位置不明。
+  2 小时 / 半日 / 全日合计 119·120 / 233·235 / 418 分钟（全日两种规则选出同一批站）。导出 `路线_<馆>.xlsx` 中英各一份。
+
+**导览站**（`web_api/tour/`，线上 `https://tour.snowmeet.top/`，部署与验收见 `docs/TOUR_WEB.md`）照原型 AriTour 做：
+目的地列表 → 导游地图，选路线、走进热区推送讲解。原型在 claude.ai/design（链接要登录，AI 读不了），
+导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**；原型含五处，只实现了伪满皇宫。
+
+    tour_osm_fetch.py → <馆>_osm_data.json ───────┐
+    库 + <馆>_route_data.py + route_plan.Planner ──┼─ tour_build.py → web_api/tour/data/<馆>.json → 页面
+    <馆>_tour_data.py（画布摆法、地点叫什么）──────┘
+
+页面只读那一个 JSON；路线不另算，`tour_build.py` 直接调 `route_plan.Planner`，分钟数与 Excel 同源。
+**⚠ 改了库里的评级、路线数据或 OSM 数据之后要重跑 `tour_build.py` 并提交**，否则线上还是旧的（`--check` 可比对）。
+
+几条定下来的规则，改之前先想清楚：
+
+- **地图按 OSM 轮廓重画，不用原型的手绘图**（用户 10-10 定）。手绘图与实测坐标对不齐：18 个点均方根差 13.5 米、
+  书画楼差 32 米，而热区半径只有十几米。画布是相似变换（转 101.5 度让主体建筑横平竖直、北朝右，0.58 米/像素），
+  所以画布上的距离除以比例就是米，范围判定与到站判定都直接在画布坐标里算。
+- **热区是「地点」不是「站」**：25 站落在 18 个地点上（怀远楼含御纹章展、陈列馆含三个陈列、嘉乐殿含《从皇帝到公民》）。
+- **坐标是借用的站不单独成点**（游泳池、卤簿车库、百年机车馆、薰南楼）：并入所借地点的介绍，写明「具体位置未核实」。
+  原型给它们画了位置，那些位置没有出处 —— 在没有出处的位置上画标记并触发到站提醒，等于告诉游客一件我们不知道的事。
+  原型里的兴运门、莱薰门、保康门库里和 OSM 上都没有，不画。
+- 热区半径 = OSM 轮廓等效半径 + 10 米，限制在 15–45 米；热区会重叠（花园里套着防空洞），取「距离 ÷ 半径」最小的。
+- 景区范围 = OSM 院区边界（`way/227373465`）外扩 30 米（售票处在边界外 3 米）。**不在范围内、未授权、丢信号、
+  非 HTTPS 时圆点一律灰掉**并在底栏写明原因（用户 10-10 定）；只有在范围内有定位时才是黑的。
+- 精度差于 30 米的定位只移动圆点、不触发到站；已在热区里要走出 1.2 倍半径才算离开。
+- 介绍用库里的官网原文。带复核标记的条目附上复核原因 —— 第 9 条说的「游客端处理」就落在这里
+  （目前会展示的 30 个条目里 0 件）。
+- **页面不引用任何站外资源**：字体自带（拉丁子集 4 个 woff2）、无框架无 CDN。服务器在美国、游客在国内，
+  站外的字体或脚本会让页面卡住。`test_tour.py` 有一条专门拦这个。数据文件在 `index.html` 里预先下载，
+  与样式脚本并行（本机到美国实测首次打开约 3 秒，不预先下载是 5 秒）；**新增一个馆要在那里加一行**。
+
+**踩过的坑（都不报错，只是悄悄不对）：**
+
+- **「地点出处」不是「介绍出处」。** 路线数据 `STOPS` 的出处列说的是「这一站在哪儿」从哪来；第一版把它当成介绍的
+  出处显示。介绍的出处按 `artwork.official_url` 判（`INTRO_SOURCES`），认不出就报错。
+- **路线数据里的「OSM 无此点」是按名字没搜到，不是 OSM 上没有。** 院内有一个无名的 `leisure=swimming_pool`
+  （`way/227329948`，御用防空洞入口北侧约 29 米）和一栋叫「停车间」的 `building=garage`（`way/227338690`），
+  很可能就是游泳池与卤簿车库。**未核实、未改** —— 改了 `POINTS` 步行分钟数会变，路线 Excel 与导览站都要重出。
+- **浏览器在两次定位之间会报一次「暂时拿不到位置」**（无头 Chrome 里每次都有，真机上丢信号时也会）。
+  第一版在出错时清掉「所在热区」，恢复后同一处被再提醒一遍。瞬时错误只把圆点置灰、停在原地，不清状态。
+- **SVG 元素没有 `.hidden` 属性**，`el.hidden = true` 不报错也不生效，要用 `toggleAttribute("hidden", …)`。
+- **原型用的 `color-mix()` 在国内不少安卓内置浏览器上不认**，不认的后果是分隔线与阴影整条消失。全部换成了 rgba，
+  改主色时这些 rgba 要跟着改。
+- **国内部分安卓浏览器给的定位是国测局坐标（GCJ-02）**，在长春偏约 590 米（北 270、东 527），会被判成不在景区。
+  页面**不会自动判断坐标系**，只留了 `?crs=gcj02` 供现场验证。真机上到底哪些浏览器会这样，还没验过。
+- **用户手动给的证书包先看大小再动手。** 10-10 上午 `~/Desktop/` 那份是 0 字节的空文件（同类约 5.7 KB，
+  `unzip` 报「不是 zip 文件」），当时桌面、下载、文稿、iCloud 里都没有第二份，站点只好先以 HTTP 上线、定位不可用；
+  完整的一份下午才出现在 `~/Downloads/`。用户一直以为证书已经给到了 —— **「文件是空的」光说一句不够，
+  要把大小、时间戳和同类文件的对照摆出来**，对方才看得出问题在文件、不在我没用它。
+- Overpass：不带 User-Agent 主站回 406；忙的时候回**状态码 200 的一页 HTML**；镜像 `overpass.kumi.systems` 可用但数据旧几个月。
+- zsh 不对变量做分词：`O="-o BatchMode=yes -o ConnectTimeout=20"; ssh $O host` 整串当成一个参数，报
+  `keyword batchmode extra arguments`。选项直接写在命令里。
+- 后台起本地静态服务用 `python3 -m http.server --directory <绝对路径>`，别靠 `cd … &&` —— 10-10 就起在了别的目录上，
+  首页回 200（一页目录列表）、数据 404。
+
+**验证分两层，改了 `app.js` 之后两个都要跑：**
+
+```
+cd web_api && ./.venv/bin/python -m pytest tests/ -q        # 数据自己对不对得上，不连库
+node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模拟手机与 GPS 把页面真跑一遍
+```
+
+后者只要 Node 22 与本机 Chrome，定位经浏览器真实的 `watchPosition`。`BASE=https://tour.snowmeet.top` 可对着线上跑。
+**真机 GPS 至今没验过** —— 手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
+
+调试参数（界面上不露出，写在 `#` 前面）：`?fix=纬度,经度[,精度]`、`?sim=1`、`?crs=gcj02`、`?debug=1`。
+
+**官网图片还没下到**：`tour_images.py` 已写好，10-10 本机连 `wmhg.com.cn` 超时（头三张全失败即停）。
+页面只显示生成那一刻已经在仓库里的图片，所以现在一张照片都没有。库里只有 17 个条目有图片地址。
+
 ---
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
@@ -1286,7 +1387,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
-| `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成**尚未实现**（所需 metadata 全为空） |
+| `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
+| `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成在 `route_plan.py` 有第一版（只做了伪满皇宫，Ma/Mc/Mr 取 0，见第 18 条） |
 | `docs/WMHG_RUNBOOK.md` | 伪满皇宫第 7–8 阶段（评分、审计、翻译、导出）的执行指引，写给 Codex。含 G3/G4 两个必须停下问用户的关卡 |
 | `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
 | `utils/import_data/README.md` | `ari` 库的建表、导入、多语种机制与已知数据问题 |
@@ -1344,7 +1446,16 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/claude_cli.py` | 通过 `claude` CLI 的 headless 模式调 Anthropic 模型，走订阅账号不需 API key。**档位必须显式传**（否则沿用用户 `settings.json` 的 `effortLevel`），空目录 + `--tools ""` + 关技能与 MCP 锁死，见第 9 条。**不要加 `--bare`**，那样读不到 OAuth |
 | `utils/import_data/schema_llm_cache.sql` | `llm_call` / `llm_call_item` / `v_artwork_llm_call` 的建表与 ALTER |
 | `.claude/skills/onboard-museum/SKILL.md` 等三份 | 接入新馆的八步清单，含每步的通过判据与踩过的坑 |
-| `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定 |
+| `utils/import_data/route_plan.py` | 第 18 条：按 V3.0 第九、十节排路线，中英各出一份 Excel。读库只读，`--dry-run` 只打印 |
+| `utils/import_data/wmhg_route_data.py` | 伪满皇宫的路线静态数据：参观顺序、OSM 坐标（带要素编号）、停留时间（估计）、现状说明、并入与位置不明的节点。事实与估计分开标了 |
+| `utils/import_data/tour_osm_fetch.py` / `wmhg_osm_data.json` | 取院区范围的 OSM 几何并落盘（132 个要素）；顺带校验路线数据里手抄的坐标与 OSM 现值相差不超过 5 米 |
+| `utils/import_data/wmhg_tour_data.py` | 导览页专属配置：院区边界、画布旋转角与比例、各地点取哪个节点的名称、借用坐标的游客版说明、介绍出处的判别表。没登记就报错 |
+| `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`，`--check` 只比对。**改了库、路线数据或 OSM 数据后要重跑并提交** |
+| `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**尚未跑成**（连不上官网） |
+| `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
+| `web_api/tour/` | 导览站：`index.html` / `app.css` / `app.js` / `fonts/` / `data/<馆>.json`（生成文件，勿手改）/ `img/<馆>/`。说明在 `web_api/README.md` |
+| `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome） |
+| `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定；导览站的目录、本地预览与调试参数 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
 | `.github/prompts/*.prompt.md` | Copilot 的两个命令入口 |
