@@ -1270,8 +1270,10 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 
 调试参数（界面上不露出，写在 `#` 前面）：`?fix=纬度,经度[,精度]`、`?sim=1`、`?crs=gcj02`、`?debug=1`。
 
-**官网图片还没下到**：`tour_images.py` 已写好，10-10 本机连 `wmhg.com.cn` 超时（头三张全失败即停）。
-页面只显示生成那一刻已经在仓库里的图片，所以现在一张照片都没有。库里只有 17 个条目有图片地址。
+**伪满皇宫官网图片已补齐并上线（2026-10-11）**：`tour_images.py --museum wmhg --allow-expired-cert` 成功下载
+17 张，`tour_build.py --museum wmhg` 重建 JSON 后部署到 `https://tour.snowmeet.top/`（commit `1765762`）。
+页面现有 16/25 个站点有图，目的地封面有图；线上 JSON 与全部 17 个图片地址均返回 HTTP 200。
+其中 5 张超过 600 KB。另有 13 个可见条目在库里没有图片地址，仍无照片。
 
 ---
 
@@ -1451,7 +1453,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tour_osm_fetch.py` / `wmhg_osm_data.json` | 取院区范围的 OSM 几何并落盘（132 个要素）；顺带校验路线数据里手抄的坐标与 OSM 现值相差不超过 5 米 |
 | `utils/import_data/wmhg_tour_data.py` | 导览页专属配置：院区边界、画布旋转角与比例、各地点取哪个节点的名称、借用坐标的游客版说明、介绍出处的判别表。没登记就报错 |
 | `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`，`--check` 只比对。**改了库、路线数据或 OSM 数据后要重跑并提交** |
-| `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**尚未跑成**（连不上官网） |
+| `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**2026-10-11 wmhg 已下载 17 张并部署**；5 张超过 600 KB |
 | `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
 | `web_api/tour/` | 导览站：`index.html` / `app.css` / `app.js` / `fonts/` / `data/<馆>.json`（生成文件，勿手改）/ `img/<馆>/`。说明在 `web_api/README.md` |
 | `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome） |
