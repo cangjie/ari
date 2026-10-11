@@ -1,6 +1,6 @@
 {
  "key": "wmhg",
- "generated": "2026-10-10",
+ "generated": "2026-10-11",
  "name": {
   "zh": "伪满皇宫博物院",
   "en": "Museum of the Imperial Palace of Manchukuo"
@@ -31,7 +31,7 @@
    "en": "Last entry 16:30"
   },
   "hours": "08:30–17:30",
-  "cover": null
+  "cover": "img/wmhg/36.jpg"
  },
  "opening": {
   "zh": "08:30 开馆，16:30 停票，17:30 闭馆（2026 春节导览）",
@@ -248,7 +248,7 @@
    "r_m": 29,
    "lp": "b",
    "osm": "way/227328266",
-   "photo": null,
+   "photo": "img/wmhg/36.jpg",
    "stops": [
     36
    ]
@@ -267,7 +267,7 @@
    "r_m": 19,
    "lp": "r",
    "osm": "way/1492049115",
-   "photo": null,
+   "photo": "img/wmhg/45.jpg",
    "stops": [
     45
    ]
@@ -286,7 +286,7 @@
    "r_m": 45,
    "lp": "t",
    "osm": "way/227329947",
-   "photo": null,
+   "photo": "img/wmhg/40.jpg",
    "stops": [
     40,
     42
@@ -306,7 +306,7 @@
    "r_m": 15,
    "lp": "r",
    "osm": "node/14085074201",
-   "photo": null,
+   "photo": "img/wmhg/41.jpg",
    "stops": [
     41
    ]
@@ -325,7 +325,7 @@
    "r_m": 19,
    "lp": "b",
    "osm": "way/1492049116",
-   "photo": null,
+   "photo": "img/wmhg/43.jpg",
    "stops": [
     43
    ]
@@ -344,7 +344,7 @@
    "r_m": 15,
    "lp": "l",
    "osm": "node/13673335173",
-   "photo": null,
+   "photo": "img/wmhg/44.jpg",
    "stops": [
     44
    ]
@@ -401,7 +401,7 @@
    "r_m": 22,
    "lp": "r",
    "osm": "way/227326611",
-   "photo": null,
+   "photo": "img/wmhg/38.jpg",
    "stops": [
     38
    ]
@@ -420,7 +420,7 @@
    "r_m": 27,
    "lp": "b",
    "osm": "relation/20216231",
-   "photo": null,
+   "photo": "img/wmhg/37.jpg",
    "stops": [
     37
    ]
@@ -439,7 +439,7 @@
    "r_m": 26,
    "lp": "t",
    "osm": "relation/20216230",
-   "photo": null,
+   "photo": "img/wmhg/46.jpg",
    "stops": [
     46,
     51
@@ -459,7 +459,7 @@
    "r_m": 27,
    "lp": "r",
    "osm": "way/227328265",
-   "photo": null,
+   "photo": "img/wmhg/35.jpg",
    "stops": [
     35
    ]
@@ -478,7 +478,7 @@
    "r_m": 26,
    "lp": "l",
    "osm": "way/227337989",
-   "photo": null,
+   "photo": "img/wmhg/47.jpg",
    "stops": [
     47
    ]
@@ -497,7 +497,7 @@
    "r_m": 19,
    "lp": "t",
    "osm": "way/227338689",
-   "photo": null,
+   "photo": "img/wmhg/48.jpg",
    "stops": [
     48
    ]
@@ -516,7 +516,7 @@
    "r_m": 19,
    "lp": "b",
    "osm": "way/227338688",
-   "photo": null,
+   "photo": "img/wmhg/49.jpg",
    "stops": [
     49
    ]
@@ -535,7 +535,7 @@
    "r_m": 29,
    "lp": "t",
    "osm": "way/227338002",
-   "photo": null,
+   "photo": "img/wmhg/50.jpg",
    "stops": [
     50
    ]
@@ -606,7 +606,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/36.jpg",
    "objects": [],
    "review": null
   },
@@ -631,7 +631,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/45.jpg",
    "objects": [],
    "review": null
   },
@@ -656,7 +656,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/40.jpg",
    "objects": [],
    "review": null
   },
@@ -684,7 +684,7 @@
     "zh": "馆方导览说游泳池在东御花园内；具体位置未核实，地图上没有单独标出。",
     "en": "The museum guide places the pool inside the East Garden; its exact position is unverified and it is not marked separately on the map."
    },
-   "photo": null,
+   "photo": "img/wmhg/42.jpg",
    "objects": [],
    "review": null
   },
@@ -709,7 +709,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/41.jpg",
    "objects": [],
    "review": null
   },
@@ -734,7 +734,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/43.jpg",
    "objects": [],
    "review": null
   },
@@ -759,7 +759,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/44.jpg",
    "objects": [],
    "review": null
   },
@@ -834,7 +834,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/38.jpg",
    "objects": [],
    "review": null
   },
@@ -859,7 +859,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/37.jpg",
    "objects": [],
    "review": null
   },
@@ -884,7 +884,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/46.jpg",
    "objects": [],
    "review": null
   },
@@ -913,7 +913,7 @@
     "en": "Museum website, exhibition notice (Jan 2026)"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/51.png",
    "objects": [
     {
      "seq": 34,
@@ -932,7 +932,7 @@
       "en": "Qibao Fengwen Bottle"
      },
      "tier": "B",
-     "photo": null,
+     "photo": "img/wmhg/13.png",
      "review": null
     },
     {
@@ -991,7 +991,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/35.jpg",
    "objects": [],
    "review": null
   },
@@ -1016,7 +1016,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/47.jpg",
    "objects": [],
    "review": null
   },
@@ -1041,7 +1041,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/48.jpg",
    "objects": [],
    "review": null
   },
@@ -1066,7 +1066,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/49.jpg",
    "objects": [],
    "review": null
   },
@@ -1092,7 +1092,7 @@
     "en": "Museum website, permanent exhibitions"
    },
    "borrowed": null,
-   "photo": null,
+   "photo": "img/wmhg/50.jpg",
    "objects": [],
    "review": null
   },
