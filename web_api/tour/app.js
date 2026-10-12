@@ -47,7 +47,7 @@
   var watchId = null, bannerTimer = null, raf = null;
   var gesture = { pointers: {}, pan: null, pinch: null, drag: false };
   var qa = {};          // {馆:地点 → 这一处的问答状态}，见「游客互动」一节
-  var qaOff = false;    // 问答接口没部署：整块不显示
+  var qaLive = null;    // 问答接口在不在：null 还不知道 / true 在 / false 不在（整块不显示）
   var visitor = null;   // 匿名设备号
 
   // ------------------------------------------------------------ 小工具
@@ -608,7 +608,7 @@
     var html = (p.photo ? '<div class="plate"><img loading="lazy" src="' + esc(p.photo) + '" alt="' + esc(p.name.zh) + '"></div>' : "") +
       '<div class="kicker">' + esc(kicker) + "</div><h2>" + esc(p.name.zh) + '</h2><div class="rule"></div>' +
       p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("") +
-      (qaOff ? "" : QA_HTML);
+      (qaLive === false ? "" : QA_HTML);
 
     if (next) {
       var meters = haversine(p.lat, p.lon, next.lat, next.lon) * M.walk.detour;
@@ -713,8 +713,10 @@
 
   function qaRender(key, pid) {
     if (!qaViewing(key, pid)) return;
-    if (qaOff) { $("qa").hidden = true; return; }
     var q = qaState(key, pid);
+    // 第一次拿到列表之前不显示：接口没部署时，这一块不该先闪出来再消失
+    $("qa").hidden = qaLive === false || (qaLive === null && q.state !== "error");
+    if (qaLive === false) return;
     $("qa-send").disabled = q.asking;
     $("qa-notice").innerHTML = q.state === "error"
       ? '暂时载入不了大家的提问。<button type="button" class="qa-link" data-qa-retry>点此重试</button>'
@@ -729,7 +731,7 @@
   }
 
   function qaMount(pid) {
-    if (qaOff) return;
+    if (qaLive === false) return;
     var q = qaState(M.key, pid);
     $("qa-input").value = q.draft;
     qaRender(M.key, pid);
@@ -747,10 +749,11 @@
     qaFetch(url).then(function (res) {
       q.loading = false;
       if (res.status === 404 || res.status === 503) {
-        qaOff = true;                              // 接口没部署：整块不显示，介绍照常
+        qaLive = false;                            // 接口没部署：整块不显示，介绍照常
       } else if (!res.ok || !res.body.topics) {
         q.state = "error";
       } else {
+        qaLive = true;
         // 正在等回答的那一条只存在于本机，重取列表时留着它
         var waiting = q.topics.filter(function (t) { return t.local; });
         q.topics = older ? q.topics.concat(res.body.topics) : waiting.concat(res.body.topics);

@@ -346,15 +346,19 @@ const SCENES = {
     const type = (text) => p.eval(`(function () { var i = document.getElementById('qa-input'); i.value = ${JSON.stringify(text)};
       i.dispatchEvent(new Event('input', { bubbles: true })); return true })()`);
     const submit = () => p.eval("document.getElementById('qa-form').requestSubmit(), true");
-    const openTongde = async () => {
+    // 打开同德殿的介绍，等互动一块有了结果。返回「刚点开那一刻这一块显示了没有」
+    const openTongde = async (expectShown = true) => {
       await p.geo("granted", BEIJING);
       await p.open("/#wmhg");
-      await p.click('.spot[aria-label="同德殿"]');
-      for (let i = 0; i < 40; i++) {              // 等列表有了结果（或者这一块被收起）
+      // 点开与取样放在同一段脚本里：分两次往返的话，本机的假接口早就答完了
+      const atOnce = await p.eval(`(function () { document.querySelector('.spot[aria-label="同德殿"]').click();
+        var box = document.getElementById('qa'); return !!box && !box.hidden })()`);
+      for (let i = 0; i < (expectShown ? 40 : 6); i++) {
         const s = await view();
-        if (!s.shown || s.count || s.notice || /还没有人提问/.test(s.list)) break;
+        if (s.shown && (s.count || s.notice || /还没有人提问/.test(s.list))) break;
         await sleep(250);
       }
+      return atOnce;
     };
 
     // 无头浏览器的页面默认不算「有焦点」，focus() 不触发 focusin；打开之后才和真机上点进输入框一样
@@ -373,9 +377,9 @@ const SCENES = {
         ...Array.from({ length: 21 }, (_, i) => ({ question: `第 ${i + 1} 个问题`, answer: `第 ${i + 1} 个回答` })),
         { question: '<img src=x onerror="window.__xss=1">同德殿是哪年建的？', answer: "<b>1938 年</b>建成。\n第二行" },
       ]);
-      await openTongde();
+      const early = await openTongde();
       let s = await view();
-      check(s.shown && s.title === "游客互动", "介绍下面有「游客互动」", s);
+      check(!early && s.shown && s.title === "游客互动", "介绍下面有「游客互动」，拿到列表之后才显示", { early, shown: s.shown });
       check(s.count === 20 && s.more, "载入最新的 20 条，还有更早的", { count: s.count, more: s.more });
       check(s.first.includes("游客提问") && s.first.includes("导览助手"), "别人的提问标「游客提问」，回答标「导览助手」", s.first);
       const xss = await p.eval("typeof window.__xss");
@@ -434,7 +438,7 @@ const SCENES = {
       check(s.notice === "先输入你的问题。" && stub.posts === posts + 2, "空问题不发请求", { notice: s.notice, posts: stub.posts - posts });
 
       stub.mode = "down";
-      await openTongde();
+      await openTongde();                           // 接口在但报错：要让人看得到出了什么事
       s = await view();
       check(s.shown && /载入不了/.test(s.notice) && s.count === 0, "列表接口报错：写明载入不了，给重试", s);
       stub.mode = "ok";
@@ -443,9 +447,9 @@ const SCENES = {
       check(s.count === 20 && s.notice === "", "点重试后列表回来", { count: s.count, notice: s.notice });
 
       stub.mode = "off";
-      await openTongde(); await sleep(300);
+      const flashed = await openTongde(false);
       s = await view();
-      check(!s.shown && (await p.state()).sheet === "同德殿", "接口不存在：这一块不显示，介绍照常", { shown: s.shown });
+      check(!flashed && !s.shown && (await p.state()).sheet === "同德殿", "接口不存在：这一块从头到尾不显示，介绍照常", { flashed, shown: s.shown });
       await p.click(".sheet-actions .btn-primary[data-goto]"); await sleep(500);
       check(!(await view()).shown && (await p.state()).sheet !== "同德殿", "翻到下一处也不再出现", await view());
     } finally {
