@@ -80,7 +80,7 @@ python3 tour_images.py --museum wmhg --allow-expired-cert   # 下载官网图片
 ## 游客互动（AI 问答）
 
 2026-10-12 加入，照 MingnaCurator 小程序的「观众互动」做，这一轮只做了文字问答。
-**页面已更新到线上，但接口入口还没开，游客暂时看不到这一块** —— 差数据库账号与 OpenAI key，见本节末的「部署状态」。
+**2026-10-12 已上线。** 服务器上的配置见本节的「部署实况」。
 
 介绍抽屉里「介绍出处」下面多出一块：游客输入问题，导览助手（AI）结合导览页上的资料回答，
 问答对所有游客公开。接口不在时这一块不显示，介绍照常。
@@ -95,9 +95,9 @@ python3 tour_images.py --museum wmhg --allow-expired-cert   # 下载官网图片
 | 接口 | `GET /api/tour/{馆}/places/{地点}/topics?before=&limit=`；`POST` 同一地址，请求体 `{"question": "…"}`，同步等回答 |
 | 「我」是谁 | 没有登录。浏览器里生成一个匿名设备号存在 `localStorage`，经 `X-Visitor` 请求头带上；接口不把它返回给别人 |
 | 谁看得到 | 所有人看所有人的。例外：模型判为与参观无关的、没答上来的，只有提问者自己看得到 |
-| 回答依据 | 就是页面那份 `data/<馆>.json`（全馆各站的名称、评级、现状、介绍、在展藏品、出处），不另外读库 |
-| 提示词 | 只写行为规则：资料之外可以用常识答，但不许挂在馆方名下；不编展厅位置、票价、是否在展；带「待复核」的不当事实讲；不超过 300 字 |
-| 型号 | 环境变量 `ARI_QA_MODEL`，不写死；缺了接口回 503，不猜。实际型号记在每一行的 `model` 列 |
+| 回答依据 | 就是页面那份 `data/<馆>.json`（全馆各站的名称、评级、建议停留时间、现状、介绍、在展藏品、出处，以及五条参观路线），不另外读库 |
+| 提示词 | 只写行为规则：历史与人物可以用一般知识答，但不许挂在馆方名下；现场实况（展厅位置、票价、今天是否开放、设施）资料没写就说不知道；带「待复核」的不当事实讲；不超过 300 字 |
+| 型号 | 环境变量 `ARI_QA_MODEL`，不写死；缺了接口回 503，不猜。线上是 `gpt-5.4-mini`，实际型号记在每一行的 `model` 列 |
 | 不重复花钱 | 同一地点、同一份资料、同一个问题已有公开回答就直接给，不再调模型（`prompt_hash`，与 `llm_cache` 的键同一思路） |
 | 记账 | token 与耗时记在 `tour_topic` 本行，不写 `llm_call`（那张表是管线的，按展品关联） |
 
@@ -136,63 +136,58 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 
 **`tour_topic` 是游客数据，重跑不出来。** 改结构只在 `web_api/sql/tour_qa.sql` 末尾追加 ALTER，不要 DROP 重建。
 
-### 部署状态（2026-10-12）
+### 部署实况（2026-10-12 上线）
 
-**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 服务器上的东西都配齐了，卡在 OpenAI 账户没有余额。
-
-| | 状态 |
+| | |
 |---|---|
-| 代码、测试 | 已完成，见下文验收记录 |
-| 库表 `tour_topic`、`tour_qa_setting` | **已建**（`ari` 库现为 16 张表），三行上限初值已写入 |
-| 服务器上的代码与依赖 | **已做**：`git pull`；`/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
-| 服务配置 | **已做**：`/etc/ari/web-api.env`（640 root:ari，**不含密钥**）与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`，服务已重启 |
-| 数据库账号 `/etc/ari/web-api.my.cnf` | **已做**：`web_api/sql/create_ari_web.sh` 建了 `ari_web@localhost`，配置文件 640 root:ari。服务没重启就连上了库，列表接口回 200 |
-| OpenAI key `/etc/ari/openai_key` | **已放好**（640 root:ari；用户给的 reqai 项目那把）。**key 有效，但账户余额为 0**：试答第一条就被拒，`credit_balance_exhausted`，与本机 `~/.openai_key` 那把是同一个报错。充值之后什么都不用改 |
-| Nginx `location /api/` | **未做**：等 OpenAI 充值，并先用真模型试答。入口不开，页面上这一块就不显示 —— 现在开了的话每个提问都会失败 |
+| 库表 | `tour_topic`、`tour_qa_setting`（`ari` 库现为 16 张表），三行上限初值 20 / 120 / 1000 |
+| 依赖 | `/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
+| 服务配置 | `/etc/ari/web-api.env` 与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`（`EnvironmentFile=`） |
+| 数据库账号 | `ari_web@localhost`，配置在 `/etc/ari/web-api.my.cnf`，走本机套接字。由 `web_api/sql/create_ari_web.sh` 生成 |
+| OpenAI key | `/etc/ari/openai_key`，只有一行。用户 2026-10-12 提供 |
+| Nginx | 站点 `ari-tour` 加了 `location ^~ /api/`，见下文「Nginx」。改之前的备份是同目录的 `ari-tour.bak-20261012` |
 
-`/etc/ari/web-api.env` 的内容（密钥不在这里，在它指向的两个文件里）：
+`/etc/ari/` 是 `750 root:ari`，里面三个文件都是 `640 root:ari`。`web-api.env` 不含密钥：
 
 ```
-ARI_QA_MODEL=gpt-5.4-nano
+ARI_QA_MODEL=gpt-5.4-mini
 ARI_DB_DEFAULTS_FILE=/etc/ari/web-api.my.cnf
 ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 ```
 
-两个文件都是 `640 root:ari`。应用在第一次用到时才读它们，**放好之后不用重启服务**。
-
-- `/etc/ari/openai_key`：只有一行，就是 key 本身。
-- `/etc/ari/web-api.my.cnf`：MySQL 选项文件。由 `web_api/sql/create_ari_web.sh` 生成：它新建账号 `ari_web@localhost`
-  （对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT，别的表碰不到），
-  口令随机生成、直接写进这个文件，不打印。服务走本机套接字连库。2026-10-12 已跑成（root 的配置从标准输入给，
-  登上的是 `root@localhost`）。以后要换口令就重跑，跑法（会问一次 MySQL root 口令，输入不回显；这一支没有实跑过）：
+- **换 key**：把新 key 写进 `/etc/ari/openai_key`（只留一行），然后 `sudo systemctl restart ari-web-api`。
+  写的时候用 `sudo sh -c 'cat > /etc/ari/openai_key.new && chown root:ari … && chmod 640 … && mv …'` 这种读标准输入的写法；
+  `sudo install … /dev/stdin …` 在 SSH 管道下不稳（2026-10-12 第二次用时报 `No such file or directory`，文件没换成，
+  接下来的试答用的还是旧 key —— **换完要比对内容或看修改时间，再下结论**）。
+- **换型号**：改 `web-api.env` 里的 `ARI_QA_MODEL`，重启服务。每一行问答都记着当时用的型号。
+- **换数据库口令**：重跑 `create_ari_web.sh`（会问一次 MySQL root 口令，输入不回显；交互这一支没有实跑过，
+  上线那次是把 root 的客户端配置从标准输入给它的），然后重启服务：
 
   ```sh
   ssh -t ubuntu@44.207.251.65 'sh /home/ubuntu/ari/web_api/sql/create_ari_web.sh'
   ```
 
-  `root@localhost` 与允许远程登录的 `root@%` 是两个账号，脚本会先走套接字、不行再走 TCP 各试一次。
+  `ari_web` 对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT，别的表碰不到。
+- 改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`；只改页面和数据仍然只需 `git pull`。
 
-OpenAI 充值之后还要做三步：
+### 型号是怎么定的：`gpt-5.4-mini`
 
-1. **用真模型试答一批问题**（现有的另一把 key 所在账户余额为 0，至今一条都没答成），看提示词与型号行不行。
-2. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
+原定照 MingnaCurator 用 `gpt-5.4-nano`。2026-10-12 用真模型试答了 71 次（nano 42 次、mini 29 次），nano 跟不住三条细则，改用 mini。
+对比用的是同一份提示词、同一批 17 个问题（多数是改完提示词之后才写的，没用来调过）：
 
-   ```nginx
-   # 游客互动的接口，转给 ari-web-api。缓存头由应用自己发（no-store），这里不重复加
-   location /api/ {
-       proxy_pass http://127.0.0.1:8002;
-       proxy_set_header Host              $host;
-       proxy_set_header X-Real-IP         $remote_addr;
-       proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-       proxy_set_header X-Forwarded-Proto $scheme;
-       proxy_read_timeout   90s;
-       client_max_body_size 8k;
-   }
-   ```
+| | `gpt-5.4-nano` | `gpt-5.4-mini` |
+|---|---|---|
+| 把关（与预期一致的条数） | 13 / 17：「让它改规则」的输入 5 条漏了 4 条 | 17 / 17 |
+| 历史与人物（资料没写的） | 4 条里 3 条只答「资料未说明」 | 都用一般知识作答，并说明不是馆方资料 |
+| 现场实况（票价、厕所、今天开不开） | 都老实说不知道 | 同左 |
+| 模型自身耗时 | 0.9–2.5 秒 | 0.6–1.5 秒 |
+| 每问 token | 输入约 6,400（其中约 5,900 命中缓存），输出 30–150 | 同左 |
 
-3. 线上验收：真问一条、查库里那一行的型号与 token、把上限临时改成 1 再改回来验证立即生效。
+两个型号都把英文提问答成了中文，这一条改由代码补一句提示来保证（`build_user`）。本项目不折算金额，只记 token。
 
-上线之后，改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`；只改页面和数据仍然只需 `git pull`。
+**一般历史知识会出错，这是放开它的代价。** mini 答「婉容后来怎么样了」，一次答的是「被带走，1946 年去世」，
+另一次多出一句「被苏方拘押」—— 后一句不对。页面上每条回答都标着「AI 生成」，提问框上方写着「可能有误」。
+要更稳有两条路：把规则 2 甲改回「资料没写就说不知道」（稳，但常常答不上），或换更大的型号（贵）。
 
 ### 已知的限制
 
@@ -206,8 +201,8 @@ OpenAI 充值之后还要做三步：
 
 - 域名 `tour.snowmeet.top`，A 记录指向 `44.207.251.65`
 - 站点根目录就是仓库里的 `web_api/tour`：`/home/ubuntu/ari/web_api/tour`，Nginx（`www-data`）可读
-- **不经过 FastAPI**，与 `ari-web-api` 服务无关
-- 更新 = `cd /home/ubuntu/ari && git pull --ff-only`，不用重启任何服务
+- 页面**不经过 FastAPI**，由 Nginx 直接出静态；只有 `/api/`（游客互动）反代到 `ari-web-api`（`127.0.0.1:8002`）
+- 更新 = `cd /home/ubuntu/ari && git pull --ff-only`。只改页面和数据不用重启任何服务；改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`
 
 ### 证书
 
@@ -263,6 +258,18 @@ server {
     gzip_types      text/plain text/css application/javascript application/json image/svg+xml;
     gzip_vary       on;
 
+    # 游客互动的接口，转给 ari-web-api（web_api/app/tour_qa.py）。缓存头由应用自己发（no-store），这里不重复加。
+    # ^~：这个前缀下不再去匹配后面按扩展名的那条规则
+    location ^~ /api/ {
+        proxy_pass http://127.0.0.1:8002;
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout   90s;
+        client_max_body_size 8k;
+    }
+
     # 页面与数据随 git pull 更新：每次都向服务器确认，不让手机拿着旧版本
     location / {
         try_files $uri $uri/ =404;
@@ -277,7 +284,7 @@ server {
 }
 ```
 
-同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）没有改动。
+同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）没有改动；2026-10-12 加 `/api/` 入口时也只动了 `ari-tour` 这一个文件。
 
 ### 换证书的步骤
 
@@ -345,11 +352,11 @@ server {
 
 只开 HTTP 的那几个小时里也验过：`isSecureContext = false` 时底栏写「需 HTTPS 才能定位」，圆点灰。
 
-2026-10-12，游客互动（接口入口未开；除最后三行外都是本机结果）：
+2026-10-12，游客互动：
 
 | 检查项 | 结果 |
 |---|---|
-| 本地 pytest | 63 条全绿：原有 18 条 + `/tour/` 挂载 1 条 + 问答接口 44 条（假库、假模型，不联网） |
+| 本地 pytest | 64 条全绿：原有 18 条 + `/tour/` 挂载 1 条 + 问答接口 45 条（假库、假模型，不联网） |
 | · 提问与列表 | 提问后拿到回答；别人看得到公开的，看不到设备号；按地点分开；新的在前、能翻页 |
 | · 把关与失败 | 判为与参观无关的只有提问者看得到；模型失败回 502，该行记 failed 且不公开，内部错误原文不给游客 |
 | · 上限 | 三道上限各回 429；改了上限不重启，下一条就按新值算；设成 0 一条也提不了、已有问答照常；上限表缺一行回 503 |
@@ -364,19 +371,24 @@ server {
 | · 翻页 | 翻到下一处是那一处自己的列表与空输入框；翻回来草稿和列表都还在 |
 | · 出错 | 提问失败写明原因、问题回到输入框；列表载入失败给「点此重试」；接口不存在时整块从头到尾不显示（拿到列表之后才显示，不会先闪一下） |
 | · 输入框获得焦点 | 输入框挪到屏幕上半截，外层页面不跟着滚（修掉了一个会把「消息」抽屉带出来的问题） |
-| **真模型试答** | **没做成**，两把 key 都试过：本机 `~/.openai_key` 13 个问题全部被拒；服务器上 reqai 那把第一条就被拒（之后没再发）。都是 `credit_balance_exhausted`，账户余额为 0。提示词与型号的实际效果还没有任何证据 |
-| 服务器：服务重启后 | `ari-web-api` active，`/health` 200；问答接口回 503，日志写明「ARI_DB_DEFAULTS_FILE 指的文件不存在」 |
-| 线上页面（新脚本已生效） | 无头 Chrome 对着 `https://tour.snowmeet.top` 跑原有 8 个场景：42 项通过；2 项「控制台没有报错」不过，报的都是 `/api/tour/…` 404，入口开通后消失 |
-| 线上：互动一块 | 不显示（入口未开，符合预期）；`ai.snowmeet.top` 仍回 200 |
+| 真模型试答（在服务器上，以服务的身份与配置） | 71 次：见上文「型号是怎么定的」。前两把 key（本机 `~/.openai_key`、reqai 项目那把）都因账户余额为 0 被拒，第三把调通 |
 | 服务账号 `ari_web` 的权限（以系统用户 `ari` 用服务的配置文件连库实测） | 能读上限表与问答表；改上限表、删问答、读 `artwork`、建表都被拒（1142） |
-| 服务器：账号建好之后（服务未重启） | 列表接口回 200 `{"topics":[],"more":false}`；提问回 503，日志写明「ARI_OPENAI_KEY_FILE 指的文件不存在」，库里没有多出行 |
+| 线上列表接口 | `https://tour.snowmeet.top/api/tour/wmhg/places/tongde/topics` 200，`Cache-Control: no-store`；未知地点 404 |
+| 线上真问一条 | 「同德殿是哪年建成的？当年是做什么用的？」3.1 秒拿到回答（从本机算，含往返美国）；换一个设备号能在列表里看到，`mine` 为假 |
+| 库里那一行 | `model = gpt-5.4-mini`，输入 6376 token（缓存命中 5888）、输出 54、模型耗时 1451 毫秒，`is_public = 1` |
+| **改上限立即生效** | 把 `per_visitor_per_day` 改成 1，没有重启，同一设备的下一条提问回 429「达到上限」；改回 20 后重问第一条回 200（直接给已有回答，库里没有多出行） |
+| 线上页面，无头 Chrome（`BASE=https://tour.snowmeet.top`） | 46 项全过：原有 44 项 + 互动一块显示且列表能载入（线上不发帖）+ 控制台无报错 |
+| 收尾 | 验收用的那一行已删，上限表是初值 20 / 120 / 1000；`ai.snowmeet.top` 仍回 200；服务日志自重启后无告警 |
 
 **没验的**：真机 GPS。无头浏览器里的定位是模拟出来的，走的是浏览器真实的 `watchPosition`，
 但手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
 
 ## 待办
 
-- **游客互动的接口入口没开**：卡在 OpenAI 账户余额为 0。充值后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
+- **游客互动：一般历史知识会出错**（见「型号是怎么定的」末尾的例子）。是维持现状、收紧到只答资料里有的、还是换更大的型号，待定。
+- **游客互动：真机上软键盘弹出时输入框会不会被挡住**，没验过。
+- **OpenAI 账户余额**：前两把 key 都是余额为 0。现在这把一旦用完，每个提问都会回「导览助手暂时没有答上来」；到时把 `site_per_day` 设成 0 可以先把提问关掉。
+- **线上的 OpenAI key 与 MySQL root 口令在 2026-10-12 的会话里出现过明文**，建议各换一次（换法见「部署实况」）。
 - **证书 2027-01-07 到期**，没有自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。
