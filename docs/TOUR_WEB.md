@@ -80,7 +80,7 @@ python3 tour_images.py --museum wmhg --allow-expired-cert   # 下载官网图片
 ## 游客互动（AI 问答）
 
 2026-10-12 加入，照 MingnaCurator 小程序的「观众互动」做，这一轮只做了文字问答。
-**代码与库表已就绪，还没有上线** —— 等 OpenAI 的 key，见本节末的「部署状态」。
+**页面已更新到线上，但接口入口还没开，游客暂时看不到这一块** —— 差数据库账号与 OpenAI key，见本节末的「部署状态」。
 
 介绍抽屉里「介绍出处」下面多出一块：游客输入问题，导览助手（AI）结合导览页上的资料回答，
 问答对所有游客公开。接口不在时这一块不显示，介绍照常。
@@ -138,21 +138,37 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 
 ### 部署状态（2026-10-12）
 
+**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 差两个带密钥的文件和一段 Nginx 配置。
+
 | | 状态 |
 |---|---|
 | 代码、测试 | 已完成，见下文验收记录 |
 | 库表 `tour_topic`、`tour_qa_setting` | **已建**（`ari` 库现为 16 张表），三行上限初值已写入 |
-| OpenAI key | **未就绪**。现有那把 key（本机 `~/.openai_key`）所在账户余额为 0（`credit_balance_exhausted`），试答一条都没成功。需要充值，并给导览站单建一把 key 存到本机 `~/.openai_key_tour` |
-| 服务器 | **未动**：没装依赖、没建数据库账号、没改 Nginx 与 systemd。key 就绪后一次做完 |
+| 服务器上的代码与依赖 | **已做**：`git pull`；`/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
+| 服务配置 | **已做**：`/etc/ari/web-api.env`（640 root:ari，**不含密钥**）与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`，服务已重启 |
+| 数据库账号 `/etc/ari/web-api.my.cnf` | **未做**：服务器上 `sudo mysql` 进不去 root，建不了账号。等用户给 root 的进法，或改定用现有的 `ari` 账号 |
+| OpenAI key `/etc/ari/openai_key` | **未做**：用户定的是用同机 reqai 项目的那把 key，但权限系统不允许 AI 自己到别的项目里找密钥，要用户放过来或明确授权 |
+| Nginx `location /api/` | **未做**：等上面两项。入口不开，页面上这一块就不显示 |
 
-key 就绪后要在服务器上做的事（做完把本表与下文「服务器部署实况」改成实况）：
+`/etc/ari/web-api.env` 的内容（密钥不在这里，在它指向的两个文件里）：
 
-1. `git pull --ff-only`；`/opt/ari/.venv/bin/pip install -r web_api/requirements.txt`
-2. 新建 MySQL 账号 `ari_web@localhost`：对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT。
-   口令在服务器上随机生成，直接写进 `/etc/ari/web-api.my.cnf`（640 root:ari），不经过命令行
-3. `/etc/ari/web-api.env`（640 root:ari）：`OPENAI_API_KEY`（从本机经管道写入）、`ARI_QA_MODEL`、`ARI_DB_DEFAULTS_FILE`；
-   给 `ari-web-api` 加 systemd drop-in 的 `EnvironmentFile=`，重启服务
-4. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
+```
+ARI_QA_MODEL=gpt-5.4-nano
+ARI_DB_DEFAULTS_FILE=/etc/ari/web-api.my.cnf
+ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
+```
+
+两个文件都是 `640 root:ari`。应用在第一次用到时才读它们，**放好之后不用重启服务**。
+
+- `/etc/ari/openai_key`：只有一行，就是 key 本身。
+- `/etc/ari/web-api.my.cnf`：MySQL 选项文件，`[client]` 段写 `host=127.0.0.1`、`user`、`password`、`database=ari`。
+  原计划是新建账号 `ari_web@localhost`，对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE、对 `ari.tour_qa_setting` 只有 SELECT，
+  口令在服务器上随机生成、直接写进这个文件，不经过命令行。
+
+两个文件到位后还要做三步：
+
+1. **用真模型试答一批问题**（现有的另一把 key 所在账户余额为 0，至今一条都没答成），看提示词与型号行不行。
+2. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
 
    ```nginx
    # 游客互动的接口，转给 ari-web-api。缓存头由应用自己发（no-store），这里不重复加
@@ -166,6 +182,8 @@ key 就绪后要在服务器上做的事（做完把本表与下文「服务器�
        client_max_body_size 8k;
    }
    ```
+
+3. 线上验收：真问一条、查库里那一行的型号与 token、把上限临时改成 1 再改回来验证立即生效。
 
 上线之后，改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`；只改页面和数据仍然只需 `git pull`。
 
@@ -320,7 +338,7 @@ server {
 
 只开 HTTP 的那几个小时里也验过：`isSecureContext = false` 时底栏写「需 HTTPS 才能定位」，圆点灰。
 
-2026-10-12，游客互动（未上线，以下都是本机结果）：
+2026-10-12，游客互动（接口入口未开；除最后三行外都是本机结果）：
 
 | 检查项 | 结果 |
 |---|---|
@@ -340,13 +358,16 @@ server {
 | · 出错 | 提问失败写明原因、问题回到输入框；列表载入失败给「点此重试」；接口不存在时整块从头到尾不显示（拿到列表之后才显示，不会先闪一下） |
 | · 输入框获得焦点 | 输入框挪到屏幕上半截，外层页面不跟着滚（修掉了一个会把「消息」抽屉带出来的问题） |
 | **真模型试答** | **没做成**：13 个问题全部被 OpenAI 拒绝，账户余额为 0。提示词与型号的实际效果还没有任何证据 |
+| 服务器：服务重启后 | `ari-web-api` active，`/health` 200；问答接口回 503，日志写明「ARI_DB_DEFAULTS_FILE 指的文件不存在」 |
+| 线上页面（新脚本已生效） | 无头 Chrome 对着 `https://tour.snowmeet.top` 跑原有 8 个场景：42 项通过；2 项「控制台没有报错」不过，报的都是 `/api/tour/…` 404，入口开通后消失 |
+| 线上：互动一块 | 不显示（入口未开，符合预期）；`ai.snowmeet.top` 仍回 200 |
 
 **没验的**：真机 GPS。无头浏览器里的定位是模拟出来的，走的是浏览器真实的 `watchPosition`，
 但手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
 
 ## 待办
 
-- **游客互动没上线**：等 OpenAI 充值与专用 key（`~/.openai_key_tour`）。到位后先用真模型试答一批问题看效果，再做服务器上那四步，见上文「部署状态」。
+- **游客互动的接口入口没开**：差 `/etc/ari/web-api.my.cnf`（数据库账号）与 `/etc/ari/openai_key` 两个文件。到位后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
 - **证书 2027-01-07 到期**，没有自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。

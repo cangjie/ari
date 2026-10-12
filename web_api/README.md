@@ -136,7 +136,7 @@ sql/tour_qa.sql        建表语句
 本地联调：一个端口同时出页面和接口，打开 <http://127.0.0.1:8099/tour/>。
 
 ```sh
-ARI_DB_DEFAULTS_FILE=~/.my.cnf ARI_QA_MODEL=gpt-5.4-nano ARI_OPENAI_KEY_FILE=~/.openai_key_tour \
+ARI_DB_DEFAULTS_FILE=~/.my.cnf ARI_QA_MODEL=gpt-5.4-nano ARI_OPENAI_KEY_FILE=~/.openai_key \
   ./.venv/bin/uvicorn app.main:app --reload --port 8099
 ```
 
