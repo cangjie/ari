@@ -6,6 +6,8 @@
 //   BASE=https://tour.snowmeet.top node …                      # 对着线上跑（默认自己起一个本地静态服务）
 //
 // pytest 那边（test_tour.py）只管数据对不对得上；页面的定位、到站、手势在这里验。
+// 介绍抽屉里的「游客互动」也在这里验：自己起的本地服务带一个假的 /api/tour/ 接口（不连库、不调模型），
+// 对着线上跑时 qa 场景只看列表能不能载入，不发帖 —— 发了就是一条留在线上的公开问答。
 // 定位用 Chrome DevTools Protocol 的 Emulation.setGeolocationOverride 喂给浏览器，
 // 页面拿到它走的是真实的 navigator.geolocation.watchPosition，不是 ?fix= 那条旁路。
 //
@@ -37,7 +39,47 @@ const JIXI = [43.90359, 125.34239], BEIJING = [39.9163, 116.3972], NEARBY = [43.
 const GCJ_TONGDE = [43.906420, 125.349804];     // 同德殿加偏成国测局坐标后的值
 
 let BASE = process.env.BASE || "";
+let LOCAL = false;          // 用的是自己起的本地服务（带假的问答接口）
 let failures = 0;
+
+// 假的问答接口的状态。mode：ok 正常 / off 接口不存在（404）/ down 列表报 500
+const stub = { mode: "ok", topics: {}, nextId: 1, posts: 0 };
+
+function stubSeed(place, rows) {
+  stub.topics[place] = rows.map((r) => ({ id: stub.nextId++, visitor: "someone-else-0000", public: true,
+    created_at: new Date(Date.now() - 3600e3).toISOString(), ...r }));
+}
+
+async function stubApi(req, res, url) {
+  const send = (status, body) => {
+    res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+    res.end(JSON.stringify(body));
+  };
+  const m = url.pathname.match(/^\/api\/tour\/([a-z0-9_]+)\/places\/([a-z0-9_]+)\/topics$/);
+  if (!m || stub.mode === "off") return send(404, { error_code: "place_not_found", message: "没有这个地点。" });
+  const list = stub.topics[m[2]] || (stub.topics[m[2]] = []);
+  const me = req.headers["x-visitor"] || "";
+  const view = (t) => ({ id: t.id, question: t.question, answer: t.answer, status: "answered",
+    mine: t.visitor === me, public: t.public, created_at: t.created_at });
+
+  if (req.method === "GET") {
+    if (stub.mode === "down") return send(500, {});
+    const limit = Number(url.searchParams.get("limit") || 20);
+    const before = Number(url.searchParams.get("before") || Infinity);
+    const rows = list.filter((t) => t.id < before && (t.public || t.visitor === me)).sort((a, b) => b.id - a.id);
+    return send(200, { topics: rows.slice(0, limit).map(view), more: rows.length > limit });
+  }
+  let raw = "";
+  for await (const chunk of req) raw += chunk;
+  const question = JSON.parse(raw).question;
+  stub.posts++;
+  await sleep(700);                                   // 留出时间看「思考中」
+  if (question.includes("失败")) return send(502, { error_code: "answer_failed", message: "导览助手暂时没有答上来，请稍后再试。" });
+  const t = { id: stub.nextId++, question, answer: "答：" + question, visitor: me,
+    public: !question.includes("广告"), created_at: new Date().toISOString() };
+  list.push(t);
+  return send(200, { topic: view(t), duplicate: false });
+}
 
 function check(ok, what, got) {
   if (!ok) failures++;
@@ -46,7 +88,9 @@ function check(ok, what, got) {
 
 async function startStatic() {
   const server = createServer(async (req, res) => {
-    const path = normalize(decodeURIComponent(new URL(req.url, "http://x").pathname)).replace(/^([/\\])+/, "");
+    const url = new URL(req.url, "http://x");
+    if (url.pathname.startsWith("/api/")) return stubApi(req, res, url);
+    const path = normalize(decodeURIComponent(url.pathname)).replace(/^([/\\])+/, "");
     try {
       const body = await readFile(join(TOUR_DIR, path || "index.html"));
       res.writeHead(200, { "Content-Type": MIME[extname(path || "index.html")] || "application/octet-stream" });
@@ -283,6 +327,133 @@ const SCENES = {
     const scrolled = await p.eval("document.getElementById('chips').scrollLeft");
     check(scrolled > 0 && (await p.state()).map === before, "横滑路线条：路线条滚动，地图不动", { scrolled });
   },
+
+  // 介绍抽屉里的「游客互动」
+  async qa(p) {
+    const view = () => p.eval(`JSON.stringify((function () {
+      var box = document.getElementById('qa');
+      if (!box || box.hidden) return { shown: false };
+      var items = Array.from(document.querySelectorAll('#qa-list .qa-item'));
+      return {
+        shown: true, title: box.querySelector('h4').textContent, count: items.length,
+        first: items[0] ? items[0].innerText : '', list: document.getElementById('qa-list').innerText,
+        thinking: !!document.querySelector('#qa-list .qa-thinking'), more: !!document.querySelector('[data-qa-more]'),
+        notice: document.getElementById('qa-notice').textContent, input: document.getElementById('qa-input').value,
+        sending: document.getElementById('qa-send').disabled,
+        tags: document.querySelectorAll('#qa-list img, #qa-list b, #qa-list script').length
+      };
+    })())`).then(JSON.parse);
+    const type = (text) => p.eval(`(function () { var i = document.getElementById('qa-input'); i.value = ${JSON.stringify(text)};
+      i.dispatchEvent(new Event('input', { bubbles: true })); return true })()`);
+    const submit = () => p.eval("document.getElementById('qa-form').requestSubmit(), true");
+    const openTongde = async () => {
+      await p.geo("granted", BEIJING);
+      await p.open("/#wmhg");
+      await p.click('.spot[aria-label="同德殿"]');
+      for (let i = 0; i < 40; i++) {              // 等列表有了结果（或者这一块被收起）
+        const s = await view();
+        if (!s.shown || s.count || s.notice || /还没有人提问/.test(s.list)) break;
+        await sleep(250);
+      }
+    };
+
+    // 无头浏览器的页面默认不算「有焦点」，focus() 不触发 focusin；打开之后才和真机上点进输入框一样
+    await p.send("Emulation.setFocusEmulationEnabled", { enabled: true });
+
+    if (!LOCAL) {
+      await openTongde();
+      const s = await view();
+      check(s.shown && s.title === "游客互动" && !/载入不了/.test(s.notice), "线上：互动一块在，列表能载入（不发帖）", s);
+      return;
+    }
+
+    try {
+      stub.mode = "ok"; stub.topics = {}; stub.posts = 0;
+      stubSeed("tongde", [
+        ...Array.from({ length: 21 }, (_, i) => ({ question: `第 ${i + 1} 个问题`, answer: `第 ${i + 1} 个回答` })),
+        { question: '<img src=x onerror="window.__xss=1">同德殿是哪年建的？', answer: "<b>1938 年</b>建成。\n第二行" },
+      ]);
+      await openTongde();
+      let s = await view();
+      check(s.shown && s.title === "游客互动", "介绍下面有「游客互动」", s);
+      check(s.count === 20 && s.more, "载入最新的 20 条，还有更早的", { count: s.count, more: s.more });
+      check(s.first.includes("游客提问") && s.first.includes("导览助手"), "别人的提问标「游客提问」，回答标「导览助手」", s.first);
+      const xss = await p.eval("typeof window.__xss");
+      check(s.tags === 0 && xss === "undefined" && s.first.includes("<img src=x") && s.first.includes("<b>1938 年</b>"),
+        "问题与回答里的 HTML 原样显示成文字，不变成元素", { tags: s.tags, xss, first: s.first });
+      const below = await p.eval(`(function () { var q = document.getElementById('qa').getBoundingClientRect().top;
+        var src = document.querySelectorAll('#sheet-body .source'), nx = document.querySelector('#sheet-body .next');
+        return src[src.length - 1].getBoundingClientRect().bottom <= q && (!nx || q < nx.getBoundingClientRect().top) })()`);
+      check(below, "位置在「介绍出处」之后、「前往下一处」之前", below);
+
+      const steady = await p.eval(`(function () { document.getElementById('qa-input').focus(); return new Promise(function (ok) {
+        setTimeout(function () {
+          var i = document.getElementById('qa-input').getBoundingClientRect(), sh = document.getElementById('sheet').getBoundingClientRect();
+          ok(JSON.stringify({ y: Math.round(i.top), focused: document.hasFocus(), app: document.getElementById('app').scrollTop, top: document.querySelector('.topbar').getBoundingClientRect().top,
+            msgs: document.getElementById('msgs').getBoundingClientRect().top >= window.innerHeight,
+            input: i.top >= sh.top && i.bottom <= window.innerHeight * 0.55 }));
+        }, 600); }) })()`).then(JSON.parse);
+      check(steady.app === 0 && steady.top === 0 && steady.msgs && steady.input,
+        "点进输入框：输入框挪到屏幕上半截，外层页面不跟着滚", steady);
+      await p.eval("document.getElementById('qa-input').blur(), true");
+
+      await p.click("[data-qa-more]"); await sleep(500);
+      s = await view();
+      check(s.count === 22 && !s.more, "「更早的提问」把剩下的取回来", { count: s.count, more: s.more });
+
+      await type("溥仪在这里住过吗？"); await submit(); await sleep(250);
+      s = await view();
+      check(s.thinking && s.sending && s.input === "" && s.first.includes("我的提问") && s.first.includes("溥仪在这里住过吗？"),
+        "提问后：输入框清空，按钮禁用，列表顶上是我的问题和「思考中」", s);
+      await sleep(900);
+      s = await view();
+      check(!s.thinking && !s.sending && s.count === 23 && s.first.includes("答：溥仪在这里住过吗？"), "回答回来，替换掉「思考中」", s);
+      await p.eval("document.getElementById('qa').scrollIntoView(), true");
+      await p.shot("qa-answered");
+
+      await type("写到一半");
+      await p.click(".sheet-actions .btn-primary[data-goto]"); await sleep(600);
+      s = await view();
+      check((await p.state()).sheet !== "同德殿" && s.input === "" && /还没有人提问/.test(s.list), "翻到下一处：是那一处自己的（空）列表和空输入框", s);
+      await p.click(".sheet-actions .btn-secondary[data-goto]"); await sleep(600);
+      s = await view();
+      check((await p.state()).sheet === "同德殿" && s.input === "写到一半" && s.count === 23, "翻回来：草稿和列表都还在", s);
+
+      const posts = stub.posts;
+      await type("这条会失败"); await submit(); await sleep(1200);
+      s = await view();
+      check(s.notice.startsWith("提交失败：导览助手暂时没有答上来") && s.input === "这条会失败" && s.count === 23 && !s.thinking && !s.sending,
+        "接口失败：写明原因，问题回到输入框，列表不留残项", s);
+
+      await type("广告：低价代订门票"); await submit(); await sleep(1200);
+      s = await view();
+      check(s.count === 24 && s.first.includes("只有你自己看得到"), "被判为与参观无关的提问：注明只有自己看得到", s.first);
+
+      await type("  "); await submit(); await sleep(200);
+      s = await view();
+      check(s.notice === "先输入你的问题。" && stub.posts === posts + 2, "空问题不发请求", { notice: s.notice, posts: stub.posts - posts });
+
+      stub.mode = "down";
+      await openTongde();
+      s = await view();
+      check(s.shown && /载入不了/.test(s.notice) && s.count === 0, "列表接口报错：写明载入不了，给重试", s);
+      stub.mode = "ok";
+      await p.click("[data-qa-retry]"); await sleep(600);
+      s = await view();
+      check(s.count === 20 && s.notice === "", "点重试后列表回来", { count: s.count, notice: s.notice });
+
+      stub.mode = "off";
+      await openTongde(); await sleep(300);
+      s = await view();
+      check(!s.shown && (await p.state()).sheet === "同德殿", "接口不存在：这一块不显示，介绍照常", { shown: s.shown });
+      await p.click(".sheet-actions .btn-primary[data-goto]"); await sleep(500);
+      check(!(await view()).shown && (await p.state()).sheet !== "同德殿", "翻到下一处也不再出现", await view());
+    } finally {
+      stub.mode = "ok"; stub.topics = {};
+      // 上面故意让接口回过 404 / 500 / 502，浏览器会各记一条「资源加载失败」
+      p.errors = p.errors.filter((e) => !/\/api\/tour\//.test(e));
+    }
+  },
 };
 
 async function main() {
@@ -291,7 +462,7 @@ async function main() {
   if (unknown.length) { console.error(`没有这些场景：${unknown}。可选：${Object.keys(SCENES)}`); process.exit(2); }
 
   const local = BASE ? null : await startStatic();
-  if (local) BASE = local.url;
+  if (local) { BASE = local.url; LOCAL = true; }
   const profile = await mkdtemp(join(tmpdir(), "ari-tour-chrome-"));
   const chrome = spawn(CHROME, ["--headless=new", `--remote-debugging-port=${DEBUG_PORT}`, `--user-data-dir=${profile}`,
     "--no-first-run", "--no-default-browser-check", "--disable-gpu", "--hide-scrollbars", "about:blank"], { stdio: "ignore" });

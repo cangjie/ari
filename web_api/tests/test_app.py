@@ -64,6 +64,18 @@ def test_prototype_missing_file_returns_404():
     assert client.head("/prototype/no-such-file.html").status_code == 404
 
 
+def test_tour_site_is_served_for_local_development():
+    """导览站线上由 Nginx 直接提供；这条挂载让本地一个端口同时出页面和 /api/tour/ 接口。"""
+    response = client.get("/tour/")
+
+    assert response.status_code == 200
+    assert "Ari Travel" in response.text
+    assert client.head("/tour/data/wmhg.json").status_code == 200
+
+    redirect = client.get("/tour", follow_redirects=False)
+    assert redirect.status_code == 307 and redirect.headers["location"] == "/tour/"
+
+
 def test_prototype_without_trailing_slash_redirects():
     """不带尾斜杠时会被根挂载抢走并 404，因此需要一条显式跳转。"""
     response = client.get("/prototype", follow_redirects=False)

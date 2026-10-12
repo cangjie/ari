@@ -1,3 +1,6 @@
 # 与服务器 /opt/ari/.venv 已验证的版本对齐（Python 3.14 / ARM64）
 fastapi==0.141.1
 uvicorn==0.52.4
+# 导览站的游客互动（app/tour_qa*.py）。都在函数里才导入：缺了只有问答回 503，其余照常
+openai==3.6.0
+PyMySQL==1.2.0

@@ -77,6 +77,106 @@ python3 tour_images.py --museum wmhg --allow-expired-cert   # 下载官网图片
   会被判成不在景区。现场若遇到，在网址上加 `?crs=gcj02` 验证。**页面目前不会自动判断坐标系。**
 - 室内 GPS 很差，到站提醒主要在走近建筑时触发。
 
+## 游客互动（AI 问答）
+
+2026-10-12 加入，照 MingnaCurator 小程序的「观众互动」做，这一轮只做了文字问答。
+**代码与库表已就绪，还没有上线** —— 等 OpenAI 的 key，见本节末的「部署状态」。
+
+介绍抽屉里「介绍出处」下面多出一块：游客输入问题，导览助手（AI）结合导览页上的资料回答，
+问答对所有游客公开。接口不在时这一块不显示，介绍照常。
+
+```
+页面（app.js）──→ /api/tour/…（Nginx 反代）──→ FastAPI（web_api/app/tour_qa.py）──→ MySQL：tour_topic、tour_qa_setting
+                                                                              └→ OpenAI
+```
+
+| | |
+|---|---|
+| 接口 | `GET /api/tour/{馆}/places/{地点}/topics?before=&limit=`；`POST` 同一地址，请求体 `{"question": "…"}`，同步等回答 |
+| 「我」是谁 | 没有登录。浏览器里生成一个匿名设备号存在 `localStorage`，经 `X-Visitor` 请求头带上；接口不把它返回给别人 |
+| 谁看得到 | 所有人看所有人的。例外：模型判为与参观无关的、没答上来的，只有提问者自己看得到 |
+| 回答依据 | 就是页面那份 `data/<馆>.json`（全馆各站的名称、评级、现状、介绍、在展藏品、出处），不另外读库 |
+| 提示词 | 只写行为规则：资料之外可以用常识答，但不许挂在馆方名下；不编展厅位置、票价、是否在展；带「待复核」的不当事实讲；不超过 300 字 |
+| 型号 | 环境变量 `ARI_QA_MODEL`，不写死；缺了接口回 503，不猜。实际型号记在每一行的 `model` 列 |
+| 不重复花钱 | 同一地点、同一份资料、同一个问题已有公开回答就直接给，不再调模型（`prompt_hash`，与 `llm_cache` 的键同一思路） |
+| 记账 | token 与耗时记在 `tour_topic` 本行，不写 `llm_call`（那张表是管线的，按展品关联） |
+
+### 提问条数上限：改一行，立即生效
+
+三个上限在表 `tour_qa_setting` 里，每次提问现读、不缓存。改完之后的下一条提问就按新值算，
+不用重启、不用登服务器、不用部署。
+
+| `name` | 初值 | 含义 |
+|---|---:|---|
+| `per_visitor_per_day` | 20 | 每个设备 24 小时内最多提问几条 |
+| `per_ip_per_hour` | 120 | 每个 IP 每小时最多提问几条（只在内存里计数，不存 IP，服务重启后清零） |
+| `site_per_day` | 1000 | 全站 24 小时内最多提问几条 |
+
+```sql
+UPDATE tour_qa_setting SET value = 50 WHERE name = 'per_visitor_per_day';   -- 改上限
+UPDATE tour_qa_setting SET value = 0  WHERE name = 'site_per_day';          -- 关掉提问（已有问答照常显示）
+SELECT name, value, updated_at FROM tour_qa_setting;                        -- 看现值
+```
+
+- **任何一项设成 0 就是关掉提问。**
+- 某一行被删掉时提问接口回 503，日志里写明缺哪一项，不拿内置默认值顶替。
+- 服务用的数据库账号对这张表只读，服务自己改不了自己的上限。
+- 另有两条写在代码里：同一设备同时只能有一条在答；问题 2–100 字且不能只有标点。
+
+### 下架一条问答
+
+这一轮没有管理端，下架靠改库。`valid = 0` 之后所有人（包括提问者）都看不到；
+别人再问同一个问题也不会让它重新公开。
+
+```sql
+SELECT id, place_id, question, LEFT(answer, 40), is_public, created_at
+  FROM tour_topic WHERE museum_key = 'wmhg' ORDER BY id DESC LIMIT 30;      -- 先看
+UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- 再下架
+```
+
+**`tour_topic` 是游客数据，重跑不出来。** 改结构只在 `web_api/sql/tour_qa.sql` 末尾追加 ALTER，不要 DROP 重建。
+
+### 部署状态（2026-10-12）
+
+| | 状态 |
+|---|---|
+| 代码、测试 | 已完成，见下文验收记录 |
+| 库表 `tour_topic`、`tour_qa_setting` | **已建**（`ari` 库现为 16 张表），三行上限初值已写入 |
+| OpenAI key | **未就绪**。现有那把 key（本机 `~/.openai_key`）所在账户余额为 0（`credit_balance_exhausted`），试答一条都没成功。需要充值，并给导览站单建一把 key 存到本机 `~/.openai_key_tour` |
+| 服务器 | **未动**：没装依赖、没建数据库账号、没改 Nginx 与 systemd。key 就绪后一次做完 |
+
+key 就绪后要在服务器上做的事（做完把本表与下文「服务器部署实况」改成实况）：
+
+1. `git pull --ff-only`；`/opt/ari/.venv/bin/pip install -r web_api/requirements.txt`
+2. 新建 MySQL 账号 `ari_web@localhost`：对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT。
+   口令在服务器上随机生成，直接写进 `/etc/ari/web-api.my.cnf`（640 root:ari），不经过命令行
+3. `/etc/ari/web-api.env`（640 root:ari）：`OPENAI_API_KEY`（从本机经管道写入）、`ARI_QA_MODEL`、`ARI_DB_DEFAULTS_FILE`；
+   给 `ari-web-api` 加 systemd drop-in 的 `EnvironmentFile=`，重启服务
+4. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
+
+   ```nginx
+   # 游客互动的接口，转给 ari-web-api。缓存头由应用自己发（no-store），这里不重复加
+   location /api/ {
+       proxy_pass http://127.0.0.1:8002;
+       proxy_set_header Host              $host;
+       proxy_set_header X-Real-IP         $remote_addr;
+       proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+       proxy_set_header X-Forwarded-Proto $scheme;
+       proxy_read_timeout   90s;
+       client_max_body_size 8k;
+   }
+   ```
+
+上线之后，改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`；只改页面和数据仍然只需 `git pull`。
+
+### 已知的限制
+
+- **真机上软键盘弹出时输入框会不会被挡住，没验过。** 无头浏览器模拟不了软键盘；页面做了三处防护
+  （输入框挪到抽屉靠上的位置、外层 `overflow: clip`、键盘收起后把页面拨回原位），实际效果要到手机上看。
+- 模型把关会误判。漏掉的不当内容靠上面的下架语句处理。
+- 换手机或清了浏览器数据，「我的提问」就认不出来了，没公开的那些也看不到了。
+- 没做：语音提问、回答朗读、跨地点的「我的互动」汇总页、管理端与策展人答复、流式输出、英文界面。
+
 ## 服务器部署实况
 
 - 域名 `tour.snowmeet.top`，A 记录指向 `44.207.251.65`
@@ -220,11 +320,33 @@ server {
 
 只开 HTTP 的那几个小时里也验过：`isSecureContext = false` 时底栏写「需 HTTPS 才能定位」，圆点灰。
 
+2026-10-12，游客互动（未上线，以下都是本机结果）：
+
+| 检查项 | 结果 |
+|---|---|
+| 本地 pytest | 63 条全绿：原有 18 条 + `/tour/` 挂载 1 条 + 问答接口 44 条（假库、假模型，不联网） |
+| · 提问与列表 | 提问后拿到回答；别人看得到公开的，看不到设备号；按地点分开；新的在前、能翻页 |
+| · 把关与失败 | 判为与参观无关的只有提问者看得到；模型失败回 502，该行记 failed 且不公开，内部错误原文不给游客 |
+| · 上限 | 三道上限各回 429；改了上限不重启，下一条就按新值算；设成 0 一条也提不了、已有问答照常；上限表缺一行回 503 |
+| · 复用 | 同一地点同一问题不再调模型；不公开的、已下架的被重问时不会重新公开 |
+| · 没配置 | 缺数据库或模型配置时只有问答回 503，`/health` 照常 |
+| 真库上的存取（`test_tour_qa_db.py`，默认跳过） | 3 条通过：UTC 时间、四字节字符、token 入库、错误信息截到 500 字、可见性、复用、下架。测试行已清掉，上限表未动 |
+| 本机起服务连真库 | 列表 200 且 `Cache-Control: no-store`；未知地点 404；只有标点的问题 400；不带设备号 400 |
+| 无头 Chrome | 64 项全过：原有 45 项 + `qa` 场景 19 项（对着脚本自带的假接口） |
+| · 位置与文案 | 「游客互动」在「介绍出处」之后、「前往下一处」之前；别人的标「游客提问」，自己的标「我的提问」 |
+| · 提问 | 提问后输入框清空、按钮禁用、出现「思考中」；回答回来后替换；空问题不发请求 |
+| · 不被注入 | 问题与回答里的 `<img onerror>`、`<b>` 原样显示成文字，不变成元素 |
+| · 翻页 | 翻到下一处是那一处自己的列表与空输入框；翻回来草稿和列表都还在 |
+| · 出错 | 提问失败写明原因、问题回到输入框；列表载入失败给「点此重试」；接口不存在时整块不显示 |
+| · 输入框获得焦点 | 输入框挪到屏幕上半截，外层页面不跟着滚（修掉了一个会把「消息」抽屉带出来的问题） |
+| **真模型试答** | **没做成**：13 个问题全部被 OpenAI 拒绝，账户余额为 0。提示词与型号的实际效果还没有任何证据 |
+
 **没验的**：真机 GPS。无头浏览器里的定位是模拟出来的，走的是浏览器真实的 `watchPosition`，
 但手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
 
 ## 待办
 
+- **游客互动没上线**：等 OpenAI 充值与专用 key（`~/.openai_key_tour`）。到位后先用真模型试答一批问题看效果，再做服务器上那四步，见上文「部署状态」。
 - **证书 2027-01-07 到期**，没有自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。

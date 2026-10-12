@@ -3,6 +3,9 @@
  * 数据全部来自 data/<馆>.json（utils/import_data/tour_build.py 生成）。地点的画布坐标、
  * 热区半径、景区范围、经纬度换算参数都在那份文件里，这里不写死任何坐标。
  *
+ * 介绍抽屉里的「游客互动」是唯一要服务端的部分：同域名 /api/tour/ 下的问答接口
+ * （web_api/app/tour_qa.py）。接口不在时那一块不显示，其余照常。
+ *
  * 定位只有一条路径：onFix()。真实 GPS、?fix= 给的假定位都从这里进，
  * 所以用 ?fix= 验过的行为就是真机上的行为。
  *
@@ -23,6 +26,9 @@
   var FAR_ZOOM = 0.75;      // 缩到比这更小就收起地点名字，只留编号
   var SIM_SPEED = 70;       // 模拟游览的速度，画布像素/秒
   var GEO_OPTIONS = { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 };
+  var QA_PAGE = 20;         // 游客互动每次取几条
+  var QA_MAX = 100;         // 一个问题最多几个字，与服务端一致
+  var QA_TIMEOUT_MS = 70000;
 
   var $ = function (id) { return document.getElementById(id); };
   var query = new URLSearchParams(location.search);
@@ -40,6 +46,9 @@
   var labels = [];      // [{el, x, y}]
   var watchId = null, bannerTimer = null, raf = null;
   var gesture = { pointers: {}, pan: null, pinch: null, drag: false };
+  var qa = {};          // {馆:地点 → 这一处的问答状态}，见「游客互动」一节
+  var qaOff = false;    // 问答接口没部署：整块不显示
+  var visitor = null;   // 匿名设备号
 
   // ------------------------------------------------------------ 小工具
   function parseFix(s) {
@@ -598,7 +607,8 @@
 
     var html = (p.photo ? '<div class="plate"><img loading="lazy" src="' + esc(p.photo) + '" alt="' + esc(p.name.zh) + '"></div>' : "") +
       '<div class="kicker">' + esc(kicker) + "</div><h2>" + esc(p.name.zh) + '</h2><div class="rule"></div>' +
-      p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("");
+      p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("") +
+      (qaOff ? "" : QA_HTML);
 
     if (next) {
       var meters = haversine(p.lat, p.lon, next.lat, next.lon) * M.walk.detour;
@@ -613,6 +623,188 @@
       "</div>";
     $("sheet-body").innerHTML = html;
     $("sheet").scrollTop = 0;
+    qaMount(p.id);
+  }
+
+  // ------------------------------------------------------------ 游客互动
+  // 介绍下面的一块：游客提问，导览助手（AI）结合这一页的资料回答，问答对所有游客公开。
+  // 接口在同一个域名的 /api/tour/ 下（web_api/app/tour_qa.py）。没有登录，「我」是存在浏览器里的匿名设备号。
+  // 抽屉每次翻页都整块重画，所以问答的状态按地点存在 qa 里，这里只重画列表，不碰输入框。
+  var QA_HTML = '<section class="qa" id="qa">' +
+    '<div class="kicker">向导览助手提问</div><h4>游客互动</h4>' +
+    '<p class="qa-lede">提问与回答对所有游客公开，请勿填写个人信息。回答由 AI 生成，可能有误。</p>' +
+    '<form class="qa-form" id="qa-form" autocomplete="off">' +
+    '<input id="qa-input" type="text" maxlength="' + QA_MAX + '" enterkeyhint="send" placeholder="例如：这里当年是做什么用的？" aria-label="向导览助手提问">' +
+    '<button class="btn btn-primary" id="qa-send" type="submit">提问</button></form>' +
+    '<div class="qa-notice" id="qa-notice" role="status"></div>' +
+    '<div class="qa-list" id="qa-list"></div></section>';
+
+  function visitorId() {
+    if (visitor) return visitor;
+    try { visitor = localStorage.getItem("ari-tour:visitor"); } catch (e) { /* 读不了就现生成一个，只在这次打开期间有效 */ }
+    if (!visitor || !/^[A-Za-z0-9-]{16,64}$/.test(visitor)) {
+      if (window.crypto && crypto.randomUUID) visitor = crypto.randomUUID();
+      else {
+        visitor = "";
+        while (visitor.length < 32) visitor += Math.floor(Math.random() * 16).toString(16);
+      }
+      try { localStorage.setItem("ari-tour:visitor", visitor); } catch (e) { /* 同上 */ }
+    }
+    return visitor;
+  }
+
+  function qaState(key, pid) {
+    var k = key + ":" + pid;
+    return qa[k] || (qa[k] = { topics: [], more: false, state: "new", loading: false, asking: false, draft: "", notice: "" });
+  }
+
+  function qaUrl(key, pid) {
+    return "/api/tour/" + encodeURIComponent(key) + "/places/" + encodeURIComponent(pid) + "/topics";
+  }
+
+  function qaViewing(key, pid) {
+    return !!M && M.key === key && st.sheetOpen && st.sheetPid === pid && !!$("qa");
+  }
+
+  // 发请求并把响应读成 {ok, status, body}。出错的响应体不一定是 JSON（比如网关报的 502），读不出来就当空对象
+  function qaFetch(url, opts) {
+    opts = opts || {};
+    opts.headers = opts.headers || {};
+    opts.headers["X-Visitor"] = visitorId();
+    var ctl = window.AbortController ? new AbortController() : null, timer = null;
+    if (ctl) {
+      opts.signal = ctl.signal;
+      timer = setTimeout(function () { ctl.abort(); }, QA_TIMEOUT_MS);
+    }
+    return fetch(url, opts).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (body) {
+        clearTimeout(timer);
+        return { ok: r.ok, status: r.status, body: body || {} };
+      });
+    }, function (err) {
+      clearTimeout(timer);
+      throw err;
+    });
+  }
+
+  function qaTime(iso) {
+    var t = new Date(iso), mins = Math.floor((Date.now() - t.getTime()) / 60000);
+    if (isNaN(mins)) return "";
+    if (mins < 1) return "刚刚";
+    if (mins < 60) return mins + " 分钟前";
+    if (mins < 1440) return Math.floor(mins / 60) + " 小时前";
+    return (t.getMonth() + 1) + " 月 " + t.getDate() + " 日";
+  }
+
+  function qaItemHtml(t) {
+    var html = '<div class="qa-item' + (t.mine ? " mine" : "") + '">' +
+      '<div class="qa-q"><div class="qa-meta"><span class="qa-role">' + (t.mine ? "我的提问" : "游客提问") + "</span><span>" +
+      esc(qaTime(t.created_at)) + "</span></div><p>" + esc(t.question) + "</p></div>";
+    if (t.status === "pending") {
+      html += '<div class="qa-a"><div class="qa-meta"><span class="qa-role">导览助手</span></div><p class="qa-thinking">思考中…</p></div>';
+    } else if (t.status === "answered") {
+      html += '<div class="qa-a"><div class="qa-meta"><span class="qa-role">导览助手</span><span>AI 生成</span></div><p>' + esc(t.answer || "") + "</p></div>";
+      if (t.mine && !t.public) html += '<div class="qa-private">这条提问与参观无关，只有你自己看得到。</div>';
+    } else {
+      html += '<div class="qa-private">这条提问没有得到回答。</div>';
+    }
+    return html + "</div>";
+  }
+
+  function qaRender(key, pid) {
+    if (!qaViewing(key, pid)) return;
+    if (qaOff) { $("qa").hidden = true; return; }
+    var q = qaState(key, pid);
+    $("qa-send").disabled = q.asking;
+    $("qa-notice").innerHTML = q.state === "error"
+      ? '暂时载入不了大家的提问。<button type="button" class="qa-link" data-qa-retry>点此重试</button>'
+      : esc(q.notice);
+    var html = q.topics.map(qaItemHtml).join("");
+    if (!q.topics.length) {
+      if (q.state === "ready") html = '<p class="qa-empty">还没有人提问。可以从历史背景、建筑、人物或参观方式切入。</p>';
+      else if (q.state !== "error") html = '<p class="qa-empty">正在载入…</p>';
+    }
+    if (q.more) html += '<button type="button" class="btn btn-secondary qa-more" data-qa-more>更早的提问</button>';
+    $("qa-list").innerHTML = html;
+  }
+
+  function qaMount(pid) {
+    if (qaOff) return;
+    var q = qaState(M.key, pid);
+    $("qa-input").value = q.draft;
+    qaRender(M.key, pid);
+    if (q.state === "new") qaLoad(M.key, pid, false);
+  }
+
+  // older：接着往前翻一页；否则取最新的一页
+  function qaLoad(key, pid, older) {
+    var q = qaState(key, pid);
+    if (q.loading) return;
+    q.loading = true;
+    if (q.state !== "ready") q.state = "loading";
+    var url = qaUrl(key, pid) + "?limit=" + QA_PAGE;
+    if (older && q.topics.length) url += "&before=" + encodeURIComponent(q.topics[q.topics.length - 1].id);
+    qaFetch(url).then(function (res) {
+      q.loading = false;
+      if (res.status === 404 || res.status === 503) {
+        qaOff = true;                              // 接口没部署：整块不显示，介绍照常
+      } else if (!res.ok || !res.body.topics) {
+        q.state = "error";
+      } else {
+        // 正在等回答的那一条只存在于本机，重取列表时留着它
+        var waiting = q.topics.filter(function (t) { return t.local; });
+        q.topics = older ? q.topics.concat(res.body.topics) : waiting.concat(res.body.topics);
+        q.more = !!res.body.more;
+        q.state = "ready";
+      }
+      qaRender(key, pid);
+    }, function () {
+      q.loading = false;
+      if (q.state !== "ready") q.state = "error";
+      qaRender(key, pid);
+    });
+  }
+
+  function qaAsk(pid) {
+    var key = M.key, q = qaState(key, pid), input = $("qa-input");
+    var text = input.value.replace(/\s+/g, " ").trim();
+    if (q.asking) return;
+    if (text.length < 2) {
+      q.notice = "先输入你的问题。";
+      qaRender(key, pid);
+      return;
+    }
+    var mine = { id: "local-" + Date.now(), local: true, question: text, answer: null, status: "pending",
+                 mine: true, public: false, created_at: new Date().toISOString() };
+    q.topics.unshift(mine);
+    q.asking = true;
+    q.notice = q.draft = input.value = "";
+    input.blur();                                  // 收起键盘，让出地方看回答
+    qaRender(key, pid);
+
+    // 回答（或失败）回来时人可能已经翻到别处：状态照记，画不画由 qaRender 自己判断
+    function settle(topic, notice) {
+      q.asking = false;
+      q.topics = q.topics.filter(function (t) { return t !== mine && !(topic && t.id === topic.id); });
+      if (topic) q.topics.unshift(topic);
+      q.notice = notice;
+      qaRender(key, pid);
+    }
+    function failed(message) {
+      settle(null, "提交失败：" + message);
+      if (q.draft) return;                         // 等的时候已经在写下一个问题了，不去覆盖
+      q.draft = text;
+      if (qaViewing(key, pid)) $("qa-input").value = text;
+    }
+    qaFetch(qaUrl(key, pid), {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: text })
+    }).then(function (res) {
+      if (res.ok && res.body.topic) settle(res.body.topic, res.body.duplicate ? "这个问题已经有人问过，回答在下面。" : "");
+      else failed(res.body.message || "服务器没有答上来（" + res.status + "）");
+    }, function () {
+      failed("网络不通或等待超时，请重试。");
+      qaLoad(key, pid, false);                     // 请求也许其实到了服务器：把列表重新取一遍
+    });
   }
 
   function openIntro(pid) {
@@ -779,7 +971,34 @@
     $("sheet").addEventListener("click", function (e) {
       var go = e.target.closest("[data-goto]");
       if (go) { openIntro(go.getAttribute("data-goto")); return; }
+      if (e.target.closest("[data-qa-more]")) { qaLoad(M.key, st.sheetPid, true); return; }
+      if (e.target.closest("[data-qa-retry]")) { qaLoad(M.key, st.sheetPid, false); qaRender(M.key, st.sheetPid); return; }
       if (e.target.closest("[data-close]")) closeSheets();
+    });
+    $("sheet").addEventListener("submit", function (e) {
+      if (e.target.id !== "qa-form") return;
+      e.preventDefault();
+      qaAsk(st.sheetPid);
+    });
+    $("sheet").addEventListener("input", function (e) {
+      if (e.target.id === "qa-input") qaState(M.key, st.sheetPid).draft = e.target.value;
+    });
+    $("sheet").addEventListener("focusin", function (e) {
+      // 软键盘会盖住屏幕下半截：把输入框挪到抽屉靠上的位置。只滚抽屉自己 ——
+      // scrollIntoView 会连外层一起滚，把收在屏幕下面的另一个抽屉带出来
+      if (e.target.id !== "qa-input") return;
+      setTimeout(function () {
+        var sheet = $("sheet");
+        sheet.scrollTop += e.target.getBoundingClientRect().top - sheet.getBoundingClientRect().top - 90;
+      }, 350);
+    });
+    $("sheet").addEventListener("focusout", function (e) {
+      // 部分手机浏览器在键盘收起后不把页面放回原位
+      if (e.target.id === "qa-input") window.scrollTo(0, 0);
+    });
+    // 外层不该滚动（见 app.css 里 #app 的说明）。不认 overflow: clip 的浏览器上，被带着滚了就拨回去
+    $("app").addEventListener("scroll", function () {
+      if (this.scrollTop || this.scrollLeft) this.scrollTop = this.scrollLeft = 0;
     });
     $("msgs-body").addEventListener("click", function (e) {
       var b = e.target.closest("[data-msg]");
