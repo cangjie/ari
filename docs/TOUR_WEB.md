@@ -146,7 +146,7 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 | 库表 `tour_topic`、`tour_qa_setting` | **已建**（`ari` 库现为 16 张表），三行上限初值已写入 |
 | 服务器上的代码与依赖 | **已做**：`git pull`；`/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
 | 服务配置 | **已做**：`/etc/ari/web-api.env`（640 root:ari，**不含密钥**）与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`，服务已重启 |
-| 数据库账号 `/etc/ari/web-api.my.cnf` | **未做**：服务器上 `sudo mysql` 进不去 root，建不了账号。等用户给 root 的进法，或改定用现有的 `ari` 账号 |
+| 数据库账号 `/etc/ari/web-api.my.cnf` | **未做**：服务器上 `sudo mysql` 进不去 root；用户给的一个口令在 `root@localhost` 与 `root@%` 上都被拒。建账号的脚本已备好（`web_api/sql/create_ari_web.sh`），等正确的 root 口令，或改定用现有的 `ari` 账号 |
 | OpenAI key `/etc/ari/openai_key` | **未做**：用户定的是用同机 reqai 项目的那把 key，但权限系统不允许 AI 自己到别的项目里找密钥，要用户放过来或明确授权 |
 | Nginx `location /api/` | **未做**：等上面两项。入口不开，页面上这一块就不显示 |
 
@@ -161,9 +161,15 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 两个文件都是 `640 root:ari`。应用在第一次用到时才读它们，**放好之后不用重启服务**。
 
 - `/etc/ari/openai_key`：只有一行，就是 key 本身。
-- `/etc/ari/web-api.my.cnf`：MySQL 选项文件，`[client]` 段写 `host=127.0.0.1`、`user`、`password`、`database=ari`。
-  原计划是新建账号 `ari_web@localhost`，对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE、对 `ari.tour_qa_setting` 只有 SELECT，
-  口令在服务器上随机生成、直接写进这个文件，不经过命令行。
+- `/etc/ari/web-api.my.cnf`：MySQL 选项文件。由 `web_api/sql/create_ari_web.sh` 生成：它新建账号 `ari_web@localhost`
+  （对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT，别的表碰不到），
+  口令随机生成、直接写进这个文件，不打印。服务走本机套接字连库。跑法（会问一次 MySQL root 口令，输入不回显）：
+
+  ```sh
+  ssh -t ubuntu@44.207.251.65 'sh /home/ubuntu/ari/web_api/sql/create_ari_web.sh'
+  ```
+
+  `root@localhost` 与允许远程登录的 `root@%` 是两个账号，脚本会先走套接字、不行再走 TCP 各试一次。
 
 两个文件到位后还要做三步：
 
