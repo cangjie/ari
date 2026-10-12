@@ -378,15 +378,17 @@ def test_material_marks_review_notes_and_borrowed_positions():
         "name": {"zh": "某馆"}, "opening": {"zh": "全天"},
         "card": {"city": {"zh": "某市"}, "district": {"zh": "某区"}, "type": {"zh": "遗址"}, "desc": {"zh": "简介。"}},
         "places": [{"id": "a", "name": {"zh": "甲处"}, "stops": [1]}],
+        "routes": [{"label": {"zh": "两小时"}, "total": 50, "stay": 45, "walk": 5, "stops": [1]}],
         "stops": {"1": {
-            "name": {"zh": "甲展"}, "tier": "A", "status": {"zh": "在展"}, "intro": ["介绍正文。"],
+            "name": {"zh": "甲展"}, "tier": "A", "dwell": 45, "status": {"zh": "在展"}, "intro": ["介绍正文。"],
             "source": {"zh": "官网"}, "borrowed": {"zh": "具体位置未核实。"}, "review": "直径 30 厘米疑为笔误",
             "objects": [{"name": {"zh": "某瓶"}, "tier": "B", "review": "足径与瓶形不合"}],
         }},
     }
     text = llm.museum_material(museum)
     for piece in ("待复核：直径 30 厘米疑为笔误", "位置说明：具体位置未核实。", "某瓶（导览评级 B；待复核：足径与瓶形不合）",
-                  "介绍正文。", "介绍出处：官网"):
+                  "介绍正文。", "介绍出处：官网", "建议停留约 45 分钟",
+                  "两小时：1 站，约 50 分钟（停留 45 + 步行 5），依次是甲展", "都是本导览的估计"):
         assert piece in text
 
 
@@ -396,6 +398,8 @@ def test_every_published_museum_can_be_turned_into_material():
         text = llm.build_system(museum)
         for stop in museum["stops"].values():
             assert stop["intro"][0] in text, f"{path.stem} seq {stop['seq']} 的介绍没进材料"
+        for route in museum["routes"]:
+            assert f"{route['label']['zh']}：{len(route['stops'])} 站，约 {route['total']} 分钟" in text
 
 
 def test_prompt_hash_changes_with_any_part():
