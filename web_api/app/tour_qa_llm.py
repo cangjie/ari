@@ -151,9 +151,14 @@ def build_system(museum: dict) -> str:
 
 def build_user(museum: dict, place: dict, question: str) -> str:
     stops = "、".join(museum["stops"][str(seq)]["name"]["zh"] for seq in place["stops"])
-    return (f"游客正在看的地点：{place['name']['zh']}\n"
+    text = (f"游客正在看的地点：{place['name']['zh']}\n"
             f"这一处的介绍页包含：{stops}\n"
             f"问题：{question}")
+    # 问题被包在几行中文里，模型会顺着用中文答（nano 与 mini 试答时都这样）。
+    # 一个汉字都没有的问题，在这里明说一句
+    if not re.search(r"[\u4e00-\u9fff]", question):
+        text += "\n这个问题不是用中文写的：整段回答都用问题所用的语言，不要用中文。"
+    return text
 
 
 def prompt_hash(model: str, effort: str | None, system: str, user: str) -> str:
