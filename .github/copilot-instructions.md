@@ -12,6 +12,12 @@
 
 **ari** —— 产品定位尚未确定，见 `PROGRESS.md` 的未决项。
 
+**导览产品是多景区的，不要为伪满皇宫量身定制**（用户 2026-10-12 定，原话：「伪满皇宫，仅仅是景点之一，请不要为伪满皇宫量身定制，
+日后至少要增加北海，香山颐和园等。」）。伪满皇宫（`wmhg`）只是已上线的第一处。写设计稿、提示词、文案、示例时至少用两处景区的内容；
+写代码时景区清单从 `web_api/tour/data/*.json` 来，不写死 `wmhg`；某个景区缺路线、缺停留时间、缺照片时界面要照常。
+没有资料的景区只能提名字，不能编内容（2026-10-12：北海库里有 23 处景点的介绍与评级，没有路线和地图；香山、颐和园一点没有）。
+后半句「怎么落实」是 AI 的理解，用户只说了前面那句。
+
 本仓库是 monorepo 根目录，将包含一个服务端子项目和多个客户端子项目。
 
 - 仓库：`git@github.com:cangjie/ari.git`
@@ -25,9 +31,10 @@
     由 Nginx 反代到 `web_api`。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18、19 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
 - `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
+- `android/` —— **还没有创建**。Android App 的工程目录，用户 2026-10-12 授权由 AI 创建（只这一个目录）。App 只做了规划，见第 20 条
 - 其余客户端子目录尚未创建，待产品定位与客户端范围明确后再定
 
-**子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。
+**子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。上面的 `android/` 是用户点名授权的例外。
 
 ## 技术选型
 
@@ -38,8 +45,9 @@
 - Nginx 反向代理
 - systemd 管理服务进程
 
-客户端技术选型仍待产品定位与客户端范围确定后再决定。已有的导览站是原生 HTML/CSS/JS，
-无框架、无构建步骤、不引用任何站外资源。
+已有的导览站是原生 HTML/CSS/JS，无框架、无构建步骤、不引用任何站外资源。
+Android App（规划中，未开工）用户 2026-10-12 定为**原生 Kotlin 外壳 + WebView 复用导览站**，语音照 MingnaCurator 用
+**讯飞实时听写 + AWS Polly 朗读**，见第 20 条。其余客户端的技术选型仍待定。
 
 导览站的游客互动调 OpenAI API，线上型号 `gpt-5.4-mini`（见第 19 条）。
 **个人订阅（Claude、ChatGPT）不能给线上服务用**（用户 2026-10-12 问过，定为走 API）：订阅登录只许本人使用。
@@ -126,7 +134,7 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十九条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下二十条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -1371,6 +1379,65 @@ ARI_QA_TEST_DB=1 ARI_DB_DEFAULTS_FILE=~/.my.cnf ./.venv/bin/python -m pytest tes
 
 **真机上软键盘弹出时输入框会不会被挡住，没验过** —— 无头浏览器模拟不了软键盘。
 
+**20. Android App：只做了规划，一行代码没写（2026-10-12）。计划草案与效果图提示词在 `docs/`。**
+
+用户要在网页版的基础上做 Android App，加四样网页做不到的：问答支持语音（照 MingnaCurator）、App 在后台时屏幕上留一个悬浮窗 agent
+（文字或语音互动）、后台持续定位并在进入热区时弹提示且 agent 用语音和文字提醒、语音唤醒。
+
+这一轮的产出只有两份文档：`docs/TOUR_ANDROID_PLAN.md`（实施计划草案，分 M0–M5 六期，**用户没有批准**）与
+`docs/TOUR_ANDROID_DESIGN_PROMPT.md`（给 Claude Design 出效果图用的提示词）。用户要先出效果图，**图回来再调整计划、再开工**。
+
+**用户定的事（2026-10-12），改之前先想清楚：**
+
+- 架构：原生 Kotlin 外壳 + WebView 复用 `web_api/tour`，四个新功能原生写。
+- 语音：照 MingnaCurator，讯飞实时听写 + AWS Polly 朗读。
+- 目录：根目录 `android/`，授权 AI 创建。真机：小米 / 红米。
+- 多景区，不为伪满皇宫量身定制（见「项目」一节）。
+- **agent 不止一个形象，是一组可以换的导览员**：阿瑞算一个，再就是小爱 —— 伪满皇宫、北海、颐和园的旧主人都姓爱新觉罗。
+- **前期位置和音频都上传。** 首次启动的说明页与设置里的说明**不要写「经纬度不上传」「唤醒词之前的声音不会上传」**。用户说明「目前就是个测试」。
+
+**AI 定的、用户还没表态的**（全在计划的「默认取舍」里，不要当成既定事实）：识别由服务器只签名、手机直连讯飞（服务器在美国）；
+悬浮窗里的问答只有提问者自己看得到，带最近 3 轮上下文；App 里到站判定由原生代码做、页面只负责画，与 `app.js` 靠同一份夹具对齐；
+测试期上传取最简单的做法（全量、存成服务器磁盘上的文件、库里留开关 `debug_upload`）；包名 `top.snowmeet.tour`、minSdk 26、targetSdk 35。
+
+**待用户定：**
+
+- **「小爱」与小米撞名。**「小爱同学」是小米语音助手的名字和唤醒词，而测试机正是小米：唤醒词带「小爱」会让两个助手同时应答，
+  名字本身也有混淆与商标上的风险。提示词里因此没给小爱写唤醒词，唤醒那组帧用的是「你好阿瑞」（这个唤醒词也是 AI 暂定的）。
+- 各位导览员要不要各有各的声音。Polly 的普通话音色只有 `Zhiyu` 一个（女声），要多音色得把朗读换成讯飞合成。
+- 要不要按景区指定默认导览员。
+- 讯飞的 AppID / APIKey / APISecret 与 Polly 权限（给 EC2 挂 IAM 角色，或给密钥）要在做语音之前到位。
+
+**查证过的平台限制（2026-10-12，出处在计划文末），这几条决定了哪些事做不到：**
+
+- **语音唤醒做不到字面上的「随时」。** Android 14 起，要用麦克风或定位的前台服务必须在 App 有可见界面时启动（点通知启动也算）；
+  开机广播不许启动麦克风类前台服务。所以只在用户打开过 App 并开启陪伴模式之后有效，被杀或重启后要点一次通知或打开 App。
+- targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时确有一个可见的悬浮窗。
+- 悬浮窗上不了锁屏；麦克风在用时状态栏的绿色标记是系统画的，藏不掉；系统通知只能用标准模板。
+- 国产系统会杀后台。小米要用户手动给：悬浮窗、后台弹出界面、自启动、省电策略「无限制」、悬浮通知，其中几项 App 查不出是否已开。
+- 纯血鸿蒙（HarmonyOS NEXT）装不了 Android 应用。
+- sherpa-onnx 的关键词检出：模型 `sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20`（int8 编码器约 4.4 MB），关键词是一行拼音 token 文本，
+  换词不用重训；当时最新版 v1.13.8。**Android 用的 AAR 叫什么文件名没查到**，写下载脚本前先看发布页，不凭记忆猜。
+
+**MingnaCurator 的语音是这么做的**（本机 `~/source/MingnaCurator`，不在本仓库）：小程序按住说话，16 kHz 单声道 PCM 经 WebSocket
+送到自家服务端（`/api/Artwork/RealtimeAsr`，消息 `start` / 二进制帧 / `stop` ↔ `ready` / `result{text,is_final}` / `stopped` / `error`），
+服务端转给讯飞实时听写（`wss://iat-api.xfyun.cn/v2/iat`，`wpgs` 边说边出字；签名在 `XfyunRealtimeAsrService.cs` 的 `BuildWebSocketUrl`）；
+松手后文字走 `PostTopic`，录音另传 `QuestionAudio` 存 S3 供别人播放；回答朗读是 `TopicAnswerAudio/{id}` → Polly（`Zhiyu`），按内容哈希缓存在 S3。
+
+**本机（Mac）的 Android 环境（2026-10-12 实查）：** SDK 在 `~/Library/Android/sdk`（platforms 35 / 36、build-tools 35 / 36、模拟器、
+android-34 / 36 的 arm64 镜像），`adb` 在 Homebrew 里；**没有 Android Studio、没有 `cmdline-tools`（建不了模拟器）、没有建好的模拟器、JDK 只有 22**；
+`~/.gradle` 里缓存着 Gradle 8.13 与 AGP 8.9 / Kotlin 2.0.21。这套组合能不能出包没有实跑过。
+
+**踩过的坑：**
+
+- **写给游客看的事实陈述，不要照自己的方案写。** 我在说明页里写了「经纬度不上传」「唤醒词之前的声音不会上传」，那是我自己计划里的做法，
+  用户的安排正相反。收集什么、传不传、存不存，先问。被纠正后改成照实写「会上传」，没有只删不提。
+- **示例只取一处，等于为那一处定制。** 第一版提示词的产品介绍、示例内容、agent 的约束全围着伪满皇宫写，用户看到后纠正。
+- **`tour_browser_check.mjs` 的 `qa` 场景截图不能给人当参照**：那是假接口的数据，里面有「第 21 个问题」和测试用的脚本注入字符串。
+  给设计工具做参照图用 `SHOTS=<目录> node web_api/tests/tour_browser_check.mjs list live routes`，得到列表页、导游地图加到站横幅、介绍抽屉三张。
+- 北海公园库里「白塔」「琼华岛」两条的中文名是 AI 翻译、简介是 AI 译或存疑（官网中文站没有这两条）。取示例优先用来源为「原始」的行，如九龙壁、团城。
+- 本机查库：`web_api/.venv/bin/python` 里有 PyMySQL，配 `~/.my.cnf` 可以直接只读查询线上库。
+
 ---
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
@@ -1488,6 +1555,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
 | `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、游客互动（设计、上限怎么改、怎么下架、换 key / 型号 / 数据库口令、型号对比）、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
+| `docs/TOUR_ANDROID_PLAN.md` | Android App 实施计划**草案**（用户未批准）：总体结构、默认取舍、M0–M5 分期、要用户提供的东西、平台硬限制与出处。见第 20 条 |
+| `docs/TOUR_ANDROID_DESIGN_PROMPT.md` | 给 Claude Design 出 Android App 效果图用的提示词，**整份文件就是要粘贴的内容**。自带视觉规格（取自 `app.css`）与两处景区的真实示例；改了网页样式或有了新景区的资料要跟着改 |
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成在 `route_plan.py` 有第一版（只做了伪满皇宫，Ma/Mc/Mr 取 0，见第 18 条） |
 | `docs/WMHG_RUNBOOK.md` | 伪满皇宫第 7–8 阶段（评分、审计、翻译、导出）的执行指引，写给 Codex。含 G3/G4 两个必须停下问用户的关卡 |
 | `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
