@@ -164,10 +164,11 @@ def test_prompt_carries_the_place_and_its_official_intro(qa):
 def test_non_chinese_question_is_answered_in_its_own_language(qa):
     """问题被包在几行中文里，不提醒的话模型会用中文答。"""
     client, _, answerer = qa
-    ask(client, "Who lived in Jixi Building?")
-    ask(client, "溥仪住在哪栋楼？")
     hint = "整段回答都用问题所用的语言"
-    assert hint in answerer.calls[0][1] and hint not in answerer.calls[1][1]
+    for question, hinted in [("Who lived in Jixi Building?", True), ("この神社は今も残っていますか", True),
+                             ("溥仪住在哪栋楼？", False), ("Puyi 住在哪栋楼", False)]:
+        ask(client, question)
+        assert (hint in answerer.calls[-1][1]) is hinted, question
 
 
 def test_off_topic_question_is_visible_only_to_its_asker(qa):

@@ -100,6 +100,7 @@ def museum_material(museum: dict) -> str:
         f"开放时间：{museum['opening']['zh']}",
         "「导览评级」是本导览 Ari Travel 按参观价值给的 S / A / B / C 四档，S 最高。"
         "它不是馆方的评级，也不是国家文物等级。",
+        "各站的「现状」是整理资料时记下的陈列状态，不是实时信息，不代表今天是否开放。",
     ]
     routes = [f"- {r['label']['zh']}：{len(r['stops'])} 站，约 {r['total']} 分钟（停留 {r['stay']} + 步行 {r['walk']}），"
               "依次是" + "、".join(museum["stops"][str(seq)]["name"]["zh"] for seq in r["stops"])
@@ -155,8 +156,8 @@ def build_user(museum: dict, place: dict, question: str) -> str:
             f"这一处的介绍页包含：{stops}\n"
             f"问题：{question}")
     # 问题被包在几行中文里，模型会顺着用中文答（nano 与 mini 试答时都这样）。
-    # 一个汉字都没有的问题，在这里明说一句
-    if not re.search(r"[\u4e00-\u9fff]", question):
+    # 没有汉字的，或者带假名、谚文的（日文里也有汉字），在这里明说一句
+    if not re.search(r"[\u4e00-\u9fff]", question) or re.search(r"[\u3040-\u30ff\uac00-\ud7af]", question):
         text += "\n这个问题不是用中文写的：整段回答都用问题所用的语言，不要用中文。"
     return text
 
