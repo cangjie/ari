@@ -138,7 +138,7 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 
 ### 部署状态（2026-10-12）
 
-**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 差两个带密钥的文件和一段 Nginx 配置。
+**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 只差 OpenAI 的 key 文件和一段 Nginx 配置。
 
 | | 状态 |
 |---|---|
@@ -146,9 +146,9 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 | 库表 `tour_topic`、`tour_qa_setting` | **已建**（`ari` 库现为 16 张表），三行上限初值已写入 |
 | 服务器上的代码与依赖 | **已做**：`git pull`；`/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
 | 服务配置 | **已做**：`/etc/ari/web-api.env`（640 root:ari，**不含密钥**）与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`，服务已重启 |
-| 数据库账号 `/etc/ari/web-api.my.cnf` | **未做**：服务器上 `sudo mysql` 进不去 root；用户给的一个口令在 `root@localhost` 与 `root@%` 上都被拒。建账号的脚本已备好（`web_api/sql/create_ari_web.sh`），等正确的 root 口令，或改定用现有的 `ari` 账号 |
+| 数据库账号 `/etc/ari/web-api.my.cnf` | **已做**：`web_api/sql/create_ari_web.sh` 建了 `ari_web@localhost`，配置文件 640 root:ari。服务没重启就连上了库，列表接口回 200 |
 | OpenAI key `/etc/ari/openai_key` | **未做**：用户定的是用同机 reqai 项目的那把 key，但权限系统不允许 AI 自己到别的项目里找密钥，要用户放过来或明确授权 |
-| Nginx `location /api/` | **未做**：等上面两项。入口不开，页面上这一块就不显示 |
+| Nginx `location /api/` | **未做**：等 key，并先用真模型试答。入口不开，页面上这一块就不显示 |
 
 `/etc/ari/web-api.env` 的内容（密钥不在这里，在它指向的两个文件里）：
 
@@ -163,7 +163,8 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 - `/etc/ari/openai_key`：只有一行，就是 key 本身。
 - `/etc/ari/web-api.my.cnf`：MySQL 选项文件。由 `web_api/sql/create_ari_web.sh` 生成：它新建账号 `ari_web@localhost`
   （对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，对 `ari.tour_qa_setting` 只有 SELECT，别的表碰不到），
-  口令随机生成、直接写进这个文件，不打印。服务走本机套接字连库。跑法（会问一次 MySQL root 口令，输入不回显）：
+  口令随机生成、直接写进这个文件，不打印。服务走本机套接字连库。2026-10-12 已跑成（root 的配置从标准输入给，
+  登上的是 `root@localhost`）。以后要换口令就重跑，跑法（会问一次 MySQL root 口令，输入不回显；这一支没有实跑过）：
 
   ```sh
   ssh -t ubuntu@44.207.251.65 'sh /home/ubuntu/ari/web_api/sql/create_ari_web.sh'
@@ -171,7 +172,7 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 
   `root@localhost` 与允许远程登录的 `root@%` 是两个账号，脚本会先走套接字、不行再走 TCP 各试一次。
 
-两个文件到位后还要做三步：
+key 文件到位后还要做三步：
 
 1. **用真模型试答一批问题**（现有的另一把 key 所在账户余额为 0，至今一条都没答成），看提示词与型号行不行。
 2. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
@@ -367,13 +368,15 @@ server {
 | 服务器：服务重启后 | `ari-web-api` active，`/health` 200；问答接口回 503，日志写明「ARI_DB_DEFAULTS_FILE 指的文件不存在」 |
 | 线上页面（新脚本已生效） | 无头 Chrome 对着 `https://tour.snowmeet.top` 跑原有 8 个场景：42 项通过；2 项「控制台没有报错」不过，报的都是 `/api/tour/…` 404，入口开通后消失 |
 | 线上：互动一块 | 不显示（入口未开，符合预期）；`ai.snowmeet.top` 仍回 200 |
+| 服务账号 `ari_web` 的权限（以系统用户 `ari` 用服务的配置文件连库实测） | 能读上限表与问答表；改上限表、删问答、读 `artwork`、建表都被拒（1142） |
+| 服务器：账号建好之后（服务未重启） | 列表接口回 200 `{"topics":[],"more":false}`；提问回 503，日志写明「ARI_OPENAI_KEY_FILE 指的文件不存在」，库里没有多出行 |
 
 **没验的**：真机 GPS。无头浏览器里的定位是模拟出来的，走的是浏览器真实的 `watchPosition`，
 但手机在院子里的实际精度、国内浏览器给的坐标系，只有到现场才知道。
 
 ## 待办
 
-- **游客互动的接口入口没开**：差 `/etc/ari/web-api.my.cnf`（数据库账号）与 `/etc/ari/openai_key` 两个文件。到位后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
+- **游客互动的接口入口没开**：只差 `/etc/ari/openai_key`。到位后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
 - **证书 2027-01-07 到期**，没有自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。
