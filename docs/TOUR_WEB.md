@@ -138,7 +138,7 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 
 ### 部署状态（2026-10-12）
 
-**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 只差 OpenAI 的 key 文件和一段 Nginx 配置。
+**页面已更新到线上，但接口入口没开，游客看不到「游客互动」。** 服务器上的东西都配齐了，卡在 OpenAI 账户没有余额。
 
 | | 状态 |
 |---|---|
@@ -147,8 +147,8 @@ UPDATE tour_topic SET valid = 0 WHERE id = 123;                             -- �
 | 服务器上的代码与依赖 | **已做**：`git pull`；`/opt/ari/.venv` 新装 `openai 3.6.0`、`PyMySQL 1.2.0`（连带 `jiter 0.17.0`、`sniffio 1.3.1`），原有的包没有变动 |
 | 服务配置 | **已做**：`/etc/ari/web-api.env`（640 root:ari，**不含密钥**）与 systemd drop-in `/etc/systemd/system/ari-web-api.service.d/tour-qa.conf`，服务已重启 |
 | 数据库账号 `/etc/ari/web-api.my.cnf` | **已做**：`web_api/sql/create_ari_web.sh` 建了 `ari_web@localhost`，配置文件 640 root:ari。服务没重启就连上了库，列表接口回 200 |
-| OpenAI key `/etc/ari/openai_key` | **未做**：用户定的是用同机 reqai 项目的那把 key，但权限系统不允许 AI 自己到别的项目里找密钥，要用户放过来或明确授权 |
-| Nginx `location /api/` | **未做**：等 key，并先用真模型试答。入口不开，页面上这一块就不显示 |
+| OpenAI key `/etc/ari/openai_key` | **已放好**（640 root:ari；用户给的 reqai 项目那把）。**key 有效，但账户余额为 0**：试答第一条就被拒，`credit_balance_exhausted`，与本机 `~/.openai_key` 那把是同一个报错。充值之后什么都不用改 |
+| Nginx `location /api/` | **未做**：等 OpenAI 充值，并先用真模型试答。入口不开，页面上这一块就不显示 —— 现在开了的话每个提问都会失败 |
 
 `/etc/ari/web-api.env` 的内容（密钥不在这里，在它指向的两个文件里）：
 
@@ -172,7 +172,7 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 
   `root@localhost` 与允许远程登录的 `root@%` 是两个账号，脚本会先走套接字、不行再走 TCP 各试一次。
 
-key 文件到位后还要做三步：
+OpenAI 充值之后还要做三步：
 
 1. **用真模型试答一批问题**（现有的另一把 key 所在账户余额为 0，至今一条都没答成），看提示词与型号行不行。
 2. Nginx 站点 `ari-tour` 在 `location /` 之前加一段，`nginx -t` 通过后再 reload：
@@ -364,7 +364,7 @@ server {
 | · 翻页 | 翻到下一处是那一处自己的列表与空输入框；翻回来草稿和列表都还在 |
 | · 出错 | 提问失败写明原因、问题回到输入框；列表载入失败给「点此重试」；接口不存在时整块从头到尾不显示（拿到列表之后才显示，不会先闪一下） |
 | · 输入框获得焦点 | 输入框挪到屏幕上半截，外层页面不跟着滚（修掉了一个会把「消息」抽屉带出来的问题） |
-| **真模型试答** | **没做成**：13 个问题全部被 OpenAI 拒绝，账户余额为 0。提示词与型号的实际效果还没有任何证据 |
+| **真模型试答** | **没做成**，两把 key 都试过：本机 `~/.openai_key` 13 个问题全部被拒；服务器上 reqai 那把第一条就被拒（之后没再发）。都是 `credit_balance_exhausted`，账户余额为 0。提示词与型号的实际效果还没有任何证据 |
 | 服务器：服务重启后 | `ari-web-api` active，`/health` 200；问答接口回 503，日志写明「ARI_DB_DEFAULTS_FILE 指的文件不存在」 |
 | 线上页面（新脚本已生效） | 无头 Chrome 对着 `https://tour.snowmeet.top` 跑原有 8 个场景：42 项通过；2 项「控制台没有报错」不过，报的都是 `/api/tour/…` 404，入口开通后消失 |
 | 线上：互动一块 | 不显示（入口未开，符合预期）；`ai.snowmeet.top` 仍回 200 |
@@ -376,7 +376,7 @@ server {
 
 ## 待办
 
-- **游客互动的接口入口没开**：只差 `/etc/ari/openai_key`。到位后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
+- **游客互动的接口入口没开**：卡在 OpenAI 账户余额为 0。充值后先用真模型试答，再开 Nginx 入口，见上文「部署状态」。
 - **证书 2027-01-07 到期**，没有自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。

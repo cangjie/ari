@@ -704,7 +704,7 @@
       html += '<div class="qa-a"><div class="qa-meta"><span class="qa-role">导览助手</span></div><p class="qa-thinking">思考中…</p></div>';
     } else if (t.status === "answered") {
       html += '<div class="qa-a"><div class="qa-meta"><span class="qa-role">导览助手</span><span>AI 生成</span></div><p>' + esc(t.answer || "") + "</p></div>";
-      if (t.mine && !t.public) html += '<div class="qa-private">这条提问与参观无关，只有你自己看得到。</div>';
+      if (t.mine && !t.public) html += '<div class="qa-private">这条提问没有公开，只有你自己看得到。</div>';
     } else {
       html += '<div class="qa-private">这条提问没有得到回答。</div>';
     }
