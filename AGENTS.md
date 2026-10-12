@@ -20,8 +20,9 @@
 ### 子目录
 
 - `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `docs/WEB_API.md`
-  - `web_api/tour/` —— 手机导览站，第一个面向游客的客户端。纯静态，线上由 Nginx 以 `tour.snowmeet.top` 直接提供，
-    **不经过 FastAPI**。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18 条
+  - `web_api/tour/` —— 手机导览站，第一个面向游客的客户端。页面纯静态，线上由 Nginx 以 `tour.snowmeet.top` 直接提供，
+    **不经过 FastAPI**；唯一的例外是介绍页里的「游客互动」（AI 问答，2026-10-12 上线），它的接口 `/api/tour/…`
+    由 Nginx 反代到 `web_api`。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18、19 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
 - `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
 - 其余客户端子目录尚未创建，待产品定位与客户端范围明确后再定
@@ -40,6 +41,11 @@
 客户端技术选型仍待产品定位与客户端范围确定后再决定。已有的导览站是原生 HTML/CSS/JS，
 无框架、无构建步骤、不引用任何站外资源。
 
+导览站的游客互动调 OpenAI API，线上型号 `gpt-5.4-mini`（见第 19 条）。
+**个人订阅（Claude、ChatGPT）不能给线上服务用**（用户 2026-10-12 问过，定为走 API）：订阅登录只许本人使用。
+管线里在自己机器上跑 `claude -p` / `codex exec` 是本人使用；线上给游客答题是对外服务。
+实际上也撑不住 —— 订阅额度与日常使用是同一个池子，CLI 每次冷启动十几秒。
+
 ### 服务器环境
 
 - AWS 主机：`44.207.251.65`
@@ -52,12 +58,18 @@
 - 公网入口：HTTPS `443`（web_api 与导览站，按域名分流）、HTTP `80`（301 跳转到 443）、MySQL `3306`、Nginx 环境验证 `8000`
 - 本机入口：Uvicorn `127.0.0.1:8002`（web_api）、`127.0.0.1:8001`（smoke）、MySQL X Protocol `127.0.0.1:33060`
 - 服务：`mysql`、`nginx`、`ari-web-api`、`ari-smoke` 均由 systemd 管理并开机启动
-- Nginx 站点：`ari-web-api`、`ari-smoke`、`ari-tour`（导览站，静态根目录 `/home/ubuntu/ari/web_api/tour`）。
+- Nginx 站点：`ari-web-api`、`ari-smoke`、`ari-tour`（导览站，静态根目录 `/home/ubuntu/ari/web_api/tour`；
+  其中 `location ^~ /api/` 反代到 `127.0.0.1:8002`，给游客互动用，2026-10-12 加，改之前的备份是同目录的 `ari-tour.bak-20261012`）。
   **同一台机器上还有别的项目的站点 `reqai`（`ai.snowmeet.top`、`snowmeet.goldenma.xyz`），不归本仓库管，不要动**
 - 代码：仓库 clone 在 `/home/ubuntu/ari`，属主 `ubuntu`；服务以 `ari` 用户运行，对代码**只读**
 - `/home/ubuntu` 权限为 `755`，否则 `ari` 用户穿不进去读不到代码
-- 部署方式：`cd /home/ubuntu/ari && git pull --ff-only` + `sudo systemctl restart ari-web-api`；导览站只需 `git pull`，不用重启任何服务
-- Python 虚拟环境：`/opt/ari/.venv`（Python 3.14），web_api 与 smoke 共用
+- 部署方式：`cd /home/ubuntu/ari && git pull --ff-only` + `sudo systemctl restart ari-web-api`；导览站只改页面和数据时只需 `git pull`，不用重启任何服务。
+  **改了 `web_api/app/`（包括游客互动的提示词）要重启 `ari-web-api`**
+- Python 虚拟环境：`/opt/ari/.venv`（Python 3.14），web_api 与 smoke 共用。**属主 `ari`、目录 750，`ubuntu` 用户进不去**
+  （直接跑报 `Permission denied`）：装包、跑脚本要 `sudo -u ari /opt/ari/.venv/bin/…`。2026-10-12 起装有 `openai 3.6.0`、`PyMySQL 1.2.0`
+- 服务配置在 `/etc/ari/`（750 root:ari），三个文件都是 640 root:ari：`web-api.env`（不含密钥，经 systemd drop-in
+  `ari-web-api.service.d/tour-qa.conf` 的 `EnvironmentFile=` 给服务）、`web-api.my.cnf`（数据库账号）、`openai_key`（只有一行）。
+  应用在第一次用到时才读后两个文件。换 key、换型号、换数据库口令的做法见 `docs/TOUR_WEB.md`
 - TLS 证书都是 TrustAsia 手动签发、**无自动续期**：`/etc/ssl/ari/`（`ari.goldenma.xyz`）**2026-11-19 到期**；
   `/etc/ssl/tour/`（`tour.snowmeet.top`）**2027-01-07 到期**，只有 90 天。换证书的步骤在 `docs/TOUR_WEB.md`
 - **22 端口偶尔新连接超时**（80/443 同时是通的，一两分钟后自己恢复；2026-08-21 与 2026-10-10 都遇到过）。
@@ -65,15 +77,23 @@
 - 临时健康检查：`/opt/ari/smoke`，仍在 8000 上跑，作为环境自检对照；web_api 稳定后可退役
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
 - 业务库 `ari`（utf8mb4 / utf8mb4_0900_ai_ci），账号 `ari` 有 `ari`.* 全部权限，`localhost` 与 `%` 两个 host 都建了。密码不进仓库
-- MySQL 8.4 用 `caching_sha2_password`。命令行客户端默认 `ssl-mode=PREFERRED` 可直连；JDBC 之类的客户端首次连接可能要加 `allowPublicKeyRetrieval=true`
+- MySQL 账号 `ari_web@localhost`：`ari-web-api` 专用，走本机套接字。对 `ari.tour_topic` 有 SELECT / INSERT / UPDATE，
+  对 `ari.tour_qa_setting` 只有 SELECT，别的表碰不到（2026-10-12 实测）。由 `web_api/sql/create_ari_web.sh` 生成，口令随机、不打印
+- **服务器上 `sudo mysql` 进不去 root**：`root@localhost` 是口令登录，不是 auth_socket；`ubuntu` 用户也没有 `~/.my.cnf`。
+  要 root 就得用户给口令。`root@localhost`（套接字）与 `root@%`（TCP）是两个账号，口令可能不同
+- **⚠ 线上的 OpenAI key 与 MySQL root 口令 2026-10-12 在会话里出现过明文**（没进命令行，也没进仓库）。建议各换一次，**待用户处理**
+- MySQL 8.4 用 `caching_sha2_password`。pymysql 走 TCP 且没有 TLS 时要另装 `cryptography` 才能完成首次认证
+  （服务端有缓存时碰巧能过）；走本机套接字不需要。命令行客户端默认 `ssl-mode=PREFERRED` 可直连；JDBC 之类的客户端首次连接可能要加 `allowPublicKeyRetrieval=true`
 - GitHub Deploy key：服务器 `ubuntu` 使用 `~/.ssh/id_ed25519`，指纹为 `SHA256:AJphJnfR+F7Id8JIonFKKchfVGeU6iWTssOZqJiJWD0`，已验证可访问 `cangjie/ari`
 - 基础环境的设计、实施计划与部署记录见 `docs/SERVER_ENVIRONMENT.md`、`docs/SERVER_ENVIRONMENT_PLAN.md`、`docs/SERVER_ENVIRONMENT_REPORT.md`；web_api 的部署记录见 `docs/WEB_API.md`；导览站的部署记录见 `docs/TOUR_WEB.md`
 
 ### 数据库设计约定
 
-`ari` 库现有 14 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
+`ari` 库现有 16 张表 + 5 个视图：两个源数据集（城市榜单、展品清单）之外，
 另有 V3.0 评级、metadata、evidence、元数据质量审计四套派生数据，
-以及 LLM 调用的缓存与计量（`llm_call` / `llm_call_item`）。
+LLM 调用的缓存与计量（`llm_call` / `llm_call_item`），
+以及导览站游客互动的两张表（`tour_topic` / `tour_qa_setting`，2026-10-12，见第 19 条）。
+**`tour_topic` 是游客写进来的数据，不是从源文件派生的，重跑不出来。**
 展品侧现有 **10 个 museum key、31426 件**（2026-09-04 新增 `mfa_boston_ext` 4464 件；
 2026-09-22 PEM 由 196 件扩到 **467 件**，见第 14 条；2026-09-24 新增伪满皇宫 `wmhg` 61 件，见第 16 条；
 2026-09-27 新增吉林省博物院 `jlpm` 17723 件，其中只有 107 行进评分，见第 17 条；
@@ -106,7 +126,7 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 `best_source_tier` 都还是占位值 —— **`evidence_score.py` 对这个馆从未跑过**，详见第 9 条
 的 slim 说明。
 
-完整说明见 `utils/import_data/README.md`，以下十八条是改代码前必须知道的，踩过就知道疼：
+完整说明见 `utils/import_data/README.md`，以下十九条是改代码前必须知道的，踩过就知道疼：
 
 **1. 所有展示文本走内容表，主表只存内容ID。**
 `content`（一段内容一个ID）+ `content_text`（`(content_id, lang)` 唯一，`lang` 用
@@ -1275,6 +1295,82 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 页面现有 16/25 个站点有图，目的地封面有图；线上 JSON 与全部 17 个图片地址均返回 HTTP 200。
 其中 5 张超过 600 KB。另有 13 个可见条目在库里没有图片地址，仍无照片。
 
+**19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
+
+照 MingnaCurator 小程序（本机 `~/source/MingnaCurator`，不在本仓库）的「观众互动」做，这一轮只做了文字问答。
+介绍抽屉里「介绍出处」下面一块：游客提问 → AI 结合导览资料回答 → 问答对所有游客公开。
+上限怎么改、怎么下架一条问答、换 key / 换型号 / 换数据库口令，都在 `docs/TOUR_WEB.md` 的「游客互动」一节。
+
+    页面（app.js）→ /api/tour/{馆}/places/{地点}/topics（Nginx 反代）→ web_api/app/tour_qa*.py → MySQL（tour_topic、tour_qa_setting）
+                                                                                              └→ OpenAI
+
+**用户定的几件事（2026-10-12）：**
+
+- 只做文字问答。MingnaCurator 还有按住说话（实时语音识别）、回答朗读、管理端审核与策展人答复，都没做。
+- 模型走 OpenAI API（见「技术选型」）。key 是用户直接给的；原定新建一把专用 key，后来没走这条。
+- **所有人看所有人的**，不做「只看我的」切换。导览站没有登录，「我」是浏览器里生成的匿名设备号（请求头 `X-Visitor`），接口不把它返回给别人。
+- 公开前由模型顺带把关（输出里的 `on_topic`）：不是正常参观提问的，只有提问者自己看得到。不增加调用次数；会误判，漏掉的靠改库下架。
+- **提问条数的上限要随时可改。** 第一版计划写的是「环境变量可调」，被用户驳回（原话：「提问条数的上限，应该随时可以修改」）。
+  现在三道上限存在表 `tour_qa_setting`，每次提问现读、不缓存：改一行，下一条提问就按新值算；任何一项设成 0 就是关掉提问。
+  **往后同类的限流、配额、开关照此办理，放在不重启就能改的地方** —— 这一句是 AI 的引申，用户只说了上限这一项。
+
+**几条定下来的规则，改之前先想清楚：**
+
+- **回答依据就是页面那份 `web_api/tour/data/<馆>.json`**，不另外读库 —— 「回答依据的资料」与「页面展示的资料」不会分叉。
+  整馆资料放 system（稳定前缀，命中缓存），当前地点与问题放 user。**页面上有的，资料里也要有**：
+  第一版没带建议停留时间与路线，问「逛完要多久」就答不上。
+- 提示词只写行为规则（第 9 条）。问题分两类：**历史与人物**可以用一般知识答，但不许挂在馆方名下；
+  **现场实况**（展厅位置、票价、今天是否开放、设施在哪）资料没写就说不知道。带「待复核」的不当事实讲。
+- 型号不写死（`ARI_QA_MODEL`），缺配置回 503，不猜。实际型号、token、耗时记在 `tour_topic` 本行，
+  **不写 `llm_call`**（那张表是管线的，按展品关联）。测量列一律可空（第 9 条的教训）。
+- 同一地点、同一份资料、同一个问题已有公开回答就直接给，不再调模型（`prompt_hash`，与 `llm_cache` 的键同一思路）。
+  不公开的、已下架的被重问时另存一行，**不会重新公开**。
+- **`tour_topic` 不可重建**，改结构只在 `web_api/sql/tour_qa.sql` 末尾追加 ALTER。下架 = `valid = 0`。
+  写库分三步各自提交（插入 pending → 调模型 → 更新），调模型期间不占着事务（第 10 条的教训）。
+- 服务用的账号 `ari_web` 对上限表只读，服务改不了自己的上限。每 IP 的计数只在内存里，不存 IP。
+- 接口不在（404 / 503）时页面上这一块**从头到尾不显示**：拿到第一份列表之后才显示，不会先闪出来再消失。
+
+**型号：`gpt-5.4-nano` 跟不住细则，线上用 `gpt-5.4-mini`。** 真模型试答 71 次（在服务器上，以服务的身份与配置）。
+同一份提示词、同一批 17 个问题（多数是改完提示词之后才写的）：nano 把「让它改规则」的输入 5 条漏了 4 条，
+资料没写的历史问题 4 条里 3 条只答「资料未说明」；mini 17 条全部符合预期，还更快（0.6–1.5 秒，nano 是 0.9–2.5 秒）。
+改提示词措辞对 nano 无效 —— 又是第 10 条那句：真正有效的变量是换模型。
+每问约 6,400 输入 token（约 5,900 命中缓存）+ 30–150 输出。
+
+**⚠ 放开一般历史知识的代价是会出错。** mini 答「婉容后来怎么样了」，一次答的是「被带走，1946 年去世」，
+另一次多出一句「被苏方拘押」—— 后一句不对。页面上每条回答标着「AI 生成」，提问框上方写着「可能有误」。
+维持现状、收紧成「资料没写就说不知道」、还是换更大的型号，**待用户定**。
+
+**踩过的坑（多数不报错，只是悄悄不对）：**
+
+- **能列出型号 ≠ 能调用。** `models.list()` 不花钱，账户余额为 0 时照样返回 133 个型号；真正的调用回 429
+  `credit_balance_exhausted`。本机 `~/.openai_key` 与同机 reqai 项目那把 key 2026-10-12 都是这个状态。
+  验一把 key 要发一次真调用。试答脚本要第一条失败就停 —— 第一版把 13 条全发完才看结果。
+- **换完凭据文件，先核对换没换成，再采信后面的结果。** `sudo install -m 640 … /dev/stdin <目标>` 经 SSH 管道第一次成功、
+  第二次报 `No such file or directory`，文件没换；紧接着的试答用的还是旧 key，得出的「新 key 也没余额」是错的，
+  是看到那行报错后回头查文件修改时间才发现的。现在用 `sudo sh -c 'cat > x.new && chown … && chmod … && mv x.new x'`，再比对 sha256。
+- **权限系统不让 AI 自己到别的项目（reqai）的服务定义和目录里找密钥**（判为凭据探查）。让用户把 key 给过来。
+- **`overflow: hidden` 挡不住脚本和浏览器自己的滚动。** 收起的抽屉是用 `transform` 挪到屏幕下面去的，仍算 `#app` 的可滚动内容；
+  输入框获得焦点（或调 `scrollIntoView`）时 `#app` 被带着滚，「消息」抽屉露出来、顶栏被顶走。真机上软键盘弹出会触发同样的事。
+  改成 `overflow: clip`（不认的旧浏览器在 `scroll` 事件里拨回去），把输入框挪到可见处时只滚抽屉自己。
+  **这是看截图看出来的，当时的断言全过** —— 加了界面就截一张图看。
+- 无头 Chrome 的页面默认不算「有焦点」，`focus()` 不触发 `focusin`：要先 `Emulation.setFocusEmulationEnabled`。
+- 浏览器验收里「点一下、再取样」分两次往返时，本机的假接口已经答完，同一项时过时不过：点击与取样放进同一段脚本。
+- 数检查项用 `grep -c '✓ '` 会把末尾的「✓ 全部通过」也算进去（报过 64，实为 63）。按行首的 `  ✓` 数。
+- 问题被包在几行中文里，两个型号都把英文提问答成了中文。没有汉字的、或带假名谚文的问题，由 `build_user` 补一句确定性的提示。
+- 资料里的「现状：在展」被模型说成了「今天开放」。资料头部写明现状是整理资料时记下的，不是实时信息。
+- **本机 `~/.my.cnf` 连的就是线上库。** 本地起服务联调时在页面上提的问题是真写进 `tour_topic` 的，公开的那些线上游客也看得到。
+  只看页面交互就用浏览器验收，它自带一个假接口。真库上的那几句 SQL 用 `test_tour_qa_db.py` 验，它只写 `zz_selftest` 的行、跑完删掉。
+
+**验证三层，改了哪层跑哪层：**
+
+```
+cd web_api && ./.venv/bin/python -m pytest tests/ -q        # 接口逻辑，假库假模型，64 条；真库那 3 条默认跳过
+node web_api/tests/tour_browser_check.mjs                   # 页面，自带假接口，63 项；BASE=线上地址 时 qa 场景不发帖，46 项
+ARI_QA_TEST_DB=1 ARI_DB_DEFAULTS_FILE=~/.my.cnf ./.venv/bin/python -m pytest tests/test_tour_qa_db.py -q   # 真库上的 SQL
+```
+
+**真机上软键盘弹出时输入框会不会被挡住，没验过** —— 无头浏览器模拟不了软键盘。
+
 ---
 
 **译名必须留在 `utils/import_data/translations_*.csv`，不能只改数据库。**
@@ -1373,6 +1469,8 @@ end-work(<工具名>): <一句话概括本次工作>
 - **证书、私钥、密码绝不进仓库。** `.gitignore` 已挡掉 `*.key` `*.pem` `*.crt` `*.zip` 等后缀，但提交前仍要查一遍暂存区。私钥传服务器用管道直写并原子设权限，不在 `/tmp` 留副本。
   **特别注意 `.claude/settings.json`：** 权限系统会把批准过的命令原文写进 allow 列表，命令行里带的密码会跟着落盘，而这个文件按上一条规矩是必须提交的。收工前用 `grep -rl '<密码>' --exclude-dir=.git .` 扫一遍，发现就把那几条 allow 规则删掉。2026-08-26 收工时就是这么处理的。
   **根治办法是不要把密码写进命令行**：服务器上配 `~/.my.cnf`（权限 600），或用 `MYSQL_PASSWORD` 环境变量，命令里就不会出现密码。
+  **用户在对话里直接给的口令或密钥也一样**：写进仓库外的临时文件，经标准输入传给目标命令（跨机器就走 SSH 的标准输入），
+  用完两头都删掉；需要新口令就在目标机器上随机生成、直接写进配置文件，不打印。2026-10-12 的 MySQL root 口令与 OpenAI key 都是这么处理的。
 - **浏览器的定位、剪贴板等 API 只在安全上下文可用**（HTTPS 或 `localhost`）。公网入口必须是 HTTPS，裸 IP 的 HTTP 一律拿不到定位。
 
 ---
@@ -1389,7 +1487,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_PLAN.md` | 已执行的服务器环境实施计划 |
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
-| `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
+| `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、游客互动（设计、上限怎么改、怎么下架、换 key / 型号 / 数据库口令、型号对比）、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成在 `route_plan.py` 有第一版（只做了伪满皇宫，Ma/Mc/Mr 取 0，见第 18 条） |
 | `docs/WMHG_RUNBOOK.md` | 伪满皇宫第 7–8 阶段（评分、审计、翻译、导出）的执行指引，写给 Codex。含 G3/G4 两个必须停下问用户的关卡 |
 | `docs/Metadata Enrichment Pipeline 提案.md` | 证据管道设计：三层 metadata、Completeness、Missing Evidence、来源分级、Research Priority、Evidence Packet。与 V3.0 是「维度定义」与「证据从哪来」的关系，不是替代 |
@@ -1455,9 +1553,12 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`，`--check` 只比对。**改了库、路线数据或 OSM 数据后要重跑并提交** |
 | `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**2026-10-11 wmhg 已下载 17 张并部署**；5 张超过 600 KB |
 | `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
-| `web_api/tour/` | 导览站：`index.html` / `app.css` / `app.js` / `fonts/` / `data/<馆>.json`（生成文件，勿手改）/ `img/<馆>/`。说明在 `web_api/README.md` |
-| `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome） |
-| `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定；导览站的目录、本地预览与调试参数 |
+| `web_api/tour/` | 导览站：`index.html` / `app.css` / `app.js` / `fonts/` / `data/<馆>.json`（生成文件，勿手改）/ `img/<馆>/`。游客互动在 `app.js` 的同名一节。说明在 `web_api/README.md` |
+| `web_api/app/tour_qa.py` / `tour_qa_llm.py` / `tour_qa_store.py` | 第 19 条：游客互动的接口（校验、三道上限、流程）、回答依据的资料与提示词与调 OpenAI、MySQL 存取。`openai` 与 `PyMySQL` 在函数里才导入，缺了只有问答回 503 |
+| `web_api/sql/tour_qa.sql` / `create_ari_web.sh` | 游客互动两张表的建表语句（可重复执行；**改结构只追加 ALTER**）；在服务器上建服务专用账号 `ari_web` 并写 `/etc/ari/web-api.my.cnf` 的脚本（交互输入口令那一支没有实跑过） |
+| `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome）。后者自带一个假的 `/api/tour/` 接口，`qa` 场景验游客互动 |
+| `web_api/tests/test_tour_qa.py` / `test_tour_qa_db.py` | 游客互动接口的测试（假库、假模型，不联网）；`MySqlStore` 对着真库的测试（默认跳过，`ARI_QA_TEST_DB=1` 才跑） |
+| `web_api/README.md` | web_api 的开发说明：本地怎么跑、路由约定；导览站的目录、本地预览与调试参数；游客互动的环境变量、本地联调与三层验收 |
 | `.claude/skills/*/SKILL.md` | Claude Code 的两个命令入口 |
 | `.agents/skills/*/SKILL.md` | Codex 的两个命令入口 |
 | `.github/prompts/*.prompt.md` | Copilot 的两个命令入口 |
