@@ -4,6 +4,30 @@
 
 ---
 
+## 2026-10-14 05:42 · codex
+**做了什么** — Android 功能范围梳理与本地环境检查，只有文档归档；`android/` 尚未创建，没有安装工具、构建 APK 或部署。
+
+（1）读取用户提供的两页 `Ari_Android_Design.pdf`，结合原计划列出 25 项功能。用户定：**语音唤醒取消；语音提问暂缓，未来可能需要**。
+相应本轮不安排录音、麦克风权限、实时转写、监听状态、语音操作指令与测试音频上传；回答朗读、介绍朗读、到站播报仍待选择。
+完整编号清单与取舍写入 `docs/TOUR_ANDROID_PLAN.md`，旧 M0–M5 明确标为历史参考；设计提示词顶部同步范围更新。
+
+（2）用户询问本地要安装什么，给出 Android Studio、SDK、JDK、Gradle Wrapper 与真机调试说明，并核对官方文档。
+10-13 检查时是 Intel Mac / macOS 13.7.8 / 16 GB，尚无 Studio 与默认 SDK；**10-14 收工复查时已经安装**
+Studio 2026.2、自带 JBR 25.0.3、SDK Platform 37.0 / Build-Tools 36.0.0 / adb 37.0.1，且配置了 x86_64 AVD。
+这些安装不是本次代理执行的。Command-Line Tools 仍缺；没有旧草案所写的 Gradle / AGP / Kotlin 缓存。
+最新实查值在计划和 `AGENTS.md`，不再沿用 10-12 的环境断言。
+
+（3）用户提供的效果图原件归档到 `docs/Ari_Android_Design.pdf`，SHA-256 与桌面原件一致；未改写其中的旧功能。
+就地修订 `AGENTS.md` 第 20 条、技术选型和文件地图，并同步 Copilot 副本。
+
+**下一步** — 补 Android SDK Command-Line Tools；按最终项目选择 SDK 与兼容的 JDK / Gradle / AGP / Kotlin，统一 Studio 和命令行构建 JDK；
+继续确认本轮功能范围，再修订当前实施方案并开始 M0。小米 / 红米真机开启 USB 调试，连接后验证安装、后台定位与悬浮窗。
+
+**未决** — 朗读和到站播报是否需要，其他新增功能的本轮范围、导览员形象与问答可见性；compileSdk / targetSdk 与构建版本组合未定。
+模拟器启动、真机连接和 APK 构建尚未验证。此前部署、数据管线及域名等待办本轮均未处理。
+
+---
+
 ## 2026-10-12 19:54 · claude
 **做了什么** — Android App 的规划。**一行代码没写，没有部署，线上没有变化。** 产出是两份文档。
 
