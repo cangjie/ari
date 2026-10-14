@@ -18,7 +18,8 @@
 (function () {
   "use strict";
 
-  var MUSEUMS = ["wmhg"];
+  var HOST = window.AriHost || null;
+  var MUSEUMS = HOST ? JSON.parse(HOST.museums()) : ["wmhg"];
   var ACC_TRIGGER_M = 30;   // 精度差于此的定位只移动圆点，不触发到站
   var STAY_FACTOR = 1.2;    // 已在某个热区里时，走出 1.2 倍半径才算离开，免得在边上反复进出
   var BANNER_MS = 6000;
@@ -33,10 +34,10 @@
   var $ = function (id) { return document.getElementById(id); };
   var query = new URLSearchParams(location.search);
   var OPT = {
-    sim: query.get("sim") === "1",
+    sim: !HOST && query.get("sim") === "1",
     debug: query.get("debug") === "1",
-    gcj: query.get("crs") === "gcj02",
-    fix: parseFix(query.get("fix"))
+    gcj: !HOST && query.get("crs") === "gcj02",
+    fix: HOST ? null : parseFix(query.get("fix"))
   };
 
   var data = {};        // {馆 key: JSON}
@@ -408,6 +409,7 @@
       case "denied": text = "未获得定位授权"; break;
       case "unavailable": text = "暂时无法定位"; break;
       case "timeout": text = "定位超时，仍在尝试…"; break;
+      case "approximate": text = "网络位置仅供参考 · 等待卫星定位"; break;
       case "insecure": text = "需 HTTPS 才能定位"; break;
       default: text = "此浏览器不支持定位";
     }
@@ -465,10 +467,10 @@
     updateMe();
   }
 
-  function notify(p) {
-    var d = new Date();
+  function notify(p, at) {
+    var d = at ? new Date(at) : new Date();
     st.msgs = st.msgs.filter(function (m) { return m.pid !== p.id; });
-    st.msgs.unshift({ pid: p.id, time: pad2(d.getHours()) + ":" + pad2(d.getMinutes()), read: false });
+    st.msgs.unshift({ pid: p.id, time: pad2(d.getHours()) + ":" + pad2(d.getMinutes()), at: d.getTime(), read: false });
     save();
     updateMsgs();
     if (st.sheetOpen && st.sheetPid === p.id) return;      // 正看着这一处的介绍，不必再提醒
@@ -486,6 +488,12 @@
 
   // ------------------------------------------------------------ 定位
   function startGeo() {
+    if (HOST) {
+      st.geo = "waiting";
+      updateMe();
+      HOST.ready(M.key);
+      return;
+    }
     if (OPT.sim) { st.geo = "sim"; st.pos = [M.entrance.x, M.entrance.y]; updateMe(); return; }
     if (OPT.fix) {
       onFix({ coords: { latitude: OPT.fix.lat, longitude: OPT.fix.lon, accuracy: OPT.fix.acc } });
@@ -640,6 +648,7 @@
     '<div class="qa-list" id="qa-list"></div></section>';
 
   function visitorId() {
+    if (HOST) return HOST.visitorId();
     if (visitor) return visitor;
     try { visitor = localStorage.getItem("ari-tour:visitor"); } catch (e) { /* 读不了就现生成一个，只在这次打开期间有效 */ }
     if (!visitor || !/^[A-Za-z0-9-]{16,64}$/.test(visitor)) {
@@ -861,7 +870,52 @@
     M = st = null;
     $("tour").hidden = true;
     $("list").hidden = false;
+    if (HOST) HOST.leave();
   }
+
+  // Android 的到站判定在原生引擎中完成。网页接收画布位置、所在热区与消息，
+  // 不再启动浏览器 GPS，也不把原生坐标送回 setPos() 重判一次。
+  var hostSeen = {};
+  if (OPT.debug) window.AriTourDebug = {
+    snapshot: function () { return M && st ? { status: st.geo, inside: st.inside, x: st.pos[0], y: st.pos[1], raw: st.raw } : null; },
+    error: function (status) { onGeoError({ code: status === "timeout" ? 3 : 2, TIMEOUT: 3, PERMISSION_DENIED: 1 }); }
+  };
+  if (HOST) window.AriTour = {
+    state: function (s) {
+      if (!M || !st || s.museum !== M.key) return;
+      var first = st.geo !== "live";
+      st.geo = s.status;
+      st.pos = [s.x, s.y];
+      st.acc = s.acc || 0;
+      st.dist = s.dist || 0;
+      st.raw = s.raw || null;
+      st.inside = s.inside || null;
+      (s.history || []).slice().reverse().forEach(function (m) {
+        if (!placeById(m.pid)) return;
+        var seenKey = s.museum + ":" + m.pid;
+        if ((hostSeen[seenKey] || 0) >= m.at) return;
+        hostSeen[seenKey] = m.at;
+        var d = new Date(m.at);
+        if (m.at >= s.connectedAt) notify(placeById(m.pid), m.at);
+        else {
+          // 从后台返回时补齐消息。时间更近的本地原生记录优先，已读状态保留。
+          var old = st.msgs.filter(function (item) { return item.pid === m.pid; })[0];
+          st.msgs = st.msgs.filter(function (item) { return item.pid !== m.pid; });
+          st.msgs.unshift({ pid: m.pid, time: pad2(d.getHours()) + ":" + pad2(d.getMinutes()), at: m.at, read: !!(old && old.at >= m.at && old.read) });
+        }
+      });
+      save();
+      updateMsgs();
+      updateMe();
+      if (s.status === "live" && (st.follow || first)) centerOn(s.x, s.y);
+    },
+    open: function (pid) { if (M && placeById(pid)) openIntro(pid); },
+    back: function () {
+      if (M && (st.sheetOpen || st.msgsOpen)) { closeSheets(); return true; }
+      if (M) { location.hash = ""; return true; }
+      return false;
+    }
+  };
 
   function onHash() {
     var key = location.hash.replace(/^#/, "");
@@ -964,6 +1018,7 @@
       updateRoute();
     });
     $("locate").addEventListener("click", function () {
+      if (HOST && st.geo === "denied") { HOST.requestLocation(); return; }
       if (st.geo === "sim") { if (st.touring) stopTour(); else startTour(); return; }
       if (st.geo === "denied") { stopGeo(); startGeo(); return; }
       st.follow = true;

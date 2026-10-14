@@ -31,7 +31,7 @@
     由 Nginx 反代到 `web_api`。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18、19 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
 - `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
-- `android/` —— **还没有创建**。Android App 的工程目录，用户 2026-10-12 授权由 AI 创建（只这一个目录）。App 只做了规划，见第 20 条
+- `android/` —— Android App 的 Kotlin / Views + WebView 工程，2026-10-14 已生成代码架构；未做运行验收、未部署。用户将迁移到 Mac 后测试，见第 20 条与 `android/README.md`
 - 其余客户端子目录尚未创建，待产品定位与客户端范围明确后再定
 
 **子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。上面的 `android/` 是用户点名授权的例外。
@@ -46,8 +46,8 @@
 - systemd 管理服务进程
 
 已有的导览站是原生 HTML/CSS/JS，无框架、无构建步骤、不引用任何站外资源。
-Android App（规划中，未开工）用户 2026-10-12 定为**原生 Kotlin 外壳 + WebView 复用导览站**。
-2026-10-13 用户取消语音唤醒、暂缓语音提问；回答朗读、介绍朗读、到站播报仍待取舍。
+Android App 的代码架构已生成，采用用户 2026-10-12 定的**原生 Kotlin 外壳 + WebView 复用导览站**。
+2026-10-13 用户取消语音唤醒、暂缓语音提问；2026-10-14 又明确暂缓回答朗读、介绍朗读与到站播报。
 此前的讯飞实时听写 + AWS Polly 方案留作参考，不能作为本轮启用语音的依据，见第 20 条。其余客户端的技术选型仍待定。
 
 导览站的游客互动调 OpenAI API，线上型号 `gpt-5.4-mini`（见第 19 条）。
@@ -1380,12 +1380,23 @@ ARI_QA_TEST_DB=1 ARI_DB_DEFAULTS_FILE=~/.my.cnf ./.venv/bin/python -m pytest tes
 
 **真机上软键盘弹出时输入框会不会被挡住，没验过** —— 无头浏览器模拟不了软键盘。
 
-**20. Android App：功能范围梳理与环境准备，工程尚未创建（2026-10-14 核对）。**
+**20. Android App：本地代码架构已生成，迁移到 Mac 后再测试（2026-10-14）。**
 
-用户提供了两页效果图，并要求「先不忙实现，给我个功能点列表」。25 项功能清单与当前取舍在
-`docs/TOUR_ANDROID_PLAN.md`；`docs/TOUR_ANDROID_DESIGN_PROMPT.md` 正文与计划的 M0–M5 是 2026-10-12 的历史草案，
-不能直接据此开工。效果图原件随仓库保存在 `docs/Ari_Android_Design.pdf`，未改写；图中的语音输入与唤醒界面已不适用于本轮。
-随后用户询问开发所需的本地环境，本次只做检查和说明，没有创建工程、安装工具、构建 APK 或部署。
+用户先要求功能点列表，随后授权在 Windows 本地生成 Android 代码；最终明确「不需要验收，测试，生成大体的代码架构即可，
+我会迁移到 Mac 电脑上测试」。当前交付是 `android/` 源码，不能当作已验收的 App。没有服务器部署、数据库结构变更或线上测试提问。
+25 项功能清单与本轮取舍在 `docs/TOUR_ANDROID_PLAN.md`，代码架构与 Mac 迁移步骤在 `android/README.md`；
+设计提示词正文与原 M0–M5 保留作历史参考。本轮范围优先，不能从历史草案恢复被取消或暂缓的语音功能。
+效果图原件仍在 `docs/Ari_Android_Design.pdf`，未改写；头像目前是「瑞 / 爱」文字占位，正式形象待定。
+
+**已生成的模块：** WebView 外壳与 `AriHost` / `AriTour` 桥、景区数据仓库、纯 Kotlin 到站判定、location 前台服务、
+GPS / 网络定位来源、后台通知、拖动贴边的悬浮头像与气泡、最近到站与公开问答面板、导览员切换、设置与权限引导、本机消息存储。
+构建时复制 `web_api/tour` 至生成的 assets，HTTPS `/app/tour/` 映射本地内容；`/api/tour/…` 仍走现有线上公开问答接口。
+Android 景区清单从 assets 的 `data/*.json` 自动发现；当前只有伪满皇宫，不编造其他景区数据。修改资料后重新构建 APK，尚无在线资料更新。
+原生接管时页面不启动浏览器 GPS，也不重新判热区；网络定位不触发到站。前台服务只从可见 App 启动，不在后台自动重启。
+
+**构建组合：** Gradle 8.11.1、AGP 8.9.2、Kotlin 2.0.21、compileSdk / targetSdk 35、minSdk 26，优先用 JDK 21。
+Wrapper JAR 从本机 Gradle 8.11.1 分发包提取；脚本与 JAR 随仓库提交，Unix 入口固定 LF 与可执行位。
+迁移需带整个仓库，至少 `android/` 与 `web_api/tour/`；Windows 的 SDK 路径、缓存、APK 与签名文件不提交、不复制到 Mac。
 
 **用户已定的事：**
 
@@ -1398,13 +1409,18 @@ ARI_QA_TEST_DB=1 ARI_DB_DEFAULTS_FILE=~/.my.cnf ./.venv/bin/python -m pytest tes
   后两项是依赖关系带来的范围调整，不是用户另外逐项取消；未来恢复语音提问不能据此恢复唤醒。
 - 2026-10-12 用户曾定测试期位置与音频上传。当前无语音输入，因此不采集或上传音频；轨迹上传仍待本轮取舍。
   首次说明中的收集、上传行为必须按最后确认的功能照实写。
+- **2026-10-14：先做文字版，语音输出后续再接。** 本轮没有朗读、播报、录音、唤醒或麦克风权限，不需讯飞 / Polly 凭据。
+- **悬浮问答沿用现有公开问答，提交前明确提示**（用户 10-14 定）；页面与悬浮窗共用匿名设备号。
+  私密接口、三轮上下文和新增 channel 列均不在本轮实现范围。
+- **只交付大体代码架构，本机不继续测试验收**（用户 10-14 最终定）；后续由用户迁移到 Mac 验证。
 
-**待用户定：** 回答朗读、景点介绍朗读、到站语音播报及其余新增功能的本轮范围；导览员形象方案、
-是否按景区指定默认导览员。若选朗读，再落实 Polly 权限和音色。讯飞凭据不再是本轮开工前置条件。
+**尚未实现 / 未决：** 正式导览员形象、按景区指定默认导览员、在线资料更新、轨迹上传；语音功能以后再定。
+悬浮面板软键盘、锁屏通知、国产系统后台策略、实际 GPS 和最新源码的运行表现均未验收。
 
-**AI 提议、尚未确认：** 悬浮窗问答仅自己可见与最近 3 轮上下文；原生到站引擎与网页通过同一份夹具对齐；
-测试数据全量存服务器文件与 `debug_upload` 开关；包名 `top.snowmeet.tour`、minSdk 26、targetSdk 35。
-讯飞由服务器签名、手机直连仅为未来语音提问的旧方案，不属于本轮实施范围。
+**已有检查，不能当作验收：** 用户收窄为只要架构前，离线 Kotlin / JUnit 9 项通过，其中 182 条状态序列取自实际 `app.js` 函数在 Node VM 中运行，
+不是浏览器定位回调；较早源码用 SDK 工具直接构建了 Debug APK 并验 v2 / v3 签名。最后一轮打包按用户要求中断，随后的小改未补验，
+本机 APK 不代表最新源码。Gradle / AGP / lint 未跑完；浏览器、模拟器和真机未验收，不继续自主补跑。
+`android/tools/` 留有备用构建和离线检查脚本，通常开发用 Gradle Wrapper 即可。测试签名仅在 gitignore 的本机 build 目录中。
 
 **平台约束参考（2026-10-12 查证，出处在计划原草案文末）：** 后台定位涉及前台服务启动限制；
 targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时确有可见悬浮窗；悬浮窗不显示在锁屏上，通知使用系统模板；
@@ -1415,7 +1431,12 @@ targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时�
 服务端转给讯飞实时听写（`wss://iat-api.xfyun.cn/v2/iat`，`wpgs` 边说边出字；签名在 `XfyunRealtimeAsrService.cs` 的 `BuildWebSocketUrl`）；
 松手后文字走 `PostTopic`，录音另传 `QuestionAudio` 存 S3 供别人播放；回答朗读是 `TopicAnswerAudio/{id}` → Polly（`Zhiyu`），按内容哈希缓存在 S3。
 
-**本机环境以每次实查为准，不能把不同机器或历史缓存当成当前安装状态。** 2026-10-13 检测到 Intel i7-7700HQ、
+**本机环境以每次实查为准，不能把不同机器或历史缓存当成当前安装状态。** 本轮 Windows：SDK 位于
+`C:\Users\cangj\AppData\Local\Android\Sdk`，Platform 35、Build-Tools 35.0.0 已有；Java 不在 PATH，
+PyCharm Community Edition 2024.3 自带 JBR 21.0.6 可用，旧 Android Studio 路径失效；Kotlin 2.0.21 与 Gradle 8.11.1 有旧缓存。
+受限环境无法连接 Gradle / adb 的本机进程，解除限制的自动权限审查两次超时，不能把它当作代码编译失败。
+
+**以下是上次 Mac 的历史记录，不是当前 Windows：** 2026-10-13 检测到 Intel i7-7700HQ、
 macOS 13.7.8、16 GB 内存；当时没有 Android Studio 与默认 SDK。2026-10-14 收工时已出现以下安装，非本次代理执行安装：
 Android Studio `2026.2`（build `AI-262.9437.185.2621.16467767`），自带 JBR `25.0.3`；
 `~/Library/Android/sdk` 有 Platform `android-37.0`、Build-Tools `36.0.0`、Platform-Tools / adb `37.0.1`、
@@ -1551,7 +1572,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
 | `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、游客互动（设计、上限怎么改、怎么下架、换 key / 型号 / 数据库口令、型号对比）、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
-| `docs/TOUR_ANDROID_PLAN.md` | Android App 的 25 项功能清单、当前取舍与本机环境；后半部分保留 2026-10-12 的 M0–M5 历史草案，不能直接据此开工。见第 20 条 |
+| `docs/TOUR_ANDROID_PLAN.md` | Android App 的 25 项功能清单、本轮文字版架构范围与环境；用户最终要求迁移到 Mac 再测试。后半部分保留 M0–M5 历史草案，当前范围优先。见第 20 条 |
+| `android/README.md` | Android 代码架构、Mac 迁移、Gradle 构建、既有检查与未验收边界；源码在 app/src，网页与数据构建时从 web_api/tour 复制 |
 | `docs/TOUR_ANDROID_DESIGN_PROMPT.md` | 原效果图提示词；正文为历史参考，顶部范围更新优先。重新设计前按功能取舍修订，不能把原文整份直接粘贴 |
 | `docs/Ari_Android_Design.pdf` | 用户提供的两页效果图原件；按原始字节归档，图中唤醒已取消、语音提问暂缓 |
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成在 `route_plan.py` 有第一版（只做了伪满皇宫，Ma/Mc/Mr 取 0，见第 18 条） |

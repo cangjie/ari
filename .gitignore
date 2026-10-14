@@ -72,3 +72,11 @@ utils/import_data/beihai_raw/
 # 花过钱或联网抓来的（dedupe_facts.json、dedupe_llm_cache.jsonl、dedupe_clusters.json）照常入库。
 utils/import_data/dedupe_cands.json
 utils/import_data/dedupe_groups.json
+
+# Android 本机配置、构建产物与签名材料
+android/.gradle/
+android/.kotlin/
+android/**/build/
+android/local.properties
+*.jks
+*.keystore

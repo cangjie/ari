@@ -21,7 +21,7 @@ import { spawn } from "node:child_process";
 import { createServer } from "node:http";
 import { readFile, writeFile, mkdir, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { extname, join, normalize } from "node:path";
+import { extname, join, normalize, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
 
@@ -188,6 +188,78 @@ class Page {
 }
 
 const SCENES = {
+  async host(p) {
+    if (!LOCAL) return;
+    const script = await p.send("Page.addScriptToEvaluateOnNewDocument", { source: `
+      window.__hostWatch = 0;
+      navigator.geolocation.watchPosition = function () { window.__hostWatch++; throw new Error('host must not start browser GPS'); };
+      window.AriHost = { museums: function () { return '["wmhg"]'; }, visitorId: function () { return 'native-visitor-00000001'; },
+        ready: function (key) { window.__hostReady = key; }, leave: function () { window.__hostLeft = true; }, requestLocation: function () {} };
+    ` });
+    try {
+      await p.send("Page.navigate", { url: BASE + "/?debug=1#wmhg" });
+      for (let i = 0; i < 80 && !(await p.eval("!!window.AriTour && window.__hostReady === 'wmhg'")); i++) await sleep(100);
+      const museum = JSON.parse(await readFile(join(TOUR_DIR, "data/wmhg.json"), "utf8"));
+      const place = museum.places.find((item) => item.id === "tongde");
+      const now = Date.now();
+      const snapshot = { museum: museum.key, status: "live", x: place.x, y: place.y, acc: 5, inside: place.id, connectedAt: now - 5,
+        history: [{ pid: place.id, at: now, museum: museum.key }] };
+      await p.eval(`AriTour.state(${JSON.stringify(snapshot)}); true`);
+      let state = await p.state();
+      check(state.status === "位于「同德殿」热区" && state.visited.startsWith("已游览 1 /"), "host：原生状态显示到站并记消息", state);
+      await p.eval(`AriTour.state(${JSON.stringify(snapshot)}); true`);
+      check((await p.state()).visited.startsWith("已游览 1 /"), "host：重复状态不重复记消息");
+      check((await p.eval("window.__hostWatch")) === 0, "host：不启动浏览器定位");
+      await p.eval("AriTour.open('tongde'); true");
+      check((await p.state()).sheet === "同德殿", "host：原生通知可以打开介绍");
+      check(await p.eval("AriTour.back()"), "host：返回键先收介绍");
+      await p.eval("AriTour.back(); true"); await sleep(150);
+      check(await p.eval("window.__hostLeft === true && document.getElementById('tour').hidden"), "host：再返回到目的地列表");
+    } finally { await p.send("Page.removeScriptToEvaluateOnNewDocument", { identifier: script.identifier }); }
+  },
+  async fixture(p) {
+    if (!LOCAL) return;
+    const museum = JSON.parse(await readFile(join(TOUR_DIR, "data/wmhg.json"), "utf8"));
+    await p.geo("granted", TONGDE);
+    await p.open("/?debug=1#" + museum.key);
+    const projection = museum.proj;
+    const inverse = (x, y) => {
+      const dx = x - projection.tx, dy = y - projection.ty, determinant = projection.a * projection.d - projection.b * projection.c;
+      return [projection.lat0 + (-projection.c * dx + projection.a * dy) / determinant / projection.mlat,
+        projection.lon0 + (projection.d * dx - projection.b * dy) / determinant / projection.mlon];
+    };
+    const samples = [];
+    for (const place of museum.places) {
+      for (const offset of [2.0, 0, 1.05, 1.19, 1.21, 2.5, 0]) {
+        const [lat, lon] = inverse(place.x + place.r * offset, place.y);
+        samples.push({ lat, lon, acc: offset === 2.5 ? 40 : 5 });
+      }
+      const [lat, lon] = inverse(place.x, place.y);
+      samples.push({ lat, lon, acc: 31 }, { error: "timeout" }, { lat, lon, acc: 5 });
+    }
+    samples.unshift({ lat: BEIJING[0], lon: BEIJING[1], acc: 5 });
+    samples.push({ lat: BEIJING[0], lon: BEIJING[1], acc: 5 });
+    const cases = [];
+    for (const sample of samples) {
+      if (sample.error) await p.eval(`AriTourDebug.error(${JSON.stringify(sample.error)}); true`);
+      else {
+        await p.moveTo([sample.lat, sample.lon, sample.acc]);
+        let arrived = false;
+        for (let i = 0; i < 100; i++) {
+          const raw = await p.eval("AriTourDebug.snapshot().raw");
+          if (raw && Math.abs(raw.lat - sample.lat) < 1e-9 && Math.abs(raw.lon - sample.lon) < 1e-9 && raw.acc === sample.acc) { arrived = true; break; }
+          await sleep(50);
+        }
+        if (!arrived) throw new Error("浏览器没有收到夹具定位");
+      }
+      const state = await p.eval("AriTourDebug.snapshot()");
+      cases.push({ ...sample, expected: { status: state.status, inside: state.inside, x: state.x, y: state.y } });
+    }
+    const output = fileURLToPath(new URL("../../android/testdata/geofence_cases.json", import.meta.url));
+    await mkdir(fileURLToPath(new URL("../../android/testdata/", import.meta.url)), { recursive: true });
+    await writeFile(output, JSON.stringify({ museum: museum.key, generated_by: "Chrome watchPosition + app.js", cases }, null, 2) + "\n");
+    check(cases.length > 150, "实际浏览器生成到站状态夹具", cases.length);
+  },
   async list(p) {
     await p.geo(null, null);
     await p.open("/");
@@ -494,7 +566,9 @@ async function main() {
   } finally {
     chrome.kill();
     local?.server.close();
-    await rm(profile, { recursive: true, force: true }).catch(() => {});
+    const safeProfile = resolve(profile);
+    if (!safeProfile.startsWith(resolve(tmpdir()) + sep + "ari-tour-chrome-")) throw new Error("临时浏览器路径越界，拒绝清理");
+    await rm(safeProfile, { recursive: true, force: true }).catch(() => {});
   }
   console.log(failures ? `\n✗ ${failures} 项没过` : "\n✓ 全部通过");
   process.exit(failures ? 1 : 0);
