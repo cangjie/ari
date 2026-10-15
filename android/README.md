@@ -112,7 +112,11 @@ adb shell am broadcast -a top.snowmeet.tour.DEBUG_FIX -n top.snowmeet.tour/.debu
 真机需要核对 GPS 精度、后台省电策略、锁屏通知、悬浮面板软键盘和拒绝 / 撤销权限后的表现。
 构建与自动检查不能代替这些现场验收。
 
-## 已有检查记录与未完成项（2026-10-14）
+## 当前验收记录（2026-10-15）
+
+标准Gradle构建、12项单元测试和lint已完成，lint为0错误、13项警告；Web为74项通过、3项真实数据库检查未启用。浏览器验证景区增删、顺序、空清单与原生同步，线上复核宛平城双路线、原有伪满皇宫和只读问答列表。APK已经发布到上述下载地址，签名与旧包相同。真机安装、现场GPS、锁屏和后台行为仍待验收。详细产物哈希及发布证据见 `utils/import_data/wanping_android_report.json`、`utils/import_data/wanping_release_report.json`。
+
+## 历史检查记录（2026-10-14，后续进展见上）
 
 - 较早的源码版本通过 SDK 直接构建 Debug APK：Kotlin 编译、AAPT2、D8、zipalign、APK v2 / v3 签名验证完成。
   用户随后明确只要代码架构、迁移到 Mac 再测试，因此最后一轮打包已中断；本机 APK 是临时产物，不代表最新源码或验收通过。

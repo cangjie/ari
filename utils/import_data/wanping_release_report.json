@@ -1,0 +1,109 @@
+{
+  "verified_at": "2026-10-15T13:31:23.214399+00:00",
+  "content_commit": "bf6d35800f24d174c4283f4922a3807c71a93bc9",
+  "web_url": "https://tour.snowmeet.top/#wanping",
+  "catalog": [
+    "wmhg",
+    "wanping"
+  ],
+  "public_files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 7597,
+      "sha256": "fcf8c3177ea5b679221de07b038c105914b126e225161a6c0343d814902ccc3e"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 50961,
+      "sha256": "602d3c20c0ea1ed1de4517f14f791470cd249b8096c524f9eaf5cf264d0d4fc8"
+    },
+    {
+      "path": "catalog.json",
+      "status": 200,
+      "bytes": 49,
+      "sha256": "cca0d2e400c2fb301278fde30a8f881fca5d4de496cbb7303c0ea2c129ab1553"
+    },
+    {
+      "path": "data/wanping.json",
+      "status": 200,
+      "bytes": 123264,
+      "sha256": "51ee5c67321d1c1617531515b5e5fbdc21188752bbc0141049f581e68a523400"
+    },
+    {
+      "path": "data/wmhg.json",
+      "status": 200,
+      "bytes": 44215,
+      "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761"
+    },
+    {
+      "path": "api/tour/wanping/places/east_gate/topics",
+      "status": 200,
+      "bytes": 26,
+      "sha256": "bb6a7b6ae01256955ff35c93920d73054d9bdcea9dad31be55b965e8f6d2a694"
+    },
+    {
+      "path": "api/tour/wmhg/places/tongde/topics",
+      "status": 200,
+      "bytes": 470,
+      "sha256": "d4371dd4217e4491f4872f45a16773e8bf330a3cf371d0223b8cbcaf0e22d112"
+    }
+  ],
+  "service": "ari-web-api active after restart",
+  "apk": {
+    "url": "https://tour.snowmeet.top/android/app",
+    "bytes": 8312316,
+    "sha256": "0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201",
+    "signature_certificate_sha256": "342b45f93487468dc125b0c000d632893b0145aacaeed668bd6eaaba2b109a01",
+    "same_signature_as_previous": true,
+    "backup": "/home/ubuntu/ari-downloads/android/app-before-wanping-1efdb270.apk",
+    "public_full_download_verification": "Deployment host fetched complete public HTTPS URL with default certificate validation; HTTP200,8312316 bytes,SHA256 matched. Local external connection separately confirmed HTTP200/type/length but was slow.",
+    "cache_control": "no-store"
+  },
+  "verification": {
+    "web_pytest": {
+      "passed": 74,
+      "skipped_real_db": 3
+    },
+    "android_unit_tests": 12,
+    "android_build": "assembleDebug successful",
+    "android_lint": {
+      "errors": 0,
+      "warnings": 13
+    },
+    "local_browser": [
+      "catalog",
+      "wanping",
+      "host"
+    ],
+    "live_browser": [
+      "wanping",
+      "list",
+      "qa (GET only)"
+    ],
+    "source_regeneration": "wanping --check matched",
+    "physical_device": false,
+    "field_gps": false
+  },
+  "business_database": {
+    "museums": 10,
+    "artworks": 31426,
+    "changed": false
+  },
+  "model_usage": {
+    "successful": 45,
+    "failed": 1,
+    "failure": "Codex subscription quota; kept in cache and continued after verified reset with same model"
+  },
+  "limitations": [
+    "No physical device install or field acceptance",
+    "Reference ticket prices are older official published prices; on-site prices govern",
+    "No downloaded Wanping photos because official downloads timed out"
+  ],
+  "local_user_changes_preserved": [
+    "android/build.gradle.kts",
+    "android/settings.gradle.kts",
+    "android/gradle/wrapper/gradle-wrapper.properties"
+  ]
+}
