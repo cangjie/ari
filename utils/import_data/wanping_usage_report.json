@@ -1,0 +1,218 @@
+{
+  "museum_counts_after": [
+    [
+      "beihai",
+      23
+    ],
+    [
+      "capital",
+      6159
+    ],
+    [
+      "ham",
+      204
+    ],
+    [
+      "jlpm",
+      17723
+    ],
+    [
+      "mfa_boston",
+      203
+    ],
+    [
+      "mfa_boston_ext",
+      4464
+    ],
+    [
+      "nmc",
+      365
+    ],
+    [
+      "palace",
+      1757
+    ],
+    [
+      "pem",
+      467
+    ],
+    [
+      "wmhg",
+      61
+    ]
+  ],
+  "unchanged_total": 31426,
+  "calls": [
+    {
+      "stage": "audit_stage1_slim",
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 2,
+      "prompt_tokens": 2620,
+      "cached_tokens": 53809,
+      "completion_tokens": 12245,
+      "latency_ms": 165593
+    },
+    {
+      "stage": "audit_tour_dynamic",
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 1310,
+      "cached_tokens": 13953,
+      "completion_tokens": 13407,
+      "latency_ms": 172918
+    },
+    {
+      "stage": "audit_tour_publish",
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 1310,
+      "cached_tokens": 78417,
+      "completion_tokens": 25709,
+      "latency_ms": 325176
+    },
+    {
+      "stage": "audit_tour_publish_patch",
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 1310,
+      "cached_tokens": 45438,
+      "completion_tokens": 15293,
+      "latency_ms": 194750
+    },
+    {
+      "stage": "audit_trans",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": null,
+      "status": "ok",
+      "calls": 2,
+      "prompt_tokens": 18068,
+      "cached_tokens": 0,
+      "completion_tokens": 1981,
+      "latency_ms": 38276
+    },
+    {
+      "stage": "source_extract_probe",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "high",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 8117,
+      "cached_tokens": 0,
+      "completion_tokens": 90,
+      "latency_ms": 8774
+    },
+    {
+      "stage": "tier_stage1",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "high",
+      "status": "ok",
+      "calls": 5,
+      "prompt_tokens": 71554,
+      "cached_tokens": 6912,
+      "completion_tokens": 10574,
+      "latency_ms": 105851
+    },
+    {
+      "stage": "tier_stage2",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 25,
+      "prompt_tokens": 245225,
+      "cached_tokens": 55296,
+      "completion_tokens": 6628,
+      "latency_ms": 292398
+    },
+    {
+      "stage": "tier_stage3",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "xhigh",
+      "status": "ok",
+      "calls": 3,
+      "prompt_tokens": 31714,
+      "cached_tokens": 0,
+      "completion_tokens": 1999,
+      "latency_ms": 72453
+    },
+    {
+      "stage": "trans_tour_notes",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 9277,
+      "cached_tokens": 0,
+      "completion_tokens": 1452,
+      "latency_ms": 21886
+    },
+    {
+      "stage": "trans_tour_notes",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "error",
+      "calls": 1,
+      "prompt_tokens": null,
+      "cached_tokens": null,
+      "completion_tokens": null,
+      "latency_ms": 8212
+    },
+    {
+      "stage": "trans_wanping_description",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 15151,
+      "cached_tokens": 0,
+      "completion_tokens": 7642,
+      "latency_ms": 47178
+    },
+    {
+      "stage": "trans_wanping_editor_note",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 9349,
+      "cached_tokens": 0,
+      "completion_tokens": 1676,
+      "latency_ms": 17505
+    },
+    {
+      "stage": "trans_wanping_name",
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 8823,
+      "cached_tokens": 0,
+      "completion_tokens": 1004,
+      "latency_ms": 13999
+    }
+  ],
+  "note": "只读复核存量各馆行数；本轮仅写LLM缓存，没有写生产业务资料。Claude输入token存在仓库已知计量缺口，不将总数当完整账单。",
+  "grouped_revision": "已按用户确认归并，新增2次CR、1次S-ness、1次十条复审、1次审计补译；无失败调用。",
+  "publication_revision": "导览发布和动态同步审查沿用sonnet-5 medium；35段游客文案补译沿用luna medium。额度耗尽的失败调用保留，恢复后才续跑。"
+}

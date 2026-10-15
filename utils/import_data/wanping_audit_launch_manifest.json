@@ -1,0 +1,19 @@
+{
+  "rating_file": "wanping_grouped_ratings.json",
+  "rating_sha256": "175dc64fbd330c3fc41aa549dafa94bf516d30bbc0ffa68705bdf454d417b31d",
+  "input_sha256": "cfd105370cab9750f68f5d74f40b172c3618e7be9e399b6451441a89e826410b",
+  "extra_evidence_sha256": "608fcf85e05278078fad7b964225188d26d98e462ed2a00a8b7c80860f92578d",
+  "reaudit_seqs": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "note": "用户确认归并后的十条复审；其他29条保留原审计。"
+}

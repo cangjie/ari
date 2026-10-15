@@ -1,0 +1,26 @@
+[
+  {
+    "seq": 1,
+    "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570552353461.png",
+    "status": "failed",
+    "error": "URLError: <urlopen error timed out>"
+  },
+  {
+    "seq": 14,
+    "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570562971991.png",
+    "status": "failed",
+    "error": "URLError: <urlopen error timed out>"
+  },
+  {
+    "seq": 19,
+    "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570541796936.jpg",
+    "status": "failed",
+    "error": "URLError: <urlopen error timed out>"
+  },
+  {
+    "seq": 31,
+    "url": "https://www.bjft.gov.cn/ftq/c100033/202509/W020251129570632918803.png",
+    "status": "failed",
+    "error": "URLError: <urlopen error timed out>"
+  }
+]

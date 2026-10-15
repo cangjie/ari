@@ -1,0 +1,22 @@
+{
+  "records": 39,
+  "tier": {
+    "S": 5,
+    "B": 16,
+    "A": 16,
+    "C": 2
+  },
+  "types": {
+    "site": 3,
+    "node": 28,
+    "object": 8
+  },
+  "needs_review": [
+    1
+  ],
+  "factual_errors": [
+    1
+  ],
+  "english_cjk_residual": [],
+  "output": "/Users/cangjie/Projects/ari/utils/import_data/exports/展品_宛平城及周边_本地审计版.xlsx"
+}

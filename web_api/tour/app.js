@@ -19,7 +19,7 @@
   "use strict";
 
   var HOST = window.AriHost || null;
-  var MUSEUMS = HOST ? JSON.parse(HOST.museums()) : ["wmhg"];
+  var MUSEUMS = []; // Server catalog controls membership and order on both Web and App.
   var ACC_TRIGGER_M = 30;   // 精度差于此的定位只移动圆点，不触发到站
   var STAY_FACTOR = 1.2;    // 已在某个热区里时，走出 1.2 倍半径才算离开，免得在边上反复进出
   var BANNER_MS = 6000;
@@ -171,6 +171,7 @@
   }
 
   function routePoints(r) {
+    if (r.path && r.path.length) return r.path;
     var ent = [M.entrance.x, M.entrance.y];
     var pts = routePlaceIds(r).map(function (pid) { var p = placeById(pid); return [p.x, p.y]; });
     return [ent].concat(pts, [ent]);
@@ -214,7 +215,7 @@
         '</div><span class="card-go">导游地图' + ICON_NEXT + "</span></div>" +
         "</div></button>";
     }).join("");
-    $("cards").innerHTML = html;
+    $("cards").innerHTML = html || '<p class="load-note">暂无可用景区，请稍后刷新。</p>';
   }
 
   // ------------------------------------------------------------ 地图：搭建
@@ -338,8 +339,16 @@
       b.classList.toggle("on", b.getAttribute("data-route") === (r ? r.id : "none"));
     });
     $("route-summary").textContent = r
-      ? r.stops.length + " 站 · 约 " + r.total + " 分钟（停留 " + r.stay + " + 步行 " + r.walk + "）· 入口出发并返回"
+      ? r.stops.length + " 站 · 约 " + r.total + " 分钟（停留 " + r.stay + " + 步行 " + r.walk + "）· 入口出发并返回" + (r.fee ? " · " + r.fee.zh : "")
       : "显示全部热区，未选择路线";
+    $("route-details").hidden = !(r && r.note);
+    if (r && r.note) {
+      $("route-detail-body").innerHTML = '<p>' + esc(r.note.zh) + '</p><ol>' + r.stops.map(function (seq) {
+        var s = M.stops[seq];
+        return '<li>' + esc(s.name.zh) + ' · 约 ' + s.dwell + ' 分钟</li>';
+      }).join('') + '</ol><p>' + esc(M.opening.zh) + '</p>' +
+        (M.planning ? '<p>' + esc(M.planning.zh) + '</p>' : '') + sourceLinks(r.sources);
+    }
     $("ly-route").setAttribute("d", r
       ? "M" + routePoints(r).map(function (q) { return q[0] + " " + q[1]; }).join(" L")
       : "");
@@ -586,7 +595,7 @@
     var solo = s.name.zh === place.name.zh;       // 这一站就是地点本身，标题已经写过了
     var ord = r ? r.stops.indexOf(s.seq) + 1 : 0;
     var meta = ['<span class="tag tag-outline">' + esc(s.tier) + " 级</span>",
-      "<span>建议停留约 " + s.dwell + " 分钟</span>"];
+      (s.included_in ? '<span>随「' + esc(M.stops[s.included_in].name.zh) + '」参观，时间已计入整体</span>' : "<span>建议停留约 " + s.dwell + " 分钟</span>")];
     if (r) meta.push(ord ? '<span class="tag tag-neutral">本路线第 ' + ord + " 站</span>" : "<span>不在所选路线内</span>");
     var html = '<div class="stop' + (r && !ord ? " off-route" : "") + '">' +
       (solo ? "" : "<h4>" + esc(s.name.zh) + "</h4>") +
@@ -601,7 +610,16 @@
           '</span><span class="tag tag-outline">' + esc(o.tier) + " 级</span></li>";
       }).join("") + "</ul></div>";
     }
-    return html + '<div class="source">介绍出处：' + esc(s.source.zh) + "</div></div>";
+    return html + '<div class="source">介绍出处：' + esc(s.source.zh) + "</div>" + sourceLinks(s.sources) + "</div>";
+  }
+
+  function sourceLinks(sources) {
+    if (!sources) return '';
+    return '<div class="source">' + sources.filter(function (s) {
+      try { return new URL(s.url).protocol === 'https:'; } catch (e) { return false; }
+    }).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener noreferrer">' + esc(s.title) + '</a>';
+    }).join(' · ') + '</div>';
   }
 
   function renderSheet() {
@@ -620,9 +638,21 @@
 
     if (next) {
       var meters = haversine(p.lat, p.lon, next.lat, next.lon) * M.walk.detour;
+      var leg = r && seq.onRoute && r.legs ? r.legs.filter(function (l) {
+        return l.start === p.id && l.end === next.id;
+      })[0] : null;
+      var walking;
+      if (leg) {
+        walking = "步行约 " + Math.max(10, Math.round(leg.meters / 10) * 10) + " 米 · " +
+          Math.max(1, Math.round(leg.minutes)) + " 分钟";
+      } else if (M.walk.method === "osm-walking-graph") {
+        walking = "两地直线约 " + Math.max(10, Math.round(meters / 10) * 10) + " 米，步行请按现场道路通行";
+      } else {
+        walking = "步行约 " + Math.max(10, Math.round(meters / 10) * 10) + " 米 · " +
+          Math.max(1, Math.round(meters / M.walk.m_per_min)) + " 分钟";
+      }
       html += '<div class="next"><div class="next-name"><span class="kicker">前往下一处</span><strong>' + esc(next.name.zh) +
-        "</strong></div><small>步行约 " + Math.max(10, Math.round(meters / 10) * 10) + " 米 · " +
-        Math.max(1, Math.round(meters / M.walk.m_per_min)) + " 分钟</small></div>";
+        "</strong></div><small>" + esc(walking) + "</small></div>";
     }
     html += '<div class="sheet-actions">' +
       (prev ? '<button class="btn btn-secondary" type="button" data-goto="' + esc(prev.id) + '">' + ICON_PREV + "<span>上一处 · " + esc(prev.name.zh) + "</span></button>" : "") +
@@ -920,7 +950,7 @@
   function onHash() {
     var key = location.hash.replace(/^#/, "");
     if (data[key]) { if (!M || M.key !== key) { if (M) closeMuseum(); openMuseum(key); } }
-    else if (M) closeMuseum();
+    else if (M) { closeMuseum(); refreshHome(); }
   }
 
   // ------------------------------------------------------------ 事件
@@ -1067,18 +1097,42 @@
 
   // ------------------------------------------------------------ 启动
   function loadAll() {
-    return Promise.all(MUSEUMS.map(function (key) {
+    return fetch('catalog.json', {cache: 'no-cache'}).then(function (r) {
+      if (!r.ok) throw new Error('景区清单 HTTP ' + r.status);
+      return r.json();
+    }).then(function (catalog) {
+      if (!Array.isArray(catalog.museums) || catalog.museums.some(function (key) {
+        return typeof key !== 'string' || !/^[a-z0-9_]{1,32}$/.test(key);
+      }) || new Set(catalog.museums).size !== catalog.museums.length) throw new Error('景区清单格式错误');
+      var nextData = {};
+      return Promise.all(catalog.museums.map(function (key) {
       // 不带额外参数：这样才能直接用上 index.html 里预先下载的那一份。
       // 要不要重新向服务器确认由响应头决定（Nginx 对 JSON 发的是 Cache-Control: no-cache）
-      return fetch("data/" + key + ".json").then(function (r) {
+      return fetch("data/" + key + ".json", {cache: 'no-cache'}).then(function (r) {
         if (!r.ok) throw new Error(key + ".json HTTP " + r.status);
         return r.json();
-      }).then(function (j) { data[key] = j; });
-    }));
+      }).then(function (j) {
+        if (j.key !== key) throw new Error('景区资料标识不一致');
+        nextData[key] = j;
+      });
+      })).then(function () {
+        if (HOST && !HOST.catalog(JSON.stringify(catalog.museums.map(function (key) { return nextData[key]; })))) {
+          throw new Error('景区资料未能同步至定位服务，请重试');
+        }
+        MUSEUMS = catalog.museums; data = nextData;
+      });
+    });
+  }
+
+  function refreshHome() {
+    loadAll().then(renderCards).catch(function () {
+      $("cards").innerHTML = '<p class="load-note">景区清单更新失败，请联网后刷新。</p>';
+    });
   }
 
   bindUi();
   bindMap();
+  document.addEventListener('visibilitychange', function () { if (!document.hidden && !M) refreshHome(); });
   loadAll().then(function () {
     renderCards();
     onHash();

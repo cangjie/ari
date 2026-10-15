@@ -1,0 +1,67 @@
+{
+  "checked_on": "2026-10-15",
+  "capture_method": "网页工具正文/搜索索引摘录；不是原始HTTP响应。历史票价为参考，未取得实时售票页面。",
+  "opening": {
+    "zh": "城内公共区域全天免费。抗战馆常规9:00–16:30，16:00停止入馆，周一闭馆（法定节假日及重要抗战纪念日除外）；基本参观免费免预约，携带有效证件安检入馆，半景画另需实名免费预约。登城4–10月9:00–19:00、11–3月9:00–18:00；卢沟桥与雕塑园时段以当天公告为准。建议9:00从东门出发先参观抗战馆；普通周一或临时闭馆时跳过馆内，估计用时相应减少90分钟。",
+    "en": "Public city spaces are free. Regular memorial hours: 09:00–16:30, last entry 16:00, closed Mondays except public holidays and important commemorative dates. General entry is free without reservation, with valid ID and security screening; the panorama requires a separate free reservation. Wall-top: Apr–Oct 09:00–19:00, Nov–Mar 09:00–18:00. Check current bridge and park notices. Start at the east gate at 09:00 and visit the memorial first; omit its 90-minute visit when closed."
+  },
+  "planning": {
+    "zh": "时间为导览估计，未实走；不含排队、安检、交通、午餐和半景画候场。馆内八部分及英烈专区共用基本陈列90分钟，不逐项重复计时；精读可另留30–60分钟。地图路线为OSM道路顺序参考，不是实时导航；园内雕塑与桥头碑刻没有独立热区，按现场标识寻找。",
+    "en": "Times are untested planning estimates, excluding queues, security, transport, meals and panorama waiting. The eight exhibition sections and heroes area share one 90-minute visit; add 30–60 minutes for close study. Map paths follow OSM roads for orientation, not live navigation. Follow signs for individual sculptures and stelae."
+  },
+  "sources": [
+    {
+      "id": "city_public",
+      "title": "北京旅游网：宛平城",
+      "url": "https://www.visitbeijing.com.cn/article/4QDqDBILw3e",
+      "excerpt": "城内公共区域全天免费开放；城墙11月1日-次年3月31日9:00-18:00（需通过官方平台购票）",
+      "checked_on": "2026-10-15",
+      "published": null,
+      "note": " 页面发布日期未核实；检索日不等于发布日期，不保证实时开放或售价。"
+    },
+    {
+      "id": "ticket_reference",
+      "title": "北京旅游网：宛平城城墙开放，卢沟桥文化旅游区游玩全攻略",
+      "url": "https://www.visitbeijing.com.cn/article/4OcMki0TMoa",
+      "excerpt": "卢沟桥门票20元，宛平城和雕塑园免费开放，宛平城城墙门票30元。",
+      "note": "票价取官方搜索索引摘录；旧文为参考，不沿用限时赠票。 页面发布日期未核实；检索日不等于发布日期，不保证实时开放或售价。",
+      "checked_on": "2026-10-15",
+      "published": null
+    },
+    {
+      "id": "wall_opening",
+      "title": "北京市政府：宛平城城墙9月27日起正式开放",
+      "published": "2025-09-27",
+      "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202509/t20250927_4211824.html",
+      "excerpt": "从西城墙的入口登上宛平城；常态化开放每年4月1日到10月31日9时至晚7时、11月1日至3月31日9时至晚6时，可通过卢沟桥文化公园公众号购票。",
+      "checked_on": "2026-10-15"
+    },
+    {
+      "id": "museum_visit",
+      "title": "北京旅游网（文旅丰台）：中国人民抗日战争纪念馆参观须知",
+      "published": "2026-02-03",
+      "url": "https://www.visitbeijing.com.cn/article/4QDpj0dvt4h",
+      "excerpt": "9:00-16:30，16:00停止入馆；周一闭馆，法定节假日、重要抗战纪念日照常开放。免费免预约，持有效证件安检入馆。半景画厅实行实名制免费预约。",
+      "note": "馆方首页列有2026-05-09须知，但本轮未取得该篇正文，不将首页日期冒充正文核验。",
+      "checked_on": "2026-10-15"
+    },
+    {
+      "id": "park_visit",
+      "title": "北京市园林绿化局：中国人民抗日战争纪念雕塑园",
+      "published": "2022-06-15",
+      "url": "https://yllhj.beijing.gov.cn/ggfw/bjsggml/zlgy/ftq/202206/t20220615_2741601.shtml",
+      "excerpt": "非全时开放；暂无需预约/门票免费。",
+      "note": "较早名录，不承诺当前具体时段。",
+      "checked_on": "2026-10-15"
+    },
+    {
+      "id": "event_not_regular",
+      "title": "丰台区文旅局：2026年8月15日免费开放一天",
+      "published": "2026-08-15",
+      "url": "https://www.bjft.gov.cn/xwdt/jcdt/bmdt/202608/t20260817_221981.shtml",
+      "excerpt": "卢沟桥—宛平城景区2026年8月15日面向公众免费开放一天。",
+      "note": "限单日活动，不用于推断日常免票。",
+      "checked_on": "2026-10-15"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "input_sha256": "6d17187d60f857e1e88195be12d36373db869c666dafd82fcfd18cb3541c6db4",
+  "tour_sha256": "51ee5c67321d1c1617531515b5e5fbdc21188752bbc0141049f581e68a523400",
+  "result": {
+    "assessment": "本轮只核查动态同步、缓存替换与信任边界三项，不复核路线/资料准确性（已另行审定）。发现一项与用户明确关切（伪满皇宫是否回归）直接对应的严重问题，以及若干同步/缓存一致性与信任边界缺口。",
+    "findings": [
+      {
+        "severity": "critical",
+        "file": "web_api/tour/catalog.json",
+        "reason": "用户明确要求核实“现有伪满皇宫会不会回归”。当前服务端目录文件同时列出 \"wmhg\" 与 \"wanping\" 两个 key。考虑到本轮范围限定为宛平城（wanping）39条已审内容接入，\"wmhg\"（与“伪满皇宫”缩写吻合）仍在权威目录中，意味着 Web 首页卡片列表与原生 App（通过 HostBridge.catalog 同步）都会把伪满皇宫重新纳入可展示、可同步的景区清单——该内容并未在本次提供的审查材料中，其讲解文本、定位坐标、开放时间等未知内容会被当作“已审”目录的一部分原样同步进生产环境和本地定位缓存（tour-catalog.json）。",
+        "recommendation": "在本次仅接入宛平城内容的发布前，从 catalog.json 的 museums 数组中移除 \"wmhg\"（或确认其确实已完成独立审计且产品决定保留/恢复，并在变更记录中说明原因）；否则应仅保留 [\"wanping\"]，避免未经本轮内容/位置/费用审计的馆别随同步机制自动“回归”上线。"
+      },
+      {
+        "severity": "important",
+        "file": "android/app/src/main/java/top/snowmeet/tour/AriApplication.kt",
+        "reason": "TourRuntime.installCatalog() 决定是否复用旧 GeofenceEngine 的条件是 `old[tour.key] == tour`（整条 TourData 完全相等才复用），只要服务端对该馆任何字段（包括与地理围栏无关的文案、费用说明等）做了编辑，就会丢弃旧引擎、新建一个初始“在外”状态的 GeofenceEngine。对正在该馆内被追踪定位的游客来说，下一次定位回调会被重新判定为“进入”，产生新的 Arrival 记录并可能再次触发到站提示——这是纯粹由内容编辑引发的虚假重复到站事件，而非游客实际移动所致，与“不得编造行为、同步应忠实反映真实状态”的要求相悖。",
+        "recommendation": "将引擎是否复用的判断改为只比较地理围栏相关字段（坐标、半径、围栏范围等），或在创建新引擎时将旧引擎当前的 inside/到访状态迁移过去，避免纯文案更新触发虚假到站。"
+      },
+      {
+        "severity": "important",
+        "file": "android/app/src/main/java/top/snowmeet/tour/MainActivity.kt",
+        "reason": "onCatalogChanged() 在所选馆被服务端目录移除后只做 `selected=null`、`pageReady=false`、清空 preference，并未停止正在运行的前台定位服务（TourService）。只有 onStop 中 `if (!companion) stopService` 才会停止服务；若此时用户开启了“陪伴模式”（companion=true），服务会持续以陪伴通知在后台运行，而其追踪目标馆已从目录和 engines 中消失（TourRuntime.state 返回 null），造成“幽灵前台服务/通知”持续存在、定位持续被使用却不产生任何有效反馈，直到用户手动退出陪伴或重新进入前台触发 reload。这直接违背“景区增减由服务器决定”应同时联动前台服务生命周期的预期。",
+        "recommendation": "在 onCatalogChanged() 中检测到所选馆被移除时，除清空 selected 外应主动调用 setCompanion(false) 或直接 stopService(Intent(this, TourService::class.java))，确保服务端下线一个馆后，原生侧追踪服务与通知同步下线。"
+      },
+      {
+        "severity": "important",
+        "file": "web_api/tour (loadAll in app.js 片段)",
+        "reason": "catalog.json 的 fetch 显式带 `{cache:'no-cache'}` 以保证每次强制回源校验，但紧随其后对每个馆的 `data/<key>.json` 请求未加任何缓存控制参数，注释里承认“要不要重新向服务器确认由响应头决定”——即新鲜度完全依赖未在本仓库出现、也未经验证的 Nginx/CDN 配置。本次需求强调“App 首页应引用 Web…景区增减、顺序、内容变化由服务器决定，不能每次发APK”，但若生产环境响应头配置与注释假设不一致（该配置文件未提供、无法验证），WebView 的 HTTP 缓存可能长期返回陈旧的馆别数据，而“回前台刷新”“首页返回刷新”触发的只是重新发起请求，并不保证真的拿到新内容——这是对“服务器决定内容变化”承诺的一个未被代码本身兜底、却被默认成立的信任假设。",
+        "recommendation": "为 data/<key>.json 请求显式加上 `{cache:'no-cache'}` 或版本号/时间戳查询参数，使内容新鲜度不再单方面依赖未随本次提交的服务器配置。"
+      },
+      {
+        "severity": "minor",
+        "file": "android/app/src/main/java/top/snowmeet/tour/MainActivity.kt",
+        "reason": "onResume() 中先调用 `web.reload()`（当 refreshOnResume 为真），随后立即基于尚未失效的旧 `selected`/`pageReady` 状态调用 startTracking() 与 pushState()；WebViewClient 没有重写 onPageStarted 来在导航开始时把 pageReady 置为 false，因此存在一个短暂窗口：原生代码依据“刷新前”的页面就绪状态做定位/状态推送决策，直到新页面重新调用 AriHost.ready() 才会被纠正。多数调用有 `window.AriTour &&` 兜底不会崩溃，但该窗口内的行为（例如对已过期页面 evaluateJavascript）属于同步时序上的不严谨之处。",
+        "recommendation": "重写 onPageStarted，在导航开始时将 pageReady 置为 false，使原生侧“页面是否就绪”的判断与实际页面生命周期保持一致。"
+      },
+      {
+        "severity": "minor",
+        "file": "android/app/src/main/java/top/snowmeet/tour/MainActivity.kt",
+        "reason": "onStop() 无条件将 refreshOnResume 置为 true，意味着任何一次短暂切出（例如几秒钟切换其他应用后返回）都会在下次 onResume 触发整页 web.reload()，进而重新拉取 catalog.json 与全部馆别 JSON，并再次通过 HostBridge.catalog 整体同步进原生缓存。这满足“回前台刷新”的字面要求，但没有最小间隔/节流限制，频繁切前后台会导致不必要的重复全量同步与网络开销。",
+        "recommendation": "可考虑加入一个最短刷新间隔（如基于 connectedAt 或单独计时）判断，避免极短暂切出也触发整页重载与全量目录同步。"
+      }
+    ]
+  }
+}

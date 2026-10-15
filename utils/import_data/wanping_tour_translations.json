@@ -1,0 +1,183 @@
+{
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "source": "AI翻译",
+  "values": {
+    "登城另购票，西侧入口往返；只走当天开放段。": {
+      "en": "Separate ticket required to ascend the city wall; round trip from the west entrance. Walk only on the sections open that day.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "地面环城步道，不等于收费的城墙顶部；按现场开放路段行走。": {
+      "en": "Ground-level circuit around the city wall, not the fee-based wall-top route; follow the sections open on site.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "复建建筑；本路线仅作外观经过，室内开放和收费待现场确认。": {
+      "en": "Reconstructed building; this route is for passing by the exterior only. Indoor access and admission fees are subject to confirmation on site.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "2025年展讯；当前是否延续、开放与收费未核实，不作必访。": {
+      "en": "2025 exhibition information; whether it continues, and its opening and admission status, have not been verified. Do not treat it as a must-see.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "进入桥面收费区需购票；免费线不入内。": {
+      "en": "A ticket is required to enter the paid bridge-deck area; the free route does not enter.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "免费安检入馆；常规周一闭馆。半景画须另预约。": {
+      "en": "Free security check and admission; normally closed on Mondays. The panoramic painting requires a separate reservation.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "基本陈列及九个组成部分合计建议90分钟，馆内按现场动线参观。": {
+      "en": "The permanent exhibition and its nine components together are estimated to take 90 minutes; follow the on-site route inside the museum.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "免费园区；园内游览已计40分钟，分区及单件按现场标识寻找。": {
+      "en": "Free park grounds; 40 minutes is allotted for visiting the park, with zones and individual items located according to on-site signs.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "只有官方索引资料；当前开放及是否随卢沟桥票参观待现场确认，不计必访。": {
+      "en": "Only official index materials are available; current opening status and whether it can be visited with the Lugou Bridge ticket are subject to confirmation on site. Do not treat it as a must-see.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "本路线仅作外观经过；室内开放与收费待现场确认。": {
+      "en": "This route is for passing by the exterior only; indoor access and admission fees are subject to confirmation on site.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "参观现状以现场公告为准。": {
+      "en": "The current visiting conditions are subject to on-site notices.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    " 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。": {
+      "en": "This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "城内公共区域全天免费。抗战馆常规9:00–16:30，16:00停止入馆，周一闭馆（法定节假日及重要抗战纪念日除外）；基本参观免费免预约，携带有效证件安检入馆，半景画另需实名免费预约。登城4–10月9:00–19:00、11–3月9:00–18:00；卢沟桥与雕塑园时段以当天公告为准。建议9:00从东门出发先参观抗战馆；普通周一或临时闭馆时跳过馆内，估计用时相应减少90分钟。": {
+      "en": "Public areas within the city are free all day. The Museum of the War of Chinese People's Resistance Against Japanese Aggression is normally open 9:00–16:30, with admission stopping at 16:00, and closed on Mondays (except statutory holidays and important anniversaries commemorating the War of Resistance); the permanent exhibition is free and does not require a reservation, but valid identification is required for security screening and admission, and the panoramic painting requires a separate real-name free reservation. City-wall access is 9:00–19:00 from April to October and 9:00–18:00 from November to March; hours for Lugou Bridge and the Sculpture Garden are subject to the day's notices. It is recommended to depart from the east gate at 9:00 and visit the museum first; on an ordinary Monday or during a temporary closure, skip the indoor museum visit and reduce the estimated time by 90 minutes accordingly.",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "时间为导览估计，未实走；不含排队、安检、交通、午餐和半景画候场。馆内八部分及英烈专区共用基本陈列90分钟，不逐项重复计时；精读可另留30–60分钟。地图路线为OSM道路顺序参考，不是实时导航；园内雕塑与桥头碑刻没有独立热区，按现场标识寻找。": {
+      "en": "Times are tour estimates and have not been walked in full; they exclude queues, security checks, transport, lunch, and waiting for the panoramic painting. The museum's eight sections and Martyrs' Area share the 90-minute permanent-exhibition allocation and are not timed separately; allow an additional 30–60 minutes for close study. The mapped route is an OSM road-order reference, not real-time navigation; the park sculptures and bridgehead stele inscriptions have no independent hotspots and should be located according to on-site signs.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "宛平城及周边": {
+      "en": "Wanping City and surroundings",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "东门出发 / 返回": {
+      "en": "Start / return at the east gate",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "北京": {
+      "en": "Beijing",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "丰台区": {
+      "en": "Fengtai District",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "古城 · 抗战遗址": {
+      "en": "Ancient City · War of Resistance sites",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "宛平城": {
+      "en": "Wanping City",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "从宛平城的城门、弹痕到抗战馆、卢沟桥与雕塑园，在“馆桥城园”之间读懂这片土地的历史。": {
+      "en": "From Wanping City's gates and bullet marks to the Museum of the War of Chinese People's Resistance Against Japanese Aggression, Lugou Bridge, and the Sculpture Garden, understand the history of this land through the museum, bridge, city wall, and park.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "场馆、登城与卢沟桥各有开放时间": {
+      "en": "The museum, city-wall access, and Lugou Bridge each have their own opening hours.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "顺治门（东门）": {
+      "en": "Shunzhi Gate (East Gate)",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "中国人民抗日战争纪念馆": {
+      "en": "Museum of the War of Chinese People's Resistance Against Japanese Aggression",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "宛平广场": {
+      "en": "Wanping Square",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "宛平大街": {
+      "en": "Wanping Street",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "永昌门（西门）": {
+      "en": "Yongchang Gate (West Gate)",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "卢沟桥": {
+      "en": "Lugou Bridge",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "抗战雕塑园（西侧到达点）": {
+      "en": "Sculpture Garden of the War of Resistance (western arrival point)",
+      "confidence": "official",
+      "source": "AI翻译"
+    },
+    "免费线": {
+      "en": "Free route",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "门票 0 元": {
+      "en": "Admission: 0 yuan",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "城内街巷、城门外观、地面弹痕、抗战馆与雕塑园；不登城墙、不进入卢沟桥收费区。县衙等沿街建筑只看外观，不假定室内免费开放。": {
+      "en": "City streets and lanes, exteriors of the city gates, ground-level bullet marks, the Museum of the War of Chinese People's Resistance Against Japanese Aggression, and the Sculpture Garden; does not ascend the city wall or enter the paid area of Lugou Bridge. Street-facing buildings such as the county yamen are viewed only from the exterior; indoor access is not assumed to be free.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "全面线": {
+      "en": "Comprehensive route",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "成人门票参考约 50 元（登城 30 + 卢沟桥 20）": {
+      "en": "Reference adult admission: approximately 50 yuan (30 for city-wall access + 20 for Lugou Bridge)",
+      "confidence": "AI",
+      "source": "AI翻译"
+    },
+    "免费线基础上增加西城墙登城和卢沟桥桥面、石狮、碑刻。登城从西侧入口往返，按开放段行走；不承诺整圈城墙可通行。卢沟桥历史博物馆当前开放及联票待现场确认，未计入必访和时长。": {
+      "en": "Adds, to the free route, access to the west city wall and the deck, stone lions, and stele inscriptions of Lugou Bridge. City-wall access is a round trip from the west entrance, following the sections open at the time; passage around the entire wall is not guaranteed. The current opening status of the Lugou Bridge History Museum and the combined ticket are subject to confirmation on site and are not included as must-see items or in the time estimate.",
+      "confidence": "AI",
+      "source": "AI翻译"
+    }
+  },
+  "input_sha256": "94d7691bd6c85664dd116e81b25b8d7dd11b06a4979661fc9a2264999162f947"
+}

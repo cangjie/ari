@@ -36,6 +36,10 @@ class TourService : Service() {
         else registerReceiver(screenReceiver, filter)
     }
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (TourRuntime.repository.tours.isEmpty()) {
+            TourRuntime.preferences.companion = false
+            stopSelf(); return START_NOT_STICKY
+        }
         if (intent?.action == ACTION_STOP) {
             TourRuntime.preferences.companion = false
             stopSelf()

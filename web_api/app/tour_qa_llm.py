@@ -88,6 +88,8 @@ def _stop_text(stop: dict) -> str:
             items.append(item + "）")
         lines.append("本展在展藏品：" + "、".join(items))
     lines.append(f"介绍出处：{stop['source']['zh']}")
+    if stop.get('included_in'):
+        lines.append('本条属于整体参观，时间已计入整体，不另外累加。')
     return "\n".join(lines)
 
 
@@ -107,6 +109,13 @@ def museum_material(museum: dict) -> str:
               for r in museum["routes"]]
     parts.append("## 导览给出的参观路线（都从入口出发并回到入口）\n" + "\n".join(routes) + "\n"
                  "各站的建议停留时间与路线的分钟数都是本导览的估计，没有实测。")
+    for route in museum['routes']:
+        if route.get('fee'):
+            parts.append(route['label']['zh'] + '费用：' + route['fee']['zh'])
+        if route.get('note'):
+            parts.append(route['note']['zh'])
+    if museum.get('planning'):
+        parts.append(museum['planning']['zh'])
     for place in museum["places"]:
         parts.append(f"## 地点：{place['name']['zh']}")
         parts += [_stop_text(museum["stops"][str(seq)]) for seq in place["stops"]]

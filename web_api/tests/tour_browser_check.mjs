@@ -41,6 +41,7 @@ const GCJ_TONGDE = [43.906420, 125.349804];     // 同德殿加偏成国测局�
 let BASE = process.env.BASE || "";
 let LOCAL = false;          // 用的是自己起的本地服务（带假的问答接口）
 let failures = 0;
+let catalogOverride = null;
 
 // 假的问答接口的状态。mode：ok 正常 / off 接口不存在（404）/ down 列表报 500
 const stub = { mode: "ok", topics: {}, nextId: 1, posts: 0 };
@@ -90,6 +91,10 @@ async function startStatic() {
   const server = createServer(async (req, res) => {
     const url = new URL(req.url, "http://x");
     if (url.pathname.startsWith("/api/")) return stubApi(req, res, url);
+    if (url.pathname === '/catalog.json' && catalogOverride) {
+      res.writeHead(200, {'Content-Type':'application/json', 'Cache-Control':'no-store'});
+      res.end(JSON.stringify({museums: catalogOverride})); return;
+    }
     const path = normalize(decodeURIComponent(url.pathname)).replace(/^([/\\])+/, "");
     try {
       const body = await readFile(join(TOUR_DIR, path || "index.html"));
@@ -155,7 +160,7 @@ class Page {
     await this.send("Page.navigate", { url: BASE + path });
     const want = path.includes("#")
       ? "!document.getElementById('tour').hidden && !['', '正在定位…'].includes(document.getElementById('status').textContent)"
-      : "!!document.querySelector('#cards .card')";
+      : "!!document.querySelector('#cards .card') || document.getElementById('cards').textContent.includes('暂无')";
     for (let i = 0; i < 80; i++) {
       if (await this.eval(want).catch(() => false)) break;
       await sleep(250);
@@ -188,12 +193,67 @@ class Page {
 }
 
 const SCENES = {
+  async catalog(p) {
+    if (!LOCAL) return;
+    const script = await p.send('Page.addScriptToEvaluateOnNewDocument', {source: `
+      window.AriHost = {catalog: function(text) {window.__catalog = JSON.parse(text).map(function(m){return m.key}); return true;},
+        visitorId: function(){return 'native-visitor-00000001';}, ready: function(){}, leave: function(){}};
+    `});
+    try {
+      for (const keys of [['wmhg'], ['wanping','wmhg'], ['wmhg','wanping'], ['wanping'], []]) {
+        catalogOverride = keys;
+        await p.open('/');
+        const shown = await p.eval("Array.from(document.querySelectorAll('[data-open]')).map(function(e){return e.dataset.open})");
+        check(JSON.stringify(shown) === JSON.stringify(keys), '服务器控制景区增减及顺序：' + keys.join(','), shown);
+        check(JSON.stringify(await p.eval('window.__catalog')) === JSON.stringify(keys), '同一清单同步给App原生定位缓存');
+      }
+    } finally {catalogOverride = null; await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier});}
+  },
+  async wanping(p) {
+    const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));
+    const east = m.places.find((item) => item.id === 'east_gate');
+    await p.geo('granted', [east.lat, east.lon, 5]);
+    await p.open('/');
+    const cards = await p.eval("document.getElementById('cards').innerText");
+    check(cards.includes('伪满皇宫') && cards.includes('宛平城'), '清单同时显示长春和北京景区', cards);
+    await p.eval("document.querySelector('[data-open=wanping]').click(); true");
+    await sleep(800);
+    let state = await p.state();
+    check(state.status.includes('顺治门'), '宛平城GPS到达东门', state.status);
+    check(state.summary.includes('0 元'), '默认免费线显示零门票', state.summary);
+    await p.eval("document.getElementById('route-details').open = true; true");
+    const detail = await p.eval("document.getElementById('route-detail-body').innerText");
+    check(detail.includes('不登城墙') && detail.includes('周一') && detail.includes('半景画'), '免费边界、闭馆日和预约分别说明', detail);
+    await p.eval("document.getElementById('route-details').open = false; document.querySelector('[aria-label=\"卢沟桥\"]').click(); true");
+    const offRoute = await p.eval("document.querySelector('#sheet-body .next small').innerText");
+    check(offRoute.includes('直线') && !offRoute.includes('分钟'), '路线外无道路分段时，不把直线距离当步行时长', offRoute);
+    await p.eval("document.querySelector('#sheet [data-close]').click(); true");
+    const pathFree = await p.eval("document.getElementById('ly-route').getAttribute('d')");
+    await p.eval("document.querySelector('[data-route=full]').click(); true");
+    state = await p.state();
+    check(state.summary.includes('50 元'), '全面线显示参考门票', state.summary);
+    check(await p.eval("document.getElementById('ly-route').getAttribute('d')") !== pathFree, '全面线画出不同的步行线');
+    await p.eval("document.getElementById('route-details').open = true; true");
+    check((await p.eval("document.getElementById('route-detail-body').innerText")).includes('石狮'), '全面线说明含桥面与碑刻');
+    await p.eval("document.getElementById('route-details').open = false; document.querySelector('[aria-label=\"卢沟桥\"]').click(); true");
+    const nextWalk = await p.eval("document.querySelector('#sheet-body .next small').innerText");
+    check(nextWalk.includes('17 分钟'), '卢沟桥到雕塑园使用约1公里的道路距离，不能用约400米直线代替', nextWalk);
+    await p.eval("document.getElementById('route-details').open = false; document.querySelector('[aria-label=\"中国人民抗日战争纪念馆\"]').click(); true");
+    const sheet = await p.eval("document.getElementById('sheet-body').innerText");
+    check(sheet.includes('英烈') && sheet.includes('时间已计入整体'), '馆内分区完整展示但不重复计时', sheet.slice(0, 300));
+    check((await p.eval("document.querySelectorAll('#sheet-body .source a').length")) > 0, '介绍保留可打开的官方出处');
+    await p.shot('wanping-museum');
+    await p.eval("document.querySelector('#sheet [data-close]').click(); true");
+    await sleep(400);
+    await p.eval("document.getElementById('map').dispatchEvent(new WheelEvent('wheel', {deltaY: 1800, clientX: 195, clientY: 400, bubbles: true, cancelable: true})); true");
+    await p.shot('wanping-full');
+  },
   async host(p) {
     if (!LOCAL) return;
     const script = await p.send("Page.addScriptToEvaluateOnNewDocument", { source: `
       window.__hostWatch = 0;
       navigator.geolocation.watchPosition = function () { window.__hostWatch++; throw new Error('host must not start browser GPS'); };
-      window.AriHost = { museums: function () { return '["wmhg"]'; }, visitorId: function () { return 'native-visitor-00000001'; },
+      window.AriHost = { catalog: function () { return true; }, museums: function () { return '["wmhg"]'; }, visitorId: function () { return 'native-visitor-00000001'; },
         ready: function (key) { window.__hostReady = key; }, leave: function () { window.__hostLeft = true; }, requestLocation: function () {} };
     ` });
     try {

@@ -3,7 +3,7 @@
 Ari Travel 手机导览站，部署在 `tour.snowmeet.top`。本文记录它是怎么来的、线上实况与待办；
 本地怎么跑、调试参数见 `web_api/README.md`。
 
-首次部署：2026-10-10，由 claude 执行。目前只上线了伪满皇宫博物院（`wmhg`）一处。
+首次部署：2026-10-10，由 claude 执行。2026-10-15接入宛平城及周边（`wanping`），与伪满皇宫博物院（`wmhg`）共用服务器景区清单。
 
 ## 这是什么
 
@@ -270,6 +270,14 @@ server {
         client_max_body_size 8k;
     }
 
+    # Android APK download, published independently of the web application.
+    location = /android/app {
+        alias /home/ubuntu/ari-downloads/android/app.apk;
+        default_type application/vnd.android.package-archive;
+        add_header Content-Disposition 'attachment; filename="ari-travel-0.1.0.apk"';
+        add_header Cache-Control "no-store";
+    }
+
     # 页面与数据随 git pull 更新：每次都向服务器确认，不让手机拿着旧版本
     location / {
         try_files $uri $uri/ =404;
@@ -285,6 +293,27 @@ server {
 ```
 
 同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）没有改动；2026-10-12 加 `/api/` 入口时也只动了 `ari-tour` 这一个文件。
+
+### Android APK 下载（2026-10-15）
+
+用户指定的下载入口：[下载 Android APK](https://tour.snowmeet.top/android/app)。该地址直接返回安装包，
+由 `ari-tour` 的精确 `location = /android/app` 提供；文件放在仓库外的
+`/home/ubuntu/ari-downloads/android/app.apk`，APK 不提交 Git，网页 `git pull` 不更新这个文件。
+
+当日首次发布本机已有的 `android/app/build/outputs/apk/debug/app-debug.apk`（以下为历史记录）：
+
+- 应用 `Ari Travel`，包名 `top.snowmeet.tour`，版本 `0.1.0` / versionCode `1`，Debug 签名，minSdk `26`、targetSdk `35`。
+- 大小 `8279219` 字节，SHA-256 `1efdb270c7c17e06e428b4fe886ffee4e8d66d6d6a4e7d705a9849de2db21b81`。
+- 本次没有重新构建。包内景区数据只有 `wmhg.json`，不含工作区尚在修改的宛平城资料与较新的网页改动。
+- `apksigner verify` 通过（v2 签名）；公网完整下载返回 HTTP 200、上述字节数与 SHA-256 一致。
+  响应为 `application/vnd.android.package-archive`，下载文件名 `ari-travel-0.1.0.apk`，`Cache-Control: no-store`。
+- Nginx 配置备份 `/etc/nginx/sites-available/ari-tour.bak-apk-20261015T081441Z`；`nginx -t` 通过后 reload，首页复查 HTTP 200。
+  下载与签名检查不代表安装或真机功能验收。
+
+后续更新：先检查新包的版本、签名和内置资料，上传到临时文件并核对 SHA-256，再以 `644` 权限写入同目录的
+`app.apk.new`，原子替换 `app.apk`，最后从公网完整下载校验；只替换 APK 不需要 reload 或重启服务。
+版本名改变时同步修改上方 `Content-Disposition` 的文件名，经 `nginx -t` 检查后 reload。
+保留相同签名才能覆盖安装，已安装更高 versionCode 的设备需要另行处理版本号。
 
 ### 换证书的步骤
 
@@ -401,3 +430,13 @@ server {
 - **`goldenma.xyz` 整个域名解析不出来**（2026-10-10，8.8.8.8 与 1.1.1.1 都查不到 NS 与 A 记录）。
   服务器上的 `ari.goldenma.xyz` 站点本身正常，只是从外面按域名访问不到。与本次部署无关。
 - 「已游览」存在手机浏览器里，隔天再来还在，目前没有清除入口。
+
+## 宛平城与动态景区清单（2026-10-15）
+
+`web_api/tour/catalog.json` 的 `museums` 数组决定Web与App共同的上架清单及顺序，当前为 `wmhg`、`wanping`。编辑清单及 `data/<key>.json` 后通过Git部署，App回到前台会重新打开线上首页，不需更换安装包。新增景区生成时首次追加；重生成保留清单中的排序和下架选择。
+
+App本次从内置网页改为直接打开 `https://tour.snowmeet.top/index.html`，需要安装新包一次。网页将成功加载的同一份资料交给原生定位、通知和悬浮导览；原生只缓存最后有效快照，删除、清空与顺序变化一起同步。APK不再包含导览网页或景区数据。
+
+新包为0.1.0 / versionCode1，大小8312316字节，SHA-256 `0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201`，沿用旧包Debug签名。下载入口仍为 `/android/app`，更新时保留旧包备份，核对暂存包哈希后原子替换；未做真机安装验收。
+
+宛平城39条资料由已审计本地包生成，无需重灌现有业务库。7个有坐标依据的到达点承接整体、分展区与实物资料。免费线约3小时45分，排除收费桥面和城墙顶部；全面线约5小时10分，包含卢沟桥及登城，官方旧文成人参考票价合计50元，现场售票为准。来源、开放限制、路线依据、审计处理与验收见 `docs/WANPING_DATA.md`。游客互动提示词同时读入费用、预约和整体停留说明，因此部署时需要重启 `ari-web-api`。

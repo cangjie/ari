@@ -1,10 +1,10 @@
 {
   "museum": "wmhg",
-  "generated_by": "Production app.js functions in Node vm; browser delivery not exercised",
+  "generated_by": "Chrome watchPosition + app.js",
   "cases": [
     {
-      "lat": 0,
-      "lon": 0,
+      "lat": 39.9163,
+      "lon": 116.3972,
       "acc": 5,
       "expected": {
         "status": "outside",
@@ -1958,8 +1958,8 @@
       }
     },
     {
-      "lat": 0,
-      "lon": 0,
+      "lat": 39.9163,
+      "lon": 116.3972,
       "acc": 5,
       "expected": {
         "status": "outside",

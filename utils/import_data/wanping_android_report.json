@@ -1,0 +1,14 @@
+{
+  "apk": "android/app/build/outputs/apk/debug/app-debug.apk",
+  "apk_sha256": "0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201",
+  "apk_bytes": 8312316,
+  "homepage": "https://tour.snowmeet.top/index.html",
+  "catalog": "https://tour.snowmeet.top/catalog.json",
+  "bundled_tour_assets": false,
+  "native_geofences": "网页同步同一份服务器资料；缓存最后有效快照；同步删除及排序。",
+  "unit_tests": 12,
+  "device_tested": false,
+  "toolchain": "使用工作区已有AGP8.13.2 / Gradle8.13 / Kotlin2.0.21；三处用户构建配置改动保持原样。",
+  "lint_errors": 0,
+  "lint_warnings": 13
+}

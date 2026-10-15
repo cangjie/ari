@@ -6,13 +6,13 @@
 悬浮窗问答复用现有公开接口，提交按钮前明确提示可能对所有游客公开；不增加私密接口。
 导览员目前使用“瑞 / 爱”文字头像，形象素材后续可替换，切换共用同一套状态和交互。
 
-**当前交付是代码架构与已有功能代码。用户已明确不继续做本机测试和验收，迁移到 Mac 后再验证。**
+**2026-10-14交付为代码架构。2026-10-15在Mac上按新增宛平城的要求继续标准构建与自动检查；真机与现场定位尚未验收。**
 
 ## 代码架构
 
 | 模块 | 责任 |
 |---|---|
-| `MainActivity.kt` / `web/` | WebView 外壳、HTTPS 本地内容、原生桥、返回与通知导航 |
+| `MainActivity.kt` / `web/` | 线上 WebView 首页、同源原生桥、返回与通知导航 |
 | `AriApplication.kt` / `TourRuntime` | 景区数据、定位状态、前后台状态与页面 / 悬浮窗之间的协调 |
 | `tour/` | 景区数据解析、数据仓库、与 Android 无关的到站判定 |
 | `service/` | location 前台服务、GPS / 网络定位来源、到站通知 |
@@ -28,7 +28,7 @@
 
 ## 迁移到 Mac
 
-1. 迁移**整个仓库**，至少带上 `android/` 与 `web_api/tour/`；只复制 Android 目录会缺少构建时复制的网页和数据。
+1. 迁移**整个仓库**；App不再打包网页和景区资料，单元测试仍使用 `web_api/tour/data/` 的真实资料夹具。
 2. 不复制 Windows 的 `local.properties`、`build/`、`.gradle/`、临时缓存或本机签名文件，它们已被 Git 忽略。
 3. 在 Android Studio 打开 `android/`，安装 SDK Platform 35 / Build-Tools 35.0.0，为本项目选择 JDK 17 或 21。
    Studio 自带运行时与项目构建 JDK 是两项设置；当前项目优先用 JDK 21，避免直接套用旧 Mac 草案的运行时版本。
@@ -59,12 +59,21 @@ cd android
 macOS / Linux 用 `sh gradlew`。APK 产物为 `app/build/outputs/apk/debug/app-debug.apk`。
 `local.properties`、Gradle 缓存与 APK 不进 Git；签名密钥不进 Git。
 
+## APK 下载
+
+下载地址：[https://tour.snowmeet.top/android/app](https://tour.snowmeet.top/android/app)。
+2026-10-15早先发布的旧包内置伪满皇宫资料；本轮改为直接打开线上Web首页，必须安装新包一次。
+此后景区增减、排序和内容更新只发布服务器资料，无需重发App。当前构建与签名记录见 `utils/import_data/wanping_android_report.json`；真机未验收。
+服务器存放位置、SHA-256 和更新方法见 `docs/TOUR_WEB.md` 的「Android APK 下载」。
+
 ## 数据与网页
 
-`syncTourAssets` 每次构建把 `../web_api/tour` 复制到生成的 assets；原文件只有一份。
-本地 WebView 使用 HTTPS 下的 `/app/tour/index.html`，网页与图片离线可用；`/api/tour/…` 仍走线上公开问答接口。
-景区清单由 assets 的 `data/*.json` 自动发现，Android 代码不写死景区 key；当前源数据只有伪满皇宫。
-资料更新后重新构建 APK；当前版本尚未实现在线资料更新或轨迹上传。
+WebView直接打开 `https://tour.snowmeet.top/index.html`。`catalog.json` 决定已发布景区及顺序，`data/<key>.json` 提供同一份地图、路线、介绍。
+网页把成功取得的完整资料同步给原生定位、通知与悬浮导览；增删与排序一起替换，错误资料不覆盖最后有效缓存。回到前台和返回首页时刷新。
+首次打开需要联网；本机缓存只用于最后一次有效的定位资料，不能当作实时开放保证，不承诺完整离线网页。
+Android不再把网页、景区清单或资料复制进APK，不写死景区key；当前服务器资料包括伪满皇宫和宛平城。
+宛平城含39条资料、7个有位置依据的到达点，以及免费线和全面线，费用及开放边界见页面路线提示和 `docs/WANPING_DATA.md`。
+修改服务器 `catalog.json` 的数组可调整顺序、上架或下架；新增资料首次生成时会追加到清单。无需重新构建APK；不上传轨迹。
 
 首次启动说明按实际行为写明：定位在本机判定；文字问题与匿名设备号发给现有服务；问答可能公开。
 **本地测试不要对线上提交测试问题**：会入库并可能向游客公开。自动测试使用假的问答接口，不调用模型或生产数据库。

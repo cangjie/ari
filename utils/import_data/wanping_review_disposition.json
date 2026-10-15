@@ -1,0 +1,46 @@
+{
+  "review_model": "claude-sonnet-5",
+  "effort": "medium",
+  "original_review": "wanping_tour_audit_initial.json",
+  "route_followup": "wanping_tour_audit.json",
+  "dynamic_review": "wanping_tour_dynamic_audit.json",
+  "dispositions": [
+    {
+      "issue": "route status English missing",
+      "resolution": "35段新增发布提示由gpt-5.6-luna medium补译；逐条收费/预约/仅外观状态成对，pytest与独立复审确认。"
+    },
+    {
+      "issue": "next-leg walking distance understated",
+      "resolution": "采用路线legs道路距离；桥至园1046米17.43分钟，浏览器断言17分钟；路线外只说直线距离。"
+    },
+    {
+      "issue": "unknown publication dates / street exterior scope",
+      "resolution": "补充发布日期未知及检索日期；seq9–12逐条说明仅外观。"
+    },
+    {
+      "issue": "critical: remove wmhg from catalog",
+      "resolution": "不采纳。审查把回归测试误读为重新上架：伪满皇宫一直在线，用户要求新增宛平城并与现有景区共存，未要求下架。保留wmhg，原数据未改且两处景区回归通过。"
+    },
+    {
+      "issue": "text edits trigger duplicate arrivals",
+      "resolution": "GeofenceEngine.updateTour仅按几何判断能否保留状态，同时更新名称和介绍；新增回归验证文案更新不重复到站、真实再次进入显示新名称。"
+    },
+    {
+      "issue": "removed destination leaves tracking service",
+      "resolution": "当前所选景区移除或清单为空时关闭陪伴并停止服务；空清单也不能新启动定位服务。其他仍在目录的景区不被删除。"
+    },
+    {
+      "issue": "data freshness depends on server headers",
+      "resolution": "catalog.json与data/<key>.json均显式使用cache:no-cache。"
+    },
+    {
+      "issue": "page-ready during navigation",
+      "resolution": "onPageStarted立即复位pageReady，等待新页面ready。"
+    },
+    {
+      "issue": "refresh frequency",
+      "resolution": "保留每次回前台刷新，以落实用户要求的服务器增删同步；HTTP缓存验证避免不必要的完整重传，不另设延迟。"
+    }
+  ],
+  "not_claimed": "未做真机安装或现场GPS验收；原始审查输出保留，以上为逐项工程判断和验证记录。"
+}

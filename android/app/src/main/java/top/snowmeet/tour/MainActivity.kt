@@ -15,7 +15,6 @@ import org.json.JSONObject
 import top.snowmeet.tour.service.TourService
 import top.snowmeet.tour.ui.*
 import top.snowmeet.tour.web.HostBridge
-import top.snowmeet.tour.web.BundledContent
 
 class MainActivity : Activity() {
     private lateinit var web: WebView
@@ -26,11 +25,19 @@ class MainActivity : Activity() {
     private var connectedAt = System.currentTimeMillis()
     private var pendingPlace: String? = null
     private var requestCompanion = false
+    private var refreshOnResume = false
     private val changed: () -> Unit = { if (::web.isInitialized) { updateGuide(); pushState() } }
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // API 26只有浅色导航按钮；27起才可在浅色导航栏上使用深色按钮。
+        if (Build.VERSION.SDK_INT >= 27) {
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            @Suppress("DEPRECATION")
+            window.navigationBarColor = Ui.background
+        }
         val layout = Ui.column(this).apply { setBackgroundColor(Ui.background) }
         layout.setOnApplyWindowInsetsListener { view, insets ->
             if (Build.VERSION.SDK_INT >= 30) {
@@ -59,18 +66,17 @@ class MainActivity : Activity() {
         }
         WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG)
         web.addJavascriptInterface(HostBridge(this), "AriHost")
-        val loader = BundledContent(this)
         web.webViewClient = object : WebViewClient() {
+            override fun onPageStarted(view: WebView?, url: String?, favicon: android.graphics.Bitmap?) {
+                pageReady = false
+            }
             override fun shouldInterceptRequest(view: WebView?, request: WebResourceRequest): WebResourceResponse? {
                 if (!isOwnOrigin(request.url))
                     return WebResourceResponse("text/plain", "UTF-8", 403, "Blocked", emptyMap(), "Blocked".byteInputStream())
-                val response = loader.intercept(request.url)
-                if (request.url.path == "/app/tour/index.html" && response != null) response.responseHeaders = mapOf(
-                    "Content-Security-Policy" to "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'")
-                return response
+                return null // Own-origin pages, scripts, data and API all come from the server.
             }
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest): Boolean {
-                if (isOwnOrigin(request.url) && request.url.path == "/app/tour/index.html") return false
+                if (isOwnOrigin(request.url) && request.url.path in setOf("/", "/index.html")) return false
                 if (request.isForMainFrame && request.url.scheme in setOf("https", "http")) runCatching { startActivity(Intent(Intent.ACTION_VIEW, request.url)) }
                 return true
             }
@@ -83,7 +89,7 @@ class MainActivity : Activity() {
         loadPage()
         if (!TourRuntime.preferences.onboarding) AlertDialog.Builder(this)
             .setTitle("欢迎使用 Ari Travel")
-            .setMessage("地图和景点资料随应用提供。允许精确定位后可提醒到站；开启陪伴模式后会继续在后台使用定位。\n\n文字提问发送到导览站，问题与回答可能向所有游客公开。当前版本没有语音和轨迹上传功能。")
+            .setMessage("首页、地图和景点资料从导览网站更新，首次打开需要联网；景区增减与排序随网站同步。允许精确定位后可提醒到站；开启陪伴模式后会继续在后台使用定位。\n\n文字提问发送到导览站，问题与回答可能向所有游客公开。当前版本没有语音和轨迹上传功能。")
             .setPositiveButton("开始导览") { _, _ -> TourRuntime.preferences.onboarding = true }
             .setCancelable(false).show()
     }
@@ -92,7 +98,7 @@ class MainActivity : Activity() {
         val key = intent.getStringExtra("museum") ?: TourRuntime.preferences.museum
         intent.removeExtra("museum"); intent.removeExtra("place")
         val hash = TourRuntime.repository.find(key)?.key?.let { "#$it" }.orEmpty()
-        web.loadUrl("${BuildConfig.TOUR_ORIGIN}/app/tour/index.html$hash")
+        web.loadUrl("${BuildConfig.TOUR_ORIGIN}/index.html$hash")
     }
     private fun isOwnOrigin(uri: Uri) = uri.scheme == "https" && uri.host == Uri.parse(BuildConfig.TOUR_ORIGIN).host && (uri.port == -1 || uri.port == 443)
     private fun showRetry() {
@@ -106,12 +112,14 @@ class MainActivity : Activity() {
     }
     override fun onResume() {
         super.onResume(); connectedAt = System.currentTimeMillis(); updateGuide()
+        if (refreshOnResume) { refreshOnResume = false; web.reload() }
         if (selected != null) {
             if (hasLocation()) startTracking() else TourRuntime.error("denied")
         }
         pushState()
     }
     override fun onStop() {
+        refreshOnResume = true
         TourRuntime.listeners.remove(changed); TourRuntime.setForeground(false)
         if (!TourRuntime.preferences.companion) stopService(Intent(this, TourService::class.java))
         super.onStop()
@@ -136,6 +144,15 @@ class MainActivity : Activity() {
         selected = key; TourRuntime.preferences.museum = key; pageReady = key != null
         connectedAt = System.currentTimeMillis()
         if (key != null) { if (hasLocation()) startTracking() else requestLocation(); pushState() }
+    }
+    fun onCatalogChanged() {
+        val removed = selected != null && TourRuntime.repository.find(selected) == null
+        if (removed) {
+            selected = null; pendingPlace = null; pageReady = false
+            TourRuntime.preferences.museum = null
+        }
+        if (removed || TourRuntime.repository.tours.isEmpty()) setCompanion(false)
+        pushState()
     }
     private fun updateGuide() {
         val guide = Guides.find(TourRuntime.preferences.guide)

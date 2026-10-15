@@ -1,0 +1,3 @@
+{"seq": 1, "object_type": "site", "peer_group": "北京城防与抗战遗址整体", "HS": 9, "IU": 10, "VI": 8, "VA": 9, "CE": 10, "ER": 9, "evidence": "明代卫城遗址与七七事变炮击现场叠加，保留城墙弹痕并形成完整的抗战纪念与历史空间体验。", "confidence": "high"}
+{"seq": 2, "object_type": "node", "peer_group": "宛平城历史城门节点", "HS": 7, "IU": 6.5, "VI": 6.5, "VA": 7.5, "CE": 8.5, "ER": 7.5, "evidence": "顺治门是宛平城东门，其门名与明末李自成及清初顺治年号形成具有叙事张力的历史线索，但单个城门的整体代表性有限。", "confidence": "high"}
+{"seq": 16, "object_type": "object", "peer_group": "卢沟桥御碑与历史碑刻", "HS": 7, "IU": 5.5, "VI": 5.5, "VA": 6.5, "CE": 7.5, "ER": 0, "evidence": "乾隆御书“卢沟晓月”碑连接金代燕京八景传统与清代皇家题刻，是卢沟桥景观文化的重要见证，但单碑的视觉冲击和不可替代性有限。", "confidence": "high"}

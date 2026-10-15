@@ -1,0 +1,7 @@
+{
+  "rating_file": "wanping_ratings.json",
+  "rating_sha256": "ef7d8c057140583a41d72f2f3f223270befcb510c7ceb139cab69f7a218960d6",
+  "input_sha256": "cfd105370cab9750f68f5d74f40b172c3618e7be9e399b6451441a89e826410b",
+  "extra_evidence_sha256": "608fcf85e05278078fad7b964225188d26d98e462ed2a00a8b7c80860f92578d",
+  "note": "本次审计启动时使用原模型同类组版本；分组选择仍待用户回复。"
+}

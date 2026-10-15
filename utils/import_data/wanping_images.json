@@ -1,0 +1,10 @@
+{
+  "collected_on": "2026-10-15",
+  "note": "按官方页面图片链接登记。三张成功由网页工具读取；雕塑园图片读取超时，仅保留官方链接。图片是对应整体的资料图，不能自动用于子节点或单件文物。尚未下载本地文件，也未核实拍摄日期与授权条件。",
+  "images": [
+    {"identity_key": "city", "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570552353461.png", "source_id": "wanping_overview", "retrieval": "web_open_success"},
+    {"identity_key": "bridge", "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570562971991.png", "source_id": "bridge_overview", "retrieval": "web_open_success"},
+    {"identity_key": "war_museum", "url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570541796936.jpg", "source_id": "museum_overview", "retrieval": "web_open_success"},
+    {"identity_key": "sculpture_park", "url": "https://www.bjft.gov.cn/ftq/c100033/202509/W020251129570632918803.png", "source_id": "sculpture_park_overview", "retrieval": "timeout"}
+  ]
+}

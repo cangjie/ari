@@ -27,15 +27,25 @@ object TourRuntime {
         engines = repository.tours.associate { it.key to GeofenceEngine(it) }
     }
     fun setForeground(value: Boolean) { foreground = value; notifyChanged() }
+    @Synchronized fun installCatalog(text: String) {
+        repository.replace(text)
+        engines = repository.tours.associate { tour ->
+            tour.key to (engines[tour.key]?.takeIf { it.updateTour(tour) } ?: GeofenceEngine(tour))
+        }
+        notifyChanged()
+    }
+    @Synchronized
     fun state(key: String?) = engines[key]?.state
+    @Synchronized
     fun error(status: String) { engines.values.forEach { it.error(status) }; notifyChanged() }
+    @Synchronized
     fun onFix(fix: Fix): List<Arrival> {
         val entered = engines.mapNotNull { (key, engine) -> engine.onFix(fix).arrival?.let { Arrival(key, it.id, it.name, fix.time) } }
         entered.forEach(arrivals::add)
         notifyChanged()
         return entered
     }
-    fun snapshot(key: String): JSONObject {
+    @Synchronized fun snapshot(key: String): JSONObject {
         val s = state(key) ?: return JSONObject()
         return JSONObject().put("museum", key).put("status", s.status).put("x", s.position.x).put("y", s.position.y)
             .put("acc", s.accuracy).put("dist", s.distance).put("inside", s.inside ?: JSONObject.NULL)

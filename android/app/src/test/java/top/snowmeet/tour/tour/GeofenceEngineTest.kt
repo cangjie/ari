@@ -57,4 +57,14 @@ class GeofenceEngineTest {
         assertThrows(IllegalArgumentException::class.java) { Fix(Double.NaN, 0.0, 5.0, 1) }
         assertThrows(IllegalArgumentException::class.java) { Fix(0.0, 0.0, -1.0, 1) }
     }
+    @Test fun contentRefreshPreservesArrivalStateButUsesNewPlaceText() {
+        val engine = GeofenceEngine(tour)
+        engine.onFix(fix(0.0))
+        val updated = tour.copy(name = "新版景区", places = tour.places.map { it.copy(name = "新版" + it.name, introduction = "新介绍") })
+        assertTrue(engine.updateTour(updated))
+        assertNull(engine.onFix(fix(0.0)).arrival)
+        engine.onFix(fix(-30.0))
+        assertEquals("新版大厅", engine.onFix(fix(0.0)).arrival?.name)
+        assertFalse(engine.updateTour(updated.copy(buffer = 40.0)))
+    }
 }

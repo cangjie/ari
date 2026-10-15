@@ -15,9 +15,19 @@ data class TourState(val museum: String, val status: String, val position: Point
 data class Transition(val state: TourState, val arrival: Place?)
 
 /** Pure Kotlin; mirrors app.js geometry, accuracy gate and 1.2x exit hysteresis. */
-class GeofenceEngine(private val tour: TourData) {
+class GeofenceEngine(private var tour: TourData) {
     var state = TourState(tour.key, "waiting", tour.entrance)
         private set
+
+    /** Keep presence on text-only updates; still replace names/descriptions for future arrivals. */
+    fun updateTour(next: TourData): Boolean {
+        fun geometry(value: TourData) = value.places.associate { it.id to (it.center to it.radius) }
+        if (tour.key != next.key || tour.projection != next.projection || tour.pixelsPerMeter != next.pixelsPerMeter ||
+            tour.area != next.area || tour.buffer != next.buffer || tour.entrance != next.entrance ||
+            tour.entranceLat != next.entranceLat || tour.entranceLon != next.entranceLon || geometry(tour) != geometry(next)) return false
+        tour = next
+        return true
+    }
 
     fun error(status: String): TourState {
         require(status in setOf("waiting", "denied", "timeout", "unavailable"))

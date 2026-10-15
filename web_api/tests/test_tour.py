@@ -97,10 +97,15 @@ def test_route_minutes_add_up(tour):
         stay = sum(tour["stops"][str(s)]["dwell"] for s in r["stops"])
         assert r["stay"] == stay
 
-        pts = [(ent["lat"], ent["lon"])]
-        pts += [(places[tour["stops"][str(s)]["place"]]["lat"],
-                 places[tour["stops"][str(s)]["place"]]["lon"]) for s in r["stops"]]
-        pts.append((ent["lat"], ent["lon"]))
+        if walk.get('method') == 'osm-walking-graph':
+            pts = r['path_wgs84']
+            assert pts[0] == pts[-1] == [ent['lat'], ent['lon']]
+            assert len(r['path']) == len(pts)
+        else:
+            pts = [(ent["lat"], ent["lon"])]
+            pts += [(places[tour["stops"][str(s)]["place"]]["lat"],
+                     places[tour["stops"][str(s)]["place"]]["lon"]) for s in r["stops"]]
+            pts.append((ent["lat"], ent["lon"]))
         minutes = sum(haversine(*a, *b) for a, b in zip(pts, pts[1:])) * walk["detour"] / walk["m_per_min"]
         assert abs(r["walk"] - minutes) <= 0.51, f"路线 {r['id']} 的步行分钟数与坐标对不上"
         assert abs(r["total"] - (stay + minutes)) <= 0.51

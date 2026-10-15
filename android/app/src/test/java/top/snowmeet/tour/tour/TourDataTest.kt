@@ -5,7 +5,7 @@ import org.junit.Test
 import java.io.File
 
 class TourDataTest {
-    @Test fun parsesEveryBundledMuseumAndEveryPlaceHasActualIntroduction() {
+    @Test fun parsesEveryServerMuseumFixtureAndEveryPlaceHasActualIntroduction() {
         val data = File("../../web_api/tour/data")
         val files = data.listFiles()?.filter { it.extension == "json" }.orEmpty()
         assertTrue("Source tour data missing", files.isNotEmpty())

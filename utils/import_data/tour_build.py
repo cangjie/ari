@@ -13,6 +13,9 @@
   与 route_plan.py 导出的 Excel 是同一段代码、同一组数字
 - <馆>_osm_data.json + <馆>_tour_data.py：地图几何与画布摆法
 
+有DATA_PACKAGE配置时，改读已审计本地资料包，详见tour_package_build.py；不重灌业务表。
+首次生成新景区时追加到服务器catalog.json；Web与App共用其发布范围及顺序。
+
 **热区是「地点」不是「站」。** 路线上的一站是库里的一个节点；地图上的一个热区是一个
 实际能走到的位置。怀远楼和楼上的御纹章展是两站、一个地点。归并规则：
 
@@ -354,6 +357,9 @@ def build(mk):
         T = importlib.import_module(f"{mk}_tour_data")
     except ModuleNotFoundError as e:
         sys.exit(f"缺 {e.name}.py —— 这个馆还没有路线数据或导览配置")
+    if getattr(D, 'DATA_PACKAGE', None):
+        import tour_package_build
+        return tour_package_build.build(mk, D, T, sys.modules[__name__])
     osm_path = HERE / f"{mk}_osm_data.json"
     if not osm_path.exists():
         sys.exit(f"缺 {osm_path.name} —— 先跑 tour_osm_fetch.py --museum {mk}")
@@ -563,6 +569,24 @@ def dumps(data):
     return json.dumps(data, ensure_ascii=False, indent=1) + "\n"
 
 
+def write_registry(check=False, publish=None):
+    """服务器清单保留运营排序与下架选择；新建景区资料首次生成时追加。"""
+    names = sorted(p.stem for p in (TOUR_DIR / 'data').glob('*.json'))
+    path = TOUR_DIR / 'catalog.json'
+    listed = json.loads(path.read_text('utf-8'))['museums'] if path.exists() else names
+    if len(listed) != len(set(listed)):
+        sys.exit('景区清单包含重复项')
+    listed = [key for key in listed if key in names]
+    if publish and publish not in listed:
+        listed.append(publish)
+    text = json.dumps({'museums': listed}, ensure_ascii=False, indent=2) + '\n'
+    if check:
+        if not path.exists() or path.read_text('utf-8') != text:
+            sys.exit('景区索引与已发布数据不一致，先重新生成导览数据')
+    else:
+        path.write_text(text, encoding='utf-8')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.strip().split("\n")[0])
     ap.add_argument("--museum", required=True, help="museum.key_name")
@@ -583,9 +607,12 @@ def main():
             print(f"\n✗ 现有文件与重新生成的不一致，不同的顶层键：{diff}")
             sys.exit(1)
         print(f"\n✓ {out.name} 与重新生成的一致")
+        write_registry(check=True)
         return
     out.parent.mkdir(parents=True, exist_ok=True)
+    first_publish = not out.exists()
     out.write_text(dumps(data), encoding="utf-8")
+    write_registry(publish=args.museum if first_publish else None)
     print(f"-> {out}（{out.stat().st_size // 1024} KB）")
 
 

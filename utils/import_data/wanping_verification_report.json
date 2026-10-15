@@ -1,0 +1,25 @@
+{
+  "source_sha256": "cfd105370cab9750f68f5d74f40b172c3618e7be9e399b6451441a89e826410b",
+  "records": 39,
+  "dimension_scores_retained": 39,
+  "unchanged_ratings_except_raw_group_provenance": 29,
+  "reaudited_records": 10,
+  "original_audit_records_retained": 29,
+  "tier_changes": 0,
+  "review_seqs": [
+    1
+  ],
+  "missing_records": 15,
+  "missing_items": 15,
+  "tier_sensitive_missing": 0,
+  "workbook_rows": {
+    "zh-CN": 39,
+    "en": 39,
+    "来源证据": 49,
+    "同类组": 20,
+    "说明": 10
+  },
+  "english_cjk_residual": 0,
+  "backup_preserved": true,
+  "output_sha256": "789672d5bbb1048b8f39d5e583615914faaed67f7b62d4d03dff7a7c25f6c2bf"
+}
