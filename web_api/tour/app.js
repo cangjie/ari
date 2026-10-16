@@ -591,6 +591,21 @@
   }
 
   // ------------------------------------------------------------ 介绍抽屉
+  function photoHtml(path, info, name) {
+    if (!path) return '';
+    var caption = info && info.caption ? info.caption.zh : name;
+    var plate = '<div class="plate"><img loading="lazy" src="' + esc(path) + '" alt="' + esc(caption) + '"></div>';
+    if (!info) return plate;
+    var source = info.source, credit = source && source.title ? '图片出处：' + esc(source.title) : '';
+    try {
+      if (new URL(source.url).protocol === 'https:') {
+        credit = '<a href="' + esc(source.url) + '" target="_blank" rel="noopener noreferrer">图片出处：' + esc(source.title) + '</a>';
+      }
+    } catch (e) { /* No clickable credit for an invalid source URL. */ }
+    return '<figure class="tour-photo">' + plate + '<figcaption>' + esc(caption) +
+      ' · 资料图' + (credit ? '<br>' + credit : '') + '</figcaption></figure>';
+  }
+
   function stopHtml(s, place, r) {
     var solo = s.name.zh === place.name.zh;       // 这一站就是地点本身，标题已经写过了
     var ord = r ? r.stops.indexOf(s.seq) + 1 : 0;
@@ -600,6 +615,8 @@
     var html = '<div class="stop' + (r && !ord ? " off-route" : "") + '">' +
       (solo ? "" : "<h4>" + esc(s.name.zh) + "</h4>") +
       '<div class="stop-meta">' + meta.join("") + "</div>";
+    // 地点封面已展示的同一张图不重复；组成部分只展示它自己收录的照片。
+    if (s.photo && s.photo !== place.photo) html += photoHtml(s.photo, s.photo_info, s.name.zh);
     if (s.status.zh !== "在展") html += '<div class="note">现状：' + esc(s.status.zh) + "</div>";
     if (s.borrowed) html += '<div class="note">' + esc(s.borrowed.zh) + "</div>";
     if (s.review) html += '<div class="note">馆方资料此处待复核：' + esc(s.review) + "</div>";
@@ -631,7 +648,7 @@
       ? "路线第 " + (i + 1) + " / " + seq.ids.length + " 处 · " + M.card.short.zh
       : "热区 " + pad2(M.places.indexOf(p) + 1) + " · " + M.card.short.zh;
 
-    var html = (p.photo ? '<div class="plate"><img loading="lazy" src="' + esc(p.photo) + '" alt="' + esc(p.name.zh) + '"></div>' : "") +
+    var html = photoHtml(p.photo, p.photo_info, p.name.zh) +
       '<div class="kicker">' + esc(kicker) + "</div><h2>" + esc(p.name.zh) + '</h2><div class="rule"></div>' +
       p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("") +
       (qaLive === false ? "" : QA_HTML);

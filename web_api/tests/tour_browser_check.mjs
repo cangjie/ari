@@ -248,6 +248,35 @@ const SCENES = {
     await p.eval("document.getElementById('map').dispatchEvent(new WheelEvent('wheel', {deltaY: 1800, clientX: 195, clientY: 400, bubbles: true, cancelable: true})); true");
     await p.shot('wanping-full');
   },
+  async photos(p) {
+    const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));
+    await p.open('/');
+    const cover = await p.eval("document.querySelector('[data-open=wanping] img')?.getAttribute('src')");
+    check(cover === m.card.cover && !!cover, '宛平城首页使用已收录的照片', cover);
+    await p.eval("document.querySelector('[data-open=wanping]').click(); true");
+    for (const id of ['east_gate', 'war_museum', 'square', 'main_street', 'west_gate', 'bridge', 'sculpture_park']) {
+      const place = m.places.find((item) => item.id === id);
+      await p.eval(`document.querySelector('[aria-label=${JSON.stringify(place.name.zh)}]').click(); true`);
+      const paths = [...new Set([place.photo, ...place.stops.map((s) => m.stops[s].photo)].filter(Boolean))];
+      // lazy图片只有滚入视口才加载，逐张滚动后检查真实解码结果。
+      for (const path of paths) {
+        const exists = await p.eval(`!!document.querySelector('#sheet-body img[src=${JSON.stringify(path)}]')`);
+        if (!exists) { check(false, '照片已渲染：' + path); continue; }
+        await p.eval(`document.querySelector('#sheet-body img[src=${JSON.stringify(path)}]')?.scrollIntoView(); true`);
+        let ok = false;
+        for (let i = 0; i < 80; i++) {
+          ok = await p.eval(`(function(){var im=document.querySelector('#sheet-body img[src=${JSON.stringify(path)}]');return !!im && im.complete && im.naturalWidth>0})()`);
+          if (ok) break;
+          await sleep(150);
+        }
+        check(ok, '照片实际载入：' + path);
+      }
+      const credit = await p.eval("Array.from(document.querySelectorAll('#sheet-body figure figcaption a')).every(function(a){return a.href.startsWith('https:') && a.textContent.includes('图片出处')}) && document.querySelectorAll('#sheet-body figure figcaption a').length");
+      check(credit >= paths.length, '各照片旁展示对应出处：' + id, credit);
+      await p.shot('photos-' + id);
+      await p.eval("document.querySelector('#sheet [data-close]').click(); true");
+    }
+  },
   async host(p) {
     if (!LOCAL) return;
     const script = await p.send("Page.addScriptToEvaluateOnNewDocument", { source: `

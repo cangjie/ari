@@ -1,6 +1,6 @@
 {
  "key": "wanping",
- "generated": "2026-10-15",
+ "generated": "2026-10-16",
  "name": {
   "zh": "宛平城及周边",
   "en": "Wanping City and surroundings"
@@ -31,7 +31,7 @@
    "en": "The museum, city-wall access, and Lugou Bridge each have their own opening hours."
   },
   "hours": "城内公共区域全天开放",
-  "cover": null
+  "cover": "img/wanping/1.jpg"
  },
  "opening": {
   "zh": "城内公共区域全天免费。抗战馆常规9:00–16:30，16:00停止入馆，周一闭馆（法定节假日及重要抗战纪念日除外）；基本参观免费免预约，携带有效证件安检入馆，半景画另需实名免费预约。登城4–10月9:00–19:00、11–3月9:00–18:00；卢沟桥与雕塑园时段以当天公告为准。建议9:00从东门出发先参观抗战馆；普通周一或临时闭馆时跳过馆内，估计用时相应减少90分钟。",
@@ -181,7 +181,19 @@
    "r_m": 35,
    "lp": "r",
    "osm": "node/296346557",
-   "photo": null,
+   "photo": "img/wanping/2.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "顺治门",
+     "en": "Shunzhi Gate"
+    },
+    "source": {
+     "title": "丰台时报",
+     "url": "https://www.bjft.gov.cn/fengtaishibao/h5/html5/2025-08/27/content_9506_18835488.htm"
+    },
+    "sha256": "5c19f2adc3138fd6f82bb7b375b04b2509518310ca89d75791e4df7ac2e375af",
+    "photographed_on": null
+   },
    "stops": [
     2,
     1,
@@ -202,7 +214,19 @@
    "r_m": 35,
    "lp": "t",
    "osm": "node/296346725",
-   "photo": null,
+   "photo": "img/wanping/19.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "中国人民抗日战争纪念馆（外观）",
+     "en": "Museum of the War of Chinese People's Resistance Against Japanese Aggression (exterior)"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/201903/077ee9381f1f4b9498d99da4571bc2d0.shtml"
+    },
+    "sha256": "d97db8c52f1e73b2f8433d9c46e8e6a12f91590de6d4e1f44c99ec697c999bbb",
+    "photographed_on": null
+   },
    "stops": [
     19,
     20,
@@ -232,6 +256,7 @@
    "lp": "b",
    "osm": "way/1052576120",
    "photo": null,
+   "photo_info": null,
    "stops": [
     30
    ]
@@ -251,6 +276,7 @@
    "lp": "t",
    "osm": "node/296346512",
    "photo": null,
+   "photo_info": null,
    "stops": [
     7,
     8,
@@ -275,6 +301,7 @@
    "lp": "t",
    "osm": "node/296346505",
    "photo": null,
+   "photo_info": null,
    "stops": [
     3,
     6,
@@ -296,7 +323,19 @@
    "r_m": 35,
    "lp": "l",
    "osm": "node/296346558",
-   "photo": null,
+   "photo": "img/wanping/14.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "卢沟桥",
+     "en": "Lugou Bridge"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/201903/473059a6cd8940b2b314026195e0aa42.shtml"
+    },
+    "sha256": "b700b50007a6dc584c0bcc14bcbf6eca5c6c2bc9c608f34d6ee32c9836e9d036",
+    "photographed_on": null
+   },
    "stops": [
     14,
     15,
@@ -320,7 +359,19 @@
    "r_m": 35,
    "lp": "b",
    "osm": "node/8278912752",
-   "photo": null,
+   "photo": "img/wanping/31.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "中国人民抗日战争纪念雕塑园",
+     "en": "Sculpture Park Commemorating the Chinese People's War of Resistance Against Japanese Aggression"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/202509/434dcd1915444ead8ec8f900f9b51f10.shtml"
+    },
+    "sha256": "d0906b06f2b5c1a711861f14098e1634765792432b79b2517b79ddeb756a89ad",
+    "photographed_on": null
+   },
    "stops": [
     31,
     32,
@@ -367,7 +418,19 @@
     "zh": "宛平城东门；本条为古城组成部分。",
     "en": "East Gate of Wanping City; this entry is a component of the ancient city."
    },
-   "photo": null,
+   "photo": "img/wanping/2.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "顺治门",
+     "en": "Shunzhi Gate"
+    },
+    "source": {
+     "title": "丰台时报",
+     "url": "https://www.bjft.gov.cn/fengtaishibao/h5/html5/2025-08/27/content_9506_18835488.htm"
+    },
+    "sha256": "5c19f2adc3138fd6f82bb7b375b04b2509518310ca89d75791e4df7ac2e375af",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -411,7 +474,19 @@
     "zh": "两份官方原文均保留；纪年与旧城名有待审计，不自行改写。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "Retain both official original texts; the dates and former city names require auditing and must not be rewritten independently.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/1.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "宛平城",
+     "en": "Wanping City"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/201903/e6414d2c39464f9d9a48d18e36541ddd.shtml"
+    },
+    "sha256": "a721da9468d35aead5a43d5d921287048a10cf230176cd13e700579942608d73",
+    "photographed_on": null
+   },
    "objects": [],
    "review": "官方来源对始建年份的公元换算自相矛盾：称'崇祯十三年'等于1638年，但该年号实际对应1640年（与gate_history来源中腰牌铭文'崇祯十三年三月'的建城纪年及另一来源'竣工于1640年'的表述不符）。"
   },
@@ -456,7 +531,19 @@
     "zh": "城墙组成部分；尚无逐处弹坑定位与编号，不编坐标。",
     "en": "A component of the city wall; no locations and numbers for individual shell craters have yet been established, so no coordinates should be invented."
    },
-   "photo": null,
+   "photo": "img/wanping/5.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "城墙弹痕",
+     "en": "Bullet Marks on the City Wall"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml"
+    },
+    "sha256": "4dbd2c0e2d0f0df9808b8a3ad004d60a1bdae3007d1ad219aad7633397d4c848",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -499,7 +586,19 @@
     "zh": "采用2025年改扩建后的基本陈列，不沿用2015年旧展厅目录。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "Use the basic exhibition after the 2025 renovation and expansion; do not follow the catalog of the old 2015 exhibition hall.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/19.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "中国人民抗日战争纪念馆（外观）",
+     "en": "Museum of the War of Chinese People's Resistance Against Japanese Aggression (exterior)"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/201903/077ee9381f1f4b9498d99da4571bc2d0.shtml"
+    },
+    "sha256": "d97db8c52f1e73b2f8433d9c46e8e6a12f91590de6d4e1f44c99ec697c999bbb",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -537,6 +636,7 @@
     "en": "The full title is “For National Liberation and World Peace—Thematic Exhibition Commemorating the 80th Anniversary of the Victory of the Chinese People’s War of Resistance Against Japanese Aggression and the World Anti-Fascist War”; the museum explicitly identifies it as a long-term basic exhibition."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -573,6 +673,7 @@
     "en": "Part One of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -609,6 +710,7 @@
     "en": "Part Two of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -645,6 +747,7 @@
     "en": "Part Three of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -681,6 +784,7 @@
     "en": "Part Four of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -717,6 +821,7 @@
     "en": "Part Five of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -753,6 +858,7 @@
     "en": "Part Six of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -789,6 +895,7 @@
     "en": "Part Seven of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -825,6 +932,7 @@
     "en": "Part Eight of the basic exhibition; the floor and exhibition-hall numbers have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -861,6 +969,7 @@
     "en": "A dedicated section of the basic exhibition; do not list physical objects such as family letters as separate collection items when they have not been catalogued independently.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -897,6 +1006,7 @@
     "en": "Located on the south side of the square in front of the Resistance War Museum; reliable information on the sculpture’s dimensions and artist has not been obtained."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -933,6 +1043,7 @@
     "en": "The authorities call the reconstructed district a Ming–Qing Cultural Pedestrian Street; this does not mean that the original Ming–Qing structures along the entire street have been preserved."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -974,7 +1085,19 @@
     "zh": "官方明确记为复建；与历史县署驻地的沿革分开记录。当前室内开放状态未核实。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "Officially identified as reconstructed; record separately from the historical succession of the county government seat. Its current indoor opening status has not been verified.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/8.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "宛平县衙（牌匾题“宛平县署”）",
+     "en": "Wanping County Government Office"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml"
+    },
+    "sha256": "f2035acbf599d20834901716846503fe64b2bb980141ce615863a203f0858eb1",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1011,6 +1134,7 @@
     "en": "Officially identified as reconstructed; its current interior displays and indoor opening status have not been verified.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1052,6 +1176,7 @@
     "en": "Officially identified as reconstructed; a 2025 report describes it as a public space serving both recreational and educational purposes.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1093,6 +1218,7 @@
     "en": "A cold-weapons exhibition hall in a reconstructed building; swords and other objects have not been collected and documented individually, so all displayed objects cannot be called excavated originals.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1129,6 +1255,7 @@
     "en": "Officially described as an added landscape feature; no specific architectural history or current performance schedule has been provided.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1166,6 +1293,7 @@
     "en": "West Gate of Wanping City; Yongchang Gate and Weiyan Gate are names for the same gate in different periods and must not be split into two entries."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1208,6 +1336,7 @@
     "en": "The 2025-reported walkway outside the city; distinct from sightseeing access along the top of the city wall."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1246,7 +1375,19 @@
     "zh": "文物本体修缮与周边院落复建分开理解；不是所有城内建筑都属于明代原构。",
     "en": "Understand the conservation of the monument itself and the reconstruction of the surrounding courtyards separately; not all buildings within the city are original Ming-dynasty structures."
    },
-   "photo": null,
+   "photo": "img/wanping/4.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "宛平城墙",
+     "en": "Wanping City Wall"
+    },
+    "source": {
+     "title": "北京旅游网 · 文旅丰台",
+     "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+    },
+    "sha256": "322f2b4800b61d2979de0c370bf907a03c74c138b298d648ce9f2ff4586fa3a8",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1283,6 +1424,7 @@
     "en": "The Fengtai Resistance War Special Exhibition in the Small City Reception Hall inside the West Gate; this entry and the venue are treated as one visitor node. The 2025 report does not establish that it is still on display today.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1324,7 +1466,19 @@
     "zh": "桥宽口径、石狮数量保留各来源原文；不同年份的数字不相互覆盖。",
     "en": "Retain the original wording from each source for the bridge width and the number of stone lions; figures from different years do not supersede one another."
    },
-   "photo": null,
+   "photo": "img/wanping/14.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "卢沟桥",
+     "en": "Lugou Bridge"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/201903/473059a6cd8940b2b314026195e0aa42.shtml"
+    },
+    "sha256": "b700b50007a6dc584c0bcc14bcbf6eca5c6c2bc9c608f34d6ee32c9836e9d036",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1367,7 +1521,19 @@
     "zh": "作为石狮群记录，不把未取得单独身份资料的数百只石狮分别编目；官方来源数量口径不一致。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "Record this as a group of stone lions rather than cataloguing the hundreds of lions individually without separately obtained identity information; official sources give inconsistent figures.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/15.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "卢沟桥石狮",
+     "en": "Lugou Bridge Stone Lions"
+    },
+    "source": {
+     "title": "北京旅游网 · 文旅丰台",
+     "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+    },
+    "sha256": "98dd639b1352076a2d0ef9c6bfe8f32f787b7695ba82055191553bba57b2798f",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1403,7 +1569,19 @@
     "zh": "目录名称据原文“卢沟晓月”碑；原物与碑亭不拆成两件。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "The catalog title is based on the original inscription, “Lugou Dawn Moon”; the original stele and its stele pavilion are not split into two objects.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/16.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "卢沟晓月碑",
+     "en": "Stele of the Dawn Moon over Lugou Bridge"
+    },
+    "source": {
+     "title": "北京旅游网 · 文旅丰台",
+     "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+    },
+    "sha256": "b6186e6bb8b042d869097d58b939cc96b23a906684883d7731e982733165f55a",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1440,6 +1618,7 @@
     "en": "The catalog title is based on the original text, “Imperial Stele Erected by the Kangxi Emperor of the Qing in 1698 to Commemorate the Reconstruction of Lugou Bridge”; the full inscription has not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1476,6 +1655,7 @@
     "en": "Record the huabiao at both ends of the bridge as a group; do not fabricate individual object numbers.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1511,7 +1691,19 @@
     "zh": "仅取得北京旅游网的官方搜索索引摘录；详情正文超时。未据此采纳实时票价、开放时间或单件文物位置。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "Only an excerpt from the official search index of the Beijing Tourism website was obtained; the detailed page timed out. Do not use it to adopt current ticket prices, opening hours, or the location of individual objects.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/39.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "卢沟桥历史博物馆（外观）",
+     "en": "Lugou Bridge Historical Museum (exterior)"
+    },
+    "source": {
+     "title": "北京旅游网综合",
+     "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc"
+    },
+    "sha256": "1e1c26374736855d3248f9c48f7650b245f18467b13ad5fd3a3da9571594a0d1",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1552,7 +1744,19 @@
     "zh": "与宛平城、卢沟桥、抗战馆有包含和相邻关系；清单不是路线，不把父子节点停留时间相加。",
     "en": "Has inclusion and adjacency relationships with Wanping City, Lugou Bridge, and the Resistance War Museum; this list is not a route, and the dwell times of parent and child nodes must not be added together."
    },
-   "photo": null,
+   "photo": "img/wanping/31.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "中国人民抗日战争纪念雕塑园",
+     "en": "Sculpture Park Commemorating the Chinese People's War of Resistance Against Japanese Aggression"
+    },
+    "source": {
+     "title": "丰台区政府",
+     "url": "https://www.bjft.gov.cn/ftq/c100033/202509/434dcd1915444ead8ec8f900f9b51f10.shtml"
+    },
+    "sha256": "d0906b06f2b5c1a711861f14098e1634765792432b79b2517b79ddeb756a89ad",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1588,7 +1792,19 @@
     "zh": "雕塑园中的纪念碑；尺寸原文照录，不推广到其他雕塑。 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。",
     "en": "A monument in the sculpture park; record the dimensions exactly as in the original text and do not generalize them to other sculptures.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
-   "photo": null,
+   "photo": "img/wanping/32.jpg",
+   "photo_info": {
+    "caption": {
+     "zh": "中国人民抗日战争纪念碑",
+     "en": "Monument to the Chinese People's War of Resistance Against Japanese Aggression"
+    },
+    "source": {
+     "title": "北京旅游网综合",
+     "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc"
+    },
+    "sha256": "f0daf51ef6d1ee507335491463d71305f0bf37419effd11e9e9722eb8c464481",
+    "photographed_on": null
+   },
    "objects": [],
    "review": null
   },
@@ -1625,6 +1841,7 @@
     "en": "One of the four major thematic sections of the sculpture group; an itemized sculpture list and boundaries for this section have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1661,6 +1878,7 @@
     "en": "One of the four major thematic sections of the sculpture group; an itemized sculpture list and boundaries for this section have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1697,6 +1915,7 @@
     "en": "One of the four major thematic sections of the sculpture group; an itemized sculpture list and boundaries for this section have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1733,6 +1952,7 @@
     "en": "One of the four major thematic sections of the sculpture group; an itemized sculpture list and boundaries for this section have not been obtained.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1769,6 +1989,7 @@
     "en": "A sculpture named in the authorities’ 2025 report; this entry does not infer which thematic section it belongs to.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   },
@@ -1807,6 +2028,7 @@
     "en": "A sculpture named in the authorities’ 2025 report; retain the original interpretation of the doctor figure and do not rewrite it as confirmation that the figure is a portrait of the artist’s identified subject.This item is to be read as part of its associated whole; the map marks only the whole or its associated area and does not represent the precise location of an individual item or indoor section."
    },
    "photo": null,
+   "photo_info": null,
    "objects": [],
    "review": null
   }
@@ -3409,6 +3631,7 @@
   "osm_sha256": "6cd7c82bc86ebea57533ac23261b93531ff7debe7cff593312dfc15f6bb8ab76",
   "tour_translations_sha256": "ce113ba45b9cda28cf9e58b019c035037bcf27a72d4f0ca219be2ed95622a045",
   "checked_on": "2026-10-15",
-  "business_database_written": false
+  "business_database_written": false,
+  "photos_sha256": "c7710ecb9db20054cbb52179b7d8f76d05d9a854f4b69011d4f50df9baa5bc4e"
  }
 }

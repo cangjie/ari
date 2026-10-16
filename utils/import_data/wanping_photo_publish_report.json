@@ -1,0 +1,77 @@
+{
+  "checked_on": "2026-10-16",
+  "photo_count": 12,
+  "sequences": [
+    1,
+    2,
+    4,
+    5,
+    8,
+    14,
+    15,
+    16,
+    19,
+    31,
+    32,
+    39
+  ],
+  "published_bytes": 1457885,
+  "largest_bytes": 175466,
+  "original_bytes": 21325461,
+  "photo_manifest_sha256": "c7710ecb9db20054cbb52179b7d8f76d05d9a854f4b69011d4f50df9baa5bc4e",
+  "source_evidence_sha256": "8b4f255cf95816d814cd697dee7357f8f22093622e5277248907243dea1f820e",
+  "originals_archive": "utils/import_data/exports/wanping_photo_originals/",
+  "relay": {
+    "ssh_host": "44.207.251.65",
+    "port": 2222,
+    "downloaded_to_remote_disk": false,
+    "method": "remote curl stdout, in-memory base64 framing, SSH stream into local files",
+    "remote_temp_files_created": 0
+  },
+  "checks": {
+    "photos_decoded_and_rebuilt_from_originals": 12,
+    "source_html_tags_matched": 12,
+    "browser_all_7_places_and_12_photos": "passed",
+    "browser_regressions": [
+      "wanping",
+      "host",
+      "list",
+      "qa (local fake API only)"
+    ],
+    "pytest": {
+      "passed": 76,
+      "real_database_skipped": 3
+    },
+    "original_39_descriptions_and_ratings": "unchanged",
+    "routes_projection_and_map": "unchanged",
+    "apk_rebuilt": false,
+    "physical_device_tested": false
+  },
+  "deployment": "pending; public checks will be recorded after deployment",
+  "review": {
+    "model": "claude-sonnet-5",
+    "effort": "medium",
+    "scope": "source captions, metadata and code; not direct model vision",
+    "raw_report": "wanping_photo_audit.json",
+    "findings": 4,
+    "resolutions": [
+      {
+        "issue": "cover depends on first record",
+        "resolution": "增加显式PLACE_PHOTOS配置，校验照片属于该地点；拒绝“一律parent_key为空”的建议，因为城门是城市组成部分但就是对应地图地点。重排石狮与整桥的用例保证封面仍指向整桥。"
+      },
+      {
+        "issue": "museum exterior captions",
+        "resolution": "两处博物馆图注明确标为外观；馆外观不分配给基本陈列与室内分区。现有开放待确认说明保留。"
+      },
+      {
+        "issue": "county office inscription",
+        "resolution": "图注注明牌匾题“宛平县署”，保留规范条目名称宛平县衙。"
+      },
+      {
+        "issue": "non-HTTPS source loses plain credit",
+        "resolution": "仅限制可点击链接为HTTPS；其他情况下保留图片出处的纯文字。"
+      }
+    ],
+    "final_fixes_verified_by": "deterministic tests and browser; no second model call claimed"
+  }
+}

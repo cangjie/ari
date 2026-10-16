@@ -1,0 +1,35 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "input_sha256": "078e96a6b385477757744f32f41c061e675fc5de28d94a63bccf104ece00f8fd",
+  "scope": "text, source captions and code; not direct model vision",
+  "result": {
+    "findings": [
+      {
+        "severity": "important",
+        "file": "utils/import_data/tour_package_build.py",
+        "reason": "地点封面照片的选取逻辑为：cover_seq = next((s for s in [seqs[0]] + seqs if photo(s) and (s == seqs[0] or rows[s]['parent_key'] == '')), None)。该逻辑隐含假设每个地点的 seqs 列表第一项（seqs[0]）必定是“整体/父级”条目，一旦 D.PLACES 中某地点的 seqs 顺序被后续编辑调整、或父级条目恰好没有配图而把子节点（如碑刻、单狮、城门等）排在列表第一位，就会在没有任何报错的情况下把子节点照片当作整地点的封面图，造成父子节点错配，且不会被当前的完整性校验（identity_key/path/sha256核对）捕捉到，因为这些校验只验证“这张图确实属于这个seq”，不验证“这个seq确实适合做本地点代表图”。",
+        "recommendation": "在构建时显式断言 rows[seqs[0]]['parent_key'] == ''（即第一项必须是父级/整体条目），否则抛错阻止发布；或改为优先按 parent_key=='' 过滤后再取第一个，不依赖位置顺序隐含假设。"
+      },
+      {
+        "severity": "important",
+        "file": "utils/import_data/wanping_tour_photos.json",
+        "reason": "seq19（中国人民抗日战争纪念馆）与seq39（卢沟桥历史博物馆）的 match_basis 已明确记录风险提示——前者“是馆外观，不能充当2025年基本陈列或分展区照片”，后者“是外观资料图，不承诺当前开放”；但这两条提示只存在于内部核查字段 match_basis 中，并未体现在对外展示的 caption（分别为纯文字“中国人民抗日战争纪念馆”“卢沟桥历史博物馆”）或 stop 的 borrowed/status 说明里。根据 web 渲染代码（photoHtml/stopHtml），用户看到的只是资料图图注+图片出处链接，图片正下方若编排有描述2025年新展内容的介绍文字，容易让访客误以为馆外观资料图代表馆内新展陈列或等同于当前可入馆参观的实时状态，正是本轮需重点识别的“馆外观冒充室内新展”风险点。",
+        "recommendation": "为这两条在发布端增加可见的说明（例如写入对应stop的status或borrowed note），明确告知“此图为建筑外观资料图，不代表馆内展陈内容/不保证当前开放”，而不仅停留在内部核查字段中。"
+      },
+      {
+        "severity": "minor",
+        "file": "utils/import_data/wanping_tour_photos.json",
+        "reason": "seq8的caption为“宛平县衙”，但其match_basis记录“牌匾可辨‘宛平县署’”，即图中实际可辨认的建筑名称与对外展示的条目名称用字不同（衙 vs 署），虽核查人员已在match_basis中坦承差异，但该差异未对用户展示，游客现场对照牌匾文字时可能产生名称不一致的困惑。",
+        "recommendation": "将对外caption统一为图中可辨认的“宛平县署”，或在图注/说明中加一句“亦称宛平县衙”，消除与实地牌匾文字的不一致。"
+      },
+      {
+        "severity": "minor",
+        "file": "WEB RENDERING",
+        "reason": "photoHtml() 中，当 source.url 不是https协议时，credit 整体被置空字符串，figcaption 最终只剩“资料图”而完全不显示“图片出处：XX”文字，即连不可点击的文字来源说明也一起丢失。当前12条记录的source.url均为https，不构成现实问题，但作为通用渲染逻辑，一旦未来资料里出现http或格式异常的来源地址，会造成来源信息静默消失而非仅丢失可点击性。",
+        "recommendation": "将https校验仅用于决定是否包裹为可点击链接，即使协议非https也应保留“图片出处：XX”纯文字，避免来源说明整体丢失。"
+      }
+    ],
+    "assessment": "在给定材料范围内（12张宛平城照片的来源记录、条目绑定校验代码与Web渲染代码），未发现确凿的重复图片、图片路径/来源缺失，或对伪满皇宫既有功能的回退（本次材料未涉及wmhg代码改动）。12条照片的sha256两两不同、path/identity_key/caption/source齐全，且wanping_tour_photos.json与wanping_photo_sources.json两份记录相互印证一致。tour_package_build.py中对资料包、评分、审计、翻译、图片均有基于sha256的完整性校验，设计上通过“子节点照片不下放覆盖父级封面、父级照片不下放到子节点”的规则主动防范父子错配，整体工程纪律良好。\\n\\n主要风险集中在：(1) 封面图选取依赖“seqs[0]为父级”的隐含顺序假设，缺少显式断言，存在未来编辑导致父子错配而不报错的隐患；(2) 两处博物馆类条目（抗战纪念馆、卢沟桥历史博物馆）的“仅为外观资料图、不代表室内新展/不保证当前开放”的核查结论只记录在内部match_basis，未转化为对外可见的说明，存在被访客误读为室内新展或实时开放状态的风险，这正是本轮需要重点防范的问题类型；其余为命名用字和前端健壮性方面的minor建议。未发现需要立即下线或阻断发布的critical问题。"
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "checked_on": "2026-10-16",
+  "method": "官方HTML中逐图匹配文件名，结合邻近正文与可辨图像人工核对；原始HTML保存在本机exports/wanping_photo_originals。",
+  "sources": [
+    {
+      "seq": 1,
+      "url": "https://www.bjft.gov.cn/ftq/c100033/201903/e6414d2c39464f9d9a48d18e36541ddd.shtml",
+      "page_sha256": "1cd1b9d6d54bb25de649057d229f7c8ccafaa610c38c692f791f2046409fa66a",
+      "image_src_as_published": "./W020251129570552353461.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "宛平城位于北京市丰台区卢沟桥东侧，始建于明崇祯十三年（1638年）。原名拱北城，是拱卫京畿的桥头堡，清改称拱极城。1928年宛平县公署迁至拱极城，并将其改名宛平城。宛平城东西长640米，南北宽320米，总面积约20公顷。1937年7月7日，日本侵略者蓄意制造七七事变，炮轰宛平城，攻击卢沟桥，当地中国驻军第29军奋起抵抗，全民族抗战由此爆发。现城墙上仍留存有31处弹坑。"
+        },
+        {
+          "type": "text",
+          "value": "宛平城作为全民族抗战爆发纪念地，是第一批全国重点文物保护单位，第一批国家级抗战纪念设施、遗址，2021年列入北京市第一批不可移动革命文物名录。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129570552353461.png"
+        },
+        {
+          "type": "text",
+          "value": "#div_div {margin: 0 auto;padding-bottom: 40px;width: 135px;}\n\t\t\t#qr_container {position: relative;margin: auto;}"
+        },
+        {
+          "type": "text",
+          "value": ".g_foot_box .m_info2 p{margin-top: -4px;line-height: 29px;}"
+        }
+      ],
+      "match_basis": "官方宛平城介绍配图；仅用于整体，不据此判定城门方位。"
+    },
+    {
+      "seq": 2,
+      "url": "https://www.bjft.gov.cn/fengtaishibao/h5/html5/2025-08/27/content_9506_18835488.htm",
+      "page_sha256": "545c4d782ddb43613a30af2265b820702516002eb1e666e6139061703fa9b66f",
+      "image_src_as_published": "../../../resfile/2025-08-27/08/ftb0827008_001_03_b.jpg",
+      "context": [
+        {
+          "type": "img",
+          "value": "../../../resfile/2025-08-27/08/ftb0827008_001_02_b.jpg"
+        },
+        {
+          "type": "text",
+          "value": "武俊腰牌"
+        },
+        {
+          "type": "img",
+          "value": "../../../resfile/2025-08-27/08/ftb0827008_001_03_b.jpg"
+        },
+        {
+          "type": "text",
+          "value": "宛平城顺治门"
+        },
+        {
+          "type": "img",
+          "value": "../../../resfile/2025-08-27/08/ftb0827008_001_04_b.jpg"
+        }
+      ],
+      "match_basis": "图注明确为“宛平城顺治门”，照片门额亦可见“顺治门”。"
+    },
+    {
+      "seq": 4,
+      "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f",
+      "page_sha256": "856d74fd07eeef0f11a3214951140ff98c356a769f45fe8dd1ec81ec017cd703",
+      "image_src_as_published": "https://t1.huanqiucdn.cn/images/article/20230708/f3fe9f3191221bdd99b34ec4016142ea.png?w=650",
+      "context": [
+        {
+          "type": "text",
+          "value": "城内大街两侧明清仿古建筑鳞次栉比的灰瓦坡顶，红绿漆色的雕花窗棂，高高扬起的龙头挑杆，都展现着这座沧桑古城的独特魅力。"
+        },
+        {
+          "type": "text",
+          "value": "快带上家人朋友们来参观吧！"
+        },
+        {
+          "type": "img",
+          "value": "https://t1.huanqiucdn.cn/images/article/20230708/f3fe9f3191221bdd99b34ec4016142ea.png?w=650"
+        },
+        {
+          "type": "img",
+          "value": "https://t1.huanqiucdn.cn/images/article/20230708/82f6ef9ef97709bf5a948b83253812e1.png?w=650"
+        },
+        {
+          "type": "text",
+          "value": "-------------"
+        }
+      ],
+      "match_basis": "宛平城段落中的城墙与城楼外观图，不据此推断具体朝向。"
+    },
+    {
+      "seq": 5,
+      "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml",
+      "page_sha256": "af5d78f0c36b55a54f2b5922670aaee8013916acaa0d71f1e369bbeca5c19bd4",
+      "image_src_as_published": "./W020251129785867882374.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "1937年7月7日，日本在卢沟桥、宛平城发动“七七事变”，宛平城成为历史见证，至今城墙上还保留着当年日军炮击宛平城的弹痕。"
+        },
+        {
+          "type": "text",
+          "value": "现在的宛平城历经多次修葺。宛平城内复建了包括宛平县衙、卢沟驿、兴隆寺及拱极营等建筑，同时增加了戏楼等景观，作为老北京民俗文化展示平台。已复建完工的宛平大街形成一条古色古香的明清文化步行街。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129785867882374.png"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129785867906791.png"
+        },
+        {
+          "type": "text",
+          "value": "平城，不仅是一座袖珍小城，更是一座巍峨雄关。宛平城，不同于一般城池，实际上，它是一座桥头堡，扼守着卢沟桥这一从南方通向北京的交通要道。那现在宛平城等待着四方游客前来观光游览。"
+        }
+      ],
+      "match_basis": "城墙近景配图，可见弹坑及文保说明牌。"
+    },
+    {
+      "seq": 8,
+      "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml",
+      "page_sha256": "af5d78f0c36b55a54f2b5922670aaee8013916acaa0d71f1e369bbeca5c19bd4",
+      "image_src_as_published": "./W020251129785867906791.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "现在的宛平城历经多次修葺。宛平城内复建了包括宛平县衙、卢沟驿、兴隆寺及拱极营等建筑，同时增加了戏楼等景观，作为老北京民俗文化展示平台。已复建完工的宛平大街形成一条古色古香的明清文化步行街。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129785867882374.png"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129785867906791.png"
+        },
+        {
+          "type": "text",
+          "value": "平城，不仅是一座袖珍小城，更是一座巍峨雄关。宛平城，不同于一般城池，实际上，它是一座桥头堡，扼守着卢沟桥这一从南方通向北京的交通要道。那现在宛平城等待着四方游客前来观光游览。"
+        },
+        {
+          "type": "text",
+          "value": "地址：北京市丰台区永定河堤农场路9号"
+        }
+      ],
+      "match_basis": "复建建筑段落配图，牌匾可辨“宛平县署”；仅作建筑外观。"
+    },
+    {
+      "seq": 14,
+      "url": "https://www.bjft.gov.cn/ftq/c100033/201903/473059a6cd8940b2b314026195e0aa42.shtml",
+      "page_sha256": "2f123a4ff45e956f92e98376902fea3959e2738fb17dbbe51f0009b38f1bf012",
+      "image_src_as_published": "./W020251129570562971991.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "卢沟桥位于北京市丰台区，始建于金大定二十九年（1189年），是北京现存最古老的联拱石桥，因横跨卢沟河（即永定河）而得名。桥长266.5米，宽9.3米，桥上现存雕刻精美、形态各异的大小石狮共计501只。1937年7月7日，日本侵略者蓄意制造七七事变，炮轰宛平城，攻击卢沟桥，当地中国驻军第29军奋起抵抗，全民族抗战由此爆发。"
+        },
+        {
+          "type": "text",
+          "value": "卢沟桥作为全民族抗战爆发纪念地，是第一批全国重点文物保护单位，第一批国家级抗战纪念设施、遗址，2021年列入北京市第一批不可移动革命文物名录。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129570562971991.png"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129570563041726.jpg"
+        },
+        {
+          "type": "text",
+          "value": "#div_div {margin: 0 auto;padding-bottom: 40px;width: 135px;}\n\t\t\t#qr_container {position: relative;margin: auto;}"
+        }
+      ],
+      "match_basis": "卢沟桥整体介绍配图，展示桥体和桥孔。"
+    },
+    {
+      "seq": 15,
+      "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f",
+      "page_sha256": "856d74fd07eeef0f11a3214951140ff98c356a769f45fe8dd1ec81ec017cd703",
+      "image_src_as_published": "https://t1.huanqiucdn.cn/images/article/20230708/3fe409b2e03058ad47588000912524fd.png?w=650",
+      "context": [
+        {
+          "type": "text",
+          "value": "卢沟桥是集历史、科学、文化艺术于一身的国之瑰宝。作为华北地区现存最古老最长的一座十一孔联拱石桥，全长266.5米，宽9.3米。共有桥墩10个，桥孔11个。有雕刻精美的大小石狮共计501个。桥东西两端均有汉白玉石碑，东面有清乾隆御笔的“卢沟晓月”碑。1937年7月7日，日本帝国主义在此发动全面侵华战争，史称“卢沟桥事变”，中国军队奋起反抗，打响了全面抗战的第一枪。"
+        },
+        {
+          "type": "img",
+          "value": "https://t1.huanqiucdn.cn/images/article/20230708/241ac986916b325d9962e1b766917850.png?w=650"
+        },
+        {
+          "type": "img",
+          "value": "https://t1.huanqiucdn.cn/images/article/20230708/3fe409b2e03058ad47588000912524fd.png?w=650"
+        },
+        {
+          "type": "text",
+          "value": "卢沟石狮惟妙惟肖、华表碑刻壮观苍劲，“卢沟晓月”闻名遐迩，是著名的燕京八景之一。"
+        },
+        {
+          "type": "text",
+          "value": "“卢沟晓月”碑"
+        }
+      ],
+      "match_basis": "卢沟桥段落中桥栏石狮近景；不将它指认为某个编号或朝代的单狮。"
+    },
+    {
+      "seq": 16,
+      "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f",
+      "page_sha256": "856d74fd07eeef0f11a3214951140ff98c356a769f45fe8dd1ec81ec017cd703",
+      "image_src_as_published": "https://t1.huanqiucdn.cn/images/article/20230708/8f4071e1131be3aae996fe5da01ca2aa.png?w=650",
+      "context": [
+        {
+          "type": "text",
+          "value": "卢沟石狮惟妙惟肖、华表碑刻壮观苍劲，“卢沟晓月”闻名遐迩，是著名的燕京八景之一。"
+        },
+        {
+          "type": "text",
+          "value": "“卢沟晓月”碑"
+        },
+        {
+          "type": "img",
+          "value": "https://t1.huanqiucdn.cn/images/article/20230708/8f4071e1131be3aae996fe5da01ca2aa.png?w=650"
+        },
+        {
+          "type": "text",
+          "value": "位于卢沟桥东雁翅桥面的北侧。碑为乾隆十六年御笔亲题“卢沟晓月”碑，阴面刻乾隆所作的“卢沟晓月”诗。碑亭平面正方形，基台用石砌成，四角立汉白玉石龙柱四根。碑高4.52米，碑身高 3.66米，宽1.27米，厚0.84米，两侧及四边刻有二龙戏珠图案的凸起半圆雕。碑首为四柱式的宝盖顶，刻有云、龙、花叶、莲瓣等或展示威严或寓意吉祥的图案。"
+        },
+        {
+          "type": "text",
+          "value": "--------------"
+        }
+      ],
+      "match_basis": "紧随“卢沟晓月”碑小标题的配图，可辨碑额。"
+    },
+    {
+      "seq": 19,
+      "url": "https://www.bjft.gov.cn/ftq/c100033/201903/077ee9381f1f4b9498d99da4571bc2d0.shtml",
+      "page_sha256": "df41b3a85cda1ccb094d56e4744591f53cc4c7f7d39671f3987a0f553391b1fe",
+      "image_src_as_published": "./W020251129570541796936.jpg",
+      "context": [
+        {
+          "type": "text",
+          "value": "中国人民抗日战争纪念馆"
+        },
+        {
+          "type": "text",
+          "value": "中国人民抗日战争纪念馆是全国唯一一座全面反映中国人民抗日战争历史的大型综合性纪念馆，于1987年7月7日建成并对外开放。中国人民抗日战争纪念馆经过改扩建，在中国人民抗日战争暨世界反法西斯战争胜利80周年之际，推出《为了民族解放与世界和平》主题展览，全景式展现中国人民14年艰苦抗战的光辉历程，为开展爱国主义教育和革命传统教育提供了重要平台。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129570541796936.jpg"
+        },
+        {
+          "type": "text",
+          "value": "#div_div {margin: 0 auto;padding-bottom: 40px;width: 135px;}\n\t\t\t#qr_container {position: relative;margin: auto;}"
+        },
+        {
+          "type": "text",
+          "value": ".g_foot_box .m_info2 p{margin-top: -4px;line-height: 29px;}"
+        }
+      ],
+      "match_basis": "抗战馆整体介绍配图；是馆外观，不能充当2025年基本陈列或分展区照片。"
+    },
+    {
+      "seq": 31,
+      "url": "https://www.bjft.gov.cn/ftq/c100033/202509/434dcd1915444ead8ec8f900f9b51f10.shtml",
+      "page_sha256": "5252922755a1c18d8c09336f03aa954338d8b6f278ce8912528f0d4a3216f447",
+      "image_src_as_published": "./W020251129570632918803.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "中国人民抗日战争纪念雕塑园"
+        },
+        {
+          "type": "text",
+          "value": "中国人民抗日战争纪念雕塑园位于北京市丰台区宛平城南侧，北倚宛平城墙，西临卢沟桥，南望京港澳高速，于2000年7月建成，占地约20公顷，由中国人民抗日战争纪念碑、雕塑群区、中心广场、绿林等组成,是北京市爱国主义教育基地。纪念碑高15米、宽8米、厚6.6米，由巨大的花岗岩和压碎侵略者战争机器残骸铸铜雕塑组成，象征着正义必胜、一切侵略者必将失败。雕塑群区占地2.25公顷，摆放38尊直径2米、高4.3米、重6吨的柱形铜铸雕塑。"
+        },
+        {
+          "type": "img",
+          "value": "./W020251129570632918803.png"
+        },
+        {
+          "type": "text",
+          "value": "#div_div {margin: 0 auto;padding-bottom: 40px;width: 135px;}\n\t\t\t#qr_container {position: relative;margin: auto;}"
+        },
+        {
+          "type": "text",
+          "value": ".g_foot_box .m_info2 p{margin-top: -4px;line-height: 29px;}"
+        }
+      ],
+      "match_basis": "雕塑园整体介绍配图；不能给未确认题名的某尊雕塑配名。"
+    },
+    {
+      "seq": 32,
+      "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc",
+      "page_sha256": "6553b0108786e0aab90aee175114b7348ba13ac7527197acc3ad82a57ab19b4b",
+      "image_src_as_published": "//img-rs.visitbeijing.com.cn/imageDir/2aa290f8035a270d057de911ed247d4b.png",
+      "context": [
+        {
+          "type": "img",
+          "value": "//img-rs.visitbeijing.com.cn/imageDir/6cd56098cb7a0cb7afea9e31cb42ada4.png"
+        },
+        {
+          "type": "text",
+          "value": "群雕中间为50米×50米，意在表示向为抗日战争捐躯、长眠于地下英灵致敬的下沉式广场。中间矗立着高15米，宽8米，厚6.6米，花岗岩和铸铜结合的，主题为“压碎侵略者的战争机器”的中国人民抗日战争纪念碑。"
+        },
+        {
+          "type": "img",
+          "value": "//img-rs.visitbeijing.com.cn/imageDir/2aa290f8035a270d057de911ed247d4b.png"
+        },
+        {
+          "type": "text",
+          "value": "卢沟桥历史博物馆"
+        },
+        {
+          "type": "text",
+          "value": "博物馆位于卢沟桥东侧桥头，与宛平城西城门隔路相望，红墙灰瓦的仿古建筑，庄严厚重。2023年，经全面改造提升后，占地面积2795.95平方米，总建筑面积982.64平方米，是一座全面介绍卢沟桥历史文化的专题性博物馆。"
+        }
+      ],
+      "match_basis": "雕塑园段落介绍纪念碑后的配图，碑名与压碎侵略者战争机器的基座形象可辨。"
+    },
+    {
+      "seq": 39,
+      "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc",
+      "page_sha256": "6553b0108786e0aab90aee175114b7348ba13ac7527197acc3ad82a57ab19b4b",
+      "image_src_as_published": "//img-rs.visitbeijing.com.cn/imageDir/9cfb488a51c360535117a9eea11f925d.png",
+      "context": [
+        {
+          "type": "text",
+          "value": "卢沟桥历史博物馆"
+        },
+        {
+          "type": "text",
+          "value": "博物馆位于卢沟桥东侧桥头，与宛平城西城门隔路相望，红墙灰瓦的仿古建筑，庄严厚重。2023年，经全面改造提升后，占地面积2795.95平方米，总建筑面积982.64平方米，是一座全面介绍卢沟桥历史文化的专题性博物馆。"
+        },
+        {
+          "type": "img",
+          "value": "//img-rs.visitbeijing.com.cn/imageDir/9cfb488a51c360535117a9eea11f925d.png"
+        },
+        {
+          "type": "text",
+          "value": "博物馆分别由历史、技法、风云、艺术及文化五个展厅组成，还有名桥走廊、古诗廊、碑林区和实景展区四个室外展厅。"
+        },
+        {
+          "type": "img",
+          "value": "//img-rs.visitbeijing.com.cn/imageDir/169ad803f3030ef713bc4505d9ba720f.png"
+        }
+      ],
+      "match_basis": "卢沟桥历史博物馆段落配图，可辨馆名；是外观资料图，不承诺当前开放。"
+    }
+  ]
+}

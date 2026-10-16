@@ -7,6 +7,8 @@ DATA_PACKAGE = 'wanping_final.json'
 TRANSLATIONS = 'wanping_translations.json'
 ACCESS = 'wanping_access.json'
 TOUR_TRANSLATIONS = 'wanping_tour_translations.json'
+PHOTO_MANIFEST = 'wanping_tour_photos.json'
+PLACE_PHOTOS = {'east_gate': 2, 'war_museum': 19, 'bridge': 14, 'sculpture_park': 31}
 ATTACHMENT_NOTE = ' 本条随所属整体阅读；地图仅标出整体或所属区域，不代表单件、室内分区的精确位置。'
 
 # id, 地点中文/英文, OSM定位依据, 热区半径米, 标签朝向, 本地点资料序号。

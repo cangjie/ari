@@ -1,0 +1,341 @@
+{
+  "checked_on": "2026-10-16",
+  "note": "逐图核对来源正文、图注与图像可辨特征。官方资料图不等于现场实时照片；图片出处不冒充摄影作者。未确认拍摄日期及独立开放许可，不推定版权转让。",
+  "transport": "用户授权经44.207.251.65:2222映射服务器下载，curl输出经SSH管道直接回本机；中转机不写图片、脚本或临时文件。",
+  "processing": "原图保存在本机忽略导出目录；发布图仅等比缩小及JPEG编码，不裁切、拼接、生成、去水印或改变画面内容。",
+  "jpeg": {
+    "max_edge": 1280,
+    "quality": 85,
+    "optimize": true,
+    "progressive": true
+  },
+  "photos": [
+    {
+      "seq": 1,
+      "identity_key": "city",
+      "caption": {
+        "zh": "宛平城",
+        "en": "Wanping City"
+      },
+      "path": "img/wanping/1.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/c100033/201903/e6414d2c39464f9d9a48d18e36541ddd.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570552353461.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "官方宛平城介绍配图；仅用于整体，不据此判定城门方位。",
+      "original": {
+        "path": "exports/wanping_photo_originals/1.png",
+        "sha256": "92f6774e9da60e470038dbd085ca514562b34a04cc62a1c1c0f4ff21cdb2df19",
+        "bytes": 2502177
+      },
+      "sha256": "a721da9468d35aead5a43d5d921287048a10cf230176cd13e700579942608d73",
+      "bytes": 132965,
+      "width": 968,
+      "height": 645
+    },
+    {
+      "seq": 2,
+      "identity_key": "east_gate",
+      "caption": {
+        "zh": "顺治门",
+        "en": "Shunzhi Gate"
+      },
+      "path": "img/wanping/2.jpg",
+      "source": {
+        "title": "丰台时报",
+        "url": "https://www.bjft.gov.cn/fengtaishibao/h5/html5/2025-08/27/content_9506_18835488.htm"
+      },
+      "image_url": "https://www.bjft.gov.cn/fengtaishibao/resfile/2025-08-27/08/ftb0827008_001_03_b.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "图注明确为“宛平城顺治门”，照片门额亦可见“顺治门”。",
+      "original": {
+        "path": "exports/wanping_photo_originals/2.jpg",
+        "sha256": "22ddda51b8786fc21d1b105e988da2d346b70e5418bc59fa7e51fcf55824e816",
+        "bytes": 153702
+      },
+      "sha256": "5c19f2adc3138fd6f82bb7b375b04b2509518310ca89d75791e4df7ac2e375af",
+      "bytes": 43437,
+      "width": 400,
+      "height": 455
+    },
+    {
+      "seq": 4,
+      "identity_key": "walls",
+      "caption": {
+        "zh": "宛平城墙",
+        "en": "Wanping City Wall"
+      },
+      "path": "img/wanping/4.jpg",
+      "source": {
+        "title": "北京旅游网 · 文旅丰台",
+        "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+      },
+      "image_url": "https://t1.huanqiucdn.cn/images/article/20230708/f3fe9f3191221bdd99b34ec4016142ea.png?w=650",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "宛平城段落中的城墙与城楼外观图，不据此推断具体朝向。",
+      "original": {
+        "path": "exports/wanping_photo_originals/4.png",
+        "sha256": "90b39fc9241e610ac76c26090b5d1a1d6df58f645cd3b2491d930db9ca2f017f",
+        "bytes": 2669055
+      },
+      "sha256": "322f2b4800b61d2979de0c370bf907a03c74c138b298d648ce9f2ff4586fa3a8",
+      "bytes": 160410,
+      "width": 1000,
+      "height": 666
+    },
+    {
+      "seq": 5,
+      "identity_key": "shell_scars",
+      "caption": {
+        "zh": "城墙弹痕",
+        "en": "Bullet Marks on the City Wall"
+      },
+      "path": "img/wanping/5.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/W020251129785867882374.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "城墙近景配图，可见弹坑及文保说明牌。",
+      "original": {
+        "path": "exports/wanping_photo_originals/5.png",
+        "sha256": "aa31c1416c6cd44e326665ad277ba4a7df65903ebb305727c12a9579ebcdeb94",
+        "bytes": 543520
+      },
+      "sha256": "4dbd2c0e2d0f0df9808b8a3ad004d60a1bdae3007d1ad219aad7633397d4c848",
+      "bytes": 63537,
+      "width": 552,
+      "height": 352
+    },
+    {
+      "seq": 8,
+      "identity_key": "county_office",
+      "caption": {
+        "zh": "宛平县衙（牌匾题“宛平县署”）",
+        "en": "Wanping County Government Office"
+      },
+      "path": "img/wanping/8.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/35b9f0517fd54493a3eeefffc60f9bcd.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/fcbjwhdkd/202408/W020251129785867906791.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "复建建筑段落配图，牌匾可辨“宛平县署”；仅作建筑外观。",
+      "original": {
+        "path": "exports/wanping_photo_originals/8.png",
+        "sha256": "2e2968e60e4a827352ef0e5518023bf374565f1d907a51a46cdf3ce9530fa361",
+        "bytes": 592111
+      },
+      "sha256": "f2035acbf599d20834901716846503fe64b2bb980141ce615863a203f0858eb1",
+      "bytes": 57073,
+      "width": 552,
+      "height": 355,
+      "caption_annotation": "编辑标注；名称英译沿用既有luna资料。"
+    },
+    {
+      "seq": 14,
+      "identity_key": "bridge",
+      "caption": {
+        "zh": "卢沟桥",
+        "en": "Lugou Bridge"
+      },
+      "path": "img/wanping/14.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/c100033/201903/473059a6cd8940b2b314026195e0aa42.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570562971991.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "卢沟桥整体介绍配图，展示桥体和桥孔。",
+      "original": {
+        "path": "exports/wanping_photo_originals/14.png",
+        "sha256": "8579f2dc53122b0c2b65f31df2b3c4b166f2541b9caa0e5a21d267c9367d9d59",
+        "bytes": 2506062
+      },
+      "sha256": "b700b50007a6dc584c0bcc14bcbf6eca5c6c2bc9c608f34d6ee32c9836e9d036",
+      "bytes": 172105,
+      "width": 968,
+      "height": 646
+    },
+    {
+      "seq": 15,
+      "identity_key": "bridge_lions",
+      "caption": {
+        "zh": "卢沟桥石狮",
+        "en": "Lugou Bridge Stone Lions"
+      },
+      "path": "img/wanping/15.jpg",
+      "source": {
+        "title": "北京旅游网 · 文旅丰台",
+        "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+      },
+      "image_url": "https://t1.huanqiucdn.cn/images/article/20230708/3fe409b2e03058ad47588000912524fd.png?w=650",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "卢沟桥段落中桥栏石狮近景；不将它指认为某个编号或朝代的单狮。",
+      "original": {
+        "path": "exports/wanping_photo_originals/15.png",
+        "sha256": "29f383c964d0b46a541b3627099cb4aaf76761fd4cfad63b14e9563d9f7079dd",
+        "bytes": 3505748
+      },
+      "sha256": "98dd639b1352076a2d0ef9c6bfe8f32f787b7695ba82055191553bba57b2798f",
+      "bytes": 160677,
+      "width": 1080,
+      "height": 810
+    },
+    {
+      "seq": 16,
+      "identity_key": "moon_stele",
+      "caption": {
+        "zh": "卢沟晓月碑",
+        "en": "Stele of the Dawn Moon over Lugou Bridge"
+      },
+      "path": "img/wanping/16.jpg",
+      "source": {
+        "title": "北京旅游网 · 文旅丰台",
+        "url": "https://mp.visitbeijing.com.cn/a1/4DciqxSQG7f"
+      },
+      "image_url": "https://t1.huanqiucdn.cn/images/article/20230708/8f4071e1131be3aae996fe5da01ca2aa.png?w=650",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "紧随“卢沟晓月”碑小标题的配图，可辨碑额。",
+      "original": {
+        "path": "exports/wanping_photo_originals/16.png",
+        "sha256": "e85f67c4865470fea058d4266858b7aee9f00fe60c427927b2591bb10172a5d7",
+        "bytes": 3116222
+      },
+      "sha256": "b6186e6bb8b042d869097d58b939cc96b23a906684883d7731e982733165f55a",
+      "bytes": 118584,
+      "width": 1080,
+      "height": 720
+    },
+    {
+      "seq": 19,
+      "identity_key": "war_museum",
+      "caption": {
+        "zh": "中国人民抗日战争纪念馆（外观）",
+        "en": "Museum of the War of Chinese People's Resistance Against Japanese Aggression (exterior)"
+      },
+      "path": "img/wanping/19.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/c100033/201903/077ee9381f1f4b9498d99da4571bc2d0.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/c100033/201903/W020251129570541796936.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "抗战馆整体介绍配图；是馆外观，不能充当2025年基本陈列或分展区照片。",
+      "original": {
+        "path": "exports/wanping_photo_originals/19.jpg",
+        "sha256": "258ab97544c5fad8d44612ae06e26e3b2c37a7adb11a3a2cd012f1522e075193",
+        "bytes": 413754
+      },
+      "sha256": "d97db8c52f1e73b2f8433d9c46e8e6a12f91590de6d4e1f44c99ec697c999bbb",
+      "bytes": 109962,
+      "width": 968,
+      "height": 815,
+      "caption_annotation": "编辑标注；名称英译沿用既有luna资料。"
+    },
+    {
+      "seq": 31,
+      "identity_key": "sculpture_park",
+      "caption": {
+        "zh": "中国人民抗日战争纪念雕塑园",
+        "en": "Sculpture Park Commemorating the Chinese People's War of Resistance Against Japanese Aggression"
+      },
+      "path": "img/wanping/31.jpg",
+      "source": {
+        "title": "丰台区政府",
+        "url": "https://www.bjft.gov.cn/ftq/c100033/202509/434dcd1915444ead8ec8f900f9b51f10.shtml"
+      },
+      "image_url": "https://www.bjft.gov.cn/ftq/c100033/202509/W020251129570632918803.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "雕塑园整体介绍配图；不能给未确认题名的某尊雕塑配名。",
+      "original": {
+        "path": "exports/wanping_photo_originals/31.png",
+        "sha256": "46a3d4baea8eea9eefd965e7d8c25876f3e6de6a4176105f917f8f556f54de3c",
+        "bytes": 2776790
+      },
+      "sha256": "d0906b06f2b5c1a711861f14098e1634765792432b79b2517b79ddeb756a89ad",
+      "bytes": 175466,
+      "width": 961,
+      "height": 721
+    },
+    {
+      "seq": 32,
+      "identity_key": "war_monument",
+      "caption": {
+        "zh": "中国人民抗日战争纪念碑",
+        "en": "Monument to the Chinese People's War of Resistance Against Japanese Aggression"
+      },
+      "path": "img/wanping/32.jpg",
+      "source": {
+        "title": "北京旅游网综合",
+        "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc"
+      },
+      "image_url": "https://img-rs.visitbeijing.com.cn/imageDir/2aa290f8035a270d057de911ed247d4b.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "雕塑园段落介绍纪念碑后的配图，碑名与压碎侵略者战争机器的基座形象可辨。",
+      "original": {
+        "path": "exports/wanping_photo_originals/32.png",
+        "sha256": "3d79a496fd2300cc1b2f4ab3f636dde43e52ed7a1dea2750e72286a2fc687b3d",
+        "bytes": 1741230
+      },
+      "sha256": "f0daf51ef6d1ee507335491463d71305f0bf37419effd11e9e9722eb8c464481",
+      "bytes": 157275,
+      "width": 1080,
+      "height": 1016
+    },
+    {
+      "seq": 39,
+      "identity_key": "bridge_museum",
+      "caption": {
+        "zh": "卢沟桥历史博物馆（外观）",
+        "en": "Lugou Bridge Historical Museum (exterior)"
+      },
+      "path": "img/wanping/39.jpg",
+      "source": {
+        "title": "北京旅游网综合",
+        "url": "https://www.visitbeijing.com.cn/article/4JHkEgkahSc"
+      },
+      "image_url": "https://img-rs.visitbeijing.com.cn/imageDir/9cfb488a51c360535117a9eea11f925d.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-16",
+      "match_basis": "卢沟桥历史博物馆段落配图，可辨馆名；是外观资料图，不承诺当前开放。",
+      "original": {
+        "path": "exports/wanping_photo_originals/39.png",
+        "sha256": "5c740011bafcb1d19fe29a959d18669913c5154dbc5dbe45673f61562af02cd4",
+        "bytes": 805090
+      },
+      "sha256": "1e1c26374736855d3248f9c48f7650b245f18467b13ad5fd3a3da9571594a0d1",
+      "bytes": 106394,
+      "width": 1080,
+      "height": 810,
+      "caption_annotation": "编辑标注；名称英译沿用既有luna资料。"
+    }
+  ]
+}

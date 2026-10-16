@@ -20,6 +20,15 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def select_cover(key, seqs, rows, photos, explicit):
+    if key in explicit:
+        seq = explicit[key]
+        if seq not in seqs or seq not in photos:
+            raise ValueError(f'{key}的封面必须是本地点已收录的图片')
+        return seq
+    return next((s for s in seqs if rows[s]['parent_key'] == '' and s in photos), None)
+
+
 def meters(a, b):
     p1, p2 = math.radians(a[0]), math.radians(b[0])
     dp, dl = p2 - p1, math.radians(b[1] - a[1])
@@ -127,7 +136,23 @@ def build(mk, D, T, base):
     area = [proj.xy(*p) for p in ring]
     width, height = math.ceil(max(p[0] for p in area) + pad), math.ceil(max(p[1] for p in area) + pad)
     places, stops, coordinates = [], {}, {}
-    photo = lambda s: next((f'img/{mk}-{s}{ext}' for ext in base.IMG_EXTS if (base.TOUR_DIR / f'img/{mk}-{s}{ext}').is_file()), None)
+    photo_manifest_path = HERE / D.PHOTO_MANIFEST if getattr(D, 'PHOTO_MANIFEST', None) else None
+    photo_manifest = json.loads(photo_manifest_path.read_text('utf-8')) if photo_manifest_path else {}
+    photo_entries = {p['seq']: p for p in photo_manifest.get('photos', [])}
+    if len(photo_entries) != len(photo_manifest.get('photos', [])) or not set(photo_entries) <= set(rows):
+        raise ValueError('图片序号重复或不属于当前资料包')
+    for seq, entry in photo_entries.items():
+        if entry['identity_key'] != rows[seq]['identity_key'] or entry['path'] != base.photo_of(mk, seq):
+            raise ValueError(f'图片与条目身份不一致：{seq}')
+        if sha(base.TOUR_DIR / entry['path']) != entry['sha256']:
+            raise ValueError(f'图片文件校验失败：{seq}')
+
+    def photo(seq):
+        return photo_entries[seq]['path'] if seq in photo_entries else None
+
+    def photo_info(seq):
+        p = photo_entries.get(seq)
+        return {k: p[k] for k in ['caption', 'source', 'sha256', 'photographed_on']} if p else None
     for key, zh, eng, osm_id, radius, lp, seqs in D.PLACES:
         lat, lon = base.el_center(elements[osm_id])
         x, y = proj.xy(lat, lon)
@@ -135,10 +160,10 @@ def build(mk, D, T, base):
             raise ValueError(f'{key} 不在导览范围内')
         coordinates[key] = (lat, lon)
         # 资料图只用于它所对应的整体，不把整体照片下放到碑刻、城门等子节点。
-        cover = next((photo(s) for s in seqs if rows[s]['parent_key'] == '' and photo(s)), None)
+        cover_seq = select_cover(key, seqs, rows, photo_entries, getattr(D, 'PLACE_PHOTOS', {}))
         places.append(dict(id=key, name=dict(zh=zh, en=tour_en(zh)), lat=lat, lon=lon,
                            x=round(x, 1), y=round(y, 1), r=radius*T.PX_PER_M, r_m=radius,
-                           lp=lp, osm=osm_id, photo=cover, stops=seqs))
+                           lp=lp, osm=osm_id, photo=photo(cover_seq), photo_info=photo_info(cover_seq), stops=seqs))
         for seq in seqs:
             r = rows[seq]
             included = D.INCLUDED_IN.get(seq)
@@ -155,7 +180,7 @@ def build(mk, D, T, base):
                 source=dict(zh='官方发布原文摘录；逐条出处见下方', en='Official source excerpts; references below'),
                 sources=[dict(title=e['source_id'], url=e['url']) for e in r['evidence']],
                 borrowed=dict(zh=note, en=note_en),
-                photo=photo(seq), objects=[],
+                photo=photo(seq), photo_info=photo_info(seq), objects=[],
                 review=r['audit'].get('error_note_zh') if r['needs_review'] else None)
 
     routes = []
@@ -205,6 +230,8 @@ def build(mk, D, T, base):
                         rating_sha256=sha(rating_path), access_sha256=sha(access_path), osm_sha256=sha(osm_path),
                         tour_translations_sha256=sha(tour_translation_path),
                         checked_on=access['checked_on'], business_database_written=False))
+    if photo_manifest_path:
+        data['provenance']['photos_sha256'] = sha(photo_manifest_path)
     data['entrance']['name'] = l2(D.ENTRANCE_NAME)
     return data, [f'{mk}: {len(places)} 个有依据的到达点；{len(stops)} 条资料。'] + [
         f"{r['label']['zh']}: {r['total']}分钟（停留{r['stay']} + 步行{r['walk']}）；参考门票{r['ticket_cny']}元" for r in routes]

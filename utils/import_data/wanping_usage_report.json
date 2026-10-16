@@ -68,6 +68,18 @@
       "latency_ms": 172918
     },
     {
+      "stage": "audit_tour_photos",
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 1310,
+      "cached_tokens": 22037,
+      "completion_tokens": 16621,
+      "latency_ms": 203955
+    },
+    {
       "stage": "audit_tour_publish",
       "provider": "anthropic_cli",
       "model": "claude-sonnet-5",
@@ -214,5 +226,6 @@
   ],
   "note": "只读复核存量各馆行数；本轮仅写LLM缓存，没有写生产业务资料。Claude输入token存在仓库已知计量缺口，不将总数当完整账单。",
   "grouped_revision": "已按用户确认归并，新增2次CR、1次S-ness、1次十条复审、1次审计补译；无失败调用。",
-  "publication_revision": "导览发布和动态同步审查沿用sonnet-5 medium；35段游客文案补译沿用luna medium。额度耗尽的失败调用保留，恢复后才续跑。"
+  "publication_revision": "导览发布和动态同步审查沿用sonnet-5 medium；35段游客文案补译沿用luna medium。额度耗尽的失败调用保留，恢复后才续跑。",
+  "photos_revision": "2026-10-16新增一次sonnet-5 medium图片出处与源码文本复核；视觉对应逐张人工查看。未重评历史资料；原失败调用保留。"
 }
