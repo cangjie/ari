@@ -14,7 +14,8 @@
 
 **导览产品是多景区的，不要为伪满皇宫量身定制**（用户 2026-10-12 定，原话：「伪满皇宫，仅仅是景点之一，请不要为伪满皇宫量身定制，
 日后至少要增加北海，香山颐和园等。」）。伪满皇宫（`wmhg`）只是已上线的第一处。写设计稿、提示词、文案、示例时至少用两处景区的内容；
-写代码时景区清单从 `web_api/tour/data/*.json` 来，不写死 `wmhg`；某个景区缺路线、缺停留时间、缺照片时界面要照常。
+景区上架、下架与排序以服务器 `web_api/tour/catalog.json` 为准，内容来自 `data/<key>.json`，Web与App共用；不写死景区key。
+用户2026-10-15明确要求App首页引用Web或API，景区变化不能每次修改App；当前App直接打开线上Web首页。某处缺路线、停留时间、照片时界面仍要照常。
 没有资料的景区只能提名字，不能编内容（2026-10-12：北海库里有 23 处景点的介绍与评级，没有路线和地图；香山、颐和园一点没有）。
 后半句「怎么落实」是 AI 的理解，用户只说了前面那句。
 
@@ -31,7 +32,7 @@
     由 Nginx 反代到 `web_api`。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18、19 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
 - `docs/` —— 项目说明文档。服务器环境、web_api 部署、算法规格等都放这里。**例外：`AGENTS.md`、`CLAUDE.md`、`PROGRESS.md` 必须留在仓库根目录**，它们被 AI 工具与收工流程按固定路径读写，挪走会静默失效
-- `android/` —— Android App 的 Kotlin / Views + WebView 工程，2026-10-14 已生成代码架构；未做运行验收、未部署。用户将迁移到 Mac 后测试，见第 20 条与 `android/README.md`
+- `android/` —— Kotlin / Views + WebView 工程；2026-10-15在Mac完成标准构建与自动检查，直接打开线上Web，Debug APK已发布。真机安装与现场验收未做，见第20条与 `android/README.md`
 - 其余客户端子目录尚未创建，待产品定位与客户端范围明确后再定
 
 **子目录由用户创建，AI 不要擅自新建。** 用户创建后会明确告知，届时再往里写代码。上面的 `android/` 是用户点名授权的例外。
@@ -46,7 +47,7 @@
 - systemd 管理服务进程
 
 已有的导览站是原生 HTML/CSS/JS，无框架、无构建步骤、不引用任何站外资源。
-Android App 的代码架构已生成，采用用户 2026-10-12 定的**原生 Kotlin 外壳 + WebView 复用导览站**。
+Android App采用用户2026-10-12定的**原生Kotlin外壳 + WebView复用导览站**；2026-10-15已改为直接访问线上首页，服务器清单同时驱动网页和原生定位缓存。
 2026-10-13 用户取消语音唤醒、暂缓语音提问；2026-10-14 又明确暂缓回答朗读、介绍朗读与到站播报。
 此前的讯飞实时听写 + AWS Polly 方案留作参考，不能作为本轮启用语音的依据，见第 20 条。其余客户端的技术选型仍待定。
 
@@ -83,6 +84,8 @@ Android App 的代码架构已生成，采用用户 2026-10-12 定的**原生 Ko
   `/etc/ssl/tour/`（`tour.snowmeet.top`）**2027-01-07 到期**，只有 90 天。换证书的步骤在 `docs/TOUR_WEB.md`
 - **22 端口偶尔新连接超时**（80/443 同时是通的，一两分钟后自己恢复；2026-08-21 与 2026-10-10 都遇到过）。
   一次部署要连好几回时复用同一条连接：`ssh -o ControlMaster=auto -o ControlPath=~/.ssh/cm-%C -o ControlPersist=900 …`
+- Android下载：`https://tour.snowmeet.top/android/app`，Nginx精确alias到仓库外 `/home/ubuntu/ari-downloads/android/app.apk`；APK不提交Git。更新须先验签、哈希、备份旧包后原子替换，不需Nginx reload；当前包与签名见第20条及 `docs/TOUR_WEB.md`。
+- 用户允许使用 `ubuntu@44.207.251.65:2222` 映射的另一台服务器取官网图片（2026-10-15授权，10-16实用）。**该机空间小，不在其上长期放临时文件**：本轮curl输出经内存和SSH管道直接回本机，未在中转机创建图片、脚本或临时文件；不要关闭TLS校验。
 - 临时健康检查：`/opt/ari/smoke`，仍在 8000 上跑，作为环境自检对照；web_api 稳定后可退役
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库
 - 业务库 `ari`（utf8mb4 / utf8mb4_0900_ai_ci），账号 `ari` 有 `ari`.* 全部权限，`localhost` 与 `%` 两个 host 都建了。密码不进仓库
@@ -122,6 +125,9 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 | `jlpm` | 17723（藏品 17715 + 节点 8） | **107** | 17723 | 569 | 评分范围 107 行 sonnet-5 **medium** 精简口径（09-27）；需复核 8 件，7 件是官网原文自身的矛盾。V3 打分为 luna（藏品 S8/A51/B39/C1，节点 S2/A3/B3）。其余 17616 行只入库、不评分不审计 |
 | `beihai` | 23（景点：site 2 + node 18 + object 3） | 23 | 23 | 66 | 全馆 sonnet-5 **medium** 精简口径（10-08）；需复核 1 件。V3 打分为 luna（S4/A12/B7） |
 | `capital` / `palace` / `nmc` | 6159 / 1757 / 365 | **0** | **0** | **0** | 未跑 |
+
+**宛平城 `wanping` 是独立本地包，不计入上表或业务库10馆31426条。** 2026-10-15完成39条来源、评分、slim审计及中英导出，10-16已上线7个到达点、两条路线和12张图。
+未执行生产登记、metadata入库或全库重灌；模型缓存有写入。详情见第18条和 `docs/WANPING_DATA.md`。
 
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
 `claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件，**档位不可考**，
@@ -1235,13 +1241,15 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 
 **导览站**（`web_api/tour/`，线上 `https://tour.snowmeet.top/`，部署与验收见 `docs/TOUR_WEB.md`）照原型 AriTour 做：
 目的地列表 → 导游地图，选路线、走进热区推送讲解。原型在 claude.ai/design（链接要登录，AI 读不了），
-导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**；原型含五处，只实现了伪满皇宫。
+导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城。当前服务器清单为 `wmhg`、`wanping`。
 
     tour_osm_fetch.py → <馆>_osm_data.json ───────┐
     库 + <馆>_route_data.py + route_plan.Planner ──┼─ tour_build.py → web_api/tour/data/<馆>.json → 页面
     <馆>_tour_data.py（画布摆法、地点叫什么）──────┘
 
-页面只读那一个 JSON；路线不另算，`tour_build.py` 直接调 `route_plan.Planner`，分钟数与 Excel 同源。
+网页先取 `catalog.json`，再加载清单内各 `data/<key>.json`，两者显式 `cache:no-cache`；整批成功才替换有效快照。
+伪满皇宫的路线不另算，`tour_build.py` 直接调 `route_plan.Planner`，分钟数与Excel同源；宛平城通过已审计本地包走 `tour_package_build.py`，不要求先重灌全库。
+清单数组可直接调整顺序与上下架；首次生成新景区自动追加，之后重生成保留排序和下架选择，移除清单项不删除来源文件。
 **⚠ 改了库里的评级、路线数据或 OSM 数据之后要重跑 `tour_build.py` 并提交**，否则线上还是旧的（`--check` 可比对）。
 
 几条定下来的规则，改之前先想清楚：
@@ -1260,8 +1268,7 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 - 介绍用库里的官网原文。带复核标记的条目附上复核原因 —— 第 9 条说的「游客端处理」就落在这里
   （目前会展示的 30 个条目里 0 件）。
 - **页面不引用任何站外资源**：字体自带（拉丁子集 4 个 woff2）、无框架无 CDN。服务器在美国、游客在国内，
-  站外的字体或脚本会让页面卡住。`test_tour.py` 有一条专门拦这个。数据文件在 `index.html` 里预先下载，
-  与样式脚本并行（本机到美国实测首次打开约 3 秒，不预先下载是 5 秒）；**新增一个馆要在那里加一行**。
+  站外的字体或脚本会让页面卡住。`test_tour.py` 有一条专门拦这个。`index.html`预加载服务器清单；新增景区不再修改HTML或App中的固定景区列表。
 
 **踩过的坑（都不报错，只是悄悄不对）：**
 
@@ -1303,6 +1310,18 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 17 张，`tour_build.py --museum wmhg` 重建 JSON 后部署到 `https://tour.snowmeet.top/`（commit `1765762`）。
 页面现有 16/25 个站点有图，目的地封面有图；线上 JSON 与全部 17 个图片地址均返回 HTTP 200。
 其中 5 张超过 600 KB。另有 13 个可见条目在库里没有图片地址，仍无照片。
+
+**宛平城及周边 `wanping`（2026-10-15/16上线）**：范围经用户确认，为古城、卢沟桥、抗战馆与雕塑园主要参观点，不扩抓抗战馆全部藏品。39条（site3/node28/object8）、49条来源、20个同类组，V3为S5/A16/B16/C2。来源与评分用 `gpt-5.6-luna`（high/medium/xhigh），审计仍为 `claude-sonnet-5` medium slim；补图未重评分，也未修改存量业务表。
+
+- 用户确认的CR口径：seq20“展览整体”单列，seq21–29“八部分及英烈专区”同组；受影响十条重算CR及适用的S-ness、复审，其他29条评分与审计保留，原分组备份不覆盖。
+- 原文保留“崇祯十三年（1638年）”纪年矛盾，seq1标复核；不能把修缮、复建建筑写成全为明代原构。
+- 7个有OSM依据的到达点承接39条资料，室内分区、单件雕塑不伪造独立GPS热区。OSM西门误标顺治门，按官方东门顺治、西门永昌命名；包围框是导览范围，不是法定边界。
+- 免费线222.4分钟（停留180+步行42.4），不登城、不进卢沟桥收费区；全面线306分钟（255+51），成人旧文参考票价50元（城墙30+桥20），现场为准。均东门往返，先看抗战馆；八部分及英烈专区共用90分钟。开放、闭馆、预约和费用分别标清，不当实时承诺。
+- 步行沿记录的OSM公共道路求路，排除墙顶及禁止通行段；“下一处”使用 `routes[].legs` 道路距离。没有道路段时明确是直线距离，不编步行时间。桥至雕塑园为1046米约17分钟，不能用约400米直线代替。
+- 12张图片按条目身份绑定；地点封面用 `PLACE_PHOTOS` 显式配置，条目重排不会把石狮变成整桥封面。馆外观不借给室内基本陈列；无图条目留空。原图与来源HTML在本机 `exports/wanping_photo_originals/`（gitignore），发布JPEG在 `img/wanping/`，合计1457885字节，均附出处。清单与原件/发布版哈希在 `wanping_tour_photos.json`，图注证据在 `wanping_photo_sources.json`。
+- 视觉对应逐张查看；sonnet-5 medium另审来源文字与接入代码，没有收到图片，不能把该报告称为模型视觉审计。图片接入前只显示地点封面、忽略条目photo的问题已修；同图不重复显示。
+- 本地审计版Excel在 `utils/import_data/exports/展品_宛平城及周边_本地审计版.xlsx`；生成输入、独立审计、原分组备份和发布验收随仓库保留。原业务库仍10馆31426条；资料整理及发布累计46次成功、1次Codex额度失败留痕，恢复后续跑原型号，见 `wanping_usage_report.json`。
+- 原始介绍、V3分数、路线与投影未因补图重写。当前检查76项pytest通过、3项真实数据库测试未启用；本地和公网浏览器逐图验证12张，公开问答仅GET，不发送测试问题。完整限制与来源见 `docs/WANPING_DATA.md`，上线证据见两份release/publish报告。
 
 **19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
 
@@ -1380,21 +1399,22 @@ ARI_QA_TEST_DB=1 ARI_DB_DEFAULTS_FILE=~/.my.cnf ./.venv/bin/python -m pytest tes
 
 **真机上软键盘弹出时输入框会不会被挡住，没验过** —— 无头浏览器模拟不了软键盘。
 
-**20. Android App：本地代码架构已生成，迁移到 Mac 后再测试（2026-10-14）。**
+**20. Android App：直接引用线上Web，标准构建与自动检查已通过，真机未验收（2026-10-15/16）。**
 
 用户先要求功能点列表，随后授权在 Windows 本地生成 Android 代码；最终明确「不需要验收，测试，生成大体的代码架构即可，
-我会迁移到 Mac 电脑上测试」。当前交付是 `android/` 源码，不能当作已验收的 App。没有服务器部署、数据库结构变更或线上测试提问。
+我会迁移到 Mac 电脑上测试」。随后用户要求将宛平城接入App和Web，2026-10-15在Mac继续实现、构建并发布Debug APK；代码架构交付的旧状态不再代表当前。没有真机安装与现场验收，没有数据库结构变更或线上测试提问。
 25 项功能清单与本轮取舍在 `docs/TOUR_ANDROID_PLAN.md`，代码架构与 Mac 迁移步骤在 `android/README.md`；
 设计提示词正文与原 M0–M5 保留作历史参考。本轮范围优先，不能从历史草案恢复被取消或暂缓的语音功能。
 效果图原件仍在 `docs/Ari_Android_Design.pdf`，未改写；头像目前是「瑞 / 爱」文字占位，正式形象待定。
 
 **已生成的模块：** WebView 外壳与 `AriHost` / `AriTour` 桥、景区数据仓库、纯 Kotlin 到站判定、location 前台服务、
 GPS / 网络定位来源、后台通知、拖动贴边的悬浮头像与气泡、最近到站与公开问答面板、导览员切换、设置与权限引导、本机消息存储。
-构建时复制 `web_api/tour` 至生成的 assets，HTTPS `/app/tour/` 映射本地内容；`/api/tour/…` 仍走现有线上公开问答接口。
-Android 景区清单从 assets 的 `data/*.json` 自动发现；当前只有伪满皇宫，不编造其他景区数据。修改资料后重新构建 APK，尚无在线资料更新。
+**App直接打开 `https://tour.snowmeet.top/index.html`，不再复制网页、清单或景区资料进APK。** 页面从服务器清单加载同一份资料，通过 `AriHost.catalog` 同步给原生定位、通知和悬浮导览，原生只缓存最后有效快照。
+新增、移除、排序或内容变化均更新服务器即可；回前台和回首页刷新。清单整批校验成功才替换，错误不覆盖有效缓存；移除景区清除其定位引擎，删除当前景区或清空清单会停止相应服务。文字更新保留原到站状态，几何变化才换引擎，避免重复提醒。
+旧的内置页面包需要升级这次新包一次；以后景区资料变化不需重发APK。首次打开需联网，不承诺完整离线网页。问答仍走现有线上公开接口。
 原生接管时页面不启动浏览器 GPS，也不重新判热区；网络定位不触发到站。前台服务只从可见 App 启动，不在后台自动重启。
 
-**构建组合：** Gradle 8.11.1、AGP 8.9.2、Kotlin 2.0.21、compileSdk / targetSdk 35、minSdk 26，优先用 JDK 21。
+**构建组合：** Gradle8.13、AGP8.13.2、Kotlin2.0.21、Foojay resolver0.10.0、compileSdk / targetSdk35、minSdk26，优先用JDK21；Java字节码目标17。AGP/Wrapper/Foojay三处是用户原有配置，本轮按其实际构建并在收工纳入Git，未改成旧Windows草案。
 Wrapper JAR 从本机 Gradle 8.11.1 分发包提取；脚本与 JAR 随仓库提交，Unix 入口固定 LF 与可执行位。
 迁移需带整个仓库，至少 `android/` 与 `web_api/tour/`；Windows 的 SDK 路径、缓存、APK 与签名文件不提交、不复制到 Mac。
 
@@ -1412,15 +1432,16 @@ Wrapper JAR 从本机 Gradle 8.11.1 分发包提取；脚本与 JAR 随仓库提
 - **2026-10-14：先做文字版，语音输出后续再接。** 本轮没有朗读、播报、录音、唤醒或麦克风权限，不需讯飞 / Polly 凭据。
 - **悬浮问答沿用现有公开问答，提交前明确提示**（用户 10-14 定）；页面与悬浮窗共用匿名设备号。
   私密接口、三轮上下文和新增 channel 列均不在本轮实现范围。
-- **只交付大体代码架构，本机不继续测试验收**（用户 10-14 最终定）；后续由用户迁移到 Mac 验证。
+- 10-14曾要求只交付架构、不继续测试；10-15因新增宛平城并发布App/Web，已在Mac继续标准构建与自动检查。**真机安装、现场GPS和后台体验仍未验收**，不能把发布和自动检查等同于实机接受。
+- 10-15明确首页引用Web或API，景区增删排序不能要求每次修改App；当前选择直接打开线上Web，共用服务器清单。
 
-**尚未实现 / 未决：** 正式导览员形象、按景区指定默认导览员、在线资料更新、轨迹上传；语音功能以后再定。
-悬浮面板软键盘、锁屏通知、国产系统后台策略、实际 GPS 和最新源码的运行表现均未验收。
+**尚未实现 / 未决：** 正式导览员形象、按景区指定默认导览员、轨迹上传；语音功能仍暂缓。在线资料更新已随线上Web和清单实现。
+悬浮面板软键盘、锁屏通知、国产系统后台策略、实际GPS、真机覆盖安装及现场行走仍未验收。
 
-**已有检查，不能当作验收：** 用户收窄为只要架构前，离线 Kotlin / JUnit 9 项通过，其中 182 条状态序列取自实际 `app.js` 函数在 Node VM 中运行，
-不是浏览器定位回调；较早源码用 SDK 工具直接构建了 Debug APK 并验 v2 / v3 签名。最后一轮打包按用户要求中断，随后的小改未补验，
-本机 APK 不代表最新源码。Gradle / AGP / lint 未跑完；浏览器、模拟器和真机未验收，不继续自主补跑。
-`android/tools/` 留有备用构建和离线检查脚本，通常开发用 Gradle Wrapper 即可。测试签名仅在 gitignore 的本机 build 目录中。
+**构建与发布证据：** Mac标准命令 `sh gradlew :app:testDebugUnitTest :app:assembleDebug :app:lintDebug` 成功；12项单元测试、lint0错误/13项警告。
+Debug包为0.1.0 / versionCode1、8312316字节，SHA-256 `0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201`，包内无导览assets。与旧包相同的Debug证书SHA-256为 `342b45f93487468dc125b0c000d632893b0145aacaeed668bd6eaaba2b109a01`。
+下载入口 `https://tour.snowmeet.top/android/app`；旧包备份 `/home/ubuntu/ari-downloads/android/app-before-wanping-1efdb270.apk`。发布前验签、备份后原子替换；服务器从公开HTTPS入口完整下载核对大小和哈希，本机外网另查响应头，未把慢速未完成下载当作完整证据。
+API26导航栏兼容错误已修，没有提高minSdk。用户要求的“免费/全面路线”和图片均从共用Web读取，10-16补图未重打APK。详见 `wanping_android_report.json`、`wanping_release_report.json` 与 `docs/TOUR_WEB.md`。这些检查不代替真机验收。
 
 **平台约束参考（2026-10-12 查证，出处在计划原草案文末）：** 后台定位涉及前台服务启动限制；
 targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时确有可见悬浮窗；悬浮窗不显示在锁屏上，通知使用系统模板；
@@ -1431,12 +1452,12 @@ targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时�
 服务端转给讯飞实时听写（`wss://iat-api.xfyun.cn/v2/iat`，`wpgs` 边说边出字；签名在 `XfyunRealtimeAsrService.cs` 的 `BuildWebSocketUrl`）；
 松手后文字走 `PostTopic`，录音另传 `QuestionAudio` 存 S3 供别人播放；回答朗读是 `TopicAnswerAudio/{id}` → Polly（`Zhiyu`），按内容哈希缓存在 S3。
 
-**本机环境以每次实查为准，不能把不同机器或历史缓存当成当前安装状态。** 本轮 Windows：SDK 位于
+**本机环境以每次实查为准，不能把不同机器或历史缓存当成当前安装状态。** 2026-10-14历史Windows环境：SDK位于
 `C:\Users\cangj\AppData\Local\Android\Sdk`，Platform 35、Build-Tools 35.0.0 已有；Java 不在 PATH，
 PyCharm Community Edition 2024.3 自带 JBR 21.0.6 可用，旧 Android Studio 路径失效；Kotlin 2.0.21 与 Gradle 8.11.1 有旧缓存。
 受限环境无法连接 Gradle / adb 的本机进程，解除限制的自动权限审查两次超时，不能把它当作代码编译失败。
 
-**以下是上次 Mac 的历史记录，不是当前 Windows：** 2026-10-13 检测到 Intel i7-7700HQ、
+**以下是早先Mac安装快照，不能作为当前环境断言；10-15实际构建结果以上述版本和报告为准：** 2026-10-13 检测到 Intel i7-7700HQ、
 macOS 13.7.8、16 GB 内存；当时没有 Android Studio 与默认 SDK。2026-10-14 收工时已出现以下安装，非本次代理执行安装：
 Android Studio `2026.2`（build `AI-262.9437.185.2621.16467767`），自带 JBR `25.0.3`；
 `~/Library/Android/sdk` 有 Platform `android-37.0`、Build-Tools `36.0.0`、Platform-Tools / adb `37.0.1`、
@@ -1453,7 +1474,7 @@ Emulator 与 API 37.0 的 Google Play x86_64 镜像，AVD `Medium_Phone_API_37.0
 - **`tour_browser_check.mjs` 的 `qa` 场景截图不能给人当参照**：那是假接口的数据，里面有「第 21 个问题」和测试用的脚本注入字符串。
   给设计工具做参照图用 `SHOTS=<目录> node web_api/tests/tour_browser_check.mjs list live routes`，得到列表页、导游地图加到站横幅、介绍抽屉三张。
 - 北海公园库里「白塔」「琼华岛」两条的中文名是 AI 翻译、简介是 AI 译或存疑（官网中文站没有这两条）。取示例优先用来源为「原始」的行，如九龙壁、团城。
-- 本机查库：`web_api/.venv/bin/python` 里有 PyMySQL，配 `~/.my.cnf` 可以直接只读查询线上库。
+- 本轮Mac查库用 `utils/import_data/.venv/bin/python` 与 `meta_lib.connect()` 读取 `~/.my.cnf`；`web_api/.venv` 不保证有PyMySQL（10-16测试中实际缺该包），不要照抄旧环境假设。
 
 ---
 
@@ -1572,8 +1593,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `docs/SERVER_ENVIRONMENT_REPORT.md` | 服务器实际版本、配置、安装过程与验收记录 |
 | `docs/WEB_API.md` | web_api 的部署记录：服务、Nginx、证书与验收证据 |
 | `docs/TOUR_WEB.md` | 导览站的部署记录：数据怎么生成、定位各情形的表现、游客互动（设计、上限怎么改、怎么下架、换 key / 型号 / 数据库口令、型号对比）、Nginx 配置原文、证书与换证书的步骤、验收与待办 |
-| `docs/TOUR_ANDROID_PLAN.md` | Android App 的 25 项功能清单、本轮文字版架构范围与环境；用户最终要求迁移到 Mac 再测试。后半部分保留 M0–M5 历史草案，当前范围优先。见第 20 条 |
-| `android/README.md` | Android 代码架构、Mac 迁移、Gradle 构建、既有检查与未验收边界；源码在 app/src，网页与数据构建时从 web_api/tour 复制 |
+| `docs/TOUR_ANDROID_PLAN.md` | Android功能清单、文字版范围和直接打开线上Web的最新更新；后半M0–M5为历史草案，不据此恢复语音。见第20条 |
+| `android/README.md` | Kotlin外壳、线上Web与原生定位缓存同步、构建/下载、真机未验收边界；不再把网页和景区资料打进APK |
 | `docs/TOUR_ANDROID_DESIGN_PROMPT.md` | 原效果图提示词；正文为历史参考，顶部范围更新优先。重新设计前按功能取舍修订，不能把原文整份直接粘贴 |
 | `docs/Ari_Android_Design.pdf` | 用户提供的两页效果图原件；按原始字节归档，图中唤醒已取消、语音提问暂缓 |
 | `docs/Ariadne文化遗产Tier算法V3.0.txt` | Tier 评级算法规格 V3.0：五层评级对象、七维度加权、S-ness Test、VisitScore 与路线生成。七维与 Tier 门槛已在 `tier_v3.py` 实现；第九、十节的 VisitScore 与路线生成在 `route_plan.py` 有第一版（只做了伪满皇宫，Ma/Mc/Mr 取 0，见第 18 条） |
@@ -1638,10 +1659,13 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/wmhg_route_data.py` | 伪满皇宫的路线静态数据：参观顺序、OSM 坐标（带要素编号）、停留时间（估计）、现状说明、并入与位置不明的节点。事实与估计分开标了 |
 | `utils/import_data/tour_osm_fetch.py` / `wmhg_osm_data.json` | 取院区范围的 OSM 几何并落盘（132 个要素）；顺带校验路线数据里手抄的坐标与 OSM 现值相差不超过 5 米 |
 | `utils/import_data/wmhg_tour_data.py` | 导览页专属配置：院区边界、画布旋转角与比例、各地点取哪个节点的名称、借用坐标的游客版说明、介绍出处的判别表。没登记就报错 |
-| `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`，`--check` 只比对。**改了库、路线数据或 OSM 数据后要重跑并提交** |
+| `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`；`--check` 比对。已审本地包走tour_package_build；首次新增时更新catalog，后续保留上架与排序选择 |
+| `utils/import_data/tour_package_build.py` | 已审本地资料包转共享导览JSON；核对来源、评分、审计、译文、图片身份和哈希，沿OSM公开道路连线 |
+| `docs/WANPING_DATA.md` / `utils/import_data/wanping_*` | 宛平城39条、CR归并、7到达点、免费/全面线、12图、原版备份及独立复核；未入业务库。当前验收见release_report和photo_publish_report |
+| `utils/import_data/tour_photo_build.py` | 从本机留存原图重建JPEG并按清单核对原件和发布版SHA-256；需Pillow，不联网、不覆盖原图 |
 | `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**2026-10-11 wmhg 已下载 17 张并部署**；5 张超过 600 KB |
 | `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
-| `web_api/tour/` | 导览站：`index.html` / `app.css` / `app.js` / `fonts/` / `data/<馆>.json`（生成文件，勿手改）/ `img/<馆>/`。游客互动在 `app.js` 的同名一节。说明在 `web_api/README.md` |
+| `web_api/tour/` | 导览站：index.html、app.css、app.js、fonts、catalog.json（上架/排序）、data/<馆>.json（生成，勿手改）、img/<馆>/；Web和App同源。游客互动见app.js同名一节 |
 | `web_api/app/tour_qa.py` / `tour_qa_llm.py` / `tour_qa_store.py` | 第 19 条：游客互动的接口（校验、三道上限、流程）、回答依据的资料与提示词与调 OpenAI、MySQL 存取。`openai` 与 `PyMySQL` 在函数里才导入，缺了只有问答回 503 |
 | `web_api/sql/tour_qa.sql` / `create_ari_web.sh` | 游客互动两张表的建表语句（可重复执行；**改结构只追加 ALTER**）；在服务器上建服务专用账号 `ari_web` 并写 `/etc/ari/web-api.my.cnf` 的脚本（交互输入口令那一支没有实跑过） |
 | `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome）。后者自带一个假的 `/api/tour/` 接口，`qa` 场景验游客互动 |
