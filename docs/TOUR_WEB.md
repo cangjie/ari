@@ -473,3 +473,5 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 新增“主题线路”入口，经典游览、文艺观光、历史探索、穷游各支持南锣鼓巷、什刹海、北海北、鼓楼大街四个起点。通过公共道路计算步行示意和估计时长，区分收费入馆/免费外观、列出固定终点；不启用GPS或到站提醒。原37处地图参考点不变。线路在独立`itineraries`字段，原生定位用的`routes`仍空，已有App直接读线上变更。
 
 重建：先执行`nanluo_shichahai_experience_data.py`，再执行`tour_build.py --museum nanluo_shichahai`；图片从留存原响应通过`nanluo_shichahai_photo_selection.py`与`tour_photo_build.py`核对。原介绍、V3、Excel不改。部署须`git pull --ff-only`并重启`ari-web-api`使问答读取新增标签/线路字段；Nginx和APK不变。完整来源、固定模型审计与验收见`docs/NANLUO_SHICHAHAI_DATA.md`和`nanluo_shichahai_expansion_*report.json`。
+
+`e688ad5`已部署，服务active；68个线上静态文件与本地一致，公网六场景通过（含全部16商铺、四条线路的地铁起点切换和旧App桥接），三馆问答GET及材料哈希一致。91项pytest、20个本地浏览器场景和原Sonnet 5 medium最终复核通过；详见`nanluo_shichahai_expansion_public_report.json`。
