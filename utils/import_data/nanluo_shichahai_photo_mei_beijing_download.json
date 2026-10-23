@@ -1,0 +1,90 @@
+[
+  {
+    "source_id": "commons_58_beijing",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mei_Lanfang_Memorial_House.JPG",
+    "title": "File:Mei Lanfang Memorial House.JPG",
+    "seq": 58,
+    "index": 0,
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mei_Lanfang_Memorial_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "metadata": {
+      "DateTime": {
+        "value": "2008-11-06 08:32:58",
+        "source": "mediawiki-metadata",
+        "hidden": ""
+      },
+      "ObjectName": {
+        "value": "Mei Lanfang Memorial House",
+        "source": "mediawiki-metadata"
+      },
+      "CommonsMetadataExtension": {
+        "value": 1.2,
+        "source": "extension",
+        "hidden": ""
+      },
+      "Categories": {
+        "value": "Mei Lanfang Memorial Museum, Beijing|Self-published work",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "Assessments": {
+        "value": "",
+        "source": "commons-categories",
+        "hidden": ""
+      },
+      "ImageDescription": {
+        "value": "Mei Lanfang Memorial, Beijing",
+        "source": "commons-desc-page"
+      },
+      "DateTimeOriginal": {
+        "value": "2008-10",
+        "source": "commons-desc-page"
+      },
+      "Credit": {
+        "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+        "source": "commons-desc-page"
+      },
+      "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gisling\" title=\"User:Gisling\">Gisling</a>",
+        "source": "commons-desc-page"
+      },
+      "LicenseShortName": {
+        "value": "CC BY 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "UsageTerms": {
+        "value": "Creative Commons Attribution 3.0",
+        "source": "commons-desc-page"
+      },
+      "AttributionRequired": {
+        "value": "true",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "LicenseUrl": {
+        "value": "https://creativecommons.org/licenses/by/3.0",
+        "source": "commons-desc-page"
+      },
+      "Copyrighted": {
+        "value": "True",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "Restrictions": {
+        "value": "",
+        "source": "commons-desc-page",
+        "hidden": ""
+      },
+      "License": {
+        "value": "cc-by-3.0",
+        "source": "commons-templates",
+        "hidden": ""
+      }
+    },
+    "user_agent": "AriTour/1.0 photo verification (https://tour.snowmeet.top)",
+    "status": "ok",
+    "original": "exports/nanluo_shichahai_photo_expand_originals/commons_58_beijing_0.original",
+    "bytes": 1934351,
+    "sha256": "41d38a79e49bb637dd0adfa4fe13eeac6bc5767e8181841efa9feb3a28d795d6"
+  }
+]

@@ -1,0 +1,1948 @@
+{
+  "files": {
+    "nanluo_shichahai_site_data.json": "92e4377dc104b03f2fcfbc7454d0d6bf054e002618a595766147c0c0619b4cd6",
+    "nanluo_shichahai_ratings.json": "1c24a20f22ecd8ab7214328cbfeba4af606980812d2f4ec2b359c2ab57b4a9d7",
+    "nanluo_shichahai_final.json": "9c91b6843a527f97a5829d9d9fc1ffc42e3fc6f2799cc3905b50ea4d9b6045b0",
+    "exports/展品_北京南锣鼓巷及什刹海.xlsx": "57ce72b469b9973f998beb8289e9481351797ac5bfd9fa93f6e4e4e09bb4e2a6"
+  },
+  "positions": [
+    {
+      "id": "nanluo",
+      "name": {
+        "zh": "南锣鼓巷历史文化街区",
+        "en": "Nanluoguxiang Historic and Cultural District"
+      },
+      "stops": [
+        1
+      ],
+      "x": 1344.97,
+      "y": 1052.49,
+      "lat": 39.93576926879722,
+      "lon": 116.39690026817127,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          4922662
+        ],
+        "source": {
+          "title": "OpenStreetMap · 南锣鼓巷",
+          "url": "https://www.openstreetmap.org/way/4922662"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "fuxiang",
+      "name": {
+        "zh": "福祥胡同",
+        "en": "Fuxiang Hutong"
+      },
+      "stops": [
+        2
+      ],
+      "x": 1404.57,
+      "y": 1231.38,
+      "lat": 39.9328277374444,
+      "lon": 116.39816961527005,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          187203226
+        ],
+        "source": {
+          "title": "OpenStreetMap · 福祥胡同",
+          "url": "https://www.openstreetmap.org/way/187203226"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "suoyi",
+      "name": {
+        "zh": "蓑衣胡同",
+        "en": "Suoyi Hutong"
+      },
+      "stops": [
+        3
+      ],
+      "x": 1264.91,
+      "y": 1191.81,
+      "lat": 39.933478400569285,
+      "lon": 116.3951950431499,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          187203225
+        ],
+        "source": {
+          "title": "OpenStreetMap · 蓑衣胡同",
+          "url": "https://www.openstreetmap.org/way/187203225"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "yuer",
+      "name": {
+        "zh": "雨儿胡同",
+        "en": "Yuer Hutong"
+      },
+      "stops": [
+        4
+      ],
+      "x": 1253.57,
+      "y": 1148.72,
+      "lat": 39.93418704179787,
+      "lon": 116.39495348868411,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30748645
+        ],
+        "source": {
+          "title": "OpenStreetMap · 雨儿胡同",
+          "url": "https://www.openstreetmap.org/way/30748645"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "maoer",
+      "name": {
+        "zh": "帽儿胡同",
+        "en": "Mao'er Hutong"
+      },
+      "stops": [
+        5
+      ],
+      "x": 1026.59,
+      "y": 1080.55,
+      "lat": 39.93530790889082,
+      "lon": 116.39011929963827,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          4931137
+        ],
+        "source": {
+          "title": "OpenStreetMap · 帽儿胡同",
+          "url": "https://www.openstreetmap.org/way/4931137"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "jingyang",
+      "name": {
+        "zh": "景阳胡同",
+        "en": "Jingyang Hutong"
+      },
+      "stops": [
+        6
+      ],
+      "x": 1275.57,
+      "y": 1048.07,
+      "lat": 39.93584195549595,
+      "lon": 116.39542215232963,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30802728
+        ],
+        "source": {
+          "title": "OpenStreetMap · 景阳胡同",
+          "url": "https://www.openstreetmap.org/way/30802728"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "shajing",
+      "name": {
+        "zh": "沙井胡同",
+        "en": "Shajing Hutong"
+      },
+      "stops": [
+        7
+      ],
+      "x": 1260.03,
+      "y": 1020.97,
+      "lat": 39.93628754543575,
+      "lon": 116.3950911291353,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          4931224
+        ],
+        "source": {
+          "title": "OpenStreetMap · 沙井胡同",
+          "url": "https://www.openstreetmap.org/way/4931224"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "heizhima",
+      "name": {
+        "zh": "黑芝麻胡同",
+        "en": "Heizhima Hutong"
+      },
+      "stops": [
+        8
+      ],
+      "x": 1269.74,
+      "y": 977.68,
+      "lat": 39.93699935,
+      "lon": 116.39529784999999,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30802727
+        ],
+        "source": {
+          "title": "OpenStreetMap · 黑芝麻胡同",
+          "url": "https://www.openstreetmap.org/way/30802727"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "qiangulouyuan",
+      "name": {
+        "zh": "前鼓楼苑胡同",
+        "en": "Qiangulouyuan Hutong"
+      },
+      "stops": [
+        9
+      ],
+      "x": 1269.84,
+      "y": 934.93,
+      "lat": 39.93770228886587,
+      "lon": 116.39529998519384,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30802721
+        ],
+        "source": {
+          "title": "OpenStreetMap · 前鼓楼苑胡同",
+          "url": "https://www.openstreetmap.org/way/30802721"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "chaodou",
+      "name": {
+        "zh": "炒豆胡同",
+        "en": "Chaodou Hutong"
+      },
+      "stops": [
+        10
+      ]
+    },
+    {
+      "id": "banchang",
+      "name": {
+        "zh": "板厂胡同",
+        "en": "Banchang Hutong"
+      },
+      "stops": [
+        11
+      ],
+      "x": 1477.62,
+      "y": 1190.02,
+      "lat": 39.93350783512704,
+      "lon": 116.39972546838449,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30748777
+        ],
+        "source": {
+          "title": "OpenStreetMap · 板厂胡同",
+          "url": "https://www.openstreetmap.org/way/30748777"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "dongmianhua",
+      "name": {
+        "zh": "东棉花胡同",
+        "en": "Dongmianhua Hutong"
+      },
+      "stops": [
+        12
+      ],
+      "x": 1476.8,
+      "y": 1146.36,
+      "lat": 39.93422569684512,
+      "lon": 116.39970806777839,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          175425297
+        ],
+        "source": {
+          "title": "OpenStreetMap · 东棉花胡同",
+          "url": "https://www.openstreetmap.org/way/175425297"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "beibingmasi",
+      "name": {
+        "zh": "北兵马司胡同",
+        "en": "Beibingmasi Hutong"
+      },
+      "stops": [
+        13
+      ],
+      "x": 1476.18,
+      "y": 1105.15,
+      "lat": 39.93490333359256,
+      "lon": 116.39969469961824,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          25091579
+        ],
+        "source": {
+          "title": "OpenStreetMap · 北兵马司胡同",
+          "url": "https://www.openstreetmap.org/way/25091579"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "qinlao",
+      "name": {
+        "zh": "秦老胡同",
+        "en": "Qinlao Hutong"
+      },
+      "stops": [
+        14
+      ],
+      "x": 1567.98,
+      "y": 1055.62,
+      "lat": 39.93571774478088,
+      "lon": 116.40164989231937,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          4931136
+        ],
+        "source": {
+          "title": "OpenStreetMap · 秦老胡同",
+          "url": "https://www.openstreetmap.org/way/4931136"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "qianyuanensi",
+      "name": {
+        "zh": "前圆恩寺胡同",
+        "en": "Qianyuan'en Temple Hutong"
+      },
+      "stops": [
+        15
+      ],
+      "x": 1474.34,
+      "y": 1017.47,
+      "lat": 39.93634505,
+      "lon": 116.3996555,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          25091635
+        ],
+        "source": {
+          "title": "OpenStreetMap · 前圆恩寺胡同",
+          "url": "https://www.openstreetmap.org/way/25091635"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "houyuanensi",
+      "name": {
+        "zh": "后圆恩寺胡同",
+        "en": "Houyuan'en Temple Hutong"
+      },
+      "stops": [
+        16
+      ],
+      "x": 1473.09,
+      "y": 973.99,
+      "lat": 39.93706015,
+      "lon": 116.3996289,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          4931240
+        ],
+        "source": {
+          "title": "OpenStreetMap · 后圆恩寺胡同",
+          "url": "https://www.openstreetmap.org/way/4931240"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "juer",
+      "name": {
+        "zh": "菊儿胡同",
+        "en": "Juer Hutong"
+      },
+      "stops": [
+        17
+      ],
+      "x": 1472.24,
+      "y": 931.78,
+      "lat": 39.937754109186024,
+      "lon": 116.39961094970019,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30748845
+        ],
+        "source": {
+          "title": "OpenStreetMap · 菊儿胡同",
+          "url": "https://www.openstreetmap.org/way/30748845"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "sengwang",
+      "name": {
+        "zh": "僧王府（僧格林沁王府）",
+        "en": "Prince Sengge Rinchen's Residence (Prince Sengge Rinchen's Residence)"
+      },
+      "stops": [
+        18
+      ],
+      "x": 1374.79,
+      "y": 1217.19,
+      "lat": 39.93306115,
+      "lon": 116.39753535,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          1156692585
+        ],
+        "source": {
+          "title": "OpenStreetMap · 僧王府",
+          "url": "https://www.openstreetmap.org/way/1156692585"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "seng_ancestral",
+      "name": {
+        "zh": "僧格林沁祠堂旧址",
+        "en": "Former Site of the Sengge Rinchen Shrine"
+      },
+      "stops": [
+        19
+      ]
+    },
+    {
+      "id": "keyuan",
+      "name": {
+        "zh": "可园及文煜宅",
+        "en": "Keyuan Garden and Wen Yu Residence"
+      },
+      "stops": [
+        20
+      ]
+    },
+    {
+      "id": "wanrong",
+      "name": {
+        "zh": "婉容故居（帽儿胡同35、37号）",
+        "en": "Former Residence of Wanrong (Nos. 35 and 37 Mao'er Hutong)"
+      },
+      "stops": [
+        21
+      ]
+    },
+    {
+      "id": "qibaishi",
+      "name": {
+        "zh": "齐白石旧居纪念馆（雨儿胡同）",
+        "en": "Qi Baishi Former Residence Memorial Museum (Yuer Hutong)"
+      },
+      "stops": [
+        22
+      ]
+    },
+    {
+      "id": "maodun",
+      "name": {
+        "zh": "茅盾故居",
+        "en": "Former Residence of Mao Dun"
+      },
+      "stops": [
+        23
+      ]
+    },
+    {
+      "id": "jiang",
+      "name": {
+        "zh": "蒋介石北平行辕旧址（载旉宅）",
+        "en": "Former Site of Chiang Kai-shek's Peiping Headquarters (Zai Fu Residence)"
+      },
+      "stops": [
+        24
+      ]
+    },
+    {
+      "id": "ronglu",
+      "name": {
+        "zh": "荣禄宅及菊儿胡同7号近代建筑",
+        "en": "Ronglu Residence and Modern Building at No. 7 Juer Hutong"
+      },
+      "stops": [
+        25
+      ]
+    },
+    {
+      "id": "suojia",
+      "name": {
+        "zh": "索家宅院（秦老胡同35号）",
+        "en": "Suo Family Residence (No. 35 Qinlao Hutong)"
+      },
+      "stops": [
+        26
+      ]
+    },
+    {
+      "id": "kuijun",
+      "name": {
+        "zh": "奎俊宅（黑芝麻胡同13号）",
+        "en": "Kuijun Residence (No. 13 Heizhima Hutong)"
+      },
+      "stops": [
+        27
+      ]
+    },
+    {
+      "id": "hongchengchou",
+      "name": {
+        "zh": "黑芝麻胡同59号宅院（文旅资料称洪承畴宅）",
+        "en": "Residence at No. 59 Heizhima Hutong (identified in cultural tourism materials as Hong Chengchou's Residence)"
+      },
+      "stops": [
+        28
+      ]
+    },
+    {
+      "id": "shajing15",
+      "name": {
+        "zh": "沙井胡同15号四合院",
+        "en": "Siheyuan at No. 15 Shajing Hutong"
+      },
+      "stops": [
+        29
+      ]
+    },
+    {
+      "id": "juer_new",
+      "name": {
+        "zh": "菊儿胡同新四合院改造项目",
+        "en": "Juer Hutong New Siheyuan Renovation Project"
+      },
+      "stops": [
+        30
+      ]
+    },
+    {
+      "id": "drama",
+      "name": {
+        "zh": "中央戏剧学院东城校区（靳云鹏宅原址）",
+        "en": "Central Academy of Drama, Dongcheng Campus (Former Site of Jin Yunpeng's Residence)"
+      },
+      "stops": [
+        31
+      ],
+      "x": 1414.91,
+      "y": 1126.43,
+      "lat": 39.93455350000001,
+      "lon": 116.39838979999999,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          649477507
+        ],
+        "source": {
+          "title": "OpenStreetMap · 中央戏剧学院(东城校区)",
+          "url": "https://www.openstreetmap.org/way/649477507"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "shichahai",
+      "name": {
+        "zh": "什刹海历史文化风景区",
+        "en": "Shichahai Historic and Cultural Scenic Area"
+      },
+      "stops": [
+        32
+      ]
+    },
+    {
+      "id": "qianhai",
+      "name": {
+        "zh": "前海",
+        "en": "Qianhai"
+      },
+      "stops": [
+        33
+      ]
+    },
+    {
+      "id": "houhai",
+      "name": {
+        "zh": "后海",
+        "en": "Houhai"
+      },
+      "stops": [
+        34
+      ]
+    },
+    {
+      "id": "xihai",
+      "name": {
+        "zh": "西海（积水潭）",
+        "en": "Xihai (Jishuitan)"
+      },
+      "stops": [
+        35
+      ]
+    },
+    {
+      "id": "yinding",
+      "name": {
+        "zh": "银锭桥",
+        "en": "Yinding Bridge"
+      },
+      "stops": [
+        36
+      ],
+      "x": 888.39,
+      "y": 940.43,
+      "lat": 39.9376119,
+      "lon": 116.38717585,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          816148132
+        ],
+        "source": {
+          "title": "OpenStreetMap · 银锭桥",
+          "url": "https://www.openstreetmap.org/way/816148132"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "desheng_bridge",
+      "name": {
+        "zh": "德胜桥",
+        "en": "Desheng Bridge"
+      },
+      "stops": [
+        37
+      ]
+    },
+    {
+      "id": "wanning",
+      "name": {
+        "zh": "万宁桥（澄清上闸）",
+        "en": "Wanning Bridge (Chengqing Upper Sluice Gate)"
+      },
+      "stops": [
+        38
+      ]
+    },
+    {
+      "id": "water_beasts",
+      "name": {
+        "zh": "万宁桥镇水兽",
+        "en": "Wanning Bridge Water-Calming Beast"
+      },
+      "stops": [
+        39
+      ]
+    },
+    {
+      "id": "hehua",
+      "name": {
+        "zh": "荷花市场",
+        "en": "Lotus Market"
+      },
+      "stops": [
+        40
+      ],
+      "x": 786.41,
+      "y": 1176.28,
+      "lat": 39.93373372511188,
+      "lon": 116.38500372659867,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          24804695
+        ],
+        "source": {
+          "title": "OpenStreetMap · 荷花市场",
+          "url": "https://www.openstreetmap.org/way/24804695"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "yandai",
+      "name": {
+        "zh": "烟袋斜街",
+        "en": "Yandai Xiejie"
+      },
+      "stops": [
+        41
+      ],
+      "x": 955.68,
+      "y": 936.23,
+      "lat": 39.937681045516285,
+      "lon": 116.38860895964386,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          42676210
+        ],
+        "source": {
+          "title": "OpenStreetMap · 烟袋斜街",
+          "url": "https://www.openstreetmap.org/way/42676210"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "guangfu",
+      "name": {
+        "zh": "广福观（什刹海文化展示中心）",
+        "en": "Guangfu Taoist Temple (Shichahai Cultural Exhibition Center)"
+      },
+      "stops": [
+        42
+      ],
+      "x": 956.96,
+      "y": 920.13,
+      "lat": 39.93794575,
+      "lon": 116.3886363,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          1571056940
+        ],
+        "source": {
+          "title": "OpenStreetMap · 广福观",
+          "url": "https://www.openstreetmap.org/way/1571056940"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "huoshen",
+      "name": {
+        "zh": "敕建火德真君庙（火神庙）",
+        "en": "Imperial Temple of the True Lord of Fire Virtue (Fire God Temple)"
+      },
+      "stops": [
+        43
+      ],
+      "x": 992.95,
+      "y": 1060.71,
+      "lat": 39.935634199999996,
+      "lon": 116.38940274999999,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          497790863
+        ],
+        "source": {
+          "title": "OpenStreetMap · 火德真君庙",
+          "url": "https://www.openstreetmap.org/way/497790863"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "guanghua",
+      "name": {
+        "zh": "广化寺",
+        "en": "Guanghua Temple"
+      },
+      "stops": [
+        44
+      ],
+      "x": 768.6,
+      "y": 792.52,
+      "lat": 39.94004395,
+      "lon": 116.38462444999999,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          929752805
+        ],
+        "source": {
+          "title": "OpenStreetMap · 广化寺",
+          "url": "https://www.openstreetmap.org/way/929752805"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "guoshoujing",
+      "name": {
+        "zh": "郭守敬纪念馆（汇通祠）",
+        "en": "Guo Shoujing Memorial Hall (Huitong Shrine)"
+      },
+      "stops": [
+        45
+      ]
+    },
+    {
+      "id": "wetland",
+      "name": {
+        "zh": "西海湿地公园",
+        "en": "Xihai Wetland Park"
+      },
+      "stops": [
+        46
+      ]
+    },
+    {
+      "id": "gsj_statue",
+      "name": {
+        "zh": "郭守敬雕像（西海北岸）",
+        "en": "Statue of Guo Shoujing (North Bank of Xihai)"
+      },
+      "stops": [
+        47
+      ]
+    },
+    {
+      "id": "guomoruo",
+      "name": {
+        "zh": "郭沫若故居（郭沫若纪念馆）",
+        "en": "Former Residence of Guo Moruo (Guo Moruo Memorial Museum)"
+      },
+      "stops": [
+        48
+      ],
+      "x": 641.42,
+      "y": 1210.79,
+      "lat": 39.9331663,
+      "lon": 116.3819157,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "poi",
+        "osm": [
+          "node",
+          13204690291
+        ],
+        "source": {
+          "title": "OpenStreetMap · 郭沫若故居",
+          "url": "https://www.openstreetmap.org/node/13204690291"
+        },
+        "note": "来源标记的位置，具体入口请按现场指示。"
+      }
+    },
+    {
+      "id": "songqingling",
+      "name": {
+        "zh": "宋庆龄故居（醇亲王府西花园）",
+        "en": "Former Residence of Soong Ching Ling (West Garden of Prince Chun's Mansion)"
+      },
+      "stops": [
+        49
+      ],
+      "x": 406.89,
+      "y": 535.96,
+      "lat": 39.9442627,
+      "lon": 116.37692075,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          30835241
+        ],
+        "source": {
+          "title": "OpenStreetMap · 宋庆龄故居",
+          "url": "https://www.openstreetmap.org/way/30835241"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "chunwang",
+      "name": {
+        "zh": "醇亲王府（北府）",
+        "en": "Prince Chun's Mansion (Northern Residence)"
+      },
+      "stops": [
+        50
+      ],
+      "x": 473.94,
+      "y": 578.08,
+      "lat": 39.94357,
+      "lon": 116.3783488,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          30835211
+        ],
+        "source": {
+          "title": "OpenStreetMap · 醇亲王府",
+          "url": "https://www.openstreetmap.org/way/30835211"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "qingwang",
+      "name": {
+        "zh": "庆王府（庆亲王府）",
+        "en": "Prince Qing's Mansion"
+      },
+      "stops": [
+        51
+      ]
+    },
+    {
+      "id": "taobeile",
+      "name": {
+        "zh": "涛贝勒府",
+        "en": "Prince Tao's Mansion"
+      },
+      "stops": [
+        52
+      ]
+    },
+    {
+      "id": "furen",
+      "name": {
+        "zh": "辅仁大学旧址（定阜街主楼）",
+        "en": "Former Site of Fu Jen University (Main Building on Dingfu Street)"
+      },
+      "stops": [
+        53
+      ],
+      "x": 456.07,
+      "y": 1120.12,
+      "lat": 39.9346573,
+      "lon": 116.37796804999999,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "relation",
+          3599661
+        ],
+        "source": {
+          "title": "OpenStreetMap · 原辅仁大学",
+          "url": "https://www.openstreetmap.org/relation/3599661"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "huixiantang",
+      "name": {
+        "zh": "会贤堂旧址",
+        "en": "Former Site of Huixian Hall"
+      },
+      "stops": [
+        54
+      ]
+    },
+    {
+      "id": "guan_yue",
+      "name": {
+        "zh": "关岳庙",
+        "en": "Temple of Guan Yu and Yue Fei"
+      },
+      "stops": [
+        55
+      ]
+    },
+    {
+      "id": "yaer",
+      "name": {
+        "zh": "鸦儿胡同",
+        "en": "Yao'er Hutong"
+      },
+      "stops": [
+        56
+      ],
+      "x": 740.35,
+      "y": 818.36,
+      "lat": 39.939619048217054,
+      "lon": 116.38402281287817,
+      "lp": "b",
+      "min_zoom": 0.42,
+      "position": {
+        "basis": "street-midpoint",
+        "osm": [
+          "way",
+          30766509
+        ],
+        "source": {
+          "title": "OpenStreetMap · 鸦儿胡同",
+          "url": "https://www.openstreetmap.org/way/30766509"
+        },
+        "note": "街段参考点，非街巷入口；放大地图可查看。"
+      }
+    },
+    {
+      "id": "desheng_gate",
+      "name": {
+        "zh": "德胜门箭楼",
+        "en": "Deshengmen Watchtower"
+      },
+      "stops": [
+        57
+      ],
+      "x": 238.54,
+      "y": 276.0,
+      "lat": 39.948537200000004,
+      "lon": 116.37333509999999,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          958430463
+        ],
+        "source": {
+          "title": "OpenStreetMap · 德胜门箭楼",
+          "url": "https://www.openstreetmap.org/way/958430463"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "meilanfang",
+      "name": {
+        "zh": "梅兰芳纪念馆（护国寺街故居）",
+        "en": "Mei Lanfang Memorial Hall (Former Residence on Huguosi Street)"
+      },
+      "stops": [
+        58
+      ],
+      "x": 233.27,
+      "y": 1150.85,
+      "lat": 39.93415195,
+      "lon": 116.3732229,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          162379494
+        ],
+        "source": {
+          "title": "OpenStreetMap · 梅兰芳纪念馆",
+          "url": "https://www.openstreetmap.org/way/162379494"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "gongwang",
+      "name": {
+        "zh": "恭王府及花园",
+        "en": "Prince Gong's Mansion and Garden"
+      },
+      "stops": [
+        59
+      ],
+      "x": 542.11,
+      "y": 1048.91,
+      "lat": 39.93582815,
+      "lon": 116.37980060000001,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          26514871
+        ],
+        "source": {
+          "title": "OpenStreetMap · 恭王府",
+          "url": "https://www.openstreetmap.org/way/26514871"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "zhonggulou",
+      "name": {
+        "zh": "北京钟鼓楼",
+        "en": "Beijing Bell and Drum Towers"
+      },
+      "stops": [
+        60
+      ]
+    },
+    {
+      "id": "gulou",
+      "name": {
+        "zh": "北京鼓楼",
+        "en": "Beijing Drum Tower"
+      },
+      "stops": [
+        61
+      ],
+      "x": 1008.99,
+      "y": 834.73,
+      "lat": 39.939349899999996,
+      "lon": 116.3897445,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          267371087
+        ],
+        "source": {
+          "title": "OpenStreetMap · 鼓楼",
+          "url": "https://www.openstreetmap.org/way/267371087"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "zhonglou",
+      "name": {
+        "zh": "北京钟楼",
+        "en": "Beijing Bell Tower"
+      },
+      "stops": [
+        62
+      ],
+      "x": 1004.1,
+      "y": 733.06,
+      "lat": 39.9410217,
+      "lon": 116.38964025000001,
+      "lp": "b",
+      "min_zoom": 0,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          425993664
+        ],
+        "source": {
+          "title": "OpenStreetMap · 钟楼",
+          "url": "https://www.openstreetmap.org/way/425993664"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "yongle_bell",
+      "name": {
+        "zh": "钟楼明永乐报时铜钟",
+        "en": "Ming Yongle Bronze Bell for Telling the Time in the Bell Tower"
+      },
+      "stops": [
+        63
+      ]
+    },
+    {
+      "id": "main_drum",
+      "name": {
+        "zh": "鼓楼残存主鼓与复制更鼓陈列",
+        "en": "Display of the Surviving Main Drum and Reproduction Time-Telling Drums in the Drum Tower"
+      },
+      "stops": [
+        64
+      ]
+    },
+    {
+      "id": "xiaojun",
+      "name": {
+        "zh": "萧军故居（蜗蜗居）",
+        "en": "Former Residence of Xiao Jun (Wowoju)"
+      },
+      "stops": [
+        65
+      ]
+    },
+    {
+      "id": "zhenwu",
+      "name": {
+        "zh": "真武庙（德胜桥旁）",
+        "en": "Zhenwu Temple (Beside Desheng Bridge)"
+      },
+      "stops": [
+        66
+      ]
+    },
+    {
+      "id": "yongquan",
+      "name": {
+        "zh": "永泉庵",
+        "en": "Yongquan Nunnery"
+      },
+      "stops": [
+        67
+      ]
+    },
+    {
+      "id": "gongwang_garden",
+      "name": {
+        "zh": "恭王府花园（萃锦园）",
+        "en": "Prince Gong's Mansion Garden (Cuijin Garden)"
+      },
+      "stops": [
+        68
+      ],
+      "x": 543.76,
+      "y": 999.45,
+      "lat": 39.936641449999996,
+      "lon": 116.37983575000001,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "feature-center",
+        "osm": [
+          "way",
+          268548508
+        ],
+        "source": {
+          "title": "OpenStreetMap · 恭王府花园",
+          "url": "https://www.openstreetmap.org/way/268548508"
+        },
+        "note": "建筑或院区轮廓中心，非检票入口。"
+      }
+    },
+    {
+      "id": "gongwang_theatre",
+      "name": {
+        "zh": "怡神所（大戏楼）",
+        "en": "Yishensuo (Grand Theater)"
+      },
+      "stops": [
+        69
+      ]
+    },
+    {
+      "id": "gongwang_fu",
+      "name": {
+        "zh": "福字碑（秘云洞内）",
+        "en": "Stele of the Character “Fu” (Inside Miyun Cave)"
+      },
+      "stops": [
+        70
+      ]
+    },
+    {
+      "id": "gongwang_gate",
+      "name": {
+        "zh": "西洋门",
+        "en": "Western Gate"
+      },
+      "stops": [
+        71
+      ]
+    },
+    {
+      "id": "gongwang_back",
+      "name": {
+        "zh": "后罩楼",
+        "en": "Rear Tower"
+      },
+      "stops": [
+        72
+      ]
+    },
+    {
+      "id": "gongwang_yinan",
+      "name": {
+        "zh": "银安殿",
+        "en": "Hall of Silver Peace"
+      },
+      "stops": [
+        73
+      ]
+    },
+    {
+      "id": "gongwang_jiale",
+      "name": {
+        "zh": "嘉乐堂",
+        "en": "Hall of Auspicious Joy"
+      },
+      "stops": [
+        74
+      ]
+    },
+    {
+      "id": "gongwang_baoguang",
+      "name": {
+        "zh": "葆光室",
+        "en": "Room of Preserved Radiance"
+      },
+      "stops": [
+        75
+      ]
+    },
+    {
+      "id": "gongwang_xijin",
+      "name": {
+        "zh": "锡晋斋",
+        "en": "Xijin Studio"
+      },
+      "stops": [
+        76
+      ]
+    },
+    {
+      "id": "gongwang_duofu",
+      "name": {
+        "zh": "多福轩",
+        "en": "Pavilion of Abundant Blessings"
+      },
+      "stops": [
+        77
+      ]
+    },
+    {
+      "id": "gongwang_ledao",
+      "name": {
+        "zh": "乐道堂",
+        "en": "Hall of Delight in the Way"
+      },
+      "stops": [
+        78
+      ]
+    },
+    {
+      "id": "gongwang_archery",
+      "name": {
+        "zh": "箭道",
+        "en": "Archery Path"
+      },
+      "stops": [
+        79
+      ]
+    },
+    {
+      "id": "gongwang_dule",
+      "name": {
+        "zh": "独乐峰",
+        "en": "Peak of Solitary Enjoyment"
+      },
+      "stops": [
+        80
+      ]
+    },
+    {
+      "id": "gongwang_fuchi",
+      "name": {
+        "zh": "蝠池",
+        "en": "Bat Pond"
+      },
+      "stops": [
+        81
+      ]
+    },
+    {
+      "id": "gongwang_dihua",
+      "name": {
+        "zh": "棣华轩",
+        "en": "Pavilion of Brotherly Fragrance"
+      },
+      "stops": [
+        82
+      ]
+    },
+    {
+      "id": "gongwang_anshan",
+      "name": {
+        "zh": "安善堂",
+        "en": "Hall of Peaceful Benevolence"
+      },
+      "stops": [
+        83
+      ]
+    },
+    {
+      "id": "gongwang_dicui",
+      "name": {
+        "zh": "滴翠岩（含秘云洞）",
+        "en": "Dripping Emerald Rock (including Secret Cloud Cave)"
+      },
+      "stops": [
+        84
+      ]
+    },
+    {
+      "id": "shop_wenyu",
+      "name": {
+        "zh": "文宇奶酪（南锣鼓巷店）",
+        "en": "Wenyu Cheese (Nanluoguxiang Store)"
+      },
+      "stops": [
+        85
+      ]
+    },
+    {
+      "id": "shop_fangzhuan",
+      "name": {
+        "zh": "方砖厂69号炸酱面（方砖厂胡同店）",
+        "en": "No. 69 Fangzhuanchang Zhajiang Noodles (Fangzhuanchang Hutong Store)"
+      },
+      "stops": [
+        86
+      ]
+    },
+    {
+      "id": "shop_jingxiu",
+      "name": {
+        "zh": "景秀餐厅（南锣鼓巷店）",
+        "en": "Jingxiu Restaurant (Nanluoguxiang Store)"
+      },
+      "stops": [
+        87
+      ]
+    },
+    {
+      "id": "shop_beiping",
+      "name": {
+        "zh": "北平花园·潮玩萌牙·北平咖啡（南锣鼓巷胡同店）",
+        "en": "Beiping Garden · Trendy Toys Mengya · Beiping Coffee (Nanluoguxiang Hutong Store)"
+      },
+      "stops": [
+        88
+      ]
+    },
+    {
+      "id": "shop_tangfang",
+      "name": {
+        "zh": "糖房咖啡（南锣鼓巷店）",
+        "en": "Tangfang Coffee (Nanluoguxiang Store)"
+      },
+      "stops": [
+        89
+      ]
+    },
+    {
+      "id": "shop_jingshan",
+      "name": {
+        "zh": "京扇子（南锣鼓巷店）",
+        "en": "Beijing Fans (Nanluoguxiang Store)"
+      },
+      "stops": [
+        90
+      ]
+    },
+    {
+      "id": "shop_yiduo",
+      "name": {
+        "zh": "一朵一果（南锣鼓巷店）",
+        "en": "Yiduo Yiguo (Nanluoguxiang Store)"
+      },
+      "stops": [
+        91
+      ]
+    },
+    {
+      "id": "shop_jiaquer",
+      "name": {
+        "zh": "家雀儿手作文创店（南锣鼓巷）",
+        "en": "Jiaque'er Handmade Cultural and Creative Store (Nanluoguxiang)"
+      },
+      "stops": [
+        92
+      ]
+    },
+    {
+      "id": "shop_qingsong",
+      "name": {
+        "zh": "青松造物（南锣鼓巷设计师共创空间）",
+        "en": "Qingsong Creations (Nanluoguxiang Designer Collaborative Creative Space)"
+      },
+      "stops": [
+        93
+      ]
+    },
+    {
+      "id": "shop_qiaoke",
+      "name": {
+        "zh": "巧克玩家（南锣鼓巷）",
+        "en": "Choco Player (Nanluoguxiang)"
+      },
+      "stops": [
+        94
+      ]
+    },
+    {
+      "id": "shop_kaorouji",
+      "name": {
+        "zh": "烤肉季饭庄（什刹海店）",
+        "en": "Kaorou Ji Restaurant (Shichahai Store)"
+      },
+      "stops": [
+        95
+      ],
+      "x": 910.09,
+      "y": 936.42,
+      "lat": 39.9376778,
+      "lon": 116.3876379,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "poi",
+        "osm": [
+          "node",
+          4450261096
+        ],
+        "source": {
+          "title": "OpenStreetMap · 烤肉季",
+          "url": "https://www.openstreetmap.org/node/4450261096"
+        },
+        "note": "来源标记的位置，具体入口请按现场指示。"
+      }
+    },
+    {
+      "id": "shop_qingyun",
+      "name": {
+        "zh": "庆云楼饭庄（什刹海店）",
+        "en": "Qingyunlou Restaurant (Shichahai Store)"
+      },
+      "stops": [
+        96
+      ]
+    },
+    {
+      "id": "shop_yaerli",
+      "name": {
+        "zh": "清真·鸦儿李记·涮肉（什刹海店）",
+        "en": "Halal · Ya'er Li Ji · Hotpot (Shichahai Store)"
+      },
+      "stops": [
+        97
+      ]
+    },
+    {
+      "id": "shop_huguosi",
+      "name": {
+        "zh": "护国寺小吃（地安门店）",
+        "en": "Huguosi Snacks (Di'anmen Store)"
+      },
+      "stops": [
+        98
+      ]
+    },
+    {
+      "id": "shop_postoffice",
+      "name": {
+        "zh": "大清邮政信柜（什刹海邮政所）",
+        "en": "Great Qing Postal Letter Cabinet (Shichahai Post Office)"
+      },
+      "stops": [
+        99
+      ],
+      "x": 944.06,
+      "y": 930.6,
+      "lat": 39.9377736,
+      "lon": 116.3883615,
+      "lp": "b",
+      "min_zoom": 0.4,
+      "position": {
+        "basis": "poi",
+        "osm": [
+          "node",
+          12998385701
+        ],
+        "source": {
+          "title": "OpenStreetMap · 什刹海邮政所",
+          "url": "https://www.openstreetmap.org/node/12998385701"
+        },
+        "note": "来源标记的位置，具体入口请按现场指示。"
+      }
+    },
+    {
+      "id": "shop_fuhuazhai",
+      "name": {
+        "zh": "富华斋饽饽铺（护国新天地店）",
+        "en": "Fuhuazhai Bobo Pastry Shop (Huguo Xintiandi Store)"
+      },
+      "stops": [
+        100
+      ]
+    }
+  ],
+  "photos": [
+    {
+      "seq": 1,
+      "identity_key": "nanluo",
+      "caption": {
+        "zh": "南锣鼓巷街口",
+        "en": "Nanluoguxiang street entrance"
+      },
+      "path": "img/nanluo_shichahai/1.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/attraction/101328"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2020/0509/20200509042230914.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/1.original",
+        "sha256": "a36bb7a8221db523b7af71a3ae4fde89b0ee858a3411da21ed82f5c495de05e6",
+        "bytes": 205317
+      },
+      "sha256": "6b066d45173564f47a9fd2b2017c249e49720a83535265fabb433e22c9ec4709",
+      "bytes": 100332,
+      "width": 1020,
+      "height": 428
+    },
+    {
+      "seq": 22,
+      "identity_key": "qibaishi",
+      "caption": {
+        "zh": "雨儿胡同齐白石旧居院落",
+        "en": "Qi Baishi residence courtyard in Yuer Hutong"
+      },
+      "path": "img/nanluo_shichahai/22.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/t20190114_1865118.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/W020200421408724037903.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/22.original",
+        "sha256": "329e1f838cfb8e43320aa8704fd360179d2e579452d57ba62d7cee1340b1a4cf",
+        "bytes": 53314
+      },
+      "sha256": "63a4b233a6648e28c020f22c342f9261a29c0b6289a8930266b5311809870b4d",
+      "bytes": 57578,
+      "width": 599,
+      "height": 391
+    },
+    {
+      "seq": 32,
+      "identity_key": "shichahai",
+      "caption": {
+        "zh": "什刹海湖岸景观",
+        "en": "Shichahai lakeside"
+      },
+      "path": "img/nanluo_shichahai/32.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744744804.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/32.original",
+        "sha256": "119ce7ff7c2cbc33df3eaf029c90270f10e19ea2ea427f87ce9f88f0762c5bd5",
+        "bytes": 111705
+      },
+      "sha256": "9b09f9248195ceb5f3d62cd914283751c5dcbbb1b4a2565adf4a1fed58a5c420",
+      "bytes": 114615,
+      "width": 1080,
+      "height": 694
+    },
+    {
+      "seq": 37,
+      "identity_key": "desheng_bridge",
+      "caption": {
+        "zh": "德胜桥桥栏及桥侧景观",
+        "en": "Desheng Bridge balustrade and surroundings"
+      },
+      "path": "img/nanluo_shichahai/37.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737672.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20180809/1533779630660043588.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/37.original",
+        "sha256": "57fca6524f72dcc9a40016e9bbecca85755204b70812aad4e952be1a90bd18f3",
+        "bytes": 1423612
+      },
+      "sha256": "314d9ef41ee12bf5a36c8aacb0b5e86a1ada71423c939fa6680e65cb5a64f213",
+      "bytes": 233811,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 41,
+      "identity_key": "yandai",
+      "caption": {
+        "zh": "烟袋斜街街景",
+        "en": "Yandai Xiejie streetscape"
+      },
+      "path": "img/nanluo_shichahai/41.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.bjxch.gov.cn/rwxc/xxxq/pnidpv954519.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20240621/1718953664900078445.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/41.original",
+        "sha256": "c9ed465b110d8c1b231b91b838e430376d9a6335a21bec7dba9e56a0e3c09f37",
+        "bytes": 74133
+      },
+      "sha256": "db798bebbc975e0bae0376a0c2d8f6c6f93cd5c43cff2623c0c783d51f5618f4",
+      "bytes": 76133,
+      "width": 800,
+      "height": 533
+    },
+    {
+      "seq": 48,
+      "identity_key": "guomoruo",
+      "caption": {
+        "zh": "郭沫若故居院落",
+        "en": "Guo Moruo residence courtyard"
+      },
+      "path": "img/nanluo_shichahai/48.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/index.php/gallery/9149"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0809/20180809112218440.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/48.original",
+        "sha256": "4046f02d610345f1c8546c128ad1c6064327d7e160c8dac63d875e8239cda3f5",
+        "bytes": 120384
+      },
+      "sha256": "942d44018d30743ff6dd20d0c13b07f7dacecd843004f2cf79c97847d21fe5e8",
+      "bytes": 14868,
+      "width": 250,
+      "height": 169
+    },
+    {
+      "seq": 49,
+      "identity_key": "songqingling",
+      "caption": {
+        "zh": "宋庆龄故居展陈",
+        "en": "Exhibition at Soong Ching Ling residence"
+      },
+      "path": "img/nanluo_shichahai/49.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744832109.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/49.original",
+        "sha256": "82dc1425aabef7cf381abae041d262b3db4c6d59aa83a52eea5901be7bd91f02",
+        "bytes": 124263
+      },
+      "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+      "bytes": 126985,
+      "width": 1080,
+      "height": 607
+    },
+    {
+      "seq": 59,
+      "identity_key": "gongwang",
+      "caption": {
+        "zh": "恭王府园林景观",
+        "en": "Garden scene at Prince Gong Mansion"
+      },
+      "path": "img/nanluo_shichahai/59.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/t20221018_2838434.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/W020221205586101641203.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/59.original",
+        "sha256": "5bbcfb190e91fe24760f99869aafd5c543917b861ccd464bbf921829b4160b64",
+        "bytes": 69128
+      },
+      "sha256": "8be8a7bc82bc30d09247874c6ac515fd5f15905e6a8a99d2cc47b7ce19598903",
+      "bytes": 40789,
+      "width": 360,
+      "height": 250
+    },
+    {
+      "seq": 61,
+      "identity_key": "gulou",
+      "caption": {
+        "zh": "由景山方向远眺鼓楼",
+        "en": "Drum Tower viewed from the direction of Jingshan"
+      },
+      "path": "img/nanluo_shichahai/61.jpg",
+      "source": {
+        "title": "北京市文物局",
+        "url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html"
+      },
+      "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032551896.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/axis_2.original",
+        "sha256": "df095656c47a9d1e8475b885c3758a6e93189b3b52002fc4fb9a35df65eb729e",
+        "bytes": 379477
+      },
+      "sha256": "fa9ca9ff8760a9902a4d7ecd5317de0e929251c77894db1d0078caa3cec58597",
+      "bytes": 61126,
+      "width": 600,
+      "height": 399
+    },
+    {
+      "seq": 96,
+      "identity_key": "shop_qingyun",
+      "caption": {
+        "zh": "庆云楼店面",
+        "en": "Qingyunlou facade"
+      },
+      "path": "img/nanluo_shichahai/96.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/gallery/8808"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0628/20180628064305173.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/96_0.original",
+        "sha256": "6767bbf75b94222212cb1d10456902b290ac68ac29023bd30da38d6967251ebd",
+        "bytes": 115002
+      },
+      "sha256": "f22c35dfadc05b3905d9aea54755f31ffb75b538d4c14535032d7c52cc72e6bd",
+      "bytes": 66588,
+      "width": 583,
+      "height": 389
+    }
+  ]
+}

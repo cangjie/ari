@@ -1,7 +1,7 @@
 {
-  "checked_on": "2026-10-23",
+  "checked_on": "2026-10-24",
   "processing": "仅EXIF方向校正、等比缩小和JPEG编码；不裁切、不去水印、不生成或改变画面。原件留本机忽略导出目录。",
-  "note": "资料图非实时现场状态；图片出处不冒充摄影作者。SIPA明确请勿转载图、河道误配帽儿胡同、碑刻误配鼓楼等候选未发布。",
+  "note": "60/100条有匹配主体的图片；16家商铺全部配图，其中12家含大众点评图，4家按用户授权用官方实景图。保留原10张及全部失败候选。共61张发布图，宋庆龄故居既有展陈图保留。Commons作者与许可随图展示。明确请勿转载的SIPA、通用推荐图、泰州梅兰芳纪念馆等误召回不发布。",
   "jpeg": {
     "max_edge": 1280,
     "quality": 85,
@@ -278,6 +278,1670 @@
       "bytes": 66588,
       "width": 583,
       "height": 389
+    },
+    {
+      "seq": 4,
+      "identity_key": "yuer",
+      "caption": {
+        "zh": "雨儿胡同公共街段",
+        "en": "Yuer Hutong public street"
+      },
+      "path": "img/nanluo_shichahai/4.jpg",
+      "source": {
+        "title": "北京市东城区人民政府",
+        "url": "https://www.bjdch.gov.cn/ywdt/dcyw/202311/t20231108_3297236.html"
+      },
+      "image_url": "https://www.bjdch.gov.cn/ywdt/dcyw/202311/W020231108412510532204.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "juer",
+        "index": 9
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/juer_9.original",
+        "sha256": "ff8626f5fbdcddbe65cef628866433a4d638011be7502bba9edf19d1ed907ba2",
+        "bytes": 107895
+      },
+      "sha256": "ad1c3b9774892dbf8d93c1969b86eb664f7490a7e4663f07c91a54132883e831",
+      "bytes": 108060,
+      "width": 800,
+      "height": 533
+    },
+    {
+      "seq": 17,
+      "identity_key": "juer",
+      "caption": {
+        "zh": "菊儿胡同（历史资料图）",
+        "en": "juer — archival photo"
+      },
+      "path": "img/nanluo_shichahai/17.jpg",
+      "source": {
+        "title": "Wikimedia Commons · 高晶 at Chinese Wikipedia · Public domain",
+        "url": "https://commons.wikimedia.org/wiki/File:Juerhutong.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Juerhutong.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "高晶 at Chinese Wikipedia",
+      "photographed_on": "2008-11-22",
+      "license": {
+        "name": "Public domain",
+        "url": ""
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_17",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_17_0.original",
+        "sha256": "cce5410789f0b0316d5c8a2356353347712885316581704c8c5368d9997514f8",
+        "bytes": 1070051
+      },
+      "sha256": "e298a89d1f15ec643b617db00df2b420b4a41ae1f8dc8a58427e268c2a1a38d4",
+      "bytes": 200534,
+      "width": 1280,
+      "height": 857
+    },
+    {
+      "seq": 18,
+      "identity_key": "sengwang",
+      "caption": {
+        "zh": "侣松园宾馆门面（板厂胡同22号，僧王府相关院落的现用途资料图；非整座王府）",
+        "en": "Lusongyuan Hotel frontage, a historically associated courtyard; not the entire princely residence"
+      },
+      "path": "img/nanluo_shichahai/18.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/index.php/hotel/10"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2016/0119/20160119031313197.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "hotel_lusongyuan",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/hotel_lusongyuan_0.original",
+        "sha256": "5b2a4d83b208f510594c53429050973ff01b17fb1870e5da7562506c65b095b0",
+        "bytes": 397947
+      },
+      "sha256": "9c411671bddd0c02d99935a477a2595ba1d071c0e093037f474915a68753b7f6",
+      "bytes": 80803,
+      "width": 631,
+      "height": 404
+    },
+    {
+      "seq": 20,
+      "identity_key": "keyuan",
+      "caption": {
+        "zh": "可园及文煜宅（历史资料图）",
+        "en": "keyuan — archival photo"
+      },
+      "path": "img/nanluo_shichahai/20.jpg",
+      "source": {
+        "title": "Wikimedia Commons · 用心阁 · CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:%E5%8F%AF%E5%9B%AD%E7%9A%84%E5%9E%82%E8%8A%B1%E9%97%A8.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/%E5%8F%AF%E5%9B%AD%E7%9A%84%E5%9E%82%E8%8A%B1%E9%97%A8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "用心阁",
+      "photographed_on": "2005-02-10",
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_20",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_20_0.original",
+        "sha256": "2905dee472e98c0786401a6cff7db0eac41890509f76584cae0e193e64cc41f2",
+        "bytes": 617537
+      },
+      "sha256": "44e5a60e0cabf3022dddad036a9c19a94d3163464a4139aab6a2780e3dce65ef",
+      "bytes": 297018,
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "seq": 23,
+      "identity_key": "maodun",
+      "caption": {
+        "zh": "茅盾故居（历史资料图）",
+        "en": "maodun — archival photo"
+      },
+      "path": "img/nanluo_shichahai/23.jpg",
+      "source": {
+        "title": "Wikimedia Commons · Charlie fong · CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Maodunguju.JPG"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Maodunguju.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "Charlie fong",
+      "photographed_on": null,
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_23",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_23_0.original",
+        "sha256": "d0915be6fd74e3048d0bab3173c7c2f25c7611d7517f2662811e632b54b11713",
+        "bytes": 673009
+      },
+      "sha256": "79cee5a1e53f2e57db16dc38d9b22436aa97c299713f3c8b6cddcb67de74c443",
+      "bytes": 253967,
+      "width": 1280,
+      "height": 854
+    },
+    {
+      "seq": 38,
+      "identity_key": "wanning",
+      "caption": {
+        "zh": "万宁桥（澄清上闸）（历史资料图）",
+        "en": "wanning — archival photo"
+      },
+      "path": "img/nanluo_shichahai/38.jpg",
+      "source": {
+        "title": "Wikimedia Commons · N509FZ · CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_Jinding_Bridge_(20211008151133).jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "N509FZ",
+      "photographed_on": "2021-10-08",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_38",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_38_0.original",
+        "sha256": "ec64d204849635179c823d91d9775cb894350e2e865da89d6a80d711493b6689",
+        "bytes": 10545162
+      },
+      "sha256": "0ef74026c203c9862325f58ae40771b98ad08dff6de5d96342692526feeb7e95",
+      "bytes": 330713,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "seq": 42,
+      "identity_key": "guangfu",
+      "caption": {
+        "zh": "广福观门面",
+        "en": "Guangfu Temple facade"
+      },
+      "path": "img/nanluo_shichahai/42.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/zt/schjmp/xxxq/pnidpv932670.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20230719/1689737126769083519.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "guangfu",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/guangfu_4.original",
+        "sha256": "7b5a2b7ddf4d5895cb5828ae28a7c3d7050ee51e8b2e37ada878f0e9d0805ec9",
+        "bytes": 154057
+      },
+      "sha256": "4e1631c34b08be727ac53455842abd24e97ebde01fcde1fb60db363318f434dd",
+      "bytes": 134648,
+      "width": 960,
+      "height": 640
+    },
+    {
+      "seq": 43,
+      "identity_key": "huoshen",
+      "caption": {
+        "zh": "火德真君庙山门",
+        "en": "Huode Zhenjun Temple gate"
+      },
+      "path": "img/nanluo_shichahai/43.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/zt/schjmp/xxxq/pnidpv932676.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20230719/1689737423784039204.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "huoshen",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/huoshen_4.original",
+        "sha256": "386216e4243396469362fdd4aa9829c22268a323e1bd1ef91bb65ea688ce9601",
+        "bytes": 90341
+      },
+      "sha256": "146466ce30193f6f1bc73c139427baadcbdcb06ac758f5aed724b344005c1ae9",
+      "bytes": 92819,
+      "width": 750,
+      "height": 501
+    },
+    {
+      "seq": 44,
+      "identity_key": "guanghua",
+      "caption": {
+        "zh": "广化寺门面",
+        "en": "Guanghua Temple facade"
+      },
+      "path": "img/nanluo_shichahai/44.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737621.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20180808/1533733728890021899.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "guanghua",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/guanghua_4.original",
+        "sha256": "b1c00b5e77fdaa91b6e526a351e938ada85a7b953343e365a9e80737465915cb",
+        "bytes": 1017840
+      },
+      "sha256": "633230183b636274e36bbde605e0fedaba12d452d894eb9b595e4a585c90d3a2",
+      "bytes": 265810,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 45,
+      "identity_key": "guoshoujing",
+      "caption": {
+        "zh": "郭守敬纪念馆院落入口建筑",
+        "en": "Guo Shoujing Memorial courtyard gateway"
+      },
+      "path": "img/nanluo_shichahai/45.jpg",
+      "source": {
+        "title": "北京市人民政府门户网站",
+        "url": "https://www.beijing.gov.cn/tsbj/sxym/202310/t20231008_3271623.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/tsbj/sxym/202310/W020231008363654066064.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "guoshoujing_new",
+        "index": 3
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/guoshoujing_new_3.original",
+        "sha256": "d09fbe6eda4751cd4ede09f250aafd1d3128931919b30813cc5fae68e2b1ad4e",
+        "bytes": 1632215
+      },
+      "sha256": "d464be1958692ccd621d77889050a955ef576b064c039bb5eb6edd8a718ede91",
+      "bytes": 196371,
+      "width": 1000,
+      "height": 667
+    },
+    {
+      "seq": 46,
+      "identity_key": "wetland",
+      "caption": {
+        "zh": "西海湿地公园湖畔栈道（旧资料图）",
+        "en": "Xihai Wetland Park boardwalk, archival view"
+      },
+      "path": "img/nanluo_shichahai/46.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv827591.html"
+      },
+      "image_url": "http://www.bjxch.gov.cn/f/190725/60753.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "wetland_district",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/wetland_district_4.original",
+        "sha256": "1523f7876f528c912c13bda53571ba6e622501cd2e5d22052e251dac68a04fe3",
+        "bytes": 94023
+      },
+      "sha256": "4d4b7747c034d3ccaa8f4ae82fdd9eb4a2201b4008049a3e8ec35e864d5417eb",
+      "bytes": 51247,
+      "width": 400,
+      "height": 300
+    },
+    {
+      "seq": 47,
+      "identity_key": "gsj_statue",
+      "caption": {
+        "zh": "郭守敬纪念馆内郭守敬塑像",
+        "en": "Statue of Guo Shoujing at the memorial"
+      },
+      "path": "img/nanluo_shichahai/47.jpg",
+      "source": {
+        "title": "北京市人民政府门户网站",
+        "url": "https://www.beijing.gov.cn/tsbj/sxym/202310/t20231008_3271623.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/tsbj/sxym/202310/W020231008363656057951.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "guoshoujing_new",
+        "index": 11
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/guoshoujing_new_11.original",
+        "sha256": "4225b0671a51fc0e8b6ad457184515a88ffaac0595c951d137d48b50e3628c99",
+        "bytes": 1179683
+      },
+      "sha256": "1e5d458c17ee6260a4178ffd57b8fbe79d4fbd69c373e762c3e9b8586ae770d9",
+      "bytes": 111259,
+      "width": 1000,
+      "height": 563
+    },
+    {
+      "seq": 50,
+      "identity_key": "chunwang",
+      "caption": {
+        "zh": "醇亲王府（北府）（历史资料图）",
+        "en": "chunwang — archival photo"
+      },
+      "path": "img/nanluo_shichahai/50.jpg",
+      "source": {
+        "title": "Wikimedia Commons · The original uploader was 用心阁 at Chinese Wikipedia . · CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Wangfudamen.JPG"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Wangfudamen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "The original uploader was 用心阁 at Chinese Wikipedia .",
+      "photographed_on": null,
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "http://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_50",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_50_0.original",
+        "sha256": "5bd952c7ed9798b9b13c2034c8f357ced04e27adccdb2e5f0d1cbca49c734960",
+        "bytes": 36254
+      },
+      "sha256": "6e994c0074748ad344ecc041b38eccd46badd6096e6c66648199a9b4f037d35f",
+      "bytes": 32149,
+      "width": 448,
+      "height": 336
+    },
+    {
+      "seq": 52,
+      "identity_key": "taobeile",
+      "caption": {
+        "zh": "涛贝勒府院落建筑（资料图）",
+        "en": "Building at Tao Beile Residence, archival view"
+      },
+      "path": "img/nanluo_shichahai/52.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737633.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20180808/1533736124066028374.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "taobeile",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/taobeile_4.original",
+        "sha256": "68650929f27b087ff455b1b5a4c1f303c0a931db7c6c9183c25e7eebeb0f2af1",
+        "bytes": 1818378
+      },
+      "sha256": "231c24452cd3aa089e2eb855f97b9143fdd0d9ff655845fc697347ededcf1528",
+      "bytes": 280177,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 53,
+      "identity_key": "furen",
+      "caption": {
+        "zh": "辅仁大学旧址（定阜街主楼）（历史资料图）",
+        "en": "furen — archival photo"
+      },
+      "path": "img/nanluo_shichahai/53.jpg",
+      "source": {
+        "title": "Wikimedia Commons · Hermann Luyken · CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "Hermann Luyken",
+      "photographed_on": "2014-09-04",
+      "license": {
+        "name": "CC0",
+        "url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_53",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_53_0.original",
+        "sha256": "61047cce5dd8f79da5aa5d5fe6295b7725aca8d08de583a309d8bda3725efc05",
+        "bytes": 1041803
+      },
+      "sha256": "4aa453f04f3936c8892a2c1a24f04eac118a47e0a688cb25821cedb16ae48a8b",
+      "bytes": 226942,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 54,
+      "identity_key": "huixiantang",
+      "caption": {
+        "zh": "会贤堂旧址（历史资料图）",
+        "en": "huixiantang — archival photo"
+      },
+      "path": "img/nanluo_shichahai/54.jpg",
+      "source": {
+        "title": "Wikimedia Commons · 猫猫的日记本 · CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Former_Huixiantang_in_Beijing_2010-11.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Former_Huixiantang_in_Beijing_2010-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "猫猫的日记本",
+      "photographed_on": "2010-11-14",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_54",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_54_0.original",
+        "sha256": "cdbfd53926732d50765e1eced35aad72ef83126ce35221be562ab0e94131b849",
+        "bytes": 1635956
+      },
+      "sha256": "501b4832b7bca512b75abe3cd29f960a791cbf09902eb9dd6bcfcb6ab19ae7f8",
+      "bytes": 297922,
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "seq": 57,
+      "identity_key": "desheng_gate",
+      "caption": {
+        "zh": "德胜门箭楼（历史资料图）",
+        "en": "desheng gate — archival photo"
+      },
+      "path": "img/nanluo_shichahai/57.jpg",
+      "source": {
+        "title": "Wikimedia Commons · Charlie fong · CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Deshengmen_Northeast_View2022.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "Charlie fong",
+      "photographed_on": "2022-03-15",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_57",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_57_0.original",
+        "sha256": "deed935ff41ce2d24213694104f3e5ad1dc8e3b80e7a60ef2a836bb53d449c74",
+        "bytes": 436299
+      },
+      "sha256": "7c12d972680d6b1e4f4a744e4f66da05a2c5c93a086d59120bd587800eac428f",
+      "bytes": 118475,
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "seq": 58,
+      "identity_key": "meilanfang",
+      "caption": {
+        "zh": "北京梅兰芳纪念馆入口（护国寺街旧居，非泰州同名馆）",
+        "en": "Mei Lanfang Memorial House in Beijing, not the Taizhou museum"
+      },
+      "path": "img/nanluo_shichahai/58.jpg",
+      "source": {
+        "title": "Wikimedia Commons · Gisling · CC BY 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Mei_Lanfang_Memorial_House.JPG"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mei_Lanfang_Memorial_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "Gisling",
+      "photographed_on": null,
+      "license": {
+        "name": "CC BY 3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_58_beijing",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_58_beijing_0.original",
+        "sha256": "41d38a79e49bb637dd0adfa4fe13eeac6bc5767e8181841efa9feb3a28d795d6",
+        "bytes": 1934351
+      },
+      "sha256": "4e1d63c8d6f9a7a8f9b983239339d1c04cc947fd0237eaffe13ba6792b09cde0",
+      "bytes": 229232,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "seq": 62,
+      "identity_key": "zhonglou",
+      "caption": {
+        "zh": "北京钟楼（历史资料图）",
+        "en": "zhonglou — archival photo"
+      },
+      "path": "img/nanluo_shichahai/62.jpg",
+      "source": {
+        "title": "Wikimedia Commons · EditQ · CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Beijing_Bell_Tower_1.jpg"
+      },
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "photographer": "EditQ",
+      "photographed_on": "2023-07-11",
+      "license": {
+        "name": "CC BY-SA 4.0",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "commons_62",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/commons_62_0.original",
+        "sha256": "817118922c11a5478ddd12dfca9906528026fef277e72b6ae8aacc98b25fe54e",
+        "bytes": 9011467
+      },
+      "sha256": "8bae9317f79ca1145303f89c4c04d7d857d6aada5c03ebdb0d9d42eb1a918b06",
+      "bytes": 236138,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 69,
+      "identity_key": "gongwang_theatre",
+      "caption": {
+        "zh": "怡神所（大戏楼）（恭王府官网资料图）",
+        "en": "怡神所（大戏楼） — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/69.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/4eef66b81a1a429f8d529bc0b117c201.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/4eef66b81a1a429f8d529bc0b117c201/images/20260605114259727001.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "gongwang_theatre",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/gongwang_theatre_4.original",
+        "sha256": "007e06472c3a737aef23ab74aa4f0c8862daa7e73bb9b6069d98c57a4c797526",
+        "bytes": 113045
+      },
+      "sha256": "dbc29a817a2195b5598ab4f73154e37080f3ffcf808d4d778a768da992c552b1",
+      "bytes": 90498,
+      "width": 600,
+      "height": 469
+    },
+    {
+      "seq": 70,
+      "identity_key": "gongwang_fu",
+      "caption": {
+        "zh": "福字碑（秘云洞内）（恭王府官网资料图）",
+        "en": "福字碑（秘云洞内） — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/70.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/531f0043f14947a98b096a335e26439f.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/531f0043f14947a98b096a335e26439f/images/福字碑2_副本.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "gongwang_fu",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/gongwang_fu_4.original",
+        "sha256": "d68b54c3bfaa7892428dc40241159c95615e41cdad2c392f34ad53b6c0d26f04",
+        "bytes": 602493
+      },
+      "sha256": "a8478d59021dad832d92416b0c443f26e68629d5ff5f4f659d3ea31eea64a102",
+      "bytes": 115175,
+      "width": 595,
+      "height": 600
+    },
+    {
+      "seq": 71,
+      "identity_key": "gongwang_gate",
+      "caption": {
+        "zh": "西洋门（恭王府官网资料图）",
+        "en": "西洋门 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/71.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/da3066c6a7bf4cc485fe198958f46114.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/da3066c6a7bf4cc485fe198958f46114/images/20140224145432298.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "gongwang_gate",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/gongwang_gate_4.original",
+        "sha256": "c2c9a6fc8d925ba4e3279e48dc02437af7d7ec30d2c21c5cc968185bfdb81b2d",
+        "bytes": 565236
+      },
+      "sha256": "80e285b0744d45b386e250886d717b20e9c4f08569ca8fd9e2ada19c4faf467d",
+      "bytes": 123785,
+      "width": 594,
+      "height": 599
+    },
+    {
+      "seq": 72,
+      "identity_key": "gongwang_back",
+      "caption": {
+        "zh": "后罩楼（恭王府官网资料图）",
+        "en": "后罩楼 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/72.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/022d6e98911c4861a268bd6f51697b9e.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/022d6e98911c4861a268bd6f51697b9e/images/后罩楼1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_022d6e98911c",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_022d6e98911c_4.original",
+        "sha256": "69831b04fc865166f2a0ea78c7585326483b393f21340d3ca91e027875f8dfa6",
+        "bytes": 310383
+      },
+      "sha256": "f67c7dc9e853d6f09a376589724b09785fc27ca9991013ee315ac9dadfd0b395",
+      "bytes": 62238,
+      "width": 600,
+      "height": 401
+    },
+    {
+      "seq": 73,
+      "identity_key": "gongwang_yinan",
+      "caption": {
+        "zh": "银安殿（恭王府官网资料图）",
+        "en": "银安殿 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/73.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/4bd8662d01834dc4888ffd229d2e0dff.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/4bd8662d01834dc4888ffd229d2e0dff/images/银安殿.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_4bd8662d0183",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_4bd8662d0183_4.original",
+        "sha256": "527b5a57a59e41595e7e9b375837b5d8266aa1fee7666d0582ff6bb736af94ff",
+        "bytes": 364733
+      },
+      "sha256": "b79d90175decc174325d3b7c7985b1a6fd4806bcf927f34c08b558e5a9dc6978",
+      "bytes": 72368,
+      "width": 600,
+      "height": 466
+    },
+    {
+      "seq": 74,
+      "identity_key": "gongwang_jiale",
+      "caption": {
+        "zh": "嘉乐堂（恭王府官网资料图）",
+        "en": "嘉乐堂 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/74.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/773022ec88aa452888bf29becbdbffe3.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/773022ec88aa452888bf29becbdbffe3/images/嘉乐堂替换图1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_773022ec88aa",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_773022ec88aa_4.original",
+        "sha256": "9c845623160b91f1036ca5bf85b87c96953897250862438cb084fac3b47e8601",
+        "bytes": 226768
+      },
+      "sha256": "8a5be526796d3f7bf297fe278c184a5a8785a386614dde4e2fde96e391ef8097",
+      "bytes": 99512,
+      "width": 600,
+      "height": 400
+    },
+    {
+      "seq": 75,
+      "identity_key": "gongwang_baoguang",
+      "caption": {
+        "zh": "葆光室（恭王府官网资料图）",
+        "en": "葆光室 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/75.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201409/d19e8da03c124135b88c7fc005546bf2.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201409/d19e8da03c124135b88c7fc005546bf2/images/20140919143905365.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_d19e8da03c12",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_d19e8da03c12_4.original",
+        "sha256": "c30d87111da92425d075d94636c698b6242acec58f857f99ea73f2193967e6fc",
+        "bytes": 185882
+      },
+      "sha256": "ab8beb46c2d1e665b5d6c0ac39f56bac6f773907de4137396df0ca2905973669",
+      "bytes": 103707,
+      "width": 600,
+      "height": 399
+    },
+    {
+      "seq": 76,
+      "identity_key": "gongwang_xijin",
+      "caption": {
+        "zh": "锡晋斋（恭王府官网资料图）",
+        "en": "锡晋斋 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/76.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201409/3930a3d27bd541c18d569c8a7e9ab8a1.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201409/3930a3d27bd541c18d569c8a7e9ab8a1/images/锡晋斋替换图1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_3930a3d27bd5",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_3930a3d27bd5_4.original",
+        "sha256": "aea3c6abcab8e8c93f9f0a6cc1100549e09f7ddf5f970f98c07cc9908a6b9630",
+        "bytes": 96009
+      },
+      "sha256": "d6e2d13f7621722218173b98aded3ad289840a0c91ac602da51f452181c2d09e",
+      "bytes": 85640,
+      "width": 600,
+      "height": 400
+    },
+    {
+      "seq": 77,
+      "identity_key": "gongwang_duofu",
+      "caption": {
+        "zh": "多福轩（恭王府官网资料图）",
+        "en": "多福轩 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/77.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/ee3370b43e5749c5bd46832443ef822c.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/ee3370b43e5749c5bd46832443ef822c/images/多福轩1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_ee3370b43e57",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_ee3370b43e57_4.original",
+        "sha256": "0091d81241f809cff92dfdfaea1cb61d5dafb95e425799d1a664486c2890e447",
+        "bytes": 348908
+      },
+      "sha256": "210ee279517eac0341afbb4112222ab75645d62c94b76438c781252ebabacb40",
+      "bytes": 72989,
+      "width": 600,
+      "height": 394
+    },
+    {
+      "seq": 78,
+      "identity_key": "gongwang_ledao",
+      "caption": {
+        "zh": "乐道堂（恭王府官网资料图）",
+        "en": "乐道堂 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/78.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201705/a239768aa3844c81b668e88ea29af445.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201705/a239768aa3844c81b668e88ea29af445/images/乐道堂.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_a239768aa384",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_a239768aa384_4.original",
+        "sha256": "e81f22dba230da5f404bd8a3fe392947744f60675b3d255d68b93f1e21784936",
+        "bytes": 400540
+      },
+      "sha256": "8c96d62b0fe2b15b53176bc4266674872e5bcac6c95e7f880ef8612857199e93",
+      "bytes": 92766,
+      "width": 600,
+      "height": 399
+    },
+    {
+      "seq": 79,
+      "identity_key": "gongwang_archery",
+      "caption": {
+        "zh": "箭道（恭王府官网资料图）",
+        "en": "箭道 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/79.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201403/fa52f16a3d334628bffbacc7847d3a50.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201403/fa52f16a3d334628bffbacc7847d3a50/images/25a4662a5d84aefefd44127c4fa80336.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_fa52f16a3d33",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_fa52f16a3d33_4.original",
+        "sha256": "7b0e82eb939d14d44be2b100b0375e453b041c2aae0e532952fd2d5a58e76156",
+        "bytes": 115382
+      },
+      "sha256": "c1f1983fdafe65eb1f61e6fdb6d50338a7581196ec8c273bb96030ee0332a012",
+      "bytes": 63566,
+      "width": 600,
+      "height": 416
+    },
+    {
+      "seq": 80,
+      "identity_key": "gongwang_dule",
+      "caption": {
+        "zh": "独乐峰（恭王府官网资料图）",
+        "en": "独乐峰 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/80.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201403/b16f60cfa64f407fac18752a03e28d38.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201403/b16f60cfa64f407fac18752a03e28d38/images/1f50b4f7b20972c93d2974dd6e828000.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_b16f60cfa64f",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_b16f60cfa64f_4.original",
+        "sha256": "d2ed9b509e5b41d261311dea27796dee998f40a89a118f0b0cfa6171f51b23a1",
+        "bytes": 332663
+      },
+      "sha256": "c9d905ce177e10c3e95b88e25f000baeec7c336fda6f5908e5761059cc01655c",
+      "bytes": 186099,
+      "width": 600,
+      "height": 901
+    },
+    {
+      "seq": 81,
+      "identity_key": "gongwang_fuchi",
+      "caption": {
+        "zh": "蝠池（恭王府官网资料图）",
+        "en": "蝠池 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/81.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/98ce2006cadb4d3d99586b21a0e47d1e.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/98ce2006cadb4d3d99586b21a0e47d1e/images/蝠池 替换图1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_98ce2006cadb",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_98ce2006cadb_4.original",
+        "sha256": "53a000950bb77ba3301798d620f6eda598558d43765acda22ebc1b8cb923e7f4",
+        "bytes": 101808
+      },
+      "sha256": "8c03a910180f8a836d67572645bc4aa83451f3b99594f1539711e8734e9fcc92",
+      "bytes": 83461,
+      "width": 600,
+      "height": 400
+    },
+    {
+      "seq": 82,
+      "identity_key": "gongwang_dihua",
+      "caption": {
+        "zh": "棣华轩（恭王府官网资料图）",
+        "en": "棣华轩 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/82.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201403/7fe6bc6439444d338c17c5d230b9ed16.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201403/7fe6bc6439444d338c17c5d230b9ed16/images/棣华轩2.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_7fe6bc643944",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_7fe6bc643944_4.original",
+        "sha256": "4be7f0bdffe61058a715304475224cda45df9d090e5a54297053e09179b2657c",
+        "bytes": 683351
+      },
+      "sha256": "afc4806a7a463e28eea059bda270f87a53a1fa95bb9c103aea867c379a84fc90",
+      "bytes": 146729,
+      "width": 590,
+      "height": 599
+    },
+    {
+      "seq": 83,
+      "identity_key": "gongwang_anshan",
+      "caption": {
+        "zh": "安善堂（恭王府官网资料图）",
+        "en": "安善堂 — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/83.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/55325015c4164b6592c669bc578d3966.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/55325015c4164b6592c669bc578d3966/images/安善堂.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_55325015c416",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_55325015c416_4.original",
+        "sha256": "5cae35d26a5cf6fba64d85f39d128df23bea7ccb309d825b4f25d967292c470e",
+        "bytes": 676991
+      },
+      "sha256": "e08682f6e624a96472c1eb9b03d96bee8077d6f2dff700d9c94f415dc84bbefc",
+      "bytes": 114747,
+      "width": 600,
+      "height": 476
+    },
+    {
+      "seq": 84,
+      "identity_key": "gongwang_dicui",
+      "caption": {
+        "zh": "滴翠岩（含秘云洞）（恭王府官网资料图）",
+        "en": "滴翠岩（含秘云洞） — palace museum source image"
+      },
+      "path": "img/nanluo_shichahai/84.jpg",
+      "source": {
+        "title": "恭王府博物馆官网",
+        "url": "https://www.pgm.org.cn/pgm/wfjd/201402/0de26d7a36e841c9a686e413e4aebdad.shtml"
+      },
+      "image_url": "https://www.pgm.org.cn/pgm/wfjd/201402/0de26d7a36e841c9a686e413e4aebdad/images/滴翠岩替换图1.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "pgm_0de26d7a36e8",
+        "index": 4
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/pgm_0de26d7a36e8_4.original",
+        "sha256": "997ca931b17c6cca00528b2f014e27a04e1f98ef38a4bd511a1260807f06b587",
+        "bytes": 95354
+      },
+      "sha256": "deb953d5d74fda73e3c1c0ad2fd8cbd531dd8bdce59f51db2ed2b04c3056af82",
+      "bytes": 77272,
+      "width": 600,
+      "height": 399
+    },
+    {
+      "seq": 85,
+      "identity_key": "shop_wenyu",
+      "caption": {
+        "zh": "文宇奶酪南锣鼓巷店门面（点评资料图）",
+        "en": "Wenyu Dairy, Nanluoguxiang branch frontage"
+      },
+      "path": "img/nanluo_shichahai/85.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/513701/photos?pg=1"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/FumNz-Vi2PAjOPu4HoiP0dybg2sfhwttVo6SOiWxd30N6036Pn1RZedA5xy8dCUYl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_wenyu_photos",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_wenyu_photos_0.original",
+        "sha256": "22988f68bbc024bd49821df1ca8ff1367eda790c428cdc7c0ea630c8cc1c9fb1",
+        "bytes": 12683
+      },
+      "sha256": "77084f1dbae310d31d79b69a92dcee6d095b8cf941b6ef289fa529ccd0d2a945",
+      "bytes": 12670,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 86,
+      "identity_key": "shop_fangzhuan",
+      "caption": {
+        "zh": "方砖厂胡同店门面（点评资料图，品牌69号不作门牌）",
+        "en": "Fangzhuanchang branch frontage; brand name is not the street number"
+      },
+      "path": "img/nanluo_shichahai/86.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/23596296/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/QXlrXveSY_-xOhPWN7zH4fXIOvZJYm0-FdGY_j0Bdi5tBtIGg5DrYVY4C2LexZmKl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_fangzhuan",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_fangzhuan_0.original",
+        "sha256": "8259923482c05e6a7716984da48f1f98b42a869d477344892cd67b5f614b938e",
+        "bytes": 15005
+      },
+      "sha256": "e983bc1c3e4e4af9c057faa31a626b65214e3d7cc664831931b04dfd6d256aac",
+      "bytes": 15363,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 87,
+      "identity_key": "shop_jingxiu",
+      "caption": {
+        "zh": "景秀餐厅南锣鼓巷店门面（点评资料图）",
+        "en": "Jingxiu Restaurant branch frontage"
+      },
+      "path": "img/nanluo_shichahai/87.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/1944160/photos?pg=39"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/W7wpJtkONkAkdktG2feahEt403vRspv8MnYeQ_dGwd34cChPnizlYjVJGV6GWcfll0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_jingxiu_photos",
+        "index": 3
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_jingxiu_photos_3.original",
+        "sha256": "334cd9594a31a08205fe94116a786b800df5085f10624c82222cd8dcec39f0c0",
+        "bytes": 15927
+      },
+      "sha256": "c8b95caee288bef8bc3c49a925dc5659549cdcc6efd8ee908fbea89a13dccb1b",
+      "bytes": 16261,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 88,
+      "identity_key": "shop_beiping",
+      "caption": {
+        "zh": "北平花园·北平咖啡南锣鼓巷店华夫饼（点评现页组合名称含MUA摩造汉堡，非实时菜单）",
+        "en": "Waffle at Beiping Garden Cafe; platform composite name includes MUA Burger; archival menu image"
+      },
+      "path": "img/nanluo_shichahai/88.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/50258464/photos?pg=47"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/F8kW_8zYPFOWh9vU4uWlrSTj9AVEaYK3SkzLa1HcaBTPmgMTRZ6S51ChWDmtQU-el0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_beiping_current",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_beiping_current_0.original",
+        "sha256": "82a5a64beeb9cee0af1d1b89a6b517dde521bba6457b1ad29e1cfea3607356cf",
+        "bytes": 11995
+      },
+      "sha256": "840ce2ee1d13ccfe962f775a28a3a02f8feed0595657a24b35146e1ce1c26d96",
+      "bytes": 12438,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 89,
+      "identity_key": "shop_tangfang",
+      "caption": {
+        "zh": "糖房咖啡南锣鼓巷店平台饮品资料图",
+        "en": "Tangfang Cafe Nanluoguxiang branch drinks, platform image"
+      },
+      "path": "img/nanluo_shichahai/89.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/130314586/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/zZwuLTlSI4CQcc_yBfGa-zJ_6ecwJAbkdpIkufoUQDqQwhMdSqiBQXpCemwnGxkol0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_tangfang",
+        "index": 2
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_tangfang_2.original",
+        "sha256": "d95fbb5b3317f86275d9ff9c653c1b005eb129959eb542679b82e128dd4c6b48",
+        "bytes": 10207
+      },
+      "sha256": "3230d8a31fd279ebf872e8beb799d31dbb50607915f2d564843f9e65115e8106",
+      "bytes": 10713,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 90,
+      "identity_key": "shop_jingshan",
+      "caption": {
+        "zh": "京扇子南锣鼓巷店扇子陈列（点评资料图）",
+        "en": "Jing Shanzi branch fan display"
+      },
+      "path": "img/nanluo_shichahai/90.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/G5bQyUPgpIHBJ5qj/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/xsdkeq2hqAH0pa4MEQ3y1cgw1QV7Z862txqTfGOe6nVzl6QxVMk327vmlZRx4QT3l0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_jingshan_photos",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_jingshan_photos_0.original",
+        "sha256": "ae8c0559d3c2784726e4132e9e0b598dc9c37b18bc460c53977e7301158b59fd",
+        "bytes": 18922
+      },
+      "sha256": "bc4efebbb0c1faa4ff815f3859c2b9606e3cdb661e45b2a9d564becf383851cd",
+      "bytes": 18616,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 91,
+      "identity_key": "shop_yiduo",
+      "caption": {
+        "zh": "一朵一果南锣鼓巷店平台商品陈列（不代表另一分店的体验项目）",
+        "en": "Yiduo Yiguo branch merchandise; no activities inferred for other branches"
+      },
+      "path": "img/nanluo_shichahai/91.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/2933107/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/GzC2mFbFijZ3Osk6jGff6YAnL1eLwVTrvNUVNaz19b4548DEdl7FDY0c-SEs6aTpl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_yiduo_photos",
+        "index": 1
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_yiduo_photos_1.original",
+        "sha256": "fcf21b56bf54d640d71a72e596bc323dd28d15159fe57f18b07581b8746d87e1",
+        "bytes": 14531
+      },
+      "sha256": "f31f63e20ca953487ed80d1f06e3273e94dcd190958ee65d4d12c4299fdd6181",
+      "bytes": 15002,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 92,
+      "identity_key": "shop_jiaquer",
+      "caption": {
+        "zh": "家雀儿手作文创店门面（北京旅游网报道）",
+        "en": "Sparrow craft shop frontage, official Beijing Tourism report"
+      },
+      "path": "img/nanluo_shichahai/92.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://www.visitbeijing.com.cn/article/4QaBE5LXvDL"
+      },
+      "image_url": "https://oss-rs.visitbeijing.com.cn/imageDir/49dc2fe1cfac21a5abaf828e17a86cd9.png",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "shop_news2026",
+        "index": 10
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/shop_news2026_10.original",
+        "sha256": "c46b81a96ab2472ccf94c22f93b4c8270f268daef618037bd8240008cd55c3fd",
+        "bytes": 182456
+      },
+      "sha256": "7d74e2bcf303d0fef07d28ce0026470b98ac401b47ba5db3e282e7ba9f9893d0",
+      "bytes": 187041,
+      "width": 1080,
+      "height": 813
+    },
+    {
+      "seq": 93,
+      "identity_key": "shop_qingsong",
+      "caption": {
+        "zh": "青松造物设计师共创空间门面（北京日报客户端转载东城报道）",
+        "en": "Chillson Creation storefront, Dongcheng report"
+      },
+      "path": "img/nanluo_shichahai/93.jpg",
+      "source": {
+        "title": "北京日报客户端 · 北京东城官方发布",
+        "url": "https://xinwen.bjd.com.cn/content/s6835335cd5de6019b802ef8f.html"
+      },
+      "image_url": "https://static.bjd.com.cn/dams-res/mps/image/202505/27/68352da8d5de43d8a1cad143.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "shops_newspaper",
+        "index": 2
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/shops_newspaper_2.original",
+        "sha256": "cbae25ce043382209dc8d47038011b393438bcfa682be8a690a8ace91285423d",
+        "bytes": 2890044
+      },
+      "sha256": "c0246ad24c95f126179017adacddbeb24130ad3723f27393096d1a0e595bea5f",
+      "bytes": 256857,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "seq": 94,
+      "identity_key": "shop_qiaoke",
+      "caption": {
+        "zh": "巧克玩家南锣鼓巷店门面（北京日报客户端转载东城报道）",
+        "en": "Choc Player Nanluoguxiang branch frontage, Dongcheng report"
+      },
+      "path": "img/nanluo_shichahai/94.jpg",
+      "source": {
+        "title": "北京日报客户端 · 北京东城官方发布",
+        "url": "https://xinwen.bjd.com.cn/content/s6835335cd5de6019b802ef8f.html"
+      },
+      "image_url": "https://static.bjd.com.cn/dams-res/mps/image/202505/27/68352dacd5de43d8a1cad14f.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "shops_newspaper",
+        "index": 11
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/shops_newspaper_11.original",
+        "sha256": "1ff29591565cd8aadd3e441aefdc4f14d2120b052d0252f0e19e5fd5eaf352fd",
+        "bytes": 2699008
+      },
+      "sha256": "68a7d5631fc62c1041dcb7d59c96cbcd636650a6d30f2686387542326bb38012",
+      "bytes": 246151,
+      "width": 1280,
+      "height": 853
+    },
+    {
+      "seq": 95,
+      "identity_key": "shop_kaorouji",
+      "caption": {
+        "zh": "烤肉季饭庄门面（前海东沿14号，对应点评门店资料图）",
+        "en": "Kaorouji Restaurant frontage, 14 Qianhai Dongyan; matching platform branch"
+      },
+      "path": "img/nanluo_shichahai/95.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/507776/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/k61VMWhPezwFSYV0G2zU8J30HypNks1SD08miZ7C1WzvnLz9ntEClBBR4rOLEYXUl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_kaorouji_current",
+        "index": 1
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_kaorouji_current_1.original",
+        "sha256": "24325863418a7a54a09cf45e543121394517407914212dd021400ffbd89a740c",
+        "bytes": 15078
+      },
+      "sha256": "7d737b5eff046bea30fab438fafc1770ec20eb904ffe40425d25096506e28653",
+      "bytes": 15070,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 97,
+      "identity_key": "shop_yaerli",
+      "caption": {
+        "zh": "鸦儿李记什刹海店涮肉资料图（点评，非实时菜单）",
+        "en": "Yaer Liji Shichahai branch sliced meat, archival platform image"
+      },
+      "path": "img/nanluo_shichahai/97.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/j72DSsty6GRFjsTC/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/RmuoaMZNW0Shk-hZ-RCoitnjhDk-j3NyotMAkI1avW1yMd-7hnwcssLLKNNk-iBYl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_yaerli_photos",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_yaerli_photos_0.original",
+        "sha256": "1e942831c58fc2cf6d52685c397b04659e412478302bc766b88f66f3943c88d2",
+        "bytes": 12454
+      },
+      "sha256": "c7705170111c74455a3d8059679a3ff137ee1871dd7d02f396f05dcace764e01",
+      "bytes": 12226,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 98,
+      "identity_key": "shop_huguosi",
+      "caption": {
+        "zh": "护国寺小吃地安门店门面（点评资料图）",
+        "en": "Huguosi Snacks Dianmen branch frontage"
+      },
+      "path": "img/nanluo_shichahai/98.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/509774/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/HKpi4nHYvKjgO4wyFeFWwhWT16MwdC6Z8YbIdOC9uhf4cChPnizlYjVJGV6GWcfll0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_huguosi",
+        "index": 0
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_huguosi_0.original",
+        "sha256": "532f40a8f3e18b7536e167ecf63ae1691014d230413682944108ae7873ee8a54",
+        "bytes": 13827
+      },
+      "sha256": "ccee9bcacaeecc7a5392bc748fcedbcc6a5d10eb92cb51b266d9f9d1a22a4a78",
+      "bytes": 13894,
+      "width": 240,
+      "height": 180
+    },
+    {
+      "seq": 99,
+      "identity_key": "shop_postoffice",
+      "caption": {
+        "zh": "大清邮政信柜门面与投信场景（2021年政府报道）",
+        "en": "Imperial Post frontage and mailing scene, 2021 district report"
+      },
+      "path": "img/nanluo_shichahai/99.jpg",
+      "source": {
+        "title": "北京市西城区人民政府",
+        "url": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv901777.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20210927/1632706848111046865.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "shop_postoffice",
+        "index": 6
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/shop_postoffice_6.original",
+        "sha256": "644b41603bb2fbcfaa2c15f864e87727e96108e2dbd82718b6c16caf02d8b0b8",
+        "bytes": 103450
+      },
+      "sha256": "6deb8c49f8e5df3941848e67b5ba42ec65c14823471df83cf1efb8f4da8d92c2",
+      "bytes": 29096,
+      "width": 364,
+      "height": 243
+    },
+    {
+      "seq": 100,
+      "identity_key": "shop_fuhuazhai",
+      "caption": {
+        "zh": "富华斋护国新天地店门面（点评资料图）",
+        "en": "Fuhuazhai Huguo Xintiandi branch frontage"
+      },
+      "path": "img/nanluo_shichahai/100.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/77241850/photos"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/YBrruN4hCwFBBaIcEJx_ws_td3r22T5uzBawZ-4xYklDUUtcoDbOdKa3qkBAt0aql0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_fuhuazhai",
+        "index": 2
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_fuhuazhai_2.original",
+        "sha256": "6cc350e76943d374799640b6b8181a73af305760a8ef9cc5db735c6bac00445c",
+        "bytes": 13817
+      },
+      "sha256": "2e5da7035f35a2a586f026c6276f58f2dc4b39fa044984c2a7f9fc5bf1372fc8",
+      "bytes": 13855,
+      "width": 240,
+      "height": 180
+    }
+  ],
+  "supplementary_photos": [
+    {
+      "seq": 96,
+      "identity_key": "shop_qingyun",
+      "caption": {
+        "zh": "庆云楼什刹海店点评菜品资料图（非实时菜单）",
+        "en": "Qingyunlou Shichahai branch food, archival platform image"
+      },
+      "path": "img/nanluo_shichahai/96-dp.jpg",
+      "source": {
+        "title": "大众点评 · 对应门店公开相册",
+        "url": "https://www.dianping.com/shop/507860/photos?pg=12"
+      },
+      "image_url": "https://qcloud.dpfile.com/pc/EvwzPrwdzA1vYHwWo5kBnTYCzzorT6vg9oUMJz3fWBNsPtG5Yemz42TBAO-JS0YLl0cm-Lf9tDMlLZpO7rb3bg.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "license": null,
+      "checked_on": "2026-10-24",
+      "match_basis": "执行助手逐张查看画面并与具体来源主体、门店身份或馆方单节点页面核对；不按泛化关键词自动配图。图片不作实时经营、开放或菜单承诺。",
+      "source_capture": {
+        "source_id": "dp_qingyun_photos",
+        "index": 2
+      },
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_expand_originals/dp_qingyun_photos_2.original",
+        "sha256": "d6e99fe1b5f22ed5b5cdf6db8764e44fd604fab02a2c02664e5a544f85ffea7e",
+        "bytes": 11824
+      },
+      "sha256": "890f0a21fff580ab7d6dddebf7c0130cf5af9b2506ad27747e927dc7fbf77cc1",
+      "bytes": 12317,
+      "width": 240,
+      "height": 180
     }
   ]
 }

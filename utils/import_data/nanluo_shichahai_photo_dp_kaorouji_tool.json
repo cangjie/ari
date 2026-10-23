@@ -1,0 +1,14 @@
+[
+  {
+    "source_id": "dp_kaorouji_tool",
+    "source_url": "https://www.dianping.com/shop/19276166/photos",
+    "title": "聚德华天烤肉季·宴会厅(什刹海总店)-图片-北京-大众点评网",
+    "index": 0,
+    "url": "https://p0.meituan.net/ugcpic/c1f93832371e001db55237352bc1b063410250.jpg%40240w_180h_1e_1c_1l%7Cwatermark%3D0",
+    "retrieval": "public web tool image link 335; direct HTML returned 404; no challenge bypass",
+    "status": "ok",
+    "original": "exports/nanluo_shichahai_photo_expand_originals/dp_kaorouji_tool_0.original",
+    "bytes": 9672,
+    "sha256": "7cbcbb21f2c361d22e1c880f44658d9f697b761d401697dc35e23e828ac6c7a1"
+  }
+]

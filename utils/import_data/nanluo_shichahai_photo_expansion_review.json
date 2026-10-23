@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-10-24",
+  "items": [
+    {
+      "source": "hutong_walk、hutong_memory大部分候选",
+      "reason": "SIPA明确请勿转载，或照片为五道营、砖塔、史家等其他胡同，不借给本清单"
+    },
+    {
+      "source": "Commons:Mei Lanfang Memorial Museum 20260610.jpg",
+      "reason": "图与描述均为泰州市梅兰芳纪念馆，非北京护国寺街故居；已改用北京对应照片"
+    },
+    {
+      "source": "大众点评photos/album的多店重复5张图片",
+      "reason": "通用推荐模块，不是对应门店照片；改用带门店alt及公开photo条目的页面"
+    },
+    {
+      "source": "juer索引6/7",
+      "reason": "玉河水道，不误配帽儿胡同"
+    }
+  ]
+}

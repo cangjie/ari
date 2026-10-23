@@ -1,0 +1,959 @@
+{
+  "diagnosis": "8 initial generic Mozilla requests returned 429; descriptive project UA HEAD then returned 200, remaining 599999/600000; sequential project-UA retrieval; originals and first failure preserved",
+  "downloads": [
+    {
+      "source_id": "commons_20",
+      "source_url": "https://commons.wikimedia.org/wiki/File:%E5%8F%AF%E5%9B%AD%E7%9A%84%E5%9E%82%E8%8A%B1%E9%97%A8.jpg",
+      "title": "File:可园的垂花门.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/%E5%8F%AF%E5%9B%AD%E7%9A%84%E5%9E%82%E8%8A%B1%E9%97%A8.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 20,
+      "metadata": {
+        "DateTime": {
+          "value": "2006-06-03 07:49:32",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "可园的垂花门",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "GFDL|Taken with Panasonic Lumix DMC-FZ20|CC-BY-SA-2.5,2.0,1.0|License migration redundant|Major National Historical and Cultural Sites in Beijing|Self-published work|Chuihua",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "可园的垂花门（北京市东城区帽儿胡同11号） Beijing KeYuan",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2005-02-10",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "用心阁拍摄",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "用心阁",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "GFDL",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 3.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 3.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-3.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_20_0.original",
+      "bytes": 617537,
+      "sha256": "2905dee472e98c0786401a6cff7db0eac41890509f76584cae0e193e64cc41f2"
+    },
+    {
+      "source_id": "commons_23",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maodunguju.JPG",
+      "title": "File:Maodunguju.JPG",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Maodunguju.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 23,
+      "metadata": {
+        "DateTime": {
+          "value": "2009-01-25 12:34:46",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Maodunguju",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "GFDL|Taken with Fujifilm FinePix S6500fd|License migration redundant|CC-BY-SA-4.0,3.0,2.5,2.0,1.0|Former Residence of Mao Dun (Beijing)|Self-published work|Files with coordinates missing SDC location of creation",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "39.937086",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "116.398478",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Mao Dun's house",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2009-01",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "个人拍摄(self made)",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Charlie_fong\" title=\"User:Charlie fong\">Charlie fong</a>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "Released under the <a href=\"//commons.wikimedia.org/wiki/GNU_Free_Documentation_License\" class=\"mw-redirect\" title=\"GNU Free Documentation License\">GNU Free Documentation License</a>.",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_23_0.original",
+      "bytes": 673009,
+      "sha256": "d0915be6fd74e3048d0bab3173c7c2f25c7611d7517f2662811e632b54b11713"
+    },
+    {
+      "source_id": "commons_38",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_Jinding_Bridge_(20211008151133).jpg",
+      "title": "File:Wanning Bridge from Jinding Bridge (20211008151133).jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 38,
+      "metadata": {
+        "DateTime": {
+          "value": "2021-10-08 14:10:56",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Wanning Bridge from Jinding Bridge (20211008151133)",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Wanning Bridge|Self-published work|Beijing photographs taken on 2021-10-08|Files with coordinates missing SDC location of creation|October 2021 in Beijing",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "39.934986",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "116.388992",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "80mm enough.",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2021-10-08 15:11:33",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_38_0.original",
+      "bytes": 10545162,
+      "sha256": "ec64d204849635179c823d91d9775cb894350e2e865da89d6a80d711493b6689"
+    },
+    {
+      "source_id": "commons_50",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wangfudamen.JPG",
+      "title": "File:Wangfudamen.JPG",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Wangfudamen.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 50,
+      "metadata": {
+        "DateTime": {
+          "value": "2007-10-04 19:29:43",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Wangfudamen",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "GFDL|Taken with Panasonic Lumix DMC-FZ20|License migration completed|Prince Chun Mansion|Red gates|Photographs of the national flag of the People's Republic of China in Beijing",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "​王府大门。",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "16 February 2005 (original upload date)",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//zh.wikipedia.org\" href=\"https://zh.wikipedia.org\">zh.wikipedia</a></span> to Commons by <a href=\"//commons.wikimedia.org/wiki/User:Mandavi\" title=\"User:Mandavi\">Mandavi</a> using <a href=\"https://iw.toolforge.org/commonshelper/\" class=\"extiw\" title=\"toollabs:commonshelper/\">CommonsHelper</a>.</bdi>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/zh:User:%E7%94%A8%E5%BF%83%E9%98%81\" class=\"extiw\" title=\"w:zh:User:用心阁\">用心阁</a> at <a href=\"https://en.wikipedia.org/wiki/zh:\" class=\"extiw\" title=\"w:zh:\">Chinese Wikipedia</a>.",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 3.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 3.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-3.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_50_0.original",
+      "bytes": 36254,
+      "sha256": "5bd952c7ed9798b9b13c2034c8f357ced04e27adccdb2e5f0d1cbca49c734960"
+    },
+    {
+      "source_id": "commons_54",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Former_Huixiantang_in_Beijing_2010-11.jpg",
+      "title": "File:Former Huixiantang in Beijing 2010-11.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Former_Huixiantang_in_Beijing_2010-11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 54,
+      "metadata": {
+        "DateTime": {
+          "value": "2014-12-20 10:44:20",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Former Huixiantang in Beijing 2010-11",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Taken with Sony DSC-H2|Restaurants in Beijing|Self-published work",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "​北京会贤堂旧址。",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2010-11-14",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E7%8C%AB%E7%8C%AB%E7%9A%84%E6%97%A5%E8%AE%B0%E6%9C%AC\" title=\"User:猫猫的日记本\">猫猫的日记本</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_54_0.original",
+      "bytes": 1635956,
+      "sha256": "cdbfd53926732d50765e1eced35aad72ef83126ce35221be562ab0e94131b849"
+    },
+    {
+      "source_id": "commons_58",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mei_Lanfang_Memorial_Museum_20260610.jpg",
+      "title": "File:Mei Lanfang Memorial Museum 20260610.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Mei_Lanfang_Memorial_Museum_20260610.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 58,
+      "metadata": {
+        "DateTime": {
+          "value": "2026-07-21 08:19:54",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Mei Lanfang Memorial Museum 20260610",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Hailing District|Self-published work|Files with coordinates missing SDC location of creation|Taken with Xiaomi 14 Pro|Museums in Taizhou, Jiangsu",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "32.487128",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "119.925651",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "​泰州市梅兰芳纪念馆正门",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2026-06-10 11:28:05",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:JacobLyu\" title=\"User:JacobLyu\">JacobLyu</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_58_0.original",
+      "bytes": 6392299,
+      "sha256": "03adb993515b607287b41062e1b3a4bb85977a80cecc0a00eaafde194b88c6cb"
+    },
+    {
+      "source_id": "commons_17",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Juerhutong.jpg",
+      "title": "File:Juerhutong.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Juerhutong.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 17,
+      "metadata": {
+        "DateTime": {
+          "value": "2014-06-04 09:44:27",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Juerhutong",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "PD-user|Ju'er Hutong",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "​菊儿胡同东口",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2008-11-22",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"https://en.wikipedia.org/wiki/zh:User:%E9%AB%98%E6%99%B6\" class=\"extiw\" title=\"w:zh:User:高晶\">高晶</a> at <a href=\"https://en.wikipedia.org/wiki/zh:\" class=\"extiw\" title=\"w:zh:\">Chinese Wikipedia</a>",
+          "source": "commons-desc-page"
+        },
+        "Permission": {
+          "value": "<table class=\"licensetpl\" style=\"display:none\">\n<tbody><tr>\n<td><span class=\"licensetpl_short\">Public domain</span><span class=\"licensetpl_long\">Public domain</span><span class=\"licensetpl_link_req\">false</span><span class=\"licensetpl_attr_req\">false</span>\n</td></tr></tbody></table>\n<table style=\"width: 100%; clear: both; margin: 0.5em auto; background-color: var(--background-color-progressive-subtle, #f7f8ff); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #8888aa); border-spacing: 8px; padding: 0px;\" dir=\"ltr\" class=\"layouttemplate\" lang=\"en\">\n<tbody><tr>\n<td><span class=\"layouttemplateargs\" style=\"display:none;speak:none;\" title=\"template=PD-user-w 1%3D%3Azh%3A 2%3Dwikipedia 3%3D%E9%AB%98%E6%99%B6 4%3D 5%3D 6%3D 7%3D%5B%5B%3Azh%3AUser%3A%E9%AB%98%E6%99%B6%7C%E9%AB%98%E6%99%B6%5D%5D\"> </span> <span typeof=\"mw:File\"><span><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/120px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"64\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/PD-icon.svg/250px-PD-icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"196\" data-file-height=\"196\"></span></span>\n</td>\n<td>This work has been released into the <b><a href=\"https://en.wikipedia.org/wiki/en:public_domain\" class=\"extiw\" title=\"w:en:public domain\">public domain</a></b> by its author, <b><a href=\"https://zh.wikipedia.org/wiki/User:%E9%AB%98%E6%99%B6\" class=\"extiw\" title=\"zh:User:高晶\">高晶</a>, at the <a href=\"https://zh.wikipedia.org/wiki/\" class=\"extiw\" title=\"zh:\">English Wikipedia</a> project</b>. This applies worldwide.<br>\n<p><small>In case this is not legally possible:</small><br> <a href=\"https://zh.wikipedia.org/wiki/User:%E9%AB%98%E6%99%B6\" class=\"extiw\" title=\"zh:User:高晶\">高晶</a> grants anyone the right to use this work <b>for any purpose</b>, without any conditions, unless such conditions are required by law.\n</p>\n</td></tr></tbody></table>",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseShortName": {
+          "value": "Public domain",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Public domain",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Copyrighted": {
+          "value": "False",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "pd",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_17_0.original",
+      "bytes": 1070051,
+      "sha256": "cce5410789f0b0316d5c8a2356353347712885316581704c8c5368d9997514f8"
+    },
+    {
+      "source_id": "commons_62",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Beijing_Bell_Tower_1.jpg",
+      "title": "File:Beijing Bell Tower 1.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 62,
+      "metadata": {
+        "DateTime": {
+          "value": "2023-08-17 08:29:18",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Beijing Bell Tower 1",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Clouds and blue sky in China|Beijing Bell Tower|China photographs taken on 2023-07-11|Self-published work|July 2023 in Beijing|North-South Central Axis of Beijing City",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Beijing Bell Tower",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2023-07-11",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_62_0.original",
+      "bytes": 9011467,
+      "sha256": "817118922c11a5478ddd12dfca9906528026fef277e72b6ae8aacc98b25fe54e"
+    },
+    {
+      "source_id": "commons_57",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Deshengmen_Northeast_View2022.jpg",
+      "title": "File:Deshengmen Northeast View2022.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 57,
+      "metadata": {
+        "DateTime": {
+          "value": "2022-03-16 15:55:05",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "Deshengmen Northeast View2022",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "Deshengmen|Self-published work|Files with coordinates missing SDC location of creation",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "39.949300",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "116.374030",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "​北京德胜门，东北方向视角",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2022-03-15",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Charlie_fong\" title=\"User:Charlie fong\">Charlie fong</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC BY-SA 4.0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Attribution-Share Alike 4.0",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "true",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "https://creativecommons.org/licenses/by-sa/4.0",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc-by-sa-4.0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_57_0.original",
+      "bytes": 436299,
+      "sha256": "deed935ff41ce2d24213694104f3e5ad1dc8e3b80e7a60ef2a836bb53d449c74"
+    },
+    {
+      "source_id": "commons_53",
+      "source_url": "https://commons.wikimedia.org/wiki/File:2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg",
+      "title": "File:2014.09.04.160142 Former Fu Jen University Dingfu Jie Beijing.jpg",
+      "index": 0,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "seq": 53,
+      "metadata": {
+        "DateTime": {
+          "value": "2014-09-12 16:54:59",
+          "source": "mediawiki-metadata",
+          "hidden": ""
+        },
+        "ObjectName": {
+          "value": "2014.09.04.160142 Former Fu Jen University Dingfu Jie Beijing",
+          "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+          "value": 1.2,
+          "source": "extension",
+          "hidden": ""
+        },
+        "Categories": {
+          "value": "China photographs taken on 2014-09-04|Taken with Fujifilm FinePix T555|CC-Zero|Former Fu Jen University (Beijing)|Self-published work|September 2014 in Beijing|Dingfu Jie (Beijing)|Files with coordinates missing SDC location of creation",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "Assessments": {
+          "value": "",
+          "source": "commons-categories",
+          "hidden": ""
+        },
+        "GPSLatitude": {
+          "value": "39.934382",
+          "source": "commons-desc-page"
+        },
+        "GPSLongitude": {
+          "value": "116.378133",
+          "source": "commons-desc-page"
+        },
+        "GPSMapDatum": {
+          "value": "WGS-84",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "ImageDescription": {
+          "value": "Former Fu Jen University at Dingfu Jie (Dingfu Street) - Beijing, 4.9.2014",
+          "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+          "value": "2014-09-04 16:01:42",
+          "source": "commons-desc-page"
+        },
+        "Credit": {
+          "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+          "source": "commons-desc-page"
+        },
+        "Artist": {
+          "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+          "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+          "value": "CC0",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "UsageTerms": {
+          "value": "Creative Commons Zero, Public Domain Dedication",
+          "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+          "value": "false",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "LicenseUrl": {
+          "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+          "value": "True",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "Restrictions": {
+          "value": "",
+          "source": "commons-desc-page",
+          "hidden": ""
+        },
+        "License": {
+          "value": "cc0",
+          "source": "commons-templates",
+          "hidden": ""
+        }
+      },
+      "status": "ok",
+      "user_agent": "AriTour/1.0 image source verification (https://tour.snowmeet.top)",
+      "original": "exports/nanluo_shichahai_photo_expand_originals/commons_53_0.original",
+      "bytes": 1041803,
+      "sha256": "61047cce5dd8f79da5aa5d5fe6295b7725aca8d08de583a309d8bda3725efc05"
+    }
+  ]
+}

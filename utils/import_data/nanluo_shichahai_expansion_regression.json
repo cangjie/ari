@@ -1,0 +1,34 @@
+{
+  "old_qa_materials": [
+    {
+      "key": "wmhg",
+      "unchanged": true,
+      "material_sha256": "d8d952e380cc3fd2f52dc4ccb51c55ce3a416dda777baabbd2cb866c079fb2eb"
+    },
+    {
+      "key": "wanping",
+      "unchanged": true,
+      "material_sha256": "e8c455e9edde2949673e91e226797dfb679dc89e39c37b9a6ee41b31d2adcdef"
+    }
+  ],
+  "business_counts": {
+    "museums": 10,
+    "artworks": 31426
+  },
+  "business_written": false,
+  "pytest_passed": 91,
+  "pytest_real_db_skipped": 3,
+  "local_browser_scenes_passed": 20,
+  "steady_theme_headers_passed": 4,
+  "final_review": {
+    "model": "claude-sonnet-5",
+    "effort": "medium",
+    "critical": 0,
+    "important": 0,
+    "note": "最终返回的minor为空结构占位，无待处理问题"
+  },
+  "browser_log": "exports/nanluo_expansion_browser_final.log",
+  "preserved_first_media_audit": true,
+  "new_model_calls": 5,
+  "new_model_errors": 0
+}

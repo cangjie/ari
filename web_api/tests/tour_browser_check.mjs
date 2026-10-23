@@ -331,11 +331,13 @@ const SCENES = {
     await p.shot('collection-map-focus');
     await p.click('#view-list');
     check(await p.eval("document.querySelectorAll('.collection-item').length === 100 && !document.getElementById('collection').hidden"), '返回清单仍完整保留100条');
-    const photos = JSON.parse(await readFile(join(TOUR_DIR, '../../utils/import_data/nanluo_shichahai_tour_photos.json'), 'utf8')).photos;
+    const manifest = JSON.parse(await readFile(join(TOUR_DIR, '../../utils/import_data/nanluo_shichahai_tour_photos.json'), 'utf8'));
+    const photos = manifest.photos.filter((photo) => !process.env.PHOTO_SEQS || process.env.PHOTO_SEQS.split(',').includes(String(photo.seq)));
     for (const photo of photos) {
       await p.eval(`document.querySelector('[data-place="${photo.identity_key}"]').click(); true`);
       const decoded = await p.eval("Promise.all(Array.from(document.querySelectorAll('#sheet-body .tour-photo img')).map(function(i){return i.decode().then(function(){return i.naturalWidth>0;}).catch(function(){return false;});}))");
-      check(decoded.length === 1 && decoded[0], `第${photo.seq}条资料图实际解码成功`, decoded);
+      const expected = 1 + (manifest.supplementary_photos || []).filter((item) => item.seq === photo.seq).length;
+      check(decoded.length === expected && decoded.every(Boolean), `第${photo.seq}条资料图实际解码成功`, decoded);
       check(await p.eval("!!document.querySelector('#sheet-body .tour-photo figcaption a')"), '图片带可查阅来源');
       if (photo.seq === 48) await p.shot('collection-photo-guomoruo');
       await p.click('#sheet [data-close]');
@@ -344,6 +346,34 @@ const SCENES = {
     await sleep(400);
     await p.click('[data-open=wmhg]');
     check(await p.eval("document.getElementById('collection-views').hidden && !document.getElementById('me').hidden"), '切回既有地图恢复定位控件');
+  },
+  async collection_experience(p) {
+    await p.open('/#nanluo_shichahai');
+    await p.eval("document.getElementById('collection-shop-tag').value='经济实惠'; document.getElementById('collection-shop-tag').dispatchEvent(new Event('change')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length===2 && !!document.querySelector('[data-place=shop_fangzhuan]') && !!document.querySelector('[data-place=shop_huguosi]')"), '经济实惠标签只筛出有27/28元人均快照的两家');
+    await p.eval("document.getElementById('collection-shop-tag').value='文艺'; document.getElementById('collection-shop-tag').dispatchEvent(new Event('change')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length===4"), '文艺标签可筛选四家设计纸品手作商铺');
+    await p.shot('collection-shop-tags');
+    await p.click('#view-themes');
+    check(await p.eval("!document.getElementById('collection-themes').hidden && document.querySelectorAll('.theme-card').length===4 && document.querySelectorAll('[data-theme-start] option').length===16"), '四条主题线路各有四个地铁起点');
+    await p.shot('collection-themes');
+    for (const id of ['classic','arts','history','budget']) {
+      const before=await p.eval(`document.querySelector('[data-theme="${id}"] .theme-summary').textContent`);
+      await p.eval(`var s=document.querySelector('[data-theme-start="${id}"]');s.value='gulou';s.dispatchEvent(new Event('change',{bubbles:true}));true`);
+      check(await p.eval(`document.querySelector('[data-theme-start="${id}"]').value==='gulou' && document.querySelector('[data-theme="${id}"] .theme-summary').textContent!==${JSON.stringify(before)}`), `${id}更换地铁起点后实际更新路程与时长`);
+      await p.click(`[data-theme-map="${id}"]`);
+      await sleep(250);
+      check(await p.eval(`!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && document.getElementById('route-summary').textContent.includes('无到站提醒') && document.getElementById('me').hidden`), `${id}路线沿道路显示，未启用假GPS或到站提醒`);
+      check(await p.eval("document.querySelector('.topbar').getBoundingClientRect().y>=0 && document.getElementById('collection-views').getBoundingClientRect().y>=0 && scrollY===0"), `${id}绘制稳定后标题与切换栏仍可见`);
+      if (id==='history') await p.shot('collection-history-map');
+      await p.click('#view-themes');
+    }
+    await p.eval("document.querySelector('[data-theme=history] [data-place=songqingling]').click();true");
+    check(await p.eval("document.getElementById('sheet-body').innerText.includes('宋庆龄故居')"), '历史线路可打开宋庆龄故居原介绍');
+    await p.click('#sheet [data-close]');
+    await p.click('#view-list');
+    await p.eval("document.getElementById('collection-shop-tag').value='all';document.getElementById('collection-shop-tag').dispatchEvent(new Event('change'));true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length===100"), '线路视图可返回完整100条');
   },
   async wanping(p) {
     const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));

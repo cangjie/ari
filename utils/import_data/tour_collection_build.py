@@ -106,4 +106,6 @@ def build(key, config):
     )
     from tour_collection_media import augment
     augment(data, config)
+    from tour_collection_experience import augment as experiences
+    experiences(data, config)
     return data, [f'{key}: {len(stops)} 条已审资料；完整清单；可选来源地图与照片，无虚构停留时间或路线。']

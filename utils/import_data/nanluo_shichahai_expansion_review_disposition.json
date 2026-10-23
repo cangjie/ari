@@ -1,0 +1,29 @@
+{
+  "checked_on": "2026-10-24",
+  "prior_audit": "nanluo_shichahai_expansion_audit_sources.json",
+  "findings": [
+    {
+      "item": "important seq95 404",
+      "resolution": "独立AWS网络亦404，未归咎本机；改用确切饭庄门店507776的公开photos（HTTP200、门店alt烤肉季饭庄）及album地址前海东沿14号对应本条。新图1是门面，已目视。旧同址宴会厅图片原响应和本轮未发布JPEG保留，不再用于发布。",
+      "source": "https://www.dianping.com/shop/507776/photos/album",
+      "evidence": "会员相册 烤肉季饭庄 人均: ¥114 地址： 前海东沿14号 电话： 暂无 环境、交通、优惠等更多信息 >> 查看商户 附近商户 和木-归GUI TEMPLE·北京菜 南门涮肉(后海店) 清真·鸦儿李记·涮肉(什刹... 淮扬府(什刹海店) 后海16号·北京私房菜 关于我们 | 商户诚信公约 | 规则中心 | 媒体报道 | 商户入驻 | 推广服务 | 人才"
+    },
+    {
+      "item": "important seq53 CC0",
+      "resolution": "逐字核对Commons文件页与API：作者Hermann Luyken，该文件确为CC0。未按摄影者一般习惯推翻具体文件许可。",
+      "source": "https://commons.wikimedia.org/wiki/File:2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg",
+      "evidence": "Licensing [ edit ] I, the copyright holder of this work, hereby publish it under the following license: This file is made available under the Creative Commons CC0 1.0 Universal Public Domain Dedication . The person who associated a work with this deed has dedicated the work to the public domain by waiving all of their rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission. http://creativecommons.org/publicdomain/zero/1.0/deed.en CC0 Creative Commons Zero, Public Domain Dedication",
+      "html_sha256": "08f3c97b7f87711286a5920a133af60215b99f8ee5f12e6566582cafcd4ba8e3"
+    },
+    {
+      "item": "minor seq92 来源措辞",
+      "resolution": "图注改为北京旅游网报道，与直接来源title一致；未声称该站即东城区文旅局。"
+    },
+    {
+      "item": "minor seq99 2021",
+      "resolution": "原已审介绍明确写2021年报道；本轮另核对留存HTTP全文发布日期2021及原图路径20210927，保留2021图注。",
+      "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv901777.html",
+      "evidence": "为北京老街增添了一抹色彩。“大清邮政信柜”的前身隶属于地安门邮政局什刹海邮电所，为配合烟袋斜街展现老北京文化、展示北京邮政的悠久历史，才以“大清邮政信柜”命名。2021年8月，“大清邮政信柜”启动了酝酿已久的升级改造工程，如今重新对外开放引发媒体和游客的高度关注。 走入“大清邮政信柜”，一进门，大龙邮票、蟠龙邮票等珍贵收藏品被嵌在迎面的橙色墙体之中，不少游客站在墙前观看。另一面橙色墙面上贴满了游客打卡留念的明信片，“考上心仪的大学”“祝父母身体健康”“想与"
+    }
+  ]
+}

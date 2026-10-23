@@ -50,7 +50,7 @@ def test_photo_files_match_subject_manifest_without_borrowing_parent_photos():
     m = collection()
     manifest = json.loads((HERE / f'{KEY}_tour_photos.json').read_text('utf-8'))
     photos = {p['seq']: p for p in manifest['photos']}
-    assert len(photos) == 10
+    assert len(photos) == 60
     for p in m['places']:
         seq = p['stops'][0]
         assert bool(p['photo']) == (seq in photos)
@@ -59,7 +59,8 @@ def test_photo_files_match_subject_manifest_without_borrowing_parent_photos():
             assert p['id'] == photo['identity_key']
             assert hashlib.sha256((ROOT / 'web_api/tour' / p['photo']).read_bytes()).hexdigest() == photo['sha256']
             assert p['photo_info']['source'] == photo['source']
-    assert m['stops']['48']['photo'] and not m['stops']['76']['photo']
+    assert m['stops']['48']['photo'] and m['stops']['76']['photo']
+    assert '平复帖' not in m['stops']['76']['photo_info']['caption']['zh']  # 建筑图不冒充帖原件。
     material = llm.museum_material(m)
     for p in m['places']:
         if p.get('position'):
@@ -95,7 +96,7 @@ def test_visitor_and_assistant_share_review_and_merchant_boundaries():
             if s[f]['zh']:
                 assert s[f]['zh'] in material
     assert '建议停留约 None' not in material and '建议停留约 0' not in material
-    assert '本清单未提供已核实的路线或停留时间' in material
+    assert '主题步行方案' in material and '不提供到站提醒' in material
     assert '平台口碑与消费信息另列' in material
     assert 'Core 7.3510' in material  # 页面显示的分数也必须进入问答材料。
 
@@ -135,3 +136,66 @@ def test_three_lakes_have_complete_outer_rings_and_island_holes():
     lake['members'].pop()
     with pytest.raises(ValueError, match='无法闭合'):
         water_rings(lake)
+
+
+def test_photo_expansion_preserves_originals_and_covers_all_shop_branches():
+    m=collection()
+    baseline=json.loads((HERE/f'{KEY}_photo_expansion_baseline.json').read_text())
+    for filename,digest in baseline['files'].items():
+        assert hashlib.sha256((HERE/filename).read_bytes()).hexdigest()==digest
+    manifest=json.loads((HERE/f'{KEY}_tour_photos.json').read_text())
+    photos={p['seq']:p for p in manifest['photos']}
+    for old in baseline['photos']:
+        assert photos[old['seq']]==old
+    for stop in m['stops'].values():
+        if stop['kind']=='shop':assert stop['photo']
+    for p in manifest['supplementary_photos']:
+        assert hashlib.sha256((ROOT/'web_api/tour'/p['path']).read_bytes()).hexdigest()==p['sha256']
+    dp={p['seq']for p in manifest['photos']+manifest['supplementary_photos']if 'dianping.com' in p['source']['url']}
+    assert dp=={85,86,87,88,89,90,91,95,96,97,98,100}
+    assert {92,93,94,99}<=set(photos)  # 用户明确允许的四家官方实景图。
+    assert '北京' in photos[58]['caption']['zh'] and '非泰州' in photos[58]['caption']['zh']
+
+
+def test_shop_consumption_labels_are_separate_from_cultural_tiers():
+    m=collection();shops=[s for s in m['stops'].values()if s['kind']=='shop']
+    assert len({s['shop_category']for s in shops})==6
+    assert all(s['shop_tags'] and s['shop_label_note'] for s in shops)
+    assert {s['seq']for s in shops if '经济实惠' in s['shop_tags']}=={86,98}
+    assert all('文艺' not in s.get('shop_tags',[])for s in shops if s['seq'] in [85,86,87,95,96,97,98])
+    material=llm.museum_material(m)
+    for s in shops:
+        assert s['shop_category']in material and s['shop_label_note']in material
+
+
+def test_four_themes_have_four_subway_origins_and_only_sourced_public_road_paths():
+    import sys
+    sys.path.insert(0,str(HERE))
+    from tour_collection_experience import StreetGraph,meters
+    m=collection();osm=json.loads((HERE/f'{KEY}_osm_data.json').read_text());graph=StreetGraph(osm)
+    assert {t['name']for t in m['itineraries']}=={'经典游览线路','文艺观光线路','历史探索线路','穷游线路'}
+    assert {s['id']for s in m['itinerary_stations']}=={'nanluo','shichahai','beihai','gulou'}
+    assert len({s['source']['url']for s in m['itinerary_stations']})==4
+    assert all(step['streets']for theme in m['itineraries']for step in theme['steps'])
+    assert not m['routes'] and all('r' not in p for p in m['places'])
+    for theme in m['itineraries']:
+        assert len(theme['variants'])==4
+        assert sum(s['minutes']for s in theme['steps'])>0
+        for variant in theme['variants']:
+            assert set(variant['way_ids'])<=set(graph.ways)
+            assert variant['total_minutes']==variant['walk_minutes']+variant['stay_minutes']
+            assert variant['walk_minutes']==round(variant['meters']/60)
+            actual=sum(meters(a,b)for a,b in zip(variant['path_wgs84'],variant['path_wgs84'][1:]))
+            assert abs(actual-variant['meters'])<2
+            assert len(variant['legs'])==len(theme['steps'])+1
+        # 不把道路仅有的端点当整条胡同位置；每一站都落在各自来源街段。
+        for step in theme['steps']:
+            ref=step['street_reference']
+            assert ref.get('way_id') in graph.ways or ref.get('osm_node') in graph.nodes
+    arts=next(t for t in m['itineraries']if t['id']=='arts')
+    points={s['seq']:s['point']for s in arts['steps']}
+    assert points[11]!=points[12] and points[12]!=points[31]
+    history=next(t for t in m['itineraries']if t['id']=='history')
+    assert {44,49,59}<={s['seq']for s in history['steps']}
+    budget=next(t for t in m['itineraries']if t['id']=='budget')
+    assert '门票0元' in budget['fee'] and all(s['seq']not in [49,59,68]for s in budget['steps'])

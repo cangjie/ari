@@ -4,14 +4,53 @@
       "provider": "anthropic_cli",
       "model": "claude-sonnet-5",
       "effort": "medium",
-      "stage": "audit_stage1_slim",
-      "status": "error",
+      "stage": "audit_collection_expand_recheck",
+      "status": "ok",
       "calls": 1,
-      "prompt_tokens": null,
-      "cached_tokens": null,
-      "completion_tokens": null,
+      "prompt_tokens": 6,
+      "cached_tokens": 33715,
+      "completion_tokens": 7023,
       "reasoning_tokens": null,
-      "latency_ms": 186075
+      "latency_ms": 104338
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_collection_expand_routes",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 2,
+      "cached_tokens": 0,
+      "completion_tokens": 7060,
+      "reasoning_tokens": null,
+      "latency_ms": 95650
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_collection_expand_sources",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 2,
+      "cached_tokens": 0,
+      "completion_tokens": 7980,
+      "reasoning_tokens": null,
+      "latency_ms": 114268
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_collection_expand_ui",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 2,
+      "cached_tokens": 0,
+      "completion_tokens": 6649,
+      "reasoning_tokens": null,
+      "latency_ms": 86280
     },
     {
       "provider": "anthropic_cli",
@@ -25,6 +64,19 @@
       "completion_tokens": 87678,
       "reasoning_tokens": null,
       "latency_ms": 1158649
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_stage1_slim",
+      "status": "error",
+      "calls": 1,
+      "prompt_tokens": null,
+      "cached_tokens": null,
+      "completion_tokens": null,
+      "reasoning_tokens": null,
+      "latency_ms": 186075
     },
     {
       "provider": "anthropic_cli",
@@ -155,6 +207,19 @@
       "completion_tokens": 26995,
       "reasoning_tokens": 3240,
       "latency_ms": 287644
+    },
+    {
+      "provider": "openai_codex",
+      "model": "gpt-5.6-luna",
+      "effort": "medium",
+      "stage": "source_shop_labels",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 13113,
+      "cached_tokens": 0,
+      "completion_tokens": 1751,
+      "reasoning_tokens": 713,
+      "latency_ms": 19915
     },
     {
       "provider": "openai_codex",
@@ -300,12 +365,13 @@
       "latency_ms": 10871
     }
   ],
-  "success_calls": 103,
+  "success_calls": 108,
   "error_calls": 4,
   "limitations": [
     "Claude标准缓存的输入侧token有历史计量缺口；provider原始usage另留。",
     "初版一次英文修订校验失败及一次Claude额度上限均保留；不能声称完整零失败计量。增补分组复核前主动结束的一轮，已返回的两组结果另存且保留模型缓存，未用于最终分组。",
     "发布首轮CLI因大输入后的上下文压缩与结构字段丢失失败（llm_call.id=3928），原始会话和usage单独留存；标准缓存错误行的token仍为空，不补造成完整账单。",
     "媒体首轮审计单次回复达到32000输出token上限后主动中止，缓存错误id3931保留；已写入会话的usage另存，不冒充完整计量。"
-  ]
+  ],
+  "updated_on": "2026-10-24T07:03:44.314680+08:00"
 }

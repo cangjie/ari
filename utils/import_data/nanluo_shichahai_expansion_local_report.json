@@ -1,0 +1,77 @@
+{
+  "checked_on": "2026-10-24T07:03:44.597802+08:00",
+  "public": false,
+  "url": "https://tour.snowmeet.top/#nanluo_shichahai",
+  "records": 100,
+  "photo_records": 60,
+  "published_images": 61,
+  "image_bytes": 6915231,
+  "shops_with_photos": 16,
+  "dianping_shops": 12,
+  "authorized_official_shops": [
+    92,
+    93,
+    94,
+    99
+  ],
+  "map_positions": 37,
+  "themes": [
+    {
+      "name": "经典游览线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "beihai",
+        "meters": 4050,
+        "walk_minutes": 68,
+        "stay_minutes": 240,
+        "total_minutes": 308
+      }
+    },
+    {
+      "name": "文艺观光线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "shichahai",
+        "meters": 3152,
+        "walk_minutes": 53,
+        "stay_minutes": 155,
+        "total_minutes": 208
+      }
+    },
+    {
+      "name": "历史探索线路",
+      "variants": 4,
+      "default": {
+        "start_station": "beihai",
+        "end_station": "gulou",
+        "meters": 6262,
+        "walk_minutes": 104,
+        "stay_minutes": 235,
+        "total_minutes": 339
+      }
+    },
+    {
+      "name": "穷游线路",
+      "variants": 4,
+      "default": {
+        "start_station": "shichahai",
+        "end_station": "nanluo",
+        "meters": 5771,
+        "walk_minutes": 96,
+        "stay_minutes": 145,
+        "total_minutes": 241
+      }
+    }
+  ],
+  "source_rating_workbook_unchanged": true,
+  "old_10_photos_unchanged": true,
+  "public_assets": [],
+  "public_qa": [],
+  "public_posts_sent": 0,
+  "apk_rebuilt": false,
+  "android_device_verified": false,
+  "nginx_changed": false,
+  "worktree_base_commit": "8744700475c050f25715486a2df957dba3c58d72"
+}

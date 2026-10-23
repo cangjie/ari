@@ -22,7 +22,8 @@ def main():
     args = ap.parse_args()
     manifest = json.loads((HERE / args.manifest).read_text('utf-8'))
     settings = manifest['jpeg']
-    for photo in manifest['photos']:
+    all_photos=manifest['photos']+manifest.get('supplementary_photos',[])
+    for photo in all_photos:
         original = (HERE / photo['original']['path']).read_bytes()
         assert hashlib.sha256(original).hexdigest() == photo['original']['sha256'], photo['seq']
         image = Image.open(io.BytesIO(original))
@@ -39,7 +40,7 @@ def main():
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(body)
         assert target.read_bytes() == body, photo['path']
-    print(f"{len(manifest['photos'])}张：原件完整、发布编码及哈希一致")
+    print(f"{len(all_photos)}张：原件完整、发布编码及哈希一致")
 
 
 if __name__ == '__main__':

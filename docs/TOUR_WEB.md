@@ -465,3 +465,11 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 ### 南锣鼓巷及什刹海地图/照片补充（2026-10-23）
 
 完整100条清单新增37处OSM来源参考位置与10张独立资料图；清单和景点地图可切换，详情可以聚焦地图。`collection`中的`map_mode=browse`只用于位置浏览，不送原生定位缓存、不启动GPS或自动到站。未知位置、缺图条目仍可浏览；未生成路线和停留时间。地图、图片均随仓库静态提供，无站外资源请求；App继续打开同一网页，无需更新APK。问答材料同步增加页面可见的位置口径、来源和图注，只提供文字不让模型冒充识图。因同时修改`web_api/app/tour_qa_llm.py`，部署后重启`ari-web-api`；不改Nginx。数据口径、来源与验收见`docs/NANLUO_SHICHAHAI_DATA.md`及`nanluo_shichahai_media_release_report.json`。
+
+### 南锣鼓巷及什刹海体验补全（2026-10-24）
+
+照片现覆盖60/100条，共61张，原10张保留；16家商铺全部有图，其中12家含点评图、4家按用户授权用官方实景。僧王府用侣松园宾馆相关院落图，宋庆龄故居原图保留、广化寺补图。商铺增加六种消费分类、经济实惠/文艺等有依据的标签与组合筛选，文化评级保持不变。
+
+新增“主题线路”入口，经典游览、文艺观光、历史探索、穷游各支持南锣鼓巷、什刹海、北海北、鼓楼大街四个起点。通过公共道路计算步行示意和估计时长，区分收费入馆/免费外观、列出固定终点；不启用GPS或到站提醒。原37处地图参考点不变。线路在独立`itineraries`字段，原生定位用的`routes`仍空，已有App直接读线上变更。
+
+重建：先执行`nanluo_shichahai_experience_data.py`，再执行`tour_build.py --museum nanluo_shichahai`；图片从留存原响应通过`nanluo_shichahai_photo_selection.py`与`tour_photo_build.py`核对。原介绍、V3、Excel不改。部署须`git pull --ff-only`并重启`ari-web-api`使问答读取新增标签/线路字段；Nginx和APK不变。完整来源、固定模型审计与验收见`docs/NANLUO_SHICHAHAI_DATA.md`和`nanluo_shichahai_expansion_*report.json`。

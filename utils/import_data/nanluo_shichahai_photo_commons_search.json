@@ -1,0 +1,3606 @@
+[
+  {
+    "query": "Deshengmen",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "37656924": {
+            "pageid": 37656924,
+            "ns": 6,
+            "title": "File:2014.08.19.151448 Deshengmen Beijing.jpg",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/2014.08.19.151448_Deshengmen_Beijing.jpg/1280px-2014.08.19.151448_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/b/bf/2014.08.19.151448_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/2014.08.19.151448_Deshengmen_Beijing.jpg/1280px-2014.08.19.151448_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/b/bf/2014.08.19.151448_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/2014.08.19.151448_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:2014.08.19.151448_Deshengmen_Beijing.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=37656924",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2015-01-03 17:51:30",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "2014.08.19.151448 Deshengmen Beijing",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2014-08-19|Taken with Sony DSLR-A100|CC-Zero|Deshengmen|Self-published work|August 2014 in Beijing|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.949213",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.372553",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Desgengmen (Desheng Gate) - Beijing, 19.8.2014",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2014-08-19 15:14:48",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "37656979": {
+            "pageid": 37656979,
+            "ns": 6,
+            "title": "File:2014.08.19.151524 Deshengmen Beijing.jpg",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2014.08.19.151524_Deshengmen_Beijing.jpg/1280px-2014.08.19.151524_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/1/1c/2014.08.19.151524_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/2014.08.19.151524_Deshengmen_Beijing.jpg/1280px-2014.08.19.151524_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/1/1c/2014.08.19.151524_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/2014.08.19.151524_Deshengmen_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:2014.08.19.151524_Deshengmen_Beijing.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=37656979",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2015-01-03 17:56:29",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "2014.08.19.151524 Deshengmen Beijing",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2014-08-19|Taken with Sony DSLR-A100|CC-Zero|Deshengmen|Self-published work|August 2014 in Beijing|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.948428",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.372518",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Deshengmen (Desheng Gate) - Beijing, 19.8.2014",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2014-08-19 15:15:24",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "108886532": {
+            "pageid": 108886532,
+            "ns": 6,
+            "title": "File:Archer's Tower at Deshengmen (9867335425).jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Archer%27s_Tower_at_Deshengmen_%289867335425%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Archer%27s_Tower_at_Deshengmen_(9867335425).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108886532",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-08-18 19:56:49",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Archer's Tower at Deshengmen (9867335425)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2011-04-08|CC-Zero|Deshengmen|Photographs by Gary Lee Todd|April 2011 in Beijing|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.948442",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.373261",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Ming-era defensive tower for Beijing. 2011 visit. Complete indexed photo collection at WorldHistoryPics.com.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2011-04-08 17:15",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9867335425/\">Archer's Tower at Deshengmen</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "108886554": {
+            "pageid": 108886554,
+            "ns": 6,
+            "title": "File:Archer's Tower at Deshengmen (9867335454).jpg",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Archer%27s_Tower_at_Deshengmen_%289867335454%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Archer%27s_Tower_at_Deshengmen_(9867335454).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108886554",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-08-18 19:56:59",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Archer's Tower at Deshengmen (9867335454)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2011-04-08|CC-Zero|Deshengmen|Photographs by Gary Lee Todd|April 2011 in Beijing|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.948442",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.373261",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Ming-era defensive tower for Beijing. 2011 visit. Complete indexed photo collection at WorldHistoryPics.com.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2011-04-08 17:16",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9867335454/\">Archer's Tower at Deshengmen</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "108886590": {
+            "pageid": 108886590,
+            "ns": 6,
+            "title": "File:Archer's Tower at Deshengmen (9867340776).jpg",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg/1280px-Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg/3840px-Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Archer%27s_Tower_at_Deshengmen_%289867340776%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Archer%27s_Tower_at_Deshengmen_(9867340776).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108886590",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-08-18 19:57:14",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Archer's Tower at Deshengmen (9867340776)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2011-04-08|CC-Zero|Deshengmen|Photographs by Gary Lee Todd|April 2011 in Beijing|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.948442",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.373261",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Ming-era defensive tower for Beijing. 2011 visit. Complete indexed photo collection at WorldHistoryPics.com.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2011-04-08 17:11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9867340776/\">Archer's Tower at Deshengmen</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "22676865": {
+            "pageid": 22676865,
+            "ns": 6,
+            "title": "File:CN-pek-deshengmen-tor.jpg",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/CN-pek-deshengmen-tor.jpg/1280px-CN-pek-deshengmen-tor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 850,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/1/14/CN-pek-deshengmen-tor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/CN-pek-deshengmen-tor.jpg/1280px-CN-pek-deshengmen-tor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 850,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/1/14/CN-pek-deshengmen-tor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/14/CN-pek-deshengmen-tor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:CN-pek-deshengmen-tor.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=22676865",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2012-11-13 23:39:13",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "CN-pek-deshengmen-tor",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2010-05-27|GFDL|Taken with Pentax K20D|Images with annotations|CC-BY-SA-3.0,2.5,2.0,1.0|License migration redundant|Deshengmen|Self-published work|Files by Wikivoyage user Bgabel|Files from Wikivoyage Shared",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Deshengmen-Stadttor, Peking",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2010-05-27",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"http://www.wikivoyage-old.org/shared/User%3ABgabel\">Bgabel</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Attribution": {
+                    "value": "User: Bgabel at  wikivoyage shared",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "79430875": {
+            "pageid": 79430875,
+            "ns": 6,
+            "title": "File:Deshengmen Gate by 2nd Ring Road.jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Deshengmen_Gate_by_2nd_Ring_Road.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                "thumbwidth": 1280,
+                "thumbheight": 958,
+                "thumbattribs": {
+                  "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Deshengmen_Gate_by_2nd_Ring_Road.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 958
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Deshengmen_Gate_by_2nd_Ring_Road.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Deshengmen_Gate_by_2nd_Ring_Road.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=79430875",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2004-07-14 17:47:33",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Deshengmen Gate by 2nd Ring Road",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "License migration completed|Deshengmen|GFDL-en|Photographs taken on 2004-07-06",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Deshengmen Gate as seen from the 2nd Ring Road",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "6 July 2004 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:DF08&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:DF08 (page does not exist)\">DF08</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:DF08\" title=\"User talk:DF08\">talk</a>) (<a href=\"//commons.wikimedia.org/wiki/Special:ListFiles/DF08\" title=\"Special:ListFiles/DF08\">Uploads</a>)",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "116123623": {
+            "pageid": 116123623,
+            "ns": 6,
+            "title": "File:Deshengmen Northeast View2022.jpg",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Deshengmen_Northeast_View2022.jpg/1280px-Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 720,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/8/89/Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Deshengmen_Northeast_View2022.jpg/1280px-Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 720,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/8/89/Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Deshengmen_Northeast_View2022.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Deshengmen_Northeast_View2022.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=116123623",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2022-03-16 15:55:05",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Deshengmen Northeast View2022",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Deshengmen|Self-published work|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.949300",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.374030",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "​北京德胜门，东北方向视角",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2022-03-15",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:Charlie_fong\" title=\"User:Charlie fong\">Charlie fong</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "query": "Beijing Bell Tower",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "136091482": {
+            "pageid": 136091482,
+            "ns": 6,
+            "title": "File:Beijing Bell Tower 1.jpg",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Beijing_Bell_Tower_1.jpg/1280px-Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Beijing_Bell_Tower_1.jpg/3840px-Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Beijing_Bell_Tower_1.jpg/1280px-Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Beijing_Bell_Tower_1.jpg/3840px-Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Beijing_Bell_Tower_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Beijing_Bell_Tower_1.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136091482",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-08-17 08:29:18",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Beijing Bell Tower 1",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Clouds and blue sky in China|Beijing Bell Tower|China photographs taken on 2023-07-11|Self-published work|July 2023 in Beijing|North-South Central Axis of Beijing City",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Beijing Bell Tower",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-07-11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "136091483": {
+            "pageid": 136091483,
+            "ns": 6,
+            "title": "File:Beijing Bell Tower 2.jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Beijing_Bell_Tower_2.jpg/1280px-Beijing_Bell_Tower_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Beijing_Bell_Tower_2.jpg/3840px-Beijing_Bell_Tower_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Beijing_Bell_Tower_2.jpg/1280px-Beijing_Bell_Tower_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Beijing_Bell_Tower_2.jpg/3840px-Beijing_Bell_Tower_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Beijing_Bell_Tower_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Beijing_Bell_Tower_2.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136091483",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-08-17 08:29:18",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Beijing Bell Tower 2",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Beijing Bell Tower|China photographs taken on 2023-07-11|Self-published work|July 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Beijing Bell Tower",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-07-11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "52547307": {
+            "pageid": 52547307,
+            "ns": 6,
+            "title": "File:Beijing Bell Tower 20160822.jpg",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Beijing_Bell_Tower_20160822.jpg/1280px-Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Beijing_Bell_Tower_20160822.jpg/1280px-Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Beijing_Bell_Tower_20160822.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=52547307",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2016-10-27 06:41:26",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Beijing Bell Tower 20160822",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Beijing Drum Tower|Beijing Bell Tower|Self-published work|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.939067",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.388869",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "南側より望む北京鐘楼",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2016-08-22 13:44:24",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:%E3%81%9D%E3%82%89%E3%81%BF%E3%81%BF\" title=\"User:そらみみ\">そらみみ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "52547306": {
+            "pageid": 52547306,
+            "ns": 6,
+            "title": "File:Beijing Drum Tower and Beijing Bell Tower 20160822.jpg",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg/1280px-Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/7/76/Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg/1280px-Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/76/Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Beijing_Drum_Tower_and_Beijing_Bell_Tower_20160822.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=52547306",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2016-10-27 06:41:26",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Beijing Drum Tower and Beijing Bell Tower 20160822",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Beijing Drum Tower|Beijing Bell Tower|Self-published work|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.938867",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389144",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "南側より望む北京鼓楼と鐘楼",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2016-08-22 13:43:48",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"mw:WikiLink\" href=\"https://commons.wikimedia.org/wiki/User:%E3%81%9D%E3%82%89%E3%81%BF%E3%81%BF\" title=\"User:そらみみ\">そらみみ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "4689376": {
+            "pageid": 4689376,
+            "ns": 6,
+            "title": "File:Beijingbelltower2.jpg",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Beijingbelltower2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "thumbattribs": {
+                  "src": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Beijingbelltower2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Beijingbelltower2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Beijingbelltower2.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=4689376",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2008-09-03 16:32:09",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Beijingbelltower2",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Taken with Canon PowerShot A95|Beijing Bell Tower|Flickr images reviewed by trusted users",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The Bell Tower of Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2007-07-19",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/gilad_rom/851321144/\">IMG_1561</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/gilad_rom/\">Zaptel</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 2.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 2.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/2.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-2.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "108887751": {
+            "pageid": 108887751,
+            "ns": 6,
+            "title": "File:Bell Tower, Beijing, Bell Tower in Beijing (9867626534).jpg",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg/1280px-Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg/3840px-Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg/1280px-Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg/3840px-Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Bell_Tower%2C_Beijing%2C_Bell_Tower_in_Beijing_%289867626534%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bell_Tower,_Beijing,_Bell_Tower_in_Beijing_(9867626534).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108887751",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-08-18 20:08:15",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Bell Tower, Beijing, Bell Tower in Beijing (9867626534)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "CC-Zero|Beijing Bell Tower|Photographs by Gary Lee Todd|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.941064",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389535",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "North of Forbidden City. Complete indexed photo collection at WorldHistoryPics.com.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2007-06-25 12:44",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9867626534/\">Bell Tower, Beijing, Bell Tower in Beijing</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "108887856": {
+            "pageid": 108887856,
+            "ns": 6,
+            "title": "File:Bell Tower, Beijing, The Bell Tower of Beijing (9867628126).jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg/1280px-Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 1920,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/4/40/Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg/1280px-Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 1920,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/4/40/Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Bell_Tower%2C_Beijing%2C_The_Bell_Tower_of_Beijing_%289867628126%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bell_Tower,_Beijing,_The_Bell_Tower_of_Beijing_(9867628126).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=108887856",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-08-18 20:09:26",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Bell Tower, Beijing, The Bell Tower of Beijing (9867628126)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "CC-Zero|Beijing Bell Tower|Photographs by Gary Lee Todd|Files with coordinates missing SDC location of creation|Flickr images reviewed by FlickreviewR 2|Files uploaded by Orizan",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.941080",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389558",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "North of Forbidden City. Complete indexed photo collection at WorldHistoryPics.com.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2007-06-25 12:49",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/101561334@N08/9867628126/\">Bell Tower, Beijing, The Bell Tower of Beijing</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/101561334@N08\">Gary Todd</a> from Xinzheng, China",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "127912561": {
+            "pageid": 127912561,
+            "ns": 6,
+            "title": "File:钟楼.jpg",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/%E9%92%9F%E6%A5%BC.jpg/1280px-%E9%92%9F%E6%A5%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 838,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/%E9%92%9F%E6%A5%BC.jpg/3840px-%E9%92%9F%E6%A5%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/%E9%92%9F%E6%A5%BC.jpg/1280px-%E9%92%9F%E6%A5%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 838,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/%E9%92%9F%E6%A5%BC.jpg/3840px-%E9%92%9F%E6%A5%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/%E9%92%9F%E6%A5%BC.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E9%92%9F%E6%A5%BC.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=127912561",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-01-19 14:19:38",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "钟楼",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Beijing Bell Tower|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Beijing Bell Tower taken in 2023",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-01-19",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:HanYang1989&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:HanYang1989 (page does not exist)\">HanYang1989</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "query": "Fu Jen University Beijing",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "35320979": {
+            "pageid": 35320979,
+            "ns": 6,
+            "title": "File:2014.09.04.160142 Former Fu Jen University Dingfu Jie Beijing.jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:2014.09.04.160142_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35320979",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2014-09-12 16:54:59",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "2014.09.04.160142 Former Fu Jen University Dingfu Jie Beijing",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2014-09-04|Taken with Fujifilm FinePix T555|CC-Zero|Former Fu Jen University (Beijing)|Self-published work|September 2014 in Beijing|Dingfu Jie (Beijing)|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934382",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.378133",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Former Fu Jen University at Dingfu Jie (Dingfu Street) - Beijing, 4.9.2014",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2014-09-04 16:01:42",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "35321045": {
+            "pageid": 35321045,
+            "ns": 6,
+            "title": "File:2014.09.04.160159 Sign Former Fu Jen University Dingfu Jie Beijing.jpg",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/3/38/2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/3/38/2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:2014.09.04.160159_Sign_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35321045",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2014-09-12 16:57:22",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "2014.09.04.160159 Sign Former Fu Jen University Dingfu Jie Beijing",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2014-09-04|Taken with Fujifilm FinePix T555|CC-Zero|Former Fu Jen University (Beijing)|Self-published work|September 2014 in Beijing|Dingfu Jie (Beijing)|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934376",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.378391",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Sign at former Fu Jen University at Dingfu Jie (Dingfu Street) - Beijing, 4.9.2014",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2014-09-04 16:01:59",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "35321063": {
+            "pageid": 35321063,
+            "ns": 6,
+            "title": "File:2014.09.04.160253 Former Fu Jen University Dingfu Jie Beijing.jpg",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/f/f3/2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg/1280px-2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/f/f3/2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:2014.09.04.160253_Former_Fu_Jen_University_Dingfu_Jie_Beijing.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=35321063",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2014-09-12 16:58:49",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "2014.09.04.160253 Former Fu Jen University Dingfu Jie Beijing",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2014-09-04|Taken with Fujifilm FinePix T555|CC-Zero|Former Fu Jen University (Beijing)|Self-published work|September 2014 in Beijing|Dingfu Jie (Beijing)|Files with coordinates missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934321",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.378087",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Former Fu Jen University at Dingfu Jie (Dingfu Street) - Beijing, 4.9.2014",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2014-09-04 16:02:53",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Hermann_Luyken\" title=\"User:Hermann Luyken\">Hermann Luyken</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Zero, Public Domain Dedication",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "false",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "94892161": {
+            "pageid": 94892161,
+            "ns": 6,
+            "title": "File:Site of Fu Jen Catholic University in Peking (20201009172530).jpg",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg/1280px-Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 854,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg/3840px-Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg/1280px-Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 854,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg/3840px-Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Site_of_Fu_Jen_Catholic_University_in_Peking_%2820201009172530%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Site_of_Fu_Jen_Catholic_University_in_Peking_(20201009172530).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=94892161",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2020-10-09 12:51:04",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Site of Fu Jen Catholic University in Peking (20201009172530)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Former Fu Jen University (Beijing)|Self-published work|Files with coordinates missing SDC location of creation|October 2020 in Beijing|Beijing photographs taken on 2020-10-09",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934325",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.378022",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "24mm... I've tried my best.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2020-10-09 17:25:30",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "82877569": {
+            "pageid": 82877569,
+            "ns": 6,
+            "title": "File:The old site of the Fu Jen Catholic University in Beijing 01.jpg",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_01.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82877569",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-10-06 08:45:08",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing 01",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Former Fu Jen University (Beijing)|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-05-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:EugeneShostakovich&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:EugeneShostakovich (page does not exist)\">EugeneShostakovich</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "82877568": {
+            "pageid": 82877568,
+            "ns": 6,
+            "title": "File:The old site of the Fu Jen Catholic University in Beijing 02.jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_02.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82877568",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-10-06 08:45:08",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing 02",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Former Fu Jen University (Beijing)|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-05-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:EugeneShostakovich&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:EugeneShostakovich (page does not exist)\">EugeneShostakovich</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "82877567": {
+            "pageid": 82877567,
+            "ns": 6,
+            "title": "File:The old site of the Fu Jen Catholic University in Beijing 03.jpg",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_03.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82877567",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-10-06 08:45:08",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing 03",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Former Fu Jen University (Beijing)|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-05-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:EugeneShostakovich&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:EugeneShostakovich (page does not exist)\">EugeneShostakovich</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "82877574": {
+            "pageid": 82877574,
+            "ns": 6,
+            "title": "File:The old site of the Fu Jen Catholic University in Beijing 04.jpg",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg/1280px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg/3840px-The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/f/fc/The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:The_old_site_of_the_Fu_Jen_Catholic_University_in_Beijing_04.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82877574",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2019-10-06 08:45:14",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing 04",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Former Fu Jen University (Beijing)|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "The old site of the Fu Jen Catholic University in Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2019-05-23",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:EugeneShostakovich&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:EugeneShostakovich (page does not exist)\">EugeneShostakovich</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "query": "Wanrong residence",
+    "data": {
+      "batchcomplete": ""
+    }
+  },
+  {
+    "query": "Beijing Prince Qing Mansion",
+    "data": {
+      "batchcomplete": ""
+    }
+  },
+  {
+    "query": "Wanning Bridge",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "11354485": {
+            "pageid": 11354485,
+            "ns": 6,
+            "title": "File:Houmenqiao 2.JPG",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Houmenqiao_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                "thumbwidth": 1280,
+                "thumbheight": 499,
+                "thumbattribs": {
+                  "src": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Houmenqiao_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 499
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Houmenqiao_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Houmenqiao_2.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=11354485",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2010-09-01 12:32:48",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Houmenqiao 2",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "GFDL|Taken with Panasonic Lumix DMC-FZ20|Wanning Bridge|License migration completed|Files moved from zh.wikipedia to Commons requiring review|Files moved to Commons requiring review as of 1 September 2010",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "​后门桥 用心阁于2005年3月5日拍摄于地安门外",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "18 April 2005 (original upload date)",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<bdi lang=\"en\" dir=\"ltr\">Transferred from <span class=\"plainlinks\"><a class=\"external text\" data-mw-original-href=\"//zh.wikipedia.org\" href=\"https://zh.wikipedia.org\">zh.wikipedia</a></span> to Commons by <a href=\"//commons.wikimedia.org/wiki/User:Shizhao\" title=\"User:Shizhao\">Shizhao</a> using <a href=\"https://iw.toolforge.org/commonshelper/\" class=\"extiw\" title=\"toollabs:commonshelper/\">CommonsHelper</a>.</bdi>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/zh:User:%E7%94%A8%E5%BF%83%E9%98%81\" class=\"extiw\" title=\"w:zh:User:用心阁\">用心阁</a> at <a href=\"https://en.wikipedia.org/wiki/zh:\" class=\"extiw\" title=\"w:zh:\">Chinese Wikipedia</a>.",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "136061119": {
+            "pageid": 136061119,
+            "ns": 6,
+            "title": "File:Wanning Bridge 1.jpg",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Wanning_Bridge_1.jpg/1280px-Wanning_Bridge_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Wanning_Bridge_1.jpg/3840px-Wanning_Bridge_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Wanning_Bridge_1.jpg/1280px-Wanning_Bridge_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Wanning_Bridge_1.jpg/3840px-Wanning_Bridge_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Wanning_Bridge_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_1.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136061119",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-08-16 14:04:27",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanning Bridge 1",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|China photographs taken on 2023-07-11|Self-published work|July 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Wanning Bridge",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-07-11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "110831992": {
+            "pageid": 110831992,
+            "ns": 6,
+            "title": "File:Wanning Bridge from Jinding Bridge (20211008151133).jpg",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg/1280px-Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg/3840px-Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg/1280px-Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg/3840px-Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Wanning_Bridge_from_Jinding_Bridge_%2820211008151133%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_Jinding_Bridge_(20211008151133).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110831992",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-10-08 14:10:56",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanning Bridge from Jinding Bridge (20211008151133)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|Self-published work|Beijing photographs taken on 2021-10-08|Files with coordinates missing SDC location of creation|October 2021 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934986",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.388992",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "80mm enough.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-10-08 15:11:33",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "110831988": {
+            "pageid": 110831988,
+            "ns": 6,
+            "title": "File:Wanning Bridge from the northwest (20211008150357).jpg",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg/1280px-Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg/3840px-Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg/1280px-Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg/3840px-Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Wanning_Bridge_from_the_northwest_%2820211008150357%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_the_northwest_(20211008150357).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110831988",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-10-08 14:10:53",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanning Bridge from the northwest (20211008150357)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|Self-published work|Beijing photographs taken on 2021-10-08|Files with coordinates missing SDC location of creation|October 2021 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.935222",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389794",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Southbound angle.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-10-08 15:03:57",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "110831986": {
+            "pageid": 110831986,
+            "ns": 6,
+            "title": "File:Wanning Bridge from the southeast (20211008150314).jpg",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg/1280px-Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg/3840px-Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg/1280px-Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg/3840px-Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Wanning_Bridge_from_the_southeast_%2820211008150314%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_the_southeast_(20211008150314).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110831986",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-10-08 14:10:54",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanning Bridge from the southeast (20211008150314)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|Self-published work|Beijing photographs taken on 2021-10-08|Files with coordinates missing SDC location of creation|October 2021 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934761",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389969",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Northbound angle.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-10-08 15:03:14",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "110831996": {
+            "pageid": 110831996,
+            "ns": 6,
+            "title": "File:Wanning Bridge from the west (20211008150518).jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Wanning_Bridge_from_the_west_%2820211008150518%29.jpg/1280px-Wanning_Bridge_from_the_west_%2820211008150518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 853,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Wanning_Bridge_from_the_west_%2820211008150518%29.jpg/3840px-Wanning_Bridge_from_the_west_%2820211008150518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Wanning_Bridge_from_the_west_%2820211008150518%29.jpg/1280px-Wanning_Bridge_from_the_west_%2820211008150518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 853,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Wanning_Bridge_from_the_west_%2820211008150518%29.jpg/3840px-Wanning_Bridge_from_the_west_%2820211008150518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Wanning_Bridge_from_the_west_%2820211008150518%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanning_Bridge_from_the_west_(20211008150518).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=110831996",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2021-10-08 14:11:05",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanning Bridge from the west (20211008150518)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|Self-published work|Beijing photographs taken on 2021-10-08|Files with coordinates missing SDC location of creation|October 2021 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.935092",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389564",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "SWW precisely.",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2021-10-08 15:05:18",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:N509FZ\" title=\"User:N509FZ\">N509FZ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "52622873": {
+            "pageid": 52622873,
+            "ns": 6,
+            "title": "File:Wanningqiao Bridge from Jindingqiao Bridge.jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg/1280px-Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg/1280px-Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Wanningqiao_Bridge_from_Jindingqiao_Bridge.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=52622873",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2016-10-30 02:54:17",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Wanningqiao Bridge from Jindingqiao Bridge",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|Di'anmen|Self-published work|Files with coordinates missing SDC location of creation|Canals in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "GPSLatitude": {
+                    "value": "39.934933",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSLongitude": {
+                    "value": "116.389053",
+                    "source": "commons-desc-page"
+                  },
+                  "GPSMapDatum": {
+                    "value": "WGS-84",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "金錠橋より望む万寧橋",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2016-08-22 13:30:30",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:%E3%81%9D%E3%82%89%E3%81%BF%E3%81%BF\" title=\"User:そらみみ\">そらみみ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "136061118": {
+            "pageid": 136061118,
+            "ns": 6,
+            "title": "File:澄清闸遗址.jpg",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg/1280px-%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                "thumbwidth": 1280,
+                "thumbheight": 960,
+                "responsiveUrls": {
+                  "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg/3840px-%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+                },
+                "thumbattribs": {
+                  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg/1280px-%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+                  "decoding": "async",
+                  "loading": "lazy",
+                  "width": 1280,
+                  "height": 960,
+                  "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg/3840px-%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+                },
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E6%BE%84%E6%B8%85%E9%97%B8%E9%81%97%E5%9D%80.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136061118",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-08-16 14:04:27",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "澄清闸遗址",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Wanning Bridge|China photographs taken on 2023-07-11|Self-published work|July 2023 in Beijing|Signs of the Major Historical and Cultural Site Protected at the National Level of Grand Canal in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "​澄清闸遗址",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-07-11",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:EditQ\" class=\"mw-redirect\" title=\"User:EditQ\">EditQ</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+]

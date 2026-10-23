@@ -159,7 +159,8 @@ def augment(data, config):
                 attribution=dict(zh='地图 © OpenStreetMap 贡献者 · ODbL · 位置仅供浏览',
                                  en='© OpenStreetMap contributors · ODbL · map browsing'))
     photo_path = HERE / manifest['photo_manifest']
-    photos = json.loads(photo_path.read_text('utf-8'))['photos']
+    photo_manifest = json.loads(photo_path.read_text('utf-8'))
+    photos = photo_manifest['photos']
     seen = set()
     for photo in photos:
         seq = photo['seq']
@@ -171,6 +172,14 @@ def augment(data, config):
         info = {k: photo[k] for k in ['caption', 'source', 'sha256', 'photographed_on', 'width', 'height']}
         for obj in [by_seq[seq], data['stops'][str(seq)]]:
             obj.update(photo=photo['path'], photo_info=info)
+    for photo in photo_manifest.get('supplementary_photos', []):
+        seq=photo['seq']
+        if (seq not in by_seq or photo['identity_key']!=by_seq[seq]['id']
+                or photo['path']!=f'img/{key}/{seq}-dp.jpg'
+                or sha(base.TOUR_DIR/photo['path'])!=photo['sha256']):
+            raise ValueError(f'补充照片身份或哈希不符：{seq}')
+        info={k:photo[k] for k in ['caption','source','sha256','photographed_on','width','height']}
+        data['stops'][str(seq)].setdefault('supplementary_photos',[]).append(dict(path=photo['path'],info=info))
     data['card']['cover'] = by_seq[manifest['cover_seq']]['photo']
     data['provenance'].update(media_sha256=sha(manifest_path), osm_sha256=sha(osm_path),
                               photos_sha256=sha(photo_path))

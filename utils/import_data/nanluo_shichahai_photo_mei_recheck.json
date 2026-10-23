@@ -1,0 +1,1464 @@
+[
+  {
+    "query": "Mei Lanfang former residence Beijing",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "5145570": {
+            "pageid": 5145570,
+            "ns": 6,
+            "title": "File:Mei Lanfang Memorial House.JPG",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mei_Lanfang_Memorial_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mei_Lanfang_Memorial_House.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5145570",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2008-11-06 08:32:58",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Mei Lanfang Memorial House",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2008-10",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gisling\" title=\"User:Gisling\">Gisling</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "806270": {
+            "pageid": 806270,
+            "ns": 6,
+            "title": "File:Meilanfang banshenxiang.JPG",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Meilanfang_banshenxiang.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Meilanfang_banshenxiang.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=806270",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2006-05-24 07:39:09",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Meilanfang banshenxiang",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2005-04-16|GFDL|Taken with Panasonic Lumix DMC-FZ20|Mei Lanfang|Mei Lanfang Memorial Museum, Beijing|License migration completed|Busts in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "​梅兰芳半身塑像，拍摄于梅兰芳故居。",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2005-04-16 15:41",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "Originally from <a class=\"external text\" data-mw-original-href=\"http://zh.wikipedia.org\" href=\"https://zh.wikipedia.org\">zh.wikipedia</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Yongxinge\" title=\"User:Yongxinge\">Yongxinge</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "<table style=\"width:100%; clear:both; margin:0.5em auto; background-color: var(--background-color-neutral-subtle, #f9f9f9); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #e0e0e0); border-spacing: 8px; box-sizing: border-box; padding: 0;\" dir=\"ltr\" lang=\"en\" class=\"layouttemplate licensetpl\">\n<tbody><tr>\n<td><span class=\"noviewer\" typeof=\"mw:File\"><span title=\"GNU head\"><img alt=\"GNU head\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/120px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/250px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"535\" data-file-height=\"523\"></span></span>\n</td>\n<td>Permission is granted to copy, distribute and/or modify this document under the terms of the <b><a href=\"https://en.wikipedia.org/wiki/en:GNU_Free_Documentation_License\" class=\"extiw\" title=\"w:en:GNU Free Documentation License\">GNU Free Documentation License</a></b>, Version 1.2 or any later version published by the <a href=\"https://en.wikipedia.org/wiki/en:Free_Software_Foundation\" class=\"extiw\" title=\"w:en:Free Software Foundation\">Free Software Foundation</a>; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <i><a href=\"//commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2\" title=\"Commons:GNU Free Documentation License, version 1.2\">GNU Free Documentation License</a></i>.<span class=\"licensetpl_link\" style=\"display:none;\">http://www.gnu.org/copyleft/fdl.html</span><span class=\"licensetpl_short\" style=\"display:none;\">GFDL</span><span class=\"licensetpl_long\" style=\"display:none;\">GNU Free Documentation License</span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span>\n</td></tr></tbody></table>\n<table style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:var(--background-color-neutral-subtle, #f8f9fa); border:var(--border-subtle, 2px solid #c8ccd1); padding: 0; border-spacing: 8px; color:var(--color-base, #202122);\" dir=\"ltr\" class=\"layouttemplate licensetpl\" lang=\"en\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"4\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/40px-Cc-sa.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/60px-Cc-sa.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span>\n</td>\n<td>This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/3.0/deed.en\">Attribution-Share Alike 3.0 Unported</a> license.\n</td>\n<td style=\"width:90px;\" rowspan=\"4\">\n</td></tr>\n<tr style=\"text-align:center;\">\n<td>\n</td></tr>\n<tr style=\"text-align:left;\">\n<td>\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl>\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><span style=\"font-size:90%;\">This licensing tag was added to this file as part of the GFDL <a href=\"https://meta.wikimedia.org/wiki/Licensing_update\" class=\"extiw\" title=\"meta:Licensing update\">licensing update</a>.</span><span class=\"licensetpl_link\" style=\"display:none;\">http://creativecommons.org/licenses/by-sa/3.0/</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 3.0</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 3.0</span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span>\n</td></tr></tbody></table>",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032850": {
+            "pageid": 132032850,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居东厢房2023.4.jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E4%B8%9C%E5%8E%A2%E6%88%BF2023.4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E4%B8%9C%E5%8E%A2%E6%88%BF2023.4.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032850",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:55:54",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居东厢房2023.4",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:15:54",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032846": {
+            "pageid": 132032846,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (1).jpg",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(1).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032846",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:55:50",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (1)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:13:03",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032716": {
+            "pageid": 132032716,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (2).jpg",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(2).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032716",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:51:09",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (2)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:08:46",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032714": {
+            "pageid": 132032714,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (3).jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(3).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032714",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:51:08",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (3)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:10:05",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "31973493": {
+            "pageid": 31973493,
+            "ns": 6,
+            "title": "File:梅兰芳旧居国保碑.JPG",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/%E6%A2%85%E5%85%B0%E8%8A%B3%E6%97%A7%E5%B1%85%E5%9B%BD%E4%BF%9D%E7%A2%91.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E6%A2%85%E5%85%B0%E8%8A%B3%E6%97%A7%E5%B1%85%E5%9B%BD%E4%BF%9D%E7%A2%91.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=31973493",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2014-04-03 16:14:24",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "梅兰芳旧居国保碑",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Taken with Panasonic Lumix DMC-GF3|Mei Lanfang Memorial Museum, Beijing|Self-published work|Signs of the Major Historical and Cultural Site Protected at the National Level in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Former residence of Meilanfang",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2013-12-12 13:40:31",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Nekitarc&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Nekitarc (page does not exist)\">Nekitarc</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "7485697": {
+            "pageid": 7485697,
+            "ns": 6,
+            "title": "File:梅兰芳纪念馆椽子万福彩画.JPG",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/%E6%A2%85%E5%85%B0%E8%8A%B3%E7%BA%AA%E5%BF%B5%E9%A6%86%E6%A4%BD%E5%AD%90%E4%B8%87%E7%A6%8F%E5%BD%A9%E7%94%BB.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E6%A2%85%E5%85%B0%E8%8A%B3%E7%BA%AA%E5%BF%B5%E9%A6%86%E6%A4%BD%E5%AD%90%E4%B8%87%E7%A6%8F%E5%BD%A9%E7%94%BB.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7485697",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2009-08-05 14:53:01",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "梅兰芳纪念馆椽子万福彩画",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|Caihua in China|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Bat pattern meant longevity",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2008-10",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gisling\" title=\"User:Gisling\">Gisling</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "query": "梅兰芳故居 北京",
+    "data": {
+      "batchcomplete": "",
+      "continue": {
+        "gsroffset": 8,
+        "continue": "gsroffset||"
+      },
+      "query": {
+        "pages": {
+          "5145570": {
+            "pageid": 5145570,
+            "ns": 6,
+            "title": "File:Mei Lanfang Memorial House.JPG",
+            "index": 1,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mei_Lanfang_Memorial_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Mei_Lanfang_Memorial_House.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=5145570",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2008-11-06 08:32:58",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Mei Lanfang Memorial House",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2008-10",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gisling\" title=\"User:Gisling\">Gisling</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "806270": {
+            "pageid": 806270,
+            "ns": 6,
+            "title": "File:Meilanfang banshenxiang.JPG",
+            "index": 7,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Meilanfang_banshenxiang.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:Meilanfang_banshenxiang.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=806270",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2006-05-24 07:39:09",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "Meilanfang banshenxiang",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "China photographs taken on 2005-04-16|GFDL|Taken with Panasonic Lumix DMC-FZ20|Mei Lanfang|Mei Lanfang Memorial Museum, Beijing|License migration completed|Busts in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "​梅兰芳半身塑像，拍摄于梅兰芳故居。",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2005-04-16 15:41",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "Originally from <a class=\"external text\" data-mw-original-href=\"http://zh.wikipedia.org\" href=\"https://zh.wikipedia.org\">zh.wikipedia</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Yongxinge\" title=\"User:Yongxinge\">Yongxinge</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "Permission": {
+                    "value": "<table style=\"width:100%; clear:both; margin:0.5em auto; background-color: var(--background-color-neutral-subtle, #f9f9f9); color: var(--color-base, #202122); border: var(--border-subtle, 2px solid #e0e0e0); border-spacing: 8px; box-sizing: border-box; padding: 0;\" dir=\"ltr\" lang=\"en\" class=\"layouttemplate licensetpl\">\n<tbody><tr>\n<td><span class=\"noviewer\" typeof=\"mw:File\"><span title=\"GNU head\"><img alt=\"GNU head\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/120px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"64\" height=\"63\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/250px-Heckert_GNU_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"535\" data-file-height=\"523\"></span></span>\n</td>\n<td>Permission is granted to copy, distribute and/or modify this document under the terms of the <b><a href=\"https://en.wikipedia.org/wiki/en:GNU_Free_Documentation_License\" class=\"extiw\" title=\"w:en:GNU Free Documentation License\">GNU Free Documentation License</a></b>, Version 1.2 or any later version published by the <a href=\"https://en.wikipedia.org/wiki/en:Free_Software_Foundation\" class=\"extiw\" title=\"w:en:Free Software Foundation\">Free Software Foundation</a>; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled <i><a href=\"//commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2\" title=\"Commons:GNU Free Documentation License, version 1.2\">GNU Free Documentation License</a></i>.<span class=\"licensetpl_link\" style=\"display:none;\">http://www.gnu.org/copyleft/fdl.html</span><span class=\"licensetpl_short\" style=\"display:none;\">GFDL</span><span class=\"licensetpl_long\" style=\"display:none;\">GNU Free Documentation License</span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span>\n</td></tr></tbody></table>\n<table style=\"width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:var(--background-color-neutral-subtle, #f8f9fa); border:var(--border-subtle, 2px solid #c8ccd1); padding: 0; border-spacing: 8px; color:var(--color-base, #202122);\" dir=\"ltr\" class=\"layouttemplate licensetpl\" lang=\"en\">\n<tbody><tr>\n<td style=\"width:90px;\" rowspan=\"4\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/40px-Cc-sa.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/60px-Cc-sa.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span>\n</td>\n<td>This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/3.0/deed.en\">Attribution-Share Alike 3.0 Unported</a> license.\n</td>\n<td style=\"width:90px;\" rowspan=\"4\">\n</td></tr>\n<tr style=\"text-align:center;\">\n<td>\n</td></tr>\n<tr style=\"text-align:left;\">\n<td>\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl>\n</td></tr>\n<tr style=\"text-align:center;\">\n<td><span style=\"font-size:90%;\">This licensing tag was added to this file as part of the GFDL <a href=\"https://meta.wikimedia.org/wiki/Licensing_update\" class=\"extiw\" title=\"meta:Licensing update\">licensing update</a>.</span><span class=\"licensetpl_link\" style=\"display:none;\">http://creativecommons.org/licenses/by-sa/3.0/</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 3.0</span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 3.0</span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span>\n</td></tr></tbody></table>",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "http://creativecommons.org/licenses/by-sa/3.0/",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "62206947": {
+            "pageid": 62206947,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居.jpg",
+            "index": 2,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=62206947",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2017-09-05 17:01:47",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Cultural heritage monuments in China with known IDs|Taken with Xiaomi Mi Note|Mei Lanfang Memorial Museum, Beijing|Images from Wiki Loves Monuments 2017 in China|Self-published work|Images from Wiki Loves Monuments 2017|Uploaded via Campaign:wlm-cn|Images from Wiki Loves Monuments missing SDC depicts|Images from Wiki Loves Monuments missing SDC location of creation",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "the Former Residence of Mei Lanfang",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2017-05-30 14:09:38",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Wuhuanqi&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Wuhuanqi (page does not exist)\">Wu Huanqi</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032850": {
+            "pageid": 132032850,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居东厢房2023.4.jpg",
+            "index": 4,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/2/25/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E4%B8%9C%E5%8E%A2%E6%88%BF2023.4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E4%B8%9C%E5%8E%A2%E6%88%BF2023.4.jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032850",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:55:54",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居东厢房2023.4",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:15:54",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032846": {
+            "pageid": 132032846,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (1).jpg",
+            "index": 5,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(1).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032846",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:55:50",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (1)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:13:03",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032716": {
+            "pageid": 132032716,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (2).jpg",
+            "index": 6,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(2).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032716",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:51:09",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (2)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:08:46",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "132032714": {
+            "pageid": 132032714,
+            "ns": 6,
+            "title": "File:北京梅兰芳故居正房2023.4 (3).jpg",
+            "index": 3,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E5%8C%97%E4%BA%AC%E6%A2%85%E5%85%B0%E8%8A%B3%E6%95%85%E5%B1%85%E6%AD%A3%E6%88%BF2023.4_(3).jpg",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=132032714",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2023-05-17 09:51:08",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "北京梅兰芳故居正房2023.4 (3)",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|China photographs taken on 2023-04-15|Self-published work|April 2023 in Beijing",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Mei Lanfang Memorial Museum, Xicheng District, Beijing",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2023-04-15 10:10:05",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:ScareCriterion12&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:ScareCriterion12 (page does not exist)\">ScareCriterion12</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY-SA 4.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution-Share Alike 4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by-sa/4.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-sa-4.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          },
+          "7485697": {
+            "pageid": 7485697,
+            "ns": 6,
+            "title": "File:梅兰芳纪念馆椽子万福彩画.JPG",
+            "index": 8,
+            "imagerepository": "local",
+            "imageinfo": [
+              {
+                "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/%E6%A2%85%E5%85%B0%E8%8A%B3%E7%BA%AA%E5%BF%B5%E9%A6%86%E6%A4%BD%E5%AD%90%E4%B8%87%E7%A6%8F%E5%BD%A9%E7%94%BB.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+                "descriptionurl": "https://commons.wikimedia.org/wiki/File:%E6%A2%85%E5%85%B0%E8%8A%B3%E7%BA%AA%E5%BF%B5%E9%A6%86%E6%A4%BD%E5%AD%90%E4%B8%87%E7%A6%8F%E5%BD%A9%E7%94%BB.JPG",
+                "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=7485697",
+                "extmetadata": {
+                  "DateTime": {
+                    "value": "2009-08-05 14:53:01",
+                    "source": "mediawiki-metadata",
+                    "hidden": ""
+                  },
+                  "ObjectName": {
+                    "value": "梅兰芳纪念馆椽子万福彩画",
+                    "source": "mediawiki-metadata"
+                  },
+                  "CommonsMetadataExtension": {
+                    "value": 1.2,
+                    "source": "extension",
+                    "hidden": ""
+                  },
+                  "Categories": {
+                    "value": "Mei Lanfang Memorial Museum, Beijing|Caihua in China|Self-published work",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "Assessments": {
+                    "value": "",
+                    "source": "commons-categories",
+                    "hidden": ""
+                  },
+                  "ImageDescription": {
+                    "value": "Bat pattern meant longevity",
+                    "source": "commons-desc-page"
+                  },
+                  "DateTimeOriginal": {
+                    "value": "2008-10",
+                    "source": "commons-desc-page"
+                  },
+                  "Credit": {
+                    "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                    "source": "commons-desc-page"
+                  },
+                  "Artist": {
+                    "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gisling\" title=\"User:Gisling\">Gisling</a>",
+                    "source": "commons-desc-page"
+                  },
+                  "LicenseShortName": {
+                    "value": "CC BY 3.0",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "UsageTerms": {
+                    "value": "Creative Commons Attribution 3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "AttributionRequired": {
+                    "value": "true",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "LicenseUrl": {
+                    "value": "https://creativecommons.org/licenses/by/3.0",
+                    "source": "commons-desc-page"
+                  },
+                  "Copyrighted": {
+                    "value": "True",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "Restrictions": {
+                    "value": "",
+                    "source": "commons-desc-page",
+                    "hidden": ""
+                  },
+                  "License": {
+                    "value": "cc-by-3.0",
+                    "source": "commons-templates",
+                    "hidden": ""
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+]

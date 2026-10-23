@@ -1,0 +1,329 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "-1": {
+        "ns": 0,
+        "title": "黑芝麻胡同",
+        "missing": ""
+      },
+      "-2": {
+        "ns": 0,
+        "title": "后圆恩寺胡同",
+        "missing": ""
+      },
+      "-3": {
+        "ns": 0,
+        "title": "前圆恩寺胡同",
+        "missing": ""
+      },
+      "-4": {
+        "ns": 0,
+        "title": "东棉花胡同",
+        "missing": ""
+      },
+      "-5": {
+        "ns": 0,
+        "title": "秦老胡同",
+        "missing": ""
+      },
+      "-6": {
+        "ns": 0,
+        "title": "荣禄故居",
+        "missing": ""
+      },
+      "-7": {
+        "ns": 0,
+        "title": "蒋介石行辕",
+        "missing": ""
+      },
+      "77210": {
+        "pageid": 77210,
+        "ns": 0,
+        "title": "万宁桥",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Houmenqiao 2.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Wanning Bridge from Jinding Bridge (20211008151133).jpg"
+          }
+        ]
+      },
+      "77051": {
+        "pageid": 77051,
+        "ns": 0,
+        "title": "什刹海",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Beijing-name.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Commons-logo.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Shichahai F&B Outlet View1 2004.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Shichahai skating game in winter.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Shishahai.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Shishahai 2.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Tango-nosources.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Yindingqiao.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Zh conversion icon m.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:世界遗产中文标识.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:亜細亜大観 09 136 \"皷樓から南へ （北平皷樓大街）\".jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:大运河什刹海国保碑.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:大運河.png"
+          }
+        ]
+      },
+      "3174729": {
+        "pageid": 3174729,
+        "ns": 0,
+        "title": "会贤堂",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Former Huixiantang in Beijing 2010-11.jpg"
+          }
+        ]
+      },
+      "9268455": {
+        "pageid": 9268455,
+        "ns": 0,
+        "title": "关岳庙",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          }
+        ]
+      },
+      "621048": {
+        "pageid": 621048,
+        "ns": 0,
+        "title": "北京茅盾故居",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Daozuofang in Mao Dun Guju, Beijing.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Maodunguju.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Maoduntouxiang.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Mdgj.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Mdgj yingbi.JPG"
+          },
+          {
+            "ns": 6,
+            "title": "File:Mdgj yuanzi.JPG"
+          }
+        ]
+      },
+      "77219": {
+        "pageid": 77219,
+        "ns": 0,
+        "title": "北京钟楼"
+      },
+      "142685": {
+        "pageid": 142685,
+        "ns": 0,
+        "title": "可园",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          }
+        ]
+      },
+      "356105": {
+        "pageid": 356105,
+        "ns": 0,
+        "title": "后海",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          }
+        ]
+      },
+      "3782836": {
+        "pageid": 3782836,
+        "ns": 0,
+        "title": "婉容故居"
+      },
+      "3789347": {
+        "pageid": 3789347,
+        "ns": 0,
+        "title": "帽儿胡同",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Beijingdoorpic2.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Commons-logo.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Zh conversion icon m.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:可园的垂花门.jpg"
+          }
+        ]
+      },
+      "431107": {
+        "pageid": 431107,
+        "ns": 0,
+        "title": "庆亲王府",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          }
+        ]
+      },
+      "77420": {
+        "pageid": 77420,
+        "ns": 0,
+        "title": "德胜门"
+      },
+      "96701": {
+        "pageid": 96701,
+        "ns": 0,
+        "title": "梅兰芳纪念馆",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Mei Lanfang Memorial Museum 20260610.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Tango-nosources.svg"
+          }
+        ]
+      },
+      "634279": {
+        "pageid": 634279,
+        "ns": 0,
+        "title": "菊儿胡同",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Commons-logo.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Juerhutong.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Zh conversion icon m.svg"
+          }
+        ]
+      },
+      "1492548": {
+        "pageid": 1492548,
+        "ns": 0,
+        "title": "西海",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          }
+        ]
+      },
+      "49711": {
+        "pageid": 49711,
+        "ns": 0,
+        "title": "辅仁大学"
+      },
+      "5467550": {
+        "pageid": 5467550,
+        "ns": 0,
+        "title": "郭守敬纪念馆"
+      },
+      "488785": {
+        "pageid": 488785,
+        "ns": 0,
+        "title": "醇亲王府",
+        "images": [
+          {
+            "ns": 6,
+            "title": "File:Beijing-name.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Disambig gray.svg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Giant Wild Goose Pagoda.jpg"
+          },
+          {
+            "ns": 6,
+            "title": "File:Wangfudamen.JPG"
+          }
+        ]
+      }
+    }
+  },
+  "limits": {
+    "images": 500
+  }
+}

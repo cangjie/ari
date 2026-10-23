@@ -82,6 +82,11 @@ def _stop_text(stop: dict, *, is_collection: bool) -> str:
     for field, label in [('related', '关联整体'), ('specialty', '特色'), ('address', '地址（来源记载）'), ('platform', '平台参考')]:
         if stop.get(field) and stop[field]['zh']:
             lines.append(label + '：' + stop[field]['zh'])
+    if stop.get('shop_category'):
+        lines.append('商铺分类：'+stop['shop_category']+'；特色标签：'+'、'.join(stop.get('shop_tags',[])))
+        lines.append('标签依据：'+stop['shop_label_note'])
+    for photo in stop.get('supplementary_photos',[]):
+        lines.append('补充资料图：'+photo['info']['caption']['zh']+'；出处：'+photo['info']['source']['title']+' '+photo['info']['source']['url']+'。未传入图片像素。')
     if stop.get("review"):
         lines.append(f"待复核：{stop['review']}")
     lines += stop["intro"]
@@ -116,8 +121,22 @@ def museum_material(museum: dict) -> str:
     if routes:
         parts.append("## 导览给出的参观路线（都从入口出发并回到入口）\n" + "\n".join(routes) + "\n"
                      "各站的建议停留时间与路线的分钟数都是本导览的估计，没有实测。")
-    else:
+    elif not museum.get('itineraries'):
         parts.append('本清单未提供已核实的路线或停留时间。')
+    if museum.get('itineraries'):
+        parts.append('## 主题步行方案\n'+museum['itinerary_policy'])
+        stations={s['id']:s for s in museum['itinerary_stations']}
+        for station in stations.values():
+            parts.append('地铁接驳来源：'+station['name']+'；'+station['source']['url']+'；出口位置来源：'+station['position_source']['url'])
+        for theme in museum['itineraries']:
+            parts.append(theme['name']+'：'+theme['description']+'\n'+theme['fee']+'\n'+theme['access'])
+            parts.append('依次：'+' → '.join(s['name']['zh']+f"（估计{s['minutes']}分钟；{s['note']}）"for s in theme['steps']))
+            for variant in theme['variants']:
+                parts.append(stations[variant['start_station']]['name']+'出发，'+stations[variant['end_station']]['name']+'结束：'+
+                             f"道路约{variant['meters']}米；估计总计{variant['total_minutes']}分钟（停留{variant['stay_minutes']}+步行{variant['walk_minutes']}），未计用餐排队。")
+            parts += ['线路来源：'+s['title']+' '+s['url']for s in theme['sources']]
+    if museum.get('shop_label_policy'):
+        parts.append(museum['shop_label_policy'])
     for route in museum['routes']:
         if route.get('fee'):
             parts.append(route['label']['zh'] + '费用：' + route['fee']['zh'])

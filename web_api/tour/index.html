@@ -44,6 +44,7 @@
     <nav id="collection-views" class="collection-views" aria-label="浏览方式" hidden>
       <button id="view-list" class="chip on" type="button" aria-pressed="true">全部清单</button>
       <button id="view-map" class="chip" type="button" aria-pressed="false">景点地图</button>
+      <button id="view-themes" class="chip" type="button" aria-pressed="false" hidden>主题线路</button>
     </nav>
 
     <div id="collection" hidden>
@@ -59,10 +60,15 @@
           <label>区域<select id="collection-area"><option value="all">全部区域</option></select></label>
           <label>评级<select id="collection-tier"><option value="all">全部评级</option><option>S</option><option>A</option><option>B</option><option>C</option></select></label>
         </div>
+        <div id="shop-filters" class="collection-filters" hidden>
+          <label>商铺分类<select id="collection-shop-category"><option value="all">全部商铺分类</option></select></label>
+          <label>特色标签<select id="collection-shop-tag"><option value="all">全部特色标签</option></select></label>
+        </div>
         <div id="collection-count" role="status" aria-live="polite"></div>
       </div>
       <div id="collection-items"></div>
     </div>
+    <section id="collection-themes" aria-label="主题游览线路" hidden></section>
 
     <div id="mapwrap">
       <!-- 只有 #map 接管触摸手势；路线条等浮层是它的兄弟节点，横向滑动不受影响 -->

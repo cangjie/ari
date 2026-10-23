@@ -1,0 +1,96 @@
+{
+  "batchcomplete": "",
+  "query": {
+    "pages": {
+      "-1": {
+        "ns": 0,
+        "title": "黑芝麻胡同",
+        "missing": ""
+      },
+      "-2": {
+        "ns": 0,
+        "title": "后圆恩寺胡同",
+        "missing": ""
+      },
+      "-3": {
+        "ns": 0,
+        "title": "辅仁大学旧址",
+        "missing": ""
+      },
+      "3174729": {
+        "pageid": 3174729,
+        "ns": 0,
+        "title": "会贤堂",
+        "original": {
+          "source": "https://upload.wikimedia.org/wikipedia/commons/4/41/Former_Huixiantang_in_Beijing_2010-11.jpg?utm_source=zh.wikipedia.org&utm_campaign=api&utm_content=original",
+          "width": 2112,
+          "height": 2816
+        },
+        "pageimage": "Former_Huixiantang_in_Beijing_2010-11.jpg"
+      },
+      "9268455": {
+        "pageid": 9268455,
+        "ns": 0,
+        "title": "关岳庙"
+      },
+      "621048": {
+        "pageid": 621048,
+        "ns": 0,
+        "title": "北京茅盾故居",
+        "original": {
+          "source": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Maodunguju.JPG?utm_source=zh.wikipedia.org&utm_campaign=api&utm_content=original",
+          "width": 2397,
+          "height": 1600
+        },
+        "pageimage": "Maodunguju.JPG"
+      },
+      "77219": {
+        "pageid": 77219,
+        "ns": 0,
+        "title": "北京钟楼"
+      },
+      "142685": {
+        "pageid": 142685,
+        "ns": 0,
+        "title": "可园"
+      },
+      "3789347": {
+        "pageid": 3789347,
+        "ns": 0,
+        "title": "帽儿胡同"
+      },
+      "431107": {
+        "pageid": 431107,
+        "ns": 0,
+        "title": "庆亲王府"
+      },
+      "77420": {
+        "pageid": 77420,
+        "ns": 0,
+        "title": "德胜门"
+      },
+      "96701": {
+        "pageid": 96701,
+        "ns": 0,
+        "title": "梅兰芳纪念馆",
+        "original": {
+          "source": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Mei_Lanfang_Memorial_Museum_20260610.jpg?utm_source=zh.wikipedia.org&utm_campaign=api&utm_content=original",
+          "width": 4000,
+          "height": 3000
+        },
+        "pageimage": "Mei_Lanfang_Memorial_Museum_20260610.jpg"
+      },
+      "488785": {
+        "pageid": 488785,
+        "ns": 0,
+        "title": "醇亲王府",
+        "original": {
+          "source": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Wangfudamen.JPG?utm_source=zh.wikipedia.org&utm_campaign=api&utm_content=original",
+          "width": 448,
+          "height": 336
+        },
+        "pageimage": "Wangfudamen.JPG"
+      }
+    }
+  }
+}
