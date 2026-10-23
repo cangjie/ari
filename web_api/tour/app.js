@@ -156,6 +156,34 @@
   }
 
   function isCollection(m) { return (m || M).mode === "collection"; }
+  function hasBrowseMap() { return isCollection() && M.map_mode === "browse"; }
+  function mapVisible() { return M && !$("mapwrap").hidden; }
+  function mapPlaces() { return M.places.filter(function (p) { return Number.isFinite(p.x) && Number.isFinite(p.y); }); }
+
+  function collectionView(showMap, pid) {
+    if (!hasBrowseMap()) return;
+    stopGeo(); stopTour(); hideBanner();
+    if (HOST) HOST.leave();
+    $("collection").hidden = showMap;
+    $("mapwrap").hidden = !showMap;
+    $("tour").scrollTop = 0;
+    window.scrollTo(0, 0);
+    $("me").hidden = showMap;  // 只浏览，不把参考位置当作到站热区。
+    ["list", "map"].forEach(function (name) {
+      var active = showMap === (name === "map"), button = $("view-" + name);
+      button.classList.toggle("on", active); button.setAttribute("aria-pressed", String(active));
+    });
+    if (showMap) {
+      buildMap();
+      st.k = minZoom();
+      if (pid) st.k = Math.max(1, st.k);
+      layout(); updateRoute();
+      var place = pid && placeById(pid);
+      centerOn(place ? place.x : M.canvas.w / 2, place ? place.y : M.canvas.h / 2);
+    } else {
+      $("tour-sub").textContent = "景点与特色商铺 · " + M.places.length + "条";
+    }
+  }
 
   function route() {
     for (var i = 0; i < M.routes.length; i++) if (M.routes[i].id === st.routeId) return M.routes[i];
@@ -241,6 +269,7 @@
     $("collection-items").innerHTML = places.map(function (p) {
       var s = M.stops[p.stops[0]], intro = s.intro.join(" ");
       return '<button class="card collection-item" type="button" data-place="' + esc(p.id) + '">' +
+        (p.photo ? '<img class="collection-thumb" loading="lazy" src="' + esc(p.photo) + '" alt="' + esc(p.photo_info.caption.zh) + '">' : '') +
         '<div class="stop-meta"><span class="tag tag-outline">' + esc(s.tier) + ' 级</span><span>' +
         esc(s.area.zh + " · " + (s.kind === "shop" ? "特色商铺" : "文化参观点")) + '</span></div>' +
         '<strong>' + esc(s.seq + ". " + s.name.zh) + '</strong><span class="collection-alias">' + esc(s.name.en) + '</span>' +
@@ -279,9 +308,9 @@
     labels = [];
 
     M.labels.forEach(function (l) { addLabel(l.kind, l.t.zh, l.x, l.y); });
-    addLabel("gate", M.entrance.name.zh, M.entrance.x, M.entrance.y + 16);
+    if (!isCollection()) addLabel("gate", M.entrance.name.zh, M.entrance.x, M.entrance.y + 16);
 
-    M.places.forEach(function (p) {
+    mapPlaces().forEach(function (p) {
       var ring = document.createElement("div");
       ring.className = "ring";
       overlay.appendChild(ring);
@@ -296,7 +325,7 @@
     });
 
     $("tour-name").textContent = M.card.short.zh;
-    $("tour-sub").textContent = "导游地图 · " + M.card.short.en;
+    $("tour-sub").textContent = (hasBrowseMap() ? "景点地图 · " : "导游地图 · ") + M.card.short.en;
     $("msgs-park").textContent = M.name.zh;
     $("credit").textContent = M.attribution.zh;
     var north = M.canvas.north * Math.PI / 180;
@@ -307,8 +336,9 @@
     var chips = M.routes.map(function (r) {
       return '<button class="chip" type="button" data-route="' + esc(r.id) + '">' + esc(r.label.zh) + "</button>";
     });
-    chips.push('<button class="chip" type="button" data-route="none">不显示路线</button>');
+    if (!hasBrowseMap()) chips.push('<button class="chip" type="button" data-route="none">不显示路线</button>');
     $("chips").innerHTML = chips.join("");
+    $("chips").hidden = !chips.length;
   }
 
   function addLabel(kind, text, x, y) {
@@ -329,7 +359,7 @@
 
   function minZoom() {
     var v = viewSize();
-    return clamp(Math.min(v[0] / M.canvas.w, (v[1] - topInset()) / M.canvas.h), 0.3, 1);
+    return clamp(Math.min(v[0] / M.canvas.w, (v[1] - topInset()) / M.canvas.h), hasBrowseMap() ? .1 : .3, 1);
   }
 
   function clampPan(x, y) {
@@ -356,19 +386,21 @@
     $("base").setAttribute("height", c.h * k);
     $("pan").style.width = px(c.w);
     $("pan").style.height = px(c.h);
-    M.places.forEach(function (p) {
+    mapPlaces().forEach(function (p) {
       var s = spots[p.id];
       s.btn.style.left = px(p.x);
       s.btn.style.top = px(p.y);
-      s.ring.style.left = px(p.x - p.r);
-      s.ring.style.top = px(p.y - p.r);
-      s.ring.style.width = s.ring.style.height = px(p.r * 2);
+      s.btn.hidden = k < (p.min_zoom || 0);
+      s.ring.hidden = !Number.isFinite(p.r);
+      s.ring.style.left = px(p.x - (p.r || 0));
+      s.ring.style.top = px(p.y - (p.r || 0));
+      s.ring.style.width = s.ring.style.height = px((p.r || 0) * 2);
     });
     labels.forEach(function (l) { l.el.style.left = px(l.x); l.el.style.top = px(l.y); });
     $("map").classList.toggle("far", k < FAR_ZOOM);
     st.pan = clampPan(st.pan[0], st.pan[1]);
     applyPan();
-    updateMe();
+    if (!hasBrowseMap()) updateMe();
   }
 
   function zoomAt(k, cx, cy) {
@@ -387,7 +419,7 @@
     });
     $("route-summary").textContent = r
       ? r.stops.length + " 站 · 约 " + r.total + " 分钟（停留 " + r.stay + " + 步行 " + r.walk + "）· 入口出发并返回" + (r.fee ? " · " + r.fee.zh : "")
-      : "显示全部热区，未选择路线";
+      : (hasBrowseMap() ? mapPlaces().length + " 处参考位置 · 数字对应清单序号，点选查看；放大显示街巷。无路线及到站提醒" : "显示全部热区，未选择路线");
     $("route-details").hidden = !(r && r.note);
     if (r && r.note) {
       $("route-detail-body").innerHTML = '<p>' + esc(r.note.zh) + '</p><ol>' + r.stops.map(function (seq) {
@@ -406,9 +438,9 @@
     var r = route();
     var seen = {};
     st.msgs.forEach(function (m) { seen[m.pid] = true; });
-    M.places.forEach(function (p, i) {
+    mapPlaces().forEach(function (p, i) {
       var s = spots[p.id], ords = r ? placeOrdinals(r, p.id) : [];
-      var num = pad2(i + 1);
+      var num = isCollection() ? String(p.stops[0]) : pad2(i + 1);
       if (r) num = ords.length > 2 ? ords[0] + "–" + ords[ords.length - 1] : (ords.join("·") || "·");
       s.num.textContent = num;
       s.btn.classList.toggle("on-route", ords.length > 0);
@@ -445,6 +477,8 @@
   function updateMe() {
     var live = st.geo === "live" || st.geo === "sim";
     var me = $("me"), k = st.k;
+    me.hidden = isCollection();
+    if (isCollection()) return;
     me.classList.toggle("off", !live);
     me.style.left = st.pos[0] * k + "px";
     me.style.top = st.pos[1] * k + "px";
@@ -495,7 +529,7 @@
   // 落在哪个热区里。热区会重叠（花园里套着防空洞），取相对距离（距离 ÷ 半径）最小的那个
   function hitPlace(x, y) {
     var best = null, bestScore = Infinity;
-    M.places.forEach(function (p) {
+    mapPlaces().forEach(function (p) {
       var d = Math.hypot(p.x - x, p.y - y), cur = p.id === st.inside;
       if (d > p.r * (cur ? STAY_FACTOR : 1)) return;
       var score = d / p.r - (cur ? 0.2 : 0);
@@ -569,7 +603,7 @@
   }
 
   function onFix(position) {
-    if (!M) return;
+    if (!M || isCollection()) return;
     var c = position.coords, lat = c.latitude, lon = c.longitude;
     if (OPT.gcj) { var w = gcjToWgs(lat, lon); lat = w[0]; lon = w[1]; }
     st.raw = { lat: lat, lon: lon, acc: c.accuracy };
@@ -590,7 +624,7 @@
   }
 
   function onGeoError(err) {
-    if (!M) return;
+    if (!M || isCollection()) return;
     // 超时与暂时拿不到位置时 watch 还在，不用重开；圆点先灰着停在原地。
     // 所在热区不清：信号一闪就清掉的话，恢复后会把同一处再提醒一遍
     st.geo = err.code === err.PERMISSION_DENIED ? "denied"
@@ -642,7 +676,7 @@
   function photoHtml(path, info, name) {
     if (!path) return '';
     var caption = info && info.caption ? info.caption.zh : name;
-    var plate = '<div class="plate"><img loading="lazy" src="' + esc(path) + '" alt="' + esc(caption) + '"></div>';
+    var plate = '<div class="plate"' + (info && Number.isFinite(info.width) ? ' style="max-width:' + info.width + 'px"' : '') + '><img loading="lazy" src="' + esc(path) + '" alt="' + esc(caption) + '"></div>';
     if (!info) return plate;
     var source = info.source, credit = source && source.title ? '图片出处：' + esc(source.title) : '';
     try {
@@ -703,6 +737,8 @@
       : (isCollection() ? "清单第 " + M.stops[p.stops[0]].seq + " 条" : "热区 " + pad2(M.places.indexOf(p) + 1)) + " · " + M.card.short.zh;
 
     var html = photoHtml(p.photo, p.photo_info, p.name.zh) +
+      (isCollection() && p.position ? '<p class="note">地图：' + esc(p.position.note) + '</p>' +
+        sourceLinks([p.position.source]) + '<button class="btn" type="button" data-show-map="' + esc(p.id) + '">在地图查看</button>' : '') +
       '<div class="kicker">' + esc(kicker) + "</div><h2>" + esc(p.name.zh) + '</h2><div class="rule"></div>' +
       p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("") +
       (qaLive === false ? "" : QA_HTML);
@@ -957,6 +993,7 @@
     $("list").hidden = true;
     $("tour").hidden = false;
     var collection = isCollection();
+    $("collection-views").hidden = !hasBrowseMap();
     $("collection").hidden = !collection;
     $("mapwrap").hidden = collection;
     $("bell").hidden = collection;
@@ -964,6 +1001,7 @@
     if (collection) {
       if (HOST) HOST.leave();
       buildCollection();
+      if (hasBrowseMap()) collectionView(false);
       updateSheets();
       return;
     }
@@ -1107,10 +1145,12 @@
       st.follow = false;
       zoomAt(st.k * Math.exp(-e.deltaY / 400), pt[0], pt[1]);
     }, { passive: false });
-    window.addEventListener("resize", function () { if (M && !isCollection()) layout(); });
+    window.addEventListener("resize", function () { if (mapVisible()) layout(); });
   }
 
   function bindUi() {
+    $("view-list").addEventListener("click", function () { collectionView(false); });
+    $("view-map").addEventListener("click", function () { collectionView(true); });
     $("collection-search").addEventListener("input", function () { if (M && isCollection()) renderCollection(); });
     ["collection-kind", "collection-area", "collection-tier"].forEach(function (id) {
       $(id).addEventListener("change", function () { if (M && isCollection()) renderCollection(); });
@@ -1148,6 +1188,8 @@
     $("banner").addEventListener("click", function () { if (st.bannerPid) openIntro(st.bannerPid); });
     $("backdrop").addEventListener("click", closeSheets);
     $("sheet").addEventListener("click", function (e) {
+      var showMap = e.target.closest("[data-show-map]");
+      if (showMap) { closeSheets(); collectionView(true, showMap.getAttribute("data-show-map")); return; }
       var go = e.target.closest("[data-goto]");
       if (go) { openIntro(go.getAttribute("data-goto")); return; }
       if (e.target.closest("[data-qa-more]")) { qaLoad(M.key, st.sheetPid, true); return; }
@@ -1176,6 +1218,7 @@
       if (e.target.id === "qa-input") window.scrollTo(0, 0);
     });
     // 外层不该滚动（见 app.css 里 #app 的说明）。不认 overflow: clip 的浏览器上，被带着滚了就拨回去
+    $("tour").addEventListener("scroll", function () { this.scrollTop = this.scrollLeft = 0; });
     $("app").addEventListener("scroll", function () {
       if (this.scrollTop || this.scrollLeft) this.scrollTop = this.scrollLeft = 0;
     });

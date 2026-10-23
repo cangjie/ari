@@ -3,6 +3,7 @@
 from nanluo_shichahai_export_data import platform_reference
 
 VIEW_MODE = 'collection'
+MEDIA_MANIFEST = 'nanluo_shichahai_tour_media.json'
 STATUS_EN = {
     '当前开放未核实；历史安排不作实时承诺': 'Current access is unverified; historical arrangements are not a live opening guarantee.',
     '平台/文旅网页有记录；现场营业、菜单、价格及体验项目未实时核实': 'Live business status, menu, prices and activities are unverified.',
@@ -19,5 +20,5 @@ CARD = dict(
 )
 OPENING = dict(zh='各场所开放、预约、收费及门店营业时间请出行前核实；历史报道和平台快照不代表今日状态。',
                en='Check access, reservations, admission and shop hours before visiting; historical reports and platform snapshots are not live information.')
-PLANNING = dict(zh='100条资料包含整体与组成部分，并非100个互不重叠的路线站点。当前提供清单浏览，地图坐标与路线尚未核实。商铺的S/A/B/C评级衡量文化与参观价值，平台口碑与消费信息另列。',
-                en='The 100 records include wholes and their components, rather than 100 separate itinerary stops. Browse the collection; map positions and routes are unverified. Shop tiers measure cultural and visit value; platform reputation and spending information are shown separately.')
+PLANNING = dict(zh='100条资料包含整体与组成部分，并非100个互不重叠的路线站点。可切换清单与地图，地图只标有来源依据的地点；街段或轮廓中心并非入口。未定位条目仍可查阅，暂未提供路线与到站提醒。商铺的S/A/B/C评级衡量文化与参观价值，平台口碑与消费信息另列。',
+                en='The 100 records include wholes and their components, rather than 100 separate itinerary stops. Switch between the full list and a sourced browsing map. Street reference points and feature centers are not entrances. Unlocated records remain readable; routes and arrival alerts are unavailable. Shop tiers measure cultural and visit value; platform reputation and spending information are shown separately.')

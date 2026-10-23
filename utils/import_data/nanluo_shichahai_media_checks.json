@@ -1,0 +1,28 @@
+{
+  "checked_on": "2026-10-23",
+  "records": 100,
+  "mapped": 37,
+  "unlocated": 63,
+  "photos": 10,
+  "photo_bytes": 892825,
+  "local_pytest": {
+    "passed": 88,
+    "skipped_real_database": 3
+  },
+  "local_browser": {
+    "scenes": 18,
+    "passed": true,
+    "log": "exports/nanluo_media_browser_local.log"
+  },
+  "existing_qa_material_unchanged": [
+    "wmhg",
+    "wanping"
+  ],
+  "tour_sha256": "6b4d668889282206a0d2c5ea602b578e56b0f5ba2c008927bb7f15aadb8905bd",
+  "workbook_unchanged": true,
+  "source_and_ratings_unchanged": true,
+  "android_device_verified": false,
+  "public_posts_sent": 0,
+  "water_rings": "三海完整内外环；多段反向way拼接与断环报错验证通过",
+  "fresh_source_check": "32与49两张不同图片同来源页面，重新HTTP200且两图URL均存在"
+}

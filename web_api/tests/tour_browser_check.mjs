@@ -272,6 +272,9 @@ const SCENES = {
       await p.open('/#nanluo_shichahai');
       check(await p.eval("document.querySelectorAll('.collection-item').length === 100 && !document.getElementById('collection').hidden"), '旧App桥接下也能浏览全部100条');
       check(await p.eval("window.__collectionHost.watch === 0 && window.__collectionHost.ready === null && !window.__collectionHost.keys.includes('nanluo_shichahai')"), '纯清单不启动定位，也不会使旧App几何解析失败');
+      await p.click('#view-map');
+      check(await p.eval("!document.getElementById('mapwrap').hidden && document.querySelectorAll('.spot').length === 37 && window.__collectionHost.watch === 0 && window.__collectionHost.ready === null"), 'App桥接中可浏览37处地图参考点，不调用原生到站');
+      await p.click('#view-list');
       await p.click('[data-place=guomoruo]');
       check(await p.eval("AriTour.back() && !document.getElementById('sheet').classList.contains('show')"), 'App返回键收起清单详情');
       await p.eval("location.hash='wmhg'; true");
@@ -281,6 +284,53 @@ const SCENES = {
       await sleep(300);
       check(await p.eval("window.__collectionHost.ready === null && window.__collectionHost.left > 0 && !document.getElementById('collection').hidden"), '地图转回清单会退出当前原生景区');
     } finally { await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier}); }
+  },
+  async waiting_marker(p) {
+    const script = await p.send('Page.addScriptToEvaluateOnNewDocument', {source: `
+      navigator.geolocation.watchPosition = function(){return 987654;};
+      navigator.geolocation.clearWatch = function(){};
+    `});
+    try {
+      await p.open('/');
+      await p.click('[data-open=wmhg]');
+      await sleep(150);
+      check(await p.eval("!document.getElementById('me').hidden && document.getElementById('me').classList.contains('off')"), '首次尚无fix时保留灰色圆点，不提前显示有效定位');
+      check(await p.eval("document.getElementById('status').textContent.includes('正在定位')"), '等待首次fix时明确显示正在定位');
+      await p.shot('waiting-marker');
+    } finally { await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier}); }
+  },
+  async collection_media(p) {
+    await p.open('/?debug=1#nanluo_shichahai');
+    check(await p.eval("!document.getElementById('collection-views').hidden"), '清单与地图切换入口可见');
+    await p.click('#view-map');
+    check(await p.eval("!document.getElementById('mapwrap').hidden && document.getElementById('collection').hidden && document.querySelectorAll('.spot').length === 37"), '地图只标37处已登记位置');
+    check(await p.eval("document.getElementById('me').hidden && document.getElementById('bell').hidden && document.querySelector('.bottombar').hidden"), '参考地图不显示假定位或到站控件');
+    await p.eval("AriTourDebug.error('timeout'); true");
+    check(await p.eval("AriTourDebug.snapshot().status === 'waiting' && document.getElementById('me').hidden"), '切换后迟到的GPS错误不进入浏览地图');
+    check(await p.eval("document.getElementById('ly-water').getAttribute('d').length > 1000 && document.getElementById('credit').textContent.includes('OpenStreetMap')"), '湖面轮廓及地图署名已载入');
+    await p.shot('collection-map');
+    await p.eval("document.querySelector('[aria-label=\"郭沫若故居（郭沫若纪念馆）\"]').click(); true");
+    check(await p.eval("document.getElementById('sheet-body').innerText.includes('来源标记的位置') && !!document.querySelector('[data-show-map=guomoruo]')"), '地图点开郭沫若详情，带位置口径和来源');
+    await p.click('[data-show-map=guomoruo]');
+    check(await p.eval("!document.getElementById('sheet').classList.contains('show') && document.querySelector('[aria-label=\"郭沫若故居（郭沫若纪念馆）\"]').getBoundingClientRect().left > 0"), '详情可聚焦地图位置');
+    await sleep(150);
+    check(await p.eval("document.querySelector('.topbar').getBoundingClientRect().top >= 0 && !document.getElementById('collection-views').hidden"), '聚焦位置后标题及清单切换仍可见');
+    await p.shot('collection-map-focus');
+    await p.click('#view-list');
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 100 && !document.getElementById('collection').hidden"), '返回清单仍完整保留100条');
+    const photos = JSON.parse(await readFile(join(TOUR_DIR, '../../utils/import_data/nanluo_shichahai_tour_photos.json'), 'utf8')).photos;
+    for (const photo of photos) {
+      await p.eval(`document.querySelector('[data-place="${photo.identity_key}"]').click(); true`);
+      const decoded = await p.eval("Promise.all(Array.from(document.querySelectorAll('#sheet-body .tour-photo img')).map(function(i){return i.decode().then(function(){return i.naturalWidth>0;}).catch(function(){return false;});}))");
+      check(decoded.length === 1 && decoded[0], `第${photo.seq}条资料图实际解码成功`, decoded);
+      check(await p.eval("!!document.querySelector('#sheet-body .tour-photo figcaption a')"), '图片带可查阅来源');
+      if (photo.seq === 48) await p.shot('collection-photo-guomoruo');
+      await p.click('#sheet [data-close]');
+    }
+    await p.click('#back');
+    await sleep(400);
+    await p.click('[data-open=wmhg]');
+    check(await p.eval("document.getElementById('collection-views').hidden && !document.getElementById('me').hidden"), '切回既有地图恢复定位控件');
   },
   async wanping(p) {
     const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));

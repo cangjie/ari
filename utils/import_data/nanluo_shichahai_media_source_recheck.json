@@ -1,0 +1,27 @@
+{
+  "note": "同篇什刹海周边教师节漫游图文包含多个参观点；节日免费政策未提取为今日开放承诺。两张独立图可共用真实来源页面，不改成伪造独立出处。",
+  "images": [
+    {
+      "seq": 32,
+      "source_id": "sh_autumn",
+      "source_title": "辛苦了老师 教师节这天 什刹海给老师留了一份秋色_信息提示_首都之窗_北京市人民政府门户网站",
+      "source_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html",
+      "source_raw_sha256": "14eca7d6167b053849f32bd85d1c46f480e64ab37f94c93630271ba5e80102dc",
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744744804.jpg",
+      "html_fragment": "<p style=\"text-align: center\"><img alt=\"辛苦了老师 教师节这天 什刹海给老师留了一份秋色\" height=\"449\" oldsrc=\"W020260910390744744804.jpg\" src=\"./W020260910390744744804.jpg\" style=\"width: 700px; height: 449px;\" title=\"辛苦了老师 教师节这天 什刹海给老师留了一份秋色\" width=\"700\"/></p>",
+      "confirmed_in_saved_html": true,
+      "visual_match": "湖面、亭岸及水面活动；只配什刹海整体，不判定具体湖面"
+    },
+    {
+      "seq": 49,
+      "source_id": "sh_autumn",
+      "source_title": "辛苦了老师 教师节这天 什刹海给老师留了一份秋色_信息提示_首都之窗_北京市人民政府门户网站",
+      "source_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html",
+      "source_raw_sha256": "14eca7d6167b053849f32bd85d1c46f480e64ab37f94c93630271ba5e80102dc",
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744832109.jpg",
+      "html_fragment": "<p style=\"text-align: center\"><img alt=\"辛苦了老师 教师节这天 什刹海给老师留了一份秋色\" height=\"393\" oldsrc=\"W020260910390744832109.jpg\" src=\"./W020260910390744832109.jpg\" style=\"width: 700px; height: 393px;\" title=\"辛苦了老师 教师节这天 什刹海给老师留了一份秋色\" width=\"700\"/></p>",
+      "confirmed_in_saved_html": true,
+      "visual_match": "展墙及胸像，墙上可辨宋庆龄相关文字；只配宋庆龄故居展陈"
+    }
+  ]
+}

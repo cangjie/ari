@@ -1,0 +1,74 @@
+{
+  "review": "nanluo_shichahai_media_audit_final.json",
+  "findings": [
+    {
+      "item": 1,
+      "severity": "important",
+      "resolution": "已修正并测试：outer/inner分别按真实端点合并，支持反向way；断环/缺失成员报错。三海完整环均通过；不画本快照缺少岛屿成员的框外北海关系。"
+    },
+    {
+      "item": 2,
+      "severity": "important",
+      "resolution": "已统一圆点可见性至updateMe；无首次fix按既有AGENTS规则显示灰点，浏览地图隐藏点且不开GPS。新增waiting_marker验证灰色与正在定位，相关6场景复测通过。"
+    },
+    {
+      "item": 3,
+      "severity": "important",
+      "resolution": "人工复核并留存原始HTML：同篇图文确有两个不同img节点，与两份原件URL一致。32湖岸景观和49宋庆龄展墙分别逐图核对，不因同页来源而造新出处；证据见media_source_recheck.json。"
+    },
+    {
+      "item": 4,
+      "severity": "minor",
+      "resolution": "原图仅250×169，没有更高分辨率来源依据；不放大、不造图，保持资料图图注。低分辨率限制保留。"
+    },
+    {
+      "item": 5,
+      "severity": "minor",
+      "resolution": "已清理重复scrollTop赋值；返回清单保留筛选及原列表浏览位置，顶栏不滚走。"
+    }
+  ],
+  "model_visual_audit": false,
+  "source_ratings_and_workbook_changed": false,
+  "recheck_result": "三项important均闭环；无critical/important",
+  "recheck_minor_resolution": {
+    "note": "直接核对原始XML与规范化JSON，三海均确实有role=inner成员；断言来自真实快照，不据常见地理印象推断。inner只说明OSM内环，不一律称自然岛屿。",
+    "evidence": [
+      {
+        "relation": 409777,
+        "name": "什刹后海",
+        "raw_xml_inner_member_way_ids": [
+          26514854,
+          946003586
+        ],
+        "normalized_inner_member_way_ids": [
+          26514854,
+          946003586
+        ]
+      },
+      {
+        "relation": 11518929,
+        "name": "什刹前海",
+        "raw_xml_inner_member_way_ids": [
+          9488290
+        ],
+        "normalized_inner_member_way_ids": [
+          9488290
+        ]
+      },
+      {
+        "relation": 12746173,
+        "name": "什刹西海",
+        "raw_xml_inner_member_way_ids": [
+          946003585,
+          946003584,
+          946003583
+        ],
+        "normalized_inner_member_way_ids": [
+          946003585,
+          946003584,
+          946003583
+        ]
+      }
+    ]
+  }
+}

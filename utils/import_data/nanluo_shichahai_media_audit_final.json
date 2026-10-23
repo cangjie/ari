@@ -1,0 +1,41 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "tour_sha256": "0c896ced02877e05667c82115e6210c2ec6fb762eb666ab25b388de192510618",
+  "request_sha256": "42ea8ceb1d78e633ada654fa7709642c9812c8a3f6161f98e9a8d6ed6bb32db8",
+  "result": {
+    "findings": [
+      {
+        "severity": "important",
+        "file": "tour_collection_media.py",
+        "reason": "水体relation的环拼接逻辑只按『单个member的geometry是否自身首尾闭合』判断（closed = ring[0]==ring[-1]），但真实OSM多边形关系的outer边界常由多条way拼接而成，单个member通常不会自成闭环。若什刹海/后海等水体relation的outer由多段way组成，所有相关ring都会在`if layer in ('water','blocks','woods') and not closed: continue`处被跳过，导致该湖面轮廓完全不画，而不是『画出完整环、避免重复』。这与注释『水体用relation的完整环』的意图不符，且未见相应的环拼接（按端点首尾相连合并多个member）代码。之前反馈的『水体site重复』修复只处理了relation本身非multipolygon被跳过的情形，没有处理outer由多段way组成的情形，二者是不同问题。",
+        "recommendation": "在water分支为relation的outer/inner分别按端点顺序拼接同role的多个member geometry成一条完整闭合环后再做winding判断与绘制；并针对什刹海relation（如存在多段outer）补充单测覆盖，而不是仅靠现有87条pytest（它们很可能只覆盖了单段闭合的简单情形）。"
+      },
+      {
+        "severity": "important",
+        "file": "web_api/tour/app.js",
+        "reason": "render()中新增了无条件执行的`$(\"me\").hidden = false;`，该行在collection与非collection（既有真实GPS馆）两条路径之前就执行，不依赖当前地理定位是否已拿到有效fix。虽然紧随其后对collection分支会被collectionView()/mapwrap隐藏覆盖掉视觉影响，但对『既有馆』路径，这行是否必然在同一次渲染内被后续的updateMe()/layout()按真实定位状态重新纠正，仅靠本次提供的diff片段无法确认（上下文省略了之后的具体调用顺序）。如果存在任何既有馆渲染路径在设置该行后、到下一次真正的geo回调之前没有立即跟一次能正确隐藏『无fix』状态的updateMe()调用，就会出现『未获得定位时也显示定位点』的回归，这与本轮明确要求的『其他既有馆定位不受影响』直接冲突。",
+        "recommendation": "明确标注该行只在collection路径需要（为了配合collectionView的統一隐藏控制），对非collection路径不要新增该无条件赋值，改为保持原有由updateMe()/geo状态驱动的隐藏逻辑；并补一条针对『首次渲染尚无geo fix时#me是否可见』的浏览器场景用例，而不是只复测『迟到GPS回调』这一个点。"
+      },
+      {
+        "severity": "important",
+        "file": "PHOTOS（照片绑定清单）",
+        "reason": "seq32（『什刹海湖岸景观 / shichahai』）与seq49（『宋庆龄故居展陈 / songqingling』）两条完全不同主体的照片，source.title与source.url被填成一模一样的同一篇政府网文章页面（https://www.beijing.gov.cn/.../jrts/202609/t20260910_4857944.html），只有image_url不同。这两处是仅10个配图名额里仅存的一对『来源页面URL完全重复』，而其余8条照片的来源URL各不相同、互不重叠。无法排除是复制来源字段时把同一条source误粘贴到两个不同条目上（caption/source配对出错），也可能确有一篇图文合集文章同时收录两张图——但这需要人工复核确认，不能默认视为正确。",
+        "recommendation": "人工重新打开该来源页面，核实页面中确实存在两张分别对应『什刹海湖岸』与『宋庆龄故居』的不同图片且各自URL与image_url一致；若该页面实际只对应其中一个主体，须单独核实并更正另一条的来源，不能两条共用同一篇文章作为出处。"
+      },
+      {
+        "severity": "minor",
+        "file": "PHOTOS（照片绑定清单）",
+        "reason": "seq48『郭沫若故居院落』图片原始尺寸仅250×169像素，在本次改为『照片原宽显示』（plate容器max-width按info.width设置）的呈现方式下，详情页该图会按很小的原生尺寸展示，观感上可能偏小/偏糊，与其他6张（360~1280像素宽）相比明显偏低。",
+        "recommendation": "若该来源没有更高分辨率版本可换，建议在图注或展示位置上做轻量提示/统一外框处理，避免与同页其他高分辨率照片对比过于突兀；非阻断性问题，可留待下一轮处理。"
+      },
+      {
+        "severity": "minor",
+        "file": "web_api/tour/app.js",
+        "reason": "collectionView()函数体内`$(\"tour\").scrollTop = 0;`被重复写了两次（紧邻的两行之间插入了collection/mapwrap的hidden赋值），属于冗余代码，暗示本意可能是要重置另一个元素（例如#collection或#mapwrap自身的scrollTop）但被误写成了同一元素两次，而不是功能性错误。",
+        "recommendation": "清理重复行，并确认视图切换时真正需要清零scrollTop的是否还包括#collection或#mapwrap本身（避免从地图切回清单/反之时保留上一视图的滚动位置）。"
+      }
+    ],
+    "assessment": "本轮审查基于提供的tour_collection_media.py全文、CURRENT PATCH五处diff（构建入口、QA材料拼装、CSS、JS、HTML）、37条POSITIONS与10条PHOTOS精简绑定清单、以及BOUNDARIES口径说明，未看到任何图片像素，不对照片主体/清晰度真实性做视觉判断，也未重新核算坐标或重新打分，仅做文本/代码/绑定层面的静态核对。\n\n总体结构是自洽的：37个位置与100条清单的id/seq一一对应校验（含sha256/身份双重校验）、10张照片的identity_key与path/by_seq比对、QA材料按map_mode=='browse'条件性追加位置口径与图注且明确声明『未传图』、既有两馆QA文本因guard条件不触发而不受影响、GPS回调对collection模式统一短路（onFix/onGeoError新增isCollection()早退）、route/热区/到站相关文案在browse地图下全部替换为『无路线及到站提醒』的措辞——这些均对应CLI描述的既定修复点，且在给定代码片段范围内未发现明显逻辑矛盾。rejected_position_matches里对齐白石/护国寺小吃/鼓楼钟楼歧义节点的排除说明，与POSITIONS、PHOTOS中对应条目『有照片无位置』的缺位情况能互相印证，内部一致性较好。\n\n但仍有需要确认、不能默认视为『合格』的具体问题：(1) 水体relation的环处理在outer由多段way拼接的情形下可能导致整个湖面轮廓漏绘，这与『水体site重复已修正』是两件不同的事，未见证据表明已被覆盖测试；(2) render()中新增的无条件`$(\\\"me\\\").hidden=false`是否会在既有真实GPS馆的渲染路径里造成『无fix前先显示定位点』的短暂回归，仅凭本次diff片段无法排除，需要补充针对该具体时序的测试，不能仅靠『新增GPS回调检查复测通过』来覆盖（那是回调层面，不是渲染时序层面）；(3) 10张照片里有且仅有一对（什刹海湖岸景观/宋庆龄故居展陈）引用了完全相同的来源页面URL，需人工重新打开页面核实两张图确实都出自该页，否则存在图注与出处张冠李戴的风险。以上三点在给出信息范围内是具体、可复核的问题，不属于要求补未知位置/路线/重打APK之类的越界要求。另有两条minor（低分辨率图、JS冗余赋值行）供后续顺手清理。\n\n结论：本次材料在身份校验、GPS屏蔽、文案口径等方面实现到位，但存在至少两项important级别的『未经证据排除的回归/遗漏风险』与一项important级别的『来源可能误配』，在它们被人工复核或补测确认前，不能判定为已通过的合格审查；未对真机、线上效果做任何验收假设。</assessment>\n"
+  }
+}

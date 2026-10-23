@@ -1,0 +1,24 @@
+{
+  "attempts": [
+    {
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "query": "[out:json][timeout:40];(way[\"highway\"](39.927,116.369,39.9525,116.414);way[\"natural\"=\"water\"](39.927,116.369,39.9525,116.414);relation[\"natural\"=\"water\"](39.927,116.369,39.9525,116.414);node[\"name\"](39.927,116.369,39.9525,116.414);way[\"building\"][\"name\"](39.927,116.369,39.9525,116.414);way[\"tourism\"](39.927,116.369,39.9525,116.414);way[\"historic\"](39.927,116.369,39.9525,116.414););out geom;",
+      "error": "<HTTPError 502: 'Bad Gateway'>",
+      "seconds": 3.7
+    },
+    {
+      "endpoint": "https://overpass.kumi.systems/api/interpreter",
+      "method": "GET",
+      "error": "TimeoutError('The read operation timed out')"
+    }
+  ],
+  "selected": {
+    "endpoint": "https://api.openstreetmap.org/api/0.6/map?bbox=116.369,39.927,116.414,39.9525",
+    "transport": "本机Python urllib；TLS正常校验；完整OSM map XML",
+    "raw_file": "nanluo_shichahai_osm_response.xml",
+    "raw_sha256": "f7113e9ddd22163ed58fbb5445d63e002325ec11b346ef5716f34c1334f791a1",
+    "normalized_file": "nanluo_shichahai_osm_data.json",
+    "fetched": "2026-10-23T22:12:31+08:00",
+    "note": "Overpass两处入口失败后改用OSM官方map API；另用服务器纯管道压缩下载校验传输，无中转文件；实际发布绑定本机完整原始XML。"
+  }
+}

@@ -127,6 +127,18 @@ def museum_material(museum: dict) -> str:
         parts.append(museum['planning']['zh'])
     for place in museum["places"]:
         parts.append(f"## 地点：{place['name']['zh']}")
+        if museum.get('map_mode') == 'browse':
+            if place.get('position'):
+                position = place['position']
+                parts.append('地图参考位置：' + position['note'])
+                parts.append('地图位置出处：' + position['source']['title'] + ' ' + position['source']['url'])
+            else:
+                parts.append('本条尚未收录独立地图位置，请从完整清单阅读；不能借用整体或其他地点的位置。')
+            if place.get('photo_info'):
+                photo = place['photo_info']
+                parts.append('资料图图注：' + photo['caption']['zh'] + '；图片出处：' +
+                             photo['source']['title'] + ' ' + photo['source']['url'] +
+                             '。这里只提供图注与出处，没有向回答模型传入图片，不据此识图或推断现场状态。')
         parts += [_stop_text(museum["stops"][str(seq)], is_collection=museum.get('mode') == 'collection') for seq in place["stops"]]
     return "\n\n".join(parts)
 

@@ -1,0 +1,330 @@
+[
+  {
+    "seq": 1,
+    "source_id": "nl_overview",
+    "source_url": "https://s.visitbeijing.com.cn/attraction/101328",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2020/0509/20200509042230914.jpg",
+    "candidate_index": 0,
+    "content_type": "image/jpeg",
+    "status": "ok",
+    "bytes": 205317,
+    "sha256": "a36bb7a8221db523b7af71a3ae4fde89b0ee858a3411da21ed82f5c495de05e6",
+    "path": "exports/nanluo_shichahai_photo_originals/1.original"
+  },
+  {
+    "seq": 48,
+    "source_id": "guomoruo",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/gmrjng/202107/t20210713_2435614.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/gmrjng/202107/W020211102644016660795.jpg",
+    "candidate_index": 2,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 23,
+    "source_id": "maodun",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/mdgj/202107/t20210708_2432100.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/mdgj/202107/W020211102642467052555.jpg",
+    "candidate_index": 2,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 49,
+    "source_id": "songqingling",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/202011/t20201123_2143317.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/202011/W020210129559781433896.jpg",
+    "candidate_index": 2,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 22,
+    "source_id": "qibaishi",
+    "source_url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/t20190114_1865118.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/W020200421408724037903.jpg",
+    "candidate_index": 4,
+    "content_type": "image/jpeg",
+    "status": "ok",
+    "bytes": 53314,
+    "sha256": "329e1f838cfb8e43320aa8704fd360179d2e579452d57ba62d7cee1340b1a4cf",
+    "path": "exports/nanluo_shichahai_photo_originals/22.original"
+  },
+  {
+    "seq": 59,
+    "source_id": "gongwang_overview",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/t20221018_2838434.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/W020221205586101641203.jpg",
+    "candidate_index": 1,
+    "content_type": "image/jpeg",
+    "status": "ok",
+    "bytes": 69128,
+    "sha256": "5bbcfb190e91fe24760f99869aafd5c543917b861ccd464bbf921829b4160b64",
+    "path": "exports/nanluo_shichahai_photo_originals/59.original"
+  },
+  {
+    "seq": 48,
+    "source_id": "guomoruo",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/gmrjng/202107/t20210713_2435614.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/gmrjng/202107/W020211201628539830263.jpg",
+    "candidate_index": 6,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 23,
+    "source_id": "maodun",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/mdgj/202107/t20210708_2432100.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/gdwh/mdgj/202107/W020211201626871879844.JPG",
+    "candidate_index": 6,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 49,
+    "source_id": "songqingling",
+    "source_url": "https://www.beijing.gov.cn/renwen/rwzyd/202011/t20201123_2143317.html",
+    "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/202011/W020210201545169296369.jpg",
+    "candidate_index": 6,
+    "status": "error",
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "seq": 32,
+    "source_id": "sh_autumn",
+    "source_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html",
+    "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744744804.jpg",
+    "candidate_index": 3,
+    "status": "ok",
+    "bytes": 111705,
+    "sha256": "119ce7ff7c2cbc33df3eaf029c90270f10e19ea2ea427f87ce9f88f0762c5bd5",
+    "path": "exports/nanluo_shichahai_photo_originals/32.original"
+  },
+  {
+    "seq": 48,
+    "source_id": "guomoruo_gallery",
+    "source_url": "https://s.visitbeijing.com.cn/index.php/gallery/9149",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0809/20180809112218440.png",
+    "status": "ok",
+    "bytes": 120384,
+    "sha256": "4046f02d610345f1c8546c128ad1c6064327d7e160c8dac63d875e8239cda3f5",
+    "path": "exports/nanluo_shichahai_photo_originals/48.original"
+  },
+  {
+    "seq": 49,
+    "source_id": "sh_autumn",
+    "source_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html",
+    "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744832109.jpg",
+    "status": "ok",
+    "bytes": 124263,
+    "sha256": "82dc1425aabef7cf381abae041d262b3db4c6d59aa83a52eea5901be7bd91f02",
+    "path": "exports/nanluo_shichahai_photo_originals/49.original"
+  },
+  {
+    "seq": 61,
+    "source_id": "gulou_detail",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362760/362770/1757494/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362760/362770/1757494/2020041009495346436.jpg",
+    "candidate_index": 2,
+    "status": "ok",
+    "bytes": 17991,
+    "sha256": "a003820a49628dd679dbcc2e7d823dd33e0d827cace2b8607f40fcaff1ddbfd9",
+    "path": "exports/nanluo_shichahai_photo_originals/61.original"
+  },
+  {
+    "seq": 37,
+    "source_id": "desheng_bridge",
+    "source_url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737672.html",
+    "image_url": "https://www.bjxch.gov.cn/file/20180809/1533779630660043588.jpg",
+    "candidate_index": 4,
+    "status": "ok",
+    "bytes": 1423612,
+    "sha256": "57fca6524f72dcc9a40016e9bbecca85755204b70812aad4e952be1a90bd18f3",
+    "path": "exports/nanluo_shichahai_photo_originals/37.original"
+  },
+  {
+    "seq": 52,
+    "source_id": "taobeile",
+    "source_url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737633.html",
+    "image_url": "https://www.bjxch.gov.cn/file/20180808/1533736124066028374.jpg",
+    "candidate_index": 4,
+    "status": "error",
+    "error": "TimeoutError('The read operation timed out')"
+  },
+  {
+    "seq": 5,
+    "source_id": "juer",
+    "source_url": "https://www.bjdch.gov.cn/ywdt/dcyw/202311/t20231108_3297236.html",
+    "image_url": "https://www.bjdch.gov.cn/ywdt/dcyw/202311/W020231108412510320656.jpg",
+    "candidate_index": 6,
+    "status": "ok",
+    "bytes": 104400,
+    "sha256": "4fcbb5aea66e0540b2abff5bf2b50a692420b09938e0216e77ab5ba21c7e161b",
+    "path": "exports/nanluo_shichahai_photo_originals/5.original"
+  },
+  {
+    "seq": 41,
+    "source_id": "sh_route",
+    "source_url": "https://www.bjxch.gov.cn/rwxc/xxxq/pnidpv954519.html",
+    "image_url": "https://www.bjxch.gov.cn/file/20240621/1718953664900078445.jpg",
+    "candidate_index": 5,
+    "status": "ok",
+    "bytes": 74133,
+    "sha256": "c9ed465b110d8c1b231b91b838e430376d9a6335a21bec7dba9e56a0e3c09f37",
+    "path": "exports/nanluo_shichahai_photo_originals/41.original"
+  },
+  {
+    "seq": 36,
+    "source_id": "gallery_36",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/17762",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2021/1111/20211111155250420.jpg",
+    "candidate_index": 0,
+    "path": "exports/nanluo_shichahai_photo_originals/36_0.original",
+    "status": "ok",
+    "bytes": 129210,
+    "sha256": "874fb08797a09a791bddcbd04e0c830053880c624e2197b6d42ed7dfd33b0c51"
+  },
+  {
+    "seq": 45,
+    "source_id": "gallery_45",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/19523",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2022/0615/bc0e66cae22fc78678b2b7d129956703.jpg",
+    "candidate_index": 0,
+    "path": "exports/nanluo_shichahai_photo_originals/45_0.original",
+    "status": "ok",
+    "bytes": 240891,
+    "sha256": "9d4db96c2d60e5f09cfafde852b4bb1b62aa272e32741f29370a81ea589ef814"
+  },
+  {
+    "seq": 60,
+    "source_id": "gallery_60",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/23626",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2024/0731/ef2786a36726c9a53115fc06420abc16.jpg",
+    "candidate_index": 0,
+    "path": "exports/nanluo_shichahai_photo_originals/60_0.original",
+    "status": "ok",
+    "bytes": 423004,
+    "sha256": "ee41a85a4dcbea28c0bfe25e61c046287b99c872445d79b4dbf28e117b5978d4"
+  },
+  {
+    "seq": 60,
+    "source_id": "gallery_60",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/23626",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2024/0731/9cf956cf0503acce75361e20184b8587.jpg",
+    "candidate_index": 1,
+    "path": "exports/nanluo_shichahai_photo_originals/60_1.original",
+    "status": "ok",
+    "bytes": 352406,
+    "sha256": "61a71d16aa29df6f735dc5346422d53be14d53faa99eea756a83b26d3d98c491"
+  },
+  {
+    "seq": 60,
+    "source_id": "gallery_60",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/23626",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2024/0731/0a85172492f91c659bd18ab4ac2df2fe.jpg",
+    "candidate_index": 2,
+    "path": "exports/nanluo_shichahai_photo_originals/60_2.original",
+    "status": "ok",
+    "bytes": 580912,
+    "sha256": "9d9b2613b058e374643c9703e8b8cedf7b1740704dc084abd166438c2480590e"
+  },
+  {
+    "seq": 96,
+    "source_id": "gallery_96",
+    "source_url": "https://s.visitbeijing.com.cn/gallery/8808",
+    "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0628/20180628064305173.jpg",
+    "candidate_index": 0,
+    "path": "exports/nanluo_shichahai_photo_originals/96_0.original",
+    "status": "ok",
+    "bytes": 115002,
+    "sha256": "6767bbf75b94222212cb1d10456902b290ac68ac29023bd30da38d6967251ebd"
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032551896.png",
+    "candidate_index": 2,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_2.original",
+    "status": "ok",
+    "sha256": "df095656c47a9d1e8475b885c3758a6e93189b3b52002fc4fb9a35df65eb729e",
+    "bytes": 379477
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032536956.png",
+    "candidate_index": 3,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_3.original",
+    "status": "ok",
+    "sha256": "209bc075c9a919af31b8cc94b1d7013eccc644f6ca747e475a260dfd3c2cd581",
+    "bytes": 167143
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032594630.png",
+    "candidate_index": 4,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_4.original",
+    "status": "ok",
+    "sha256": "4614e095e68f88901b96c02924c37fe8aa187a9f2009dfd27ba9c4fd9154bf98",
+    "bytes": 187743
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032656970.png",
+    "candidate_index": 5,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_5.original",
+    "status": "ok",
+    "sha256": "0aa14c4648cfd0b23a41e35a1dfda85b1776568067d5dbdba0f2837e83c44f9f",
+    "bytes": 183679
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032671166.png",
+    "candidate_index": 6,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_6.original",
+    "status": "ok",
+    "sha256": "59fb357da73a82cd4ac6d35a298b8bb30dce50ccaaf3430cebc4c8f57dcfb255",
+    "bytes": 218901
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416034828215.png",
+    "candidate_index": 7,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_7.original",
+    "status": "ok",
+    "sha256": "eb52d04db05f071353a84c99c48db1194c27918e7681ed1d8acc77b1684f2c76",
+    "bytes": 199112
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416034880945.png",
+    "candidate_index": 8,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_8.original",
+    "status": "ok",
+    "sha256": "7594c1b175c683328f60dbe80e9e9b13f190244508d3afc52c2e9078510d526e",
+    "bytes": 192180
+  },
+  {
+    "seq": 60,
+    "source_id": "wwj_axis_museums",
+    "source_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html",
+    "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416034981694.png",
+    "candidate_index": 9,
+    "path": "exports/nanluo_shichahai_photo_originals/axis_9.original",
+    "status": "ok",
+    "sha256": "e54e54e3e4fa100537d902737867bacf942ebe9fe3462263b76e3a05421e5252",
+    "bytes": 221800
+  }
+]

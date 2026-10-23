@@ -1,0 +1,436 @@
+{
+  "checked_on": "2026-10-23",
+  "map_mode": "browse",
+  "note": "OSM同名要素与既有来源位置交叉核对；街巷选真实节点，院落取轮廓中心。非入口导航；无热区、定位或路线。未核实的内部组成部分保留清单。齐白石OSM同名节点地址为跨车胡同，不能用于雨儿胡同旧居；不标。 护国寺小吃OSM节点缺分店地址，不用于地安门店。 鼓楼/钟楼需用中轴线的建筑及Wikidata标识；排除雍和宫同名楼。街巷取沿折线累计长度的中点，避免两条胡同共享端点。 水面关系仅画三海完整环；北海关系内岛在框外且快照未返回成员，不推画该关系。",
+  "osm_file": "nanluo_shichahai_osm_data.json",
+  "raw_file": "nanluo_shichahai_osm_response.xml",
+  "osm_sha256": "0b6720c426e194dc88a8d723bd8349d526ea9aa103629a0d165637e12adb00d3",
+  "positions": [
+    {
+      "seq": 1,
+      "identity_key": "nanluo",
+      "osm": [
+        "way",
+        4922662
+      ],
+      "osm_name": "南锣鼓巷",
+      "basis": "street-midpoint",
+      "min_zoom": 0
+    },
+    {
+      "seq": 2,
+      "identity_key": "fuxiang",
+      "osm": [
+        "way",
+        187203226
+      ],
+      "osm_name": "福祥胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 3,
+      "identity_key": "suoyi",
+      "osm": [
+        "way",
+        187203225
+      ],
+      "osm_name": "蓑衣胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 4,
+      "identity_key": "yuer",
+      "osm": [
+        "way",
+        30748645
+      ],
+      "osm_name": "雨儿胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 5,
+      "identity_key": "maoer",
+      "osm": [
+        "way",
+        4931137
+      ],
+      "osm_name": "帽儿胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 6,
+      "identity_key": "jingyang",
+      "osm": [
+        "way",
+        30802728
+      ],
+      "osm_name": "景阳胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 7,
+      "identity_key": "shajing",
+      "osm": [
+        "way",
+        4931224
+      ],
+      "osm_name": "沙井胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 8,
+      "identity_key": "heizhima",
+      "osm": [
+        "way",
+        30802727
+      ],
+      "osm_name": "黑芝麻胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 9,
+      "identity_key": "qiangulouyuan",
+      "osm": [
+        "way",
+        30802721
+      ],
+      "osm_name": "前鼓楼苑胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 11,
+      "identity_key": "banchang",
+      "osm": [
+        "way",
+        30748777
+      ],
+      "osm_name": "板厂胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 12,
+      "identity_key": "dongmianhua",
+      "osm": [
+        "way",
+        175425297
+      ],
+      "osm_name": "东棉花胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 13,
+      "identity_key": "beibingmasi",
+      "osm": [
+        "way",
+        25091579
+      ],
+      "osm_name": "北兵马司胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 14,
+      "identity_key": "qinlao",
+      "osm": [
+        "way",
+        4931136
+      ],
+      "osm_name": "秦老胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 15,
+      "identity_key": "qianyuanensi",
+      "osm": [
+        "way",
+        25091635
+      ],
+      "osm_name": "前圆恩寺胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 16,
+      "identity_key": "houyuanensi",
+      "osm": [
+        "way",
+        4931240
+      ],
+      "osm_name": "后圆恩寺胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 17,
+      "identity_key": "juer",
+      "osm": [
+        "way",
+        30748845
+      ],
+      "osm_name": "菊儿胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 18,
+      "identity_key": "sengwang",
+      "osm": [
+        "way",
+        1156692585
+      ],
+      "osm_name": "僧王府",
+      "basis": "feature-center",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 31,
+      "identity_key": "drama",
+      "osm": [
+        "way",
+        649477507
+      ],
+      "osm_name": "中央戏剧学院(东城校区)",
+      "basis": "feature-center",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 36,
+      "identity_key": "yinding",
+      "osm": [
+        "way",
+        816148132
+      ],
+      "osm_name": "银锭桥",
+      "basis": "street-midpoint",
+      "min_zoom": 0
+    },
+    {
+      "seq": 40,
+      "identity_key": "hehua",
+      "osm": [
+        "way",
+        24804695
+      ],
+      "osm_name": "荷花市场",
+      "basis": "street-midpoint",
+      "min_zoom": 0
+    },
+    {
+      "seq": 41,
+      "identity_key": "yandai",
+      "osm": [
+        "way",
+        42676210
+      ],
+      "osm_name": "烟袋斜街",
+      "basis": "street-midpoint",
+      "min_zoom": 0
+    },
+    {
+      "seq": 42,
+      "identity_key": "guangfu",
+      "osm": [
+        "way",
+        1571056940
+      ],
+      "osm_name": "广福观",
+      "basis": "feature-center",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 43,
+      "identity_key": "huoshen",
+      "osm": [
+        "way",
+        497790863
+      ],
+      "osm_name": "火德真君庙",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 44,
+      "identity_key": "guanghua",
+      "osm": [
+        "way",
+        929752805
+      ],
+      "osm_name": "广化寺",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 48,
+      "identity_key": "guomoruo",
+      "osm": [
+        "node",
+        13204690291
+      ],
+      "osm_name": "郭沫若故居",
+      "basis": "poi"
+    },
+    {
+      "seq": 49,
+      "identity_key": "songqingling",
+      "osm": [
+        "way",
+        30835241
+      ],
+      "osm_name": "宋庆龄故居",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 50,
+      "identity_key": "chunwang",
+      "osm": [
+        "way",
+        30835211
+      ],
+      "osm_name": "醇亲王府",
+      "basis": "feature-center",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 53,
+      "identity_key": "furen",
+      "osm": [
+        "relation",
+        3599661
+      ],
+      "osm_name": "原辅仁大学",
+      "basis": "feature-center"
+    },
+    {
+      "seq": 56,
+      "identity_key": "yaer",
+      "osm": [
+        "way",
+        30766509
+      ],
+      "osm_name": "鸦儿胡同",
+      "basis": "street-midpoint",
+      "min_zoom": 0.42
+    },
+    {
+      "seq": 57,
+      "identity_key": "desheng_gate",
+      "osm": [
+        "way",
+        958430463
+      ],
+      "osm_name": "德胜门箭楼",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 58,
+      "identity_key": "meilanfang",
+      "osm": [
+        "way",
+        162379494
+      ],
+      "osm_name": "梅兰芳纪念馆",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 59,
+      "identity_key": "gongwang",
+      "osm": [
+        "way",
+        26514871
+      ],
+      "osm_name": "恭王府",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 61,
+      "identity_key": "gulou",
+      "osm": [
+        "way",
+        267371087
+      ],
+      "osm_name": "鼓楼",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 62,
+      "identity_key": "zhonglou",
+      "osm": [
+        "way",
+        425993664
+      ],
+      "osm_name": "钟楼",
+      "basis": "feature-center",
+      "min_zoom": 0
+    },
+    {
+      "seq": 68,
+      "identity_key": "gongwang_garden",
+      "osm": [
+        "way",
+        268548508
+      ],
+      "osm_name": "恭王府花园",
+      "basis": "feature-center",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 95,
+      "identity_key": "shop_kaorouji",
+      "osm": [
+        "node",
+        4450261096
+      ],
+      "osm_name": "烤肉季",
+      "basis": "poi",
+      "min_zoom": 0.4
+    },
+    {
+      "seq": 99,
+      "identity_key": "shop_postoffice",
+      "osm": [
+        "node",
+        12998385701
+      ],
+      "osm_name": "什刹海邮政所",
+      "basis": "poi",
+      "min_zoom": 0.4
+    }
+  ],
+  "labels": [
+    [
+      "relation",
+      409777
+    ],
+    [
+      "relation",
+      11518929
+    ],
+    [
+      "relation",
+      12746173
+    ]
+  ],
+  "photo_manifest": "nanluo_shichahai_tour_photos.json",
+  "cover_seq": 1,
+  "water_relations": [
+    409777,
+    11518929,
+    12746173
+  ]
+}

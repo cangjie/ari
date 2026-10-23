@@ -104,4 +104,6 @@ def build(key, config):
                         workbook_sha256=load('verification_report.json')['workbook_sha256'],
                         checked_on='2026-10-23', business_database_written=False),
     )
-    return data, [f'{key}: {len(stops)} 条已审资料；清单浏览，无未经核实的地图坐标、停留时间或路线。']
+    from tour_collection_media import augment
+    augment(data, config)
+    return data, [f'{key}: {len(stops)} 条已审资料；完整清单；可选来源地图与照片，无虚构停留时间或路线。']

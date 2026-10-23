@@ -460,3 +460,8 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 游客互动同样读取这份JSON；新清单的Core分数、地址、特色及平台提示都进入回答材料。Core分数和资料说明文案按显式模式区分，原有两馆的问答材料已与改动前逐字比对一致。部署需要`git pull --ff-only`后重启`ari-web-api`，不改Nginx或APK。发布复核用原Sonnet 5 medium，实际公开文件哈希与只读GET验收记录在`nanluo_shichahai_release_report.json`。
 
 内容版本`6ac44bd`已推送并部署，服务active；7个公开页面/脚本/资料文件逐字节核对通过，三处景区问答GET正常，公网清单、桥接模拟及旧景区回归通过。首次冷启动超过原验收脚本20秒等待，改为明确等到载入完成、60秒超时即报错后复查通过；历史失败保留。85项pytest通过、3项真库写入测试未启用。Android真机未测，APK未替换。
+
+
+### 南锣鼓巷及什刹海地图/照片补充（2026-10-23）
+
+完整100条清单新增37处OSM来源参考位置与10张独立资料图；清单和景点地图可切换，详情可以聚焦地图。`collection`中的`map_mode=browse`只用于位置浏览，不送原生定位缓存、不启动GPS或自动到站。未知位置、缺图条目仍可浏览；未生成路线和停留时间。地图、图片均随仓库静态提供，无站外资源请求；App继续打开同一网页，无需更新APK。问答材料同步增加页面可见的位置口径、来源和图注，只提供文字不让模型冒充识图。因同时修改`web_api/app/tour_qa_llm.py`，部署后重启`ari-web-api`；不改Nginx。数据口径、来源与验收见`docs/NANLUO_SHICHAHAI_DATA.md`及`nanluo_shichahai_media_release_report.json`。

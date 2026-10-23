@@ -1,0 +1,283 @@
+{
+  "checked_on": "2026-10-23",
+  "processing": "仅EXIF方向校正、等比缩小和JPEG编码；不裁切、不去水印、不生成或改变画面。原件留本机忽略导出目录。",
+  "note": "资料图非实时现场状态；图片出处不冒充摄影作者。SIPA明确请勿转载图、河道误配帽儿胡同、碑刻误配鼓楼等候选未发布。",
+  "jpeg": {
+    "max_edge": 1280,
+    "quality": 85,
+    "optimize": true,
+    "progressive": true
+  },
+  "photos": [
+    {
+      "seq": 1,
+      "identity_key": "nanluo",
+      "caption": {
+        "zh": "南锣鼓巷街口",
+        "en": "Nanluoguxiang street entrance"
+      },
+      "path": "img/nanluo_shichahai/1.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/attraction/101328"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2020/0509/20200509042230914.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/1.original",
+        "sha256": "a36bb7a8221db523b7af71a3ae4fde89b0ee858a3411da21ed82f5c495de05e6",
+        "bytes": 205317
+      },
+      "sha256": "6b066d45173564f47a9fd2b2017c249e49720a83535265fabb433e22c9ec4709",
+      "bytes": 100332,
+      "width": 1020,
+      "height": 428
+    },
+    {
+      "seq": 22,
+      "identity_key": "qibaishi",
+      "caption": {
+        "zh": "雨儿胡同齐白石旧居院落",
+        "en": "Qi Baishi residence courtyard in Yuer Hutong"
+      },
+      "path": "img/nanluo_shichahai/22.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/t20190114_1865118.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/renwen/sy/whkb/201901/W020200421408724037903.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/22.original",
+        "sha256": "329e1f838cfb8e43320aa8704fd360179d2e579452d57ba62d7cee1340b1a4cf",
+        "bytes": 53314
+      },
+      "sha256": "63a4b233a6648e28c020f22c342f9261a29c0b6289a8930266b5311809870b4d",
+      "bytes": 57578,
+      "width": 599,
+      "height": 391
+    },
+    {
+      "seq": 32,
+      "identity_key": "shichahai",
+      "caption": {
+        "zh": "什刹海湖岸景观",
+        "en": "Shichahai lakeside"
+      },
+      "path": "img/nanluo_shichahai/32.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744744804.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/32.original",
+        "sha256": "119ce7ff7c2cbc33df3eaf029c90270f10e19ea2ea427f87ce9f88f0762c5bd5",
+        "bytes": 111705
+      },
+      "sha256": "9b09f9248195ceb5f3d62cd914283751c5dcbbb1b4a2565adf4a1fed58a5c420",
+      "bytes": 114615,
+      "width": 1080,
+      "height": 694
+    },
+    {
+      "seq": 37,
+      "identity_key": "desheng_bridge",
+      "caption": {
+        "zh": "德胜桥桥栏及桥侧景观",
+        "en": "Desheng Bridge balustrade and surroundings"
+      },
+      "path": "img/nanluo_shichahai/37.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.bjxch.gov.cn/xcfw/whfw/xxxq/pnidpv737672.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20180809/1533779630660043588.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/37.original",
+        "sha256": "57fca6524f72dcc9a40016e9bbecca85755204b70812aad4e952be1a90bd18f3",
+        "bytes": 1423612
+      },
+      "sha256": "314d9ef41ee12bf5a36c8aacb0b5e86a1ada71423c939fa6680e65cb5a64f213",
+      "bytes": 233811,
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "seq": 41,
+      "identity_key": "yandai",
+      "caption": {
+        "zh": "烟袋斜街街景",
+        "en": "Yandai Xiejie streetscape"
+      },
+      "path": "img/nanluo_shichahai/41.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.bjxch.gov.cn/rwxc/xxxq/pnidpv954519.html"
+      },
+      "image_url": "https://www.bjxch.gov.cn/file/20240621/1718953664900078445.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/41.original",
+        "sha256": "c9ed465b110d8c1b231b91b838e430376d9a6335a21bec7dba9e56a0e3c09f37",
+        "bytes": 74133
+      },
+      "sha256": "db798bebbc975e0bae0376a0c2d8f6c6f93cd5c43cff2623c0c783d51f5618f4",
+      "bytes": 76133,
+      "width": 800,
+      "height": 533
+    },
+    {
+      "seq": 48,
+      "identity_key": "guomoruo",
+      "caption": {
+        "zh": "郭沫若故居院落",
+        "en": "Guo Moruo residence courtyard"
+      },
+      "path": "img/nanluo_shichahai/48.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/index.php/gallery/9149"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0809/20180809112218440.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/48.original",
+        "sha256": "4046f02d610345f1c8546c128ad1c6064327d7e160c8dac63d875e8239cda3f5",
+        "bytes": 120384
+      },
+      "sha256": "942d44018d30743ff6dd20d0c13b07f7dacecd843004f2cf79c97847d21fe5e8",
+      "bytes": 14868,
+      "width": 250,
+      "height": 169
+    },
+    {
+      "seq": 49,
+      "identity_key": "songqingling",
+      "caption": {
+        "zh": "宋庆龄故居展陈",
+        "en": "Exhibition at Soong Ching Ling residence"
+      },
+      "path": "img/nanluo_shichahai/49.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260910_4857944.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/W020260910390744832109.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/49.original",
+        "sha256": "82dc1425aabef7cf381abae041d262b3db4c6d59aa83a52eea5901be7bd91f02",
+        "bytes": 124263
+      },
+      "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+      "bytes": 126985,
+      "width": 1080,
+      "height": 607
+    },
+    {
+      "seq": 59,
+      "identity_key": "gongwang",
+      "caption": {
+        "zh": "恭王府园林景观",
+        "en": "Garden scene at Prince Gong Mansion"
+      },
+      "path": "img/nanluo_shichahai/59.jpg",
+      "source": {
+        "title": "北京市政府或西城区政府",
+        "url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/t20221018_2838434.html"
+      },
+      "image_url": "https://www.beijing.gov.cn/renwen/rwzyd/lyjq/5A/gwf/202210/W020221205586101641203.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/59.original",
+        "sha256": "5bbcfb190e91fe24760f99869aafd5c543917b861ccd464bbf921829b4160b64",
+        "bytes": 69128
+      },
+      "sha256": "8be8a7bc82bc30d09247874c6ac515fd5f15905e6a8a99d2cc47b7ce19598903",
+      "bytes": 40789,
+      "width": 360,
+      "height": 250
+    },
+    {
+      "seq": 61,
+      "identity_key": "gulou",
+      "caption": {
+        "zh": "由景山方向远眺鼓楼",
+        "en": "Drum Tower viewed from the direction of Jingshan"
+      },
+      "path": "img/nanluo_shichahai/61.jpg",
+      "source": {
+        "title": "北京市文物局",
+        "url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/index.html"
+      },
+      "image_url": "https://wwj.beijing.gov.cn/bjww/362679/483700/543518451/2025012416032551896.png",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/axis_2.original",
+        "sha256": "df095656c47a9d1e8475b885c3758a6e93189b3b52002fc4fb9a35df65eb729e",
+        "bytes": 379477
+      },
+      "sha256": "fa9ca9ff8760a9902a4d7ecd5317de0e929251c77894db1d0078caa3cec58597",
+      "bytes": 61126,
+      "width": 600,
+      "height": 399
+    },
+    {
+      "seq": 96,
+      "identity_key": "shop_qingyun",
+      "caption": {
+        "zh": "庆云楼店面",
+        "en": "Qingyunlou facade"
+      },
+      "path": "img/nanluo_shichahai/96.jpg",
+      "source": {
+        "title": "北京旅游网",
+        "url": "https://s.visitbeijing.com.cn/gallery/8808"
+      },
+      "image_url": "https://r1.visitbeijing.com.cn/vbj-s/2018/0628/20180628064305173.jpg",
+      "photographer": null,
+      "photographed_on": null,
+      "checked_on": "2026-10-23",
+      "match_basis": "已逐张查看图像，并与所存来源正文、图库标题及可辨特征核对；只配给所列身份，不分配给整体的子条目。",
+      "original": {
+        "path": "exports/nanluo_shichahai_photo_originals/96_0.original",
+        "sha256": "6767bbf75b94222212cb1d10456902b290ac68ac29023bd30da38d6967251ebd",
+        "bytes": 115002
+      },
+      "sha256": "f22c35dfadc05b3905d9aea54755f31ffb75b538d4c14535032d7c52cc72e6bd",
+      "bytes": 66588,
+      "width": 583,
+      "height": 389
+    }
+  ]
+}

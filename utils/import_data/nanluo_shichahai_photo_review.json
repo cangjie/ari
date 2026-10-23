@@ -1,0 +1,47 @@
+{
+  "checked_on": "2026-10-23",
+  "review_method": "执行助手逐张查看原件，核对来源正文、图库标题与可辨主体；独立Sonnet只收到文字与代码，未视觉验图。",
+  "accepted": [
+    1,
+    22,
+    32,
+    37,
+    41,
+    48,
+    49,
+    59,
+    61,
+    96
+  ],
+  "rejected": [
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/5.original",
+      "reason": "画面为玉河河道，不能配帽儿胡同"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/61.original",
+      "reason": "画面为碑刻，不能配鼓楼建筑"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/36_0.original",
+      "reason": "SIPA水印明确请勿转载；未发布"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/45_0.original",
+      "reason": "SIPA水印明确请勿转载；未发布"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/60_0.original",
+      "reason": "SIPA水印明确请勿转载；未发布"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/60_1.original",
+      "reason": "SIPA水印明确请勿转载；未发布"
+    },
+    {
+      "path": "exports/nanluo_shichahai_photo_originals/60_2.original",
+      "reason": "SIPA水印明确请勿转载；未发布"
+    }
+  ],
+  "notes": "axis_3至axis_8为其他馆图；axis_9含历史收费标签，未发布。下载日志seq=60仅表示该次图库请求目标，发布绑定以tour_photos清单为准；鼓楼远景图axis_2核对后绑定61。"
+}

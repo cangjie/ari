@@ -122,3 +122,35 @@
 公网浏览器已通过新清单、App桥接模拟、宛平城、原有首页和只读问答五个场景；首页新增入口及郭沫若故居详情截图已查看。首次新清单冷启动超过检查器原有20秒等待，页面仍在载入时产生5个断言失败；其余场景正常，文件比对正常。检查器改为显式等待加载完成、公网最多60秒且超时立即报错后，新清单与桥接模拟复查全部通过。该修改仅影响验收脚本，不修改生产页面或数据。
 
 入口为`https://tour.snowmeet.top/#nanluo_shichahai`；现有App重新回首页或重开即可读取同一内容。APK、Nginx和业务表均未改；地图/路线/到站提醒没有新增，Android真机及现场体验未验收。完整逐文件证据、实际提交、只读检查与首轮载入限制保留在`nanluo_shichahai_release_report.json`。
+
+
+## 地图与照片补充（2026-10-23）
+
+用户随后要求给刚上线的南锣鼓巷及什刹海增加地图和图片。100条原始身份、介绍、评级和Excel不变；新增的是可选的浏览地图及10张独立配图，Web和现有App共用，无须更新APK。
+
+地图以OSM官方map API取得的完整XML快照为依据，保存原件、规范化要素及哈希。Overpass两处入口分别502、超时后改用官方map API；网络失败记录保留。`nanluo_shichahai_tour_media.json`逐条登记37处位置与OSM要素，`tour_collection_media.py`从这些要素生成同一相似投影下的湖面、道路、园林及部分有名建筑轮廓，不请求第三方瓦片。水体multipolygon保留内环岛屿，site类型的三海集合不重复画湖。
+
+街巷选沿真实道路折线累计长度的中点，院落/建筑用轮廓中心，独立POI用原节点。位置均注明口径与OSM来源，不能当作检票入口；未定位的63条仍在完整清单中，不把整体坐标借给内部节点。核对时排除了雍和宫同名钟/鼓楼，采用中轴线上对应建筑；跨车胡同齐白石故居不能套给雨儿胡同旧居；缺少分店地址的护国寺小吃OSM节点也没有套给地安门店。地图编号沿用Excel序号，放大可查看街巷，详情可聚焦到该点。
+
+本次为`map_mode=browse`：可以缩放、平移和点开介绍，不产生路线、停留时间、热区半径、GPS定位或到站提醒。整个collection继续不送旧App原生定位缓存，已有伪满皇宫、宛平城的原生定位方式保留。
+
+10张图分别用于南锣鼓巷、齐白石雨儿胡同旧居、什刹海整体、德胜桥、烟袋斜街、郭沫若故居、宋庆龄故居展陈、恭王府园林、鼓楼远景和庆云楼。图片来自留存的政府/文旅来源，逐张由执行助手查看主体与出处；河道误配帽儿胡同、碑刻误配鼓楼、SIPA明确“请勿转载”的候选未发布。原件保存在忽略的exports目录，手机图仅校正EXIF方向、等比缩小和JPEG编码；不裁切、不生成、不去水印，郭沫若故居小图显示时也限制原生宽度。照片清单保存原图/发布图哈希、尺寸、来源、身份与图注；没有图的90条保持原状，不给内部节点借用整体照片。
+
+生成与复核命令：
+
+```sh
+utils/import_data/.venv/bin/python utils/import_data/tour_photo_build.py --manifest nanluo_shichahai_tour_photos.json
+utils/import_data/.venv/bin/python utils/import_data/tour_build.py --museum nanluo_shichahai --check
+cd web_api && ./.venv/bin/python -m pytest tests/ -q
+```
+
+浏览器新增`collection_media`场景检查37点、详情聚焦、10张图实际解码与图片出处；`collection_host`检查旧App桥接不启动该目的地定位且仍可使用地图。聚焦后顶栏被浏览器滚出视口的问题已通过限制导览容器滚动修正，并增加可见性断言。独立复核沿用Claude Sonnet 5 medium，只收到代码及文字绑定，不能把它称为模型视觉验图。最终审计、检查和公开部署结果见`nanluo_shichahai_media_audit*.json`与`nanluo_shichahai_media_release_report.json`。
+
+问答材料也同步加入地图位置口径、位置出处和照片图注，未定位条目明确不借用坐标；只传文字元信息，不让回答模型声称看到照片。已有两处景区的问答材料须逐字保持一致。本次改动涉及`web_api/app/`，部署后重启`ari-web-api`。
+
+
+媒体复核首轮输入58138字符，CLI 2.1.92启动时另有插件下载；随后一条模型回复达到32000输出token上限，长期没有结构化结论，主动终止该次CLI。缓存失败`llm_call.id=3931`保留，会话已完成消息的usage单独记录，未写入的后续token不补造为0；守护向已退出组发信号报PermissionError，已确认无遗留worker/CLI。缩至32797字符后，以同Sonnet 5 medium取得有效审查（`media_audit_final.json`）。空setting-sources仍未完全阻止旧CLI同步插件，未修改用户配置。
+
+有效审查的三项important意见已逐项处理：增加水体多段way端点拼接/反向连接和断环报错，三海内外环及合成分段湖面通过检查，框外北海关系缺内岛成员不猜画；圆点取消隐藏统一由`updateMe`管理，新`waiting_marker`验证无首次fix时按既定规则显示灰点；两张共用政府图文页面的照片各自保存HTML节点并重新HTTP打开该页面确认两个图URL均存在。重复scrollTop已清理；郭沫若250×169小图的分辨率限制保留，没有编造高分辨率替代。
+
+针对上述三项的最终复核改用本机已安装的Claude CLI 2.1.308及其safe-mode，已只读核对仍为claude.ai订阅/firstParty认证；模型仍是`claude-sonnet-5`、显式medium、相同schema、零自动重试，没有安装/升级CLI或修改全局设置。该复核只收相关完整函数、三项意见处理、测试和来源证据，不重传全量历史内容。最终源码已通过88项pytest（3项真实数据库测试未启用）；18个本地浏览器场景的结果与公网验收记入媒体发布报告。自动检查、桥接模拟均不等于Android真机验收。
