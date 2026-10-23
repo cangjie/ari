@@ -159,7 +159,7 @@ class Page {
     await sleep(100);
     await this.send("Page.navigate", { url: BASE + path });
     const want = path.includes("#")
-      ? "!document.getElementById('tour').hidden && !['', '正在定位…'].includes(document.getElementById('status').textContent)"
+      ? "!document.getElementById('tour').hidden && (!document.getElementById('collection').hidden || !['', '正在定位…'].includes(document.getElementById('status').textContent))"
       : "!!document.querySelector('#cards .card') || document.getElementById('cards').textContent.includes('暂无')";
     for (let i = 0; i < 80; i++) {
       if (await this.eval(want).catch(() => false)) break;
@@ -200,14 +200,83 @@ const SCENES = {
         visitorId: function(){return 'native-visitor-00000001';}, ready: function(){}, leave: function(){}};
     `});
     try {
-      for (const keys of [['wmhg'], ['wanping','wmhg'], ['wmhg','wanping'], ['wanping'], []]) {
+      for (const keys of [['wmhg'], ['wanping','wmhg'], ['nanluo_shichahai','wmhg','wanping'], ['nanluo_shichahai'], []]) {
         catalogOverride = keys;
         await p.open('/');
         const shown = await p.eval("Array.from(document.querySelectorAll('[data-open]')).map(function(e){return e.dataset.open})");
         check(JSON.stringify(shown) === JSON.stringify(keys), '服务器控制景区增减及顺序：' + keys.join(','), shown);
-        check(JSON.stringify(await p.eval('window.__catalog')) === JSON.stringify(keys), '同一清单同步给App原生定位缓存');
+        const mapped = keys.filter((k) => k !== 'nanluo_shichahai');
+        check(JSON.stringify(await p.eval('window.__catalog')) === JSON.stringify(mapped), '有坐标的景区同步给原生定位；纯清单仍在Web可见');
       }
     } finally {catalogOverride = null; await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier});}
+  },
+  async collection(p) {
+    await p.open('/#nanluo_shichahai');
+    check(await p.eval("!document.getElementById('collection').hidden && document.getElementById('mapwrap').hidden"), '已审清单可直接打开，未伪装成地图');
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 100"), '全部100条均可浏览');
+    await p.shot('collection-all');
+    await p.eval("document.getElementById('collection-kind').value='shop'; document.getElementById('collection-kind').dispatchEvent(new Event('change')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 16"), '特色商铺筛出16条');
+    await p.eval("document.getElementById('collection-tier').value='A'; document.getElementById('collection-tier').dispatchEvent(new Event('change')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 1 && !!document.querySelector('[data-place=shop_kaorouji]')"), '商铺与A级筛选可以组合');
+    await p.eval("document.getElementById('collection-area').value='南锣鼓巷'; document.getElementById('collection-area').dispatchEvent(new Event('change')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 0"), '区域条件与类别、评级同时生效');
+    await p.eval("document.getElementById('collection-area').value='all'; document.getElementById('collection-tier').value='all'; document.getElementById('collection-tier').dispatchEvent(new Event('change')); true");
+    await p.shot('collection-shops');
+    await p.eval("document.querySelector('[data-place=shop_kaorouji]').click(); true");
+    check(await p.eval("document.getElementById('sheet').classList.contains('show')"), '商铺详情抽屉实际可见');
+    let detail = await p.eval("document.getElementById('sheet-body').innerText");
+    check(detail.includes('A 级') && detail.includes('前海东沿14号') && detail.includes('平台参考') && !detail.includes('建议停留'), '商铺展示原评级、地址、平台信息，不编造停留时间', detail);
+    check(await p.eval("!document.querySelector('#sheet-body .next')"), '清单前后翻阅不冒充步行导航');
+    await p.shot('collection-shop-detail');
+    await p.click('#sheet [data-close]');
+    await p.eval("document.getElementById('collection-kind').value='all'; document.getElementById('collection-search').value='郭沫若'; document.getElementById('collection-search').dispatchEvent(new Event('input')); true");
+    check(await p.eval("document.querySelectorAll('.collection-item').length === 1 && !!document.querySelector('[data-place=guomoruo]')"), '郭沫若故居可按常用名称找到，未重复新增');
+    await p.click('[data-place=guomoruo]');
+    detail = await p.eval("document.getElementById('sheet-body').innerText");
+    check(detail.includes('第 48 条') && detail.includes('A 级') && detail.includes('郭沫若故居'), '郭沫若第48条与Excel一致');
+    await p.shot('collection-guomoruo');
+    await p.click('#sheet [data-close]');
+    await p.eval("document.getElementById('collection-search').value='锡晋斋'; document.getElementById('collection-search').dispatchEvent(new Event('input')); document.querySelector('[data-place=gongwang_xijin]').click(); true");
+    detail = await p.eval("document.getElementById('sheet-body').innerText");
+    check(detail.includes('待复核') && detail.includes('故宫'), '保留锡晋斋与平复帖的审计提示');
+    await p.click('#sheet [data-close]');
+    await p.eval("document.getElementById('collection-search').value='故宫'; document.getElementById('collection-search').dispatchEvent(new Event('input')); true");
+    check(await p.eval("!!document.querySelector('[data-place=gongwang_xijin]')"), '审计提示中的关键词也可搜索');
+    await p.eval("document.getElementById('collection-search').value='不存在的zzzz'; document.getElementById('collection-search').dispatchEvent(new Event('input')); true");
+    check(await p.eval("document.getElementById('collection-items').textContent.includes('没有符合')"), '搜索空结果可恢复');
+    await p.click('#back');
+    await sleep(600);
+    check(await p.eval("!document.getElementById('list').hidden && document.getElementById('cards').textContent.includes('南锣鼓巷')"), '返回首页保留新旧目的地');
+    await p.eval("document.querySelector('[data-open=nanluo_shichahai]').scrollIntoView(); true");
+    await p.shot('collection-home-entry');
+    await p.click('[data-open=nanluo_shichahai]');
+    await sleep(250);
+    check(await p.eval("!document.getElementById('collection').hidden && document.querySelectorAll('.collection-item').length === 100"), '首页新增入口可进入完整清单');
+  },
+  async collection_host(p) {
+    // 浏览器内的桥接模拟可检查本地及公开页面；不发帖，也不冒充真机验收。
+    const script = await p.send('Page.addScriptToEvaluateOnNewDocument', {source: `
+      window.__collectionHost = {ready:null, left:0, watch:0};
+      navigator.geolocation.watchPosition = function(){window.__collectionHost.watch++; throw new Error('Unexpected GPS');};
+      window.AriHost = {catalog:function(text){var a=JSON.parse(text); window.__collectionHost.keys=a.map(function(m){return m.key;});
+        return a.every(function(m){return m.proj && m.entrance && m.canvas && m.area && m.places.every(function(p){return p.r>0;});});},
+        visitorId:function(){return 'native-visitor-00000001';}, ready:function(k){window.__collectionHost.ready=k;},
+        leave:function(){window.__collectionHost.ready=null;window.__collectionHost.left++;}};
+    `});
+    try {
+      await p.open('/#nanluo_shichahai');
+      check(await p.eval("document.querySelectorAll('.collection-item').length === 100 && !document.getElementById('collection').hidden"), '旧App桥接下也能浏览全部100条');
+      check(await p.eval("window.__collectionHost.watch === 0 && window.__collectionHost.ready === null && !window.__collectionHost.keys.includes('nanluo_shichahai')"), '纯清单不启动定位，也不会使旧App几何解析失败');
+      await p.click('[data-place=guomoruo]');
+      check(await p.eval("AriTour.back() && !document.getElementById('sheet').classList.contains('show')"), 'App返回键收起清单详情');
+      await p.eval("location.hash='wmhg'; true");
+      await sleep(300);
+      check(await p.eval("window.__collectionHost.ready === 'wmhg' && document.getElementById('collection').hidden && !document.getElementById('mapwrap').hidden"), '从清单切回原有地图仍能请求原生导览');
+      await p.eval("location.hash='nanluo_shichahai'; true");
+      await sleep(300);
+      check(await p.eval("window.__collectionHost.ready === null && window.__collectionHost.left > 0 && !document.getElementById('collection').hidden"), '地图转回清单会退出当前原生景区');
+    } finally { await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier}); }
   },
   async wanping(p) {
     const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));

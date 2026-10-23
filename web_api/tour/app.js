@@ -155,6 +155,8 @@
     return null;
   }
 
+  function isCollection(m) { return (m || M).mode === "collection"; }
+
   function route() {
     for (var i = 0; i < M.routes.length; i++) if (M.routes[i].id === st.routeId) return M.routes[i];
     return null;
@@ -186,6 +188,7 @@
 
   // 介绍抽屉里「上一处 / 下一处」走的顺序：地点在所选路线上就按路线，否则按全部地点
   function sequenceFor(pid) {
+    if (isCollection()) return { ids: collectionPlaces().map(function (p) { return p.id; }), onRoute: false };
     var r = route();
     if (r) {
       var ids = routePlaceIds(r);
@@ -211,11 +214,55 @@
         '<p class="card-desc">' + esc(c.desc.zh) + "</p>" +
         '<div class="card-foot"><div class="card-meta">' +
         "<span>" + ICON_CLOCK + esc(c.hours) + "</span>" +
-        "<span>" + ICON_PIN + m.places.length + " 处热区</span>" +
-        '</div><span class="card-go">导游地图' + ICON_NEXT + "</span></div>" +
+        "<span>" + ICON_PIN + m.places.length + (isCollection(m) ? " 条资料" : " 处热区") + "</span>" +
+        '</div><span class="card-go">' + (isCollection(m) ? '景点与商铺' : '导游地图') + ICON_NEXT + "</span></div>" +
         "</div></button>";
     }).join("");
     $("cards").innerHTML = html || '<p class="load-note">暂无可用景区，请稍后刷新。</p>';
+  }
+
+  // 已有介绍但尚无定位依据的目的地也可阅读；筛选只影响浏览顺序，不构造步行路线。
+  function collectionPlaces() {
+    var word = $("collection-search").value.trim().toLowerCase();
+    var kind = $("collection-kind").value, area = $("collection-area").value, tier = $("collection-tier").value;
+    return M.places.filter(function (p) {
+      var s = M.stops[p.stops[0]];
+      var text = [s.name.zh, s.name.en, (s.aliases || []).join(" "), s.intro.join(" "),
+        s.address.zh, s.specialty.zh, s.area.zh, s.related ? s.related.zh : "", s.review || "",
+        s.platform.zh, s.borrowed ? s.borrowed.zh : ""].join(" ").toLowerCase();
+      return (kind === "all" || s.kind === kind) && (area === "all" || s.area.zh === area) &&
+        (tier === "all" || s.tier === tier) && (!word || text.indexOf(word) >= 0);
+    });
+  }
+
+  function renderCollection() {
+    var places = collectionPlaces();
+    $("collection-count").textContent = "显示 " + places.length + " / " + M.places.length + " 条";
+    $("collection-items").innerHTML = places.map(function (p) {
+      var s = M.stops[p.stops[0]], intro = s.intro.join(" ");
+      return '<button class="card collection-item" type="button" data-place="' + esc(p.id) + '">' +
+        '<div class="stop-meta"><span class="tag tag-outline">' + esc(s.tier) + ' 级</span><span>' +
+        esc(s.area.zh + " · " + (s.kind === "shop" ? "特色商铺" : "文化参观点")) + '</span></div>' +
+        '<strong>' + esc(s.seq + ". " + s.name.zh) + '</strong><span class="collection-alias">' + esc(s.name.en) + '</span>' +
+        '<p>' + esc(intro.length > 90 ? intro.slice(0, 90) + "…" : intro) + '</p></button>';
+    }).join("") || '<p class="load-note">没有符合条件的条目，请调整搜索或筛选。</p>';
+  }
+
+  function buildCollection() {
+    $("tour-name").textContent = M.card.short.zh;
+    $("tour-sub").textContent = "景点与特色商铺 · " + M.places.length + "条";
+    $("collection-desc").textContent = M.card.desc.zh;
+    $("collection-note").textContent = M.planning.zh;
+    ["collection-search", "collection-kind", "collection-tier"].forEach(function (id) {
+      $(id).value = id === "collection-search" ? "" : "all";
+    });
+    var areas = [];
+    M.places.forEach(function (p) { var area = M.stops[p.stops[0]].area.zh; if (areas.indexOf(area) < 0) areas.push(area); });
+    $("collection-area").innerHTML = '<option value="all">全部区域</option>' + areas.map(function (a) {
+      return '<option value="' + esc(a) + '">' + esc(a) + '</option>';
+    }).join("");
+    $("collection").scrollTop = 0;
+    renderCollection();
   }
 
   // ------------------------------------------------------------ 地图：搭建
@@ -373,6 +420,7 @@
   }
 
   function updateMsgs() {
+    if (isCollection()) return;
     var unread = st.msgs.filter(function (m) { return !m.read; }).length;
     $("unread").hidden = !unread;
     $("unread").textContent = unread;
@@ -609,8 +657,10 @@
   function stopHtml(s, place, r) {
     var solo = s.name.zh === place.name.zh;       // 这一站就是地点本身，标题已经写过了
     var ord = r ? r.stops.indexOf(s.seq) + 1 : 0;
-    var meta = ['<span class="tag tag-outline">' + esc(s.tier) + " 级</span>",
-      (s.included_in ? '<span>随「' + esc(M.stops[s.included_in].name.zh) + '」参观，时间已计入整体</span>' : "<span>建议停留约 " + s.dwell + " 分钟</span>")];
+    var meta = ['<span class="tag tag-outline">' + esc(s.tier) + " 级</span>"];
+    if (isCollection() && Number.isFinite(s.core)) meta.push('<span>Core ' + s.core.toFixed(4) + '</span>');
+    if (s.included_in) meta.push('<span>随「' + esc(M.stops[s.included_in].name.zh) + '」参观，时间已计入整体</span>');
+    else if (Number.isFinite(s.dwell)) meta.push("<span>建议停留约 " + s.dwell + " 分钟</span>");
     if (r) meta.push(ord ? '<span class="tag tag-neutral">本路线第 ' + ord + " 站</span>" : "<span>不在所选路线内</span>");
     var html = '<div class="stop' + (r && !ord ? " off-route" : "") + '">' +
       (solo ? "" : "<h4>" + esc(s.name.zh) + "</h4>") +
@@ -619,7 +669,11 @@
     if (s.photo && s.photo !== place.photo) html += photoHtml(s.photo, s.photo_info, s.name.zh);
     if (s.status.zh !== "在展") html += '<div class="note">现状：' + esc(s.status.zh) + "</div>";
     if (s.borrowed) html += '<div class="note">' + esc(s.borrowed.zh) + "</div>";
-    if (s.review) html += '<div class="note">馆方资料此处待复核：' + esc(s.review) + "</div>";
+    if (s.review) html += '<div class="note">' + (isCollection() ? '资料此处待复核：' : '馆方资料此处待复核：') + esc(s.review) + "</div>";
+    if (s.related) html += '<div class="note">关联整体：' + esc(s.related.zh) + '</div>';
+    if (s.specialty && s.specialty.zh) html += '<p><strong>特色：</strong>' + esc(s.specialty.zh) + '</p>';
+    if (s.address && s.address.zh) html += '<p><strong>地址（来源记载）：</strong>' + esc(s.address.zh) + '</p>';
+    if (s.platform && s.platform.zh) html += '<p><strong>平台参考：</strong>' + esc(s.platform.zh) + '</p>';
     html += s.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
     if (s.objects.length) {
       html += '<div class="objects"><h5>本展在展藏品</h5><ul>' + s.objects.map(function (o) {
@@ -646,14 +700,14 @@
     var next = i < seq.ids.length - 1 ? placeById(seq.ids[i + 1]) : null;
     var kicker = seq.onRoute
       ? "路线第 " + (i + 1) + " / " + seq.ids.length + " 处 · " + M.card.short.zh
-      : "热区 " + pad2(M.places.indexOf(p) + 1) + " · " + M.card.short.zh;
+      : (isCollection() ? "清单第 " + M.stops[p.stops[0]].seq + " 条" : "热区 " + pad2(M.places.indexOf(p) + 1)) + " · " + M.card.short.zh;
 
     var html = photoHtml(p.photo, p.photo_info, p.name.zh) +
       '<div class="kicker">' + esc(kicker) + "</div><h2>" + esc(p.name.zh) + '</h2><div class="rule"></div>' +
       p.stops.map(function (s) { return stopHtml(M.stops[s], p, seq.onRoute ? r : null); }).join("") +
       (qaLive === false ? "" : QA_HTML);
 
-    if (next) {
+    if (next && !isCollection()) {
       var meters = haversine(p.lat, p.lon, next.lat, next.lon) * M.walk.detour;
       var leg = r && seq.onRoute && r.legs ? r.legs.filter(function (l) {
         return l.start === p.id && l.end === next.id;
@@ -892,8 +946,9 @@
   // ------------------------------------------------------------ 进出地图页
   function openMuseum(key) {
     M = data[key];
+    var entrance = M.entrance || {x: 0, y: 0};
     st = {
-      routeId: M.default_route, k: 1, pan: [0, 0], pos: [M.entrance.x, M.entrance.y],
+      routeId: M.default_route, k: 1, pan: [0, 0], pos: [entrance.x, entrance.y],
       geo: "waiting", acc: 0, dist: 0, raw: null, inside: null, msgs: [],
       sheetPid: null, sheetOpen: false, msgsOpen: false, bannerPid: null,
       follow: true, touring: false, tourIdx: null
@@ -901,6 +956,17 @@
     restore();
     $("list").hidden = true;
     $("tour").hidden = false;
+    var collection = isCollection();
+    $("collection").hidden = !collection;
+    $("mapwrap").hidden = collection;
+    $("bell").hidden = collection;
+    document.querySelector('.bottombar').hidden = collection;
+    if (collection) {
+      if (HOST) HOST.leave();
+      buildCollection();
+      updateSheets();
+      return;
+    }
     buildMap();
     layout();
     updateRoute();
@@ -929,7 +995,7 @@
   };
   if (HOST) window.AriTour = {
     state: function (s) {
-      if (!M || !st || s.museum !== M.key) return;
+      if (!M || !st || isCollection() || s.museum !== M.key) return;
       var first = st.geo !== "live";
       st.geo = s.status;
       st.pos = [s.x, s.y];
@@ -1041,10 +1107,18 @@
       st.follow = false;
       zoomAt(st.k * Math.exp(-e.deltaY / 400), pt[0], pt[1]);
     }, { passive: false });
-    window.addEventListener("resize", function () { if (M) layout(); });
+    window.addEventListener("resize", function () { if (M && !isCollection()) layout(); });
   }
 
   function bindUi() {
+    $("collection-search").addEventListener("input", function () { if (M && isCollection()) renderCollection(); });
+    ["collection-kind", "collection-area", "collection-tier"].forEach(function (id) {
+      $(id).addEventListener("change", function () { if (M && isCollection()) renderCollection(); });
+    });
+    $("collection-items").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-place]");
+      if (b) openIntro(b.getAttribute("data-place"));
+    });
     $("cards").addEventListener("click", function (e) {
       var b = e.target.closest("[data-open]");
       if (b) location.hash = b.getAttribute("data-open");
@@ -1133,7 +1207,9 @@
         nextData[key] = j;
       });
       })).then(function () {
-        if (HOST && !HOST.catalog(JSON.stringify(catalog.museums.map(function (key) { return nextData[key]; })))) {
+        // 原生缓存只接收有真实几何的目的地；清单仍由同一网页显示，无需旧APK理解新数据类型。
+        var mapped = catalog.museums.map(function (key) { return nextData[key]; }).filter(function (m) { return !isCollection(m); });
+        if (HOST && !HOST.catalog(JSON.stringify(mapped))) {
           throw new Error('景区资料未能同步至定位服务，请重试');
         }
         MUSEUMS = catalog.museums; data = nextData;

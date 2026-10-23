@@ -448,3 +448,13 @@ App本次从内置网页改为直接打开 `https://tour.snowmeet.top/index.html
 发布JPEG合计1457885字节，完整原件和来源HTML在本机忽略导出目录留存。用户指定的2222映射服务器仅用于纯管道下载，未写图片、脚本或临时文件。来源、完整性检查、固定模型文本复核和处理记录见 `docs/WANPING_DATA.md` 及 `utils/import_data/wanping_photo_publish_report.json`。
 
 本轮仅部署静态网页、JSON及图片，未重启服务、重打APK或改业务资料。App重新回到前台即可从同一Web读取照片。
+
+### 南锣鼓巷及什刹海清单（2026-10-23）
+
+新增100条已审资料：84条文化参观点、16家特色商铺，S8/A32/B35/C25。郭沫若故居（郭沫若纪念馆）为第48条A级；第76条锡晋斋保留《平复帖》原件现藏故宫的复核提示。来源包、既定评分及审计直接生成`data/nanluo_shichahai.json`，不导入或重灌业务资料表。
+
+该资料包没有核实过的地图坐标和路线，使用共用页面的`mode=collection`清单模式，支持搜索、类别/区域/评级筛选和详情。门店地址、特色、平台快照与实时状态边界分别列示；没有停留数据不显示0分钟，也不把前后翻阅当作步行导航。生成及比对使用`tour_build.py --museum nanluo_shichahai [--check]`，详见`docs/NANLUO_SHICHAHAI_DATA.md`。
+
+App继续打开线上Web，原APK不变；首页显示完整服务器清单，原生定位缓存只同步有几何依据的目的地。进入纯清单会退出当前原生景区，不给100条资料编造热区。浏览器桥接模拟可以针对本地及公开页面运行，未做Android真机验收。
+
+游客互动同样读取这份JSON；新清单的Core分数、地址、特色及平台提示都进入回答材料。Core分数和资料说明文案按显式模式区分，原有两馆的问答材料已与改动前逐字比对一致。部署需要`git pull --ff-only`后重启`ari-web-api`，不改Nginx或APK。发布复核用原Sonnet 5 medium，实际公开文件哈希与只读GET验收记录在`nanluo_shichahai_release_report.json`。

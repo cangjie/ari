@@ -1,0 +1,16 @@
+{
+  "input_sha256": "92e4377dc104b03f2fcfbc7454d0d6bf054e002618a595766147c0c0619b4cd6",
+  "rating_sha256": "1c24a20f22ecd8ab7214328cbfeba4af606980812d2f4ec2b359c2ab57b4a9d7",
+  "audit_source_sha256": "a988121f7f757fde6e158c6ea16aab9d350b948cd9f82dfbe9a18460999a63ff",
+  "audit_packets_sha256": "345a1d8a201973b5d6e85c6b7c3cd3752f8ff0174dac10fb59386da0f2fb6dfd",
+  "source_packaging": "shared_saved_source_text_once_per_48_items",
+  "model": "claude-sonnet-5 effort=medium (claude-cli)",
+  "mode": "slim",
+  "count": 100,
+  "bc_guard_downgraded": 0,
+  "reused_audit_binding_sha256": "0bfcf7f2e353c5d8d46da74b4b934b6d4383a4997600fd6835aa5e4637546028",
+  "factual_errors": [],
+  "review": [
+    76
+  ]
+}

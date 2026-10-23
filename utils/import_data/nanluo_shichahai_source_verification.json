@@ -1,0 +1,14 @@
+{
+  "version": "v2_shops",
+  "source_sha256": "92e4377dc104b03f2fcfbc7454d0d6bf054e002618a595766147c0c0619b4cd6",
+  "rows": 100,
+  "named_rows": 100,
+  "filled_descriptions": 100,
+  "unique_identity_keys": 100,
+  "unique_sequences": 100,
+  "verified_evidence": 130,
+  "used_sources": 68,
+  "merchant_rows": 16,
+  "guomoruo_display": "郭沫若故居（郭沫若纪念馆）",
+  "candidate_pending": []
+}

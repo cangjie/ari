@@ -1,0 +1,18 @@
+{
+  "version": "v2_shops",
+  "previous_records": 84,
+  "records": 100,
+  "source_sha256": "92e4377dc104b03f2fcfbc7454d0d6bf054e002618a595766147c0c0619b4cd6",
+  "state": "完成：100条评级、独立审计、中英导出和工作簿检查均已完成",
+  "completed_at": "2026-10-23T17:57:23+08:00",
+  "rating_sha256": "1c24a20f22ecd8ab7214328cbfeba4af606980812d2f4ec2b359c2ab57b4a9d7",
+  "workbook_sha256": "57ce72b469b9973f998beb8289e9481351797ac5bfd9fa93f6e4e4e09bb4e2a6",
+  "tier": {"S": 8, "A": 32, "B": 35, "C": 25},
+  "added_shops": 16,
+  "audit_records": 100,
+  "audit_factual_errors": [],
+  "audit_needs_review": [76],
+  "verification_report": "nanluo_shichahai_verification_report.json",
+  "reused_translation_rule": "原文本未变，保留旧译文及17项修订；新文本另由同型号翻译。",
+  "rating_cache_result": "旧84条阶段一7批命中；旧同类组与S候选在输入完全相同时复用。新增16条、新同类组及郭沫若身份纠正后的12条CR实调；最后12条由原Sonnet medium独立复审。"
+}

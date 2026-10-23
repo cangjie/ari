@@ -1,0 +1,59 @@
+{
+  "review_model": "claude-sonnet-5 effort=medium (claude-cli)",
+  "reviews": [
+    "nanluo_shichahai_tour_audit_followup.json",
+    "nanluo_shichahai_tour_audit_final.json"
+  ],
+  "failed_call_id": 3928,
+  "reviewed_tour_sha256": "81bcd3316fabda7b3dadd80e9005a9f5c4472f2e18b68f2ece3099a6b59d01ba",
+  "dispositions": [
+    {
+      "issue": "Core展示超出新清单范围",
+      "resolution": "前端isCollection限定；后端显式is_collection参数，旧两馆问答资料与上线前逐字一致。",
+      "status": "fixed_and_tested"
+    },
+    {
+      "issue": "位置/资料说明用kind隐式判断",
+      "resolution": "改为显式mode传参，保留已有地图景区的位置说明措辞。",
+      "status": "fixed_and_tested"
+    },
+    {
+      "issue": "fixture编码依赖系统默认值",
+      "resolution": "统一UTF-8。",
+      "status": "fixed_and_tested"
+    },
+    {
+      "issue": "桥接注册证据及真机边界",
+      "resolution": "核对MainActivity第68行注册AriHost、HostBridge方法；本地/公开页只读模拟，不声称真机已验收。",
+      "status": "evidence_checked_boundary_retained"
+    },
+    {
+      "issue": "回归测试硬编码当前两馆",
+      "resolution": "移动到按所有非collection资料自动参数化的mapped_tour测试。",
+      "status": "minor_fixed_after_final_model_review_and_tested"
+    },
+    {
+      "issue": "is_collection参数有隐式默认值",
+      "resolution": "改为必须显式传入的关键字参数，现有唯一调用已显式传值。",
+      "status": "minor_fixed_after_final_model_review_and_tested"
+    }
+  ],
+  "validation": {
+    "pytest_passed": 85,
+    "real_database_tests_skipped": 3,
+    "browser_all_scenes_passed": 16,
+    "final_relevant_browser_scenes_passed": [
+      "collection",
+      "collection_host",
+      "wanping",
+      "host",
+      "qa"
+    ],
+    "existing_material_byte_identical": [
+      "wmhg",
+      "wanping"
+    ],
+    "android_device_tested": false
+  },
+  "scope": "最后两项minor采纳后通过确定性检查，未另称模型再次审过最终源码；原100条历史资料、评分及审计未改变。"
+}

@@ -1,0 +1,84 @@
+{
+  "records": 100,
+  "tier": {
+    "S": 8,
+    "B": 35,
+    "A": 32,
+    "C": 25
+  },
+  "workbook": "/Users/cangjie/source/ari/utils/import_data/exports/展品_北京南锣鼓巷及什刹海.xlsx",
+  "workbook_bytes": 160675,
+  "workbook_sha256": "57ce72b469b9973f998beb8289e9481351797ac5bfd9fa93f6e4e4e09bb4e2a6",
+  "source_sha256": "92e4377dc104b03f2fcfbc7454d0d6bf054e002618a595766147c0c0619b4cd6",
+  "bilingual_rows_equal": true,
+  "typed_scores": true,
+  "frozen_headers_and_identifiers": true,
+  "business_before": {
+    "beihai": 23,
+    "capital": 6159,
+    "ham": 204,
+    "jlpm": 17723,
+    "mfa_boston": 203,
+    "mfa_boston_ext": 4464,
+    "nmc": 365,
+    "palace": 1757,
+    "pem": 467,
+    "wmhg": 61
+  },
+  "business_after": {
+    "beihai": 23,
+    "capital": 6159,
+    "ham": 204,
+    "jlpm": 17723,
+    "mfa_boston": 203,
+    "mfa_boston_ext": 4464,
+    "nmc": 365,
+    "palace": 1757,
+    "pem": 467,
+    "wmhg": 61
+  },
+  "business_total": 31426,
+  "models": {
+    "information": "gpt-5.6-luna medium",
+    "rating": "gpt-5.6-luna effort=high/medium/xhigh (codex-cli)",
+    "audit": "claude-sonnet-5 effort=medium (claude-cli)"
+  },
+  "audit_needs_review": [
+    76
+  ],
+  "factual_errors": [],
+  "english_cjk_residual": [],
+  "translation_revisions": 19,
+  "added_shops": 16,
+  "shop_tier": {
+    "C": 15,
+    "A": 1
+  },
+  "guomoruo": {
+    "seq": 48,
+    "name": "郭沫若故居（郭沫若纪念馆）",
+    "tier": "A"
+  },
+  "changed_existing_tiers": [],
+  "reaudited_after_cr_correction": [
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    45,
+    48,
+    49,
+    58,
+    65
+  ],
+  "unchanged_audit_records_reused": 88,
+  "limits": [
+    "来源与形式复核不等于现场验收；商铺营业、价格、菜单和体验均未现场逐店核实，平台/索引可能滞后。",
+    "Claude标准缓存的输入侧token有历史计量缺口；provider原始usage另留。",
+    "初版一次英文修订校验失败及一次Claude额度上限均保留；不能声称完整零失败计量。增补分组复核前主动结束的一轮，已返回的两组结果另存且保留模型缓存，未用于最终分组。",
+    "发布首轮CLI因大输入后的上下文压缩与结构字段丢失失败（llm_call.id=3928），原始会话和usage单独留存；标准缓存错误行的token仍为空，不补造成完整账单。"
+  ]
+}

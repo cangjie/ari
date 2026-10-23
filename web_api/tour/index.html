@@ -19,7 +19,7 @@
     <div class="list-head">
       <div class="kicker">园林 · 古迹导览</div>
       <div class="list-title"><h1>Ari Travel</h1><em>Gardens &amp; Sites</em></div>
-      <p class="list-lede">选择一处目的地，进入后即显示导游地图；走进景点热区时，Ari Travel 会推送讲解消息。</p>
+      <p class="list-lede">选择一处目的地，查看景点介绍与参观资料。提供导游地图的目的地，走进热区时会推送讲解消息。</p>
     </div>
     <div class="rule" style="margin:16px 22px 0"></div>
     <div id="cards"><p class="load-note">正在载入…</p></div>
@@ -40,6 +40,24 @@
         <span id="unread" class="badge" hidden></span>
       </button>
     </header>
+
+    <div id="collection" hidden>
+      <div class="collection-head">
+        <p id="collection-desc"></p>
+        <p class="note" id="collection-note"></p>
+      </div>
+      <div class="collection-tools">
+        <label for="collection-search">搜索景点、人物或店铺</label>
+        <input id="collection-search" type="search" placeholder="输入名称或关键词" autocomplete="off">
+        <div class="collection-filters">
+          <label>类别<select id="collection-kind"><option value="all">全部</option><option value="culture">文化参观点</option><option value="shop">特色商铺</option></select></label>
+          <label>区域<select id="collection-area"><option value="all">全部区域</option></select></label>
+          <label>评级<select id="collection-tier"><option value="all">全部评级</option><option>S</option><option>A</option><option>B</option><option>C</option></select></label>
+        </div>
+        <div id="collection-count" role="status" aria-live="polite"></div>
+      </div>
+      <div id="collection-items"></div>
+    </div>
 
     <div id="mapwrap">
       <!-- 只有 #map 接管触摸手势；路线条等浮层是它的兄弟节点，横向滑动不受影响 -->

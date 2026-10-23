@@ -72,10 +72,16 @@ def find_place(museum: dict, place_id: str) -> dict | None:
     return None
 
 
-def _stop_text(stop: dict) -> str:
-    lines = [f"### {stop['name']['zh']}｜导览评级 {stop['tier']}｜建议停留约 {stop['dwell']} 分钟｜现状：{stop['status']['zh']}"]
+def _stop_text(stop: dict, *, is_collection: bool) -> str:
+    dwell = f"｜建议停留约 {stop['dwell']} 分钟" if stop.get('dwell') is not None else ''
+    core = f"｜Core {stop['core']:.4f}" if is_collection and stop.get('core') is not None else ''
+    lines = [f"### {stop['name']['zh']}｜导览评级 {stop['tier']}{core}{dwell}｜现状：{stop['status']['zh']}"]
     if stop.get("borrowed"):
-        lines.append(f"位置说明：{stop['borrowed']['zh']}")
+        label = '资料说明' if is_collection else '位置说明'
+        lines.append(f"{label}：{stop['borrowed']['zh']}")
+    for field, label in [('related', '关联整体'), ('specialty', '特色'), ('address', '地址（来源记载）'), ('platform', '平台参考')]:
+        if stop.get(field) and stop[field]['zh']:
+            lines.append(label + '：' + stop[field]['zh'])
     if stop.get("review"):
         lines.append(f"待复核：{stop['review']}")
     lines += stop["intro"]
@@ -107,8 +113,11 @@ def museum_material(museum: dict) -> str:
     routes = [f"- {r['label']['zh']}：{len(r['stops'])} 站，约 {r['total']} 分钟（停留 {r['stay']} + 步行 {r['walk']}），"
               "依次是" + "、".join(museum["stops"][str(seq)]["name"]["zh"] for seq in r["stops"])
               for r in museum["routes"]]
-    parts.append("## 导览给出的参观路线（都从入口出发并回到入口）\n" + "\n".join(routes) + "\n"
-                 "各站的建议停留时间与路线的分钟数都是本导览的估计，没有实测。")
+    if routes:
+        parts.append("## 导览给出的参观路线（都从入口出发并回到入口）\n" + "\n".join(routes) + "\n"
+                     "各站的建议停留时间与路线的分钟数都是本导览的估计，没有实测。")
+    else:
+        parts.append('本清单未提供已核实的路线或停留时间。')
     for route in museum['routes']:
         if route.get('fee'):
             parts.append(route['label']['zh'] + '费用：' + route['fee']['zh'])
@@ -118,7 +127,7 @@ def museum_material(museum: dict) -> str:
         parts.append(museum['planning']['zh'])
     for place in museum["places"]:
         parts.append(f"## 地点：{place['name']['zh']}")
-        parts += [_stop_text(museum["stops"][str(seq)]) for seq in place["stops"]]
+        parts += [_stop_text(museum["stops"][str(seq)], is_collection=museum.get('mode') == 'collection') for seq in place["stops"]]
     return "\n\n".join(parts)
 
 

@@ -1,0 +1,23 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "input_sha256": "c457a4ef66b97c40139559077389b1eb661f76fd6fd663a52793dd0e573d1b49",
+  "tour_sha256": "81bcd3316fabda7b3dadd80e9005a9f5c4472f2e18b68f2ece3099a6b59d01ba",
+  "result": {
+    "findings": [
+      {
+        "severity": "minor",
+        "file": "web_api/tests/test_tour.py",
+        "reason": "新增的 test_existing_mapped_destinations_keep_their_material_labels 用硬编码列表 ['wmhg', 'wanping'] 逐个 json.loads，而不是复用同文件里已经修好 UTF-8 编码、按 mode!='collection' 自动筛选的 mapped_tour fixture。这个测试本意是防止『Core 仅 collection 显示、位置说明文案不变』这类共享代码改动外溢到已上线馆——这正是上一轮 important 发现的回归点。但硬编码写法只能保护当前已知的两个馆，未来任何新增的『有真实几何』馆都不会被这条守护测试自动覆盖，等于把本应通用的回归防护又缩回到了手工维护的名单上。",
+        "recommendation": "把该测试改成使用 mapped_tour fixture（parametrize 覆盖 data 目录下所有非 collection 馆），而不是写死 wmhg/wanping，这样未来新增馆时无需记得手动加名字也能被同一条回归测试保护。"
+      },
+      {
+        "severity": "minor",
+        "file": "web_api/app/tour_qa_llm.py",
+        "reason": "_stop_text(stop, is_collection: bool = False) 把 is_collection 设为带默认值的可选参数。上一轮 important/minor 两条发现的根因都是『该函数曾经隐式依赖字段推断模式』，本轮改成显式参数是对的方向，但默认值 False 意味着：如果今后任何调用点（比如未来新加的另一处拼装问答材料的代码）忘记显式传这个参数，会静默按『非 collection、无 Core、位置说明』处理，不会报错提醒，等价于又在类型层面留了一条隐式回退路径，和本轮想消除的隐式耦合问题性质相同，只是触发条件从『字段是否存在』换成了『调用点是否遗漏参数』。",
+        "recommendation": "去掉默认值，把 is_collection 设为必填位置参数（或用更明确的 mode: Literal['collection','mapped']），强制每个调用点显式决定展示口径，避免未来再次因遗漏而安静地把某馆当成另一种模式处理。"
+      }
+    ],
+    "assessment": "本轮仅复核上一轮四条有效意见（Core仅collection显示、位置/资料说明显式mode区分、测试fixture统一UTF-8、补充既有馆回归测试）及其修正可能产生的回归，基于本轮提供的代码与测试片段做静态比对，未执行测试、未做真机验收。\\n\\n核对结果：\\n1. Core 分数展示：后端 museum_material 对每个 stop 调用 _stop_text 时显式传入 is_collection=museum.get('mode')=='collection'，不再依赖隐式字段；前端 stopHtml 同样改为 isCollection() && Number.isFinite(s.core) 才渲染 Core。新增 test_existing_mapped_destinations_keep_their_material_labels 对 wmhg、wanping 两个既有馆分别断言材料里不含『｜Core 』，与 collection 自身测试里 'Core 7.3510' in material 的断言正好覆盖两种口径，未见矛盾或遗漏。\\n2. 位置说明/资料说明：_stop_text 用显式 is_collection 参数做三元选择（'资料说明' / '位置说明'），不再读取可能被其他用途占用的 'kind' 字段；前端待复核提示同样改为 isCollection() 三元判断。新增测试对既有馆断言『位置说明：』+ borrowed 文本必须出现在材料里，直接验证了上一轮担心的『共享代码改动可能悄悄改写已上线馆措辞』这一问题已被堵住。\\n3. 测试 fixture 编码：test_tour.py 中 tour 与新增的 mapped_tour 两个 fixture 的 read_text 调用，以及用于筛选 mapped_tour 参数的 list 推导式，均已统一指定 encoding='utf-8'，不再有裸读导致的编码不一致风险。\\n4. 既有馆回归测试：已新增并覆盖 wmhg、wanping，断言内容与前两点的修复逐一对应，逻辑自洽；南锣鼓巷清单自身的身份/评级/商铺/复核提示相关断言与上一轮通过的内容一致（数据哈希未变，未重审）。\\n5. 原生接口注册代码片段显示 addJavascriptInterface(HostBridge(this), \\\"AriHost\\\")，与浏览器桥接模拟假定的全局接口名一致，为上一轮『未经真机验收』的疑虑提供了实际注册代码作为补充证据；本轮材料也明确声明自动检查与浏览器桥接模拟不等同真机验收，没有过度声称，这点处理得当。selectMuseum 中对 repository.find(key)==null 的提前 return，与『纯清单不同步到原生定位缓存、不能启动定位』的设计描述一致，未发现据此推断出的崩溃证据。\\n\\n综合来看，上一轮四条意见均已针对性修复并有对应测试覆盖，静态比对未发现新的 critical/important 回归。仅有两处偏工程健壮性的minor建议（测试覆盖面可以更自动化、函数参数默认值可以去掉以避免未来再引入隐式回退），不影响本轮结论：该修正本身自洽、未发现扩散到既有馆或清单模式的新问题；但这仍只是静态代码与样本比对，不构成测试执行、生产部署或真机验收的确认。"
+  }
+}

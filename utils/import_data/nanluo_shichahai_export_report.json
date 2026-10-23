@@ -1,0 +1,37 @@
+{
+  "audit_state": "complete",
+  "audited_records": 100,
+  "records": 100,
+  "tier": {
+    "S": 8,
+    "B": 35,
+    "A": 32,
+    "C": 25
+  },
+  "types": {
+    "site": 4,
+    "node": 90,
+    "object": 6
+  },
+  "evidence_records": 172,
+  "verified_short_quotes": 130,
+  "displayed_short_quotes": 68,
+  "needs_review": [
+    76
+  ],
+  "factual_errors": [],
+  "english_cjk_residual": [],
+  "pending": 0,
+  "added_shops": 16,
+  "shop_tier": {
+    "C": 15,
+    "A": 1
+  },
+  "previous_records": 84,
+  "changed_existing_tiers": [],
+  "guomoruo": {
+    "seq": 48,
+    "name": "郭沫若故居（郭沫若纪念馆）",
+    "tier": "A"
+  }
+}

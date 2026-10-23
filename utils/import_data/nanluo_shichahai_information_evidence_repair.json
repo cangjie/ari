@@ -1,0 +1,26 @@
+{
+  "reason": "逐条来源白名单遗漏了已在同批输入中出现的文物局正文；恢复真实且可逐字核对的引用。",
+  "before_sha256": "3ac1c913962bc656556693dc98cb07e6509eca8393f31fd14e3738f1eaf714b8",
+  "after_sha256": "6261cb7011d76ba74987985f6c00386ea119171e8385ffba71bc662ac16ad14a",
+  "changes": [
+    {
+      "seq": 62,
+      "restored_evidence": [
+        {
+          "source_id": "gulou_detail",
+          "quote": "钟楼始建于元至元九年，明永乐十八年、清乾隆十年（1745）分别重建"
+        }
+      ]
+    },
+    {
+      "seq": 63,
+      "restored_evidence": [
+        {
+          "source_id": "gulou_detail",
+          "quote": "该钟铸造于明永乐十八年，钟通高7.02米"
+        }
+      ]
+    }
+  ],
+  "model_calls": 0
+}

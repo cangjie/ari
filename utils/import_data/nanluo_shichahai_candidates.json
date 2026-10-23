@@ -1,0 +1,1336 @@
+{
+  "scope": "北京南锣鼓巷主街及16条支巷、什刹海前海后海西海及沿岸主要历史文化参观点；钟鼓楼、德胜门和护国寺街为明确标示的周边衔接。恭王府收录官网景点介绍列出的建筑园林节点，不扩抓全部馆藏。 本次增补南锣鼓巷、什刹海及已列周边衔接范围内的16家特色经营门店，商铺按具体分店识别。",
+  "model": "gpt-5.6-luna",
+  "rows": [
+    {
+      "identity_key": "nanluo",
+      "name": "南锣鼓巷历史文化街区",
+      "area": "南锣鼓巷",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "source_ids": [
+        "nl_overview",
+        "nl_community"
+      ],
+      "anchor": "南锣鼓巷",
+      "editor_note": "整体与16条支巷有包含关系；胡同肌理保存不代表所有建筑均为元代原构。"
+    },
+    {
+      "identity_key": "fuxiang",
+      "name": "福祥胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "hutong_renewal"
+      ],
+      "anchor": "福祥胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "suoyi",
+      "name": "蓑衣胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "hutong_renewal"
+      ],
+      "anchor": "蓑衣胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "yuer",
+      "name": "雨儿胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "hutong_renewal"
+      ],
+      "anchor": "雨儿胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "maoer",
+      "name": "帽儿胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "maoer"
+      ],
+      "anchor": "帽儿胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "jingyang",
+      "name": "景阳胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "景阳胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "shajing",
+      "name": "沙井胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "沙井胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "heizhima",
+      "name": "黑芝麻胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "黑芝麻胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "qiangulouyuan",
+      "name": "前鼓楼苑胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "前鼓楼苑胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "chaodou",
+      "name": "炒豆胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "炒豆胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "banchang",
+      "name": "板厂胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "板厂胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "dongmianhua",
+      "name": "东棉花胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "东棉花胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "beibingmasi",
+      "name": "北兵马司胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "北兵马司胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "qinlao",
+      "name": "秦老胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "秦老胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "qianyuanensi",
+      "name": "前圆恩寺胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "前圆恩寺胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "houyuanensi",
+      "name": "后圆恩寺胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "后圆恩寺胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "juer",
+      "name": "菊儿胡同",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "juer"
+      ],
+      "anchor": "菊儿胡同",
+      "editor_note": "街巷仍有居民生活；公开街面与私人院落、校园内部的进入权限分别看待。"
+    },
+    {
+      "identity_key": "sengwang",
+      "name": "僧王府（僧格林沁王府）",
+      "area": "南锣鼓巷",
+      "parent_key": "chaodou",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sengwang",
+        "nl_overview"
+      ],
+      "anchor": "僧王府",
+      "editor_note": "跨炒豆、板厂胡同的同一府址，不按多个门牌拆成多座王府；室内开放未核实。"
+    },
+    {
+      "identity_key": "seng_ancestral",
+      "name": "僧格林沁祠堂旧址",
+      "area": "南锣鼓巷",
+      "parent_key": "chaodou",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "祠堂",
+      "editor_note": "单据文旅旧文识别，未取得独立文保编号或当前内部开放资料。"
+    },
+    {
+      "identity_key": "keyuan",
+      "name": "可园及文煜宅",
+      "area": "南锣鼓巷",
+      "parent_key": "maoer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "keyuan",
+        "maoer",
+        "nl_overview"
+      ],
+      "anchor": "可园",
+      "editor_note": "园林与其宅院合为一条；来源所列地址范围不同，保留各自口径，内部开放未核实。"
+    },
+    {
+      "identity_key": "wanrong",
+      "name": "婉容故居（帽儿胡同35、37号）",
+      "area": "南锣鼓巷",
+      "parent_key": "maoer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "maoer",
+        "nl_overview"
+      ],
+      "anchor": "婉容",
+      "editor_note": "公开街面观察院门；不将私人或未开放宅院记成可以入内。"
+    },
+    {
+      "identity_key": "qibaishi",
+      "name": "齐白石旧居纪念馆（雨儿胡同）",
+      "area": "南锣鼓巷",
+      "parent_key": "yuer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "qibaishi",
+        "nl_overview"
+      ],
+      "anchor": "齐白石",
+      "editor_note": "本条为雨儿胡同13号，不是跨车胡同13号的另一处齐白石故居。"
+    },
+    {
+      "identity_key": "maodun",
+      "name": "茅盾故居",
+      "area": "南锣鼓巷",
+      "parent_key": "houyuanensi",
+      "object_type_hint": "node",
+      "source_ids": [
+        "maodun",
+        "nl_overview"
+      ],
+      "anchor": "茅盾",
+      "editor_note": "故居建筑、原状陈列合为一处，不把未取得单件身份的用品拆为独立藏品。"
+    },
+    {
+      "identity_key": "jiang",
+      "name": "蒋介石北平行辕旧址（载旉宅）",
+      "area": "南锣鼓巷",
+      "parent_key": "houyuanensi",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "nl_history"
+      ],
+      "anchor": "蒋介石",
+      "editor_note": "同一宅院的不同时期名称合并；历史使用不代表当前室内开放。"
+    },
+    {
+      "identity_key": "ronglu",
+      "name": "荣禄宅及菊儿胡同7号近代建筑",
+      "area": "南锣鼓巷",
+      "parent_key": "juer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "荣禄",
+      "editor_note": "先按文旅旧文识别同一宅院组，原有花园与建筑保存情况待补专门文保材料。"
+    },
+    {
+      "identity_key": "suojia",
+      "name": "索家宅院（秦老胡同35号）",
+      "area": "南锣鼓巷",
+      "parent_key": "qinlao",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "秦老胡同35号",
+      "editor_note": "原文只支持历史宅主归属；当前建筑用途和内部开放未核实。"
+    },
+    {
+      "identity_key": "kuijun",
+      "name": "奎俊宅（黑芝麻胡同13号）",
+      "area": "南锣鼓巷",
+      "parent_key": "heizhima",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "黑芝麻胡同13号",
+      "editor_note": "原文只支持历史宅主归属；不把校园或居民院落默认当作旅游开放场所。"
+    },
+    {
+      "identity_key": "hongchengchou",
+      "name": "黑芝麻胡同59号宅院（文旅资料称洪承畴宅）",
+      "area": "南锣鼓巷",
+      "parent_key": "heizhima",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "黑芝麻胡同59号",
+      "editor_note": "历史归属仅据本轮取得的文旅旧文，未独立核对产权沿革；名称明确标示来源归属。"
+    },
+    {
+      "identity_key": "shajing15",
+      "name": "沙井胡同15号四合院",
+      "area": "南锣鼓巷",
+      "parent_key": "shajing",
+      "object_type_hint": "node",
+      "source_ids": [
+        "shajing"
+      ],
+      "anchor": "沙井胡同15号",
+      "editor_note": "按文保工程资料的正式身份记载，不自行增添宅主归属；室内开放未核实。"
+    },
+    {
+      "identity_key": "juer_new",
+      "name": "菊儿胡同新四合院改造项目",
+      "area": "南锣鼓巷",
+      "parent_key": "juer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview",
+        "juer"
+      ],
+      "anchor": "吴良镛",
+      "editor_note": "现代有机更新项目，不写成全为明清原构；居民建筑不默认可入内。"
+    },
+    {
+      "identity_key": "drama",
+      "name": "中央戏剧学院东城校区（靳云鹏宅原址）",
+      "area": "南锣鼓巷",
+      "parent_key": "dongmianhua",
+      "object_type_hint": "node",
+      "source_ids": [
+        "nl_overview"
+      ],
+      "anchor": "中央戏剧学院",
+      "editor_note": "来源明确旧建筑已拆除；作为历史原址与校园外观记录，不作现存靳宅原构。"
+    },
+    {
+      "identity_key": "shichahai",
+      "name": "什刹海历史文化风景区",
+      "area": "什刹海",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "source_ids": [
+        "sh_overview",
+        "sh_sights"
+      ],
+      "anchor": "什刹海",
+      "editor_note": "前海、后海、西海与沿岸古迹组成的整体；北海公园独立，不并入本清单。"
+    },
+    {
+      "identity_key": "qianhai",
+      "name": "前海",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_overview",
+        "sh_sights"
+      ],
+      "anchor": "前海",
+      "editor_note": "水域与所属风景区重叠，不按多个整体重复累计参观用时。"
+    },
+    {
+      "identity_key": "houhai",
+      "name": "后海",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_overview",
+        "sh_sights"
+      ],
+      "anchor": "后海",
+      "editor_note": "水域与所属风景区重叠，不按多个整体重复累计参观用时。"
+    },
+    {
+      "identity_key": "xihai",
+      "name": "西海（积水潭）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_overview",
+        "sh_sights"
+      ],
+      "anchor": "西海",
+      "editor_note": "水域与所属风景区重叠，不按多个整体重复累计参观用时。"
+    },
+    {
+      "identity_key": "yinding",
+      "name": "银锭桥",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_bridges",
+        "sh_route"
+      ],
+      "anchor": "银锭桥",
+      "editor_note": "桥体与“银锭观山”视廊合为一个参观点；能否观山受天气和能见度影响。"
+    },
+    {
+      "identity_key": "desheng_bridge",
+      "name": "德胜桥",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "desheng_bridge",
+        "sh_route"
+      ],
+      "anchor": "德胜桥",
+      "editor_note": "闸桥合一，与德胜门箭楼为不同对象；保留1919年桥面改造等历史信息，不当作当前通行状态。"
+    },
+    {
+      "identity_key": "wanning",
+      "name": "万宁桥（澄清上闸）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "wanning",
+        "sh_sights"
+      ],
+      "anchor": "万宁桥",
+      "editor_note": "桥与其水闸遗产关系保留，不把石桥现存构件笼统全称为元代原物。"
+    },
+    {
+      "identity_key": "water_beasts",
+      "name": "万宁桥镇水兽",
+      "area": "什刹海",
+      "parent_key": "wanning",
+      "object_type_hint": "object",
+      "source_ids": [
+        "wanning",
+        "sh_sights"
+      ],
+      "anchor": "镇水兽",
+      "editor_note": "组合石刻记录，原文明确不同位置和年代，不把六只全部称为元代原物；民俗寓意不是实际防洪功能。"
+    },
+    {
+      "identity_key": "hehua",
+      "name": "荷花市场",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_sights",
+        "sh_autumn"
+      ],
+      "anchor": "荷花市场",
+      "editor_note": "历史市集与当代商业街区分别描述；不将旧文店铺名录当作当前营业承诺。"
+    },
+    {
+      "identity_key": "yandai",
+      "name": "烟袋斜街",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_sights",
+        "sh_route"
+      ],
+      "anchor": "烟袋斜街",
+      "editor_note": "街道整体与广福观有包含关系，不把商店逐一当作文物景点。"
+    },
+    {
+      "identity_key": "guangfu",
+      "name": "广福观（什刹海文化展示中心）",
+      "area": "什刹海",
+      "parent_key": "yandai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "guangfu",
+        "sh_bridges"
+      ],
+      "anchor": "广福观",
+      "editor_note": "历史宫观与现文化展示中心合并一条，展览内容与开放安排需按发布年份理解。"
+    },
+    {
+      "identity_key": "huoshen",
+      "name": "敕建火德真君庙（火神庙）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "huoshen",
+        "sh_local",
+        "sh_sights"
+      ],
+      "anchor": "火德真君庙",
+      "editor_note": "唐代始建在区政府资料中写作据传，保留限定；当前来源中纪年文字差错留给审计核对。"
+    },
+    {
+      "identity_key": "guanghua",
+      "name": "广化寺",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "guanghua",
+        "sh_local"
+      ],
+      "anchor": "广化寺",
+      "editor_note": "宗教场所，文物介绍与当日宗教活动、公众进入安排分开。"
+    },
+    {
+      "identity_key": "guoshoujing",
+      "name": "郭守敬纪念馆（汇通祠）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "guoshoujing",
+        "guoshoujing_new",
+        "sh_sights"
+      ],
+      "anchor": "郭守敬",
+      "editor_note": "同一地点的祠与纪念馆合并；保留旧展陈与新展陈来源日期，不强行拼成当前展厅目录；现建筑含原址复建。"
+    },
+    {
+      "identity_key": "wetland",
+      "name": "西海湿地公园",
+      "area": "什刹海",
+      "parent_key": "xihai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "wetland"
+      ],
+      "anchor": "西海湿地公园",
+      "editor_note": "作为西海沿岸湿地游览空间，与西海水域有包含及相邻关系。"
+    },
+    {
+      "identity_key": "gsj_statue",
+      "name": "郭守敬雕像（西海北岸）",
+      "area": "什刹海",
+      "parent_key": "wetland",
+      "object_type_hint": "object",
+      "source_ids": [
+        "wetland"
+      ],
+      "anchor": "雕像",
+      "editor_note": "资料仅说明临岸雕像，不编造作者、尺寸或坐标。"
+    },
+    {
+      "identity_key": "guomoruo",
+      "name": "郭沫若纪念馆",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "guomoruo",
+        "sh_sights",
+        "sh_culture"
+      ],
+      "anchor": "郭沫若",
+      "editor_note": "郭沫若故居与纪念馆同一对象，院落、原状陈列合为一个参观点。",
+      "display_name": "郭沫若故居（郭沫若纪念馆）",
+      "aliases": [
+        "郭沫若故居",
+        "郭沫若纪念馆"
+      ]
+    },
+    {
+      "identity_key": "songqingling",
+      "name": "宋庆龄故居（醇亲王府西花园）",
+      "area": "什刹海",
+      "parent_key": "chunwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "songqingling",
+        "sh_sights",
+        "sh_culture"
+      ],
+      "anchor": "宋庆龄",
+      "editor_note": "西花园改作故居，不将整个醇亲王府都称为对外开放的宋庆龄故居。"
+    },
+    {
+      "identity_key": "chunwang",
+      "name": "醇亲王府（北府）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_culture"
+      ],
+      "anchor": "醇亲王府",
+      "editor_note": "本条指后海北府，不是鲍家街南府；与西花园宋庆龄故居有包含关系，王府其他部分开放未核实。"
+    },
+    {
+      "identity_key": "qingwang",
+      "name": "庆王府（庆亲王府）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "qingwang",
+        "sh_local"
+      ],
+      "anchor": "庆王府",
+      "editor_note": "不是恭王府，亦不是天津庆王府；来源历史纪年口径不一致，保留待审；内部开放未核实。"
+    },
+    {
+      "identity_key": "taobeile",
+      "name": "涛贝勒府",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "taobeile",
+        "sh_local"
+      ],
+      "anchor": "涛贝勒",
+      "editor_note": "府邸与后来的学校功能分别记录，部分建筑拆改，不默认校园允许游客进入。"
+    },
+    {
+      "identity_key": "furen",
+      "name": "辅仁大学旧址（定阜街主楼）",
+      "area": "什刹海",
+      "parent_key": "taobeile",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_culture",
+        "taobeile"
+      ],
+      "anchor": "辅仁大学",
+      "editor_note": "主楼与涛贝勒府原花园、马厩存在历史用地关系，建筑时代和身份分别说明；入校安排未核实。"
+    },
+    {
+      "identity_key": "huixiantang",
+      "name": "会贤堂旧址",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_local"
+      ],
+      "anchor": "会贤堂",
+      "editor_note": "旧饭庄及其后续用途与当前餐饮营业无必然关系；不以历史名店介绍承诺现营业。"
+    },
+    {
+      "identity_key": "guan_yue",
+      "name": "关岳庙",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_culture"
+      ],
+      "anchor": "关岳庙",
+      "editor_note": "历史祭祀建筑与现存文物身份照录；公众入内安排未核实。"
+    },
+    {
+      "identity_key": "yaer",
+      "name": "鸦儿胡同",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "yuer"
+      ],
+      "anchor": "鸦儿胡同",
+      "editor_note": "临后海的街巷空间，与沿线广化寺、名人旧居有关系，居民院落不默认可入内。"
+    },
+    {
+      "identity_key": "desheng_gate",
+      "name": "德胜门箭楼",
+      "area": "周边衔接",
+      "parent_key": "",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_culture"
+      ],
+      "anchor": "德胜门箭楼",
+      "editor_note": "什刹海北缘衔接点，箭楼与原城门整体区分；当前内部开放未核实。"
+    },
+    {
+      "identity_key": "meilanfang",
+      "name": "梅兰芳纪念馆（护国寺街故居）",
+      "area": "周边衔接",
+      "parent_key": "",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_culture",
+        "meilanfang"
+      ],
+      "anchor": "梅兰芳",
+      "editor_note": "什刹海西南周边延伸点，与湖岸核心区分列；旧文居住起始年份待复核。"
+    },
+    {
+      "identity_key": "gongwang",
+      "name": "恭王府及花园",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "site",
+      "source_ids": [
+        "gongwang_overview",
+        "gongwang_history",
+        "gongwang_guide"
+      ],
+      "anchor": "恭王府",
+      "editor_note": "整体与其府邸、花园节点重叠，不能把各节点用时累加成多次完整王府参观。"
+    },
+    {
+      "identity_key": "zhonggulou",
+      "name": "北京钟鼓楼",
+      "area": "周边衔接",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "source_ids": [
+        "zhonggulou",
+        "gulou_detail"
+      ],
+      "anchor": "钟鼓楼",
+      "editor_note": "区域衔接的报时建筑群整体；与两座建筑和钟鼓实物有包含关系。"
+    },
+    {
+      "identity_key": "gulou",
+      "name": "北京鼓楼",
+      "area": "周边衔接",
+      "parent_key": "zhonggulou",
+      "object_type_hint": "node",
+      "source_ids": [
+        "zhonggulou",
+        "gulou_detail"
+      ],
+      "anchor": "鼓楼",
+      "editor_note": "现存建筑、历史重建和更鼓复制陈列分别理解。"
+    },
+    {
+      "identity_key": "zhonglou",
+      "name": "北京钟楼",
+      "area": "周边衔接",
+      "parent_key": "zhonggulou",
+      "object_type_hint": "node",
+      "source_ids": [
+        "zhonggulou",
+        "gulou_detail"
+      ],
+      "anchor": "钟楼",
+      "editor_note": "元代始建与清代现存建筑不是同一建造阶段；不把整楼写成元代原构。"
+    },
+    {
+      "identity_key": "yongle_bell",
+      "name": "钟楼明永乐报时铜钟",
+      "area": "周边衔接",
+      "parent_key": "zhonglou",
+      "object_type_hint": "object",
+      "source_ids": [
+        "zhonggulou",
+        "gulou_detail"
+      ],
+      "anchor": "铜钟",
+      "editor_note": "铜钟与钟楼为不同层级，年代和材料不能相互替代。"
+    },
+    {
+      "identity_key": "main_drum",
+      "name": "鼓楼残存主鼓与复制更鼓陈列",
+      "area": "周边衔接",
+      "parent_key": "gulou",
+      "object_type_hint": "object",
+      "source_ids": [
+        "zhonggulou",
+        "gulou_detail"
+      ],
+      "anchor": "主鼓",
+      "editor_note": "一面残存主鼓与25面复制更鼓的性质区别必须保留，不称全部为明清原物。"
+    },
+    {
+      "identity_key": "xiaojun",
+      "name": "萧军故居（蜗蜗居）",
+      "area": "什刹海",
+      "parent_key": "yaer",
+      "object_type_hint": "node",
+      "source_ids": [
+        "yuer"
+      ],
+      "anchor": "蜗蜗居",
+      "editor_note": "为鸦儿胡同6号院内的小楼；未取得当前公众进入安排，不将居民院落默认当作可入内。"
+    },
+    {
+      "identity_key": "zhenwu",
+      "name": "真武庙（德胜桥旁）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_renewal",
+        "sh_temple_renewal"
+      ],
+      "anchor": "真武庙",
+      "editor_note": "本条是德胜桥一桥两庙中的真武庙，不与德胜门箭楼内同名场所混为一处；活化计划不等于已经开放。"
+    },
+    {
+      "identity_key": "yongquan",
+      "name": "永泉庵",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "sh_renewal",
+        "sh_temple_renewal"
+      ],
+      "anchor": "永泉庵",
+      "editor_note": "2024年公布活化利用计划，后续报道仍记保护修缮，不据此判定当前对外开放。"
+    },
+    {
+      "identity_key": "gongwang_garden",
+      "name": "恭王府花园（萃锦园）",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "gongwang_overview",
+        "gongwang_history"
+      ],
+      "anchor": "花园",
+      "editor_note": "花园为恭王府整体的一部分，与花园各节点有包含关系。"
+    },
+    {
+      "identity_key": "gongwang_theatre",
+      "name": "怡神所（大戏楼）",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "gongwang_theatre"
+      ],
+      "anchor": "怡神所",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_fu",
+      "name": "福字碑（秘云洞内）",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "object",
+      "source_ids": [
+        "gongwang_fu"
+      ],
+      "anchor": "福字碑",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_gate",
+      "name": "西洋门",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "gongwang_gate"
+      ],
+      "anchor": "西洋门",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_back",
+      "name": "后罩楼",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_022d6e98911c"
+      ],
+      "anchor": "后罩楼",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_yinan",
+      "name": "银安殿",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_4bd8662d0183"
+      ],
+      "anchor": "银安殿",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_jiale",
+      "name": "嘉乐堂",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_773022ec88aa"
+      ],
+      "anchor": "嘉乐堂",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_baoguang",
+      "name": "葆光室",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_d19e8da03c12"
+      ],
+      "anchor": "葆光室",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_xijin",
+      "name": "锡晋斋",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_3930a3d27bd5"
+      ],
+      "anchor": "锡晋斋",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_duofu",
+      "name": "多福轩",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_ee3370b43e57"
+      ],
+      "anchor": "多福轩",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_ledao",
+      "name": "乐道堂",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_a239768aa384"
+      ],
+      "anchor": "乐道堂",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_archery",
+      "name": "箭道",
+      "area": "什刹海",
+      "parent_key": "gongwang",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_fa52f16a3d33"
+      ],
+      "anchor": "箭道",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_dule",
+      "name": "独乐峰",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "object",
+      "source_ids": [
+        "pgm_b16f60cfa64f"
+      ],
+      "anchor": "独乐峰",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_fuchi",
+      "name": "蝠池",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_98ce2006cadb"
+      ],
+      "anchor": "蝠池",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_dihua",
+      "name": "棣华轩",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_7fe6bc643944"
+      ],
+      "anchor": "棣华轩",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_anshan",
+      "name": "安善堂",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_55325015c416"
+      ],
+      "anchor": "安善堂",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "gongwang_dicui",
+      "name": "滴翠岩（含秘云洞）",
+      "area": "什刹海",
+      "parent_key": "gongwang_garden",
+      "object_type_hint": "node",
+      "source_ids": [
+        "pgm_0de26d7a36e8"
+      ],
+      "anchor": "滴翠岩",
+      "editor_note": "官网所列恭王府组成节点，建筑原构、复建或陈列依据原文分别说明；不从介绍页推导当日室内可进入或有演出。"
+    },
+    {
+      "identity_key": "shop_wenyu",
+      "name": "文宇奶酪（南锣鼓巷店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_wenyu_photos",
+        "nl_overview"
+      ],
+      "anchor": "文宇奶酪",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n不把宫廷传承的宣传描述当作本分店建筑年代。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "奶酪甜品",
+      "address": "南锣鼓巷49号（文旅旧文记载）",
+      "specialty": "京式奶酪、奶卷及双皮奶"
+    },
+    {
+      "identity_key": "shop_fangzhuan",
+      "name": "方砖厂69号炸酱面（方砖厂胡同店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_fangzhuan_album",
+        "shop_news2026"
+      ],
+      "anchor": "方砖厂69号",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n69号是品牌名；点评本店地址为1号，不将店名当门牌。品牌获奖信息不自动归到本店。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "京味面食",
+      "address": "方砖厂胡同1号（点评登记）",
+      "specialty": "炸酱面与胡同餐饮体验"
+    },
+    {
+      "identity_key": "shop_jingxiu",
+      "name": "景秀餐厅（南锣鼓巷店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_jingxiu_photos",
+        "shop_jingxiu_address",
+        "shop_news2026"
+      ],
+      "anchor": "景秀餐厅",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n1992年为报道所述店史，不推定房屋为1992年原构。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "胡同家常菜",
+      "address": "东棉花胡同36号（携程登记）",
+      "specialty": "家常菜与中戏周边餐饮记忆"
+    },
+    {
+      "identity_key": "shop_beiping",
+      "name": "北平花园·潮玩萌牙·北平咖啡（南锣鼓巷胡同店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_beiping_photos",
+        "shop_beiping_address"
+      ],
+      "anchor": "北平",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n点评使用组合店名，携程名含青年旅舍；本条只整理门店，不另扩旅舍住宿业务。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "花园咖啡",
+      "address": "南锣鼓巷113-2号（携程登记）",
+      "specialty": "咖啡、华夫饼和旅舍前庭休憩"
+    },
+    {
+      "identity_key": "shop_tangfang",
+      "name": "糖房咖啡（南锣鼓巷店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_tangfang_main"
+      ],
+      "anchor": "糖房咖啡",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n不据店名推断古代糖坊，不混为什刹海的其他同名店。公开页4.3分、48元/人为采集快照。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "咖啡简餐",
+      "address": "南锣鼓巷，完整门牌在公开页面被遮挡",
+      "specialty": "精品咖啡、茶饮及简餐"
+    },
+    {
+      "identity_key": "shop_jingshan",
+      "name": "京扇子（南锣鼓巷店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_jingshan_photos",
+        "shop_jingshan_design_index"
+      ],
+      "anchor": "京扇子",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n不与日本京扇堂混淆；旧设计报道说明的是当时空间，不承诺当前陈设未变。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "扇艺零售",
+      "address": "南锣鼓巷6号（2018年设计报道；现址待复核）",
+      "specialty": "扇子零售与当代店铺空间设计"
+    },
+    {
+      "identity_key": "shop_yiduo",
+      "name": "一朵一果（南锣鼓巷店）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_yiduo_album",
+        "shop_yiduo_industry",
+        "shop_yiduo_qunar_index"
+      ],
+      "anchor": "一朵一果",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n同品牌在南锣曾有两家门店；45号、41号和41-2号不默认为同一门店，不把其他分店制作体验搬来。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "纸品文具",
+      "address": "南锣鼓巷45号（点评登记；其他资料为41号或41-2号）",
+      "specialty": "明信片、手账纸品与城市纪念品"
+    },
+    {
+      "identity_key": "shop_jiaquer",
+      "name": "家雀儿手作文创店（南锣鼓巷）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "shop_news2026"
+      ],
+      "anchor": "家雀儿",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n据2026年3月街区报道定位；没有对应点评完整商户页，不填星级、人均或精确地址。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "手作文创",
+      "address": "南锣鼓巷主街；2026年报道未列具体门牌",
+      "specialty": "手作瓷瓶、木质动物摆件及手绘葫芦"
+    },
+    {
+      "identity_key": "shop_qingsong",
+      "name": "青松造物（南锣鼓巷设计师共创空间）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "shop_news2026"
+      ],
+      "anchor": "青松造物",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n报道列商品，不等于每天提供手作课程，也不推定每件商品有非遗认证。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "设计文创",
+      "address": "南锣鼓巷主街；2026年报道未列具体门牌",
+      "specialty": "陶瓷、剪纸、印章及手绘文创"
+    },
+    {
+      "identity_key": "shop_qiaoke",
+      "name": "巧克玩家（南锣鼓巷）",
+      "area": "南锣鼓巷",
+      "parent_key": "nanluo",
+      "object_type_hint": "node",
+      "source_ids": [
+        "shop_news2026"
+      ],
+      "anchor": "巧克玩家",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n只介绍2026年报道中的创意商品，不把城市地标缩小模型当文物原件。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "创意巧克力礼品",
+      "address": "南锣鼓巷主街；2026年报道未列具体门牌",
+      "specialty": "天坛祈年殿、长城等建筑造型巧克力"
+    },
+    {
+      "identity_key": "shop_kaorouji",
+      "name": "烤肉季饭庄（什刹海店）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_kaorouji_album",
+        "shop_kaorouji_official",
+        "sh_bridges",
+        "sh_autumn"
+      ],
+      "anchor": "烤肉季",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n点评记录为同址宴会厅，只作地址对照，不拆成第二家餐厅。1848年为品牌史，不等于现楼原构。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "京味烤肉",
+      "address": "前海东沿14号",
+      "specialty": "北京烤肉、清真炒菜与银锭桥畔饮食文化"
+    },
+    {
+      "identity_key": "shop_qingyun",
+      "name": "庆云楼饭庄（什刹海店）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_qingyun_album",
+        "dp_qingyun_photos"
+      ],
+      "anchor": "庆云楼",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n不依据顾客评论将现楼认定为清代原构，店史与建筑年代分开。点评人均123元为快照。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "京鲁风味饭庄",
+      "address": "前海东沿22号庆云楼2层（银锭桥旁）",
+      "specialty": "抓炒里脊、干炸小丸子与炙子烤肉"
+    },
+    {
+      "identity_key": "shop_yaerli",
+      "name": "清真·鸦儿李记·涮肉（什刹海店）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_yaerli_photos",
+        "sh_autumn"
+      ],
+      "anchor": "鸦儿李记",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n只按本分店整理，菜单推荐数不是菜品质量证明；不凭品牌名推断鸦儿胡同具体门牌。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "铜锅涮肉",
+      "address": "什刹海周边；本轮可读来源未列完整门牌",
+      "specialty": "涮肉、麻酱小料及北京清真餐饮"
+    },
+    {
+      "identity_key": "shop_huguosi",
+      "name": "护国寺小吃（地安门店）",
+      "area": "什刹海",
+      "parent_key": "shichahai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_huguosi_album"
+      ],
+      "anchor": "护国寺小吃",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n与护国寺总店、新街口店区分；未取得本店完整实时菜单，不把别店菜品默认搬来。点评人均28元为快照。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "北京小吃",
+      "address": "地安门外大街180号",
+      "specialty": "地安门街区的北京小吃门店"
+    },
+    {
+      "identity_key": "shop_postoffice",
+      "name": "大清邮政信柜（什刹海邮政所）",
+      "area": "什刹海",
+      "parent_key": "yandai",
+      "object_type_hint": "node",
+      "source_ids": [
+        "shop_postoffice"
+      ],
+      "anchor": "大清邮政信柜",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n2011年开业、2021年报道重张的现代主题邮局，不称清代原建邮局；旧体验项目及展示藏品不承诺仍在。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "邮政文创体验",
+      "address": "烟袋斜街53号",
+      "specialty": "邮政主题文创、明信片及印章体验"
+    },
+    {
+      "identity_key": "shop_fuhuazhai",
+      "name": "富华斋饽饽铺（护国新天地店）",
+      "area": "周边衔接",
+      "parent_key": "",
+      "object_type_hint": "node",
+      "source_ids": [
+        "dp_fuhuazhai_index"
+      ],
+      "anchor": "富华斋",
+      "editor_note": "具体经营门店，不把品牌创立年当作本分店或建筑年代；平台星级、人均和菜品为第三方页面快照，不能直接换算V3评级。现场营业、菜单、价格和体验项目仍待出行前核实。\n位于既有护国寺街周边衔接范围；只取得点评索引，未取得详情正文，不把店名中的宫廷宣传当历史身份认证。人均56元为索引快照。",
+      "entry_kind": "特色商铺",
+      "shop_kind": "传统糕点礼品",
+      "address": "护国寺街85号护国新天地商场一层底商（点评索引记载）",
+      "specialty": "传统饽饽与糕点伴手礼"
+    }
+  ]
+}

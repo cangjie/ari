@@ -1,0 +1,35 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "input_sha256": "9b8bf6440dc3a5d1f726f1e9940155ccec136eddf8b6a3380ef87bfbf86d800e",
+  "tour_sha256": "81bcd3316fabda7b3dadd80e9005a9f5c4472f2e18b68f2ece3099a6b59d01ba",
+  "result": {
+    "assessment": "本轮审查基于给出的变更代码、测试与样本数据（静态比对，未执行真实测试套件、未做真机验收、尚未部署）。核心契约基本自洽：\n- 100条数据的身份、描述、评级与审计标记在 tour_collection_build.py 的多重 sha256/覆盖校验下保持一致；按提供的 all_records 样本手工核对 S/A/B/C 计数（8/32/35/25）与 test_every_audited_record_keeps_its_identity_description_and_rating 的断言完全吻合，未发现资料遗漏或身份错配的证据。\n- 郭沫若故居（seq 48，identity=guomoruo）展示名称、关联整体、来源说明均与要求一致，未与恭王府混淆。\n- 16家商铺的地址/特色/平台字段均以\"来源记载\"\"平台参考\"等限定语言呈现，且前端 stopHtml 明确用独立标签展示，未与官方核实信息混同；方砖厂（86号1号门牌）、糖房咖啡（89号门牌遮挡）等边界样本与测试断言一致。\n- 复核提示（锡晋斋/平复帖，seq 76）在数据、前端 note 文案、搜索关键词、AI问答材料四处均保留且可检索，未被误删。\n- collection 模式下 routes=[]、default_route='none'、无 proj/canvas/area/entrance 字段，前端对 isCollection() 做了分支短路，避免了 buildMap/layout/startGeo/HOST.ready 等依赖几何或路线字段的函数被调用，静态分析未发现\"无路线/无图\"路径下的必然崩溃点；node 测试脚本中新增的 collection/collection_host 场景覆盖了搜索、筛选、详情、返回首页、以及\"地图↔清单\"切换时原生 ready/leave 状态的回归检查。\n- 原生缓存同步逻辑（web_api/tour/app.js loadAll）已按\"只同步有真实几何的目的地\"过滤 collection 条目后再调用 HOST.catalog()，与 HostBridge.kt/TourData.kt 的几何解析要求兼容，catalog.json 中的三馆配置与此一致。\n- tour_qa_llm.museum_material 与前端 stopHtml 共享同一份数据字段（address/specialty/platform/review/core），test_visitor_and_assistant_share_review_and_merchant_boundaries 验证了页面展示字段与问答材料是同源的。\n\n但有以下问题值得在合并前处理或至少明确确认，详见 findings。总体结论：本轮变更在其声称的范围内（清单发布、搜索含复核/平台信息、Core分数入问答材料）逻辑自洽且有对应测试覆盖，但存在两处\"共享代码改动外溢到已上线馆（伪满皇宫/宛平城）展示内容\"的证据，以及一处次要的测试基础设施一致性问题，均未见对应的回归校验或产品确认。鉴于用户要求\"不把前轮失败尝试当作通过结论\"且\"未提供的生产状态、现场状况不应假定已验证\"，本轮仍只能视为通过静态代码/测试样本的审查，不构成真机或生产环境的验收结论。",
+    "findings": [
+      {
+        "severity": "important",
+        "file": "web_api/app/tour_qa_llm.py (及 web_api/tour/app.js 中的 stopHtml)",
+        "reason": "diff 中新增的 Core 分数展示（`core = f\"｜Core {stop['core']:.4f}\" if stop.get('core') is not None else ''`，以及前端 `if (Number.isFinite(s.core)) meta.push('<span>Core ' + s.core.toFixed(4) + '</span>');`）未以 isCollection()/mode 做条件限制，而是对所有馆通用生效。若已上线的伪满皇宫、宛平城等馆的评级数据中同样带有 core 字段（根据描述，100条内容已统一用 Luna/Sonnet 评分，大概率带 core），则这次改动会让它们的页面详情与AI问答材料里新增一行原始 Core 分数——这超出了本轮声明的范围（南锣鼓巷/什刹海清单发布），且没有任何测试（无论是 web_api/tests/test_tour.py 的 mapped_tour 系列，还是 tour_browser_check.mjs 的 wmhg/wanping 场景）验证这些已上线馆的详情文本在改动前后仍符合既定展示需求。",
+        "recommendation": "将 Core 分数展示限定在 collection 模式（例如用 `isCollection(museum)` 或显式的展示开关控制），或者如果产品侧确认所有馆都应该展示 Core 分数，则为 wmhg/wanping 等既有馆补充一条断言（页面文本与问答材料）确认该改动是预期且不影响既有审核通过的呈现措辞。"
+      },
+      {
+        "severity": "minor",
+        "file": "web_api/app/tour_qa_llm.py",
+        "reason": "`_stop_text` 中用 `stop.get('kind')` 的真值来决定“位置说明”还是“资料说明”这一文案（`label = '资料说明' if stop.get('kind') else '位置说明'`），这是一个隐式判断：只要某条 stop 字典里存在真值的 'kind' 字段（无论出于何种原本用途），其“位置说明”文案就会被改写成“资料说明”。该函数没有接收显式的 museum/mode 参数，也没有测试验证已有的、经过审计通过的馆（伪满皇宫、宛平城）的 stop 数据中不存在同名字段，因而无法排除这次共享代码改动意外改变了既有馆问答材料用词的可能性。",
+        "recommendation": "改为显式传入馆的模式（例如 `_stop_text(stop, is_collection)` 或根据 museum['mode'] 判断），避免依赖某个字段是否存在这种隐式耦合；并补充一条针对既有馆（wmhg/wanping）的断言，确认其“位置说明”措辞未受影响。"
+      },
+      {
+        "severity": "minor",
+        "file": "web_api/tests/test_tour.py",
+        "reason": "新增的 `mapped_tour` fixture 在列表推导式和 fixture 函数体中均使用 `.read_text()` 读取 JSON 文件，未像原有的 `tour` fixture 那样显式指定 `encoding='utf-8'`。若运行环境（本地或CI）的默认编码不是 UTF-8，读取含中文的 data/*.json 可能触发 UnicodeDecodeError 或静默产生错误解码结果，从而影响这批回归测试本身的可靠性，而不是被测代码的问题。",
+        "recommendation": "统一改为 `.read_text(encoding='utf-8')`，与既有 `tour` fixture 保持一致，避免测试基础设施本身在不同部署/CI环境下出现编码相关的不稳定性。"
+      },
+      {
+        "severity": "minor",
+        "file": "web_api/tests/tour_browser_check.mjs",
+        "reason": "新增的 `collection_host` 场景说明中已自述“浏览器内的桥接模拟可检查本地及公开页面；不发帖，也不冒充真机验收”，这与用户描述的修复点（移除仅限本地假HTTP服务的限制）相符，但该脚本仍只是在 Node/无头浏览器环境里模拟 `window.AriHost`/`navigator.geolocation`，并不能证明真实 Android WebView 对应的 JS 接口命名、权限模型与本模拟完全一致（例如 HostBridge 向 WebView 注册的接口名是否确实是全局 `AriHost`，未在本次提供的文件中直接确认）。",
+        "recommendation": "在合入前以真实 WebView（或至少对照 MainActivity 中 addJavascriptInterface 的注册代码）确认接口名称、方法签名与本模拟脚本一致，并在发布记录中明确注明“本轮仅浏览器模拟通过，未经真机验收”，不要将该脚本的通过结果等同于原生兼容性的最终确认。"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "failed_open_attempts": [
+    {
+      "source_id": "dp_wenyu_album",
+      "url": "https://www.dianping.com/shop/513701/photos/album",
+      "reason": "Internal Error ()\nciteturn41view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.dianping.com/shop/513701/photos/album\",\"lineno\":null}); Total lines: 1\nL0: URL https://www.dianping.com/shop/513701/photos/album is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "dp_jingxiu_album",
+      "url": "https://www.dianping.com/shop/1944160/photos/album",
+      "reason": "Internal Error ()\nciteturn40view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.dianping.com/shop/1944160/photos/album\",\"lineno\":null}); Total lines: 1\nL0: URL https://www.dianping.com/shop/1944160/photos/album is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "dp_beiping_album",
+      "url": "https://www.dianping.com/shop/50258464/photos/album",
+      "reason": "Internal Error ()\nciteturn44view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.dianping.com/shop/50258464/photos/album\",\"lineno\":null}); Total lines: 1\nL0: URL https://www.dianping.com/shop/50258464/photos/album is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "dp_yaerli_album",
+      "url": "https://www.dianping.com/shop/j72DSsty6GRFjsTC/photos/album",
+      "reason": "Internal Error ()\nciteturn49view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.dianping.com/shop/j72DSsty6GRFjsTC/photos/album\",\"lineno\":null}); Total lines: 1\nL0: URL https://www.dianping.com/shop/j72DSsty6GRFjsTC/photos/album is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "dp_huguosi_main",
+      "url": "https://m.dianping.com/shop/509774",
+      "reason": "Internal Error ()\nciteturn55view0 [wordlim: 200] Source: open({\"ref_id\":\"https://m.dianping.com/shop/509774\",\"lineno\":null}); Total lines: 1\nL0: URL https://m.dianping.com/shop/509774 is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "dp_fuhuazhai_album",
+      "url": "https://www.dianping.com/shop/77241850/photos/album",
+      "reason": "Internal Error ()\nciteturn53view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.dianping.com/shop/77241850/photos/album\",\"lineno\":null}); Total lines: 1\nL0: Failed to fetch https://www.dianping.com/shop/77241850/photos/album: (400) Timeout fetching\n"
+    },
+    {
+      "source_id": "dp_fuhuazhai_main",
+      "url": "https://m.dianping.com/shop/77241850",
+      "reason": "Internal Error ()\nciteturn56view0 [wordlim: 200] Source: open({\"ref_id\":\"https://m.dianping.com/shop/77241850\",\"lineno\":null}); Total lines: 1\nL0: URL https://m.dianping.com/shop/77241850 is not accessible via this tool.\n"
+    },
+    {
+      "source_id": "shop_jingshan_design",
+      "url": "https://www.sohodd.com/?p=97102",
+      "reason": "Internal Error ()\nciteturn58view0 [wordlim: 200] Source: open({\"ref_id\":\"https://www.sohodd.com/?p=97102\",\"lineno\":null}); Total lines: 1\nL0: Failed to fetch https://www.sohodd.com/?p=97102: TimeoutError\n"
+    }
+  ],
+  "policy": "失败保留；用已有索引时独立登记取得方式，无自动重试或访问验证绕过。"
+}

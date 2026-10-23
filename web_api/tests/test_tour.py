@@ -23,6 +23,11 @@ def tour(request):
     return json.loads((TOUR_DIR / "data" / f"{request.param}.json").read_text(encoding="utf-8"))
 
 
+@pytest.fixture(params=[k for k in MUSEUMS if json.loads((TOUR_DIR / 'data' / f'{k}.json').read_text(encoding='utf-8')).get('mode') != 'collection'])
+def mapped_tour(request):
+    return json.loads((TOUR_DIR / 'data' / f'{request.param}.json').read_text(encoding='utf-8'))
+
+
 def haversine(lat1, lon1, lat2, lon2):
     r = 6371000.0
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -61,7 +66,8 @@ def test_places_and_stops_reference_each_other(tour):
         assert stop["tier"] in "SABC"
 
 
-def test_places_sit_inside_canvas_and_area(tour):
+def test_places_sit_inside_canvas_and_area(mapped_tour):
+    tour = mapped_tour
     w, h = tour["canvas"]["w"], tour["canvas"]["h"]
     for p in tour["places"] + [tour["entrance"]]:
         name = p["name"]["zh"]
@@ -69,8 +75,9 @@ def test_places_sit_inside_canvas_and_area(tour):
         assert in_area(p["x"], p["y"], tour["area"]), f"{name} 在景区范围之外，站在那里圆点会是灰的"
 
 
-def test_projection_reproduces_place_coordinates(tour):
+def test_projection_reproduces_place_coordinates(mapped_tour):
     """页面用 proj 把 GPS 换成画布坐标；同一组参数必须把地点的经纬度换回它自己的 x、y。"""
+    tour = mapped_tour
     q = tour["proj"]
     for p in tour["places"] + [tour["entrance"]]:
         e, n = (p["lon"] - q["lon0"]) * q["mlon"], (p["lat"] - q["lat0"]) * q["mlat"]
@@ -82,6 +89,9 @@ def test_routes_follow_the_visiting_order(tour):
     order = [int(k) for k in tour["stops"]]            # 站表按参观顺序写出
     ids = [r["id"] for r in tour["routes"]]
     assert len(ids) == len(set(ids))
+    if not ids:
+        assert tour.get('mode') == 'collection' and tour['default_route'] == 'none'
+        return
     assert tour["default_route"] in ids
     for r in tour["routes"]:
         assert r["stops"], f"路线 {r['id']} 是空的"
@@ -89,8 +99,9 @@ def test_routes_follow_the_visiting_order(tour):
         assert r["stops"] == [s for s in order if s in set(r["stops"])], f"路线 {r['id']} 没按参观顺序排"
 
 
-def test_route_minutes_add_up(tour):
+def test_route_minutes_add_up(mapped_tour):
     """停留是各站之和；步行按地点坐标重算一遍，应与生成器（route_plan）给的数对上。"""
+    tour = mapped_tour
     places = {p["id"]: p for p in tour["places"]}
     ent, walk = tour["entrance"], tour["walk"]
     for r in tour["routes"]:
@@ -136,3 +147,13 @@ def test_stylesheet_fonts_exist():
     assert fonts
     for rel in fonts:
         assert (TOUR_DIR / rel).is_file(), rel
+
+
+def test_mapped_destinations_keep_their_material_labels(mapped_tour):
+    from app import tour_qa_llm as llm
+
+    material = llm.museum_material(mapped_tour)
+    assert '｜Core ' not in material
+    for stop in mapped_tour['stops'].values():
+        if stop.get('borrowed'):
+            assert '位置说明：' + stop['borrowed']['zh'] in material

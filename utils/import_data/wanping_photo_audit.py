@@ -33,7 +33,7 @@ def main():
     user = '\n\n'.join(f'FILE {p}\n{(ROOT / p).read_text("utf-8")}' for p in paths)
     js = (ROOT / 'web_api/tour/app.js').read_text('utf-8')
     start = js.index('  function photoHtml(')
-    end = js.index('    if (next) {', start)
+    end = js.index('    if (next', start)
     css = (ROOT / 'web_api/tour/app.css').read_text('utf-8')
     user += '\nWEB RENDERING\n' + js[start:end]
     user += '\nPHOTO CSS\n' + '\n'.join(line for line in css.splitlines() if 'tour-photo' in line)

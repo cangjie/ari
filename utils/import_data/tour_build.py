@@ -353,8 +353,11 @@ def build_map(osm, T, proj, area_xy, w, h):
 # ---------------------------------------------------------------- 组装
 def build(mk):
     try:
-        D = importlib.import_module(f"{mk}_route_data")
         T = importlib.import_module(f"{mk}_tour_data")
+        if getattr(T, 'VIEW_MODE', None) == 'collection':
+            import tour_collection_build
+            return tour_collection_build.build(mk, T)
+        D = importlib.import_module(f"{mk}_route_data")
     except ModuleNotFoundError as e:
         sys.exit(f"缺 {e.name}.py —— 这个馆还没有路线数据或导览配置")
     if getattr(D, 'DATA_PACKAGE', None):
