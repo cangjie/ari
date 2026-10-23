@@ -1,0 +1,355 @@
+{
+  "published_on": "2026-10-23T23:03:25.744710+08:00",
+  "commit": "12afaf5581b36fd8338b20dfc045616964a7f813",
+  "previous_commit": "0151205",
+  "url": "https://tour.snowmeet.top/#nanluo_shichahai",
+  "records": 100,
+  "map_positions": 37,
+  "photos": 10,
+  "mode": "collection / browse map",
+  "public_assets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 8994,
+      "sha256": "abbd68ba8e941b2bb68e36d9d4d85bda5fadf95f1268086ea533c6d371c58725",
+      "matches_local": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "content_type": "application/javascript; charset=utf-8",
+      "bytes": 59547,
+      "sha256": "7db86bbe4711d7fa9b57d9462d7b435779ead496e86a343c63d751c9543cb07c",
+      "matches_local": true
+    },
+    {
+      "path": "app.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 25470,
+      "sha256": "8244256fb2b4e94b441f8447a8fd6f64fafa4f6921f7a1a1b4fe9ad1490cd88c",
+      "matches_local": true
+    },
+    {
+      "path": "catalog.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 73,
+      "sha256": "2fa497eaa88ad4699e4153093f855d459f006773b21feebda5aca10bf9d48569",
+      "matches_local": true
+    },
+    {
+      "path": "data/wmhg.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 44215,
+      "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761",
+      "matches_local": true
+    },
+    {
+      "path": "data/wanping.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 130706,
+      "sha256": "6345635598856b6de3f10f98524d1859f82579a437a2a46d87a664716a73ed24",
+      "matches_local": true
+    },
+    {
+      "path": "data/nanluo_shichahai.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "bytes": 513397,
+      "sha256": "6b4d668889282206a0d2c5ea602b578e56b0f5ba2c008927bb7f15aadb8905bd",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/1.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 100332,
+      "sha256": "6b066d45173564f47a9fd2b2017c249e49720a83535265fabb433e22c9ec4709",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/22.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 57578,
+      "sha256": "63a4b233a6648e28c020f22c342f9261a29c0b6289a8930266b5311809870b4d",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/32.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 114615,
+      "sha256": "9b09f9248195ceb5f3d62cd914283751c5dcbbb1b4a2565adf4a1fed58a5c420",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/37.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 233811,
+      "sha256": "314d9ef41ee12bf5a36c8aacb0b5e86a1ada71423c939fa6680e65cb5a64f213",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/41.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 76133,
+      "sha256": "db798bebbc975e0bae0376a0c2d8f6c6f93cd5c43cff2623c0c783d51f5618f4",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/48.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 14868,
+      "sha256": "942d44018d30743ff6dd20d0c13b07f7dacecd843004f2cf79c97847d21fe5e8",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/49.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 126985,
+      "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/59.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 40789,
+      "sha256": "8be8a7bc82bc30d09247874c6ac515fd5f15905e6a8a99d2cc47b7ce19598903",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/61.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 61126,
+      "sha256": "fa9ca9ff8760a9902a4d7ecd5317de0e929251c77894db1d0078caa3cec58597",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/96.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "bytes": 66588,
+      "sha256": "f22c35dfadc05b3905d9aea54755f31ffb75b538d4c14535032d7c52cc72e6bd",
+      "matches_local": true
+    }
+  ],
+  "public_qa": [
+    {
+      "key": "wmhg",
+      "place": "tongde",
+      "status": 200,
+      "read_only_get": true
+    },
+    {
+      "key": "wanping",
+      "place": "east_gate",
+      "status": 200,
+      "read_only_get": true
+    },
+    {
+      "key": "nanluo_shichahai",
+      "place": "guomoruo",
+      "status": 200,
+      "read_only_get": true
+    }
+  ],
+  "public_posts_sent": 0,
+  "local_checks": {
+    "checked_on": "2026-10-23",
+    "records": 100,
+    "mapped": 37,
+    "unlocated": 63,
+    "photos": 10,
+    "photo_bytes": 892825,
+    "local_pytest": {
+      "passed": 88,
+      "skipped_real_database": 3
+    },
+    "local_browser": {
+      "scenes": 19,
+      "passed": true,
+      "log": "exports/nanluo_media_browser_local.log",
+      "full_suite_scenes": 18,
+      "additional_scenes": [
+        "collection_map_view"
+      ],
+      "additional_scenes_passed": true
+    },
+    "existing_qa_material_unchanged": [
+      "wmhg",
+      "wanping"
+    ],
+    "tour_sha256": "6b4d668889282206a0d2c5ea602b578e56b0f5ba2c008927bb7f15aadb8905bd",
+    "workbook_unchanged": true,
+    "source_and_ratings_unchanged": true,
+    "android_device_verified": false,
+    "public_posts_sent": 0,
+    "water_rings": "三海完整内外环；多段反向way拼接与断环报错验证通过",
+    "fresh_source_check": "32与49两张不同图片同来源页面，重新HTTP200且两图URL均存在",
+    "business_museums": 10,
+    "business_artworks": 31426,
+    "model_success_calls": 103,
+    "model_error_calls": 4,
+    "audit_no_critical_or_important": true
+  },
+  "android_device_verified": false,
+  "apk_rebuilt": false,
+  "nginx_changed": false,
+  "verified_on": "2026-10-23T23:15:22.825888+08:00",
+  "server_qa_materials": {
+    "server": "44.207.251.65",
+    "materials": {
+      "wmhg": {
+        "sha256": "d8d952e380cc3fd2f52dc4ccb51c55ce3a416dda777baabbd2cb866c079fb2eb",
+        "characters": 6533,
+        "map_mode": null
+      },
+      "wanping": {
+        "sha256": "e8c455e9edde2949673e91e226797dfb679dc89e39c37b9a6ee41b31d2adcdef",
+        "characters": 16460,
+        "map_mode": null
+      },
+      "nanluo_shichahai": {
+        "sha256": "16c329fb442c4ed8c8378f484f1d42bad2cc2ca74d9303c28f63b793c4666184",
+        "characters": 47170,
+        "map_mode": "browse"
+      }
+    },
+    "all_match_local": true,
+    "online_model_calls": 0
+  },
+  "old_photo_assets": {
+    "all_match_local": true,
+    "photos": [
+      {
+        "path": "img/wanping/1.jpg",
+        "status": 200,
+        "bytes": 132965,
+        "sha256": "a721da9468d35aead5a43d5d921287048a10cf230176cd13e700579942608d73"
+      },
+      {
+        "path": "img/wanping/14.jpg",
+        "status": 200,
+        "bytes": 172105,
+        "sha256": "b700b50007a6dc584c0bcc14bcbf6eca5c6c2bc9c608f34d6ee32c9836e9d036"
+      },
+      {
+        "path": "img/wanping/15.jpg",
+        "status": 200,
+        "bytes": 160677,
+        "sha256": "98dd639b1352076a2d0ef9c6bfe8f32f787b7695ba82055191553bba57b2798f"
+      },
+      {
+        "path": "img/wanping/16.jpg",
+        "status": 200,
+        "bytes": 118584,
+        "sha256": "b6186e6bb8b042d869097d58b939cc96b23a906684883d7731e982733165f55a"
+      },
+      {
+        "path": "img/wanping/19.jpg",
+        "status": 200,
+        "bytes": 109962,
+        "sha256": "d97db8c52f1e73b2f8433d9c46e8e6a12f91590de6d4e1f44c99ec697c999bbb"
+      },
+      {
+        "path": "img/wanping/2.jpg",
+        "status": 200,
+        "bytes": 43437,
+        "sha256": "5c19f2adc3138fd6f82bb7b375b04b2509518310ca89d75791e4df7ac2e375af"
+      },
+      {
+        "path": "img/wanping/31.jpg",
+        "status": 200,
+        "bytes": 175466,
+        "sha256": "d0906b06f2b5c1a711861f14098e1634765792432b79b2517b79ddeb756a89ad"
+      },
+      {
+        "path": "img/wanping/32.jpg",
+        "status": 200,
+        "bytes": 157275,
+        "sha256": "f0daf51ef6d1ee507335491463d71305f0bf37419effd11e9e9722eb8c464481"
+      },
+      {
+        "path": "img/wanping/39.jpg",
+        "status": 200,
+        "bytes": 106394,
+        "sha256": "1e1c26374736855d3248f9c48f7650b245f18467b13ad5fd3a3da9571594a0d1"
+      },
+      {
+        "path": "img/wanping/4.jpg",
+        "status": 200,
+        "bytes": 160410,
+        "sha256": "322f2b4800b61d2979de0c370bf907a03c74c138b298d648ce9f2ff4586fa3a8"
+      },
+      {
+        "path": "img/wanping/5.jpg",
+        "status": 200,
+        "bytes": 63537,
+        "sha256": "4dbd2c0e2d0f0df9808b8a3ad004d60a1bdae3007d1ad219aad7633397d4c848"
+      },
+      {
+        "path": "img/wanping/8.jpg",
+        "status": 200,
+        "bytes": 57073,
+        "sha256": "f2035acbf599d20834901716846503fe64b2bb980141ce615863a203f0858eb1"
+      }
+    ]
+  },
+  "deployment": {
+    "server": "44.207.251.65",
+    "code_revision": "12afaf5581b36fd8338b20dfc045616964a7f813",
+    "method": "clean worktree, git pull --ff-only",
+    "ari_web_api_restarted": true,
+    "service": "active",
+    "nginx_changed": false,
+    "apk_changed": false
+  },
+  "public_browser": {
+    "scenes": [
+      "collection_media",
+      "collection_host",
+      "waiting_marker",
+      "wanping",
+      "photos",
+      "qa",
+      "collection_map_view"
+    ],
+    "all_resolved_and_passed": true,
+    "new_photos_decoded": 10,
+    "old_photos_decoded": 12,
+    "bridge_simulation": true,
+    "real_touch_map_navigation": true,
+    "public_posts_sent": 0,
+    "first_run": {
+      "log": "exports/nanluo_media_browser_public.log",
+      "failed_checks": 7,
+      "cause": "既有photos场景只等12秒，部分旧图在本轮公网链路未及时完成；另核对12张均HTTP200且逐字节一致。"
+    },
+    "rechecks": [
+      {
+        "scene": "photos",
+        "log": "exports/nanluo_media_browser_public_photo_recheck.log",
+        "passed": true,
+        "note": "公网图片等待上限改为90秒，本地仍12秒；全部12图实际载入通过，无游客端文件改动"
+      },
+      {
+        "scene": "collection_map_view",
+        "log": "exports/nanluo_media_browser_public_map_touch.log",
+        "passed": true,
+        "note": "真实触摸打开地图并待绘制后确认标题/切换栏可见，可返回100条清单"
+      }
+    ]
+  }
+}

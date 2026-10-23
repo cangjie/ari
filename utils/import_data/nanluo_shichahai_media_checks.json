@@ -10,9 +10,14 @@
     "skipped_real_database": 3
   },
   "local_browser": {
-    "scenes": 18,
+    "scenes": 19,
     "passed": true,
-    "log": "exports/nanluo_media_browser_local.log"
+    "log": "exports/nanluo_media_browser_local.log",
+    "full_suite_scenes": 18,
+    "additional_scenes": [
+      "collection_map_view"
+    ],
+    "additional_scenes_passed": true
   },
   "existing_qa_material_unchanged": [
     "wmhg",

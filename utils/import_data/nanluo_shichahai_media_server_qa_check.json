@@ -1,0 +1,22 @@
+{
+  "server": "44.207.251.65",
+  "materials": {
+    "wmhg": {
+      "sha256": "d8d952e380cc3fd2f52dc4ccb51c55ce3a416dda777baabbd2cb866c079fb2eb",
+      "characters": 6533,
+      "map_mode": null
+    },
+    "wanping": {
+      "sha256": "e8c455e9edde2949673e91e226797dfb679dc89e39c37b9a6ee41b31d2adcdef",
+      "characters": 16460,
+      "map_mode": null
+    },
+    "nanluo_shichahai": {
+      "sha256": "16c329fb442c4ed8c8378f484f1d42bad2cc2ca74d9303c28f63b793c4666184",
+      "characters": 47170,
+      "map_mode": "browse"
+    }
+  },
+  "all_match_local": true,
+  "online_model_calls": 0
+}

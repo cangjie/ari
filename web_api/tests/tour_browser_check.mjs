@@ -31,6 +31,7 @@ const SHOTS = process.env.SHOTS || "";
 const DEBUG_PORT = 9333;
 // 公网冷启动可能比自带本地服务慢；超时必须明确报加载失败，不能继续对未加载页面断言。
 const LOAD_TIMEOUT_MS = Number(process.env.LOAD_TIMEOUT_MS || (process.env.BASE ? 60000 : 20000));
+const IMAGE_TIMEOUT_MS = Number(process.env.IMAGE_TIMEOUT_MS || (process.env.BASE ? 90000 : 12000));
 const MIME = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".woff2": "font/woff2", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
@@ -299,6 +300,18 @@ const SCENES = {
       await p.shot('waiting-marker');
     } finally { await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier}); }
   },
+  async collection_map_view(p) {
+    await p.open('/#nanluo_shichahai');
+    const point = await p.eval("(function(){var r=document.getElementById('view-map').getBoundingClientRect();return [r.x+r.width/2,r.y+r.height/2]})()");
+    await p.touch('touchStart', [point]);
+    await p.touch('touchEnd', []);
+    await sleep(250);
+    const state = await p.eval("({mapVisible:!document.getElementById('mapwrap').hidden,headerY:document.querySelector('.topbar').getBoundingClientRect().y,tabsY:document.getElementById('collection-views').getBoundingClientRect().y,scrollY:scrollY})");
+    check(state.mapVisible && state.headerY >= 0 && state.tabsY >= 0 && state.scrollY === 0, '真实触摸打开地图后标题与切换栏均可见', state);
+    await p.shot('collection-map-touch');
+    await p.click('#view-list');
+    check(await p.eval("!document.getElementById('collection').hidden && document.querySelectorAll('.collection-item').length===100"), '地图可返回完整清单');
+  },
   async collection_media(p) {
     await p.open('/?debug=1#nanluo_shichahai');
     check(await p.eval("!document.getElementById('collection-views').hidden"), '清单与地图切换入口可见');
@@ -387,7 +400,7 @@ const SCENES = {
         if (!exists) { check(false, '照片已渲染：' + path); continue; }
         await p.eval(`document.querySelector('#sheet-body img[src=${JSON.stringify(path)}]')?.scrollIntoView(); true`);
         let ok = false;
-        for (let i = 0; i < 80; i++) {
+        for (let i = 0; i < Math.ceil(IMAGE_TIMEOUT_MS / 150); i++) {
           ok = await p.eval(`(function(){var im=document.querySelector('#sheet-body img[src=${JSON.stringify(path)}]');return !!im && im.complete && im.naturalWidth>0})()`);
           if (ok) break;
           await sleep(150);
