@@ -30,6 +30,45 @@
       "provider": "anthropic_cli",
       "model": "claude-sonnet-5",
       "effort": "medium",
+      "stage": "audit_tour_media",
+      "status": "error",
+      "calls": 1,
+      "prompt_tokens": null,
+      "cached_tokens": null,
+      "completion_tokens": null,
+      "reasoning_tokens": null,
+      "latency_ms": 1033417
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_tour_media_final",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 4,
+      "cached_tokens": 18006,
+      "completion_tokens": 28887,
+      "reasoning_tokens": null,
+      "latency_ms": 357815
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_tour_media_recheck",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 4,
+      "cached_tokens": 9589,
+      "completion_tokens": 12134,
+      "reasoning_tokens": null,
+      "latency_ms": 158062
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
       "stage": "audit_tour_publish",
       "status": "error",
       "calls": 1,
@@ -261,11 +300,12 @@
       "latency_ms": 10871
     }
   ],
-  "success_calls": 101,
-  "error_calls": 3,
+  "success_calls": 103,
+  "error_calls": 4,
   "limitations": [
     "Claude标准缓存的输入侧token有历史计量缺口；provider原始usage另留。",
     "初版一次英文修订校验失败及一次Claude额度上限均保留；不能声称完整零失败计量。增补分组复核前主动结束的一轮，已返回的两组结果另存且保留模型缓存，未用于最终分组。",
-    "发布首轮CLI因大输入后的上下文压缩与结构字段丢失失败（llm_call.id=3928），原始会话和usage单独留存；标准缓存错误行的token仍为空，不补造成完整账单。"
+    "发布首轮CLI因大输入后的上下文压缩与结构字段丢失失败（llm_call.id=3928），原始会话和usage单独留存；标准缓存错误行的token仍为空，不补造成完整账单。",
+    "媒体首轮审计单次回复达到32000输出token上限后主动中止，缓存错误id3931保留；已写入会话的usage另存，不冒充完整计量。"
   ]
 }

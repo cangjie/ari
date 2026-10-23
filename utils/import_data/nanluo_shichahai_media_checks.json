@@ -24,5 +24,10 @@
   "android_device_verified": false,
   "public_posts_sent": 0,
   "water_rings": "三海完整内外环；多段反向way拼接与断环报错验证通过",
-  "fresh_source_check": "32与49两张不同图片同来源页面，重新HTTP200且两图URL均存在"
+  "fresh_source_check": "32与49两张不同图片同来源页面，重新HTTP200且两图URL均存在",
+  "business_museums": 10,
+  "business_artworks": 31426,
+  "model_success_calls": 103,
+  "model_error_calls": 4,
+  "audit_no_critical_or_important": true
 }
