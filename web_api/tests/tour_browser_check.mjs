@@ -29,6 +29,8 @@ const TOUR_DIR = fileURLToPath(new URL("../tour/", import.meta.url));
 const CHROME = process.env.CHROME || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const SHOTS = process.env.SHOTS || "";
 const DEBUG_PORT = 9333;
+// 公网冷启动可能比自带本地服务慢；超时必须明确报加载失败，不能继续对未加载页面断言。
+const LOAD_TIMEOUT_MS = Number(process.env.LOAD_TIMEOUT_MS || (process.env.BASE ? 60000 : 20000));
 const MIME = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".woff2": "font/woff2", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
@@ -161,10 +163,12 @@ class Page {
     const want = path.includes("#")
       ? "!document.getElementById('tour').hidden && (!document.getElementById('collection').hidden || !['', '正在定位…'].includes(document.getElementById('status').textContent))"
       : "!!document.querySelector('#cards .card') || document.getElementById('cards').textContent.includes('暂无')";
-    for (let i = 0; i < 80; i++) {
-      if (await this.eval(want).catch(() => false)) break;
+    let loaded = false;
+    for (let i = 0; i < LOAD_TIMEOUT_MS / 250; i++) {
+      if (await this.eval(want).catch(() => false)) { loaded = true; break; }
       await sleep(250);
     }
+    if (!loaded) throw new Error('页面在' + LOAD_TIMEOUT_MS + 'ms内未完成加载：' + await this.eval("document.getElementById('cards').textContent"));
     await sleep(500);
   }
   state() {

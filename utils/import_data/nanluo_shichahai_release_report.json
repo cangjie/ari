@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-10-23T21:45:26.861858+08:00",
+  "commit": "6ac44bd36c04714c12d65a81e2a98b9c427f226b",
+  "origin": "https://tour.snowmeet.top",
+  "catalog": [
+    "wmhg",
+    "wanping",
+    "nanluo_shichahai"
+  ],
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 8693,
+      "sha256": "d49047fdaedef0df6d9da1b0cef5c4d04288044801a72d30c5b940f77bf27285",
+      "content_type": "text/html; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 56739,
+      "sha256": "de3e8b33c95b7ec43ee052166c87355c27ee440e152a61146e0e26304e54a2ae",
+      "content_type": "application/javascript; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "app.css",
+      "status": 200,
+      "bytes": 25147,
+      "sha256": "12aef84ee6c484228e0c6f77d75d521f41307f6696d94c4bb2496e8a744e7d31",
+      "content_type": "text/css; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "catalog.json",
+      "status": 200,
+      "bytes": 73,
+      "sha256": "2fa497eaa88ad4699e4153093f855d459f006773b21feebda5aca10bf9d48569",
+      "content_type": "application/json; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "data/wmhg.json",
+      "status": 200,
+      "bytes": 44215,
+      "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761",
+      "content_type": "application/json; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "data/wanping.json",
+      "status": 200,
+      "bytes": 130706,
+      "sha256": "6345635598856b6de3f10f98524d1859f82579a437a2a46d87a664716a73ed24",
+      "content_type": "application/json; charset=utf-8",
+      "cache_control": "no-cache"
+    },
+    {
+      "path": "data/nanluo_shichahai.json",
+      "status": 200,
+      "bytes": 371883,
+      "sha256": "81bcd3316fabda7b3dadd80e9005a9f5c4472f2e18b68f2ece3099a6b59d01ba",
+      "content_type": "application/json; charset=utf-8",
+      "cache_control": "no-cache"
+    }
+  ],
+  "qa_get": [
+    {
+      "museum": "wmhg",
+      "place": "tongde",
+      "status": 200,
+      "visible_topics": 1
+    },
+    {
+      "museum": "wanping",
+      "place": "east_gate",
+      "status": 200,
+      "visible_topics": 0
+    },
+    {
+      "museum": "nanluo_shichahai",
+      "place": "guomoruo",
+      "status": 200,
+      "visible_topics": 0
+    }
+  ],
+  "business_database_written": false,
+  "online_questions_sent": 0,
+  "apk_rebuilt": false,
+  "android_device_tested": false,
+  "collection": {
+    "records": 100,
+    "shops": 16,
+    "mode": "collection",
+    "review": [
+      76
+    ],
+    "workbook_sha256": "57ce72b469b9973f998beb8289e9481351797ac5bfd9fa93f6e4e4e09bb4e2a6"
+  },
+  "state": "已部署并通过公开文件哈希、三处景区只读问答和公网浏览器验收；真机未测",
+  "deployment": {
+    "before": "0c5884727df537c5591adcc4992ceb96517c89ae",
+    "content_commit": "6ac44bd36c04714c12d65a81e2a98b9c427f226b",
+    "service": "ari-web-api",
+    "service_state": "active",
+    "service_restarted": true,
+    "nginx_changed": false,
+    "apk_changed": false
+  },
+  "browser": {
+    "verified_at": "2026-10-23T21:50:37.369917+08:00",
+    "online_scenes_passed": [
+      "collection",
+      "collection_host",
+      "wanping",
+      "list",
+      "qa"
+    ],
+    "native_scope": "浏览器模拟AriHost，并对照真实注册代码；不是Android真机验收",
+    "initial_run_note": "首次新清单冷启动仍在载入时，旧20秒固定等待已经结束，造成5个断言失败；同轮其他4个场景通过。已保留本地原日志。",
+    "recheck_note": "检查器按加载完成状态等待，公网最多60秒，超时立即明确失败；新清单及桥接模拟复查全部通过。",
+    "initial_log_sha256": "2273fff24359688e41761f5c6a20d81d210fc97e2135bb2c2ced908b53fa6240",
+    "recheck_log_sha256": "f968212299b9319abb819117f04b0381715e881f712b3c36dd80a091118f6d62",
+    "public_screenshots_reviewed": [
+      "collection-home-entry",
+      "collection-guomoruo"
+    ],
+    "online_questions_sent": 0
+  },
+  "pytest": {
+    "passed": 85,
+    "real_database_checks_skipped": 3
+  }
+}
