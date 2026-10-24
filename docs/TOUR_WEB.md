@@ -1,6 +1,6 @@
 # 导览站部署记录
 
-Ari Travel 手机导览站，部署在 `tour.snowmeet.top`。本文记录它是怎么来的、线上实况与待办；
+Ari Travel 手机导览站，现有两个等价HTTPS入口：`tour.snowmeet.top` 与 `tour.arimuseum.org`（2026-10-24新增）。本文记录它是怎么来的、线上实况与待办；
 本地怎么跑、调试参数见 `web_api/README.md`。
 
 首次部署：2026-10-10，由 claude 执行。2026-10-15接入宛平城及周边（`wanping`），与伪满皇宫博物院（`wmhg`）共用服务器景区清单。
@@ -204,7 +204,7 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 - 页面**不经过 FastAPI**，由 Nginx 直接出静态；只有 `/api/`（游客互动）反代到 `ari-web-api`（`127.0.0.1:8002`）
 - 更新 = `cd /home/ubuntu/ari && git pull --ff-only`。只改页面和数据不用重启任何服务；改了 `web_api/app/` 要 `sudo systemctl restart ari-web-api`
 
-### 证书
+### tour.snowmeet.top 证书
 
 - 签发机构：TrustAsia LiteSSL RSA CA 2025，RSA，只签给 `tour.snowmeet.top` 一个域名
 - 证书链（3 张，叶子在前）：`/etc/ssl/tour/tour.snowmeet.top.crt`，`644 root:root`
@@ -213,86 +213,58 @@ ARI_OPENAI_KEY_FILE=/etc/ari/openai_key
 
 证书由用户手动申请，**没有自动续期**。到期前需重新下载并替换，或改用 Let's Encrypt + certbot。
 
+### tour.arimuseum.org 证书与自动续期（2026-10-24）
+
+用户已把A记录指向`44.207.251.65`；当前无AAAA记录。新域名单独申请Let's Encrypt ECDSA证书，签发链为YE1，有效期为2026-10-24 03:12:23 UTC至2027-01-22 03:12:22 UTC（北京时间到期为2027-01-22 11:12:22）。证书链在`/etc/letsencrypt/live/tour.arimuseum.org/fullchain.pem`，私钥在同目录`privkey.pem`，实际私钥文件权限`600 root:root`。证书和私钥不进入Git。
+
+本轮通过Ubuntu仓库安装`certbot 4.0.0`及7个依赖，没有升级已有软件包。使用webroot HTTP-01验证，验证目录`/var/lib/letsencrypt`，专用80端口location提供`/.well-known/acme-challenge/`；其余HTTP请求301到同域名HTTPS并保留路径、查询串。新域名HTTPS直接提供同一导览站，不跳回旧域名。
+
+```sh
+sudo certbot certonly --webroot --webroot-path /var/lib/letsencrypt \
+  --cert-name tour.arimuseum.org -d tour.arimuseum.org --key-type ecdsa \
+  --preferred-challenges http --non-interactive --agree-tos \
+  --register-unsafely-without-email
+```
+
+未提供通知邮箱，本轮未猜测用户邮箱；使用无邮箱ACME账户。`certbot.timer`已enabled/active，定期检查续期；成功续期后执行`/etc/letsencrypt/renewal-hooks/deploy/ari-tour-reload-nginx`，仅对本证书谱系运行`nginx -t`后reload。已经执行带deploy hook的staging模拟续期并成功，生产证书保持原指纹。
+
+```sh
+sudo certbot renew --cert-name tour.arimuseum.org --dry-run \
+  --run-deploy-hooks --no-random-sleep-on-renew --non-interactive
+sudo systemctl status certbot.timer
+sudo journalctl -u certbot.service
+```
+
+首次模拟未关闭随机等待，Certbot自动等待约189秒后成功；不是验证卡死。后续手动测试可用上面的`--no-random-sleep-on-renew`，定时续期仍保留默认分散等待。实现依据见[Certbot官方webroot与续期文档](https://eff-certbot.readthedocs.io/en/stable/using.html)。
+
+两个域名共用相同页面、catalog/JSON、图片/字体、`/api/`反代及`/android/app`下载。公开问答同库；浏览器定位授权与localStorage按origin分别保存，新域名首次使用需单独授权。App当前`TOUR_ORIGIN`仍为旧域名，此次仅增加服务器等价入口，没有迁移App入口或更换APK。
+
 2026-10-10 的经过：用户先给的 `~/Desktop/tour-snowmeet-top-nginx-1010093039.zip` 是 0 字节的空文件，
 站点先只开了 80 上线；同名文件在 `~/Downloads/` 里是完整的（5728 字节），当天下午装上并切到 HTTPS。
 **同名文件在两个目录里可能不是同一份，装之前先看大小。**
 
 ### Nginx
 
-`/etc/nginx/sites-available/ari-tour`，已在 `sites-enabled` 建链接：
+2026-10-24起，两域名的HTTPS server分别加载各自证书，共用一个内容片段，防止页面/API/下载配置逐渐分叉。配置快照留在仓库，**Git拉取本身不安装这些系统配置**：
+
+| 服务器路径 | 仓库快照 |
+|---|---|
+| `/etc/nginx/sites-available/ari-tour` | [旧域名server](nginx-ari-tour.conf) |
+| `/etc/nginx/sites-available/ari-tour-arimuseum` | [新域名HTTP验证、跳转及HTTPS server](nginx-ari-tour-arimuseum.conf) |
+| `/etc/nginx/snippets/ari-tour-content.conf` | [两域名共用的内容配置](nginx-ari-tour-content.conf) |
+| `/etc/letsencrypt/renewal-hooks/deploy/ari-tour-reload-nginx` | [续期成功后的重载脚本](certbot-ari-tour-reload-nginx.sh) |
+
+两个站点均在`/etc/nginx/sites-enabled/`有同名链接，HTTPS段均包含：
 
 ```nginx
-server {
-    listen 80;
-    listen [::]:80;
-    server_name tour.snowmeet.top;
-
-    return 301 https://$host$request_uri;
-}
-
-server {
-    listen 443 ssl;
-    listen [::]:443 ssl;
-    http2 on;
-    server_name tour.snowmeet.top;
-
-    # TrustAsia 手动签发，2027-01-07 到期，没有自动续期
-    ssl_certificate     /etc/ssl/tour/tour.snowmeet.top.crt;
-    ssl_certificate_key /etc/ssl/tour/tour.snowmeet.top.key;
-
-    ssl_protocols       TLSv1.2 TLSv1.3;
-    ssl_session_cache   shared:SSL:10m;
-    ssl_session_timeout 1d;
-    ssl_session_tickets off;
-
-    root  /home/ubuntu/ari/web_api/tour;
-    index index.html;
-
-    # 明确告诉浏览器是 UTF-8，不靠它从 <meta> 里猜（text/html 恒被包含）
-    charset       utf-8;
-    charset_types text/css application/javascript application/json;
-
-    gzip            on;
-    gzip_comp_level 5;
-    gzip_min_length 1024;
-    gzip_types      text/plain text/css application/javascript application/json image/svg+xml;
-    gzip_vary       on;
-
-    # 游客互动的接口，转给 ari-web-api（web_api/app/tour_qa.py）。缓存头由应用自己发（no-store），这里不重复加。
-    # ^~：这个前缀下不再去匹配后面按扩展名的那条规则
-    location ^~ /api/ {
-        proxy_pass http://127.0.0.1:8002;
-        proxy_set_header Host              $host;
-        proxy_set_header X-Real-IP         $remote_addr;
-        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_read_timeout   90s;
-        client_max_body_size 8k;
-    }
-
-    # Android APK download, published independently of the web application.
-    location = /android/app {
-        alias /home/ubuntu/ari-downloads/android/app.apk;
-        default_type application/vnd.android.package-archive;
-        add_header Content-Disposition 'attachment; filename="ari-travel-0.1.0.apk"';
-        add_header Cache-Control "no-store";
-    }
-
-    # 页面与数据随 git pull 更新：每次都向服务器确认，不让手机拿着旧版本
-    location / {
-        try_files $uri $uri/ =404;
-        add_header Cache-Control "no-cache";
-    }
-
-    # 字体与图片不会变，放心缓存 30 天
-    location ~* \.(woff2|jpg|jpeg|png|webp)$ {
-        try_files $uri =404;
-        add_header Cache-Control "public, max-age=2592000";
-    }
-}
+include /etc/nginx/snippets/ari-tour-content.conf;
 ```
 
-同一台机器上的其它站点（`ari-web-api`、`ari-smoke`、`reqai`）没有改动；2026-10-12 加 `/api/` 入口时也只动了 `ari-tour` 这一个文件。
+共用片段保留原站点的静态根目录`/home/ubuntu/ari/web_api/tour`、UTF-8、gzip、页面/JSON的no-cache、字体/图片缓存、`/api/`反代到`127.0.0.1:8002`、APK精确alias。后续修改这些行为只改共用片段；新增证书或域名配置在各自server中处理。
+
+旧`ari-tour`的完整配置备份为`/etc/nginx/sites-available/ari-tour.before-arimuseum-20261024T041014Z`；原TrustAsia证书路径不变。每次安装系统配置均先备份、`nginx -t`通过再reload。此次只修改导览站相关配置，`ari-web-api`、`ari-smoke`和`reqai`三份站点文件SHA-256与改前一致，Nginx及API服务保持active。
+
+新域名验收记录见[TOUR_DOMAIN_ARIMUSEUM_REPORT.json](TOUR_DOMAIN_ARIMUSEUM_REPORT.json)：两域名代表性页面、三馆JSON、静态资源、API列表、HTTP跳转、证书与APK下载路由均核对；没有向线上发布测试问题。
 
 ### Android APK 下载（2026-10-15）
 
@@ -418,7 +390,7 @@ server {
 - **游客互动：真机上软键盘弹出时输入框会不会被挡住**，没验过。
 - **OpenAI 账户余额**：前两把 key 都是余额为 0。现在这把一旦用完，每个提问都会回「导览助手暂时没有答上来」；到时把 `site_per_day` 设成 0 可以先把提问关掉。
 - **线上的 OpenAI key 与 MySQL root 口令在 2026-10-12 的会话里出现过明文**，建议各换一次（换法见「部署实况」）。
-- **证书 2027-01-07 到期**，没有自动续期。
+- **tour.snowmeet.top证书2027-01-07到期**，没有自动续期；tour.arimuseum.org使用独立Let's Encrypt证书，已配置自动续期。
 - **真机 GPS 验收**还没做。
 - **照片**：2026-10-11 已下载 17 张官网图片并部署到导览站，16/25 个站点有图，目的地卡片封面有图；线上 JSON 和 17 个图片 URL 均返回 HTTP 200。
   其中 5 张超过 600 KB。另有 13 个条目库里没有图片地址（52–61 号节点与 4 件在展藏品），需先补来源才能配图。

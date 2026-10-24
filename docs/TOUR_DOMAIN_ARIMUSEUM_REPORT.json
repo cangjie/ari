@@ -1,0 +1,787 @@
+{
+  "checked_on": "2026-10-24T12:15:35.688740+08:00",
+  "aliases": [
+    "tour.snowmeet.top",
+    "tour.arimuseum.org"
+  ],
+  "dns_new": [
+    "44.207.251.65"
+  ],
+  "static_assets": [
+    {
+      "path": "/",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/",
+          "bytes": 9525,
+          "sha256": "11209c3b718555c49edd2bf9edfb9217985a34c73340c26245d8f0a29d3ca4d7",
+          "headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "9525",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/",
+          "bytes": 9525,
+          "sha256": "11209c3b718555c49edd2bf9edfb9217985a34c73340c26245d8f0a29d3ca4d7",
+          "headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "9525",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "index.html",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "index.html",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/index.html",
+          "bytes": 9525,
+          "sha256": "11209c3b718555c49edd2bf9edfb9217985a34c73340c26245d8f0a29d3ca4d7",
+          "headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "9525",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "index.html",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/index.html",
+          "bytes": 9525,
+          "sha256": "11209c3b718555c49edd2bf9edfb9217985a34c73340c26245d8f0a29d3ca4d7",
+          "headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "9525",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "app.js",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "app.js",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/app.js",
+          "bytes": 71895,
+          "sha256": "cbc725881497f8db001514fcb157638e1b35f9dd13f91fb3984d62fbd169df63",
+          "headers": {
+            "Content-Type": "application/javascript; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "71895",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "app.js",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/app.js",
+          "bytes": 71895,
+          "sha256": "cbc725881497f8db001514fcb157638e1b35f9dd13f91fb3984d62fbd169df63",
+          "headers": {
+            "Content-Type": "application/javascript; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "71895",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "app.css",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "app.css",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/app.css",
+          "bytes": 27219,
+          "sha256": "309dbfb650827141af00b223d63658c6c6de4424fa28513e1abcabdc37d461dc",
+          "headers": {
+            "Content-Type": "text/css; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "27219",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "app.css",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/app.css",
+          "bytes": 27219,
+          "sha256": "309dbfb650827141af00b223d63658c6c6de4424fa28513e1abcabdc37d461dc",
+          "headers": {
+            "Content-Type": "text/css; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "27219",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "catalog.json",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "catalog.json",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/catalog.json",
+          "bytes": 73,
+          "sha256": "2fa497eaa88ad4699e4153093f855d459f006773b21feebda5aca10bf9d48569",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "73",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "catalog.json",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/catalog.json",
+          "bytes": 73,
+          "sha256": "2fa497eaa88ad4699e4153093f855d459f006773b21feebda5aca10bf9d48569",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "73",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "data/wmhg.json",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "data/wmhg.json",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/data/wmhg.json",
+          "bytes": 44215,
+          "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "44215",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "data/wmhg.json",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/data/wmhg.json",
+          "bytes": 44215,
+          "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "44215",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "data/wanping.json",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "data/wanping.json",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/data/wanping.json",
+          "bytes": 130706,
+          "sha256": "6345635598856b6de3f10f98524d1859f82579a437a2a46d87a664716a73ed24",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "130706",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "data/wanping.json",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/data/wanping.json",
+          "bytes": 130706,
+          "sha256": "6345635598856b6de3f10f98524d1859f82579a437a2a46d87a664716a73ed24",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "130706",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "data/nanluo_shichahai.json",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "data/nanluo_shichahai.json",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/data/nanluo_shichahai.json",
+          "bytes": 875095,
+          "sha256": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "875095",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "data/nanluo_shichahai.json",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/data/nanluo_shichahai.json",
+          "bytes": 875095,
+          "sha256": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-cache",
+            "Content-Length": "875095",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "img/nanluo_shichahai/49.jpg",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "img/nanluo_shichahai/49.jpg",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/img/nanluo_shichahai/49.jpg",
+          "bytes": 126985,
+          "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+          "headers": {
+            "Content-Type": "image/jpeg",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "126985",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "img/nanluo_shichahai/49.jpg",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/img/nanluo_shichahai/49.jpg",
+          "bytes": 126985,
+          "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+          "headers": {
+            "Content-Type": "image/jpeg",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "126985",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-nanluo.svg",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "img/nanluo_shichahai/route-classic-nanluo.svg",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/img/nanluo_shichahai/route-classic-nanluo.svg",
+          "bytes": 125819,
+          "sha256": "8ef57a50c3d5558901f7115643e62906787e92dce4a33758d7119b69a8cdbdf2",
+          "headers": {
+            "Content-Type": "image/svg+xml",
+            "Cache-Control": "no-cache",
+            "Content-Length": "125819",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "img/nanluo_shichahai/route-classic-nanluo.svg",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/img/nanluo_shichahai/route-classic-nanluo.svg",
+          "bytes": 125819,
+          "sha256": "8ef57a50c3d5558901f7115643e62906787e92dce4a33758d7119b69a8cdbdf2",
+          "headers": {
+            "Content-Type": "image/svg+xml",
+            "Cache-Control": "no-cache",
+            "Content-Length": "125819",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-nanluo.png",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "img/nanluo_shichahai/route-classic-nanluo.png",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/img/nanluo_shichahai/route-classic-nanluo.png",
+          "bytes": 218393,
+          "sha256": "cec786c42c8d3bd641aa8ce2b492cc7236e8e56383a64c88a1239aa53d43c9dd",
+          "headers": {
+            "Content-Type": "image/png",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "218393",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "img/nanluo_shichahai/route-classic-nanluo.png",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/img/nanluo_shichahai/route-classic-nanluo.png",
+          "bytes": 218393,
+          "sha256": "cec786c42c8d3bd641aa8ce2b492cc7236e8e56383a64c88a1239aa53d43c9dd",
+          "headers": {
+            "Content-Type": "image/png",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "218393",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "fonts/lora-latin.woff2",
+      "both_match_local": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "fonts/lora-latin.woff2",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/fonts/lora-latin.woff2",
+          "bytes": 37792,
+          "sha256": "6b102ab35aa1f2b315788bb4853434ed1e52137603bf7a3da71a682276748d45",
+          "headers": {
+            "Content-Type": "font/woff2",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "37792",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "fonts/lora-latin.woff2",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/fonts/lora-latin.woff2",
+          "bytes": 37792,
+          "sha256": "6b102ab35aa1f2b315788bb4853434ed1e52137603bf7a3da71a682276748d45",
+          "headers": {
+            "Content-Type": "font/woff2",
+            "Cache-Control": "public, max-age=2592000",
+            "Content-Length": "37792",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    }
+  ],
+  "api": [
+    {
+      "path": "api/tour/wmhg/places/tongde/topics",
+      "read_only": true,
+      "same_body_observed": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "api/tour/wmhg/places/tongde/topics",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/api/tour/wmhg/places/tongde/topics",
+          "bytes": 470,
+          "sha256": "d4371dd4217e4491f4872f45a16773e8bf330a3cf371d0223b8cbcaf0e22d112",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "470",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "api/tour/wmhg/places/tongde/topics",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/api/tour/wmhg/places/tongde/topics",
+          "bytes": 470,
+          "sha256": "d4371dd4217e4491f4872f45a16773e8bf330a3cf371d0223b8cbcaf0e22d112",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "470",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "api/tour/wanping/places/east_gate/topics",
+      "read_only": true,
+      "same_body_observed": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "api/tour/wanping/places/east_gate/topics",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/api/tour/wanping/places/east_gate/topics",
+          "bytes": 26,
+          "sha256": "bb6a7b6ae01256955ff35c93920d73054d9bdcea9dad31be55b965e8f6d2a694",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "26",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "api/tour/wanping/places/east_gate/topics",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/api/tour/wanping/places/east_gate/topics",
+          "bytes": 26,
+          "sha256": "bb6a7b6ae01256955ff35c93920d73054d9bdcea9dad31be55b965e8f6d2a694",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "26",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    },
+    {
+      "path": "api/tour/nanluo_shichahai/places/guomoruo/topics",
+      "read_only": true,
+      "same_body_observed": true,
+      "results": [
+        {
+          "host": "tour.snowmeet.top",
+          "path": "api/tour/nanluo_shichahai/places/guomoruo/topics",
+          "status": 200,
+          "url": "https://tour.snowmeet.top/api/tour/nanluo_shichahai/places/guomoruo/topics",
+          "bytes": 26,
+          "sha256": "bb6a7b6ae01256955ff35c93920d73054d9bdcea9dad31be55b965e8f6d2a694",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "26",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        },
+        {
+          "host": "tour.arimuseum.org",
+          "path": "api/tour/nanluo_shichahai/places/guomoruo/topics",
+          "status": 200,
+          "url": "https://tour.arimuseum.org/api/tour/nanluo_shichahai/places/guomoruo/topics",
+          "bytes": 26,
+          "sha256": "bb6a7b6ae01256955ff35c93920d73054d9bdcea9dad31be55b965e8f6d2a694",
+          "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "Cache-Control": "no-store",
+            "Content-Length": "26",
+            "Content-Range": null,
+            "Content-Disposition": null
+          }
+        }
+      ]
+    }
+  ],
+  "apk": [
+    {
+      "head": {
+        "host": "tour.snowmeet.top",
+        "path": "android/app",
+        "status": 200,
+        "url": "https://tour.snowmeet.top/android/app",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "headers": {
+          "Content-Type": "application/vnd.android.package-archive",
+          "Cache-Control": "no-store",
+          "Content-Length": "8312316",
+          "Content-Range": null,
+          "Content-Disposition": "attachment; filename=\"ari-travel-0.1.0.apk\""
+        }
+      },
+      "range": {
+        "host": "tour.snowmeet.top",
+        "path": "android/app",
+        "status": 206,
+        "url": "https://tour.snowmeet.top/android/app",
+        "bytes": 65536,
+        "sha256": "364f5203191cc488f4f93a288b55bda93fb3cf7c1bbfff421dee145f6ae95366",
+        "headers": {
+          "Content-Type": "application/vnd.android.package-archive",
+          "Cache-Control": "no-store",
+          "Content-Length": "65536",
+          "Content-Range": "bytes 0-65535/8312316",
+          "Content-Disposition": "attachment; filename=\"ari-travel-0.1.0.apk\""
+        }
+      }
+    },
+    {
+      "head": {
+        "host": "tour.arimuseum.org",
+        "path": "android/app",
+        "status": 200,
+        "url": "https://tour.arimuseum.org/android/app",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "headers": {
+          "Content-Type": "application/vnd.android.package-archive",
+          "Cache-Control": "no-store",
+          "Content-Length": "8312316",
+          "Content-Range": null,
+          "Content-Disposition": "attachment; filename=\"ari-travel-0.1.0.apk\""
+        }
+      },
+      "range": {
+        "host": "tour.arimuseum.org",
+        "path": "android/app",
+        "status": 206,
+        "url": "https://tour.arimuseum.org/android/app",
+        "bytes": 65536,
+        "sha256": "364f5203191cc488f4f93a288b55bda93fb3cf7c1bbfff421dee145f6ae95366",
+        "headers": {
+          "Content-Type": "application/vnd.android.package-archive",
+          "Cache-Control": "no-store",
+          "Content-Length": "65536",
+          "Content-Range": "bytes 0-65535/8312316",
+          "Content-Disposition": "attachment; filename=\"ari-travel-0.1.0.apk\""
+        }
+      }
+    }
+  ],
+  "redirects": [
+    {
+      "url": "http://tour.snowmeet.top/data/nanluo_shichahai.json?domain_check=1",
+      "status": 301,
+      "location": "https://tour.snowmeet.top/data/nanluo_shichahai.json?domain_check=1"
+    },
+    {
+      "url": "http://tour.arimuseum.org/data/nanluo_shichahai.json?domain_check=1",
+      "status": 301,
+      "location": "https://tour.arimuseum.org/data/nanluo_shichahai.json?domain_check=1"
+    }
+  ],
+  "certificates": [
+    {
+      "host": "tour.snowmeet.top",
+      "verified": true,
+      "protocol": "TLSv1.3",
+      "subject": [
+        [
+          [
+            "commonName",
+            "tour.snowmeet.top"
+          ]
+        ]
+      ],
+      "issuer": [
+        [
+          [
+            "countryName",
+            "CN"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "TrustAsia Technologies, Inc."
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "LiteSSL RSA CA 2025"
+          ]
+        ]
+      ],
+      "san": [
+        [
+          "DNS",
+          "tour.snowmeet.top"
+        ]
+      ],
+      "not_before": "Oct 10 00:00:00 2026 GMT",
+      "not_after": "Jan  7 23:59:59 2027 GMT",
+      "sha256": "c66c717abaa44a4bc103264a4d3e087aabfc93606df52f50d8898354c86f6588"
+    },
+    {
+      "host": "tour.arimuseum.org",
+      "verified": true,
+      "protocol": "TLSv1.3",
+      "subject": [
+        [
+          [
+            "commonName",
+            "tour.arimuseum.org"
+          ]
+        ]
+      ],
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YE1"
+          ]
+        ]
+      ],
+      "san": [
+        [
+          "DNS",
+          "tour.arimuseum.org"
+        ]
+      ],
+      "not_before": "Oct 24 03:12:23 2026 GMT",
+      "not_after": "Jan 22 03:12:22 2027 GMT",
+      "sha256": "664eb235ab6b16b4277290d6dc9b9a4dad35a02103e4f5a2e946e2e9ed1ad648"
+    }
+  ],
+  "online_posts_sent": 0,
+  "application_changed": false,
+  "apk_changed": false,
+  "other_projects_changed": false,
+  "server": {
+    "deployment": {
+      "created_utc": "20261024T041014Z",
+      "old_backup": "/etc/nginx/sites-available/ari-tour.before-arimuseum-20261024T041014Z",
+      "old_site_sha256": "b5532a1cedbd2ed155f63e2cbd4a6a42555e7b15f6797616c8a84547346aa704",
+      "other_sites_sha256": {
+        "/etc/nginx/sites-enabled/ari-smoke": "0c7d91c21bd718997b492f72e1952a287f05dc7cdc7a10e67fef0de102b52b05",
+        "/etc/nginx/sites-enabled/ari-web-api": "6390c84b7c830cddfd4cec82a7c78e6e335c652aec5bf380fc687270b0f7e0b3",
+        "/etc/nginx/sites-enabled/reqai": "87e0118025b8c5b000cfb89b5e5b4850e1fa5bfec3c89c0046c1b4f20463c540"
+      },
+      "new_http_site": "/etc/nginx/sites-available/ari-tour-arimuseum",
+      "shared_snippet": "/etc/nginx/snippets/ari-tour-content.conf",
+      "new_https_site": "/etc/nginx/sites-available/ari-tour-arimuseum",
+      "renewal_hook": "/etc/letsencrypt/renewal-hooks/deploy/ari-tour-reload-nginx",
+      "certificate": "/etc/letsencrypt/live/tour.arimuseum.org/fullchain.pem",
+      "private_key": "/etc/letsencrypt/live/tour.arimuseum.org/privkey.pem",
+      "other_sites_unchanged": true,
+      "active_config_sha256": {
+        "/etc/nginx/sites-available/ari-tour": "3a6b49ec5c73780e0202cc21194eb88040bfe6242c5dffba308da16c8a44562a",
+        "/etc/nginx/sites-available/ari-tour-arimuseum": "fec3cadc6a6a0a32553f2fb11d13b5a76e7aa5baa091f9f72b980c02b4c3cdb3",
+        "/etc/nginx/snippets/ari-tour-content.conf": "8d416f4b96b76998d9e76a13f0a53d36aafc5ff463680465d24e0e8cf8ae3ed2",
+        "/etc/letsencrypt/renewal-hooks/deploy/ari-tour-reload-nginx": "fc476f0d603480179a7b4408610da0152a5aa990cf9c780e96a45782f4e5f6a4"
+      },
+      "probe_removed": true
+    },
+    "certbot_version": "certbot 4.0.0",
+    "timer": "ActiveState=active\nUnitFileState=enabled\nNextElapseUSecRealtime=Sat 2026-10-24 12:52:38 UTC",
+    "apk_sha256": "0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201",
+    "renewal_dry_run": {
+      "passed": true,
+      "deploy_hook_executed": true,
+      "noninteractive_random_delay_seconds": 189.15845425560477
+    }
+  },
+  "tls12_verified": true,
+  "production_certificate_unchanged_after_renewal_dry_run": true,
+  "certbot_installation": {
+    "source": "Ubuntu 26.04 universe signed package repository",
+    "version": "4.0.0-4",
+    "new_packages": 8,
+    "upgraded_packages": 0,
+    "account_email_configured": false
+  },
+  "browser": {
+    "base": "https://tour.arimuseum.org",
+    "scenes": [
+      "collection_gps",
+      "collection_experience",
+      "live",
+      "wanping",
+      "qa"
+    ],
+    "all_passed": true,
+    "log": "utils/import_data/exports/tour_arimuseum_browser.log",
+    "gps_input": "CDP模拟定位，经真实navigator.watchPosition，非现场或真机GPS"
+  },
+  "validation_completed_on": "2026-10-24T12:19:35.680251+08:00",
+  "app_origin_changed": false,
+  "nginx_config_test_passed": true,
+  "nginx_reload_succeeded": true,
+  "nginx_active": true,
+  "api_active": true
+}

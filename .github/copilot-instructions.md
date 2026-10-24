@@ -28,6 +28,7 @@
 
 - `web_api/` —— 服务端 Web 应用，FastAPI，静态页面与接口同进程提供。已上线，见 `docs/WEB_API.md`
   - `web_api/tour/` —— 手机导览站，第一个面向游客的客户端。页面纯静态，线上由 Nginx 以 `tour.snowmeet.top` 直接提供，
+    `tour.arimuseum.org`是同站点等价HTTPS入口（2026-10-24新增），两域名共用内容配置；
     **不经过 FastAPI**；唯一的例外是介绍页里的「游客互动」（AI 问答，2026-10-12 上线），它的接口 `/api/tour/…`
     由 Nginx 反代到 `web_api`。放在 `web_api/` 下是用户 2026-10-10 定的。见 `docs/TOUR_WEB.md` 与下文第 18、19 条
 - `utils/` —— 项目用到的临时工具。目前只有 `utils/import_data/`：把 Excel 数据源导入 `ari` 库的脚本与译名表，见 `utils/import_data/README.md`
@@ -61,14 +62,14 @@ Android App采用用户2026-10-12定的**原生Kotlin外壳 + WebView复用导�
 - AWS 主机：`44.207.251.65`
 - 系统：Ubuntu 26.04，ARM64（aarch64）
 - SSH：`ubuntu@44.207.251.65`
-- 域名：`ari.goldenma.xyz`（web_api）与 `tour.snowmeet.top`（导览站），A 记录都指向 `44.207.251.65`
+- 域名：`ari.goldenma.xyz`（web_api）、`tour.snowmeet.top`及`tour.arimuseum.org`（导览站两个等价入口）。两处导览站A记录指向`44.207.251.65`，新域名未配置AAAA；web_api的旧域名解析问题见下一条
 - **⚠ `goldenma.xyz` 整个域名解析不出来**（2026-10-10 发现，10-11 复查仍是 NXDOMAIN，多半是域名到期）。
   服务器上的 `ari.goldenma.xyz` 站点本身正常（`curl --resolve ari.goldenma.xyz:443:44.207.251.65` 直连 200、证书校验通过），
   只是按域名访问不到。**待用户处理**；同机的 `snowmeet.goldenma.xyz` 同理
 - 公网入口：HTTPS `443`（web_api 与导览站，按域名分流）、HTTP `80`（301 跳转到 443）、MySQL `3306`、Nginx 环境验证 `8000`
 - 本机入口：Uvicorn `127.0.0.1:8002`（web_api）、`127.0.0.1:8001`（smoke）、MySQL X Protocol `127.0.0.1:33060`
 - 服务：`mysql`、`nginx`、`ari-web-api`、`ari-smoke` 均由 systemd 管理并开机启动
-- Nginx 站点：`ari-web-api`、`ari-smoke`、`ari-tour`（导览站，静态根目录 `/home/ubuntu/ari/web_api/tour`；
+- Nginx 站点：`ari-web-api`、`ari-smoke`、`ari-tour`及`ari-tour-arimuseum`（导览站两入口，静态根目录 `/home/ubuntu/ari/web_api/tour`；2026-10-24起两HTTPS server共用`/etc/nginx/snippets/ari-tour-content.conf`的页面/API/APK配置，各自加载证书；
   其中 `location ^~ /api/` 反代到 `127.0.0.1:8002`，给游客互动用，2026-10-12 加，改之前的备份是同目录的 `ari-tour.bak-20261012`）。
   **同一台机器上还有别的项目的站点 `reqai`（`ai.snowmeet.top`、`snowmeet.goldenma.xyz`），不归本仓库管，不要动**
 - 代码：仓库 clone 在 `/home/ubuntu/ari`，属主 `ubuntu`；服务以 `ari` 用户运行，对代码**只读**
@@ -80,8 +81,8 @@ Android App采用用户2026-10-12定的**原生Kotlin外壳 + WebView复用导�
 - 服务配置在 `/etc/ari/`（750 root:ari），三个文件都是 640 root:ari：`web-api.env`（不含密钥，经 systemd drop-in
   `ari-web-api.service.d/tour-qa.conf` 的 `EnvironmentFile=` 给服务）、`web-api.my.cnf`（数据库账号）、`openai_key`（只有一行）。
   应用在第一次用到时才读后两个文件。换 key、换型号、换数据库口令的做法见 `docs/TOUR_WEB.md`
-- TLS 证书都是 TrustAsia 手动签发、**无自动续期**：`/etc/ssl/ari/`（`ari.goldenma.xyz`）**2026-11-19 到期**；
-  `/etc/ssl/tour/`（`tour.snowmeet.top`）**2027-01-07 到期**，只有 90 天。换证书的步骤在 `docs/TOUR_WEB.md`
+- 原TLS证书为TrustAsia手动签发、**无自动续期**：`/etc/ssl/ari/`（`ari.goldenma.xyz`）**2026-11-19到期**；`/etc/ssl/tour/`（`tour.snowmeet.top`）**2027-01-07到期**，只有90天。换证书步骤见`docs/TOUR_WEB.md`
+- 新域名`tour.arimuseum.org`使用独立Let's Encrypt ECDSA证书，**2027-01-22到期**，链/私钥在`/etc/letsencrypt/live/tour.arimuseum.org/`。Ubuntu Certbot4.0.0的`certbot.timer`已enabled/active，webroot为`/var/lib/letsencrypt`；成功续期经专用deploy hook先`nginx -t`再reload，带hook的模拟续期已通过。旧域名证书不因此自动续期；本轮未提供ACME邮箱。配置快照、备份与验收见`docs/TOUR_WEB.md`和`docs/TOUR_DOMAIN_ARIMUSEUM_REPORT.json`
 - **22 端口偶尔新连接超时**（80/443 同时是通的，一两分钟后自己恢复；2026-08-21 与 2026-10-10 都遇到过）。
   一次部署要连好几回时复用同一条连接：`ssh -o ControlMaster=auto -o ControlPath=~/.ssh/cm-%C -o ControlPersist=900 …`
 - Android下载：`https://tour.snowmeet.top/android/app`，Nginx精确alias到仓库外 `/home/ubuntu/ari-downloads/android/app.apk`；APK不提交Git。更新须先验签、哈希、备份旧包后原子替换，不需Nginx reload；当前包与签名见第20条及 `docs/TOUR_WEB.md`。
@@ -1686,6 +1687,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**2026-10-11 wmhg 已下载 17 张并部署**；5 张超过 600 KB |
 | `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
 | `web_api/tour/` | 导览站：index.html、app.css、app.js、fonts、catalog.json（上架/排序）、data/<馆>.json（生成，勿手改）、img/<馆>/；Web和App同源。游客互动见app.js同名一节 |
+| `docs/nginx-ari-tour*.conf` / `docs/certbot-ari-tour-reload-nginx.sh` / `docs/TOUR_DOMAIN_ARIMUSEUM_REPORT.json` | 两个导览域名的Nginx配置、共用内容片段、证书续期hook快照及公网验收；Git拉取不会自动安装系统配置，证书/私钥不入库 |
 | `web_api/app/tour_qa.py` / `tour_qa_llm.py` / `tour_qa_store.py` | 第 19 条：游客互动的接口（校验、三道上限、流程）、回答依据的资料与提示词与调 OpenAI、MySQL 存取。`openai` 与 `PyMySQL` 在函数里才导入，缺了只有问答回 503 |
 | `web_api/sql/tour_qa.sql` / `create_ari_web.sh` | 游客互动两张表的建表语句（可重复执行；**改结构只追加 ALTER**）；在服务器上建服务专用账号 `ari_web` 并写 `/etc/ari/web-api.my.cnf` 的脚本（交互输入口令那一支没有实跑过） |
 | `web_api/tests/test_tour.py` / `tour_browser_check.mjs` | 导览站的两层验收：数据自洽（pytest，不连库）与无头 Chrome 实跑（Node 22 + 本机 Chrome）。后者自带一个假的 `/api/tour/` 接口，`qa` 场景验游客互动 |
