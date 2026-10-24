@@ -129,6 +129,8 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 **宛平城 `wanping` 是独立本地包，不计入上表或业务库10馆31426条。** 2026-10-15完成39条来源、评分、slim审计及中英导出，10-16已上线7个到达点、两条路线和12张图。
 未执行生产登记、metadata入库或全库重灌；模型缓存有写入。详情见第18条和 `docs/WANPING_DATA.md`。
 
+**南锣鼓巷及什刹海 `nanluo_shichahai` 同为独立本地包，不计入上述10馆31426条。** 2026-10-23/24完成100条（84文化参观点+16商铺）的双语Excel及Web/App发布，S8/A32/B35/C25；现有37处浏览位置、60条有图、四主题×四地铁起点和21处GPS街道参考点。只写模型缓存，未登记生产馆、入metadata或重灌业务资料。详情见第18条和 `docs/NANLUO_SHICHAHAI_DATA.md`。
+
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
 `claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件，**档位不可考**，
 见第 9 条 `--effort`），`claude-sonnet-5 effort=medium (claude-cli)` 是 2026-09-23
@@ -1241,7 +1243,7 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 
 **导览站**（`web_api/tour/`，线上 `https://tour.snowmeet.top/`，部署与验收见 `docs/TOUR_WEB.md`）照原型 AriTour 做：
 目的地列表 → 导游地图，选路线、走进热区推送讲解。原型在 claude.ai/design（链接要登录，AI 读不了），
-导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城。当前服务器清单为 `wmhg`、`wanping`。
+导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城，10-23/24新增南锣鼓巷及什刹海。当前服务器清单为 `wmhg`、`wanping`、`nanluo_shichahai`，仍以服务器catalog为准。
 
     tour_osm_fetch.py → <馆>_osm_data.json ───────┐
     库 + <馆>_route_data.py + route_plan.Planner ──┼─ tour_build.py → web_api/tour/data/<馆>.json → 页面
@@ -1249,6 +1251,7 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 
 网页先取 `catalog.json`，再加载清单内各 `data/<key>.json`，两者显式 `cache:no-cache`；整批成功才替换有效快照。
 伪满皇宫的路线不另算，`tour_build.py` 直接调 `route_plan.Planner`，分钟数与Excel同源；宛平城通过已审计本地包走 `tour_package_build.py`，不要求先重灌全库。
+南锣什刹海走 `tour_collection_build.py` 保留完整清单，再由media/experience构建器增加来源地图、图片、标签、主题方案与独立GPS数据；不要为启用GPS改成只含已定位条目的清单。
 清单数组可直接调整顺序与上下架；首次生成新景区自动追加，之后重生成保留排序和下架选择，移除清单项不删除来源文件。
 **⚠ 改了库里的评级、路线数据或 OSM 数据之后要重跑 `tour_build.py` 并提交**，否则线上还是旧的（`--check` 可比对）。
 
@@ -1321,7 +1324,19 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 - 12张图片按条目身份绑定；地点封面用 `PLACE_PHOTOS` 显式配置，条目重排不会把石狮变成整桥封面。馆外观不借给室内基本陈列；无图条目留空。原图与来源HTML在本机 `exports/wanping_photo_originals/`（gitignore），发布JPEG在 `img/wanping/`，合计1457885字节，均附出处。清单与原件/发布版哈希在 `wanping_tour_photos.json`，图注证据在 `wanping_photo_sources.json`。
 - 视觉对应逐张查看；sonnet-5 medium另审来源文字与接入代码，没有收到图片，不能把该报告称为模型视觉审计。图片接入前只显示地点封面、忽略条目photo的问题已修；同图不重复显示。
 - 本地审计版Excel在 `utils/import_data/exports/展品_宛平城及周边_本地审计版.xlsx`；生成输入、独立审计、原分组备份和发布验收随仓库保留。原业务库仍10馆31426条；资料整理及发布累计46次成功、1次Codex额度失败留痕，恢复后续跑原型号，见 `wanping_usage_report.json`。
-- 原始介绍、V3分数、路线与投影未因补图重写。当前检查76项pytest通过、3项真实数据库测试未启用；本地和公网浏览器逐图验证12张，公开问答仅GET，不发送测试问题。完整限制与来源见 `docs/WANPING_DATA.md`，上线证据见两份release/publish报告。
+- 原始介绍、V3分数、路线与投影未因补图重写。10-16验收76项pytest通过、3项真实数据库测试未启用；本地和公网浏览器逐图验证12张，公开问答仅GET，不发送测试问题。完整限制与来源见 `docs/WANPING_DATA.md`，上线证据见两份release/publish报告。
+
+**北京南锣鼓巷及什刹海 `nanluo_shichahai`（2026-10-23/24上线）**：完整清单100条（84文化参观点+16商铺），S8/A32/B35/C25。信息整理、翻译与V3仍用 `gpt-5.6-luna`，评分high/medium/xhigh；独立审计仍为 `claude-sonnet-5` 显式medium/slim，不更换模型或自造餐厅评分。来源为已留存的官方/文旅正文和标明取得方式的点评资料，实时开放、营业与价格须另核。
+
+- 郭沫若故居原来就是第48条“郭沫若纪念馆”，补全展示名而不重编号/新增重复；A级Core7.3510。宋庆龄故居、广化寺已收录。第76条锡晋斋保留《平复帖》原件现藏故宫的审计提示，不把帖当本街区当前实物。整体与组成部分不能当100个互不重叠站点。Excel为 `utils/import_data/exports/展品_北京南锣鼓巷及什刹海.xlsx`（忽略目录），重建输入与脚本均已提交。
+- 用户允许总配图覆盖约60%，商铺必须全部配图。现60/100条有图、共61张JPEG；16/16商铺有图，12家含大众点评图，家雀儿/青松造物/巧克玩家/大清邮政信柜按用户授权用官方实景图。僧王府可用侣松园宾馆院落图。保留原10张和原介绍/评级/Excel，不用整体照片冒充内部节点；照片主体由助手查看，模型仅审文字与代码。清单、原件/发布哈希及出处在 `nanluo_shichahai_tour_photos.json` 等文件。
+- 商铺经营分类与风格/消费标签分开，文化V3评级不当口味评分。“文艺”须有商品/空间依据；“经济实惠”仅用于有人均27/28元历史快照的方砖厂和护国寺两店，不因靠近中戏就推定便宜或可进校园。店铺分店、品牌名与门牌分开核对，原网页遮挡的地址不猜。
+- 经典、文艺、历史、穷游四主题各支持南锣鼓巷E口、什刹海A2口、北海北B口、鼓楼大街G口，共16方案；换起点只改首段接驳，游览次序/终点固定。路线沿OSM已记录公共道路求路，主站显式限制街道名，禁止穿收费馆、校园或私有院落抄近路。步行按60米/分、停留为估计，不含排队用餐；免费外观与购票入馆分开说明，地铁出口临时封闭以现场为准。
+- 主题与16套独立线路图在 `itineraries[].variants`（SVG+1200×1600 PNG，标明顺序、S/E、箭头、比例尺及图例）。生成顺序为experience配置→`tour_build.py --museum nanluo_shichahai`→`tour_itinerary_maps.py --museum nanluo_shichahai`→同名Node导出器；`--check`核对生成物与哈希。不要只生成文字方案或藏在互动按钮后的连线就声称已交付独立线路图。
+- **GPS数据与浏览位置分开**：root仍 `mode=collection`、`map_mode=browse`、`routes=[]`，37处轮廓/街段中心不改、无root area/r。独立 `navigation` 使用主题主站并集21处已审公共街道参考点及OSM线段参数；25米提醒半径为估计，精度超过30米不新增提醒，1.2倍离开迟滞。提醒称“到附近”，不是检票入口。覆盖范围是OSM资料框而非行政边界；范围外距离明确显示固定参照“南锣鼓巷站 E口”，不是所选起点。未知位置不编GPS点。
+- 选择主题后点“开始GPS导览”才启用定位；完整清单及全部景点地图仍可只浏览。网页用现有watchPosition；App通过 `nativeTour` 把navigation的area/entrance/places覆盖到发送副本，旧原生解析器即可接收21点，不重复启动浏览器GPS；无需改APK。回清单/线路图页清理网页监听并退出当前原生景区。原两景区的资料与问答材料未变，新增GPS说明涉及后端提示词，部署后已重启 `ari-web-api`。
+- 最终92项pytest、21个本地浏览器场景、13项Android单测通过；公网100个静态文件逐字节一致，五场景及三处只读问答GET正常，服务器/本地问答材料哈希一致。内容提交 `e688ad5`（照片/标签/主题）、`4b42d9e`（独立图）、`ef0ffe3`（GPS）均已部署，收工前服务器为 `77a44ac`、服务active。累计111次模型成功/4次历史失败，见usage与三组public_report；Claude输入计量缺口仍保留，不能当完整账单。未改Nginx或APK，没有线上测试发帖；真机现场GPS/后台体验尚未验收。
+- 后续审查使用本机已安装Claude CLI 2.1.308的safe-mode，仍是Sonnet 5 medium和订阅认证，不改全局设置；旧2.1.92曾触发插件下载和超长思考。审查只提供相关完整函数和直接证据，不能把文字审查称为模型视觉验图。用户要求模型额度耗尽后保留原模型、3小时后恢复；**当前未接入持久自动唤醒/调度**，不得声称会话结束后会自动续跑。最近照片/线路/GPS三阶段未出现新配额失败。
 
 **19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
 
@@ -1413,6 +1428,7 @@ GPS / 网络定位来源、后台通知、拖动贴边的悬浮头像与气泡�
 新增、移除、排序或内容变化均更新服务器即可；回前台和回首页刷新。清单整批校验成功才替换，错误不覆盖有效缓存；移除景区清除其定位引擎，删除当前景区或清空清单会停止相应服务。文字更新保留原到站状态，几何变化才换引擎，避免重复提醒。
 旧的内置页面包需要升级这次新包一次；以后景区资料变化不需重发APK。首次打开需联网，不承诺完整离线网页。问答仍走现有线上公开接口。
 原生接管时页面不启动浏览器 GPS，也不重新判热区；网络定位不触发到站。前台服务只从可见 App 启动，不在后台自动重启。
+2026-10-24南锣什刹海沿用原安装包接入GPS：网页完整清单保持collection模式，只有其navigation子包适配为既有原生数据结构；全量更新仍以服务器catalog为准，见第18条。
 
 **构建组合：** Gradle8.13、AGP8.13.2、Kotlin2.0.21、Foojay resolver0.10.0、compileSdk / targetSdk35、minSdk26，优先用JDK21；Java字节码目标17。AGP/Wrapper/Foojay三处是用户原有配置，本轮按其实际构建并在收工纳入Git，未改成旧Windows草案。
 Wrapper JAR 从本机 Gradle 8.11.1 分发包提取；脚本与 JAR 随仓库提交，Unix 入口固定 LF 与可执行位。
@@ -1438,10 +1454,11 @@ Wrapper JAR 从本机 Gradle 8.11.1 分发包提取；脚本与 JAR 随仓库提
 **尚未实现 / 未决：** 正式导览员形象、按景区指定默认导览员、轨迹上传；语音功能仍暂缓。在线资料更新已随线上Web和清单实现。
 悬浮面板软键盘、锁屏通知、国产系统后台策略、实际GPS、真机覆盖安装及现场行走仍未验收。
 
-**构建与发布证据：** Mac标准命令 `sh gradlew :app:testDebugUnitTest :app:assembleDebug :app:lintDebug` 成功；12项单元测试、lint0错误/13项警告。
+**构建与发布证据：** 2026-10-15/16的Mac标准命令 `sh gradlew :app:testDebugUnitTest :app:assembleDebug :app:lintDebug` 成功；12项单元测试、lint0错误/13项警告。
 Debug包为0.1.0 / versionCode1、8312316字节，SHA-256 `0a91add6947d004153f44c618c4f7f4513e76a50df11d3e768ddd4095d3ba201`，包内无导览assets。与旧包相同的Debug证书SHA-256为 `342b45f93487468dc125b0c000d632893b0145aacaeed668bd6eaaba2b109a01`。
 下载入口 `https://tour.snowmeet.top/android/app`；旧包备份 `/home/ubuntu/ari-downloads/android/app-before-wanping-1efdb270.apk`。发布前验签、备份后原子替换；服务器从公开HTTPS入口完整下载核对大小和哈希，本机外网另查响应头，未把慢速未完成下载当作完整证据。
 API26导航栏兼容错误已修，没有提高minSdk。用户要求的“免费/全面路线”和图片均从共用Web读取，10-16补图未重打APK。详见 `wanping_android_report.json`、`wanping_release_report.json` 与 `docs/TOUR_WEB.md`。这些检查不代替真机验收。
+2026-10-24为南锣什刹海GPS新增真实JSON适配测试，`:app:testDebugUnitTest`共13项通过；同步修正fixture测试，按网页真实发送结构解析collection的navigation。Android生产代码、APK和上述签名/下载包均未改，没有重跑assemble/lint或做真机现场验收。
 
 **平台约束参考（2026-10-12 查证，出处在计划原草案文末）：** 后台定位涉及前台服务启动限制；
 targetSdk 35 起，靠悬浮窗权限从后台启动前台服务，要求当时确有可见悬浮窗；悬浮窗不显示在锁屏上，通知使用系统模板；
@@ -1662,6 +1679,9 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tour_build.py` | 生成 `web_api/tour/data/<馆>.json`；`--check` 比对。已审本地包走tour_package_build；首次新增时更新catalog，后续保留上架与排序选择 |
 | `utils/import_data/tour_package_build.py` | 已审本地资料包转共享导览JSON；核对来源、评分、审计、译文、图片身份和哈希，沿OSM公开道路连线 |
 | `docs/WANPING_DATA.md` / `utils/import_data/wanping_*` | 宛平城39条、CR归并、7到达点、免费/全面线、12图、原版备份及独立复核；未入业务库。当前验收见release_report和photo_publish_report |
+| `docs/NANLUO_SHICHAHAI_DATA.md` / `utils/import_data/nanluo_shichahai_*` | 南锣什刹海100条双语资料、来源/评分/slim审计、商铺标签及照片、16主题方案、21处GPS参考点；未入业务库。当前验收看gps_public_report；历史发布依次为release、media、expansion、itinerary_map报告 |
+| `utils/import_data/tour_collection_build.py` / `tour_collection_media.py` / `tour_collection_experience.py` | 完整清单模式的版本核对、来源位置/图片、商铺标签/公共道路主题与可选navigation构建；GPS点不覆盖旧浏览坐标，未知位置保留清单 |
+| `utils/import_data/tour_itinerary_maps.py` / `tour_itinerary_maps.mjs` | 按共享JSON生成独立SVG并经本机Chrome导出1200×1600 PNG；对应 `<key>_itinerary_maps.json` 绑定源JSON、SVG和PNG哈希 |
 | `utils/import_data/tour_photo_build.py` | 从本机留存原图重建JPEG并按清单核对原件和发布版SHA-256；需Pillow，不联网、不覆盖原图 |
 | `utils/import_data/tour_images.py` | 按 `artwork.image_url` 下载官网图片到 `web_api/tour/img/<馆>/`，下完要重跑 `tour_build.py`。**2026-10-11 wmhg 已下载 17 张并部署**；5 张超过 600 KB |
 | `utils/import_data/beihai_site_scrape.py` / `beihai_site_data.json` / `beihai_build.py` / `beihai_seq_map.csv` / `meta_fill_official_beihai.py` / `beihai_samples/` | 北海公园（2026-10-08 接入，那一轮未走收工流程）：官网抓取（只能在国内网络跑）、源表生成（23 个景点，范围是用户定的）、逐条登记原文出处的 metadata。说明在各文件头 |
