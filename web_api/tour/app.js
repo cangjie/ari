@@ -105,7 +105,7 @@
 
   // 景区范围 = 院区边界外扩一圈。画布是等比的，所以直接在画布坐标里算
   function inArea(xy) {
-    var a = M.area;
+    var a = gpsData(M).area;
     return inPoly(xy[0], xy[1], a.poly) || distPoly(xy[0], xy[1], a.poly) <= a.buffer;
   }
 
@@ -159,6 +159,13 @@
   function hasBrowseMap() { return isCollection() && M.map_mode === "browse"; }
   function mapVisible() { return M && !$("mapwrap").hidden; }
   function mapPlaces() { return M.places.filter(function (p) { return Number.isFinite(p.x) && Number.isFinite(p.y); }); }
+  function gpsData(m) { return isCollection(m) ? m.navigation : m; }
+  function gpsActive() { return M && (!isCollection() || !!(M.navigation && st.themeId && mapVisible())); }
+  function gpsPlace(id) { return gpsData(M).places.filter(function (p) { return p.id === id; })[0]; }
+  function nativeTour(m) {
+    if (!isCollection(m)) return m;
+    return Object.assign({}, m, {area:m.navigation.area, entrance:m.navigation.entrance, places:m.navigation.places});
+  }
 
   function collectionView(showMap, pid) {
     if (!hasBrowseMap()) return;
@@ -171,7 +178,10 @@
     $("mapwrap").hidden = !showMap;
     $("tour").scrollTop = 0;
     window.scrollTo(0, 0);
-    $("me").hidden = showMap;  // 只浏览，不把参考位置当作到站热区。
+    var guided = gpsActive();
+    $("me").hidden = !guided;
+    $("bell").hidden = !guided;
+    document.querySelector('.bottombar').hidden = !guided;
     ["list", "map"].forEach(function (name) {
       var active = showMap === (name === "map"), button = $("view-" + name);
       button.classList.toggle("on", active); button.setAttribute("aria-pressed", String(active));
@@ -189,6 +199,7 @@
         st.k = clamp(Math.min((view[0] - 60) / (right - left + 40), (view[1] - topInset() - 60) / (bottom - top + 40)), minZoom(), 1.4);
         layout(); centerOn((left + right) / 2, (top + bottom) / 2);
       } else centerOn(place ? place.x : M.canvas.w / 2, place ? place.y : M.canvas.h / 2);
+      if (guided) { updateMsgs(); startGeo(); }
     } else {
       $("tour-sub").textContent = "景点与特色商铺 · " + M.places.length + "条";
     }
@@ -346,8 +357,8 @@
           return '<option value="' + esc(s.id) + '"' + (s.id === start ? ' selected' : '') + '>' + esc(s.name + ' · ' + s.lines.join('/') + '号线') + '</option>';
         }).join("") + '</select></label><p class="theme-summary">步行约 ' + (v.meters / 1000).toFixed(1) + ' 公里 · 约 ' + Math.floor(v.total_minutes / 60) + '小时' + (v.total_minutes % 60) + '分（停留 ' + v.stay_minutes + ' + 步行 ' + v.walk_minutes + ' 分钟，均为估计）</p>' +
         '<p>终点：' + esc(station(v.end_station).name) + (v.start_station === v.end_station ? '（同站往返）' : '') + '</p>' +
+        '<button class="btn btn-primary" type="button" data-theme-map="' + esc(theme.id) + '">' + (M.navigation ? '开始GPS导览' : '在互动地图查看线路') + '</button>' +
         (v.map_assets ? '<figure class="theme-map-preview"><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener"><img src="' + esc(v.map_assets.svg) + '" width="1200" height="1600" loading="lazy" alt="' + esc(theme.name + '线路图，' + station(start).name + '出发；数字表示游览顺序') + '"></a><figcaption>点击线路图可放大查看 · S起点 / E终点 · 数字为游览顺序</figcaption></figure><div class="theme-map-actions"><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener">打开完整线路图</a><a href="' + esc(v.map_assets.png) + '" download>保存PNG图片</a></div>' : '') +
-        '<button class="btn btn-primary" type="button" data-theme-map="' + esc(theme.id) + '">在互动地图查看线路</button>' +
         '<ol>' + theme.steps.map(function (step) {
           return '<li><button class="theme-stop" type="button" data-place="' + esc(M.stops[step.seq].place) + '">' + esc(step.name.zh) + '</button> · 约' + step.minutes + '分钟<p>' + esc(step.note) + '</p>' +
             (step.related.length ? '<p>沿途可选：' + step.related.map(function (seq) { return '<button class="theme-stop" type="button" data-place="' + esc(M.stops[seq].place) + '">' + esc(M.stops[seq].name.zh) + '</button>'; }).join('、') + '</p>' : '') + '</li>';
@@ -478,16 +489,17 @@
       s.btn.style.left = px(point[0]);
       s.btn.style.top = px(point[1]);
       s.btn.hidden = themed ? !step : k < (p.min_zoom || 0);
-      s.ring.hidden = !Number.isFinite(p.r);
-      s.ring.style.left = px(p.x - (p.r || 0));
-      s.ring.style.top = px(p.y - (p.r || 0));
-      s.ring.style.width = s.ring.style.height = px((p.r || 0) * 2);
+      var geo = themed && M.navigation ? gpsPlace(p.id) : null, radius = geo ? geo.r : p.r;
+      s.ring.hidden = !Number.isFinite(radius) || !!(themed && !step);
+      s.ring.style.left = px(point[0] - (radius || 0));
+      s.ring.style.top = px(point[1] - (radius || 0));
+      s.ring.style.width = s.ring.style.height = px((radius || 0) * 2);
     });
     labels.forEach(function (l) { l.el.style.left = px(l.x); l.el.style.top = px(l.y); });
     $("map").classList.toggle("far", k < FAR_ZOOM);
     st.pan = clampPan(st.pan[0], st.pan[1]);
     applyPan();
-    if (!hasBrowseMap()) updateMe();
+    updateMe();
   }
 
   function zoomAt(k, cx, cy) {
@@ -521,14 +533,15 @@
       : "");
     if (themed) {
       var t = themed.theme, v = themed.variant;
-      $("route-summary").textContent = t.name + " · 约" + (v.meters / 1000).toFixed(1) + "公里 · 估计" + v.total_minutes + "分钟（停留" + v.stay_minutes + "+步行" + v.walk_minutes + "）· 数字为游览顺序 · 无到站提醒";
+      $("route-summary").textContent = t.name + " · 约" + (v.meters / 1000).toFixed(1) + "公里 · 估计" + v.total_minutes + "分钟（停留" + v.stay_minutes + "+步行" + v.walk_minutes + "）· 数字为游览顺序 · " + (M.navigation ? "GPS导览 · 到附近提醒" : "无到站提醒");
       $("ly-route").setAttribute("d", "M" + v.path.map(function (q) { return q[0] + " " + q[1]; }).join(" L"));
       $("route-details").hidden = false;
       var stations = M.itinerary_stations.filter(function (s) { return s.id === v.start_station || s.id === v.end_station; });
       function stationName(id) { return stations.filter(function (s) { return s.id === id; })[0].name; }
       $("route-detail-body").innerHTML = '<p>S起点：' + esc(stationName(v.start_station)) + '；E终点：' + esc(stationName(v.end_station)) + '</p><ol>' + t.steps.map(function (s) { return '<li>' + esc(s.name.zh) + '</li>'; }).join('') + '</ol>' +
         (v.map_assets ? '<p><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener">打开完整线路图</a> · <a href="' + esc(v.map_assets.png) + '" download>保存PNG图片</a></p>' : '') +
-        '<p>' + esc(t.fee) + '</p><p>' + esc(t.access) + '</p><p>' + esc(M.itinerary_policy) + '</p>' + sourceLinks(t.sources);
+        '<p>' + esc(t.fee) + '</p><p>' + esc(t.access) + '</p><p>' + esc(M.itinerary_policy) + '</p>' +
+        (M.navigation ? '<p>' + esc(M.navigation.policy) + '</p>' : '') + sourceLinks(t.sources);
     }
     updateSpots();
   }
@@ -553,14 +566,14 @@
   }
 
   function updateMsgs() {
-    if (isCollection()) return;
+    if (isCollection() && !gpsActive()) return;
     var unread = st.msgs.filter(function (m) { return !m.read; }).length;
     $("unread").hidden = !unread;
     $("unread").textContent = unread;
-    $("visited").textContent = "已游览 " + st.msgs.length + " / " + M.places.length;
+    $("visited").textContent = (isCollection() ? "已到附近 " : "已游览 ") + st.msgs.length + " / " + gpsData(M).places.length;
     $("msgs-body").innerHTML = st.msgs.length ? st.msgs.map(function (m) {
       return '<button class="msg' + (m.read ? "" : " unread") + '" type="button" data-msg="' + esc(m.pid) + '">' +
-        '<span class="msg-dot"></span><span class="msg-text"><strong>已进入热区：' + esc(placeById(m.pid).name.zh) +
+        '<span class="msg-dot"></span><span class="msg-text"><strong>' + (isCollection() ? '已到附近：' : '已进入热区：') + esc(placeById(m.pid).name.zh) +
         "</strong><small>" + (m.read ? "已读 · 点击再次查看介绍" : "未读 · 点击查看介绍") + "</small></span>" +
         "<time>" + esc(m.time) + "</time></button>";
     }).join("") : '<p class="msgs-empty">尚未进入任何热区。<br>在地图上走近带编号的景点即可收到讲解消息。</p>';
@@ -578,8 +591,8 @@
   function updateMe() {
     var live = st.geo === "live" || st.geo === "sim";
     var me = $("me"), k = st.k;
-    me.hidden = isCollection();
-    if (isCollection()) return;
+    me.hidden = !gpsActive();
+    if (!gpsActive()) return;
     me.classList.toggle("off", !live);
     me.style.left = st.pos[0] * k + "px";
     me.style.top = st.pos[1] * k + "px";
@@ -593,11 +606,11 @@
     switch (st.geo) {
       case "sim":
       case "live":
-        text = inside ? "位于「" + inside.name.zh + "」热区"
+        text = inside ? (isCollection() ? "已到「" + inside.name.zh + "」附近" : "位于「" + inside.name.zh + "」热区")
           : (st.geo === "live" && st.acc > ACC_TRIGGER_M ? "定位精度较低 · ±" + Math.round(st.acc) + " 米" : "未进入热区");
         break;
       case "waiting": text = "正在定位…"; break;
-      case "outside": text = "不在景区范围内 · 距入口 " + fmtDist(st.dist); break;
+      case "outside": text = (isCollection() ? "导览覆盖范围外 · 距" + gpsData(M).entrance.name.zh + " " : "不在景区范围内 · 距入口 ") + fmtDist(st.dist); break;
       case "denied": text = "未获得定位授权"; break;
       case "unavailable": text = "暂时无法定位"; break;
       case "timeout": text = "定位超时，仍在尝试…"; break;
@@ -630,7 +643,7 @@
   // 落在哪个热区里。热区会重叠（花园里套着防空洞），取相对距离（距离 ÷ 半径）最小的那个
   function hitPlace(x, y) {
     var best = null, bestScore = Infinity;
-    mapPlaces().forEach(function (p) {
+    gpsData(M).places.forEach(function (p) {
       var d = Math.hypot(p.x - x, p.y - y), cur = p.id === st.inside;
       if (d > p.r * (cur ? STAY_FACTOR : 1)) return;
       var score = d / p.r - (cur ? 0.2 : 0);
@@ -648,7 +661,7 @@
       var hit = hitPlace(x, y);
       id = hit ? hit.id : null;
     } else if (id) {
-      var cur = placeById(id);
+      var cur = gpsPlace(id);
       if (Math.hypot(cur.x - x, cur.y - y) > cur.r * STAY_FACTOR + (slackPx || 0)) id = null;
     }
     if (id !== st.inside) {
@@ -666,7 +679,8 @@
     save();
     updateMsgs();
     if (st.sheetOpen && st.sheetPid === p.id) return;      // 正看着这一处的介绍，不必再提醒
-    $("banner-title").textContent = p.name.zh;
+    $("banner-title").textContent = p.name.zh + (isCollection() ? "附近" : "");
+    $("banner").querySelector('.banner-top > span').textContent = isCollection() ? "Ari Travel · 已到附近" : "Ari Travel · 已进入热区";
     st.bannerPid = p.id;
     $("banner").classList.add("show");
     clearTimeout(bannerTimer);
@@ -680,6 +694,7 @@
 
   // ------------------------------------------------------------ 定位
   function startGeo() {
+    if (!gpsActive()) return;
     if (HOST) {
       st.geo = "waiting";
       updateMe();
@@ -704,7 +719,7 @@
   }
 
   function onFix(position) {
-    if (!M || isCollection()) return;
+    if (!gpsActive()) return;
     var c = position.coords, lat = c.latitude, lon = c.longitude;
     if (OPT.gcj) { var w = gcjToWgs(lat, lon); lat = w[0]; lon = w[1]; }
     st.raw = { lat: lat, lon: lon, acc: c.accuracy };
@@ -717,15 +732,16 @@
       if (st.follow || first) centerOn(xy[0], xy[1]);
     } else {
       st.geo = "outside";
-      st.dist = haversine(lat, lon, M.entrance.lat, M.entrance.lon);
-      st.pos = [M.entrance.x, M.entrance.y];
+      var entrance = gpsData(M).entrance;
+      st.dist = haversine(lat, lon, entrance.lat, entrance.lon);
+      st.pos = [entrance.x, entrance.y];
       if (st.inside) { st.inside = null; updateSpots(); }
       updateMe();
     }
   }
 
   function onGeoError(err) {
-    if (!M || isCollection()) return;
+    if (!gpsActive()) return;
     // 超时与暂时拿不到位置时 watch 还在，不用重开；圆点先灰着停在原地。
     // 所在热区不清：信号一闪就清掉的话，恢复后会把同一处再提醒一遍
     st.geo = err.code === err.PERMISSION_DENIED ? "denied"
@@ -735,6 +751,8 @@
 
   // ------------------------------------------------------------ 模拟游览（仅 ?sim=1）
   function tourPoints() {
+    var themed = themeSelection();
+    if (themed) return themed.variant.path;
     var r = route(), ent = [M.entrance.x, M.entrance.y];
     return r ? routePoints(r) : [ent].concat(M.places.map(function (p) { return [p.x, p.y]; }));
   }
@@ -1137,7 +1155,7 @@
   };
   if (HOST) window.AriTour = {
     state: function (s) {
-      if (!M || !st || isCollection() || s.museum !== M.key) return;
+      if (!M || !st || !gpsActive() || s.museum !== M.key) return;
       var first = st.geo !== "live";
       st.geo = s.status;
       st.pos = [s.x, s.y];
@@ -1372,7 +1390,7 @@
       });
       })).then(function () {
         // 原生缓存只接收有真实几何的目的地；清单仍由同一网页显示，无需旧APK理解新数据类型。
-        var mapped = catalog.museums.map(function (key) { return nextData[key]; }).filter(function (m) { return !isCollection(m); });
+        var mapped = catalog.museums.map(function (key) { return nextData[key]; }).filter(function (m) { return !isCollection(m) || !!m.navigation; }).map(nativeTour);
         if (HOST && !HOST.catalog(JSON.stringify(mapped))) {
           throw new Error('景区资料未能同步至定位服务，请重试');
         }

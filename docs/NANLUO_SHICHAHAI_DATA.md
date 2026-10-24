@@ -208,3 +208,15 @@ utils/import_data/.venv/bin/python utils/import_data/nanluo_shichahai_expansion_
 最终本地92项pytest、20个浏览器场景通过；16组SVG/PNG实际解码、起点切换、顺序编号及整线可见性均检查通过。助手查看四默认图及16图联系表。两次独立文字/代码复核仍用`claude-sonnet-5`显式medium；首轮状态混用意见在当前互斥的数据模式下不可复现，仍加强两个入口的状态清空，复核后无新问题。互动地图长起终点标签缩为S/E，详情保留完整站名。原审核请求、结果与本轮2次成功/0次新模型失败计量保存在`nanluo_shichahai_itinerary_map_*`文件中；自动检查不等于现场或Android真机验收。
 
 内容提交`4b42d9e`已推送并部署，服务active；100个公开静态文件（含32个地图文件）HTTPS200且与本地逐字节一致。公网三个浏览器场景通过，16组SVG/PNG均实际解码，四主题及四起点切换、游览编号、旧App桥接均正常。三处问答只读GET通过，未发送线上测试问题。未改Nginx、APK或后端代码，未重启服务。新发布证据见`nanluo_shichahai_itinerary_map_public_report.json`；累计模型110次成功、4次历史失败。
+
+### 主题线路GPS导览（2026-10-24）
+
+用户要求与宛平城、伪满皇宫相同的GPS导览。四条主题的“开始GPS导览”与地图主题按钮接入当前位置、地图跟随、“回到我的位置”及到附近提醒。清单、静态线路图和全部37点浏览地图仍可单独查看；选择主题线路才启动定位，回到清单/线路图页会清理网页监听并退出当前原生景区。拒绝授权时线路仍可浏览、圆点保持灰色，并显示重新授权入口。
+
+新增独立`navigation`对象，包含四主题主站并集21处公共街道参考点；坐标直接来自此前已审的`steps.point`及OSM线段参数，保留来源链。25米提醒半径是导览估计，精度超过30米不新增提醒；离开1.2倍半径才重新判定。提醒明确称“附近”，不把建筑/院区中心当入口。覆盖范围取已保存OSM资料框`[39.927,116.369,39.9525,116.414]`，明确不是行政边界。原100条介绍、评级、Excel、37处浏览位置、照片及16个方案的几何/次序/时间均不变，32张SVG/PNG也逐字节不变。
+
+Web沿用现有`watchPosition`及精度/迟滞逻辑；App继续由既有原生引擎判定，不重复启动网页GPS。网页将`navigation`的area/entrance/places覆盖到发送副本，形成旧解析器已支持的数据结构；原始清单不改为热区包。原生缓存增加该景区21点，未知位置不参与定位。App生产代码及APK未改，Android单元测试增加实际数据适配检查；原先直接将所有JSON当热区包的fixture测试同步匹配真实发送结构。问答加入同源GPS说明，原两处景区的问答材料哈希保持不变。
+
+本地92项pytest、21个浏览器场景、13项Android单元测试通过。新增浏览器场景经真实`navigator.geolocation.watchPosition`通路输入模拟定位，检查精度不足、恢复、重复到站、短暂超时、范围外、拒绝授权与监听清理；App桥接另检查21点解析、原生状态回传及浏览器GPS未启动。以上不替代Android真机、现场GPS或国产系统后台验收。发布需重启`ari-web-api`读取新问答说明，不改Nginx或APK。生成与检查仍用`tour_build.py`、`tour_itinerary_maps.py`及`nanluo_shichahai_expansion_check.py --report-prefix gps`；独立复核沿用Sonnet 5 medium。
+
+Sonnet 5 medium本轮GPS复核无critical/important，一条minor建议为范围外距离参照点需更清楚；保留固定接驳点以兼容现有原生引擎，界面改为明确显示“距南锣鼓巷站 E口…”，避免误解为当前所选起点距离。GPS入口移到静态图上方。报告及处理记录为`nanluo_shichahai_gps_audit.json`与`nanluo_shichahai_gps_review_disposition.json`。

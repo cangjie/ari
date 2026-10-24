@@ -35,7 +35,7 @@ def main():
     review(system,user,'audit_itinerary_map_delivery','itinerary_map_audit')
 
 
-def review(system,user,stage,suffix):
+def review(system,user,stage,suffix,scope='16 independent route maps and shared Web integration',reviewed_files=None):
     if len(user)>28000:raise ValueError(len(user))
     request=dict(system=system,user=user,schema=SCHEMA)
     (HERE/f'{KEY}_{suffix}_request.json').write_text(json.dumps(request,ensure_ascii=False,indent=2)+'\n')
@@ -47,11 +47,11 @@ def review(system,user,stage,suffix):
             try:result,usage=claude_cli.ask(system,user,SCHEMA,'claude-sonnet-5','medium')
             finally:os.environ['PATH']=old
         return result,claude_cli.Usage(usage)
-    result=llm_cache.call(call,provider='anthropic_cli',model='claude-sonnet-5',effort='medium',stage=stage,museum_key=KEY,system=system,user=user,schema=SCHEMA,scope='16 independent route maps and shared Web integration',retries=0,validate=lambda r:isinstance(r.get('findings'),list)and bool(r.get('assessment')))
+    result=llm_cache.call(call,provider='anthropic_cli',model='claude-sonnet-5',effort='medium',stage=stage,museum_key=KEY,system=system,user=user,schema=SCHEMA,scope=scope,retries=0,validate=lambda r:isinstance(r.get('findings'),list)and bool(r.get('assessment')))
     report=dict(model='claude-sonnet-5',effort='medium',tour_sha256=hashlib.sha256((ROOT/f'web_api/tour/data/{KEY}.json').read_bytes()).hexdigest(),
                 map_manifest_sha256=hashlib.sha256((HERE/f'{KEY}_itinerary_maps.json').read_bytes()).hexdigest(),result=result)
-    if suffix.endswith('recheck'):
-        report['reviewed_files']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest()for name in ['web_api/tour/app.js','web_api/tour/app.css','web_api/tour/index.html','utils/import_data/tour_itinerary_maps.py','utils/import_data/tour_itinerary_maps.mjs']}
+    if reviewed_files or suffix.endswith('recheck'):
+        report['reviewed_files']={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest()for name in (reviewed_files or ['web_api/tour/app.js','web_api/tour/app.css','web_api/tour/index.html','utils/import_data/tour_itinerary_maps.py','utils/import_data/tour_itinerary_maps.mjs'])}
     (HERE/f'{KEY}_{suffix}.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(result,ensure_ascii=False),flush=True)
 

@@ -39,8 +39,8 @@
   "en": "Check access, reservations, admission and shop hours before visiting; historical reports and platform snapshots are not live information."
  },
  "planning": {
-  "zh": "100条资料包含整体与组成部分，并非100个互不重叠的路线站点。可切换清单、地图和四条主题线路；地图只标有来源依据的地点，街段或轮廓中心并非入口。主题路线为公共道路步行方案，时长为估计，不提供到站提醒。商铺的S/A/B/C评级衡量文化与参观价值；平台口碑与消费信息另列，并提供消费分类和风格标签。",
-  "en": "The 100 records include wholes and components. Browse the full list, sourced map and four themed walks. Reference points are not entrances. Walk times are estimates, without arrival alerts. Shop tiers measure cultural and visit value; shopping categories and editorial tags are separate."
+  "zh": "100条资料包含整体与组成部分，并非100个互不重叠的路线站点。可切换清单、地图和四条主题线路；地图只标有来源依据的地点，街段或轮廓中心并非入口。选择主题线路可开始GPS导览，查看当前位置、跟随地图，并在靠近21处公共街道参考点时提示到达附近。步行和停留时间为估计。商铺的S/A/B/C评级衡量文化与参观价值；平台口碑与消费信息另列，并提供消费分类和风格标签。",
+  "en": "The 100 records include wholes and components. Browse the full list, sourced map and four themed walks. Select a themed walk for GPS position, map following and vicinity alerts at 21 sourced public-street points. Reference points are not entrances. Walk times are estimates. Shop tiers measure cultural and visit value; shopping categories and editorial tags are separate."
  },
  "places": [
   {
@@ -10067,7 +10067,7 @@
   "media_sha256": "6dd7d44dd5ee8e44cc0a8cb57a0fba001aaaacce0c5023c4e592fce06432697c",
   "osm_sha256": "0b6720c426e194dc88a8d723bd8349d526ea9aa103629a0d165637e12adb00d3",
   "photos_sha256": "df1b4b14fd1436997ab53c35b03b022cf0a9c988c73e1448b3c6df0bdbeed40e",
-  "experience_sha256": "2ec29bffeb39b7337717ccf75df1c12313c039b9ffea23bb444c35a131ad6b90",
+  "experience_sha256": "4e7644f7c86a0d256955888b864d4c4176ee9b38f8c98be0affa65519d7e8e95",
   "shop_labels_sha256": "d459283d29dc465e880d709e87fb762ce6da2b78fa35110e79b234cfbe2f0aa3"
  },
  "map_mode": "browse",
@@ -31155,5 +31155,671 @@
    "connector_m": 0.0
   }
  ],
- "itinerary_policy": "四条主题步行方案均可选6号线/8号线周边四个地铁起点；更换起点只改变到首站的接驳，景点次序不变。地图为已记录公共道路的步行示意，过街及出入口以现场人行设施为准，不提供到站提醒。距离依据OSM，步行按60米/分估算；停留、排队、购票、交通衔接均有个体差异，所列总时长未计用餐和排队。路线到场所附近公共街道参考点，并非检票入口。地铁出口编号取自OSM，临时封闭以现场为准。"
+ "itinerary_policy": "四条主题步行方案均可选6号线/8号线周边四个地铁起点；更换起点只改变到首站的接驳，景点次序不变。选择主题线路可开始GPS导览，查看当前位置并在靠近已记录的街道参考点时提示到达附近。地图为已记录公共道路的步行示意，过街及出入口以现场人行设施为准。距离依据OSM，步行按60米/分估算；停留、排队、购票、交通衔接均有个体差异，所列总时长未计用餐和排队。路线到场所附近公共街道参考点，并非检票入口。地铁出口编号取自OSM，临时封闭以现场为准。",
+ "navigation": {
+  "area": {
+   "poly": [
+    [
+     35.0,
+     1585.8
+    ],
+    [
+     2147.84,
+     1585.8
+    ],
+    [
+     2147.84,
+     35.0
+    ],
+    [
+     35.0,
+     35.0
+    ]
+   ],
+   "buffer": 0,
+   "basis": "osm-snapshot-bbox",
+   "bbox": [
+    39.927,
+    116.369,
+    39.9525,
+    116.414
+   ],
+   "source_file": "nanluo_shichahai_osm_data.json",
+   "source_sha256": "0b6720c426e194dc88a8d723bd8349d526ea9aa103629a0d165637e12adb00d3",
+   "note": "已收录地图资料的GPS覆盖范围，并非街区行政边界。"
+  },
+  "entrance": {
+   "x": 1333.22,
+   "y": 1263.74,
+   "lat": 39.9322957,
+   "lon": 116.3966499,
+   "name": {
+    "zh": "南锣鼓巷站 E口",
+    "en": "Default subway connection"
+   }
+  },
+  "places": [
+   {
+    "id": "nanluo",
+    "name": {
+     "zh": "南锣鼓巷历史文化街区附近",
+     "en": "Nanluoguxiang Historic and Cultural District vicinity"
+    },
+    "stops": [
+     1
+    ],
+    "x": 1344.97,
+    "y": 1052.49,
+    "lat": 39.93576926879722,
+    "lon": 116.39690026817127,
+    "r": 13.75,
+    "reference": {
+     "way_id": 4922662,
+     "segment": [
+      [
+       39.9362997,
+       116.3969078
+      ],
+      [
+       39.935687,
+       116.3968991
+      ]
+     ],
+     "fraction": 0.8657274404732859
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "maoer",
+    "name": {
+     "zh": "帽儿胡同附近",
+     "en": "Mao'er Hutong vicinity"
+    },
+    "stops": [
+     5
+    ],
+    "x": 1026.59,
+    "y": 1080.55,
+    "lat": 39.93530790889082,
+    "lon": 116.39011929963827,
+    "r": 13.75,
+    "reference": {
+     "way_id": 4931137,
+     "segment": [
+      [
+       39.9353103,
+       116.3901071
+      ],
+      [
+       39.9352623,
+       116.390352
+      ]
+     ],
+     "fraction": 0.0498147745108922
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "yandai",
+    "name": {
+     "zh": "烟袋斜街附近",
+     "en": "Yandai Xiejie vicinity"
+    },
+    "stops": [
+     41
+    ],
+    "x": 955.68,
+    "y": 936.22,
+    "lat": 39.93768104551628,
+    "lon": 116.38860895964386,
+    "r": 13.75,
+    "reference": {
+     "way_id": 42676210,
+     "segment": [
+      [
+       39.9377074,
+       116.3883685
+      ],
+      [
+       39.9376679,
+       116.3887289
+      ]
+     ],
+     "fraction": 0.6672021194731732
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "yinding",
+    "name": {
+     "zh": "银锭桥附近",
+     "en": "Yinding Bridge vicinity"
+    },
+    "stops": [
+     36
+    ],
+    "x": 888.39,
+    "y": 940.43,
+    "lat": 39.9376119,
+    "lon": 116.38717585,
+    "r": 13.75,
+    "reference": {
+     "way_id": 816148132,
+     "segment": [
+      [
+       39.937561,
+       116.3871438
+      ],
+      [
+       39.9376628,
+       116.3872079
+      ]
+     ],
+     "fraction": 0.5
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "gongwang",
+    "name": {
+     "zh": "恭王府及花园附近",
+     "en": "Prince Gong's Mansion and Garden vicinity"
+    },
+    "stops": [
+     59
+    ],
+    "x": 503.97,
+    "y": 1063.7,
+    "lat": 39.93558490935469,
+    "lon": 116.37898837336044,
+    "r": 13.75,
+    "reference": {
+     "way_id": 24804758,
+     "segment": [
+      [
+       39.9345263,
+       116.3795276
+      ],
+      [
+       39.9358493,
+       116.3788537
+      ]
+     ],
+     "fraction": 0.8001582423947974
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "guomoruo",
+    "name": {
+     "zh": "郭沫若故居（郭沫若纪念馆）附近",
+     "en": "Former Residence of Guo Moruo (Guo Moruo Memorial Museum) vicinity"
+    },
+    "stops": [
+     48
+    ],
+    "x": 634.76,
+    "y": 1144.46,
+    "lat": 39.93425693697699,
+    "lon": 116.3817739687021,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30832953,
+     "segment": [
+      [
+       39.9342685,
+       116.3819253
+      ],
+      [
+       39.9342068,
+       116.3811178
+      ]
+     ],
+     "fraction": 0.1874071800514583
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "hehua",
+    "name": {
+     "zh": "荷花市场附近",
+     "en": "Lotus Market vicinity"
+    },
+    "stops": [
+     40
+    ],
+    "x": 786.41,
+    "y": 1176.28,
+    "lat": 39.93373372511188,
+    "lon": 116.38500372659867,
+    "r": 13.75,
+    "reference": {
+     "way_id": 24804695,
+     "segment": [
+      [
+       39.9338962,
+       116.3849086
+      ],
+      [
+       39.9328311,
+       116.3855322
+      ]
+     ],
+     "fraction": 0.15254425699310284
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "banchang",
+    "name": {
+     "zh": "板厂胡同附近",
+     "en": "Banchang Hutong vicinity"
+    },
+    "stops": [
+     11
+    ],
+    "x": 1477.62,
+    "y": 1190.02,
+    "lat": 39.93350783512704,
+    "lon": 116.39972546838449,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30748777,
+     "segment": [
+      [
+       39.9335596,
+       116.4025232
+      ],
+      [
+       39.9334786,
+       116.3981454
+      ]
+     ],
+     "fraction": 0.6390725057142147
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "sengwang",
+    "name": {
+     "zh": "僧王府（僧格林沁王府）附近",
+     "en": "Prince Sengge Rinchen's Residence (Prince Sengge Rinchen's Residence) vicinity"
+    },
+    "stops": [
+     18
+    ],
+    "x": 1375.83,
+    "y": 1190.73,
+    "lat": 39.933496183080024,
+    "lon": 116.39755747783794,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30748777,
+     "segment": [
+      [
+       39.933515,
+       116.3969283
+      ],
+      [
+       39.9334786,
+       116.3981454
+      ]
+     ],
+     "fraction": 0.5169483509435775
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "dongmianhua",
+    "name": {
+     "zh": "东棉花胡同附近",
+     "en": "Dongmianhua Hutong vicinity"
+    },
+    "stops": [
+     12
+    ],
+    "x": 1476.8,
+    "y": 1146.36,
+    "lat": 39.93422569684512,
+    "lon": 116.39970806777839,
+    "r": 13.75,
+    "reference": {
+     "way_id": 175425297,
+     "segment": [
+      [
+       39.9341812,
+       116.3969231
+      ],
+      [
+       39.9342278,
+       116.3998397
+      ]
+     ],
+     "fraction": 0.9548679210006076
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "drama",
+    "name": {
+     "zh": "中央戏剧学院东城校区（靳云鹏宅原址）附近",
+     "en": "Central Academy of Drama, Dongcheng Campus (Former Site of Jin Yunpeng's Residence) vicinity"
+    },
+    "stops": [
+     31
+    ],
+    "x": 1415.35,
+    "y": 1147.64,
+    "lat": 39.934204785618945,
+    "lon": 116.39839927631351,
+    "r": 13.75,
+    "reference": {
+     "way_id": 175425297,
+     "segment": [
+      [
+       39.93422569684512,
+       116.39970806777839
+      ],
+      [
+       39.9341812,
+       116.3969231
+      ]
+     ],
+     "fraction": 0.4699485125199094
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "houyuanensi",
+    "name": {
+     "zh": "后圆恩寺胡同附近",
+     "en": "Houyuan'en Temple Hutong vicinity"
+    },
+    "stops": [
+     16
+    ],
+    "x": 1473.09,
+    "y": 973.98,
+    "lat": 39.93706015,
+    "lon": 116.3996289,
+    "r": 13.75,
+    "reference": {
+     "way_id": 4931240,
+     "segment": [
+      [
+       39.937029,
+       116.3968843
+      ],
+      [
+       39.9370913,
+       116.4023735
+      ]
+     ],
+     "fraction": 0.5
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "yuer",
+    "name": {
+     "zh": "雨儿胡同附近",
+     "en": "Yuer Hutong vicinity"
+    },
+    "stops": [
+     4
+    ],
+    "x": 1253.57,
+    "y": 1148.72,
+    "lat": 39.93418704179787,
+    "lon": 116.39495348868411,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30748645,
+     "segment": [
+      [
+       39.9341812,
+       116.3969231
+      ],
+      [
+       39.9341913,
+       116.3935178
+      ]
+     ],
+     "fraction": 0.5783958288219627
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "songqingling",
+    "name": {
+     "zh": "宋庆龄故居（醇亲王府西花园）附近",
+     "en": "Former Residence of Soong Ching Ling (West Garden of Prince Chun's Mansion) vicinity"
+    },
+    "stops": [
+     49
+    ],
+    "x": 381.22,
+    "y": 578.44,
+    "lat": 39.9435641205743,
+    "lon": 116.37637389603084,
+    "r": 13.75,
+    "reference": {
+     "way_id": 24804776,
+     "segment": [
+      [
+       39.9439347,
+       116.3755685
+      ],
+      [
+       39.9435003,
+       116.3765126
+      ]
+     ],
+     "fraction": 0.853083392480381
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "guanghua",
+    "name": {
+     "zh": "广化寺附近",
+     "en": "Guanghua Temple vicinity"
+    },
+    "stops": [
+     44
+    ],
+    "x": 741.31,
+    "y": 819.33,
+    "lat": 39.93960318982305,
+    "lon": 116.38404327178526,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30766509,
+     "segment": [
+      [
+       39.9394993,
+       116.3841773
+      ],
+      [
+       39.9398609,
+       116.3837108
+      ]
+     ],
+     "fraction": 0.2873059265771217
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "chunwang",
+    "name": {
+     "zh": "醇亲王府（北府）附近",
+     "en": "Prince Chun's Mansion (Northern Residence) vicinity"
+    },
+    "stops": [
+     50
+    ],
+    "x": 446.04,
+    "y": 621.88,
+    "lat": 39.94284982743373,
+    "lon": 116.37775440423586,
+    "r": 13.75,
+    "reference": {
+     "way_id": 24804776,
+     "segment": [
+      [
+       39.9428818,
+       116.3776885
+      ],
+      [
+       39.9426778,
+       116.378109
+      ]
+     ],
+     "fraction": 0.15672826602025025
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "desheng_gate",
+    "name": {
+     "zh": "德胜门箭楼附近",
+     "en": "Deshengmen Watchtower vicinity"
+    },
+    "stops": [
+     57
+    ],
+    "x": 231.79,
+    "y": 376.44,
+    "lat": 39.9468856,
+    "lon": 116.3731913,
+    "r": 13.75,
+    "reference": {
+     "osm_node": 64367553
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "huoshen",
+    "name": {
+     "zh": "敕建火德真君庙（火神庙）附近",
+     "en": "Imperial Temple of the True Lord of Fire Virtue (Fire God Temple) vicinity"
+    },
+    "stops": [
+     43
+    ],
+    "x": 1014.74,
+    "y": 1059.76,
+    "lat": 39.93564976746052,
+    "lon": 116.3898669618449,
+    "r": 13.75,
+    "reference": {
+     "way_id": 4928048,
+     "segment": [
+      [
+       39.9353458,
+       116.3898843
+      ],
+      [
+       39.9360646,
+       116.3898433
+      ]
+     ],
+     "fraction": 0.42288183154445547
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "gulou",
+    "name": {
+     "zh": "北京鼓楼附近",
+     "en": "Beijing Drum Tower vicinity"
+    },
+    "stops": [
+     61
+    ],
+    "x": 1025.11,
+    "y": 852.17,
+    "lat": 39.93906315368977,
+    "lon": 116.39008782439114,
+    "r": 13.75,
+    "reference": {
+     "way_id": 25091600,
+     "segment": [
+      [
+       39.9393684,
+       116.3905215
+      ],
+      [
+       39.9388467,
+       116.3897803
+      ]
+     ],
+     "fraction": 0.5850993103780249
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "zhonglou",
+    "name": {
+     "zh": "北京钟楼附近",
+     "en": "Beijing Bell Tower vicinity"
+    },
+    "stops": [
+     62
+    ],
+    "x": 1020.63,
+    "y": 746.35,
+    "lat": 39.94080312539875,
+    "lon": 116.38999224854764,
+    "r": 13.75,
+    "reference": {
+     "way_id": 29207286,
+     "segment": [
+      [
+       39.9409678,
+       116.3901662
+      ],
+      [
+       39.9405755,
+       116.3897518
+      ]
+     ],
+     "fraction": 0.4197670182270177
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   },
+   {
+    "id": "juer",
+    "name": {
+     "zh": "菊儿胡同附近",
+     "en": "Juer Hutong vicinity"
+    },
+    "stops": [
+     17
+    ],
+    "x": 1472.24,
+    "y": 931.78,
+    "lat": 39.937754109186024,
+    "lon": 116.39961094970019,
+    "r": 13.75,
+    "reference": {
+     "way_id": 30748845,
+     "segment": [
+      [
+       39.9377409,
+       116.3989302
+      ],
+      [
+       39.9377603,
+       116.39993
+      ]
+     ],
+     "fraction": 0.6808858773682575
+    },
+    "note": "路线到附近公共街道参考点；不代表场馆或商铺入口。"
+   }
+  ],
+  "radius_m": 25,
+  "policy": "选择主题线路后启用GPS当前位置、地图跟随和到附近提醒。定位点为21处已记录公共街道参考点，25米提醒半径为导览估计，不代表建筑、检票入口或可入内区域。定位精度超过30米不新增提醒；离开1.2倍半径后才重新判断。导览覆盖范围取已保存OSM资料框，不是行政边界。App沿用原生GPS判定，网络位置不触发到站。"
+ }
 }

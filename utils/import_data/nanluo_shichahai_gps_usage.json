@@ -1,0 +1,27 @@
+{
+  "new_successes": 1,
+  "new_failures": 0,
+  "calls": [
+    {
+      "id": 3941,
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_collection_gps",
+      "status": "ok",
+      "prompt_tokens": 4,
+      "cached_tokens": 12029,
+      "completion_tokens": 11206,
+      "reasoning_tokens": null,
+      "latency_ms": 135240
+    }
+  ],
+  "cumulative_successes": 111,
+  "cumulative_historical_failures": 4,
+  "limitations": [
+    "Claude标准缓存的输入侧token有历史计量缺口；provider原始usage另留。",
+    "初版一次英文修订校验失败及一次Claude额度上限均保留；不能声称完整零失败计量。增补分组复核前主动结束的一轮，已返回的两组结果另存且保留模型缓存，未用于最终分组。",
+    "发布首轮CLI因大输入后的上下文压缩与结构字段丢失失败（llm_call.id=3928），原始会话和usage单独留存；标准缓存错误行的token仍为空，不补造成完整账单。",
+    "媒体首轮审计单次回复达到32000输出token上限后主动中止，缓存错误id3931保留；已写入会话的usage另存，不冒充完整计量。"
+  ]
+}

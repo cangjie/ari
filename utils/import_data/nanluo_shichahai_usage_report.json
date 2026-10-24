@@ -56,6 +56,19 @@
       "provider": "anthropic_cli",
       "model": "claude-sonnet-5",
       "effort": "medium",
+      "stage": "audit_collection_gps",
+      "status": "ok",
+      "calls": 1,
+      "prompt_tokens": 4,
+      "cached_tokens": 12029,
+      "completion_tokens": 11206,
+      "reasoning_tokens": null,
+      "latency_ms": 135240
+    },
+    {
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
       "stage": "audit_itinerary_map_delivery",
       "status": "ok",
       "calls": 1,
@@ -391,7 +404,7 @@
       "latency_ms": 10871
     }
   ],
-  "success_calls": 110,
+  "success_calls": 111,
   "error_calls": 4,
   "limitations": [
     "Claude标准缓存的输入侧token有历史计量缺口；provider原始usage另留。",

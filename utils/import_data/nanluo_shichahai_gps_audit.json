@@ -1,0 +1,25 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "tour_sha256": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583",
+  "map_manifest_sha256": "706133920d2b1f19e69875cdfc8494b4584483627b5584c485ad1eec32a4a026",
+  "result": {
+    "assessment": "审查了本次南锣鼓巷+什刹海GPS导览相关的新增数据生成逻辑、web端生命周期函数（gpsActive/startGeo/stopGeo/onFix/setPos/hitPlace/notify/updateMe/updateMsgs/collectionView）、原生状态桥接（AriTour.state）以及原生onFix/parser（未改动，用于核对一致性）。各处触发条件（trigger=accuracy<=30m、STAY_FACTOR=1.2、radius=25m估计值、provider=='gps'才算到站、area为OSM资料框非行政边界）在web与原生两端逐项比对一致，未发现可达路径上的到站误判、重复提醒或监听泄漏问题。gpsActive()正确限定在选中主题+地图可见时才启用GPS，collectionView在离开地图/清单页时无条件执行stopGeo/stopTour/HOST.leave，桥接层hostSeen去重按museum+pid+时间戳单调递增处理，能正确避免重复通知同时保留补发历史消息的已读状态。未发现新增GPS数据或生命周期/桥接代码引入的实际缺陷；仅有一处可用性层面的次要提示，不构成功能性问题。",
+    "findings": [
+      {
+        "severity": "minor",
+        "file": "DATA GENERATOR / web onFix",
+        "reason": "data['navigation'].entrance 固定取 themes[0]['default_start'] 对应的站点，4条路线共享同一个'默认地铁接驳点'。用户在地图范围外时（onFix 的 outside 分支）显示的'距默认地铁接驳点 X米'始终基于第一条主题路线的起点，与用户实际选择的其它3条路线起点不一定一致。",
+        "recommendation": "若希望该距离提示更贴合当前选择的路线，可在生成时为每条主题单独保留各自默认起点，entrance 按当前选中 theme 动态取值；若维持共享单一参考点为既定设计，建议在policy文案中更明确说明该距离与所选路线起点可能不同，避免使用者误解为'距当前路线起点'。"
+      }
+    ]
+  },
+  "reviewed_files": {
+    "web_api/tour/app.js": "d275313e342732607f1249e0456771231ce7a2370fc174389a347fac5f6772f7",
+    "web_api/app/tour_qa_llm.py": "c4ff389b7aa6235599cfc42e3b3ae3c965de5b441030dc3bf98083adfdbcff9e",
+    "utils/import_data/tour_collection_experience.py": "58776d5f76d552e5247e098bfc8a0d25ce8cb56b5a39607cbae56b00c81597f1",
+    "utils/import_data/nanluo_shichahai_tour_data.py": "132ac6b5d4870da8eaee63af9b39f013178b7f5daa91f345acdc6dce91d599f6",
+    "utils/import_data/nanluo_shichahai_experience_data.py": "af28335f0b24e99021a6988f6c12cf31082012e9a8ace8b6f1b6fba7cf5511e1",
+    "web_api/tour/data/nanluo_shichahai.json": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583"
+  }
+}

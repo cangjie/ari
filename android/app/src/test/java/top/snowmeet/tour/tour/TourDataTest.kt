@@ -2,6 +2,7 @@ package top.snowmeet.tour.tour
 
 import org.junit.Assert.*
 import org.junit.Test
+import org.json.JSONObject
 import java.io.File
 
 class TourDataTest {
@@ -10,7 +11,12 @@ class TourDataTest {
         val files = data.listFiles()?.filter { it.extension == "json" }.orEmpty()
         assertTrue("Source tour data missing", files.isNotEmpty())
         files.forEach { file ->
-            val tour = TourData.parse(file.readText(Charsets.UTF_8))
+            val root = JSONObject(file.readText(Charsets.UTF_8))
+            if (root.optString("mode") == "collection") {
+                val navigation = root.optJSONObject("navigation") ?: return@forEach
+                for (key in listOf("area", "entrance", "places")) root.put(key, navigation.get(key))
+            }
+            val tour = TourData.parse(root.toString())
             assertTrue(tour.places.isNotEmpty())
             assertEquals(file.nameWithoutExtension, tour.key)
             assertTrue(tour.places.all { it.introduction.isNotBlank() })

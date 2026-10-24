@@ -1,0 +1,14 @@
+{
+  "audit": "nanluo_shichahai_gps_audit.json",
+  "critical": 0,
+  "important": 0,
+  "minor": [
+    {
+      "reason": "data['navigation'].entrance 固定取 themes[0]['default_start'] 对应的站点，4条路线共享同一个'默认地铁接驳点'。用户在地图范围外时（onFix 的 outside 分支）显示的'距默认地铁接驳点 X米'始终基于第一条主题路线的起点，与用户实际选择的其它3条路线起点不一定一致。",
+      "resolution": "范围外提示直接显示固定参照站“南锣鼓巷站 E口”，保持原生/网页同一参照；未把固定参照称为当前线路起点。"
+    }
+  ],
+  "post_review_ui_change": "GPS导览按钮移至静态图片上方；固定参照提示加站名。",
+  "final_app_js_sha256": "cbc725881497f8db001514fcb157638e1b35f9dd13f91fb3984d62fbd169df63",
+  "final_data_sha256": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583"
+}

@@ -53,6 +53,7 @@ def main():
                 image_bytes=sum(p['bytes']for p in photos),shops_with_photos=16,dianping_shops=12,authorized_official_shops=[92,93,94,99],
                 map_positions=37,themes=[dict(name=t['name'],variants=len(t['variants']),default=next(v for v in t['variants']if v['start_station']==t['default_start']))for t in data['itineraries']],
                 standalone_maps=16,svg_maps=16,png_maps=16,
+                gps=dict(points=len(data['navigation']['places']),radius_m=data['navigation']['radius_m'],area_basis=data['navigation']['area']['basis'])if data.get('navigation')else None,
                 source_rating_workbook_unchanged=True,old_10_photos_unchanged=True,public_assets=assets,public_qa=api,
                 public_posts_sent=0,apk_rebuilt=False,android_device_verified=False,nginx_changed=False)
     # 报告无需再复制每个折点；完整有出处几何在同源JSON里。

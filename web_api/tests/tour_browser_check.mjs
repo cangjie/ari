@@ -210,7 +210,7 @@ const SCENES = {
         await p.open('/');
         const shown = await p.eval("Array.from(document.querySelectorAll('[data-open]')).map(function(e){return e.dataset.open})");
         check(JSON.stringify(shown) === JSON.stringify(keys), '服务器控制景区增减及顺序：' + keys.join(','), shown);
-        const mapped = keys.filter((k) => k !== 'nanluo_shichahai');
+        const mapped = keys;
         check(JSON.stringify(await p.eval('window.__catalog')) === JSON.stringify(mapped), '有坐标的景区同步给原生定位；纯清单仍在Web可见');
       }
     } finally {catalogOverride = null; await p.send('Page.removeScriptToEvaluateOnNewDocument', {identifier:script.identifier});}
@@ -264,7 +264,7 @@ const SCENES = {
     const script = await p.send('Page.addScriptToEvaluateOnNewDocument', {source: `
       window.__collectionHost = {ready:null, left:0, watch:0};
       navigator.geolocation.watchPosition = function(){window.__collectionHost.watch++; throw new Error('Unexpected GPS');};
-      window.AriHost = {catalog:function(text){var a=JSON.parse(text); window.__collectionHost.keys=a.map(function(m){return m.key;});
+      window.AriHost = {catalog:function(text){var a=JSON.parse(text); window.__collectionHost.payload=a; window.__collectionHost.keys=a.map(function(m){return m.key;});
         return a.every(function(m){return m.proj && m.entrance && m.canvas && m.area && m.places.every(function(p){return p.r>0;});});},
         visitorId:function(){return 'native-visitor-00000001';}, ready:function(k){window.__collectionHost.ready=k;},
         leave:function(){window.__collectionHost.ready=null;window.__collectionHost.left++;}};
@@ -272,10 +272,14 @@ const SCENES = {
     try {
       await p.open('/#nanluo_shichahai');
       check(await p.eval("document.querySelectorAll('.collection-item').length === 100 && !document.getElementById('collection').hidden"), '旧App桥接下也能浏览全部100条');
-      check(await p.eval("window.__collectionHost.watch === 0 && window.__collectionHost.ready === null && !window.__collectionHost.keys.includes('nanluo_shichahai')"), '纯清单不启动定位，也不会使旧App几何解析失败');
+      check(await p.eval("window.__collectionHost.watch === 0 && window.__collectionHost.ready === null && window.__collectionHost.payload.find(m=>m.key==='nanluo_shichahai').places.length===21"), '清单不启动定位，21处街道点可交给现有App解析');
       await p.click('#view-map');
       check(await p.eval("!document.getElementById('mapwrap').hidden && document.querySelectorAll('.spot').length === 37 && window.__collectionHost.watch === 0 && window.__collectionHost.ready === null"), 'App桥接中可浏览37处地图参考点，不调用原生到站');
+      await p.click('[data-map-theme=classic]');
+      check(await p.eval("window.__collectionHost.ready==='nanluo_shichahai' && window.__collectionHost.watch===0 && !document.getElementById('me').hidden"),'GPS线路调用原生导览，不重复启动浏览器定位');
+      check(await p.eval(`(function(){var point=window.__collectionHost.payload.find(m=>m.key==='nanluo_shichahai').places[0],at=Date.now();AriTour.state({museum:'nanluo_shichahai',status:'live',x:point.x,y:point.y,acc:5,inside:point.id,connectedAt:at-100,history:[{pid:point.id,at:at}]});return !document.getElementById('me').classList.contains('off') && document.getElementById('banner-title').textContent.includes('附近') && document.getElementById('status').textContent.includes('附近');})()`),'原生GPS状态、附近提醒和网页当前位置正确衔接');
       await p.click('#view-list');
+      check(await p.eval("window.__collectionHost.ready===null && document.getElementById('me').hidden && document.querySelector('.bottombar').hidden"),'返回清单退出当前原生导览并隐藏定位控件');
       await p.click('[data-place=guomoruo]');
       check(await p.eval("AriTour.back() && !document.getElementById('sheet').classList.contains('show')"), 'App返回键收起清单详情');
       await p.eval("location.hash='wmhg'; true");
@@ -348,6 +352,7 @@ const SCENES = {
     check(await p.eval("document.getElementById('collection-views').hidden && !document.getElementById('me').hidden"), '切回既有地图恢复定位控件');
   },
   async collection_experience(p) {
+    await p.geo('denied');
     await p.open('/#nanluo_shichahai');
     await p.eval("document.getElementById('collection-shop-tag').value='经济实惠'; document.getElementById('collection-shop-tag').dispatchEvent(new Event('change')); true");
     check(await p.eval("document.querySelectorAll('.collection-item').length===2 && !!document.querySelector('[data-place=shop_fangzhuan]') && !!document.querySelector('[data-place=shop_huguosi]')"), '经济实惠标签只筛出有27/28元人均快照的两家');
@@ -372,7 +377,7 @@ const SCENES = {
       check(await p.eval(`document.querySelector('[data-theme-start="${id}"]').value==='gulou' && document.querySelector('[data-theme="${id}"] .theme-summary').textContent!==${JSON.stringify(before)}`), `${id}更换地铁起点后实际更新路程与时长`);
       await p.click(`[data-theme-map="${id}"]`);
       await sleep(250);
-      check(await p.eval(`!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && document.getElementById('route-summary').textContent.includes('无到站提醒') && document.getElementById('me').hidden`), `${id}路线沿道路显示，未启用假GPS或到站提醒`);
+      check(await p.eval(`!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && document.getElementById('route-summary').textContent.includes('GPS导览') && !document.getElementById('me').hidden`), `${id}沿道路显示路线并提供GPS导览控件`);
       check(await p.eval("document.querySelector('.topbar').getBoundingClientRect().y>=0 && document.getElementById('collection-views').getBoundingClientRect().y>=0 && scrollY===0"), `${id}绘制稳定后标题与切换栏仍可见`);
       const expected=m.itineraries.find(t=>t.id===id).steps.length;
       check(await p.eval(`Array.from(document.querySelectorAll('.spot')).filter(e=>!e.hidden).map(e=>+e.querySelector('.spot-num').textContent).sort((a,b)=>a-b).join(',')===Array.from({length:${expected}},(_,i)=>i+1).join(',')`),`${id}地图只显示本线路站点，编号为游览顺序`);
@@ -392,6 +397,45 @@ const SCENES = {
     check(await p.eval("document.getElementById('route-summary').textContent.includes('经典游览') && document.querySelectorAll('.spot.on-route').length===7"),'地图入口可直接画出经典线');
     await p.click('[data-map-theme=""]');
     check(await p.eval("document.getElementById('ly-route').getAttribute('d')==='' && Array.from(document.querySelectorAll('.spot')).some(e=>!e.hidden && +e.querySelector('.spot-num').textContent>10)"),'全部景点恢复原清单编号与浏览地图');
+  },
+  async collection_gps(p) {
+    const m=JSON.parse(await readFile(join(TOUR_DIR,'data/nanluo_shichahai.json'),'utf8'));
+    const a=m.navigation.places.find(q=>q.stops[0]===1),b=m.navigation.places.find(q=>q.stops[0]===5);
+    const script=await p.send('Page.addScriptToEvaluateOnNewDocument',{source:`
+      window.__gpsCalls={watch:0,clear:0};
+      var watch=navigator.geolocation.watchPosition.bind(navigator.geolocation),clear=navigator.geolocation.clearWatch.bind(navigator.geolocation);
+      navigator.geolocation.watchPosition=function(){window.__gpsCalls.watch++;return watch.apply(null,arguments);};
+      navigator.geolocation.clearWatch=function(id){window.__gpsCalls.clear++;return clear(id);};`});
+    try {
+      await p.geo('granted',[a.lat,a.lon,5]);
+      await p.open('/?debug=1#nanluo_shichahai');
+      check(await p.eval('window.__gpsCalls.watch===0'),'完整清单不会提前请求GPS');
+      await p.click('#view-themes');await p.click('[data-theme-map=classic]');await sleep(700);
+      check(await p.eval("window.__gpsCalls.watch===1 && !document.getElementById('me').hidden && !document.getElementById('me').classList.contains('off') && document.getElementById('status').textContent.includes('南锣鼓巷')"),'真实watchPosition通路显示GPS当前位置与附近状态');
+      check(await p.eval("document.getElementById('banner-title').textContent.includes('附近') && document.getElementById('banner').classList.contains('show')"),'靠近街道参考点提醒到附近');
+      await p.click('#banner');
+      check(await p.eval("document.getElementById('sheet-body').innerText.includes('南锣鼓巷历史文化街区')"),'GPS提醒可打开原景点介绍');
+      await p.click('#sheet [data-close]');
+      const times=()=>p.eval("JSON.parse(localStorage.getItem('ari-tour:nanluo_shichahai')).msgs.map(m=>m.at).join(',')");
+      const first=await times();await p.moveTo([a.lat+.000001,a.lon,5],400);
+      check(await times()===first,'在同一提醒范围内移动不会重复到站');
+      await p.moveTo([b.lat,b.lon,40],400);
+      check(await p.eval("document.getElementById('status').textContent.includes('精度较低')") && await times()===first,'低精度GPS移动位置但不新增到站提醒');
+      await p.moveTo([b.lat,b.lon,5],400);
+      check(await p.eval("document.getElementById('status').textContent.includes('帽儿胡同') && JSON.parse(localStorage.getItem('ari-tour:nanluo_shichahai')).msgs.length===2"),'精度恢复后进入下一站并记录到附近');
+      const second=await times();await p.eval("AriTourDebug.error('timeout');true");
+      check(await p.eval("document.getElementById('me').classList.contains('off') && document.getElementById('status').textContent.includes('超时')"),'定位中断保留灰点并显示原因');
+      await p.moveTo([b.lat+.000001,b.lon,5],400);
+      check(await times()===second,'短暂定位恢复不会重复同一站提醒');
+      await p.shot('collection-gps-arrival');
+      await p.moveTo([...BEIJING,5],400);
+      check(await p.eval("document.getElementById('me').classList.contains('off') && document.getElementById('locate').disabled && document.getElementById('status').textContent.includes('导览覆盖范围') && document.getElementById('status').textContent.includes('南锣鼓巷站')"),'范围外变灰并明确距离所用接驳站名');
+      await p.click('#view-list');
+      check(await p.eval("window.__gpsCalls.clear>=1 && document.getElementById('me').hidden && document.querySelector('.bottombar').hidden"),'返回清单清理浏览器GPS监听');
+      await p.geo('denied');await p.open('/#nanluo_shichahai');
+      await p.click('#view-themes');await p.click('[data-theme-map=history]');await sleep(400);
+      check(await p.eval("document.getElementById('status').textContent.includes('未获得定位授权') && document.getElementById('me').classList.contains('off') && document.getElementById('locate-label').textContent==='重新授权'"),'拒绝授权可继续看线路并提供重新授权入口');
+    } finally {await p.send('Page.removeScriptToEvaluateOnNewDocument',{identifier:script.identifier});}
   },
   async wanping(p) {
     const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));

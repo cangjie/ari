@@ -154,4 +154,26 @@ def augment(data, config):
                                  way_ids=sorted(all_ways),legs=legs))
         themes.append({**theme,'steps':steps,'variants':variants})
     data.update(itineraries=themes,itinerary_stations=list(stations.values()),itinerary_policy=manifest['policy'])
+    if getattr(config,'GPS_GUIDE',False):
+        # 定位点独立于旧清单/轮廓中心；只取已审线路中的公共街道参考点。
+        unique={}
+        for theme in themes:
+            for step in theme['steps']:
+                seq=step['seq'];place=places[seq];point=step['point']
+                x,y=xy(point)
+                geo=dict(id=place['id'],name={lang:text+('附近'if lang=='zh'else' vicinity')for lang,text in place['name'].items()},
+                         stops=[seq],x=x,y=y,lat=point[0],lon=point[1],r=round(25*data['canvas']['px_per_m'],2),
+                         reference=step['street_reference'],note=step['reference_note'])
+                if seq in unique and unique[seq]!=geo:raise ValueError('同一站在不同主题中定位不一致')
+                unique[seq]=geo
+        south,west,north,east=osm['bbox']
+        origin=stations[themes[0]['default_start']]
+        x,y=xy(origin['point'])
+        data['navigation']=dict(
+            area=dict(poly=[xy(p)for p in [(south,west),(south,east),(north,east),(north,west)]],buffer=0,
+                      basis='osm-snapshot-bbox',bbox=osm['bbox'],source_file=manifest['osm_file'],source_sha256=sha(HERE/manifest['osm_file']),
+                      note='已收录地图资料的GPS覆盖范围，并非街区行政边界。'),
+            entrance=dict(x=x,y=y,lat=origin['point'][0],lon=origin['point'][1],name=dict(zh=origin['name'],en='Default subway connection')),
+            places=list(unique.values()),radius_m=25,
+            policy='选择主题线路后启用GPS当前位置、地图跟随和到附近提醒。定位点为21处已记录公共街道参考点，25米提醒半径为导览估计，不代表建筑、检票入口或可入内区域。定位精度超过30米不新增提醒；离开1.2倍半径后才重新判断。导览覆盖范围取已保存OSM资料框，不是行政边界。App沿用原生GPS判定，网络位置不触发到站。')
     data['provenance'].update(experience_sha256=sha(HERE/filename),shop_labels_sha256=sha(labels_path))

@@ -65,12 +65,26 @@ def test_every_audited_record_keeps_its_identity_description_and_rating():
     assert m['provenance']['package_sha256'] == hashlib.sha256((HERE / f'{KEY}_final.json').read_bytes()).hexdigest()
 
 
-def test_browse_map_keeps_unlocated_records_and_does_not_claim_arrival_or_routes():
+def test_browse_map_preserves_original_points_and_gps_uses_separate_street_references():
     m = collection()
     assert m['mode'] == 'collection'
     assert not m['routes'] and m['default_route'] == 'none'
     assert m['map_mode'] == 'browse' and m['map']['water'] and m['map']['roads']
-    assert 'area' not in m  # 无定位范围，不交给原生到站引擎。
+    assert 'area' not in m  # 清单坐标与GPS参考点分别保存。
+    nav=m['navigation']
+    assert len(nav['places'])==21 and nav['radius_m']==25
+    assert nav['area']['basis']=='osm-snapshot-bbox' and nav['area']['buffer']==0
+    assert nav['area']['source_sha256']==hashlib.sha256((HERE/nav['area']['source_file']).read_bytes()).hexdigest()
+    steps={s['seq']:s for t in m['itineraries']for s in t['steps']}
+    for p in nav['places']:
+        seq=p['stops'][0];step=steps[seq]
+        assert p['id']==m['stops'][str(seq)]['place']
+        assert [p['lat'],p['lon']]==step['point'] and p['reference']==step['street_reference']
+        assert abs(p['r']-25*m['canvas']['px_per_m'])<.000001
+        assert p['name']['zh'].endswith('附近') and p['note']==step['reference_note']
+        proj=m['proj'];e=(p['lon']-proj['lon0'])*proj['mlon'];n=(p['lat']-proj['lat0'])*proj['mlat']
+        assert abs(p['x']-(proj['a']*e+proj['b']*n+proj['tx']))<.01
+        assert abs(p['y']-(proj['c']*e+proj['d']*n+proj['ty']))<.01
     positions = [p for p in m['places'] if 'x' in p]
     assert len(positions) == 37
     assert all('r' not in p for p in m['places'])
@@ -129,7 +143,7 @@ def test_visitor_and_assistant_share_review_and_merchant_boundaries():
             if s[f]['zh']:
                 assert s[f]['zh'] in material
     assert '建议停留约 None' not in material and '建议停留约 0' not in material
-    assert '主题步行方案' in material and '不提供到站提醒' in material
+    assert '主题步行方案' in material and 'GPS导览' in material and m['navigation']['policy']in material
     assert '平台口碑与消费信息另列' in material
     assert 'Core 7.3510' in material  # 页面显示的分数也必须进入问答材料。
 

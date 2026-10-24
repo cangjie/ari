@@ -482,3 +482,9 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 静态文件和共享JSON随Git发布；本轮没有修改`web_api/app/`，不需重启服务或更新APK。生成与验收命令、文件哈希见`docs/NANLUO_SHICHAHAI_DATA.md`和`nanluo_shichahai_itinerary_map_*report.json`。
 
 `4b42d9e`已上线；100个静态文件逐字节核对通过，16组SVG与PNG公网真实解码、三个浏览器场景、三处只读问答列表正常。最终92项pytest及20个本地浏览器场景通过，Sonnet 5 medium复核无新问题。
+
+### 南锣鼓巷及什刹海GPS导览（2026-10-24）
+
+四条主题线路通过“开始GPS导览”显示当前位置、跟随地图及到附近提醒；回到清单或线路图页退出当前导览。21处GPS点单独放在`navigation`，采用原线路公共街道参考点及25米估计提醒范围，精度超过30米不新增提醒；资料框只是GPS覆盖范围，不是行政边界。原37处浏览坐标及静态线路图不变。
+
+App原生解析器通过网页发送副本读取21点，沿用既有GPS、网络定位不提醒、迟滞和通知逻辑；不重复调用浏览器定位，不改APK。Web继续复用现有定位实现。GPS说明进入游客问答材料，本轮部署须重启`ari-web-api`；无需改Nginx。完整来源、自动检查和限制见`docs/NANLUO_SHICHAHAI_DATA.md`及`nanluo_shichahai_gps_*report.json`。

@@ -1,0 +1,139 @@
+{
+  "checked_on": "2026-10-24T08:54:15.340705+08:00",
+  "public": false,
+  "url": "https://tour.snowmeet.top/#nanluo_shichahai",
+  "records": 100,
+  "photo_records": 60,
+  "published_images": 61,
+  "image_bytes": 6915231,
+  "shops_with_photos": 16,
+  "dianping_shops": 12,
+  "authorized_official_shops": [
+    92,
+    93,
+    94,
+    99
+  ],
+  "map_positions": 37,
+  "themes": [
+    {
+      "name": "经典游览线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "beihai",
+        "meters": 4050,
+        "walk_minutes": 68,
+        "stay_minutes": 240,
+        "total_minutes": 308,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-classic-nanluo.svg",
+          "png": "img/nanluo_shichahai/route-classic-nanluo.png"
+        }
+      }
+    },
+    {
+      "name": "文艺观光线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "shichahai",
+        "meters": 3152,
+        "walk_minutes": 53,
+        "stay_minutes": 155,
+        "total_minutes": 208,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-arts-nanluo.svg",
+          "png": "img/nanluo_shichahai/route-arts-nanluo.png"
+        }
+      }
+    },
+    {
+      "name": "历史探索线路",
+      "variants": 4,
+      "default": {
+        "start_station": "beihai",
+        "end_station": "gulou",
+        "meters": 6262,
+        "walk_minutes": 104,
+        "stay_minutes": 235,
+        "total_minutes": 339,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-history-beihai.svg",
+          "png": "img/nanluo_shichahai/route-history-beihai.png"
+        }
+      }
+    },
+    {
+      "name": "穷游线路",
+      "variants": 4,
+      "default": {
+        "start_station": "shichahai",
+        "end_station": "nanluo",
+        "meters": 5771,
+        "walk_minutes": 96,
+        "stay_minutes": 145,
+        "total_minutes": 241,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-budget-shichahai.svg",
+          "png": "img/nanluo_shichahai/route-budget-shichahai.png"
+        }
+      }
+    }
+  ],
+  "standalone_maps": 16,
+  "svg_maps": 16,
+  "png_maps": 16,
+  "gps": {
+    "points": 21,
+    "radius_m": 25,
+    "area_basis": "osm-snapshot-bbox"
+  },
+  "source_rating_workbook_unchanged": true,
+  "old_10_photos_unchanged": true,
+  "public_assets": [],
+  "public_qa": [],
+  "public_posts_sent": 0,
+  "apk_rebuilt": false,
+  "android_device_verified": false,
+  "nginx_changed": false,
+  "worktree_base_commit": "ed5715017010ed5981d57be79f11a01c7d8a0da0",
+  "baseline_commit": "ed57150",
+  "original_places_stops_routes_photos_unchanged": true,
+  "all_32_standalone_map_bytes_unchanged": true,
+  "pytest": {
+    "passed": 92,
+    "skipped": 3,
+    "log": "exports/nanluo_gps_pytest.log"
+  },
+  "browser": {
+    "scenes": 21,
+    "all_passed": true,
+    "log": "exports/nanluo_gps_browser_final.log",
+    "final_gps_and_native_focus_log": "exports/nanluo_gps_browser_focus.log",
+    "final_gps_and_native_focus_passed": true
+  },
+  "android": {
+    "unit_tests": 13,
+    "all_passed": true,
+    "production_code_changed": false,
+    "apk_rebuilt": false,
+    "device_verified": false,
+    "log": "exports/nanluo_gps_android_unit.log"
+  },
+  "qa_material_sha256": {
+    "wmhg": "d8d952e380cc3fd2f52dc4ccb51c55ce3a416dda777baabbd2cb866c079fb2eb",
+    "wanping": "e8c455e9edde2949673e91e226797dfb679dc89e39c37b9a6ee41b31d2adcdef",
+    "nanluo_shichahai": "0ae7b431a7c8529132ca4930edd90706b3532474ae4473cc0ec424561ea9e494"
+  },
+  "old_two_qa_materials_unchanged": true,
+  "independent_review": {
+    "model": "claude-sonnet-5",
+    "effort": "medium",
+    "critical": 0,
+    "important": 0,
+    "minor_resolved": 1,
+    "report": "nanluo_shichahai_gps_audit.json",
+    "disposition": "nanluo_shichahai_gps_review_disposition.json"
+  }
+}

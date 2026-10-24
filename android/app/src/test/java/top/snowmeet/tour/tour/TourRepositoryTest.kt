@@ -41,4 +41,25 @@ class TourRepositoryTest {
             }
         } finally { cache.parentFile?.deleteRecursively() }
     }
+
+    @Test fun collectionGpsPayloadUsesExistingParserAndAccuracyGate() {
+        val root = source("nanluo_shichahai")
+        val nav = root.getJSONObject("navigation")
+        // Same wire shape sent by app.js nativeTour; production parser stays unchanged.
+        for (key in listOf("area", "entrance", "places")) root.put(key, nav.get(key))
+        val tours = TourRepository.decode(JSONArray().put(source("wmhg")).put(source("wanping")).put(root).toString())
+        val tour = tours.last()
+        assertEquals("nanluo_shichahai", tour.key)
+        assertEquals(21, tour.places.size)
+        val point = nav.getJSONArray("places").getJSONObject(0)
+        val engine = GeofenceEngine(tour)
+        fun fix(accuracy: Double, provider: String = "gps") = Fix(point.getDouble("lat"), point.getDouble("lon"), accuracy, 1, provider)
+        assertNull(engine.onFix(fix(40.0)).arrival)
+        assertNull(engine.onFix(fix(5.0, "network")).arrival)
+        val arrival = engine.onFix(fix(5.0)).arrival
+        assertEquals(point.getString("id"), arrival?.id)
+        assertTrue(arrival!!.name.endsWith("附近"))
+        assertNull(engine.onFix(fix(5.0)).arrival)
+        assertEquals("outside", engine.onFix(Fix(39.9163, 116.3972, 5.0, 2)).state.status)
+    }
 }

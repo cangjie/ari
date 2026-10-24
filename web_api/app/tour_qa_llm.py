@@ -125,6 +125,8 @@ def museum_material(museum: dict) -> str:
         parts.append('本清单未提供已核实的路线或停留时间。')
     if museum.get('itineraries'):
         parts.append('## 主题步行方案\n'+museum['itinerary_policy'])
+        if museum.get('navigation'):
+            parts.append('## GPS导览\n'+museum['navigation']['policy'])
         stations={s['id']:s for s in museum['itinerary_stations']}
         for station in stations.values():
             parts.append('地铁接驳来源：'+station['name']+'；'+station['source']['url']+'；出口位置来源：'+station['position_source']['url'])
