@@ -206,3 +206,5 @@ utils/import_data/.venv/bin/python utils/import_data/nanluo_shichahai_expansion_
 图片与清单留存在`web_api/tour/img/nanluo_shichahai/route-<主题>-<地铁站>.svg/png`及`utils/import_data/nanluo_shichahai_itinerary_maps.json`；清单绑定共享JSON与两种文件哈希。生成器不调用模型，不另抓地图瓦片或字体。App读取同源预览，打开大图由现有外链处理交给浏览器，无需改APK。
 
 最终本地92项pytest、20个浏览器场景通过；16组SVG/PNG实际解码、起点切换、顺序编号及整线可见性均检查通过。助手查看四默认图及16图联系表。两次独立文字/代码复核仍用`claude-sonnet-5`显式medium；首轮状态混用意见在当前互斥的数据模式下不可复现，仍加强两个入口的状态清空，复核后无新问题。互动地图长起终点标签缩为S/E，详情保留完整站名。原审核请求、结果与本轮2次成功/0次新模型失败计量保存在`nanluo_shichahai_itinerary_map_*`文件中；自动检查不等于现场或Android真机验收。
+
+内容提交`4b42d9e`已推送并部署，服务active；100个公开静态文件（含32个地图文件）HTTPS200且与本地逐字节一致。公网三个浏览器场景通过，16组SVG/PNG均实际解码，四主题及四起点切换、游览编号、旧App桥接均正常。三处问答只读GET通过，未发送线上测试问题。未改Nginx、APK或后端代码，未重启服务。新发布证据见`nanluo_shichahai_itinerary_map_public_report.json`；累计模型110次成功、4次历史失败。
