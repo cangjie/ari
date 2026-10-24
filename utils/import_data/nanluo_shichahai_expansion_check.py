@@ -16,7 +16,8 @@ KEY='nanluo_shichahai'
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--public',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--public',action='store_true')
+    parser.add_argument('--report-prefix',default='expansion');args=parser.parse_args()
     baseline=json.loads((HERE/f'{KEY}_photo_expansion_baseline.json').read_text())
     for name,digest in baseline['files'].items():assert hashlib.sha256((HERE/name).read_bytes()).hexdigest()==digest,name
     manifest=json.loads((HERE/f'{KEY}_tour_photos.json').read_text());photos=manifest['photos']+manifest['supplementary_photos']
@@ -24,13 +25,19 @@ def main():
     assert len([s for s in data['stops'].values()if s['photo']])==60
     assert sum(bool(s['photo'])for s in data['stops'].values()if s['kind']=='shop')==16
     assert len(data['itineraries'])==4 and all(len(t['variants'])==4 for t in data['itineraries'])
+    maps=json.loads((HERE/f'{KEY}_itinerary_maps.json').read_text())
+    assert maps['tour_sha256']==hashlib.sha256((TOUR/f'data/{KEY}.json').read_bytes()).hexdigest()
+    map_assets=[p for row in maps['maps']for p in row['assets'].values()]
+    assert len(map_assets)==32 and len(set(map_assets))==32
+    for row in maps['maps']:
+        for ext,path in row['assets'].items():assert hashlib.sha256((TOUR/path).read_bytes()).hexdigest()==row[f'{ext}_sha256']
     current=[{k:v for k,v in p.items()if k not in ['photo','photo_info','supplementary_photos']}for p in data['places']]
     assert current==baseline['positions'],'旧地图37位置或身份发生未预期变化'
     for photo in baseline['photos']:
         assert hashlib.sha256((TOUR/photo['path']).read_bytes()).hexdigest()==photo['sha256']
     assets=[];api=[]
     if args.public:
-        files=['index.html','app.js','app.css','catalog.json','data/wmhg.json','data/wanping.json',f'data/{KEY}.json']+[p['path']for p in photos]
+        files=['index.html','app.js','app.css','catalog.json','data/wmhg.json','data/wanping.json',f'data/{KEY}.json']+[p['path']for p in photos]+map_assets
         def check(path):
             expected=(TOUR/path).read_bytes();req=urllib.request.Request('https://tour.snowmeet.top/'+path,headers={'User-Agent':'ari-expansion-check/1.0','Cache-Control':'no-cache'})
             with urllib.request.urlopen(req,context=ssl_ctx(),timeout=40)as res:body=res.read();status=res.status
@@ -45,15 +52,16 @@ def main():
                 url='https://tour.snowmeet.top/#'+KEY,records=100,photo_records=60,published_images=len(photos),
                 image_bytes=sum(p['bytes']for p in photos),shops_with_photos=16,dianping_shops=12,authorized_official_shops=[92,93,94,99],
                 map_positions=37,themes=[dict(name=t['name'],variants=len(t['variants']),default=next(v for v in t['variants']if v['start_station']==t['default_start']))for t in data['itineraries']],
+                standalone_maps=16,svg_maps=16,png_maps=16,
                 source_rating_workbook_unchanged=True,old_10_photos_unchanged=True,public_assets=assets,public_qa=api,
                 public_posts_sent=0,apk_rebuilt=False,android_device_verified=False,nginx_changed=False)
     # 报告无需再复制每个折点；完整有出处几何在同源JSON里。
     for theme in report['themes']:
         for key in ['path','path_wgs84','way_ids','legs']:theme['default'].pop(key,None)
     if not args.public:report['worktree_base_commit']=report.pop('commit')
-    suffix='expansion_public_report'if args.public else 'expansion_local_report'
+    suffix=args.report_prefix+('_public_report'if args.public else '_local_report')
     (HERE/f'{KEY}_{suffix}.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    print(f"60/100 records; 16/16 shops; {len(photos)} images ({report['image_bytes']} bytes); 4 themes × 4 starts; {len(assets)} public exact matches; {len(api)} read-only QA lists")
+    print(f"60/100 records; 16/16 shops; {len(photos)} photos ({report['image_bytes']} bytes); 4 themes × 4 starts; 16 SVG + 16 PNG maps; {len(assets)} public exact matches; {len(api)} read-only QA lists")
 
 
 if __name__=='__main__':main()

@@ -10403,6 +10403,10 @@
      "walk_minutes": 68,
      "stay_minutes": 240,
      "total_minutes": 308,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-classic-nanluo.svg",
+      "png": "img/nanluo_shichahai/route-classic-nanluo.png"
+     },
      "path": [
       [
        1333.22,
@@ -11467,6 +11471,10 @@
      "walk_minutes": 74,
      "stay_minutes": 240,
      "total_minutes": 314,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-classic-shichahai.svg",
+      "png": "img/nanluo_shichahai/route-classic-shichahai.png"
+     },
      "path": [
       [
        1002.81,
@@ -12602,6 +12610,10 @@
      "walk_minutes": 88,
      "stay_minutes": 240,
      "total_minutes": 328,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-classic-beihai.svg",
+      "png": "img/nanluo_shichahai/route-classic-beihai.png"
+     },
      "path": [
       [
        645.31,
@@ -13914,6 +13926,10 @@
      "walk_minutes": 91,
      "stay_minutes": 240,
      "total_minutes": 331,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-classic-gulou.svg",
+      "png": "img/nanluo_shichahai/route-classic-gulou.png"
+     },
      "path": [
       [
        923.08,
@@ -15486,6 +15502,10 @@
      "walk_minutes": 53,
      "stay_minutes": 155,
      "total_minutes": 208,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-arts-nanluo.svg",
+      "png": "img/nanluo_shichahai/route-arts-nanluo.png"
+     },
      "path": [
       [
        1333.22,
@@ -16044,6 +16064,10 @@
      "walk_minutes": 66,
      "stay_minutes": 155,
      "total_minutes": 221,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-arts-shichahai.svg",
+      "png": "img/nanluo_shichahai/route-arts-shichahai.png"
+     },
      "path": [
       [
        1002.81,
@@ -16784,6 +16808,10 @@
      "walk_minutes": 74,
      "stay_minutes": 155,
      "total_minutes": 229,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-arts-beihai.svg",
+      "png": "img/nanluo_shichahai/route-arts-beihai.png"
+     },
      "path": [
       [
        645.31,
@@ -17539,6 +17567,10 @@
      "walk_minutes": 83,
      "stay_minutes": 155,
      "total_minutes": 238,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-arts-gulou.svg",
+      "png": "img/nanluo_shichahai/route-arts-gulou.png"
+     },
      "path": [
       [
        923.08,
@@ -18723,6 +18755,10 @@
      "walk_minutes": 126,
      "stay_minutes": 235,
      "total_minutes": 361,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-history-nanluo.svg",
+      "png": "img/nanluo_shichahai/route-history-nanluo.png"
+     },
      "path": [
       [
        1333.22,
@@ -20359,6 +20395,10 @@
      "walk_minutes": 117,
      "stay_minutes": 235,
      "total_minutes": 352,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-history-shichahai.svg",
+      "png": "img/nanluo_shichahai/route-history-shichahai.png"
+     },
      "path": [
       [
        1002.81,
@@ -22074,6 +22114,10 @@
      "walk_minutes": 104,
      "stay_minutes": 235,
      "total_minutes": 339,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-history-beihai.svg",
+      "png": "img/nanluo_shichahai/route-history-beihai.png"
+     },
      "path": [
       [
        645.31,
@@ -23524,6 +23568,10 @@
      "walk_minutes": 130,
      "stay_minutes": 235,
      "total_minutes": 365,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-history-gulou.svg",
+      "png": "img/nanluo_shichahai/route-history-gulou.png"
+     },
      "path": [
       [
        923.08,
@@ -25743,6 +25791,10 @@
      "walk_minutes": 110,
      "stay_minutes": 145,
      "total_minutes": 255,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-budget-nanluo.svg",
+      "png": "img/nanluo_shichahai/route-budget-nanluo.png"
+     },
      "path": [
       [
        1333.22,
@@ -27051,6 +27103,10 @@
      "walk_minutes": 96,
      "stay_minutes": 145,
      "total_minutes": 241,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-budget-shichahai.svg",
+      "png": "img/nanluo_shichahai/route-budget-shichahai.png"
+     },
      "path": [
       [
        1002.81,
@@ -28362,6 +28418,10 @@
      "walk_minutes": 93,
      "stay_minutes": 145,
      "total_minutes": 238,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-budget-beihai.svg",
+      "png": "img/nanluo_shichahai/route-budget-beihai.png"
+     },
      "path": [
       [
        645.31,
@@ -29535,6 +29595,10 @@
      "walk_minutes": 109,
      "stay_minutes": 145,
      "total_minutes": 254,
+     "map_assets": {
+      "svg": "img/nanluo_shichahai/route-budget-gulou.svg",
+      "png": "img/nanluo_shichahai/route-budget-gulou.png"
+     },
      "path": [
       [
        923.08,

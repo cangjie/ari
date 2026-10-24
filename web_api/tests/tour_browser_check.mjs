@@ -34,7 +34,7 @@ const LOAD_TIMEOUT_MS = Number(process.env.LOAD_TIMEOUT_MS || (process.env.BASE 
 const IMAGE_TIMEOUT_MS = Number(process.env.IMAGE_TIMEOUT_MS || (process.env.BASE ? 90000 : 12000));
 const MIME = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8", ".json": "application/json; charset=utf-8",
-  ".woff2": "font/woff2", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
+  ".woff2": "font/woff2", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".svg": "image/svg+xml" };
 
 // 几个有出处的位置（WGS-84）。同德殿等取自 wmhg_route_data.POINTS
 const TONGDE = [43.90398, 125.34323], QINMIN = [43.90412, 125.34226], SHRINE = [43.90323, 125.34420];
@@ -356,6 +356,15 @@ const SCENES = {
     await p.shot('collection-shop-tags');
     await p.click('#view-themes');
     check(await p.eval("!document.getElementById('collection-themes').hidden && document.querySelectorAll('.theme-card').length===4 && document.querySelectorAll('[data-theme-start] option').length===16"), '四条主题线路各有四个地铁起点');
+    const m=JSON.parse(await readFile(join(TOUR_DIR,'data/nanluo_shichahai.json'),'utf8'));
+    for(const t of m.itineraries){
+      for(const v of t.variants){
+        await p.eval(`var s=document.querySelector('[data-theme-start="${t.id}"]');s.value='${v.start_station}';s.dispatchEvent(new Event('change',{bubbles:true}));true`);
+        const result=await p.eval(`(async function(){var card=document.querySelector('[data-theme="${t.id}"]'),img=card.querySelector('.theme-map-preview img');img.loading='eager';await img.decode();var png=new Image();png.src=card.querySelector('[download]').href;await png.decode();return img.getAttribute('src')===${JSON.stringify(v.map_assets.svg)} && img.naturalWidth===1200 && png.naturalWidth===1200 && png.naturalHeight===1600;})()`);
+        check(result,`${t.id}/${v.start_station}预览与可保存PNG实际解码成功且随起点切换`);
+      }
+      await p.eval(`var s=document.querySelector('[data-theme-start="${t.id}"]');s.value='${t.default_start}';s.dispatchEvent(new Event('change',{bubbles:true}));true`);
+    }
     await p.shot('collection-themes');
     for (const id of ['classic','arts','history','budget']) {
       const before=await p.eval(`document.querySelector('[data-theme="${id}"] .theme-summary').textContent`);
@@ -365,6 +374,9 @@ const SCENES = {
       await sleep(250);
       check(await p.eval(`!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && document.getElementById('route-summary').textContent.includes('无到站提醒') && document.getElementById('me').hidden`), `${id}路线沿道路显示，未启用假GPS或到站提醒`);
       check(await p.eval("document.querySelector('.topbar').getBoundingClientRect().y>=0 && document.getElementById('collection-views').getBoundingClientRect().y>=0 && scrollY===0"), `${id}绘制稳定后标题与切换栏仍可见`);
+      const expected=m.itineraries.find(t=>t.id===id).steps.length;
+      check(await p.eval(`Array.from(document.querySelectorAll('.spot')).filter(e=>!e.hidden).map(e=>+e.querySelector('.spot-num').textContent).sort((a,b)=>a-b).join(',')===Array.from({length:${expected}},(_,i)=>i+1).join(',')`),`${id}地图只显示本线路站点，编号为游览顺序`);
+      check(await p.eval(`(function(){var route=document.getElementById('ly-route').getBoundingClientRect(),map=document.getElementById('map').getBoundingClientRect(),bar=document.getElementById('routes').getBoundingClientRect();return route.width>50 && route.height>50 && route.left>=map.left+15 && route.right<=map.right-15 && route.top>=bar.bottom+15 && route.bottom<=map.bottom-15;})()`),`${id}整条路线在可见地图范围内`);
       if (id==='history') await p.shot('collection-history-map');
       await p.click('#view-themes');
     }
@@ -374,6 +386,12 @@ const SCENES = {
     await p.click('#view-list');
     await p.eval("document.getElementById('collection-shop-tag').value='all';document.getElementById('collection-shop-tag').dispatchEvent(new Event('change'));true");
     check(await p.eval("document.querySelectorAll('.collection-item').length===100"), '线路视图可返回完整100条');
+    await p.click('#view-map');
+    check(await p.eval("document.querySelectorAll('[data-map-theme]').length===5"),'景点地图可直接选择四条游览线路');
+    await p.click('[data-map-theme=classic]');
+    check(await p.eval("document.getElementById('route-summary').textContent.includes('经典游览') && document.querySelectorAll('.spot.on-route').length===7"),'地图入口可直接画出经典线');
+    await p.click('[data-map-theme=""]');
+    check(await p.eval("document.getElementById('ly-route').getAttribute('d')==='' && Array.from(document.querySelectorAll('.spot')).some(e=>!e.hidden && +e.querySelector('.spot-num').textContent>10)"),'全部景点恢复原清单编号与浏览地图');
   },
   async wanping(p) {
     const m = JSON.parse(await readFile(join(TOUR_DIR, 'data/wanping.json'), 'utf8'));

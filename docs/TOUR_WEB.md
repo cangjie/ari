@@ -475,3 +475,8 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 重建：先执行`nanluo_shichahai_experience_data.py`，再执行`tour_build.py --museum nanluo_shichahai`；图片从留存原响应通过`nanluo_shichahai_photo_selection.py`与`tour_photo_build.py`核对。原介绍、V3、Excel不改。部署须`git pull --ff-only`并重启`ari-web-api`使问答读取新增标签/线路字段；Nginx和APK不变。完整来源、固定模型审计与验收见`docs/NANLUO_SHICHAHAI_DATA.md`和`nanluo_shichahai_expansion_*report.json`。
 
 `e688ad5`已部署，服务active；68个线上静态文件与本地一致，公网六场景通过（含全部16商铺、四条线路的地铁起点切换和旧App桥接），三馆问答GET及材料哈希一致。91项pytest、20个本地浏览器场景和原Sonnet 5 medium最终复核通过；详见`nanluo_shichahai_expansion_public_report.json`。
+### 南锣鼓巷及什刹海线路图（2026-10-24）
+
+新增16组独立线路图（四主题×四地铁起点），每组含SVG与1200×1600 PNG。目的地内“线路图”直接预览、放大、保存，更换起点同步换图；景点地图上也可直接选择主题。图中的数字为游览顺序，附S/E地铁起终点、方向箭头及名称图例；“全部景点”仍使用原清单序号。地图连线沿已记录公共道路，圆点为附近街道参考点，不是检票入口。
+
+静态文件和共享JSON随Git发布；本轮没有修改`web_api/app/`，不需重启服务或更新APK。生成与验收命令、文件哈希见`docs/NANLUO_SHICHAHAI_DATA.md`和`nanluo_shichahai_itinerary_map_*report.json`。

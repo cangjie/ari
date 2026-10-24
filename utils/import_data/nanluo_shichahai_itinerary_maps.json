@@ -1,0 +1,185 @@
+{
+  "museum": "nanluo_shichahai",
+  "tour_sha256": "c88b48977a4af08a9f810cc4fab0cae4d3b64643d35d647b1f90830a629ad5c9",
+  "width": 1200,
+  "height": 1600,
+  "maps": [
+    {
+      "theme": "classic",
+      "start_station": "nanluo",
+      "default": true,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-classic-nanluo.svg",
+        "png": "img/nanluo_shichahai/route-classic-nanluo.png"
+      },
+      "svg_sha256": "8ef57a50c3d5558901f7115643e62906787e92dce4a33758d7119b69a8cdbdf2",
+      "png_sha256": "cec786c42c8d3bd641aa8ce2b492cc7236e8e56383a64c88a1239aa53d43c9dd"
+    },
+    {
+      "theme": "classic",
+      "start_station": "shichahai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-classic-shichahai.svg",
+        "png": "img/nanluo_shichahai/route-classic-shichahai.png"
+      },
+      "svg_sha256": "f97bce5e4108d59be395cd662a82f869da1ea19b127fe4da12da80f1f7e6a114",
+      "png_sha256": "7d326a38f786a1a93c8912175072a0cddaf1dd23bc847288359bbdd321eaf822"
+    },
+    {
+      "theme": "classic",
+      "start_station": "beihai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-classic-beihai.svg",
+        "png": "img/nanluo_shichahai/route-classic-beihai.png"
+      },
+      "svg_sha256": "761627f1f8bc62bfb6fb61851776726d958d5895cf5cc704ab5d48291d2acd6e",
+      "png_sha256": "123b452fd136c0ba0276c05a32ceae548c656c681943a840d3b5ea6b7dd1fce2"
+    },
+    {
+      "theme": "classic",
+      "start_station": "gulou",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-classic-gulou.svg",
+        "png": "img/nanluo_shichahai/route-classic-gulou.png"
+      },
+      "svg_sha256": "818d86d6811221dac364a9df50ed55d22282aa1b81c7d93b3079163b136db097",
+      "png_sha256": "75d42ed3c71b4239bbfa841a2d7e54de86fe287883d2c075e87236f53630a34f"
+    },
+    {
+      "theme": "arts",
+      "start_station": "nanluo",
+      "default": true,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-arts-nanluo.svg",
+        "png": "img/nanluo_shichahai/route-arts-nanluo.png"
+      },
+      "svg_sha256": "2922a06df84236b886d760c89dd2bb04e7bb2a0e571685810b07d70933e972b0",
+      "png_sha256": "167713726017d8878e2b64682c5b5d23d56e4718799b62796eafb560575d58c5"
+    },
+    {
+      "theme": "arts",
+      "start_station": "shichahai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-arts-shichahai.svg",
+        "png": "img/nanluo_shichahai/route-arts-shichahai.png"
+      },
+      "svg_sha256": "2a8e205eec40c32520bfea6670cbc63c05e79b3b9f799b420384bd3b7ae3d0ee",
+      "png_sha256": "0fa264287ecfb84ea926818ef21936df956960186532421ba8587fc51e6fbb4e"
+    },
+    {
+      "theme": "arts",
+      "start_station": "beihai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-arts-beihai.svg",
+        "png": "img/nanluo_shichahai/route-arts-beihai.png"
+      },
+      "svg_sha256": "34b9381fc3025e02f4c6f02f3bb9fa6eec1675cb019d399dc40fd5a731a4295a",
+      "png_sha256": "7b59c8f0ec9017ffb10271aef39d18b69c2cc024f44fb6d7ba8ad37850c6bce1"
+    },
+    {
+      "theme": "arts",
+      "start_station": "gulou",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-arts-gulou.svg",
+        "png": "img/nanluo_shichahai/route-arts-gulou.png"
+      },
+      "svg_sha256": "114c38f33aa9e286215f24e8ca8df8c322e8a154b9e1e565fb3ec0ebe997a131",
+      "png_sha256": "10a4ecde08923f2b9ef77f60066bbe06109c3cbca535d0d188bb2d51059b13d9"
+    },
+    {
+      "theme": "history",
+      "start_station": "nanluo",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-history-nanluo.svg",
+        "png": "img/nanluo_shichahai/route-history-nanluo.png"
+      },
+      "svg_sha256": "15664faa963a8539e132cf144027e44af61bbc25e5e3d5c5bbe65c3297dbfad9",
+      "png_sha256": "c5409a85a635f7a67a050a1211a63fec035fbc9b0a8624a43a9b9b3e11734eba"
+    },
+    {
+      "theme": "history",
+      "start_station": "shichahai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-history-shichahai.svg",
+        "png": "img/nanluo_shichahai/route-history-shichahai.png"
+      },
+      "svg_sha256": "24dcd1a4780389bd4d09ae8e9e587778c47531c5b00db5da5d44706d371462b6",
+      "png_sha256": "50f44b4172a1747e01e6fd11edfe4d6a9c1ea8b6b58d88b84db9697a30cfd829"
+    },
+    {
+      "theme": "history",
+      "start_station": "beihai",
+      "default": true,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-history-beihai.svg",
+        "png": "img/nanluo_shichahai/route-history-beihai.png"
+      },
+      "svg_sha256": "0f191c4a10245bbd3146e449276d344e4b2938a756423d26884ab8616a440001",
+      "png_sha256": "337ff27a4ef07d570d654874be29148742567935c29f89b789e1fca70b89a85e"
+    },
+    {
+      "theme": "history",
+      "start_station": "gulou",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-history-gulou.svg",
+        "png": "img/nanluo_shichahai/route-history-gulou.png"
+      },
+      "svg_sha256": "201e13ade3b2263b8ceb1ee52a93246d2de8aa1d32d32bc845d130dde45bc25e",
+      "png_sha256": "7a55b1d900b4778efa91ae169e16a968a28f90c6178f91e7acf2a0eb11eee584"
+    },
+    {
+      "theme": "budget",
+      "start_station": "nanluo",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-budget-nanluo.svg",
+        "png": "img/nanluo_shichahai/route-budget-nanluo.png"
+      },
+      "svg_sha256": "553781da70c65bf912bb47960b5a305ae8269e89f83fabb56471667e6eeee063",
+      "png_sha256": "7a2d491d199a271d95e1bf72006f4c3a84e9a6ec7f1d9e5d94be54e8c25f47ab"
+    },
+    {
+      "theme": "budget",
+      "start_station": "shichahai",
+      "default": true,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-budget-shichahai.svg",
+        "png": "img/nanluo_shichahai/route-budget-shichahai.png"
+      },
+      "svg_sha256": "66a53b9a8b1983b8b8543f810e51cd62e283c3b52e40cc3b4849d01b7df35d96",
+      "png_sha256": "77826ace64123aa59c2c5a9238529fbdf4fb8c238e5ba4d3de000bfda35bb567"
+    },
+    {
+      "theme": "budget",
+      "start_station": "beihai",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-budget-beihai.svg",
+        "png": "img/nanluo_shichahai/route-budget-beihai.png"
+      },
+      "svg_sha256": "f331c107cfeee345ea8094f8ad8dca657119fa2c428a4809e3eec79afc8ab89e",
+      "png_sha256": "2a4ca1c014e3c82b1de8cd1a0f5495c8bb4371c7d12599e33ef4a4854086cbbb"
+    },
+    {
+      "theme": "budget",
+      "start_station": "gulou",
+      "default": false,
+      "assets": {
+        "svg": "img/nanluo_shichahai/route-budget-gulou.svg",
+        "png": "img/nanluo_shichahai/route-budget-gulou.png"
+      },
+      "svg_sha256": "0329139614dea53ff623afc162829b3d0af64eff87308ff18280cca6ad6e8479",
+      "png_sha256": "5dfce664212802c82fa77b4bbb6a44d2b12b99472326c658ed50d2f229ab24b2"
+    }
+  ],
+  "rasterizer": "Chrome/155.0.8059.85"
+}

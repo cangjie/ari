@@ -1,6 +1,8 @@
 """清单发布的关键契约：不漏原表内容，不伪造地图与营业，问答和页面同源。"""
 import hashlib
 import json
+import math
+import xml.etree.ElementTree as ET
 from collections import Counter
 from pathlib import Path
 
@@ -13,6 +15,37 @@ KEY = 'nanluo_shichahai'
 
 def collection():
     return json.loads((ROOT / f'web_api/tour/data/{KEY}.json').read_text(encoding='utf-8'))
+
+
+def test_standalone_itinerary_maps_match_selected_origin_geometry_and_order():
+    m=collection()
+    manifest=json.loads((HERE/f'{KEY}_itinerary_maps.json').read_text())
+    assert len(manifest['maps'])==16
+    assert manifest['tour_sha256']==hashlib.sha256((ROOT/f'web_api/tour/data/{KEY}.json').read_bytes()).hexdigest()
+    ns={'s':'http://www.w3.org/2000/svg'}
+    for item in manifest['maps']:
+        theme=next(t for t in m['itineraries']if t['id']==item['theme'])
+        variant=next(v for v in theme['variants']if v['start_station']==item['start_station'])
+        assert item['assets']==variant['map_assets']
+        for ext in ['svg','png']:
+            raw=(ROOT/'web_api/tour'/item['assets'][ext]).read_bytes()
+            assert hashlib.sha256(raw).hexdigest()==item[f'{ext}_sha256']
+        tree=ET.fromstring((ROOT/'web_api/tour'/item['assets']['svg']).read_text())
+        assert tree.attrib['viewBox']=='0 0 1200 1600'
+        markers=tree.findall('.//s:g[@data-order]',ns)
+        assert [int(n.attrib['data-seq'])for n in markers]==[s['seq']for s in theme['steps']]
+        assert [int(n.attrib['data-order'])for n in markers]==list(range(1,len(markers)+1))
+        line=tree.find('.//s:path[@id="walking-route"]',ns).attrib['d']
+        points=[[float(v)for v in p.split()]for p in line[1:].split(' L')]
+        assert len(points)==len(variant['path'])
+        # 独立核对投影后的公共街道点落在线上，所有点在图框内，未把清单序号当顺序。
+        for marker in markers:
+            point=[float(marker.attrib['data-x']),float(marker.attrib['data-y'])]
+            assert min(math.dist(point,p)for p in points)<.03
+        assert all(70<=x<=1130 and 275<=y<=1045 for x,y in points)
+        endpoints=tree.findall('.//s:g[@data-station]',ns)
+        assert [n.attrib['data-station']for n in endpoints]==(['S/E']if variant['start_station']==variant['end_station']else['S','E'])
+        assert not tree.findall('.//s:script',ns) and not tree.findall('.//s:image',ns)
 
 
 def test_every_audited_record_keeps_its_identity_description_and_rating():

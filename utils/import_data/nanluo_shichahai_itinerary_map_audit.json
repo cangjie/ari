@@ -1,0 +1,17 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "tour_sha256": "c88b48977a4af08a9f810cc4fab0cae4d3b64643d35d647b1f90830a629ad5c9",
+  "map_manifest_sha256": "d2e0387b4d8557fb27a41d55df23e8047aec11b8ea6eb93516b3071ad4f944d9",
+  "result": {
+    "findings": [
+      {
+        "severity": "important",
+        "file": "web_api/tour/app.js",
+        "reason": "新增“线路图”主题切换使用独立状态 st.themeId，但点击事件处理中，选择主题 chip（data-map-theme）的分支只设置 st.themeId，并不清除原有路线选择（st.routeId，由 data-route 分支设置）；反过来，点击普通路线 chip 的既有分支也没有被修改为清除 st.themeId。结果是 themeSelection() 与 route() 可以同时为真：updateSpots() 中 `if (r || themed)` 会把来自 r（固定游览路线序号）与来自 themed.theme.steps（主题线路序号）的 ords 合并进同一个数组再拼接显示（如 '2–7'），导致地图图钉上出现两套互不相关顺序混合后的错误编号；同时 updateHUD 里 `$(\"route-summary\")`/`$(\"route-detail-body\")` 会先按 r 设值后又被 themed 覆盖，表现为点击切换时地图概览与图钉编号不一致。只要用户先点一个“全部景点”下的固定路线 chip，再点任一主题 chip（或反过来），就会复现。",
+        "recommendation": "在两个点击分支中互斥清空对方状态，例如选择 data-map-theme 时同时清空 st.routeId（并调用 stopTour()/等效复位逻辑），选择 data-route 时同时清空 st.themeId；或者让 themeSelection() 与 route() 在读取时就互斥（谁最近被设置谁生效，并把另一个置空），避免 updateSpots 中 ords 被两套序号同时写入。"
+      }
+    ],
+    "assessment": "除上述一项地图UI回归缺陷外，本轮新增内容未见明显实质性问题：SVG 生成脚本（generate_itinerary_maps.py）中坐标投影（project→xy 两段变换）、路径/标签与站点标记的坐标空间保持一致，箭头、比例尺、图例换行、S/E 标注逻辑在给定数据范围内自洽，--check 模式对 SVG 内容与 PNG 哈希的核验逻辑完整，不会把旧栅格图冒充为当前图；栅格化脚本（tour_itinerary_maps.mjs）对 SVG 哈希、页面加载完成状态、视口尺寸的处理与生成脚本保持一致，没有发现会产生错误 PNG 的逻辑漏洞。index.html/app.css 的改动仅为文案与样式调整，未发现回归。身份顺序（数字=游览顺序、点位=steps.point 公共参考点而非入口）、来源与距离/时长字段均未被此次改动触碰，也没有被重新计算或篡改，符合“只新增 map_assets 路径”的描述。建议先修复 app.js 中主题/路线状态互斥的问题，再进入完整浏览器场景回归。"
+  }
+}

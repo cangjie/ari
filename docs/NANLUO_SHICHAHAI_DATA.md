@@ -187,3 +187,22 @@ cd web_api && ./.venv/bin/python -m pytest tests/ -q
 最终聚焦复核`expansion_recheck.json`确认四项important均闭环，无critical/important待处理（返回的一项minor为空结构占位，无操作项）。地铁四站均改为各自线路的具体官网页面，留存GB2312原编码与HTTP200全文；所有主站均显式登记街道白名单，缺省即拒绝构建。主题地图自动框选线路、保持屏幕描边宽度，同站出发返回明确标示。最后一套20场景浏览器日志在忽略目录`exports/nanluo_expansion_browser_final.log`。本轮新增5次成功模型调用（Luna标签1次、Sonnet文字/源码审查及复核4次）、0次模型失败；累计108成功/4历史失败，计量不按相似型号估金额。原两馆问答材料逐字未变，业务库只读复查仍10馆31426条。
 
 内容提交`e688ad5`已推送并部署，服务器从清洁`8744700`快进，`ari-web-api`重启后active。68个首页/脚本/清单/三馆JSON/61张照片地址均HTTPS200且与本地逐字节一致；公网六场景通过，23条记录的24个图片元素实际解码（含全部16商铺），四条线路切换起点、路线绘制、稳定后顶栏、旧App桥接均通过。三处问答只读GET正常，服务器与本地三馆材料哈希相同；没有发送线上测试问题。Nginx、APK、原介绍/评级/Excel、原37点及原10张图均未变。发布记录为`nanluo_shichahai_expansion_public_report.json`，公网浏览器日志在忽略目录`exports/nanluo_expansion_browser_public.log`。
+### 独立游览线路图（2026-10-24）
+
+此前主题页仅有文字安排与需要另点按钮的互动连线。本轮补齐经典、文艺、历史、穷游四种主题各四个地铁起点，共16张独立SVG及16张1200×1600 PNG。主题页“线路图”直接预览，选择地铁起点同步换图，可放大或保存PNG；景点地图也可直接选择四条线路。
+
+底图与连线继续使用已审的OSM几何，所有图包含S/E地铁起终点、游览顺序编号、方向箭头、比例尺和完整名称图例。同站往返合并标记为S/E。互动地图改用线路顺序编号，只显示本线站点，位置为原步骤的公共街道参考点；“全部景点”恢复原37处位置及清单序号。路线不代表检票入口，开放、预约与过街设施以现场为准。原景点资料、评分、Excel、照片和道路方案均未重写。
+
+生成和只读核对：
+
+```sh
+utils/import_data/.venv/bin/python utils/import_data/tour_build.py --museum nanluo_shichahai
+utils/import_data/.venv/bin/python utils/import_data/tour_itinerary_maps.py --museum nanluo_shichahai
+node utils/import_data/tour_itinerary_maps.mjs nanluo_shichahai
+utils/import_data/.venv/bin/python utils/import_data/tour_itinerary_maps.py --museum nanluo_shichahai --check
+utils/import_data/.venv/bin/python utils/import_data/nanluo_shichahai_expansion_check.py --report-prefix itinerary_map
+```
+
+图片与清单留存在`web_api/tour/img/nanluo_shichahai/route-<主题>-<地铁站>.svg/png`及`utils/import_data/nanluo_shichahai_itinerary_maps.json`；清单绑定共享JSON与两种文件哈希。生成器不调用模型，不另抓地图瓦片或字体。App读取同源预览，打开大图由现有外链处理交给浏览器，无需改APK。
+
+最终本地92项pytest、20个浏览器场景通过；16组SVG/PNG实际解码、起点切换、顺序编号及整线可见性均检查通过。助手查看四默认图及16图联系表。两次独立文字/代码复核仍用`claude-sonnet-5`显式medium；首轮状态混用意见在当前互斥的数据模式下不可复现，仍加强两个入口的状态清空，复核后无新问题。互动地图长起终点标签缩为S/E，详情保留完整站名。原审核请求、结果与本轮2次成功/0次新模型失败计量保存在`nanluo_shichahai_itinerary_map_*`文件中；自动检查不等于现场或Android真机验收。

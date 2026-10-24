@@ -1,0 +1,39 @@
+{
+  "calls": [
+    {
+      "id": 3939,
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_itinerary_map_delivery",
+      "status": "ok",
+      "prompt_tokens": 2,
+      "cached_tokens": 0,
+      "completion_tokens": 11539,
+      "reasoning_tokens": null,
+      "latency_ms": 147810
+    },
+    {
+      "id": 3940,
+      "provider": "anthropic_cli",
+      "model": "claude-sonnet-5",
+      "effort": "medium",
+      "stage": "audit_itinerary_map_recheck",
+      "status": "ok",
+      "prompt_tokens": 4,
+      "cached_tokens": 6146,
+      "completion_tokens": 4261,
+      "reasoning_tokens": null,
+      "latency_ms": 58191
+    }
+  ],
+  "cumulative_status_counts": {
+    "ok": 110,
+    "error": 4
+  },
+  "limitations": [
+    "标准缓存的Claude输入计量仍有历史缺口；provider原始usage另留，不能当作完整账单。"
+  ],
+  "new_model_successes": 2,
+  "new_model_failures": 0
+}

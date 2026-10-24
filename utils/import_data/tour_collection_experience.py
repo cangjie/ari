@@ -149,6 +149,7 @@ def augment(data, config):
             walk=round(round(total)/60);stay=sum(s['minutes'] for s in steps)
             variants.append(dict(start_station=station['id'],end_station=end['id'],meters=round(total),
                                  walk_minutes=walk,stay_minutes=stay,total_minutes=walk+stay,
+                                 map_assets={ext:f'img/{data["key"]}/route-{theme["id"]}-{station["id"]}.{ext}' for ext in ['svg','png']},
                                  path=[xy(p) for p in points],path_wgs84=[list(p) for p in points],
                                  way_ids=sorted(all_ways),legs=legs))
         themes.append({**theme,'steps':steps,'variants':variants})

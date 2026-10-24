@@ -345,7 +345,9 @@
         '<label>地铁起点<select data-theme-start="' + esc(theme.id) + '">' + M.itinerary_stations.map(function (s) {
           return '<option value="' + esc(s.id) + '"' + (s.id === start ? ' selected' : '') + '>' + esc(s.name + ' · ' + s.lines.join('/') + '号线') + '</option>';
         }).join("") + '</select></label><p class="theme-summary">步行约 ' + (v.meters / 1000).toFixed(1) + ' 公里 · 约 ' + Math.floor(v.total_minutes / 60) + '小时' + (v.total_minutes % 60) + '分（停留 ' + v.stay_minutes + ' + 步行 ' + v.walk_minutes + ' 分钟，均为估计）</p>' +
-        '<p>终点：' + esc(station(v.end_station).name) + (v.start_station === v.end_station ? '（同站往返）' : '') + '</p><button class="btn btn-primary" type="button" data-theme-map="' + esc(theme.id) + '">在地图看这条线路</button>' +
+        '<p>终点：' + esc(station(v.end_station).name) + (v.start_station === v.end_station ? '（同站往返）' : '') + '</p>' +
+        (v.map_assets ? '<figure class="theme-map-preview"><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener"><img src="' + esc(v.map_assets.svg) + '" width="1200" height="1600" loading="lazy" alt="' + esc(theme.name + '线路图，' + station(start).name + '出发；数字表示游览顺序') + '"></a><figcaption>点击线路图可放大查看 · S起点 / E终点 · 数字为游览顺序</figcaption></figure><div class="theme-map-actions"><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener">打开完整线路图</a><a href="' + esc(v.map_assets.png) + '" download>保存PNG图片</a></div>' : '') +
+        '<button class="btn btn-primary" type="button" data-theme-map="' + esc(theme.id) + '">在互动地图查看线路</button>' +
         '<ol>' + theme.steps.map(function (step) {
           return '<li><button class="theme-stop" type="button" data-place="' + esc(M.stops[step.seq].place) + '">' + esc(step.name.zh) + '</button> · 约' + step.minutes + '分钟<p>' + esc(step.note) + '</p>' +
             (step.related.length ? '<p>沿途可选：' + step.related.map(function (seq) { return '<button class="theme-stop" type="button" data-place="' + esc(M.stops[seq].place) + '">' + esc(M.stops[seq].name.zh) + '</button>'; }).join('、') + '</p>' : '') + '</li>';
@@ -382,8 +384,9 @@
     var themed = themeSelection();
     if (themed) {
       var path = themed.variant.path;
-      addLabel("route", "地铁起点", path[0][0], path[0][1]);
-      addLabel("route", "地铁终点", path[path.length - 1][0], path[path.length - 1][1]);
+      var loop = themed.variant.start_station === themed.variant.end_station;
+      addLabel("route", loop ? "S/E" : "S", path[0][0], path[0][1]);
+      if (!loop) addLabel("route", "E", path[path.length - 1][0], path[path.length - 1][1]);
     }
     if (!isCollection()) addLabel("gate", M.entrance.name.zh, M.entrance.x, M.entrance.y + 16);
 
@@ -413,6 +416,10 @@
     var chips = M.routes.map(function (r) {
       return '<button class="chip" type="button" data-route="' + esc(r.id) + '">' + esc(r.label.zh) + "</button>";
     });
+    if (M.itineraries) {
+      chips.push('<button class="chip" type="button" data-map-theme="">全部景点</button>');
+      M.itineraries.forEach(function (t) { chips.push('<button class="chip" type="button" data-map-theme="' + esc(t.id) + '">' + esc(t.name) + '</button>'); });
+    }
     if (!hasBrowseMap()) chips.push('<button class="chip" type="button" data-route="none">不显示路线</button>');
     $("chips").innerHTML = chips.join("");
     $("chips").hidden = !chips.length;
@@ -463,11 +470,14 @@
     $("base").setAttribute("height", c.h * k);
     $("pan").style.width = px(c.w);
     $("pan").style.height = px(c.h);
+    var themed = themeSelection();
     mapPlaces().forEach(function (p) {
       var s = spots[p.id];
-      s.btn.style.left = px(p.x);
-      s.btn.style.top = px(p.y);
-      s.btn.hidden = k < (p.min_zoom || 0);
+      var step = themed && themed.theme.steps.filter(function (v) { return M.stops[v.seq].place === p.id; })[0];
+      var point = step ? project(step.point[0], step.point[1]) : [p.x, p.y];
+      s.btn.style.left = px(point[0]);
+      s.btn.style.top = px(point[1]);
+      s.btn.hidden = themed ? !step : k < (p.min_zoom || 0);
       s.ring.hidden = !Number.isFinite(p.r);
       s.ring.style.left = px(p.x - (p.r || 0));
       s.ring.style.top = px(p.y - (p.r || 0));
@@ -493,7 +503,7 @@
     var r = route();
     var themed = themeSelection();
     Array.prototype.forEach.call($("chips").children, function (b) {
-      b.classList.toggle("on", b.getAttribute("data-route") === (r ? r.id : "none"));
+      b.classList.toggle("on", b.hasAttribute("data-map-theme") ? b.getAttribute("data-map-theme") === (st.themeId || "") : b.getAttribute("data-route") === (r ? r.id : "none"));
     });
     $("route-summary").textContent = r
       ? r.stops.length + " 站 · 约 " + r.total + " 分钟（停留 " + r.stay + " + 步行 " + r.walk + "）· 入口出发并返回" + (r.fee ? " · " + r.fee.zh : "")
@@ -511,22 +521,28 @@
       : "");
     if (themed) {
       var t = themed.theme, v = themed.variant;
-      $("route-summary").textContent = t.name + " · 约" + (v.meters / 1000).toFixed(1) + "公里 · 估计" + v.total_minutes + "分钟（停留" + v.stay_minutes + "+步行" + v.walk_minutes + "）· 无到站提醒";
+      $("route-summary").textContent = t.name + " · 约" + (v.meters / 1000).toFixed(1) + "公里 · 估计" + v.total_minutes + "分钟（停留" + v.stay_minutes + "+步行" + v.walk_minutes + "）· 数字为游览顺序 · 无到站提醒";
       $("ly-route").setAttribute("d", "M" + v.path.map(function (q) { return q[0] + " " + q[1]; }).join(" L"));
       $("route-details").hidden = false;
-      $("route-detail-body").innerHTML = '<p>' + esc(t.fee) + '</p><p>' + esc(t.access) + '</p><p>' + esc(M.itinerary_policy) + '</p>' + sourceLinks(t.sources);
+      var stations = M.itinerary_stations.filter(function (s) { return s.id === v.start_station || s.id === v.end_station; });
+      function stationName(id) { return stations.filter(function (s) { return s.id === id; })[0].name; }
+      $("route-detail-body").innerHTML = '<p>S起点：' + esc(stationName(v.start_station)) + '；E终点：' + esc(stationName(v.end_station)) + '</p><ol>' + t.steps.map(function (s) { return '<li>' + esc(s.name.zh) + '</li>'; }).join('') + '</ol>' +
+        (v.map_assets ? '<p><a href="' + esc(v.map_assets.svg) + '" target="_blank" rel="noopener">打开完整线路图</a> · <a href="' + esc(v.map_assets.png) + '" download>保存PNG图片</a></p>' : '') +
+        '<p>' + esc(t.fee) + '</p><p>' + esc(t.access) + '</p><p>' + esc(M.itinerary_policy) + '</p>' + sourceLinks(t.sources);
     }
     updateSpots();
   }
 
   function updateSpots() {
     var r = route();
+    var themed = themeSelection();
     var seen = {};
     st.msgs.forEach(function (m) { seen[m.pid] = true; });
     mapPlaces().forEach(function (p, i) {
       var s = spots[p.id], ords = r ? placeOrdinals(r, p.id) : [];
+      if (themed) themed.theme.steps.forEach(function (step, order) { if (M.stops[step.seq].place === p.id) ords.push(order + 1); });
       var num = isCollection() ? String(p.stops[0]) : pad2(i + 1);
-      if (r) num = ords.length > 2 ? ords[0] + "–" + ords[ords.length - 1] : (ords.join("·") || "·");
+      if (r || themed) num = ords.length > 2 ? ords[0] + "–" + ords[ords.length - 1] : (ords.join("·") || "·");
       s.num.textContent = num;
       s.btn.classList.toggle("on-route", ords.length > 0);
       s.btn.classList.toggle("dim", !!r && !ords.length);
@@ -1246,7 +1262,7 @@
     });
     $("collection-themes").addEventListener("click", function (e) {
       var map = e.target.closest("[data-theme-map]"), place = e.target.closest("[data-place]"), jump = e.target.closest("[data-theme-jump]");
-      if (map) { st.themeId = map.getAttribute("data-theme-map"); collectionView(true); }
+      if (map) { st.routeId = "none"; st.themeId = map.getAttribute("data-theme-map"); collectionView(true); }
       else if (place) openIntro(place.getAttribute("data-place"));
       else if (jump) {
         var pane = $("collection-themes"), target = pane.querySelector('[data-theme="' + jump.getAttribute("data-theme-jump") + '"]');
@@ -1272,10 +1288,13 @@
       updateSheets();
     });
     $("chips").addEventListener("click", function (e) {
+      var theme = e.target.closest("[data-map-theme]");
+      if (theme) { st.routeId = "none"; st.themeId = theme.getAttribute("data-map-theme") || null; collectionView(true); return; }
       var b = e.target.closest("[data-route]");
       if (!b) return;
       stopTour();
       st.tourIdx = null;
+      if (st.themeId) { st.themeId = null; buildMap(); layout(); }
       st.routeId = b.getAttribute("data-route");
       save();
       updateRoute();
