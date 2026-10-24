@@ -1,0 +1,878 @@
+{
+  "checked_on": "2026-10-24T09:00:14.122036+08:00",
+  "commit": "ef0ffe312e0ff33a3fe40684f838a800990fd604",
+  "public": true,
+  "url": "https://tour.snowmeet.top/#nanluo_shichahai",
+  "records": 100,
+  "photo_records": 60,
+  "published_images": 61,
+  "image_bytes": 6915231,
+  "shops_with_photos": 16,
+  "dianping_shops": 12,
+  "authorized_official_shops": [
+    92,
+    93,
+    94,
+    99
+  ],
+  "map_positions": 37,
+  "themes": [
+    {
+      "name": "经典游览线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "beihai",
+        "meters": 4050,
+        "walk_minutes": 68,
+        "stay_minutes": 240,
+        "total_minutes": 308,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-classic-nanluo.svg",
+          "png": "img/nanluo_shichahai/route-classic-nanluo.png"
+        }
+      }
+    },
+    {
+      "name": "文艺观光线路",
+      "variants": 4,
+      "default": {
+        "start_station": "nanluo",
+        "end_station": "shichahai",
+        "meters": 3152,
+        "walk_minutes": 53,
+        "stay_minutes": 155,
+        "total_minutes": 208,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-arts-nanluo.svg",
+          "png": "img/nanluo_shichahai/route-arts-nanluo.png"
+        }
+      }
+    },
+    {
+      "name": "历史探索线路",
+      "variants": 4,
+      "default": {
+        "start_station": "beihai",
+        "end_station": "gulou",
+        "meters": 6262,
+        "walk_minutes": 104,
+        "stay_minutes": 235,
+        "total_minutes": 339,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-history-beihai.svg",
+          "png": "img/nanluo_shichahai/route-history-beihai.png"
+        }
+      }
+    },
+    {
+      "name": "穷游线路",
+      "variants": 4,
+      "default": {
+        "start_station": "shichahai",
+        "end_station": "nanluo",
+        "meters": 5771,
+        "walk_minutes": 96,
+        "stay_minutes": 145,
+        "total_minutes": 241,
+        "map_assets": {
+          "svg": "img/nanluo_shichahai/route-budget-shichahai.svg",
+          "png": "img/nanluo_shichahai/route-budget-shichahai.png"
+        }
+      }
+    }
+  ],
+  "standalone_maps": 16,
+  "svg_maps": 16,
+  "png_maps": 16,
+  "gps": {
+    "points": 21,
+    "radius_m": 25,
+    "area_basis": "osm-snapshot-bbox"
+  },
+  "source_rating_workbook_unchanged": true,
+  "old_10_photos_unchanged": true,
+  "public_assets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 9525,
+      "sha256": "11209c3b718555c49edd2bf9edfb9217985a34c73340c26245d8f0a29d3ca4d7",
+      "matches_local": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 71895,
+      "sha256": "cbc725881497f8db001514fcb157638e1b35f9dd13f91fb3984d62fbd169df63",
+      "matches_local": true
+    },
+    {
+      "path": "app.css",
+      "status": 200,
+      "bytes": 27219,
+      "sha256": "309dbfb650827141af00b223d63658c6c6de4424fa28513e1abcabdc37d461dc",
+      "matches_local": true
+    },
+    {
+      "path": "catalog.json",
+      "status": 200,
+      "bytes": 73,
+      "sha256": "2fa497eaa88ad4699e4153093f855d459f006773b21feebda5aca10bf9d48569",
+      "matches_local": true
+    },
+    {
+      "path": "data/wmhg.json",
+      "status": 200,
+      "bytes": 44215,
+      "sha256": "13fb2cc2ee386f665e57b3e2b1cb7ee5ae86e56ffd9f4dfc55b3e15a9c1bc761",
+      "matches_local": true
+    },
+    {
+      "path": "data/wanping.json",
+      "status": 200,
+      "bytes": 130706,
+      "sha256": "6345635598856b6de3f10f98524d1859f82579a437a2a46d87a664716a73ed24",
+      "matches_local": true
+    },
+    {
+      "path": "data/nanluo_shichahai.json",
+      "status": 200,
+      "bytes": 875095,
+      "sha256": "b0e5737c7a434f0375cc67b121402adee1e4355bdb7e13ecc81085c393772583",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/1.jpg",
+      "status": 200,
+      "bytes": 100332,
+      "sha256": "6b066d45173564f47a9fd2b2017c249e49720a83535265fabb433e22c9ec4709",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/22.jpg",
+      "status": 200,
+      "bytes": 57578,
+      "sha256": "63a4b233a6648e28c020f22c342f9261a29c0b6289a8930266b5311809870b4d",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/32.jpg",
+      "status": 200,
+      "bytes": 114615,
+      "sha256": "9b09f9248195ceb5f3d62cd914283751c5dcbbb1b4a2565adf4a1fed58a5c420",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/37.jpg",
+      "status": 200,
+      "bytes": 233811,
+      "sha256": "314d9ef41ee12bf5a36c8aacb0b5e86a1ada71423c939fa6680e65cb5a64f213",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/41.jpg",
+      "status": 200,
+      "bytes": 76133,
+      "sha256": "db798bebbc975e0bae0376a0c2d8f6c6f93cd5c43cff2623c0c783d51f5618f4",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/48.jpg",
+      "status": 200,
+      "bytes": 14868,
+      "sha256": "942d44018d30743ff6dd20d0c13b07f7dacecd843004f2cf79c97847d21fe5e8",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/49.jpg",
+      "status": 200,
+      "bytes": 126985,
+      "sha256": "e93d70bbe223d882d3228e7aa0f5aff72c516674bbad7b58721205b5f584aa79",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/59.jpg",
+      "status": 200,
+      "bytes": 40789,
+      "sha256": "8be8a7bc82bc30d09247874c6ac515fd5f15905e6a8a99d2cc47b7ce19598903",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/61.jpg",
+      "status": 200,
+      "bytes": 61126,
+      "sha256": "fa9ca9ff8760a9902a4d7ecd5317de0e929251c77894db1d0078caa3cec58597",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/96.jpg",
+      "status": 200,
+      "bytes": 66588,
+      "sha256": "f22c35dfadc05b3905d9aea54755f31ffb75b538d4c14535032d7c52cc72e6bd",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/4.jpg",
+      "status": 200,
+      "bytes": 108060,
+      "sha256": "ad1c3b9774892dbf8d93c1969b86eb664f7490a7e4663f07c91a54132883e831",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/17.jpg",
+      "status": 200,
+      "bytes": 200534,
+      "sha256": "e298a89d1f15ec643b617db00df2b420b4a41ae1f8dc8a58427e268c2a1a38d4",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/18.jpg",
+      "status": 200,
+      "bytes": 80803,
+      "sha256": "9c411671bddd0c02d99935a477a2595ba1d071c0e093037f474915a68753b7f6",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/20.jpg",
+      "status": 200,
+      "bytes": 297018,
+      "sha256": "44e5a60e0cabf3022dddad036a9c19a94d3163464a4139aab6a2780e3dce65ef",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/23.jpg",
+      "status": 200,
+      "bytes": 253967,
+      "sha256": "79cee5a1e53f2e57db16dc38d9b22436aa97c299713f3c8b6cddcb67de74c443",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/38.jpg",
+      "status": 200,
+      "bytes": 330713,
+      "sha256": "0ef74026c203c9862325f58ae40771b98ad08dff6de5d96342692526feeb7e95",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/42.jpg",
+      "status": 200,
+      "bytes": 134648,
+      "sha256": "4e1631c34b08be727ac53455842abd24e97ebde01fcde1fb60db363318f434dd",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/43.jpg",
+      "status": 200,
+      "bytes": 92819,
+      "sha256": "146466ce30193f6f1bc73c139427baadcbdcb06ac758f5aed724b344005c1ae9",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/44.jpg",
+      "status": 200,
+      "bytes": 265810,
+      "sha256": "633230183b636274e36bbde605e0fedaba12d452d894eb9b595e4a585c90d3a2",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/45.jpg",
+      "status": 200,
+      "bytes": 196371,
+      "sha256": "d464be1958692ccd621d77889050a955ef576b064c039bb5eb6edd8a718ede91",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/46.jpg",
+      "status": 200,
+      "bytes": 51247,
+      "sha256": "4d4b7747c034d3ccaa8f4ae82fdd9eb4a2201b4008049a3e8ec35e864d5417eb",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/47.jpg",
+      "status": 200,
+      "bytes": 111259,
+      "sha256": "1e5d458c17ee6260a4178ffd57b8fbe79d4fbd69c373e762c3e9b8586ae770d9",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/50.jpg",
+      "status": 200,
+      "bytes": 32149,
+      "sha256": "6e994c0074748ad344ecc041b38eccd46badd6096e6c66648199a9b4f037d35f",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/52.jpg",
+      "status": 200,
+      "bytes": 280177,
+      "sha256": "231c24452cd3aa089e2eb855f97b9143fdd0d9ff655845fc697347ededcf1528",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/53.jpg",
+      "status": 200,
+      "bytes": 226942,
+      "sha256": "4aa453f04f3936c8892a2c1a24f04eac118a47e0a688cb25821cedb16ae48a8b",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/54.jpg",
+      "status": 200,
+      "bytes": 297922,
+      "sha256": "501b4832b7bca512b75abe3cd29f960a791cbf09902eb9dd6bcfcb6ab19ae7f8",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/57.jpg",
+      "status": 200,
+      "bytes": 118475,
+      "sha256": "7c12d972680d6b1e4f4a744e4f66da05a2c5c93a086d59120bd587800eac428f",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/58.jpg",
+      "status": 200,
+      "bytes": 229232,
+      "sha256": "4e1d63c8d6f9a7a8f9b983239339d1c04cc947fd0237eaffe13ba6792b09cde0",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/62.jpg",
+      "status": 200,
+      "bytes": 236138,
+      "sha256": "8bae9317f79ca1145303f89c4c04d7d857d6aada5c03ebdb0d9d42eb1a918b06",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/69.jpg",
+      "status": 200,
+      "bytes": 90498,
+      "sha256": "dbc29a817a2195b5598ab4f73154e37080f3ffcf808d4d778a768da992c552b1",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/70.jpg",
+      "status": 200,
+      "bytes": 115175,
+      "sha256": "a8478d59021dad832d92416b0c443f26e68629d5ff5f4f659d3ea31eea64a102",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/71.jpg",
+      "status": 200,
+      "bytes": 123785,
+      "sha256": "80e285b0744d45b386e250886d717b20e9c4f08569ca8fd9e2ada19c4faf467d",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/72.jpg",
+      "status": 200,
+      "bytes": 62238,
+      "sha256": "f67c7dc9e853d6f09a376589724b09785fc27ca9991013ee315ac9dadfd0b395",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/73.jpg",
+      "status": 200,
+      "bytes": 72368,
+      "sha256": "b79d90175decc174325d3b7c7985b1a6fd4806bcf927f34c08b558e5a9dc6978",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/74.jpg",
+      "status": 200,
+      "bytes": 99512,
+      "sha256": "8a5be526796d3f7bf297fe278c184a5a8785a386614dde4e2fde96e391ef8097",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/75.jpg",
+      "status": 200,
+      "bytes": 103707,
+      "sha256": "ab8beb46c2d1e665b5d6c0ac39f56bac6f773907de4137396df0ca2905973669",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/76.jpg",
+      "status": 200,
+      "bytes": 85640,
+      "sha256": "d6e2d13f7621722218173b98aded3ad289840a0c91ac602da51f452181c2d09e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/77.jpg",
+      "status": 200,
+      "bytes": 72989,
+      "sha256": "210ee279517eac0341afbb4112222ab75645d62c94b76438c781252ebabacb40",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/78.jpg",
+      "status": 200,
+      "bytes": 92766,
+      "sha256": "8c96d62b0fe2b15b53176bc4266674872e5bcac6c95e7f880ef8612857199e93",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/79.jpg",
+      "status": 200,
+      "bytes": 63566,
+      "sha256": "c1f1983fdafe65eb1f61e6fdb6d50338a7581196ec8c273bb96030ee0332a012",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/80.jpg",
+      "status": 200,
+      "bytes": 186099,
+      "sha256": "c9d905ce177e10c3e95b88e25f000baeec7c336fda6f5908e5761059cc01655c",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/81.jpg",
+      "status": 200,
+      "bytes": 83461,
+      "sha256": "8c03a910180f8a836d67572645bc4aa83451f3b99594f1539711e8734e9fcc92",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/82.jpg",
+      "status": 200,
+      "bytes": 146729,
+      "sha256": "afc4806a7a463e28eea059bda270f87a53a1fa95bb9c103aea867c379a84fc90",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/83.jpg",
+      "status": 200,
+      "bytes": 114747,
+      "sha256": "e08682f6e624a96472c1eb9b03d96bee8077d6f2dff700d9c94f415dc84bbefc",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/84.jpg",
+      "status": 200,
+      "bytes": 77272,
+      "sha256": "deb953d5d74fda73e3c1c0ad2fd8cbd531dd8bdce59f51db2ed2b04c3056af82",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/85.jpg",
+      "status": 200,
+      "bytes": 12670,
+      "sha256": "77084f1dbae310d31d79b69a92dcee6d095b8cf941b6ef289fa529ccd0d2a945",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/86.jpg",
+      "status": 200,
+      "bytes": 15363,
+      "sha256": "e983bc1c3e4e4af9c057faa31a626b65214e3d7cc664831931b04dfd6d256aac",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/87.jpg",
+      "status": 200,
+      "bytes": 16261,
+      "sha256": "c8b95caee288bef8bc3c49a925dc5659549cdcc6efd8ee908fbea89a13dccb1b",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/88.jpg",
+      "status": 200,
+      "bytes": 12438,
+      "sha256": "840ce2ee1d13ccfe962f775a28a3a02f8feed0595657a24b35146e1ce1c26d96",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/89.jpg",
+      "status": 200,
+      "bytes": 10713,
+      "sha256": "3230d8a31fd279ebf872e8beb799d31dbb50607915f2d564843f9e65115e8106",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/90.jpg",
+      "status": 200,
+      "bytes": 18616,
+      "sha256": "bc4efebbb0c1faa4ff815f3859c2b9606e3cdb661e45b2a9d564becf383851cd",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/91.jpg",
+      "status": 200,
+      "bytes": 15002,
+      "sha256": "f31f63e20ca953487ed80d1f06e3273e94dcd190958ee65d4d12c4299fdd6181",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/92.jpg",
+      "status": 200,
+      "bytes": 187041,
+      "sha256": "7d74e2bcf303d0fef07d28ce0026470b98ac401b47ba5db3e282e7ba9f9893d0",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/93.jpg",
+      "status": 200,
+      "bytes": 256857,
+      "sha256": "c0246ad24c95f126179017adacddbeb24130ad3723f27393096d1a0e595bea5f",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/94.jpg",
+      "status": 200,
+      "bytes": 246151,
+      "sha256": "68a7d5631fc62c1041dcb7d59c96cbcd636650a6d30f2686387542326bb38012",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/95.jpg",
+      "status": 200,
+      "bytes": 15070,
+      "sha256": "7d737b5eff046bea30fab438fafc1770ec20eb904ffe40425d25096506e28653",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/97.jpg",
+      "status": 200,
+      "bytes": 12226,
+      "sha256": "c7705170111c74455a3d8059679a3ff137ee1871dd7d02f396f05dcace764e01",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/98.jpg",
+      "status": 200,
+      "bytes": 13894,
+      "sha256": "ccee9bcacaeecc7a5392bc748fcedbcc6a5d10eb92cb51b266d9f9d1a22a4a78",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/99.jpg",
+      "status": 200,
+      "bytes": 29096,
+      "sha256": "6deb8c49f8e5df3941848e67b5ba42ec65c14823471df83cf1efb8f4da8d92c2",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/100.jpg",
+      "status": 200,
+      "bytes": 13855,
+      "sha256": "2e5da7035f35a2a586f026c6276f58f2dc4b39fa044984c2a7f9fc5bf1372fc8",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/96-dp.jpg",
+      "status": 200,
+      "bytes": 12317,
+      "sha256": "890f0a21fff580ab7d6dddebf7c0130cf5af9b2506ad27747e927dc7fbf77cc1",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-nanluo.svg",
+      "status": 200,
+      "bytes": 125819,
+      "sha256": "8ef57a50c3d5558901f7115643e62906787e92dce4a33758d7119b69a8cdbdf2",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-nanluo.png",
+      "status": 200,
+      "bytes": 218393,
+      "sha256": "cec786c42c8d3bd641aa8ce2b492cc7236e8e56383a64c88a1239aa53d43c9dd",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-shichahai.svg",
+      "status": 200,
+      "bytes": 126041,
+      "sha256": "f97bce5e4108d59be395cd662a82f869da1ea19b127fe4da12da80f1f7e6a114",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-shichahai.png",
+      "status": 200,
+      "bytes": 217800,
+      "sha256": "7d326a38f786a1a93c8912175072a0cddaf1dd23bc847288359bbdd321eaf822",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-beihai.svg",
+      "status": 200,
+      "bytes": 126512,
+      "sha256": "761627f1f8bc62bfb6fb61851776726d958d5895cf5cc704ab5d48291d2acd6e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-beihai.png",
+      "status": 200,
+      "bytes": 219307,
+      "sha256": "123b452fd136c0ba0276c05a32ceae548c656c681943a840d3b5ea6b7dd1fce2",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-gulou.svg",
+      "status": 200,
+      "bytes": 126720,
+      "sha256": "818d86d6811221dac364a9df50ed55d22282aa1b81c7d93b3079163b136db097",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-classic-gulou.png",
+      "status": 200,
+      "bytes": 226963,
+      "sha256": "75d42ed3c71b4239bbfa841a2d7e54de86fe287883d2c075e87236f53630a34f",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-nanluo.svg",
+      "status": 200,
+      "bytes": 124082,
+      "sha256": "2922a06df84236b886d760c89dd2bb04e7bb2a0e571685810b07d70933e972b0",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-nanluo.png",
+      "status": 200,
+      "bytes": 180950,
+      "sha256": "167713726017d8878e2b64682c5b5d23d56e4718799b62796eafb560575d58c5",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-shichahai.svg",
+      "status": 200,
+      "bytes": 124550,
+      "sha256": "2a8e205eec40c32520bfea6670cbc63c05e79b3b9f799b420384bd3b7ae3d0ee",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-shichahai.png",
+      "status": 200,
+      "bytes": 182441,
+      "sha256": "0fa264287ecfb84ea926818ef21936df956960186532421ba8587fc51e6fbb4e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-beihai.svg",
+      "status": 200,
+      "bytes": 124857,
+      "sha256": "34b9381fc3025e02f4c6f02f3bb9fa6eec1675cb019d399dc40fd5a731a4295a",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-beihai.png",
+      "status": 200,
+      "bytes": 212399,
+      "sha256": "7b59c8f0ec9017ffb10271aef39d18b69c2cc024f44fb6d7ba8ad37850c6bce1",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-gulou.svg",
+      "status": 200,
+      "bytes": 125638,
+      "sha256": "114c38f33aa9e286215f24e8ca8df8c322e8a154b9e1e565fb3ec0ebe997a131",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-arts-gulou.png",
+      "status": 200,
+      "bytes": 209071,
+      "sha256": "10a4ecde08923f2b9ef77f60066bbe06109c3cbca535d0d188bb2d51059b13d9",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-nanluo.svg",
+      "status": 200,
+      "bytes": 127771,
+      "sha256": "15664faa963a8539e132cf144027e44af61bbc25e5e3d5c5bbe65c3297dbfad9",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-nanluo.png",
+      "status": 200,
+      "bytes": 241554,
+      "sha256": "c5409a85a635f7a67a050a1211a63fec035fbc9b0a8624a43a9b9b3e11734eba",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-shichahai.svg",
+      "status": 200,
+      "bytes": 128104,
+      "sha256": "24dcd1a4780389bd4d09ae8e9e587778c47531c5b00db5da5d44706d371462b6",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-shichahai.png",
+      "status": 200,
+      "bytes": 245193,
+      "sha256": "50f44b4172a1747e01e6fd11edfe4d6a9c1ea8b6b58d88b84db9697a30cfd829",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-beihai.svg",
+      "status": 200,
+      "bytes": 127161,
+      "sha256": "0f191c4a10245bbd3146e449276d344e4b2938a756423d26884ab8616a440001",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-beihai.png",
+      "status": 200,
+      "bytes": 242873,
+      "sha256": "337ff27a4ef07d570d654874be29148742567935c29f89b789e1fca70b89a85e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-gulou.svg",
+      "status": 200,
+      "bytes": 128413,
+      "sha256": "201e13ade3b2263b8ceb1ee52a93246d2de8aa1d32d32bc845d130dde45bc25e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-history-gulou.png",
+      "status": 200,
+      "bytes": 244619,
+      "sha256": "7a55b1d900b4778efa91ae169e16a968a28f90c6178f91e7acf2a0eb11eee584",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-nanluo.svg",
+      "status": 200,
+      "bytes": 127704,
+      "sha256": "553781da70c65bf912bb47960b5a305ae8269e89f83fabb56471667e6eeee063",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-nanluo.png",
+      "status": 200,
+      "bytes": 219639,
+      "sha256": "7a2d491d199a271d95e1bf72006f4c3a84e9a6ec7f1d9e5d94be54e8c25f47ab",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-shichahai.svg",
+      "status": 200,
+      "bytes": 127880,
+      "sha256": "66a53b9a8b1983b8b8543f810e51cd62e283c3b52e40cc3b4849d01b7df35d96",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-shichahai.png",
+      "status": 200,
+      "bytes": 214141,
+      "sha256": "77826ace64123aa59c2c5a9238529fbdf4fb8c238e5ba4d3de000bfda35bb567",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-beihai.svg",
+      "status": 200,
+      "bytes": 127379,
+      "sha256": "f331c107cfeee345ea8094f8ad8dca657119fa2c428a4809e3eec79afc8ab89e",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-beihai.png",
+      "status": 200,
+      "bytes": 222317,
+      "sha256": "2a4ca1c014e3c82b1de8cd1a0f5495c8bb4371c7d12599e33ef4a4854086cbbb",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-gulou.svg",
+      "status": 200,
+      "bytes": 128553,
+      "sha256": "0329139614dea53ff623afc162829b3d0af64eff87308ff18280cca6ad6e8479",
+      "matches_local": true
+    },
+    {
+      "path": "img/nanluo_shichahai/route-budget-gulou.png",
+      "status": 200,
+      "bytes": 229692,
+      "sha256": "5dfce664212802c82fa77b4bbb6a44d2b12b99472326c658ed50d2f229ab24b2",
+      "matches_local": true
+    }
+  ],
+  "public_qa": [
+    {
+      "key": "wmhg",
+      "place": "tongde",
+      "status": 200,
+      "read_only_get": true
+    },
+    {
+      "key": "wanping",
+      "place": "east_gate",
+      "status": 200,
+      "read_only_get": true
+    },
+    {
+      "key": "nanluo_shichahai",
+      "place": "guomoruo",
+      "status": 200,
+      "read_only_get": true
+    }
+  ],
+  "public_posts_sent": 0,
+  "apk_rebuilt": false,
+  "android_device_verified": false,
+  "nginx_changed": false,
+  "deployed_content_commit": "ef0ffe3",
+  "server_service": "active",
+  "service_restarted": true,
+  "public_browser": {
+    "scenes": [
+      "collection_gps",
+      "collection_host",
+      "collection_experience",
+      "live",
+      "wanping"
+    ],
+    "all_passed": true,
+    "log": "exports/nanluo_gps_browser_public.log",
+    "geolocation_input": "Chrome DevTools模拟位置，经真实navigator.watchPosition；非现场GPS或Android真机"
+  },
+  "local_tests": {
+    "passed": 92,
+    "skipped": 3,
+    "log": "exports/nanluo_gps_pytest.log"
+  },
+  "local_browser": {
+    "scenes": 21,
+    "all_passed": true,
+    "log": "exports/nanluo_gps_browser_final.log",
+    "final_gps_and_native_focus_log": "exports/nanluo_gps_browser_focus.log",
+    "final_gps_and_native_focus_passed": true
+  },
+  "android": {
+    "unit_tests": 13,
+    "all_passed": true,
+    "production_code_changed": false,
+    "apk_rebuilt": false,
+    "device_verified": false,
+    "log": "exports/nanluo_gps_android_unit.log"
+  },
+  "independent_review": {
+    "model": "claude-sonnet-5",
+    "effort": "medium",
+    "critical": 0,
+    "important": 0,
+    "minor_resolved": 1,
+    "report": "nanluo_shichahai_gps_audit.json",
+    "disposition": "nanluo_shichahai_gps_review_disposition.json"
+  },
+  "qa_material_sha256": {
+    "wmhg": "d8d952e380cc3fd2f52dc4ccb51c55ce3a416dda777baabbd2cb866c079fb2eb",
+    "wanping": "e8c455e9edde2949673e91e226797dfb679dc89e39c37b9a6ee41b31d2adcdef",
+    "nanluo_shichahai": "0ae7b431a7c8529132ca4930edd90706b3532474ae4473cc0ec424561ea9e494"
+  },
+  "server_and_local_qa_materials_equal": true,
+  "old_two_qa_materials_unchanged": true,
+  "original_places_stops_routes_photos_unchanged": true,
+  "all_32_standalone_map_bytes_unchanged": true,
+  "model_successes_this_work": 1,
+  "model_failures_this_work": 0,
+  "cumulative_model_successes": 111,
+  "cumulative_historical_model_failures": 4
+}

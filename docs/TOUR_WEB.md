@@ -488,3 +488,5 @@ App继续打开线上Web，原APK不变；首页显示完整服务器清单，�
 四条主题线路通过“开始GPS导览”显示当前位置、跟随地图及到附近提醒；回到清单或线路图页退出当前导览。21处GPS点单独放在`navigation`，采用原线路公共街道参考点及25米估计提醒范围，精度超过30米不新增提醒；资料框只是GPS覆盖范围，不是行政边界。原37处浏览坐标及静态线路图不变。
 
 App原生解析器通过网页发送副本读取21点，沿用既有GPS、网络定位不提醒、迟滞和通知逻辑；不重复调用浏览器定位，不改APK。Web继续复用现有定位实现。GPS说明进入游客问答材料，本轮部署须重启`ari-web-api`；无需改Nginx。完整来源、自动检查和限制见`docs/NANLUO_SHICHAHAI_DATA.md`及`nanluo_shichahai_gps_*report.json`。
+
+`ef0ffe3`已部署、服务重启后active；100个公开静态文件与本地一致，公网五场景通过，三处问答GET及服务器/本地材料哈希一致。92项pytest、21个本地浏览器场景、13项Android单元测试通过；Sonnet 5 medium复核无critical/important，minor距离说明已处理。未做真机现场GPS验收。

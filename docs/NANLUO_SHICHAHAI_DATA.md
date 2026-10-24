@@ -220,3 +220,5 @@ Web沿用现有`watchPosition`及精度/迟滞逻辑；App继续由既有原生�
 本地92项pytest、21个浏览器场景、13项Android单元测试通过。新增浏览器场景经真实`navigator.geolocation.watchPosition`通路输入模拟定位，检查精度不足、恢复、重复到站、短暂超时、范围外、拒绝授权与监听清理；App桥接另检查21点解析、原生状态回传及浏览器GPS未启动。以上不替代Android真机、现场GPS或国产系统后台验收。发布需重启`ari-web-api`读取新问答说明，不改Nginx或APK。生成与检查仍用`tour_build.py`、`tour_itinerary_maps.py`及`nanluo_shichahai_expansion_check.py --report-prefix gps`；独立复核沿用Sonnet 5 medium。
 
 Sonnet 5 medium本轮GPS复核无critical/important，一条minor建议为范围外距离参照点需更清楚；保留固定接驳点以兼容现有原生引擎，界面改为明确显示“距南锣鼓巷站 E口…”，避免误解为当前所选起点距离。GPS入口移到静态图上方。报告及处理记录为`nanluo_shichahai_gps_audit.json`与`nanluo_shichahai_gps_review_disposition.json`。
+
+GPS内容提交`ef0ffe3`已推送并部署，重启`ari-web-api`后active。100个公开静态文件HTTPS200、逐字节匹配；公网五场景通过，覆盖新GPS权限/附近提醒/精度与超时恢复、App桥接、四主题及四起点和两处旧景区。三处问答只读GET正常，三馆服务器/本地材料哈希一致，未发送线上测试问题。未改Nginx或APK。发布记录为`nanluo_shichahai_gps_public_report.json`；本轮模型1次成功、0次失败，累计111成功/4次历史失败。
