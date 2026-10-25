@@ -62,7 +62,7 @@ Android App采用用户2026-10-12定的**原生Kotlin外壳 + WebView复用导�
 - AWS 主机：`44.207.251.65`
 - 系统：Ubuntu 26.04，ARM64（aarch64）
 - SSH：`ubuntu@44.207.251.65`
-- 域名：`ari.goldenma.xyz`（web_api）、`tour.snowmeet.top`及`tour.arimuseum.org`（导览站两个等价入口）。两处导览站A记录指向`44.207.251.65`，新域名未配置AAAA；web_api的旧域名解析问题见下一条
+- 域名：`ari.goldenma.xyz`（web_api）、`tour.snowmeet.top`及`tour.arimuseum.org`（导览站两个等价入口）。两处导览站A记录指向`44.207.251.65`，新域名未配置AAAA；HTTPS各自保留访问域名，浏览器定位授权及localStorage按origin分开保存。Android当前`TOUR_ORIGIN`仍为`tour.snowmeet.top`；web_api的旧域名解析问题见下一条
 - **⚠ `goldenma.xyz` 整个域名解析不出来**（2026-10-10 发现，10-11 复查仍是 NXDOMAIN，多半是域名到期）。
   服务器上的 `ari.goldenma.xyz` 站点本身正常（`curl --resolve ari.goldenma.xyz:443:44.207.251.65` 直连 200、证书校验通过），
   只是按域名访问不到。**待用户处理**；同机的 `snowmeet.goldenma.xyz` 同理
@@ -85,7 +85,7 @@ Android App采用用户2026-10-12定的**原生Kotlin外壳 + WebView复用导�
 - 新域名`tour.arimuseum.org`使用独立Let's Encrypt ECDSA证书，**2027-01-22到期**，链/私钥在`/etc/letsencrypt/live/tour.arimuseum.org/`。Ubuntu Certbot4.0.0的`certbot.timer`已enabled/active，webroot为`/var/lib/letsencrypt`；成功续期经专用deploy hook先`nginx -t`再reload，带hook的模拟续期已通过。旧域名证书不因此自动续期；本轮未提供ACME邮箱。配置快照、备份与验收见`docs/TOUR_WEB.md`和`docs/TOUR_DOMAIN_ARIMUSEUM_REPORT.json`
 - **22 端口偶尔新连接超时**（80/443 同时是通的，一两分钟后自己恢复；2026-08-21 与 2026-10-10 都遇到过）。
   一次部署要连好几回时复用同一条连接：`ssh -o ControlMaster=auto -o ControlPath=~/.ssh/cm-%C -o ControlPersist=900 …`
-- Android下载：`https://tour.snowmeet.top/android/app`，Nginx精确alias到仓库外 `/home/ubuntu/ari-downloads/android/app.apk`；APK不提交Git。更新须先验签、哈希、备份旧包后原子替换，不需Nginx reload；当前包与签名见第20条及 `docs/TOUR_WEB.md`。
+- Android下载：`https://tour.snowmeet.top/android/app`与`https://tour.arimuseum.org/android/app`等价，Nginx精确alias到仓库外 `/home/ubuntu/ari-downloads/android/app.apk`；APK不提交Git。更新须先验签、哈希、备份旧包后原子替换，不需Nginx reload；当前包与签名见第20条及 `docs/TOUR_WEB.md`。
 - 用户允许使用 `ubuntu@44.207.251.65:2222` 映射的另一台服务器取官网图片（2026-10-15授权，10-16实用）。**该机空间小，不在其上长期放临时文件**：本轮curl输出经内存和SSH管道直接回本机，未在中转机创建图片、脚本或临时文件；不要关闭TLS校验。
 - 临时健康检查：`/opt/ari/smoke`，仍在 8000 上跑，作为环境自检对照；web_api 稳定后可退役
 - MySQL 已按用户明确要求允许 `root@%` 公网登录，未强制 TLS；密码不进入仓库

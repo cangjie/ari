@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-10-25 16:19 · codex
+**做了什么** — 归档10-24完成的`tour.arimuseum.org`等价HTTPS入口部署。新旧域名共用页面、景区资料、GPS导览、问答接口与APK下载，HTTPS各自保留访问域名；部署提交`eef2077`已推送并拉取到服务器。
+
+（1）**Nginx配置**：新增`ari-tour-arimuseum`站点，将原`ari-tour`的静态页面、`/api/`反代及`/android/app`配置提取到两站共用的`/etc/nginx/snippets/ari-tour-content.conf`，两域名独立加载证书。新域名HTTP保留ACME验证路径，其余请求301至同域名HTTPS并保留路径与查询参数。
+原配置备份在`/etc/nginx/sites-available/ari-tour.before-arimuseum-20261024T041014Z`；配置检查、平滑reload通过，同机`reqai`、web_api及smoke站点配置哈希未变。
+
+（2）**证书与续期**：安装Ubuntu签名仓库的Certbot4.0.0，申请独立Let's Encrypt ECDSA证书，有效至2027-01-22；文件位于`/etc/letsencrypt/live/tour.arimuseum.org/`，私钥权限600。用户未提供ACME通知邮箱，使用无邮箱账户。
+`certbot.timer`已enabled/active，webroot为`/var/lib/letsencrypt`；专用deploy hook仅对该证书谱系执行`nginx -t`后reload。带hook的staging模拟续期成功，生产证书指纹保持一致。原`tour.snowmeet.top`和`ari.goldenma.xyz`的TrustAsia证书及手动续期方式保持原状。
+
+（3）**验收与范围**：12个静态路径在两域名均与本地逐字节一致；三景区×两域名的六个问答只读GET正常；APK响应头及64KiB分段相同，服务器原安装包完整哈希未变。新入口五个公网浏览器场景通过，覆盖南锣什刹海GPS与主题线路、伪满皇宫、宛平城及问答界面；TLS1.2/1.3、HTTP跳转和Nginx检查通过。
+未提交线上测试问题或触发付费模型回答；应用源码、APK及数据库未改，无需重启FastAPI。新域名浏览器权限和localStorage独立，首次定位需单独授权；Android当前`TOUR_ORIGIN`仍为`tour.snowmeet.top`，本次没有迁移App入口或进行真机现场GPS验收。
+
+配置快照、续期脚本和验收证据已提交到`docs/nginx-ari-tour*.conf`、`docs/certbot-ari-tour-reload-nginx.sh`、`docs/TOUR_DOMAIN_ARIMUSEUM_REPORT.json`，操作说明在`docs/TOUR_WEB.md`。本次就地补充AGENTS的双入口、浏览器origin及App入口约定，逐字同步Copilot副本；只做文档归档，不重复运行既有功能测试，没有持久memory目录。
+
+**下一步** — 持续检查`certbot.timer`与续期日志；后续修改两域名共用服务时更新共享snippet。原有Android真机、现场GPS及后台体验验收继续按上一条计划执行。
+
+**未决** — `tour.snowmeet.top`证书2027-01-07到期、`ari.goldenma.xyz`证书2026-11-19到期，仍需手动续期；`goldenma.xyz`解析、凭据轮换、无邮箱ACME账户通知及原有数据/产品待办未因新增入口而完成。
+
+---
+
 ## 2026-10-24 09:24 · codex
 **做了什么** — 完成南锣鼓巷及什刹海资料、特色商铺、图片、四类线路图与GPS导览发布，并归档此前未收工的10-23/24工作。Web与App共用线上资料，App安装包未改；现场和真机验收仍待做。
 
