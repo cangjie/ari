@@ -58,7 +58,9 @@ def build(key, config):
     identities = {r['identity_key']: r for r in rows.values()}
     if len(identities) != len(rows) or any(not re.fullmatch(r'[a-z0-9_]{1,64}', k) for k in identities):
         raise ValueError('资料身份重复或不能作为稳定地点标识')
-    areas = {'南锣鼓巷': 'Nanluoguxiang', '什刹海': 'Shichahai', '周边衔接': 'Nearby connections'}
+    areas = getattr(config, 'AREAS', {
+        '南锣鼓巷': 'Nanluoguxiang', '什刹海': 'Shichahai', '周边衔接': 'Nearby connections'
+    })
     places, stops = [], {}
     for seq, row in rows.items():
         audit = row['audit']
@@ -102,7 +104,7 @@ def build(key, config):
                         source_sha256=source_sha, rating_sha256=sha(path('ratings.json')),
                         audit_sha256=sha(path('audit1_slim.jsonl')), translations_sha256=sha(path('translations.json')),
                         workbook_sha256=load('verification_report.json')['workbook_sha256'],
-                        checked_on='2026-10-23', business_database_written=False),
+                        checked_on=getattr(config, 'CHECKED_ON', '2026-10-23'), business_database_written=False),
     )
     from tour_collection_media import augment
     augment(data, config)

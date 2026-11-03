@@ -1,0 +1,3878 @@
+{
+ "key": "boston_summer_st",
+ "mode": "collection",
+ "generated": "2026-11-03",
+ "name": {
+  "zh": "波士顿 Summer Street 及周边",
+  "en": "Boston Summer Street and Nearby"
+ },
+ "card": {
+  "city": {
+   "zh": "波士顿",
+   "en": "Boston"
+  },
+  "district": {
+   "zh": "市中心 · Fort Point · 海港区",
+   "en": "Downtown, Fort Point and Seaport"
+  },
+  "type": {
+   "zh": "城市历史 · 滨水 · 特色商铺",
+   "en": "Urban history, waterfront and specialty shops"
+  },
+  "short": {
+   "zh": "Summer Street",
+   "en": "Summer Street"
+  },
+  "desc": {
+   "zh": "沿 Summer Street 从 Downtown Crossing 走到海港区，并衔接自由之路市中心站点；共53条双语资料。",
+   "en": "Follow Summer Street from Downtown Crossing to the Seaport, with linked downtown Freedom Trail sites; 53 bilingual records."
+  },
+  "hours": "开放、预约、票价及营业请在出行当天核实",
+  "hours_note": {
+   "zh": "查看介绍、评级、来源与复核提示",
+   "en": "Browse descriptions, tiers, sources and review notes"
+  },
+  "cover": null
+ },
+ "opening": {
+  "zh": "场馆开放、预约、票价、门店营业及临时关闭均未实时核实；请在出行当天查看各自官网。",
+  "en": "Venue access, reservations, admission, business hours and temporary closures are not live-verified; check each official site on the day of travel."
+ },
+ "planning": {
+  "zh": "53条包含自由之路整体与组成站点，并非53个互不重叠的路线站。S/A/B/C表示本走廊文化参观优先级；餐饮不按口味、服务或价格评级。地图位置、路线与步行时间以保存的公开街道资料为依据，属于导览估计而非逐向导航。",
+  "en": "The 53 records include the Freedom Trail as a whole and individual sites, so they are not 53 non-overlapping route stops. S/A/B/C measures cultural visit priority within this corridor; food is not rated for taste, service or price. Map positions, walks and timings use saved public-street references and are guide estimates, not turn-by-turn navigation."
+ },
+ "places": [
+  {
+   "id": "f00",
+   "name": {
+    "zh": "自由之路",
+    "en": "Freedom Trail"
+   },
+   "stops": [
+    1
+   ],
+   "photo": null
+  },
+  {
+   "id": "t01",
+   "name": {
+    "zh": "波士顿公园",
+    "en": "Boston Common"
+   },
+   "stops": [
+    2
+   ],
+   "photo": null
+  },
+  {
+   "id": "t02",
+   "name": {
+    "zh": "马萨诸塞州议会大厦",
+    "en": "Massachusetts State House"
+   },
+   "stops": [
+    3
+   ],
+   "photo": null
+  },
+  {
+   "id": "t03",
+   "name": {
+    "zh": "公园街教堂",
+    "en": "Park Street Church"
+   },
+   "stops": [
+    4
+   ],
+   "photo": null
+  },
+  {
+   "id": "t04",
+   "name": {
+    "zh": "谷仓墓地",
+    "en": "Granary Burying Ground"
+   },
+   "stops": [
+    5
+   ],
+   "photo": null
+  },
+  {
+   "id": "t05",
+   "name": {
+    "zh": "国王礼拜堂及墓地",
+    "en": "King's Chapel & Burying Ground"
+   },
+   "stops": [
+    6
+   ],
+   "photo": null
+  },
+  {
+   "id": "t06",
+   "name": {
+    "zh": "波士顿拉丁学校旧址与富兰克林像",
+    "en": "Boston Latin School Site / Benjamin Franklin Statue"
+   },
+   "stops": [
+    7
+   ],
+   "photo": null
+  },
+  {
+   "id": "t07",
+   "name": {
+    "zh": "老街角书店旧址",
+    "en": "Old Corner Bookstore"
+   },
+   "stops": [
+    8
+   ],
+   "photo": null
+  },
+  {
+   "id": "t08",
+   "name": {
+    "zh": "老南会议厅",
+    "en": "Old South Meeting House"
+   },
+   "stops": [
+    9
+   ],
+   "photo": null
+  },
+  {
+   "id": "t09",
+   "name": {
+    "zh": "老州议会大厦",
+    "en": "Old State House"
+   },
+   "stops": [
+    10
+   ],
+   "photo": null
+  },
+  {
+   "id": "t10",
+   "name": {
+    "zh": "波士顿惨案遗址",
+    "en": "Boston Massacre Site"
+   },
+   "stops": [
+    11
+   ],
+   "photo": null
+  },
+  {
+   "id": "t11",
+   "name": {
+    "zh": "法尼尔厅",
+    "en": "Faneuil Hall"
+   },
+   "stops": [
+    12
+   ],
+   "photo": null
+  },
+  {
+   "id": "p01",
+   "name": {
+    "zh": "市中心十字路口商圈",
+    "en": "Downtown Crossing"
+   },
+   "stops": [
+    13
+   ],
+   "photo": null
+  },
+  {
+   "id": "p02",
+   "name": {
+    "zh": "夏街广场",
+    "en": "Summer Street Plaza"
+   },
+   "stops": [
+    14
+   ],
+   "photo": null
+  },
+  {
+   "id": "p03",
+   "name": {
+    "zh": "公民歌剧院",
+    "en": "Citizens Opera House"
+   },
+   "stops": [
+    15
+   ],
+   "photo": null
+  },
+  {
+   "id": "p04",
+   "name": {
+    "zh": "爱尔兰大饥荒纪念广场",
+    "en": "Irish Famine Memorial Plaza"
+   },
+   "stops": [
+    16
+   ],
+   "photo": null
+  },
+  {
+   "id": "p05",
+   "name": {
+    "zh": "诺曼·B·莱文塔尔公园",
+    "en": "Norman B. Leventhal Park"
+   },
+   "stops": [
+    17
+   ],
+   "photo": null
+  },
+  {
+   "id": "p06",
+   "name": {
+    "zh": "罗斯·肯尼迪绿道",
+    "en": "Rose Fitzgerald Kennedy Greenway"
+   },
+   "stops": [
+    18
+   ],
+   "photo": null
+  },
+  {
+   "id": "p07",
+   "name": {
+    "zh": "波士顿南站",
+    "en": "South Station"
+   },
+   "stops": [
+    19
+   ],
+   "photo": null
+  },
+  {
+   "id": "p08",
+   "name": {
+    "zh": "堡点水道地标区",
+    "en": "Fort Point Channel Landmark District"
+   },
+   "stops": [
+    20
+   ],
+   "photo": null
+  },
+  {
+   "id": "p09",
+   "name": {
+    "zh": "波士顿码头公司旧办公楼及屋顶标牌",
+    "en": "Boston Wharf Company Office Building & Sign"
+   },
+   "stops": [
+    21
+   ],
+   "photo": null
+  },
+  {
+   "id": "p10",
+   "name": {
+    "zh": "波士顿倾茶事件船舰与博物馆",
+    "en": "Boston Tea Party Ships & Museum"
+   },
+   "stops": [
+    22
+   ],
+   "photo": null
+  },
+  {
+   "id": "p11",
+   "name": {
+    "zh": "波士顿儿童博物馆",
+    "en": "Boston Children's Museum"
+   },
+   "stops": [
+    23
+   ],
+   "photo": null
+  },
+  {
+   "id": "p12",
+   "name": {
+    "zh": "马丁公园",
+    "en": "Martin's Park"
+   },
+   "stops": [
+    24
+   ],
+   "photo": null
+  },
+  {
+   "id": "p13",
+   "name": {
+    "zh": "波士顿消防博物馆",
+    "en": "Boston Fire Museum"
+   },
+   "stops": [
+    25
+   ],
+   "photo": null
+  },
+  {
+   "id": "p14",
+   "name": {
+    "zh": "波士顿海港步道海港区段",
+    "en": "Boston Harborwalk — Seaport segment"
+   },
+   "stops": [
+    26
+   ],
+   "photo": null
+  },
+  {
+   "id": "p15",
+   "name": {
+    "zh": "波士顿当代艺术学院",
+    "en": "Institute of Contemporary Art/Boston"
+   },
+   "stops": [
+    27
+   ],
+   "photo": null
+  },
+  {
+   "id": "p16",
+   "name": {
+    "zh": "D草坪",
+    "en": "The Lawn on D"
+   },
+   "stops": [
+    28
+   ],
+   "photo": null
+  },
+  {
+   "id": "p17",
+   "name": {
+    "zh": "托马斯·M·梅尼诺会展中心",
+    "en": "Thomas M. Menino Convention & Exhibition Center"
+   },
+   "stops": [
+    29
+   ],
+   "photo": null
+  },
+  {
+   "id": "p18",
+   "name": {
+    "zh": "Laugh Boston 喜剧俱乐部",
+    "en": "Laugh Boston"
+   },
+   "stops": [
+    30
+   ],
+   "photo": null
+  },
+  {
+   "id": "p19",
+   "name": {
+    "zh": "夏街阶梯",
+    "en": "Summer Street Steps"
+   },
+   "stops": [
+    31
+   ],
+   "photo": null
+  },
+  {
+   "id": "p20",
+   "name": {
+    "zh": "Harbor Way 绿地",
+    "en": "Harbor Way park"
+   },
+   "stops": [
+    32
+   ],
+   "photo": null
+  },
+  {
+   "id": "s01",
+   "name": {
+    "zh": "Primark 市中心店",
+    "en": "Primark — Downtown Crossing"
+   },
+   "stops": [
+    33
+   ],
+   "photo": null
+  },
+  {
+   "id": "s02",
+   "name": {
+    "zh": "梅西百货市中心店",
+    "en": "Macy's — Downtown Crossing"
+   },
+   "stops": [
+    34
+   ],
+   "photo": null
+  },
+  {
+   "id": "s03",
+   "name": {
+    "zh": "Roche Bros. 超市",
+    "en": "Roche Bros. — Downtown Crossing"
+   },
+   "stops": [
+    35
+   ],
+   "photo": null
+  },
+  {
+   "id": "s04",
+   "name": {
+    "zh": "Tatte Bakery 夏街店",
+    "en": "Tatte Bakery — Summer Street"
+   },
+   "stops": [
+    36
+   ],
+   "photo": null
+  },
+  {
+   "id": "s05",
+   "name": {
+    "zh": "Caffè Nero 夏街店",
+    "en": "Caffè Nero — Summer Street"
+   },
+   "stops": [
+    37
+   ],
+   "photo": null
+  },
+  {
+   "id": "s06",
+   "name": {
+    "zh": "The Peach Cobbler Factory 夏街店",
+    "en": "The Peach Cobbler Factory — Summer Street"
+   },
+   "stops": [
+    38
+   ],
+   "photo": null
+  },
+  {
+   "id": "s07",
+   "name": {
+    "zh": "Chacarero 智利三明治",
+    "en": "Chacarero"
+   },
+   "stops": [
+    39
+   ],
+   "photo": null
+  },
+  {
+   "id": "s08",
+   "name": {
+    "zh": "Sam LaGrassa's 三明治店",
+    "en": "Sam LaGrassa's"
+   },
+   "stops": [
+    40
+   ],
+   "photo": null
+  },
+  {
+   "id": "s09",
+   "name": {
+    "zh": "George Howell Coffee 市中心店",
+    "en": "George Howell Coffee — Downtown"
+   },
+   "stops": [
+    41
+   ],
+   "photo": null
+  },
+  {
+   "id": "s10",
+   "name": {
+    "zh": "Brattle 二手书店",
+    "en": "Brattle Book Shop"
+   },
+   "stops": [
+    42
+   ],
+   "photo": null
+  },
+  {
+   "id": "s11",
+   "name": {
+    "zh": "Democracy Brewing 酿酒餐吧",
+    "en": "Democracy Brewing"
+   },
+   "stops": [
+    43
+   ],
+   "photo": null
+  },
+  {
+   "id": "s12",
+   "name": {
+    "zh": "Legal Sea Foods 市中心十字路口店",
+    "en": "Legal Sea Foods — Downtown Crossing"
+   },
+   "stops": [
+    44
+   ],
+   "photo": null
+  },
+  {
+   "id": "s13",
+   "name": {
+    "zh": "High Street Place 美食广场",
+    "en": "High Street Place Food Hall"
+   },
+   "stops": [
+    45
+   ],
+   "photo": null
+  },
+  {
+   "id": "s14",
+   "name": {
+    "zh": "Flour Bakery 堡点店",
+    "en": "Flour Bakery + Cafe — Fort Point"
+   },
+   "stops": [
+    46
+   ],
+   "photo": null
+  },
+  {
+   "id": "s15",
+   "name": {
+    "zh": "Row 34 海港区店",
+    "en": "Row 34 — Seaport"
+   },
+   "stops": [
+    47
+   ],
+   "photo": null
+  },
+  {
+   "id": "s16",
+   "name": {
+    "zh": "Trillium 堡点店",
+    "en": "Trillium — Fort Point"
+   },
+   "stops": [
+    48
+   ],
+   "photo": null
+  },
+  {
+   "id": "s17",
+   "name": {
+    "zh": "Abigail's Tea Room",
+    "en": "Abigail's Tea Room"
+   },
+   "stops": [
+    49
+   ],
+   "photo": null
+  },
+  {
+   "id": "s18",
+   "name": {
+    "zh": "Coquette 餐厅",
+    "en": "Coquette"
+   },
+   "stops": [
+    50
+   ],
+   "photo": null
+  },
+  {
+   "id": "s19",
+   "name": {
+    "zh": "M.J. O'Connor's 海港区店",
+    "en": "M.J. O'Connor's — Seaport"
+   },
+   "stops": [
+    51
+   ],
+   "photo": null
+  },
+  {
+   "id": "s20",
+   "name": {
+    "zh": "Harpoon 波士顿酿酒厂",
+    "en": "Harpoon Boston Brewery"
+   },
+   "stops": [
+    52
+   ],
+   "photo": null
+  },
+  {
+   "id": "s21",
+   "name": {
+    "zh": "Legal Sea Foods 海港店",
+    "en": "Legal Sea Foods — Boston Harborside"
+   },
+   "stops": [
+    53
+   ],
+   "photo": null
+  }
+ ],
+ "stops": {
+  "1": {
+   "seq": 1,
+   "place": "f00",
+   "name": {
+    "zh": "自由之路",
+    "en": "Freedom Trail"
+   },
+   "aliases": [
+    "Freedom Trail"
+   ],
+   "tier": "B",
+   "core": 6.9825,
+   "kind": "culture",
+   "area": {
+    "zh": "跨区",
+    "en": "Across districts"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "约2.5英里的红线历史步道，串联16处官方站点；本表另列全部站点。"
+   ],
+   "intro_en": "A roughly 2.5-mile red-lined historic trail linking 16 official sites; all sites are indexed separately.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Experience the Freedom Trail Now (Visitor Resource) | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/visit/experience-freedom-trail-now-visitor-resource"
+    }
+   ],
+   "borrowed": {
+    "zh": "整条步道超出Summer Street走廊。",
+    "en": "整条步道超出Summer Street走廊。"
+   },
+   "address": {
+    "zh": "Boston / Charlestown",
+    "en": "Boston / Charlestown"
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "2": {
+   "seq": 2,
+   "place": "t01",
+   "name": {
+    "zh": "波士顿公园",
+    "en": "Boston Common"
+   },
+   "aliases": [
+    "Boston Common"
+   ],
+   "tier": "A",
+   "core": 8.0375,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "老城公共绿地，也是自由之路起点。"
+   ],
+   "intro_en": "Historic public park and the starting point of the Freedom Trail.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Boston Common | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites/boston-common"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "139 Tremont St.",
+    "en": "139 Tremont St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "3": {
+   "seq": 3,
+   "place": "t02",
+   "name": {
+    "zh": "马萨诸塞州议会大厦",
+    "en": "Massachusetts State House"
+   },
+   "aliases": [
+    "Massachusetts State House"
+   ],
+   "tier": "A",
+   "core": 7.735,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "位于波士顿公园旁的州议会大厦。"
+   ],
+   "intro_en": "State capitol beside Boston Common.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Beacon St.",
+    "en": "Beacon St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "4": {
+   "seq": 4,
+   "place": "t03",
+   "name": {
+    "zh": "公园街教堂",
+    "en": "Park Street Church"
+   },
+   "aliases": [
+    "Park Street Church"
+   ],
+   "tier": "B",
+   "core": 6.439,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "自由之路沿线的历史教堂。"
+   ],
+   "intro_en": "Historic church on the Freedom Trail.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Park St. & Tremont St.",
+    "en": "Park St. & Tremont St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录提到公园街教堂217英尺尖顶曾是旅行者进入波士顿时看到的第一座地标，描述中未体现"
+  },
+  "5": {
+   "seq": 5,
+   "place": "t04",
+   "name": {
+    "zh": "谷仓墓地",
+    "en": "Granary Burying Ground"
+   },
+   "aliases": [
+    "Granary Burying Ground"
+   ],
+   "tier": "A",
+   "core": 7.31,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "市中心历史墓地，毗邻公园街教堂。"
+   ],
+   "intro_en": "Historic downtown burial ground beside Park Street Church.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Granary Burying Ground | Boston.gov city_hall lock lock",
+     "url": "https://www.boston.gov/cemeteries/granary-burying-ground"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "120 Tremont St.",
+    "en": "120 Tremont St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录明确列出萨缪尔·亚当斯、约翰·汉考克、保罗·里维尔及波士顿惨案受害者等名人安葬于此，描述中完全未提及"
+  },
+  "6": {
+   "seq": 6,
+   "place": "t05",
+   "name": {
+    "zh": "国王礼拜堂及墓地",
+    "en": "King's Chapel & Burying Ground"
+   },
+   "aliases": [
+    "King's Chapel & Burying Ground"
+   ],
+   "tier": "A",
+   "core": 7.396,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "自由之路上的教堂与相邻墓地。"
+   ],
+   "intro_en": "Church and adjacent burial ground on the Freedom Trail.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Tremont St. & School St.",
+    "en": "Tremont St. & School St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明国王礼拜堂是波士顿首座英国圣公会教堂，且墓地是波士顿最古老的英国人墓地，描述未体现这些关键身份信息"
+  },
+  "7": {
+   "seq": 7,
+   "place": "t06",
+   "name": {
+    "zh": "波士顿拉丁学校旧址与富兰克林像",
+    "en": "Boston Latin School Site / Benjamin Franklin Statue"
+   },
+   "aliases": [
+    "Boston Latin School Site / Benjamin Franklin Statue"
+   ],
+   "tier": "B",
+   "core": 6.695,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "旧校址以纪念标识和富兰克林雕像呈现。"
+   ],
+   "intro_en": "Former school site marked by a memorial and Benjamin Franklin statue.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "School St.",
+    "en": "School St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录指出波士顿拉丁学校始建于1635年，是美国最古老的公立学校，描述中未提及此核心历史地位"
+  },
+  "8": {
+   "seq": 8,
+   "place": "t07",
+   "name": {
+    "zh": "老街角书店旧址",
+    "en": "Old Corner Bookstore"
+   },
+   "aliases": [
+    "Old Corner Bookstore"
+   ],
+   "tier": "B",
+   "core": 6.23,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "自由之路上的历史建筑；名称不代表现在仍是书店。"
+   ],
+   "intro_en": "Historic Freedom Trail building; the name does not imply an operating bookstore today.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "283 Washington St.",
+    "en": "283 Washington St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明老街角书店建于1718年，是市中心现存最古老的商业建筑，并曾是19世纪出版商Ticknor and Fields所在地（出版《瓦尔登湖》《红字》等），描述仅提醒非现仍书店，未呈现这些支撑其文化地位的关键事实"
+  },
+  "9": {
+   "seq": 9,
+   "place": "t08",
+   "name": {
+    "zh": "老南会议厅",
+    "en": "Old South Meeting House"
+   },
+   "aliases": [
+    "Old South Meeting House"
+   ],
+   "tier": "A",
+   "core": 7.995,
+   "kind": "culture",
+   "area": {
+    "zh": "市中心西端",
+    "en": "Western downtown"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "与1773年波士顿倾茶事件前的群众集会有关。"
+   ],
+   "intro_en": "Meeting house linked to the mass meeting before the 1773 Boston Tea Party.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "310 Washington St.",
+    "en": "310 Washington St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "10": {
+   "seq": 10,
+   "place": "t09",
+   "name": {
+    "zh": "老州议会大厦",
+    "en": "Old State House"
+   },
+   "aliases": [
+    "Old State House"
+   ],
+   "tier": "A",
+   "core": 8.246,
+   "kind": "culture",
+   "area": {
+    "zh": "金融区",
+    "en": "Financial District"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "波士顿现存最古老的公共建筑之一。"
+   ],
+   "intro_en": "One of Boston's oldest surviving public buildings.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "206 Washington St.",
+    "en": "206 Washington St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "11": {
+   "seq": 11,
+   "place": "t10",
+   "name": {
+    "zh": "波士顿惨案遗址",
+    "en": "Boston Massacre Site"
+   },
+   "aliases": [
+    "Boston Massacre Site"
+   ],
+   "tier": "B",
+   "core": 6.965,
+   "kind": "culture",
+   "area": {
+    "zh": "金融区",
+    "en": "Financial District"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "纪念1770年波士顿惨案的街道遗址标记。"
+   ],
+   "intro_en": "Street marker commemorating the 1770 Boston Massacre.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "State St. & Congress St.",
+    "en": "State St. & Congress St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "12": {
+   "seq": 12,
+   "place": "t11",
+   "name": {
+    "zh": "法尼尔厅",
+    "en": "Faneuil Hall"
+   },
+   "aliases": [
+    "Faneuil Hall"
+   ],
+   "tier": "A",
+   "core": 7.986,
+   "kind": "culture",
+   "area": {
+    "zh": "金融区",
+    "en": "Financial District"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "自由之路上的历史集会场所。"
+   ],
+   "intro_en": "Historic meeting hall on the Freedom Trail.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Trail Sites | The Freedom Trail",
+     "url": "https://www.thefreedomtrail.org/trail-sites"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "1 Faneuil Hall Sq.",
+    "en": "1 Faneuil Hall Sq."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "13": {
+   "seq": 13,
+   "place": "p01",
+   "name": {
+    "zh": "市中心十字路口商圈",
+    "en": "Downtown Crossing"
+   },
+   "aliases": [
+    "Downtown Crossing"
+   ],
+   "tier": "C",
+   "core": 4.51,
+   "kind": "culture",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "Summer与Washington街交汇处的步行购物区。"
+   ],
+   "intro_en": "Pedestrian shopping district around Summer and Washington Streets.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Downtown Boston/Financial District | Boston Neighborhoods",
+     "url": "https://www.meetboston.com/explore/neighborhoods/downtown-crossing-financial-district/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Summer St. & Washington St.",
+    "en": "Summer St. & Washington St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "14": {
+   "seq": 14,
+   "place": "p02",
+   "name": {
+    "zh": "夏街广场",
+    "en": "Summer Street Plaza"
+   },
+   "aliases": [
+    "Summer Street Plaza"
+   ],
+   "tier": "C",
+   "core": 3.77,
+   "kind": "culture",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "市中心步行区的公共聚集空间。"
+   ],
+   "intro_en": "Public gathering space in the Downtown Crossing pedestrian zone.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Summer Street Plaza - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/summer-street-plaza/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "10 Summer St.",
+    "en": "10 Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "15": {
+   "seq": 15,
+   "place": "p03",
+   "name": {
+    "zh": "公民歌剧院",
+    "en": "Citizens Opera House"
+   },
+   "aliases": [
+    "Citizens Opera House"
+   ],
+   "tier": "B",
+   "core": 6.28,
+   "kind": "culture",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "市中心十字路口附近的演出场馆。"
+   ],
+   "intro_en": "Performing arts venue near Downtown Crossing.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Getting Here | Citizens Opera House",
+     "url": "https://www.citizensoperahouse.com/getting-here/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "539 Washington St.",
+    "en": "539 Washington St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录中列出网站有'History'导航页面，说明该歌剧院存在独立历史内容，但摘录未包含具体历史文字，描述也未体现其是否为历史建筑"
+  },
+  "16": {
+   "seq": 16,
+   "place": "p04",
+   "name": {
+    "zh": "爱尔兰大饥荒纪念广场",
+    "en": "Irish Famine Memorial Plaza"
+   },
+   "aliases": [
+    "Irish Famine Memorial Plaza"
+   ],
+   "tier": "B",
+   "core": 6.48,
+   "kind": "culture",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "位于老南会议厅与老街角书店之间，纪念19世纪爱尔兰大饥荒及移民。"
+   ],
+   "intro_en": "Plaza between Old South Meeting House and Old Corner Bookstore commemorating the Great Irish Famine and migration.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Irish Famine Memorial Plaza - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/irish-famine-memorial-plaza/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "10 School St.",
+    "en": "10 School St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "17": {
+   "seq": 17,
+   "place": "p05",
+   "name": {
+    "zh": "诺曼·B·莱文塔尔公园",
+    "en": "Norman B. Leventhal Park"
+   },
+   "aliases": [
+    "Norman B. Leventhal Park"
+   ],
+   "tier": "C",
+   "core": 4.6,
+   "kind": "culture",
+   "area": {
+    "zh": "金融区",
+    "en": "Financial District"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "位于邮政广场的金融区公共绿地。"
+   ],
+   "intro_en": "Public green space at Post Office Square in the Financial District.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Hours & Information | Norman B. Leventhal Park",
+     "url": "https://www.normanbleventhalpark.org/hours-information/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Post Office Square",
+    "en": "Post Office Square"
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录标题显示为'开放时间与信息'页面，未提供公园的设计者、历史背景或园内景点等实质内容，无法判断是否有足够文化价值支撑更高等级"
+  },
+  "18": {
+   "seq": 18,
+   "place": "p06",
+   "name": {
+    "zh": "罗斯·肯尼迪绿道",
+    "en": "Rose Fitzgerald Kennedy Greenway"
+   },
+   "aliases": [
+    "Rose Fitzgerald Kennedy Greenway"
+   ],
+   "tier": "B",
+   "core": 6.275,
+   "kind": "culture",
+   "area": {
+    "zh": "南站",
+    "en": "South Station"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "贯穿市中心多个街区的线性公园，南端接近南站。"
+   ],
+   "intro_en": "Linear park through central Boston, with its southern end near South Station.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Overview - The Rose Kennedy Greenway",
+     "url": "https://www.rosekennedygreenway.org/overview/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Surface Rd. / Dewey Sq.",
+    "en": "Surface Rd. / Dewey Sq."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "19": {
+   "seq": 19,
+   "place": "p07",
+   "name": {
+    "zh": "波士顿南站",
+    "en": "South Station"
+   },
+   "aliases": [
+    "South Station"
+   ],
+   "tier": "B",
+   "core": 6.53,
+   "kind": "culture",
+   "area": {
+    "zh": "南站",
+    "en": "South Station"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "Summer Street旁的主要铁路与地铁换乘点，历史站房可从外部观看。"
+   ],
+   "intro_en": "Major rail and transit hub by Summer Street, with a historic headhouse visible outside.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "South Station ::: Home Page Placewise",
+     "url": "https://bostonsouthstation.com/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "700 Atlantic Ave.",
+    "en": "700 Atlantic Ave."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "20": {
+   "seq": 20,
+   "place": "p08",
+   "name": {
+    "zh": "堡点水道地标区",
+    "en": "Fort Point Channel Landmark District"
+   },
+   "aliases": [
+    "Fort Point Channel Landmark District"
+   ],
+   "tier": "A",
+   "core": 8.06,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "旧仓库与工业建筑集中的历史街区，适合看建筑外观。"
+   ],
+   "intro_en": "Historic district of former warehouses and industrial lofts; exterior architecture can be viewed from public streets.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Fort Point Channel Landmark District | Boston.gov city_hall lock lock Toggle",
+     "url": "https://content.boston.gov/historic-district/fort-point-channel-landmark-district"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Summer St. / A St. / Congress St.",
+    "en": "Summer St. / A St. / Congress St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "21": {
+   "seq": 21,
+   "place": "p09",
+   "name": {
+    "zh": "波士顿码头公司旧办公楼及屋顶标牌",
+    "en": "Boston Wharf Company Office Building & Sign"
+   },
+   "aliases": [
+    "Boston Wharf Company Office Building & Sign"
+   ],
+   "tier": "A",
+   "core": 7.55,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "Summer与Melcher街角的堡点地标；从公共街道观看建筑及屋顶标牌。"
+   ],
+   "intro_en": "Fort Point landmark at Summer and Melcher Streets; view the building and rooftop sign from public streets.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "History – 263 Summer St",
+     "url": "https://263summerst.com/history/"
+    }
+   ],
+   "borrowed": {
+    "zh": "市历史报告使用363 Summer St./10 Melcher St.；现址网站使用263 Summer St。",
+    "en": "市历史报告使用363 Summer St./10 Melcher St.；现址网站使用263 Summer St。"
+   },
+   "address": {
+    "zh": "263 Summer St. / 10 Melcher St.",
+    "en": "263 Summer St. / 10 Melcher St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "22": {
+   "seq": 22,
+   "place": "p10",
+   "name": {
+    "zh": "波士顿倾茶事件船舰与博物馆",
+    "en": "Boston Tea Party Ships & Museum"
+   },
+   "aliases": [
+    "Boston Tea Party Ships & Museum"
+   ],
+   "tier": "A",
+   "core": 7.88,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "位于国会街桥的历史体验馆，另有不购票可进入的茶室与商店。"
+   ],
+   "intro_en": "Historic experience on Congress Street Bridge; its tea room and gift shop are accessible without a museum ticket.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Frequently Asked Questions About Boston Tea Party Museum",
+     "url": "https://www.bostonteapartyship.com/faq"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "306 Congress St.",
+    "en": "306 Congress St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "23": {
+   "seq": 23,
+   "place": "p11",
+   "name": {
+    "zh": "波士顿儿童博物馆",
+    "en": "Boston Children's Museum"
+   },
+   "aliases": [
+    "Boston Children's Museum"
+   ],
+   "tier": "B",
+   "core": 6.49,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "位于堡点水道边的儿童博物馆。"
+   ],
+   "intro_en": "Children's museum on Fort Point Channel.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Directions and Parking - Boston Children's Museum",
+     "url": "https://bostonchildrensmuseum.org/visit/directions-and-parking/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "308 Congress St.",
+    "en": "308 Congress St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "24": {
+   "seq": 24,
+   "place": "p12",
+   "name": {
+    "zh": "马丁公园",
+    "en": "Martin's Park"
+   },
+   "aliases": [
+    "Martin's Park"
+   ],
+   "tier": "C",
+   "core": 5.25,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "儿童博物馆旁的包容性滨水游乐公园。"
+   ],
+   "intro_en": "Inclusive waterfront play park beside Boston Children's Museum.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Martin's Park | Boston.gov city_hall lock lock Toggle On Nov 28",
+     "url": "https://content.boston.gov/departments/parks-and-recreation/martins-park"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "64 Sleeper St.",
+    "en": "64 Sleeper St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明马丁公园是为纪念2013年波士顿马拉松爆炸案最年轻遇难者Martin Richard而建，具有城市悼念意义，描述仅称其为'包容性滨水游乐公园'，未体现纪念性质"
+  },
+  "25": {
+   "seq": 25,
+   "place": "p13",
+   "name": {
+    "zh": "波士顿消防博物馆",
+    "en": "Boston Fire Museum"
+   },
+   "aliases": [
+    "Boston Fire Museum"
+   ],
+   "tier": "B",
+   "core": 5.91,
+   "kind": "culture",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "设在旧消防站内，展示波士顿消防史。"
+   ],
+   "intro_en": "Museum of Boston firefighting history in a former firehouse.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Boston Fire Museum — Boston Sparks Association",
+     "url": "https://www.bostonsparks.com/boston-fire-museum"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "344 Congress St.",
+    "en": "344 Congress St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "26": {
+   "seq": 26,
+   "place": "p14",
+   "name": {
+    "zh": "波士顿海港步道海港区段",
+    "en": "Boston Harborwalk — Seaport segment"
+   },
+   "aliases": [
+    "Boston Harborwalk — Seaport segment"
+   ],
+   "tier": "A",
+   "core": 7.625,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "沿海港岸线连接公共空间与文化地点的步道；此条只指海港区段。"
+   ],
+   "intro_en": "Waterfront public path linking open spaces and cultural sites; this entry covers the Seaport segment only.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "How to Use the Harborwalk Webtool - Harborwalk - Harborwalk",
+     "url": "https://www.bostonharborwalk.org/how-to-use-the-harborwalk-webtool/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Seaport waterfront",
+    "en": "Seaport waterfront"
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "27": {
+   "seq": 27,
+   "place": "p15",
+   "name": {
+    "zh": "波士顿当代艺术学院",
+    "en": "Institute of Contemporary Art/Boston"
+   },
+   "aliases": [
+    "Institute of Contemporary Art/Boston"
+   ],
+   "tier": "A",
+   "core": 7.58,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "海港区滨水的当代艺术馆。"
+   ],
+   "intro_en": "Contemporary art museum on the Seaport waterfront.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Plan Your Visit to ICA Boston",
+     "url": "https://www.icaboston.org/visit/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "25 Harbor Shore Dr.",
+    "en": "25 Harbor Shore Dr."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "28": {
+   "seq": 28,
+   "place": "p16",
+   "name": {
+    "zh": "D草坪",
+    "en": "The Lawn on D"
+   },
+   "aliases": [
+    "The Lawn on D"
+   ],
+   "tier": "C",
+   "core": 5.16,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "会议中心旁的户外活动空间，活动安排需另查。"
+   ],
+   "intro_en": "Outdoor event space beside the convention center; check its calendar before visiting.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Community Activities | Signature Boston Signature Boston Open Navigation Close Navigation Facebook Twitter Flickr YouTube LinkedIn",
+     "url": "https://www.signatureboston.com/lawn-on-d/community-activities"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "415 Summer St.",
+    "en": "415 Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "29": {
+   "seq": 29,
+   "place": "p17",
+   "name": {
+    "zh": "托马斯·M·梅尼诺会展中心",
+    "en": "Thomas M. Menino Convention & Exhibition Center"
+   },
+   "aliases": [
+    "Thomas M. Menino Convention & Exhibition Center"
+   ],
+   "tier": "C",
+   "core": 4.22,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "Summer Street上的大型会展场馆，原名波士顿会展中心；按具体活动决定能否入内。"
+   ],
+   "intro_en": "Major convention venue on Summer Street, formerly the Boston Convention & Exhibition Center; access depends on the event.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Massachusetts Convention Center Authority",
+     "url": "https://www.massconvention.com/about-us/contact-us/boston-convention-exhibition-center/1000"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "415 Summer St.",
+    "en": "415 Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "30": {
+   "seq": 30,
+   "place": "p18",
+   "name": {
+    "zh": "Laugh Boston 喜剧俱乐部",
+    "en": "Laugh Boston"
+   },
+   "aliases": [
+    "Laugh Boston"
+   ],
+   "tier": "C",
+   "core": 5.15,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "Summer Street上的喜剧演出场所。"
+   ],
+   "intro_en": "Comedy venue on Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Laugh Boston",
+     "url": "https://www.meetboston.com/listing/laugh-boston/13539/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "425 Summer St.",
+    "en": "425 Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "31": {
+   "seq": 31,
+   "place": "p19",
+   "name": {
+    "zh": "夏街阶梯",
+    "en": "Summer Street Steps"
+   },
+   "aliases": [
+    "Summer Street Steps"
+   ],
+   "tier": "C",
+   "core": 3.86,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "400 Summer Street旁连接高处街道与海港方向的公共阶梯。"
+   ],
+   "intro_en": "Public steps beside 400 Summer Street connecting the elevated street toward the harbor.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "400 Summer Street | WS Development",
+     "url": "https://www.wsdevelopment.com/our-properties/400-summer-street/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "400 Summer St.",
+    "en": "400 Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "32": {
+   "seq": 32,
+   "place": "p20",
+   "name": {
+    "zh": "Harbor Way 绿地",
+    "en": "Harbor Way park"
+   },
+   "aliases": [
+    "Harbor Way park"
+   ],
+   "tier": "C",
+   "core": 5.16,
+   "kind": "culture",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+    "en": "The place and description are sourced; current opening, reservations, admission and temporary closures are unverified."
+   },
+   "intro": [
+    "连接Summer Street与海港岸线的步行公共空间。"
+   ],
+   "intro_en": "Pedestrian open space linking Summer Street to the harbor edge.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "How to humanize a $22 billion neighborhood built from scratch | WS Development",
+     "url": "https://www.wsdevelopment.com/news/how-to-humanize-a-22-billion-neighborhood-built-from-scratch/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Indoor access and current opening arrangements must be checked before visiting.",
+    "en": "Indoor access and current opening arrangements must be checked before visiting."
+   },
+   "address": {
+    "zh": "Harbor Way / Summer St.",
+    "en": "Harbor Way / Summer St."
+   },
+   "specialty": {
+    "zh": "",
+    "en": ""
+   },
+   "shop_kind": {
+    "zh": "",
+    "en": ""
+   },
+   "platform": {
+    "zh": "",
+    "en": ""
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "33": {
+   "seq": 33,
+   "place": "s01",
+   "name": {
+    "zh": "Primark 市中心店",
+    "en": "Primark — Downtown Crossing"
+   },
+   "aliases": [
+    "Primark — Downtown Crossing"
+   ],
+   "tier": "C",
+   "core": 2.73,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于Burnham Building的服饰及家居零售店。"
+   ],
+   "intro_en": "Fashion and home goods store in the Burnham Building.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Primark - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/primark/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "10 Summer St.",
+    "en": "10 Summer St."
+   },
+   "specialty": {
+    "zh": "位于Burnham Building的服饰及家居零售店。",
+    "en": "Fashion and home goods store in the Burnham Building."
+   },
+   "shop_kind": {
+    "zh": "服饰",
+    "en": "服饰"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "34": {
+   "seq": 34,
+   "place": "s02",
+   "name": {
+    "zh": "梅西百货市中心店",
+    "en": "Macy's — Downtown Crossing"
+   },
+   "aliases": [
+    "Macy's — Downtown Crossing"
+   ],
+   "tier": "C",
+   "core": 3.25,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于Washington Street的市中心百货店。"
+   ],
+   "intro_en": "Downtown department store on Washington Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Macy's - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/macys/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "450 Washington St.",
+    "en": "450 Washington St."
+   },
+   "specialty": {
+    "zh": "位于Washington Street的市中心百货店。",
+    "en": "Downtown department store on Washington Street."
+   },
+   "shop_kind": {
+    "zh": "百货",
+    "en": "百货"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "35": {
+   "seq": 35,
+   "place": "s03",
+   "name": {
+    "zh": "Roche Bros. 超市",
+    "en": "Roche Bros. — Downtown Crossing"
+   },
+   "aliases": [
+    "Roche Bros. — Downtown Crossing"
+   ],
+   "tier": "C",
+   "core": 2.26,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于10 Summer Street的超市。"
+   ],
+   "intro_en": "Supermarket at 10 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Roche Bros. supermarket - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/roche-bros-supermarket/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "10 Summer St.",
+    "en": "10 Summer St."
+   },
+   "specialty": {
+    "zh": "位于10 Summer Street的超市。",
+    "en": "Supermarket at 10 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "食品零售",
+    "en": "食品零售"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "36": {
+   "seq": 36,
+   "place": "s04",
+   "name": {
+    "zh": "Tatte Bakery 夏街店",
+    "en": "Tatte Bakery — Summer Street"
+   },
+   "aliases": [
+    "Tatte Bakery — Summer Street"
+   ],
+   "tier": "C",
+   "core": 3.49,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于125 Summer Street的烘焙咖啡店。"
+   ],
+   "intro_en": "Bakery and cafe at 125 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Tatte Bakery (125 Summer Street) - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/tatte-bakery-125-summer-street/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "125 Summer St.",
+    "en": "125 Summer St."
+   },
+   "specialty": {
+    "zh": "位于125 Summer Street的烘焙咖啡店。",
+    "en": "Bakery and cafe at 125 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "面包咖啡",
+    "en": "面包咖啡"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "37": {
+   "seq": 37,
+   "place": "s05",
+   "name": {
+    "zh": "Caffè Nero 夏街店",
+    "en": "Caffè Nero — Summer Street"
+   },
+   "aliases": [
+    "Caffè Nero — Summer Street"
+   ],
+   "tier": "C",
+   "core": 1.38,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于10 Summer Street的咖啡店。"
+   ],
+   "intro_en": "Coffee shop at 10 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Caffe Nero (10 Summer St.) - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/caffh-nero-10-summer-st/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "10 Summer St.",
+    "en": "10 Summer St."
+   },
+   "specialty": {
+    "zh": "位于10 Summer Street的咖啡店。",
+    "en": "Coffee shop at 10 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "咖啡",
+    "en": "咖啡"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "38": {
+   "seq": 38,
+   "place": "s06",
+   "name": {
+    "zh": "The Peach Cobbler Factory 夏街店",
+    "en": "The Peach Cobbler Factory — Summer Street"
+   },
+   "aliases": [
+    "The Peach Cobbler Factory — Summer Street"
+   ],
+   "tier": "C",
+   "core": 1.68,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于77 Summer Street的甜品店。"
+   ],
+   "intro_en": "Dessert shop at 77 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "The Peach Cobbler Factory - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/the-peach-cobbler-factory/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "77 Summer St.",
+    "en": "77 Summer St."
+   },
+   "specialty": {
+    "zh": "位于77 Summer Street的甜品店。",
+    "en": "Dessert shop at 77 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "甜品",
+    "en": "甜品"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "39": {
+   "seq": 39,
+   "place": "s07",
+   "name": {
+    "zh": "Chacarero 智利三明治",
+    "en": "Chacarero"
+   },
+   "aliases": [
+    "Chacarero"
+   ],
+   "tier": "C",
+   "core": 3.32,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Arch Street上的智利风味三明治店。"
+   ],
+   "intro_en": "Chilean-style sandwich shop on Arch Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Chacarero - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/chacarero/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "101 Arch St.",
+    "en": "101 Arch St."
+   },
+   "specialty": {
+    "zh": "Arch Street上的智利风味三明治店。",
+    "en": "Chilean-style sandwich shop on Arch Street."
+   },
+   "shop_kind": {
+    "zh": "简餐",
+    "en": "简餐"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "40": {
+   "seq": 40,
+   "place": "s08",
+   "name": {
+    "zh": "Sam LaGrassa's 三明治店",
+    "en": "Sam LaGrassa's"
+   },
+   "aliases": [
+    "Sam LaGrassa's"
+   ],
+   "tier": "C",
+   "core": 3.35,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Province Street上的老牌三明治店。"
+   ],
+   "intro_en": "Long-running sandwich shop on Province Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Sam LaGrassa's - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/sam-lagrassas/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "44 Province St.",
+    "en": "44 Province St."
+   },
+   "specialty": {
+    "zh": "Province Street上的老牌三明治店。",
+    "en": "Long-running sandwich shop on Province Street."
+   },
+   "shop_kind": {
+    "zh": "简餐",
+    "en": "简餐"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "评分证据称店铺'未提供具体年代'，但摘录实际给出了1968年创立的具体年代及创始人信息，评估未充分利用已有证据。\n摘录明确给出创始人Sam LaGrassa于1968年创立该店、经营超过50年的具体历史，而评分证据称'未提供具体年代或文化背景'，与摘录实际内容不符"
+  },
+  "41": {
+   "seq": 41,
+   "place": "s09",
+   "name": {
+    "zh": "George Howell Coffee 市中心店",
+    "en": "George Howell Coffee — Downtown"
+   },
+   "aliases": [
+    "George Howell Coffee — Downtown"
+   ],
+   "tier": "C",
+   "core": 3.57,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Washington Street上的精品咖啡店。"
+   ],
+   "intro_en": "Specialty coffee shop on Washington Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "George Howell Coffee - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/george-howell-coffee/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "505 Washington St.",
+    "en": "505 Washington St."
+   },
+   "specialty": {
+    "zh": "Washington Street上的精品咖啡店。",
+    "en": "Specialty coffee shop on Washington Street."
+   },
+   "shop_kind": {
+    "zh": "咖啡",
+    "en": "咖啡"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "42": {
+   "seq": 42,
+   "place": "s10",
+   "name": {
+    "zh": "Brattle 二手书店",
+    "en": "Brattle Book Shop"
+   },
+   "aliases": [
+    "Brattle Book Shop"
+   ],
+   "tier": "C",
+   "core": 5.01,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "West Street上的旧书与珍本书店。"
+   ],
+   "intro_en": "Used and antiquarian bookshop on West Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Brattle Book Shop",
+     "url": "https://www.brattlebookshop.com/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "9 West St.",
+    "en": "9 West St."
+   },
+   "specialty": {
+    "zh": "West Street上的旧书与珍本书店。",
+    "en": "Used and antiquarian bookshop on West Street."
+   },
+   "shop_kind": {
+    "zh": "书店",
+    "en": "书店"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录明确标注'Est 1825'，即书店创立于1825年，是美国最古老、规模最大的旧书店之一，描述中完全未体现这一具有显著文化遗产价值的事实"
+  },
+  "43": {
+   "seq": 43,
+   "place": "s11",
+   "name": {
+    "zh": "Democracy Brewing 酿酒餐吧",
+    "en": "Democracy Brewing"
+   },
+   "aliases": [
+    "Democracy Brewing"
+   ],
+   "tier": "C",
+   "core": 3.88,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Temple Place上的员工持有制酿酒餐吧。"
+   ],
+   "intro_en": "Worker-owned brewery and pub on Temple Place.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Democracy Brewing - Downtown Boston Alliance",
+     "url": "https://www.downtownboston.org/business/democracy-brewing/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "35 Temple Pl.",
+    "en": "35 Temple Pl."
+   },
+   "specialty": {
+    "zh": "Temple Place上的员工持有制酿酒餐吧。",
+    "en": "Worker-owned brewery and pub on Temple Place."
+   },
+   "shop_kind": {
+    "zh": "餐饮",
+    "en": "餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明该酿酒馆为员工持有制，并特意选在2018年7月4日独立日开业，具有象征性文化叙事，描述未体现开业日期的象征意义"
+  },
+  "44": {
+   "seq": 44,
+   "place": "s12",
+   "name": {
+    "zh": "Legal Sea Foods 市中心十字路口店",
+    "en": "Legal Sea Foods — Downtown Crossing"
+   },
+   "aliases": [
+    "Legal Sea Foods — Downtown Crossing"
+   ],
+   "tier": "C",
+   "core": 2.33,
+   "kind": "shop",
+   "area": {
+    "zh": "Downtown Crossing",
+    "en": "Downtown Crossing"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Washington Street上的海鲜餐厅，按具体分店识别。"
+   ],
+   "intro_en": "Seafood restaurant on Washington Street; listed as a specific branch.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Boston Downtown Crossing - Restaurant - Legal Sea Foods",
+     "url": "https://www.legalseafoods.com/locations/boston-downtown-crossing/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "558 Washington St.",
+    "en": "558 Washington St."
+   },
+   "specialty": {
+    "zh": "Washington Street上的海鲜餐厅，按具体分店识别。",
+    "en": "Seafood restaurant on Washington Street; listed as a specific branch."
+   },
+   "shop_kind": {
+    "zh": "海鲜餐饮",
+    "en": "海鲜餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "45": {
+   "seq": 45,
+   "place": "s13",
+   "name": {
+    "zh": "High Street Place 美食广场",
+    "en": "High Street Place Food Hall"
+   },
+   "aliases": [
+    "High Street Place Food Hall"
+   ],
+   "tier": "C",
+   "core": 3.72,
+   "kind": "shop",
+   "area": {
+    "zh": "金融区",
+    "en": "Financial District"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "High Street上的多商户美食广场。"
+   ],
+   "intro_en": "Multi-vendor food hall on High Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "403 - Forbidden",
+     "url": "https://www.highstreetplace.com/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "100 High St.",
+    "en": "100 High St."
+   },
+   "specialty": {
+    "zh": "High Street上的多商户美食广场。",
+    "en": "Multi-vendor food hall on High Street."
+   },
+   "shop_kind": {
+    "zh": "美食广场",
+    "en": "美食广场"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录因页面403错误未能获取任何实际内容，无法验证美食广场的具体商户构成、建筑背景或文化特色"
+  },
+  "46": {
+   "seq": 46,
+   "place": "s14",
+   "name": {
+    "zh": "Flour Bakery 堡点店",
+    "en": "Flour Bakery + Cafe — Fort Point"
+   },
+   "aliases": [
+    "Flour Bakery + Cafe — Fort Point"
+   ],
+   "tier": "C",
+   "core": 3.4,
+   "kind": "shop",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Farnsworth Street上的烘焙咖啡店。"
+   ],
+   "intro_en": "Bakery and cafe on Farnsworth Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "welcome to flour bakery + cafe",
+     "url": "https://www.flourbakery.com/"
+    }
+   ],
+   "borrowed": {
+    "zh": "具体地址另据Signature Boston 2025海港区商户图。",
+    "en": "具体地址另据Signature Boston 2025海港区商户图。"
+   },
+   "address": {
+    "zh": "12 Farnsworth St.",
+    "en": "12 Farnsworth St."
+   },
+   "specialty": {
+    "zh": "Farnsworth Street上的烘焙咖啡店。",
+    "en": "Bakery and cafe on Farnsworth Street."
+   },
+   "shop_kind": {
+    "zh": "面包咖啡",
+    "en": "面包咖啡"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "47": {
+   "seq": 47,
+   "place": "s15",
+   "name": {
+    "zh": "Row 34 海港区店",
+    "en": "Row 34 — Seaport"
+   },
+   "aliases": [
+    "Row 34 — Seaport"
+   ],
+   "tier": "C",
+   "core": 5.11,
+   "kind": "shop",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "设在旧波士顿码头公司仓库里的海鲜餐厅。"
+   ],
+   "intro_en": "Seafood restaurant in a former Boston Wharf Company warehouse.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Hours & Location | Row 34 in Boston, MA",
+     "url": "https://www.row34.com/location/row34-seaport/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "383 Congress St.",
+    "en": "383 Congress St."
+   },
+   "specialty": {
+    "zh": "设在旧波士顿码头公司仓库里的海鲜餐厅。",
+    "en": "Seafood restaurant in a former Boston Wharf Company warehouse."
+   },
+   "shop_kind": {
+    "zh": "海鲜餐饮",
+    "en": "海鲜餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "48": {
+   "seq": 48,
+   "place": "s16",
+   "name": {
+    "zh": "Trillium 堡点店",
+    "en": "Trillium — Fort Point"
+   },
+   "aliases": [
+    "Trillium — Fort Point"
+   ],
+   "tier": "C",
+   "core": 3.77,
+   "kind": "shop",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Thomson Place上的精酿啤酒与餐饮场所。"
+   ],
+   "intro_en": "Craft brewery and dining venue on Thomson Place.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Fort Point – Trilliumbrewing.com",
+     "url": "https://trilliumbrewing.com/pages/fort-point"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "50 Thomson Pl.",
+    "en": "50 Thomson Pl."
+   },
+   "specialty": {
+    "zh": "Thomson Place上的精酿啤酒与餐饮场所。",
+    "en": "Craft brewery and dining venue on Thomson Place."
+   },
+   "shop_kind": {
+    "zh": "酿酒餐饮",
+    "en": "酿酒餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "49": {
+   "seq": 49,
+   "place": "s17",
+   "name": {
+    "zh": "Abigail's Tea Room",
+    "en": "Abigail's Tea Room"
+   },
+   "aliases": [
+    "Abigail's Tea Room"
+   ],
+   "tier": "C",
+   "core": 4.89,
+   "kind": "shop",
+   "area": {
+    "zh": "Fort Point",
+    "en": "Fort Point"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "波士顿倾茶博物馆内可不购博物馆门票进入的茶室。"
+   ],
+   "intro_en": "Tea room at the Tea Party museum, accessible without a museum ticket.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Frequently Asked Questions About Boston Tea Party Museum",
+     "url": "https://www.bostonteapartyship.com/faq"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "306 Congress St.",
+    "en": "306 Congress St."
+   },
+   "specialty": {
+    "zh": "波士顿倾茶博物馆内可不购博物馆门票进入的茶室。",
+    "en": "Tea room at the Tea Party museum, accessible without a museum ticket."
+   },
+   "shop_kind": {
+    "zh": "茶室",
+    "en": "茶室"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "50": {
+   "seq": 50,
+   "place": "s18",
+   "name": {
+    "zh": "Coquette 餐厅",
+    "en": "Coquette"
+   },
+   "aliases": [
+    "Coquette"
+   ],
+   "tier": "C",
+   "core": 2.28,
+   "kind": "shop",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于450 Summer Street的地中海风格餐厅。"
+   ],
+   "intro_en": "Mediterranean-inspired restaurant at 450 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Hours & Location | Coquette in Boston, MA",
+     "url": "https://www.coquetteboston.com/location/coquette/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "450 Summer St.",
+    "en": "450 Summer St."
+   },
+   "specialty": {
+    "zh": "位于450 Summer Street的地中海风格餐厅。",
+    "en": "Mediterranean-inspired restaurant at 450 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "餐饮",
+    "en": "餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "51": {
+   "seq": 51,
+   "place": "s19",
+   "name": {
+    "zh": "M.J. O'Connor's 海港区店",
+    "en": "M.J. O'Connor's — Seaport"
+   },
+   "aliases": [
+    "M.J. O'Connor's — Seaport"
+   ],
+   "tier": "C",
+   "core": 1.91,
+   "kind": "shop",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "位于425 Summer Street的餐吧。"
+   ],
+   "intro_en": "Restaurant and pub at 425 Summer Street.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Seaport Hours & Location | M.J. O'Connor's in Boston, MA",
+     "url": "https://www.mjoconnors.com/location/mj-oconnors-seaport/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "425 Summer St.",
+    "en": "425 Summer St."
+   },
+   "specialty": {
+    "zh": "位于425 Summer Street的餐吧。",
+    "en": "Restaurant and pub at 425 Summer Street."
+   },
+   "shop_kind": {
+    "zh": "餐吧",
+    "en": "餐吧"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": null
+  },
+  "52": {
+   "seq": 52,
+   "place": "s20",
+   "name": {
+    "zh": "Harpoon 波士顿酿酒厂",
+    "en": "Harpoon Boston Brewery"
+   },
+   "aliases": [
+    "Harpoon Boston Brewery"
+   ],
+   "tier": "C",
+   "core": 4.08,
+   "kind": "shop",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Northern Avenue上的酿酒厂与啤酒厅。"
+   ],
+   "intro_en": "Brewery and beer hall on Northern Avenue.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Boston Brewery - Harpoon",
+     "url": "https://harpoonbrewery.com/boston-brewery/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "306 Northern Ave.",
+    "en": "306 Northern Ave."
+   },
+   "specialty": {
+    "zh": "Northern Avenue上的酿酒厂与啤酒厅。",
+    "en": "Brewery and beer hall on Northern Avenue."
+   },
+   "shop_kind": {
+    "zh": "酿酒餐饮",
+    "en": "酿酒餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明Harpoon自称'波士顿原创'精酿啤酒厂，并提供每日多场次的酿酒厂参观与品酒活动（$15/人），描述仅提及'酿酒厂与啤酒厅'，未体现其可参与的参观品酒体验，这会影响其作为生产型文化场所的参观价值判断"
+  },
+  "53": {
+   "seq": 53,
+   "place": "s21",
+   "name": {
+    "zh": "Legal Sea Foods 海港店",
+    "en": "Legal Sea Foods — Boston Harborside"
+   },
+   "aliases": [
+    "Legal Sea Foods — Boston Harborside"
+   ],
+   "tier": "C",
+   "core": 2.19,
+   "kind": "shop",
+   "area": {
+    "zh": "海港区",
+    "en": "Seaport"
+   },
+   "related": null,
+   "dwell": null,
+   "status": {
+    "zh": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+    "en": "The business has a public web listing; live operation, menu, prices and temporary closures are unverified."
+   },
+   "intro": [
+    "Northern Avenue上的海港区海鲜餐厅。"
+   ],
+   "intro_en": "Seaport seafood restaurant on Northern Avenue.",
+   "source": {
+    "zh": "依据官方文旅及平台资料整理（AI整理），逐条出处见下方",
+    "en": "AI summary of saved official tourism and platform sources; references below"
+   },
+   "sources": [
+    {
+     "title": "Menus - Boston Harborside - Legal Sea Foods",
+     "url": "https://www.legalseafoods.com/locations/boston-harborside/"
+    }
+   ],
+   "borrowed": {
+    "zh": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+    "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified."
+   },
+   "address": {
+    "zh": "270 Northern Ave.",
+    "en": "270 Northern Ave."
+   },
+   "specialty": {
+    "zh": "Northern Avenue上的海港区海鲜餐厅。",
+    "en": "Seaport seafood restaurant on Northern Avenue."
+   },
+   "shop_kind": {
+    "zh": "海鲜餐饮",
+    "en": "海鲜餐饮"
+   },
+   "platform": {
+    "zh": "经营者或街区网页快照；实时营业、菜单、价格与临时停业未核实",
+    "en": "Operator or district web snapshot; live operation, menu, prices and temporary closures are unverified"
+   },
+   "photo": null,
+   "objects": [],
+   "review": "摘录说明这是Legal Sea Foods的旗舰海港店，占地三层、2万平方英尺，设有屋顶'The Overlook'可360度眺望波士顿港，描述仅为'海港区海鲜餐厅'，未体现其规模与景观特色，可能影响其在滨水体验维度的等级判断"
+  }
+ },
+ "routes": [],
+ "default_route": "none",
+ "provenance": {
+  "package": "boston_summer_st_final.json",
+  "package_sha256": "d6b6f575da6926dd6a95e3f9a85bcc61cf7f1cb8e12343bb443db0ed27341f37",
+  "source_sha256": "5c85adb32ecf902b4f31976bd36e620f76f02d3a911498a931befd851116be10",
+  "rating_sha256": "dfdbec4726729b6d5e291edb7ef92832b744b70194f33a07e8afb0f6990f406d",
+  "audit_sha256": "f95e760330f1b01c078fa60e2033f3533281701fbf9771b8bedf7b40ff053998",
+  "translations_sha256": "6b654e4580d6e5a7fa08aa633d012d17ce320a272f2f982742c3e9e107d8f699",
+  "workbook_sha256": "6e9acf52ea4a186712adacc6702437156943b50f0b64818d819ec0aeec0bab87",
+  "checked_on": "2026-11-03",
+  "business_database_written": false
+ }
+}
