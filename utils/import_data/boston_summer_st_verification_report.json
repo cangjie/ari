@@ -1,0 +1,16 @@
+{
+  "key": "boston_summer_st",
+  "count": 53,
+  "tiers": {
+    "B": 11,
+    "A": 12,
+    "C": 30
+  },
+  "workbook": "exports/波士顿Summer Street周边景点与商铺_双语清单_V3评级版.xlsx",
+  "workbook_sha256": "6e9acf52ea4a186712adacc6702437156943b50f0b64818d819ec0aeec0bab87",
+  "business_database_written": false,
+  "production_questions_posted": 0,
+  "android_apk_rebuilt": false,
+  "nginx_changed": false,
+  "verified_on": "2026-11-03"
+}

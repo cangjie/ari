@@ -1,0 +1,53 @@
+{"seq": 1, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 2, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 3, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 4, "missing": [{"zh": "摘录提到公园街教堂217英尺尖顶曾是旅行者进入波士顿时看到的第一座地标，描述中未体现", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "217英尺尖顶曾是进入波士顿的首个可见地标", "top_missing_en": "The 217 ft. steeple was once the first landmark travelers saw when approaching Boston"}
+{"seq": 5, "missing": [{"zh": "摘录明确列出萨缪尔·亚当斯、约翰·汉考克、保罗·里维尔及波士顿惨案受害者等名人安葬于此，描述中完全未提及", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "安葬有萨缪尔·亚当斯、约翰·汉考克、保罗·里维尔等多位开国名人及波士顿惨案受害者", "top_missing_en": "Burial site of Samuel Adams, John Hancock, Paul Revere, and Boston Massacre victims"}
+{"seq": 6, "missing": [{"zh": "摘录说明国王礼拜堂是波士顿首座英国圣公会教堂，且墓地是波士顿最古老的英国人墓地，描述未体现这些关键身份信息", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "波士顿首座英国圣公会教堂，毗邻波士顿最古老的英国人墓地", "top_missing_en": "Boston's first Anglican church, adjacent to the city's oldest English burying ground"}
+{"seq": 7, "missing": [{"zh": "摘录指出波士顿拉丁学校始建于1635年，是美国最古老的公立学校，描述中未提及此核心历史地位", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "美国最古老的公立学校，创立于1635年", "top_missing_en": "America's oldest public school, founded 1635"}
+{"seq": 8, "missing": [{"zh": "摘录说明老街角书店建于1718年，是市中心现存最古老的商业建筑，并曾是19世纪出版商Ticknor and Fields所在地（出版《瓦尔登湖》《红字》等），描述仅提醒非现仍书店，未呈现这些支撑其文化地位的关键事实", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "建于1718年，是市中心最古老的商业建筑，曾为19世纪出版商Ticknor and Fields所在地", "top_missing_en": "Built in 1718, downtown's oldest commercial building, former home of 19th-century publisher Ticknor and Fields"}
+{"seq": 9, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 10, "missing": [{"zh": "保存摘录中关于老州议会大厦的具体段落被截断，未能直接验证'现存最古老公共建筑之一'的具体支撑文字", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "摘录未包含该站点具体介绍文字（源文本在此处被截断）", "top_missing_en": "Source excerpt is truncated before the specific Old State House description"}
+{"seq": 11, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 12, "missing": [{"zh": "保存摘录中关于法尼尔厅的具体段落被截断，未能直接验证其历史叙事细节", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "摘录未包含该站点具体介绍文字（源文本在此处被截断）", "top_missing_en": "Source excerpt is truncated before the specific Faneuil Hall description"}
+{"seq": 13, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 14, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 15, "missing": [{"zh": "摘录中列出网站有'History'导航页面，说明该歌剧院存在独立历史内容，但摘录未包含具体历史文字，描述也未体现其是否为历史建筑", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "网站提及存在歌剧院历史（History）页面，但摘录未呈现具体历史内容，无法确认建筑年代等信息", "top_missing_en": "Site references a History page but excerpt lacks the actual historical content (building age, etc.)"}
+{"seq": 16, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 17, "missing": [{"zh": "摘录标题显示为'开放时间与信息'页面，未提供公园的设计者、历史背景或园内景点等实质内容，无法判断是否有足够文化价值支撑更高等级", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "摘录仅为时间信息页面标题，缺少公园设计、历史或景点的实质描述", "top_missing_en": "Excerpt is only an hours/info page title, lacking substantive content on design, history, or features"}
+{"seq": 18, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 19, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 20, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 21, "missing": [{"zh": "评分证据已承认地址资料存在不一致；摘录只提供263 Summer St地址，并未提及'Summer与Melcher街角'这一具体路口位置，描述中的路口信息未获摘录直接支持", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": "描述中'Summer与Melcher街角'的具体路口位置未在摘录中得到证实，摘录仅给出263 Summer St地址（此问题已在评分证据中注明）。", "top_missing_zh": "摘录未证实具体路口位置（Summer与Melcher街角），仅提供街道地址", "top_missing_en": "Excerpt does not confirm the specific intersection (Summer & Melcher), only the street address"}
+{"seq": 22, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 23, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 24, "missing": [{"zh": "摘录说明马丁公园是为纪念2013年波士顿马拉松爆炸案最年轻遇难者Martin Richard而建，具有城市悼念意义，描述仅称其为'包容性滨水游乐公园'，未体现纪念性质", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "为纪念2013年波士顿马拉松爆炸案最年轻遇难者Martin Richard而建的纪念性公园", "top_missing_en": "Memorial park honoring Martin Richard, the youngest victim of the Boston Marathon bombing"}
+{"seq": 25, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 26, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 27, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 28, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 29, "missing": [{"zh": "该条来源为'编辑摘要'而非网页正文（原始网页请求超时），对会展中心的具体历史或功能信息缺乏实际来源支撑", "tier_sensitive": false}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "来源为编辑摘要而非网页正文，缺乏实质信息来源", "top_missing_en": "Source is an editor summary, not actual page text, due to a fetch timeout"}
+{"seq": 30, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 31, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 32, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 33, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 34, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 35, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 36, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 37, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 38, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 39, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 40, "missing": [{"zh": "摘录明确给出创始人Sam LaGrassa于1968年创立该店、经营超过50年的具体历史，而评分证据称'未提供具体年代或文化背景'，与摘录实际内容不符", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": "评分证据称店铺'未提供具体年代'，但摘录实际给出了1968年创立的具体年代及创始人信息，评估未充分利用已有证据。", "top_missing_zh": "1968年由Sam LaGrassa创立，经营超过50年", "top_missing_en": "Founded in 1968 by Sam LaGrassa, over 50 years in operation"}
+{"seq": 41, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 42, "missing": [{"zh": "摘录明确标注'Est 1825'，即书店创立于1825年，是美国最古老、规模最大的旧书店之一，描述中完全未体现这一具有显著文化遗产价值的事实", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "创立于1825年，为美国最古老及最大的旧书店之一", "top_missing_en": "Established in 1825, one of America's oldest and largest antiquarian book shops"}
+{"seq": 43, "missing": [{"zh": "摘录说明该酿酒馆为员工持有制，并特意选在2018年7月4日独立日开业，具有象征性文化叙事，描述未体现开业日期的象征意义", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "2018年7月4日独立日开业，具有象征性意义", "top_missing_en": "Opened on July 4, 2018 (Independence Day), a symbolic opening date"}
+{"seq": 44, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 45, "missing": [{"zh": "摘录因页面403错误未能获取任何实际内容，无法验证美食广场的具体商户构成、建筑背景或文化特色", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "摘录为403禁止访问错误页面，未提供任何实质内容", "top_missing_en": "Excerpt is a 403 Forbidden error page with no substantive content"}
+{"seq": 46, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 47, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 48, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 49, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 50, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 51, "missing": [], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": null, "top_missing_en": null}
+{"seq": 52, "missing": [{"zh": "摘录说明Harpoon自称'波士顿原创'精酿啤酒厂，并提供每日多场次的酿酒厂参观与品酒活动（$15/人），描述仅提及'酿酒厂与啤酒厅'，未体现其可参与的参观品酒体验，这会影响其作为生产型文化场所的参观价值判断", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "提供每日多场次酿酒厂参观与品酒活动（$15/人）", "top_missing_en": "Offers daily brewery tours and tastings ($15 per person)"}
+{"seq": 53, "missing": [{"zh": "摘录说明这是Legal Sea Foods的旗舰海港店，占地三层、2万平方英尺，设有屋顶'The Overlook'可360度眺望波士顿港，描述仅为'海港区海鲜餐厅'，未体现其规模与景观特色，可能影响其在滨水体验维度的等级判断", "tier_sensitive": true}], "found_factual_error": false, "error_note_zh": null, "top_missing_zh": "旗舰店，三层楼2万平方英尺，设有360度观港屋顶'The Overlook'", "top_missing_en": "Flagship location, three floors spanning 20,000 sq ft, with a 360-degree harbor-view rooftop called 'The Overlook'"}

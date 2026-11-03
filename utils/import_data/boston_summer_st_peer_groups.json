@@ -1,0 +1,271 @@
+{
+  "museum_key": "boston_summer_st",
+  "input_sha256": "5c85adb32ecf902b4f31976bd36e620f76f02d3a911498a931befd851116be10",
+  "groups": [
+    {
+      "seq": 1,
+      "identity_key": "f00",
+      "peer_group": "自由之路整体历史步道"
+    },
+    {
+      "seq": 2,
+      "identity_key": "t01",
+      "peer_group": "自由之路历史步道站点"
+    },
+    {
+      "seq": 3,
+      "identity_key": "t02",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 4,
+      "identity_key": "t03",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 5,
+      "identity_key": "t04",
+      "peer_group": "自由之路历史遗址站点"
+    },
+    {
+      "seq": 6,
+      "identity_key": "t05",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 7,
+      "identity_key": "t06",
+      "peer_group": "自由之路历史遗址站点"
+    },
+    {
+      "seq": 8,
+      "identity_key": "t07",
+      "peer_group": "自由之路历史遗址站点"
+    },
+    {
+      "seq": 9,
+      "identity_key": "t08",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 10,
+      "identity_key": "t09",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 11,
+      "identity_key": "t10",
+      "peer_group": "自由之路历史遗址站点"
+    },
+    {
+      "seq": 12,
+      "identity_key": "t11",
+      "peer_group": "自由之路历史建筑站点"
+    },
+    {
+      "seq": 13,
+      "identity_key": "p01",
+      "peer_group": "商业街区"
+    },
+    {
+      "seq": 14,
+      "identity_key": "p02",
+      "peer_group": "城市公共广场"
+    },
+    {
+      "seq": 15,
+      "identity_key": "p03",
+      "peer_group": "现场演出场馆"
+    },
+    {
+      "seq": 16,
+      "identity_key": "p04",
+      "peer_group": "纪念性公共空间"
+    },
+    {
+      "seq": 17,
+      "identity_key": "p05",
+      "peer_group": "城市公园"
+    },
+    {
+      "seq": 18,
+      "identity_key": "p06",
+      "peer_group": "城市线性公园"
+    },
+    {
+      "seq": 19,
+      "identity_key": "p07",
+      "peer_group": "历史交通设施"
+    },
+    {
+      "seq": 20,
+      "identity_key": "p08",
+      "peer_group": "历史街区"
+    },
+    {
+      "seq": 21,
+      "identity_key": "p09",
+      "peer_group": "历史建筑"
+    },
+    {
+      "seq": 22,
+      "identity_key": "p10",
+      "peer_group": "综合历史博物馆"
+    },
+    {
+      "seq": 23,
+      "identity_key": "p11",
+      "peer_group": "专业主题博物馆"
+    },
+    {
+      "seq": 24,
+      "identity_key": "p12",
+      "peer_group": "城市公园"
+    },
+    {
+      "seq": 25,
+      "identity_key": "p13",
+      "peer_group": "专业主题博物馆"
+    },
+    {
+      "seq": 26,
+      "identity_key": "p14",
+      "peer_group": "滨水步道"
+    },
+    {
+      "seq": 27,
+      "identity_key": "p15",
+      "peer_group": "当代艺术场馆"
+    },
+    {
+      "seq": 28,
+      "identity_key": "p16",
+      "peer_group": "公共活动草坪"
+    },
+    {
+      "seq": 29,
+      "identity_key": "p17",
+      "peer_group": "会展场馆"
+    },
+    {
+      "seq": 30,
+      "identity_key": "p18",
+      "peer_group": "现场演出场馆"
+    },
+    {
+      "seq": 31,
+      "identity_key": "p19",
+      "peer_group": "步行连接设施"
+    },
+    {
+      "seq": 32,
+      "identity_key": "p20",
+      "peer_group": "城市公园"
+    },
+    {
+      "seq": 33,
+      "identity_key": "s01",
+      "peer_group": "服饰零售店"
+    },
+    {
+      "seq": 34,
+      "identity_key": "s02",
+      "peer_group": "百货零售店"
+    },
+    {
+      "seq": 35,
+      "identity_key": "s03",
+      "peer_group": "食品零售店"
+    },
+    {
+      "seq": 36,
+      "identity_key": "s04",
+      "peer_group": "面包咖啡店"
+    },
+    {
+      "seq": 37,
+      "identity_key": "s05",
+      "peer_group": "咖啡店"
+    },
+    {
+      "seq": 38,
+      "identity_key": "s06",
+      "peer_group": "甜品店"
+    },
+    {
+      "seq": 39,
+      "identity_key": "s07",
+      "peer_group": "三明治简餐店"
+    },
+    {
+      "seq": 40,
+      "identity_key": "s08",
+      "peer_group": "三明治简餐店"
+    },
+    {
+      "seq": 41,
+      "identity_key": "s09",
+      "peer_group": "咖啡店"
+    },
+    {
+      "seq": 42,
+      "identity_key": "s10",
+      "peer_group": "书店"
+    },
+    {
+      "seq": 43,
+      "identity_key": "s11",
+      "peer_group": "酿酒餐饮场所"
+    },
+    {
+      "seq": 44,
+      "identity_key": "s12",
+      "peer_group": "海鲜餐厅"
+    },
+    {
+      "seq": 45,
+      "identity_key": "s13",
+      "peer_group": "美食广场"
+    },
+    {
+      "seq": 46,
+      "identity_key": "s14",
+      "peer_group": "面包咖啡店"
+    },
+    {
+      "seq": 47,
+      "identity_key": "s15",
+      "peer_group": "海鲜餐厅"
+    },
+    {
+      "seq": 48,
+      "identity_key": "s16",
+      "peer_group": "酿酒餐饮场所"
+    },
+    {
+      "seq": 49,
+      "identity_key": "s17",
+      "peer_group": "茶室"
+    },
+    {
+      "seq": 50,
+      "identity_key": "s18",
+      "peer_group": "综合餐厅"
+    },
+    {
+      "seq": 51,
+      "identity_key": "s19",
+      "peer_group": "餐吧"
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "peer_group": "酿酒餐饮场所"
+    },
+    {
+      "seq": 53,
+      "identity_key": "s21",
+      "peer_group": "海鲜餐厅"
+    }
+  ]
+}
