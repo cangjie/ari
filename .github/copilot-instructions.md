@@ -132,6 +132,8 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 
 **南锣鼓巷及什刹海 `nanluo_shichahai` 同为独立本地包，不计入上述10馆31426条。** 2026-10-23/24完成100条（84文化参观点+16商铺）的双语Excel及Web/App发布，S8/A32/B35/C25；现有37处浏览位置、60条有图、四主题×四地铁起点和21处GPS街道参考点。只写模型缓存，未登记生产馆、入metadata或重灌业务资料。详情见第18条和 `docs/NANLUO_SHICHAHAI_DATA.md`。
 
+**波士顿 Summer Street `boston_summer_st` 同为独立本地包，不计入上述业务库统计。** 2026-11-04上线53条（含21条商铺）、两条路线和17张有署名许可的图片；V3为S1/A12/B10/C30，其中21条评级待结合补充资料复核。未登记生产馆、写业务metadata或重灌资料。详情见第18条和 `docs/BOSTON_SUMMER_ST_DATA.md`。
+
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
 `claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件，**档位不可考**，
 见第 9 条 `--effort`），`claude-sonnet-5 effort=medium (claude-cli)` 是 2026-09-23
@@ -1244,7 +1246,7 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 
 **导览站**（`web_api/tour/`，线上 `https://tour.snowmeet.top/`，部署与验收见 `docs/TOUR_WEB.md`）照原型 AriTour 做：
 目的地列表 → 导游地图，选路线、走进热区推送讲解。原型在 claude.ai/design（链接要登录，AI 读不了），
-导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城，10-23/24新增南锣鼓巷及什刹海。当前服务器清单为 `wmhg`、`wanping`、`nanluo_shichahai`，仍以服务器catalog为准。
+导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城，10-23/24新增南锣鼓巷及什刹海，11-04新增波士顿Summer Street。发布时服务器清单为 `wmhg`、`wanping`、`nanluo_shichahai`、`boston_summer_st`，实际以上线服务器catalog为准。
 
     tour_osm_fetch.py → <馆>_osm_data.json ───────┐
     库 + <馆>_route_data.py + route_plan.Planner ──┼─ tour_build.py → web_api/tour/data/<馆>.json → 页面
@@ -1338,6 +1340,12 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 - 选择主题后点“开始GPS导览”才启用定位；完整清单及全部景点地图仍可只浏览。网页用现有watchPosition；App通过 `nativeTour` 把navigation的area/entrance/places覆盖到发送副本，旧原生解析器即可接收21点，不重复启动浏览器GPS；无需改APK。回清单/线路图页清理网页监听并退出当前原生景区。原两景区的资料与问答材料未变，新增GPS说明涉及后端提示词，部署后已重启 `ari-web-api`。
 - 最终92项pytest、21个本地浏览器场景、13项Android单测通过；公网100个静态文件逐字节一致，五场景及三处只读问答GET正常，服务器/本地问答材料哈希一致。内容提交 `e688ad5`（照片/标签/主题）、`4b42d9e`（独立图）、`ef0ffe3`（GPS）均已部署，收工前服务器为 `77a44ac`、服务active。累计111次模型成功/4次历史失败，见usage与三组public_report；Claude输入计量缺口仍保留，不能当完整账单。未改Nginx或APK，没有线上测试发帖；真机现场GPS/后台体验尚未验收。
 - 后续审查使用本机已安装Claude CLI 2.1.308的safe-mode，仍是Sonnet 5 medium和订阅认证，不改全局设置；旧2.1.92曾触发插件下载和超长思考。审查只提供相关完整函数和直接证据，不能把文字审查称为模型视觉验图。用户要求模型额度耗尽后保留原模型、3小时后恢复；**当前未接入持久自动唤醒/调度**，不得声称会话结束后会自动续跑。最近照片/线路/GPS三阶段未出现新配额失败。
+
+**波士顿 Summer Street `boston_summer_st`（2026-11-04上线）**：53条含21商铺，评级反映文化参观价值，不评价口味服务。自由之路整体与组成点有重叠；Excel另列完整16站作范围对照。21条保留评级复核提示。正文引文必须与保存的来源正文逐字匹配；未带v2/v3的早期资料包误将编辑简介标作引文，已作废，现行构建使用V3，保留实际评分输入哈希及独立审计结果。
+
+- 纯观光18站约5.4公里，观光加美食11站约4.4公里；距离和停留时间为估计，不含用餐排队。25处浏览参考点与24处独立GPS附近提醒点来自公共道路/OSM，不能当场馆入口；两条路线包含Summer Street Steps，码头屋顶标牌合并到Fort Point路线点。地铁站点引用MBTA官方GTFS。现场可达性、开放和商铺营业须另核。
+- 17张Wikimedia Commons图片经主体、署名与许可核对；用户同意Summer Street Steps、Harbor Way绿地、码头屋顶标牌及缺少可确认授权图片的餐饮节点暂时无图。两条线路各有SVG和1200×1600 PNG。`tour_build.py --museum boston_summer_st --check`及`tour_itinerary_maps.py --museum boston_summer_st --check`可核对数据与路线图。
+- 功能提交 `1bf3c07` 已推送并部署到服务器，两域名浏览器的清单、路线、图片署名和模拟定位验收通过。未修改APK，真机安装、现场GPS与实走尚未验收。相关Excel位于忽略目录 `utils/import_data/exports/波士顿Summer Street周边_双语V3评级.xlsx`，资料与审计详见 `docs/BOSTON_SUMMER_ST_DATA.md`。
 
 **19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
 
@@ -1681,6 +1689,7 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/tour_package_build.py` | 已审本地资料包转共享导览JSON；核对来源、评分、审计、译文、图片身份和哈希，沿OSM公开道路连线 |
 | `docs/WANPING_DATA.md` / `utils/import_data/wanping_*` | 宛平城39条、CR归并、7到达点、免费/全面线、12图、原版备份及独立复核；未入业务库。当前验收见release_report和photo_publish_report |
 | `docs/NANLUO_SHICHAHAI_DATA.md` / `utils/import_data/nanluo_shichahai_*` | 南锣什刹海100条双语资料、来源/评分/slim审计、商铺标签及照片、16主题方案、21处GPS参考点；未入业务库。当前验收看gps_public_report；历史发布依次为release、media、expansion、itinerary_map报告 |
+| `docs/BOSTON_SUMMER_ST_DATA.md` / `utils/import_data/boston_summer_st_*` | 波士顿Summer Street双语清单、V3评分及独立审计、来源正文、17张图片许可、两条路线与GPS参考点；现行构建使用V3，早期未标v2/v3的引文资料包已作废，详见说明 |
 | `utils/import_data/tour_collection_build.py` / `tour_collection_media.py` / `tour_collection_experience.py` | 完整清单模式的版本核对、来源位置/图片、商铺标签/公共道路主题与可选navigation构建；GPS点不覆盖旧浏览坐标，未知位置保留清单 |
 | `utils/import_data/tour_itinerary_maps.py` / `tour_itinerary_maps.mjs` | 按共享JSON生成独立SVG并经本机Chrome导出1200×1600 PNG；对应 `<key>_itinerary_maps.json` 绑定源JSON、SVG和PNG哈希 |
 | `utils/import_data/tour_photo_build.py` | 从本机留存原图重建JPEG并按清单核对原件和发布版SHA-256；需Pillow，不联网、不覆盖原图 |
