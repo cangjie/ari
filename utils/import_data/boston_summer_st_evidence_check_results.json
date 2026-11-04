@@ -1,0 +1,462 @@
+{
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "items": [
+    {
+      "seq": 1,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "给定网页文本未提及2.5英里长度、红线标识或16个官方景点的说法，无法在来源中找到对应原文支持；地址信息亦未出现。"
+    },
+    {
+      "seq": 2,
+      "quote": "Established in 1634, Boston Common is America’s oldest public park.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/boston-common",
+      "supported": false,
+      "address_supported": true,
+      "reason": "来源确认Boston Common是美国最古老的公共公园（历史公园），但未明确说明它是Freedom Trail的起点；地址139 Tremont St.在来源中有明确列出，支持。"
+    },
+    {
+      "seq": 3,
+      "quote": "Designed by Charles Bulfinch, the ‘new’ and current State House has served as the seat of Massachusetts government since its opening in 1798.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": false,
+      "address_supported": false,
+      "reason": "来源支持其为州政府所在地（州议会大厦），但未说明它位于Boston Common旁边；来源文本中未给出该景点的具体街道地址。"
+    },
+    {
+      "seq": 4,
+      "quote": "The church was founded in 1809, at the corner of Park and Tremont Streets, atop the site of Boston’s town grain storage building, or granary.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": true,
+      "reason": "来源确认Park Street Church为历史教堂，位于Freedom Trail上，且地址为Park St.与Tremont St.交界处，与给定地址一致。"
+    },
+    {
+      "seq": 5,
+      "quote": "The Granary Burying Ground, located at 120 Tremont Street in downtown Boston, is the city's third oldest cemetery.",
+      "source_url": "https://www.boston.gov/cemeteries/granary-burying-ground",
+      "supported": false,
+      "address_supported": true,
+      "reason": "来源确认其为市中心历史墓地及地址120 Tremont St.，但未明确说明它“紧邻Park Street Church”，仅提及谷仓移至Park Street Church所在地，关系不完全等同于“beside”。"
+    },
+    {
+      "seq": 6,
+      "quote": "Founded in 1686 as Boston’s first Anglican church, King’s Chapel is home to over 330 years of history. The 1754 granite building still stands on the church’s original site: the corner of Boston’s oldest English burying ground.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": false,
+      "reason": "来源确认King's Chapel为教堂且位于Boston最古老英式墓地旁，支持“教堂和邻接墓地”的描述；但未给出Tremont St. & School St.这一具体地址。"
+    },
+    {
+      "seq": 7,
+      "quote": "Boston Latin School Site/Benjamin Franklin Statue Boston Latin School, founded on April 23, 1635, is the oldest public school in America. It offered free education to boys - rich or poor - while girls attended private schools at home. Until the completion of the schoolhouse in 1645, classes were held in the home of the first headmaster, Philemon Pormont. A mosaic and a statue of former student Benjamin Franklin currently marks the location of the original schoolhouse.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": false,
+      "reason": "来源确认该地点为原学校旧址，现以马赛克和富兰克林雕像标记，符合描述；但未给出School St.这一具体地址。"
+    },
+    {
+      "seq": 8,
+      "quote": "Constructed in 1718, the Old Corner Bookstore is downtown Boston’s oldest commercial building and was home to the 19 th -century publishing giant Ticknor and Fields, producer of many venerable American titles",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": false,
+      "address_supported": false,
+      "reason": "来源确认其为历史建筑，但未明确说明“该名称不代表如今仍是营业中的书店”这一具体说法；来源文本中也未给出283 Washington St.这一地址。"
+    },
+    {
+      "seq": 9,
+      "quote": "Experience history where the Boston Tea Party began! This hall rang with words from Puritan sermons, public meetings, and the tea tax debates - visit Old South Meeting House and add your voice to history.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": false,
+      "reason": "来源确认Old South Meeting House与波士顿倾茶事件前的集会相关，支持描述；但未给出310 Washington St.这一具体地址。"
+    },
+    {
+      "seq": 10,
+      "quote": "Through Massacre, Revolution, and fire, the Old State House stands as the oldest surviving public building in Boston.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": false,
+      "reason": "来源明确称其为波士顿现存最古老的公共建筑，支持描述；但未给出206 Washington St.这一具体地址。"
+    },
+    {
+      "seq": 11,
+      "quote": "On March 5, 1770, after months of tensions due to occupation and taxation, Bostonians and Redcoats clashed in the streets of Boston.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": false,
+      "address_supported": false,
+      "reason": "来源确认1770年波士顿大屠杀事件的日期和冲突情况，但未提及该地点以“街道标记”的形式存在；也未给出State St. & Congress St.这一具体地址。"
+    },
+    {
+      "seq": 12,
+      "quote": "Faneuil Hall Often referred to as \"the home of free speech\" and the \"Cradle of Liberty,\" Faneuil Hall hosted America's first Town Meeting.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites",
+      "supported": true,
+      "address_supported": false,
+      "reason": "来源确认Faneuil Hall为历史性集会场所，位于Freedom Trail上，支持描述；但未给出1 Faneuil Hall Sq.这一具体地址。"
+    },
+    {
+      "seq": 13,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source lists businesses located in Downtown Crossing (e.g., on Washington Street, Province Street, High Street) but never describes Downtown Crossing itself as 'a pedestrian shopping district around Summer and Washington Streets,' nor gives that as its address."
+    },
+    {
+      "seq": 14,
+      "quote": "At the center of Downtown Crossing’s bustling pedestrian zone, Summer Street Plaza is one of Boston’s great civic gathering centers.",
+      "source_url": "https://www.downtownboston.org/business/summer-street-plaza/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source directly states Summer Street Plaza is a civic gathering space in the Downtown Crossing pedestrian zone, and lists its address as 10 Summer St., Boston, MA 02110, matching the given address."
+    },
+    {
+      "seq": 15,
+      "quote": "The Citizens Opera House is centrally located in Downtown Crossing. We are within walking distance from the Orange Line Downtown Crossing and Chinatown T Stops, The Green Line Park and Boylston T stops, The Red Line Park and Downtown Crossing T stops.",
+      "source_url": "https://www.citizensoperahouse.com/getting-here/",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The source confirms the location is near Downtown Crossing and lists the address as 539 Washington Street, matching the given address, but it never explicitly describes the venue as a 'performing arts venue.'"
+    },
+    {
+      "seq": 16,
+      "quote": "Developed in 1998, the Irish Famine Memorial Plaza occupies one of the most historic corners in Downtown Boston. Flanked by the Old South Meeting House and the Old Corner Bookstore, with numerous other Freedom Trail sites nearby, it pays tribute to an Gorta Mór –the Great Irish Famine of 1845-49 that drove thousands of Irish to immigrate to Boston, forever transforming the city’s complexion and character.",
+      "source_url": "https://www.downtownboston.org/business/irish-famine-memorial-plaza/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms the plaza is flanked by the Old South Meeting House and Old Corner Bookstore and commemorates the Great Irish Famine and the resulting migration; the listed address 10 School St. matches the source's business info."
+    },
+    {
+      "seq": 17,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The extracted source text only contains the page title ('Hours & Information | Norman B. Leventhal Park') with no descriptive content or address information to verify the claims."
+    },
+    {
+      "seq": 18,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source discusses the Greenway's vision, DEI commitments, and lists the Conservancy's office address (185 Kneeland Street), but does not describe it as a 'linear park through central Boston with its southern end near South Station,' nor does it give 'Surface Rd. / Dewey Sq.' as an address."
+    },
+    {
+      "seq": 19,
+      "quote": "South Station 700 Atlantic Ave Boston, MA 02110 (617) 982-6994",
+      "source_url": "https://bostonsouthstation.com/",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address 700 Atlantic Ave matches the source, but the source text (about retail, food, and offices) does not describe South Station as 'a major rail and transit hub by Summer Street with a historic headhouse visible outside.'"
+    },
+    {
+      "seq": 20,
+      "quote": "Development of the Fort Point Channel area began in 1836 and continued until 1882. The Boston Wharf Company erected nearly all of the buildings in the FPCLD from the designs of their own staff architects.",
+      "source_url": "https://content.boston.gov/historic-district/fort-point-channel-landmark-district",
+      "supported": true,
+      "address_supported": false,
+      "reason": "The source confirms the district consists of historic industrial loft buildings built by the Boston Wharf Company, supporting the description, but it gives the Boston Landmarks Commission's office address (26 Court Street) rather than confirming 'Summer St. / A St. / Congress St.' as the district's address."
+    },
+    {
+      "seq": 21,
+      "quote": "Rising above Summer Street is the iconic red neon “Boston Wharf Co Industrial Real Estate” sign—a fixture that has guided pedestrians and commuters for generations.",
+      "source_url": "https://263summerst.com/history/",
+      "supported": true,
+      "address_supported": false,
+      "reason": "The source confirms the building is at 263 Summer Street and the rooftop sign rises above Summer Street, visible to the public, supporting the description, but it never mentions Melcher Street or '10 Melcher St.' as part of the address."
+    },
+    {
+      "seq": 22,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "审计引文与保存的正文不符，需人工复核。原结论：The source confirms the address 306 Congress St. and that the tea room (Abigail's Tea Room) can be visited without a museum ticket, but it never describes the location as 'Congress Street Bridge' and does not state that the gift shop is accessible without a ticket."
+    },
+    {
+      "seq": 23,
+      "quote": "The Museum is located on the Fort Point Channel in the Fort Point/Seaport neighborhood of Boston.",
+      "source_url": "https://bostonchildrensmuseum.org/visit/directions-and-parking/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms the museum is a children's museum located on the Fort Point Channel, and the address 308 Congress St. matches the source's stated location."
+    },
+    {
+      "seq": 24,
+      "quote": "Adjacent to Boston Children's Museum, the City of Boston Parks Department created an inclusive park and play space that is the first-of-its-kind in the City.",
+      "source_url": "https://content.boston.gov/departments/parks-and-recreation/martins-park",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms Martin's Park is an inclusive park adjacent to Boston Children's Museum on the South Boston waterfront, and the address 64 Sleeper Street matches the source's stated location."
+    },
+    {
+      "seq": 25,
+      "quote": "Step through the door of the historic firehouse at 344 Congress Street and onto the apparatus bay floor that now houses a museum dedicated to the history of the nation’s first and oldest professional fire department.",
+      "source_url": "https://www.bostonsparks.com/boston-fire-museum",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms it is a museum of Boston firefighting history located in a former firehouse at 344 Congress Street."
+    },
+    {
+      "seq": 26,
+      "quote": "BostonHarborwalk.org was designed to help folks find and navigate the Harborwalk and the many public benefits available along it",
+      "source_url": "https://www.bostonharborwalk.org/how-to-use-the-harborwalk-webtool/",
+      "supported": false,
+      "address_supported": false,
+      "reason": "Source describes the Harborwalk generally as a public waterfront path, but does not specifically mention a 'Seaport segment' or give an address of 'Seaport waterfront'; the entry's specific framing as covering only the Seaport segment is not supported by this source."
+    },
+    {
+      "seq": 27,
+      "quote": "Located on Boston Harbor in the city’s dynamic Seaport district",
+      "source_url": "https://www.icaboston.org/visit/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms ICA is a contemporary art museum on the Seaport waterfront, and lists the address as 25 Harbor Shore Drive Boston MA 02210."
+    },
+    {
+      "seq": 28,
+      "quote": "The mailing address for the Lawn on D is 415 Summer Street, Boston, MA 02210.",
+      "source_url": "https://www.signatureboston.com/lawn-on-d/community-activities",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address 415 Summer St. matches the stated mailing address, but the source text does not explicitly describe the Lawn on D as 'beside the convention center' or instruct checking a calendar before visiting."
+    },
+    {
+      "seq": 29,
+      "quote": "Boston Convention & Exhibition Center to be renamed the Thomas Michael Menino Convention and Exhibition Center",
+      "source_url": "https://www.massconvention.com/about-us/press-release/boston-convention-exhibition-center-to-be-renamed-the-thomas-michael-menino",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms the venue was formerly the Boston Convention & Exhibition Center and is now the Thomas M. Menino Convention & Exhibition Center, with address 415 Summer St Boston, MA 02210."
+    },
+    {
+      "seq": 30,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source page is a directory listing with no body text describing Laugh Boston as a comedy venue, and does not state its address as 425 Summer St."
+    },
+    {
+      "seq": 31,
+      "quote": "Adjacent to the Summer Street Steps, a welcoming pedestrian connection between Summer Street and Boston Harbor",
+      "source_url": "https://www.wsdevelopment.com/our-properties/400-summer-street/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms the Summer Street Steps are a pedestrian connection near 400 Summer Street toward the harbor."
+    },
+    {
+      "seq": 32,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "审计引文与保存的正文不符，需人工复核。原结论：Source confirms Harbor Way is a pedestrian open space connecting the district to the harbor, but does not specify an address of 'Harbor Way / Summer St.'"
+    },
+    {
+      "seq": 33,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "审计引文与保存的正文不符，需人工复核。原结论：Source confirms Primark sells fashion and home goods and is located in the Burnham Building at 10 Summer St., Boston, MA 02110."
+    },
+    {
+      "seq": 34,
+      "quote": "BUSINESS INFO 450 Washington St., Boston, MA 02110",
+      "source_url": "https://www.downtownboston.org/business/macys/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Macy's is a downtown department store located at 450 Washington St."
+    },
+    {
+      "seq": 35,
+      "quote": "Roche Bros. is the first large-scale grocery store to be built in Boston’s Downtown Crossing.",
+      "source_url": "https://www.downtownboston.org/business/roche-bros-supermarket/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Roche Bros. is a supermarket located at 10 Summer St., Boston, MA 02110."
+    },
+    {
+      "seq": 36,
+      "quote": "BUSINESS INFO 125 Summer St., Boston, MA 02110",
+      "source_url": "https://www.downtownboston.org/business/tatte-bakery-125-summer-street/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Tatte is a bakery/cafe located at 125 Summer St."
+    },
+    {
+      "seq": 37,
+      "quote": "Caffe Nero is a European-style coffee shop chain with headquarters in London",
+      "source_url": "https://www.downtownboston.org/business/caffh-nero-10-summer-st/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Caffè Nero is a coffee shop located at 10 Summer St., Boston, MA 02110, matching description and address."
+    },
+    {
+      "seq": 38,
+      "quote": "Since 2013, the Peach Cobbler Factory has been devoted to crafting delightful desserts",
+      "source_url": "https://www.downtownboston.org/business/the-peach-cobbler-factory/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms it is a dessert shop located at 77 Summer St., Boston, MA 02110, matching description and address."
+    },
+    {
+      "seq": 39,
+      "quote": "Chilean native Juan Hurtado started selling his sandwiches from a pushcart in Downtown Boston.",
+      "source_url": "https://www.downtownboston.org/business/chacarero/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Chacarero is a Chilean-style sandwich shop located at 101 Arch Street, matching description and address."
+    },
+    {
+      "seq": 40,
+      "quote": "Famed for its variety of mouth-watering sandwiches, Sam LaGrassa’s has been a staple of the downtown lunch scene for over 50 years.",
+      "source_url": "https://www.downtownboston.org/business/sam-lagrassas/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Sam LaGrassa's is a long-running sandwich shop at 44 Province St., matching description and address."
+    },
+    {
+      "seq": 41,
+      "quote": "George Howell started George Howell Coffee with the primary focus and passion to continually identify, source and roast the highest quality coffees available.",
+      "source_url": "https://www.downtownboston.org/business/george-howell-coffee/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms George Howell Coffee is a specialty coffee shop located at 505 Washington St., matching description and address."
+    },
+    {
+      "seq": 42,
+      "quote": "Welcome to one of America's oldest and largest used book shops. The Brattle features two floors of general used books, a third floor of rare and antiquarian books",
+      "source_url": "https://www.brattlebookshop.com/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Brattle Book Shop is a used and antiquarian bookshop located at 9 West St., matching description and address."
+    },
+    {
+      "seq": 43,
+      "quote": "Democracy Brewing, a worker-owned brewery and pub committed to making great beers and supporting the local community, opened its doors at 35 Temple Place",
+      "source_url": "https://www.downtownboston.org/business/democracy-brewing/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Democracy Brewing is a worker-owned brewery and pub located at 35 Temple Pl., matching description and address."
+    },
+    {
+      "seq": 44,
+      "quote": "558 Washington Street, Boston, MA 02111",
+      "source_url": "https://www.legalseafoods.com/locations/boston-downtown-crossing/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The page is the Legal Sea Foods Downtown Crossing location page listing the address 558 Washington Street, and menu items like oysters, clams, and shrimp cocktail confirm it is a seafood restaurant branch, matching description and address."
+    },
+    {
+      "seq": 45,
+      "quote": "The vibrant food hall boasts 20 fabulous food and beverage vendors, each curated by Greater Boston’s culinary rockstars.",
+      "source_url": "https://www.downtownboston.org/business/high-street-place-food-hall/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms High Street Place is a multi-vendor food hall located at 100 High St., matching description and address."
+    },
+    {
+      "seq": 46,
+      "quote": "Head over and welcome the newest addition to Fort Point: flour bakery 12 Farnsworth St.",
+      "source_url": "https://www.fortpointboston.com/2007/01/flour-bakery-open-for-business.html",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Flour Bakery + Cafe is a bakery/cafe located at 12 Farnsworth St. in Fort Point, matching description and address."
+    },
+    {
+      "seq": 47,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "Source confirms Row 34 is a seafood-focused restaurant (lobster roll, raw bar), but does not mention the building being a former Boston Wharf Company warehouse, nor does it state the address 383 Congress St. anywhere in the extracted text."
+    },
+    {
+      "seq": 48,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "审计引文与保存的正文不符，需人工复核。原结论：Source confirms Trillium Fort Point is a craft brewery with a taproom/restaurant and dining venue located at 50 Thomson Pl., matching description and address."
+    },
+    {
+      "seq": 49,
+      "quote": "306 Congress St.",
+      "source_url": "https://www.bostonteapartyship.com/faq",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The source confirms the address 306 Congress St. for the Boston Tea Party Ships & Museum complex, but it never mentions 'Abigail's Tea Room' by name, nor states that it is accessible without a museum ticket (in fact it states guests must purchase a ticket to tour the museum). So the description's key facts are not supported, though the address matches."
+    },
+    {
+      "seq": 50,
+      "quote": "450 Summer St, Boston, MA 02210",
+      "source_url": "https://www.coquetteboston.com/location/coquette/",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address 450 Summer St matches the source exactly, but the source text provided contains no description of the restaurant's cuisine style; 'Mediterranean-inspired' is not mentioned anywhere in the extracted text."
+    },
+    {
+      "seq": 51,
+      "quote": "425 Summer St, Boston, MA 02210",
+      "source_url": "https://www.mjoconnors.com/location/mj-oconnors-seaport/",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address 425 Summer St matches exactly. However, the source describes it as 'a classic Boston tavern' with 'true Irish hospitality' and 'tavern fare', not explicitly as a 'restaurant and pub', so the description is not directly confirmed, though it is address-consistent."
+    },
+    {
+      "seq": 52,
+      "quote": "306 Northern Avenue Boston, MA 02210",
+      "source_url": "https://harpoonbrewery.com/boston-brewery/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms the Boston location at 306 Northern Avenue and describes it as operating a craft brewery combined with 'the atmosphere of a European beer hall' and refers to the 'Harpoon Beer Hall', directly supporting the description as a brewery and beer hall on Northern Avenue."
+    },
+    {
+      "seq": 53,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The provided source text consists of booking/reservation form content and a list of location names (including 'Boston - Harborside') but contains no street address, no mention of Northern Avenue, and no description of the restaurant as a seafood restaurant in the Seaport; neither the description nor the address of 270 Northern Ave. is supported by this text."
+    }
+  ],
+  "request_sha256": "ecbf1c76712c0d523e77cc8fddefb59c6538d286c3ff69ae9f099edaacc74546",
+  "complete": true,
+  "last_usage": {
+    "input_tokens": 1310,
+    "cache_creation_input_tokens": 11014,
+    "cache_read_input_tokens": 7523,
+    "output_tokens": 2544,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 11014,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 386,
+        "cache_read_input_tokens": 7523,
+        "cache_creation_input_tokens": 3491,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3491
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

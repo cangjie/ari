@@ -1,0 +1,31 @@
+{
+  "museum": "boston_summer_st",
+  "tour_sha256": "c84104f5898c8adb6ace8bb31d0df2643d939e5c1f32b68ada1d051f7018c3d9",
+  "width": 1200,
+  "height": 1600,
+  "maps": [
+    {
+      "theme": "sightseeing",
+      "start_station": "park",
+      "default": true,
+      "assets": {
+        "svg": "img/boston_summer_st/route-sightseeing-park.svg",
+        "png": "img/boston_summer_st/route-sightseeing-park.png"
+      },
+      "svg_sha256": "7912d44f44c886d248657c5f5bd9d9a1b0ceb073b8e6a1db8159a3c40c154878",
+      "png_sha256": "59f245a37afd44c004586c4ee31f5e840f07397b4a37844a1d1f9e27305c7e61"
+    },
+    {
+      "theme": "food",
+      "start_station": "downtown",
+      "default": true,
+      "assets": {
+        "svg": "img/boston_summer_st/route-food-downtown.svg",
+        "png": "img/boston_summer_st/route-food-downtown.png"
+      },
+      "svg_sha256": "b6aa065b11763803a20aee13a8c2d70d99a0b7d1e9cb1fd4fdc84d64283411d6",
+      "png_sha256": "67ddc0c96f61dd85dfb88eb72cde01bb485b9b860e8d5e51dc61226d72135ba4"
+    }
+  ],
+  "rasterizer": "Chrome/156.0.8078.80"
+}

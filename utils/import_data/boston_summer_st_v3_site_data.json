@@ -1,0 +1,1643 @@
+{
+  "museum_key": "boston_summer_st",
+  "name": "波士顿 Summer Street 及周边",
+  "collected_on": "2026-11-03",
+  "scope": "Summer Street from Downtown Crossing through South Station and Fort Point to the Seaport, plus linked downtown Freedom Trail sites.",
+  "models": {
+    "information": "editorial normalization",
+    "rating": "gpt-5.6-luna effort=high/medium/xhigh (codex-cli)",
+    "audit": "claude-sonnet-5 effort=medium (claude-cli)"
+  },
+  "capture_sha256": "2386eeda450b2cbe6b90a00d66ef7995357a05389e2427f18e14ebefe968f8ef",
+  "information_sha256": "286873d0eca326b72e1dbf7f2e6ecb9c9a169b41ffcec595ae28907bcc0790df",
+  "rows": [
+    {
+      "identity_key": "f00",
+      "name": "自由之路",
+      "display_name": "自由之路",
+      "area": "跨区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_001"
+      ],
+      "anchor": "Boston / Charlestown",
+      "editor_note": "整条步道超出Summer Street走廊。",
+      "source_seq": 1,
+      "description": "约2.5英里的红砖历史步道，连接16处官方历史站点。",
+      "address": "Boston / Charlestown",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Freedom Trail"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_001",
+          "url": "https://www.thefreedomtrail.org/visit/experience-freedom-trail-now-visitor-resource",
+          "quote": "The 2.5-mile Freedom Trail is a red-bricked path on City of Boston sidewalks and leads one to the Trail’s 16 official historic sites."
+        }
+      ]
+    },
+    {
+      "identity_key": "t01",
+      "name": "波士顿公园",
+      "display_name": "波士顿公园",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_002",
+        "source_003"
+      ],
+      "anchor": "139 Tremont St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 2,
+      "description": "1634年建立的波士顿公园是美国最古老的公共公园，也是自由之路的起点。",
+      "address": "139 Tremont St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Common"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_002",
+          "url": "https://www.thefreedomtrail.org/trail-sites/boston-common",
+          "quote": "Boston Common | The Freedom Trail Skip to main content Click To Open Main menu Historic Sites All Sites Boston Common Massachusetts State House Park Street Church Granary Burying Ground King's Chapel & King's Chapel Burying Ground Boston Latin School Site/Benjamin Franklin Statue Old Corner Bookstore Old South Meeting House Old State House Boston Massacre Site Faneuil Hall Paul Revere House Old North Church Copp's Hill Burying Ground USS Constitution Bunker Hill Monument Explore Tours All Tours Walk Into History® Walk Into History® - Faneuil Hall North End Paul Revere Rainbow Revolutionaries African American Patriots® Revolutionary Women Exclusive On-Line Tickets Only Private & Custom Historic Pub Crawl Private Tour Lantern Historic Holiday Stroll Freedom Trail Tour App History Education Overview Distance Learning Resources Virtual Programs Curriculum Guide & Resources Scholars Program (Currently On Hold) Freedom Trail Sites' Education Programs Additional In-School Programs Field Trips Plan Your Visit Overview Experience the Freedom Trail Now (Visitor Resource) Boston 250th Anniversary (Visitor Resource) Access Information Directions & Parking Maps Foreign Language - Resources Sample Itineraries & Resources Hotel Packages Discounts & Savings Steps Off the Trail Utility Menu About Donate FAQ Groups Store Tour Tickets Boston Common Boston Common Established in 1634, Boston Common is America’s oldest public park. Puritan colonists purchased the land rights to the Common’s 44 acres from the first European settler of the area, Anglican minister William Blackstone. Visiting Boston Common 139 Tremont St. Boston, MA 02111 Directions Email (617) 635-4505 Links for mobile use. 139 Tremont St. Boston, MA 02111 Directions Email (617) 635-4505 Managed by the City of Boston Parks and Recreation Department City of Boston Parks and Recreation Department The Boston Common Visitor Information Center is managed by the Greater Boston Convention & Visitors Bureau. Access Information Whe"
+        },
+        {
+          "source_id": "source_003",
+          "url": "https://home.nps.gov/places/freedom-trail-start.htm",
+          "quote": "Start the Freedom Trail (U.S. National Park Service) An official website of the United States government Here's how you know Here's how you know Official websites use .gov A .gov website belongs to an official government organization in the United States. Secure .gov websites use HTTPS A lock ( ) or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites. Skip to global NPS navigation Skip to the main content Skip to the footer section National Park Service Search Search This Site All NPS Open Menu Close Menu Explore This Park Explore the National Park Service Exiting nps.gov Cancel Contact Us Place Start the Freedom Trail Begin the Freedom Trail on Boston Common NPS Photo/Woods Quick Facts Location: Outside the Boston Common Visitors Center Significance: The beginning of Boston's Freedom Trail. Welcome to Boston’s Freedom Trail. Originally designed in the 1950s, the Freedom Trail is an iconic symbol of Boston. Its red brick line snakes through some of the oldest parts of this City, leading visitors to notable historic sites in the Downtown, North End, and Charlestown neighborhoods of Boston. The trail introduces visitors to Boston's storied, complicated, and multi-faceted history. While many sites are primarily recognized for their role in the American Revolution, all the sites on the Freedom Trail have stood as the backdrop of subsequent social, political, and religious movements, controversies, and challenges. Boston National Historical Park You Might Also Like Loading results... Tags boston national historical park freedom trail boston Last updated: September 2, 2021 This Site All NPS Experience Your America. Download the NPS app to navigate the parks on the go. Accessibility Privacy Policy FOIA Notices Contact The National Park Service NPS FAQ No Fear Act Disclaimer Vulnerability Disclosure Policy USA.gov Office of Civil Rights Looking for U.S. government information and services? Visit USA.gov"
+        }
+      ]
+    },
+    {
+      "identity_key": "t02",
+      "name": "马萨诸塞州议会大厦",
+      "display_name": "马萨诸塞州议会大厦",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_004"
+      ],
+      "anchor": "Beacon St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 3,
+      "description": "查尔斯·布尔芬奇设计的州议会大厦于1798年启用，内部有多处历史厅室。",
+      "address": "Beacon St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Massachusetts State House"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_004",
+          "url": "https://www.thefreedomtrail.org/trail-sites/massachusetts-state-house",
+          "quote": "Massachusetts State House | The Freedom Trail Skip to main content Click To Open Main menu Historic Sites All Sites Boston Common Massachusetts State House Park Street Church Granary Burying Ground King's Chapel & King's Chapel Burying Ground Boston Latin School Site/Benjamin Franklin Statue Old Corner Bookstore Old South Meeting House Old State House Boston Massacre Site Faneuil Hall Paul Revere House Old North Church Copp's Hill Burying Ground USS Constitution Bunker Hill Monument Explore Tours All Tours Walk Into History® Walk Into History® - Faneuil Hall North End Paul Revere Rainbow Revolutionaries African American Patriots® Revolutionary Women Exclusive On-Line Tickets Only Private & Custom Historic Pub Crawl Private Tour Lantern Historic Holiday Stroll Freedom Trail Tour App History Education Overview Distance Learning Resources Virtual Programs Curriculum Guide & Resources Scholars Program (Currently On Hold) Freedom Trail Sites' Education Programs Additional In-School Programs Field Trips Plan Your Visit Overview Experience the Freedom Trail Now (Visitor Resource) Boston 250th Anniversary (Visitor Resource) Access Information Directions & Parking Maps Foreign Language - Resources Sample Itineraries & Resources Hotel Packages Discounts & Savings Steps Off the Trail Utility Menu About Donate FAQ Groups Store Tour Tickets Massachusetts State House Massachusetts State House Designed by Charles Bulfinch, the ‘new’ and current State House has served as the seat of Massachusetts government since its opening in 1798. Holding the legislative and executive branches, it sits adjacent to the former site of the historic Hancock mansion. Visiting Massachusetts State House 24 Beacon St. Boston MA 02108 Directions (617) 727-3676 Links for mobile use. 24 Beacon St. Boston MA 02108 Directions Email (617) 727-3676 Managed by the Secretary of the Commonwealth's Office, State House Tours Division Secretary of the Commonwealth Access Information Wheelchair Accessible Bowdoin Str"
+        },
+        {
+          "source_id": "source_004",
+          "url": "https://www.thefreedomtrail.org/trail-sites/massachusetts-state-house",
+          "quote": "adjacent to the former site of the historic Hancock mansion. Visiting Massachusetts State House 24 Beacon St. Boston MA 02108 Directions (617) 727-3676 Links for mobile use. 24 Beacon St. Boston MA 02108 Directions Email (617) 727-3676 Managed by the Secretary of the Commonwealth's Office, State House Tours Division Secretary of the Commonwealth Access Information Wheelchair Accessible Bowdoin Street, Boston, MA 02108 Restrooms Large Print Assistive Listening Device Braille Featured Photo of Tour Site 1829 Sketch of the Bulfinch Front with Hancock Mansion (left). \"[The] Boston State-House is the hub of the solar system” Oliver Wendall Holmes Massachusetts State House Photos Bulfinch Front Doric Hall Hall of Flags Memorial Hall John F. Kennedy Statue House of Representatives Senate Chamber View All Sites View All Tours Three Branches of Government House of Representatives The Massachusetts House of Representatives has 160 representatives elected for 2-year terms. It is also home to the Sacred Cod, the good luck mascot of the House of Representatives. House of Representatives Senate The Massachusetts State Senate has 40 senators elected for 2-year terms. Their current chamber resides under the Golden Dome. Senate Chamber Executive Branch Since Massachusetts’s first freely elected governor, John Hancock, 71 governors have served as the head of the executive branch. Currently, Massachusetts’s governors hold 4-year terms and work in the West Wing of the State House. Executive Offices Choose to visit Previous or next Sites on the Freedom Trail Boston Common 0.2 mi | 0.32 km | 5 min Park Street Church 0.1 mi | 0.16 km | 3 min Copyright © 2024 Freedom Trail® Foundation All Rights Reserved Legal Information Footer Menu Freedom Trail Foundation Store Media Activities & Programs Discounts & Savings Careers (617) 357-8300 info@thefreedomtrail.org Visit with Go City Boston® Purchase Tickets Donate facebook instagram twitter tripadvisor yelp Subscribe To Our Newsletter! Subscribe to our email list"
+        }
+      ]
+    },
+    {
+      "identity_key": "t03",
+      "name": "公园街教堂",
+      "display_name": "公园街教堂",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_005"
+      ],
+      "anchor": "Park St. & Tremont St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 4,
+      "description": "建于1809年的公园街教堂，其217英尺高的尖塔曾是进入波士顿时的醒目地标。",
+      "address": "Park St. & Tremont St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Park Street Church"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_005",
+          "url": "https://www.thefreedomtrail.org/trail-sites",
+          "quote": "usetts State House Designed by Charles Bulfinch, the ‘new’ and current State House has served as the seat of Massachusetts government since its opening in 1798. Holding the legislative and executive branches, it sits adjacent to the former site of the historic Hancock mansion. Learn More Park Street Church The church was founded in 1809, at the corner of Park and Tremont Streets, atop the site of Boston’s town grain storage building, or granary. Designed by Peter Banner, the 217 ft. steeple of Park Street Church was once the first landmark travelers saw when approaching Boston. Learn More Granary Burying Ground Established in 1660, some of America's most notable citizens rest here. Named for the 12,000-bushel grain storage building that was once next door, the historic burying ground has approximately 2,300 markers. Learn More King's Chapel & King's Chapel Burying Ground Founded in 1686 as Boston’s first Anglican church, King’s Chapel is home to over 330 years of history. The 1754 granite building still stands on the church’s original site: the corner of Boston’s oldest English burying ground. Learn More Boston Latin School Site/Benjamin Franklin Statue Boston Latin School, founded on April 23, 1635, is the oldest public school in America. It offered free education to boys - rich or poor - while girls attended private schools at home. Until the completion of the schoolhouse in 1645, classes were held in the home of the first headmaster, Philemon Pormont. A mosaic and a statue of former student Benjamin Franklin currently marks the location of the original schoolhouse. Learn More Old Corner Bookstore Constructed in 1718, the Old Corner Bookstore is downtown Boston’s oldest commercial building and was home to the 19 th -century publishing giant Ticknor and Fields, producer of many venerable American titles including Thoreau’s Walden , Hawthorne’s The Scarlet Letter , Longfellow's Midnight Ride of Paul Revere , and the Atlantic Monthly including Ward Howe's Battle Hymn of the Republic . Saved from demolition in 1960, the building’s leases help subsidize important historic preservation projects in Boston’s neighborhoods. Learn More Old South Meeting House Experience"
+        }
+      ]
+    },
+    {
+      "identity_key": "t04",
+      "name": "谷仓墓地",
+      "display_name": "谷仓墓地",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_006"
+      ],
+      "anchor": "120 Tremont St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 5,
+      "description": "1660年建立的历史墓地，安葬有萨缪尔·亚当斯、约翰·汉考克和保罗·里维尔等人。",
+      "address": "120 Tremont St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Granary Burying Ground"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_006",
+          "url": "https://www.boston.gov/cemeteries/granary-burying-ground",
+          "quote": "r questions about City of Boston services, programs, and information. While we strive for accuracy by sourcing directly from Boston.gov, our search can occasionally provide unexpected results. You can help us improve by using the feedback buttons below each answer. Questions? Contact us at digital@boston.gov . Please note: AI-generated responses may contain errors, including about real people. Please verify important information before acting on it. Search Boston.gov Search Choose a search type Search results AI summary Popular searches Resident parking stickers Pay parking ticket City of Boston jobs Popular questions How do I pay a parking ticket? What is my trash pickup schedule? How do I get a resident parking sticker? You are here Home › Cemeteries › Granary Burying Ground Last updated: 2/20/26 Granary Burying Ground The Granary Burying Ground, located at 120 Tremont Street in downtown Boston, is the city's third oldest cemetery. The Granary Burying Ground was the third burial site in Boston Proper, established in 1660. Town officials set aside part of what was then the Boston Common for burial space to help alleviate overcrowding in the near-by King’s Chapel Burying Ground. First, the space was known as the South or Common Burying Ground, and then the Middle Burying Ground (after the opening of Central Burying Ground). The Granary Burying Ground took its present name in 1737 when a granary, a small building used to store grain, was moved to the site presently occupied by the Park Street Church. The Granary Burying Grounds contains approximately 2,345 gravestones and to"
+        },
+        {
+          "source_id": "source_006",
+          "url": "https://www.boston.gov/cemeteries/granary-burying-ground",
+          "quote": "rst, the space was known as the South or Common Burying Ground, and then the Middle Burying Ground (after the opening of Central Burying Ground). The Granary Burying Ground took its present name in 1737 when a granary, a small building used to store grain, was moved to the site presently occupied by the Park Street Church. The Granary Burying Grounds contains approximately 2,345 gravestones and tombs, although it is estimated that over 5,000 people are buried at this site. The grave markers are predominantly slate. The gravestones’ original configuration was rearranged into straighter rows over the years to accommodate both nineteenth-century aesthetics and the modern lawnmower. Underground burial crypts (tombs) line the entire perimeter of the site. These crypts are small rectangular rooms, made of brick or stone, designed to hold multiple burials, which were frequently owned by families. Older underground tombs are found in the center of the site. Many well-known people from American history are buried at this site. Visitors will find the graves of three signers of the Declaration of Independence: Samuel Adams, John Hancock, and Robert Treat Paine; patriot and craftsman Paul Revere; James Otis, a Revolutionary orator and lawyer; the five victims of the Boston Massacre, including Crispus Attucks, considered to be the first casualty of the American Revolution; and Peter Faneuil, benefactor of the famed downtown Boston landmark. Near the center of the ground, a 25-foot-tall obelisk commemorates the tomb of Benjamin Franklin’s parents. Other prominent Bostonians, including ni"
+        }
+      ]
+    },
+    {
+      "identity_key": "t05",
+      "name": "国王礼拜堂及墓地",
+      "display_name": "国王礼拜堂及墓地",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_007"
+      ],
+      "anchor": "58 Tremont St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 6,
+      "description": "1686年创立的国王礼拜堂与相邻墓地，是波士顿早期宗教和墓葬历史地标。",
+      "address": "58 Tremont St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "King's Chapel & Burying Ground"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_007",
+          "url": "https://www.thefreedomtrail.org/trail-sites/kings-chapel-kings-chapel-burying-ground",
+          "quote": " In-School Programs Field Trips Plan Your Visit Overview Experience the Freedom Trail Now (Visitor Resource) Boston 250th Anniversary (Visitor Resource) Access Information Directions & Parking Maps Foreign Language - Resources Sample Itineraries & Resources Hotel Packages Discounts & Savings Steps Off the Trail Utility Menu About Donate FAQ Groups Store Tour Tickets King's Chapel & King's Chapel Burying Ground King's Chapel & King's Chapel Burying Ground Founded in 1686 as Boston’s first Anglican church, King’s Chapel is home to over 330 years of history. The 1754 granite building still stands on the church’s original site: the corner of Boston’s oldest English burying ground. Visiting King's Chapel & King's Chapel Burying Ground 58 Tremont St. Boston, MA 02108 Directions Email (617) 227-2155 Links for mobile use. 58 Tremont St. Boston, MA 02108 Directions Email (617) 227-2155 Church managed by King's Chapel and burying ground managed by the City of Boston Parks and Recreation Department's Historic Burying Grounds Initiative Kings Chapel The Historic Burying Grounds Initiative manages sixteen burying grounds located throughout Boston and King's Chapel is an independent congregation affiliated with the Unitarian Universalist Association. Access Information Wheelchair Accessible Featured Photo of Tour Site 1886 King's Chapel interior King's Chapel Parish House Archives Dive into history at one of the oldest churches in Boston! Established in 1686 as the first Anglican church in New England, you can discover over 330 years of history at King’s Chapel. Exhibits and programs exp"
+        }
+      ]
+    },
+    {
+      "identity_key": "t06",
+      "name": "波士顿拉丁学校旧址与富兰克林像",
+      "display_name": "波士顿拉丁学校旧址与富兰克林像",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_008"
+      ],
+      "anchor": "School St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 7,
+      "description": "1635年创立的波士顿拉丁学校旧址，现以马赛克和富兰克林雕像标记。",
+      "address": "School St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Latin School Site / Benjamin Franklin Statue"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_008",
+          "url": "https://www.thefreedomtrail.org/trail-sites/boston-latin-school-sitebenjamin-franklin-statue",
+          "quote": "ional In-School Programs Field Trips Plan Your Visit Overview Experience the Freedom Trail Now (Visitor Resource) Boston 250th Anniversary (Visitor Resource) Access Information Directions & Parking Maps Foreign Language - Resources Sample Itineraries & Resources Hotel Packages Discounts & Savings Steps Off the Trail Utility Menu About Donate FAQ Groups Store Tour Tickets Boston Latin School Site/Benjamin Franklin Statue Boston Latin School Site/Benjamin Franklin Statue Boston Latin School, founded on April 23, 1635, is the oldest public school in America. It offered free education to boys - rich or poor - while girls attended private schools at home. Until the completion of the schoolhouse in 1645, classes were held in the home of the first headmaster, Philemon Pormont. A mosaic and a statue of former student Benjamin Franklin currently marks the location of the original schoolhouse. Visiting Boston Latin School Site/Benjamin Franklin Statue 45 School St. Boston, MA 02108 Directions Email (617) 635-3911 Links for mobile use. 45 School St. Boston, MA 02108 Directions Email (617) 635-3911 Managed by the City of Boston Mayor's Office of Arts & Culture Access Information Wheelchair Accessible Featured Photo of Tour Site ca. 1855–1862 Digital Commonwealth Boston Latin School Site A mosaic and a statue of former student Benjamin Franklin currently marks the School Street location of the original schoolhouse. Five signers of the Declaration of Independence attended Boston Latin: Franklin, Samuel Adams, John Hancock, Robert Treat Paine, and William Hooper. Of the five, only four gr"
+        }
+      ]
+    },
+    {
+      "identity_key": "t07",
+      "name": "老街角书店旧址",
+      "display_name": "老街角书店旧址",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_009"
+      ],
+      "anchor": "283 Washington St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 8,
+      "description": "建于1718年的历史商业建筑，曾是19世纪出版商 Ticknor and Fields 的所在地。",
+      "address": "283 Washington St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Old Corner Bookstore"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_009",
+          "url": "https://www.thefreedomtrail.org/trail-sites/old-corner-bookstore",
+          "quote": "d Trips Plan Your Visit Overview Experience the Freedom Trail Now (Visitor Resource) Boston 250th Anniversary (Visitor Resource) Access Information Directions & Parking Maps Foreign Language - Resources Sample Itineraries & Resources Hotel Packages Discounts & Savings Steps Off the Trail Utility Menu About Donate FAQ Groups Store Tour Tickets Old Corner Bookstore Old Corner Bookstore Constructed in 1718, the Old Corner Bookstore is downtown Boston’s oldest commercial building and was home to the 19 th -century publishing giant Ticknor and Fields, producer of many venerable American titles including Thoreau’s Walden , Hawthorne’s The Scarlet Letter , Longfellow's Midnight Ride of Paul Revere , and the Atlantic Monthly including Ward Howe's Battle Hymn of the Republic . Saved from demolition in 1960, the building’s leases help subsidize important historic preservation projects in Boston’s neighborhoods. Visiting Old Corner Bookstore 283 Washington St. Boston, MA 02108 Directions Email (617) 442-1859 Links for mobile use. 283 Washington St. Boston, MA 02108 Directions Email (617) 442-1859 Owned by Historic Boston Inc Historic Boston Inc. Historic Boston Incorporated is a non-profit organization that works with local partners to identify and redevelop historically significant buildings in Boston’s neighborhoods Located on the site of Anne Hutchinson’s home, the Old Corner Bookstore was constructed in 1718 by Dr. Thomas Crease as his home and apothecary shop. It later housed a number of booksellers and publishers, the most famous of which was Ticknor and Fields, publishers of ma"
+        }
+      ]
+    },
+    {
+      "identity_key": "t08",
+      "name": "老南会议厅",
+      "display_name": "老南会议厅",
+      "area": "市中心西端",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_010"
+      ],
+      "anchor": "310 Washington St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 9,
+      "description": "与1773年波士顿倾茶事件前的群众集会有关。",
+      "address": "310 Washington St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Old South Meeting House"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_010",
+          "url": "https://www.thefreedomtrail.org/trail-sites/old-south-meeting-house",
+          "quote": "Samuel Adams gave the signal that started the Boston Tea Party"
+        }
+      ]
+    },
+    {
+      "identity_key": "t09",
+      "name": "老州议会大厦",
+      "display_name": "老州议会大厦",
+      "area": "金融区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_011"
+      ],
+      "anchor": "206 Washington St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 10,
+      "description": "波士顿现存最古老的公共建筑之一。",
+      "address": "206 Washington St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Old State House"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_011",
+          "url": "https://www.thefreedomtrail.org/trail-sites/old-state-house",
+          "quote": "the Old State House stands as the oldest surviving public building in Boston"
+        }
+      ]
+    },
+    {
+      "identity_key": "t10",
+      "name": "波士顿惨案遗址",
+      "display_name": "波士顿惨案遗址",
+      "area": "金融区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_012"
+      ],
+      "anchor": "State St. & Congress St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 11,
+      "description": "纪念1770年波士顿惨案的街道遗址标记。",
+      "address": "State St. & Congress St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Massacre Site"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_012",
+          "url": "https://www.thefreedomtrail.org/trail-sites/boston-massacre-site",
+          "quote": "a medallion on the Freedom Trail marks the site of the Boston Massacre"
+        }
+      ]
+    },
+    {
+      "identity_key": "t11",
+      "name": "法尼尔厅",
+      "display_name": "法尼尔厅",
+      "area": "金融区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_013"
+      ],
+      "anchor": "1 Faneuil Hall Sq.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 12,
+      "description": "自由之路上的历史集会场所。",
+      "address": "1 Faneuil Hall Sq.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Faneuil Hall"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_013",
+          "url": "https://www.thefreedomtrail.org/trail-sites/faneuil-hall",
+          "quote": "has served as an open forum meeting hall and marketplace for more than 270 years"
+        }
+      ]
+    },
+    {
+      "identity_key": "p01",
+      "name": "市中心十字路口商圈",
+      "display_name": "市中心十字路口商圈",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_014"
+      ],
+      "anchor": "Summer St. & Washington St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 13,
+      "description": "Summer与Washington街交汇处的步行购物区。",
+      "address": "Summer St. & Washington St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Downtown Crossing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_014",
+          "url": "https://www.meetboston.com/explore/neighborhoods/downtown-crossing-financial-district/",
+          "quote": "along a bustling pedestrian mall at the intersection of Summer and Washington Streets"
+        }
+      ]
+    },
+    {
+      "identity_key": "p02",
+      "name": "夏街广场",
+      "display_name": "夏街广场",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_015"
+      ],
+      "anchor": "10 Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 14,
+      "description": "市中心步行区的公共聚集空间。",
+      "address": "10 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Summer Street Plaza"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_015",
+          "url": "https://www.downtownboston.org/business/summer-street-plaza/",
+          "quote": "At the center of Downtown Crossing’s bustling pedestrian zone, Summer Street Plaza is one of Boston’s great civic gathering centers."
+        }
+      ]
+    },
+    {
+      "identity_key": "p03",
+      "name": "公民歌剧院",
+      "display_name": "公民歌剧院",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_016"
+      ],
+      "anchor": "539 Washington St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 15,
+      "description": "市中心十字路口附近的演出场馆。",
+      "address": "539 Washington St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Citizens Opera House"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_016",
+          "url": "https://www.citizensoperahouse.com/getting-here/",
+          "quote": "The Citizens Opera House is centrally located in Downtown Crossing."
+        }
+      ]
+    },
+    {
+      "identity_key": "p04",
+      "name": "爱尔兰大饥荒纪念广场",
+      "display_name": "爱尔兰大饥荒纪念广场",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_017"
+      ],
+      "anchor": "10 School St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 16,
+      "description": "位于老南会议厅与老街角书店之间，纪念19世纪爱尔兰大饥荒及移民。",
+      "address": "10 School St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Irish Famine Memorial Plaza"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_017",
+          "url": "https://www.downtownboston.org/business/irish-famine-memorial-plaza/",
+          "quote": "Developed in 1998, the Irish Famine Memorial Plaza occupies one of the most historic corners in Downtown Boston. Flanked by the Old South Meeting House and the Old Corner Bookstore, with numerous other Freedom Trail sites nearby, it pays tribute to an Gorta Mór –the Great Irish Famine of 1845-49 that drove thousands of Irish to immigrate to Boston, forever transforming the city’s complexion and character."
+        }
+      ]
+    },
+    {
+      "identity_key": "p05",
+      "name": "诺曼·B·莱文塔尔公园",
+      "display_name": "诺曼·B·莱文塔尔公园",
+      "area": "金融区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_018"
+      ],
+      "anchor": "Post Office Square",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 17,
+      "description": "位于邮政广场的公共公园，原址曾是地面停车楼。",
+      "address": "Post Office Square",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Norman B. Leventhal Park"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_018",
+          "url": "https://www.bostonplans.org/news-calendar/news-updates/2014/06/11/american-planning-association-honors-norman-b-leve",
+          "quote": "This afternoon, the Massachusetts chapter of the American Planning Association (APA) joined community members and city leaders to celebrate the designation of Norman B. Leventhal Park in Post Office Square as a Great Public Space"
+        }
+      ]
+    },
+    {
+      "identity_key": "p06",
+      "name": "罗斯·肯尼迪绿道",
+      "display_name": "罗斯·肯尼迪绿道",
+      "area": "南站",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_019"
+      ],
+      "anchor": "Dewey Square",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 18,
+      "description": "波士顿市中心的绿道公园；Dewey Square 公园位于南站北侧。",
+      "address": "Dewey Square",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Rose Fitzgerald Kennedy Greenway"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_019",
+          "url": "https://www.rosekennedygreenway.org/planning-for-2010-b/",
+          "quote": "we look more closely at the Dewey Square Parks, just north of South Station"
+        }
+      ]
+    },
+    {
+      "identity_key": "p07",
+      "name": "波士顿南站",
+      "display_name": "波士顿南站",
+      "area": "南站",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_020"
+      ],
+      "anchor": "2 South Station, Boston, MA 02110",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 19,
+      "description": "1899年开放的历史火车站，现为铁路与公共交通枢纽。",
+      "address": "2 South Station, Boston, MA 02110",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "South Station"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_020",
+          "url": "https://www.bostonmagazine.com/property/2019/11/14/south-station-history/",
+          "quote": "when its first train departed at 4:38 a.m. on January 1, 1899"
+        }
+      ]
+    },
+    {
+      "identity_key": "p08",
+      "name": "堡点水道地标区",
+      "display_name": "堡点水道地标区",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_021"
+      ],
+      "anchor": "South Boston, Boston, MA",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 20,
+      "description": "旧仓库与工业建筑集中的历史街区，适合看建筑外观。",
+      "address": "South Boston, Boston, MA",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Fort Point Channel Landmark District"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_021",
+          "url": "https://content.boston.gov/historic-district/fort-point-channel-landmark-district",
+          "quote": "ase see details about nomination in the district's Study Report and check the commission information section at the bottom of this page. If you see an \"apply online\" button, we have an opening on the commission and you're able to apply for it. DESIGN REVIEW PROCESS All proposed exterior work visible from a public way is subject to the review of the FPCLDC. To save time and costs, review district Standards and Criteria early in the planning process. APPLY FOR DESIGN REVIEW ONLINE Review all instructions and documentation requirements before submitting your application to ensure it is complete. Incomplete applications will not be added to a public hearing agenda. Submit your application online well in advance of a filing deadline in case it is marked incomplete and additional or revised information needs to be submitted. Staff is not available to review applications for completeness immediately upon submittal. Do not begin any work, or buy materials, until after you have received confirmation your project has been approved. HISTORY The Fort Point Channel Landmark District (FPCLD) encompasses roughly 55 acres across the Fort Point Channel from downtown Boston. Developed in the 1830s by the Boston Wharf Company and owned by the company until the early 2000s, the Fort Point Channel area is Boston’s largest, most cohesive, and most significant collection of late 19th and early 20th century industrial loft buildings. Development of the Fort Point Channel area began in 1836 and continued until 1882. The Boston Wharf Company erected nearly all of the buildings in the FPCLD from the "
+        },
+        {
+          "source_id": "source_021",
+          "url": "https://content.boston.gov/historic-district/fort-point-channel-landmark-district",
+          "quote": "y the Boston Wharf Company and owned by the company until the early 2000s, the Fort Point Channel area is Boston’s largest, most cohesive, and most significant collection of late 19th and early 20th century industrial loft buildings. Development of the Fort Point Channel area began in 1836 and continued until 1882. The Boston Wharf Company erected nearly all of the buildings in the FPCLD from the designs of their own staff architects. For further historical background, please check out the Fort Point Channel Landmark District Study Report . 26 Court Street Floor 2 Boston , MA 02108 United States 617-635-2513 Contact: Landmarks Commission Neighborhood: South Boston SEND AN EMAIL Public hearings Search Agendas and Presentations Archived Notices Hearing Deadlines and Dates Boston Landmarks Commission Online Portal All of our applications for the Landmarks Commission and Historic Districts are now online! Utilize our online portal to: Apply for Design Review Apply for Article 85 (Demolition Delay) Review Past Demolition Delay Applications Report a Violation Submit a Public Comment Translated Applications Stay Connected Get updates about Fort Point Channel Landmark District hearings and more. Enter Your Email Address Zip Code Gotcha Sign Up Resources Resources Expand all | Collapse all Step-by-step Instructions on How to Apply For Work 1. CHECK TO SEE IF YOU'RE IN THE DISTRICT: District map Landmarks map 2. FIND OUT WHAT WORK IS ALLOWED: Fort Point standards Fort Point governing legislation 3. WHEN CAN MY APPLICATION GET ON THE AGENDA? Hearing dates and deadlines 4. APPLY FOR WO"
+        }
+      ]
+    },
+    {
+      "identity_key": "p09",
+      "name": "波士顿码头公司建筑及屋顶标牌",
+      "display_name": "波士顿码头公司建筑及屋顶标牌",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_022"
+      ],
+      "anchor": "263 Summer St.",
+      "editor_note": "现址网站使用 263 Summer St.；屋顶标牌以现场状态为准。",
+      "source_seq": 21,
+      "description": "Summer Street 上的堡点历史建筑，屋顶有 Boston Wharf Co. 标牌。",
+      "address": "263 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Wharf Company Building & Sign"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_022",
+          "url": "https://263summerst.com/history/",
+          "quote": "History – 263 Summer St Skip to content Skip to footer Apartments Studio Apartments One Bedroom Apartments Two Bedroom Apartments Amenities History The Neighborhood FAQs Contact Us Resident Portal History Close Apartments Studio Apartments One Bedroom Apartments Two Bedroom Apartments Amenities History The Neighborhood FAQs Contact Us Resident Portal facebook-1 twitter-x instagram Get in Touch! info@website.com Want to Work with Us? Send Brief Find Your Dream Apartment! Go to Shop The History of 263 Summer St A Building That Helped Shape the City Long before it became home, 263 Summer Street played a working role in Boston’s industrial rise. Constructed in 1905 by the Boston Wharf Company, the building was part of a network of warehouses, offices, and manufacturing spaces that defined Fort Point as one of the city’s most productive districts. Designed by architect Morton D. Safford , whose work helped shape the neighborhood, the building was created for durability, efficiency, and longevity—qualities that still define it today. From the start, this was a place built to last. Summer Street & “Wool Row” At the turn of the 20th century, Summer Street was known as “Wool Row” —the customer-facing edge of Boston’s wool and textile trade. Merchants, manufacturers, and logistics operations lined the corridor, connecting industry to the waterfront, the rail system, and the rest of the city. Early tenants reflected that energy and scale, including the U.S. Army Depot Quartermaster , Windrum Shoe Manufacturing , and the Boston Wool Trade Association . This building wasn’t ornamental—it was essential. Built on Resilience The story goes deeper than the brick walls. Fort Point itself was built on land created from the debris of Boston’s Great Fire of 1872 —a city-scale reset that led to a stronger, more modern Boston. That cycle of reinvention is literally beneath your feet, embedded in the character of the district, and carried forward by the buildings that rose from it. The Sig"
+        },
+        {
+          "source_id": "source_022",
+          "url": "https://263summerst.com/history/",
+          "quote": "t was essential. Built on Resilience The story goes deeper than the brick walls. Fort Point itself was built on land created from the debris of Boston’s Great Fire of 1872 —a city-scale reset that led to a stronger, more modern Boston. That cycle of reinvention is literally beneath your feet, embedded in the character of the district, and carried forward by the buildings that rose from it. The Sign That Never Went Dark Rising above Summer Street is the iconic red neon “Boston Wharf Co Industrial Real Estate” sign—a fixture that has guided pedestrians and commuters for generations. Officially recognized within Fort Point’s landmark guidelines, the sign has been described as a beacon marking the passage from downtown into Boston’s industrial age. Over the years, it has been repainted and reinterpreted by local artists, reinforcing its role as more than signage—it’s a cultural marker. While much around it has changed, the sign remains, anchoring the building to its origins. A New Chapter Begins More than a century after its construction, 263 Summer Street enters its next era as part of Boston’s office-to-housing transformation—preserving what makes the building significant while reimagining what it can be. The exterior remains unmistakably historic. Inside, the spaces have been fully modernized for contemporary living, with clean lines, warm materials, and thoughtful layouts that respect the building’s industrial bones without replicating the past. This isn’t history frozen in time—it’s history, adapted. Still Standing. Still Evolving. Today, 263 Summer Street stands as a rare balance: a building with memory, character, and presence—redefined for the way Boston lives now. What began as a place of work has become a place to live. What was built for industry now supports community. And what has endured for more than a century continues to move forward. Contact Have a question or want to schedule a tour? Get in touch—we’re happy to help. Get in touch info@burnsrealtyboston.com (857) 496-7187 Address 263 Summer St Boston, MA 02210 facebook-1 twitter-x instagram Apartments Contact Us © 2026, All Rights Reserved | BWG ✕ Apartments Studio Apartments One Bedroom Apartments"
+        }
+      ]
+    },
+    {
+      "identity_key": "p10",
+      "name": "波士顿倾茶事件船舰与博物馆",
+      "display_name": "波士顿倾茶事件船舰与博物馆",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_023"
+      ],
+      "anchor": "306 Congress St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 22,
+      "description": "波士顿倾茶事件主题博物馆，茶室与商店可不购博物馆门票进入。",
+      "address": "306 Congress St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Tea Party Ships & Museum"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_023",
+          "url": "https://www.bostonteapartyship.com/faq",
+          "quote": "Our Retail Shop and Abigail’s Tea Room are accessible and available without purchase of a museum experience ticket."
+        }
+      ]
+    },
+    {
+      "identity_key": "p11",
+      "name": "波士顿儿童博物馆",
+      "display_name": "波士顿儿童博物馆",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_024"
+      ],
+      "anchor": "308 Congress St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 23,
+      "description": "位于堡点水道边的儿童博物馆。",
+      "address": "308 Congress St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Children's Museum"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_024",
+          "url": "https://bostonchildrensmuseum.org/visit/directions-and-parking/",
+          "quote": "The Museum is located on the Fort Point Channel in the Fort Point/Seaport neighborhood of Boston."
+        }
+      ]
+    },
+    {
+      "identity_key": "p12",
+      "name": "马丁公园",
+      "display_name": "马丁公园",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_025"
+      ],
+      "anchor": "64 Sleeper St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 24,
+      "description": "南波士顿滨水公园，纪念波士顿马拉松爆炸案中最年轻的遇难者 Martin W. Richard。",
+      "address": "64 Sleeper St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Martin's Park"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_025",
+          "url": "https://content.boston.gov/departments/parks-and-recreation/martins-park",
+          "quote": "ns about City of Boston services, programs, and information. While we strive for accuracy by sourcing directly from Boston.gov, our search can occasionally provide unexpected results. You can help us improve by using the feedback buttons below each answer. Questions? Contact us at digital@boston.gov . Please note: AI-generated responses may contain errors, including about real people. Please verify important information before acting on it. Search Boston.gov Search Choose a search type Search results AI summary Popular searches Trash schedule Resident parking stickers Pay parking ticket Popular questions How can I work for the city? How do I get a resident parking sticker? How do I pay a parking ticket? You are here Home › Departments › Parks and Recreation › Martin's Park Last updated: 11/17/25 Martin's Park The first-of-its-kind park is a lasting legacy of Martin Richard's welcoming, inclusive nature, and will provide enjoyment for generations of Boston's children, families and visitors. Page Sections Page Sections Latest news Meetings Archive Documents Get updates Partners Contact Us Martin's Park opened on June 15, 2019 . Adjacent to Boston Children's Museum, the City of Boston Parks Department created an inclusive park and play space that is the first-of-its-kind in the City. The Department oversaw the project honoring Martin W. Richard, the youngest victim of the Boston Marathon bombings. Located at 64 Sleeper Street on the South Boston waterfront, Martin's Park is a climate-resilient park that provides a space for children, families, and visitors of all abilities to "
+        }
+      ]
+    },
+    {
+      "identity_key": "p13",
+      "name": "波士顿消防博物馆",
+      "display_name": "波士顿消防博物馆",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_026"
+      ],
+      "anchor": "344 Congress St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 25,
+      "description": "位于旧消防站的消防博物馆，展品包括1792年由保罗·里维尔学徒制造的手动水泵车。",
+      "address": "344 Congress St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Fire Museum"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_026",
+          "url": "https://www.bostonsparks.com/boston-fire-museum",
+          "quote": "Boston Fire Museum — Boston Sparks Association 0 Skip to Content Boston Fire Museum A-10 Incident Support Unit Member Portal Online Store Open Menu Close Menu Boston Fire Museum A-10 Incident Support Unit Member Portal Online Store Open Menu Close Menu Boston Fire Museum A-10 Incident Support Unit Member Portal Online Store Boston Fire Museum The official museum dedicated to the history of America’s first and oldest professional fire department. Operated by the Boston Sparks Association since 1983. Step through the door of the historic firehouse at 344 Congress Street and onto the apparatus bay floor that now houses a museum dedicated to the history of the nation’s first and oldest professional fire department. Featuring historic artifacts, interactive exhibits, and plenty of educational opportunities, this museum offers a glimpse into the past that is both inspiring and unforgettable. Conveniently located between and within walking distance of Boston’s Financial District and the popular Seaport District, the museum is a must-see for history buffs, fire service enthusiasts, and children of all ages. 344 Congress Street, South Boston Open Saturdays 10am–4pm • Free Admission Directions and Parking What You’ll See at the Museum Vintage Former Firehouse —Built in 1891 to house Engine Companies 38 and 39 —Added to the National Register of Historic Places in 1987 —Still contains working telegraph fire alarm bell and tape register connected to an active circuit on the City’s telegraph fire alarm system —Museum displays a hand-made, scale cutaway model of the building as it appeared in the early 20th century Antique Fire Apparatus —“Hand Tub” water pumper built in 1792 by an apprentice to Paul Revere —“Hand Tub” water pumper built in 1851 and used by the former City of Charlestown (prior to annexation by Boston) —1882 steam engine (former Boston Fire Engine 26 / Engine 50 / Engine 38) —1926 American la France pumper (of Horseheads, New York; resembles former Boston Fire Eng"
+        },
+        {
+          "source_id": "source_026",
+          "url": "https://www.bostonsparks.com/boston-fire-museum",
+          "quote": "d in the early 20th century Antique Fire Apparatus —“Hand Tub” water pumper built in 1792 by an apprentice to Paul Revere —“Hand Tub” water pumper built in 1851 and used by the former City of Charlestown (prior to annexation by Boston) —1882 steam engine (former Boston Fire Engine 26 / Engine 50 / Engine 38) —1926 American la France pumper (of Horseheads, New York; resembles former Boston Fire Engine 38) —1948 Mack Type 85 pumper (former Boston Fire Engine 40 / Engine 5) —Our in-service A-10 incident support unit response vehicles are also on display at the museum when not deployed at an emergency scene. Interactive Fire Alarm Demonstration —Pull the hook on a telegraph fire alarm box, and look inside to see how it works —Dial the box number into a vintage alarm transmitter to simulate “striking the box” to all of the City firehouses —Search the firehouse run cards to determine which Companies are on the assignment —Search the City fire alarm map book to determine where the box is located Historical Artifacts —Fire helmet collection of Arthur Fiedler, Boston Pops conductor 1929–1979 —Firehouse log book from 1914 —Matching set of green leather fire buckets from 1829 —Scale models of fireboat engine 44 Educational and Informational Exhibits —Great Molasses Flood of 1919 —Cocoanut Grove Nightclub Fire of 1942 (second-deadliest building fire in the United States) —Firefighters Memorial corner, spotlighting firefighters who died in the line of duty in the City of Boston And much more! Contact us Directions and Parking 344 Congress Street, Boston, MA 02210"
+        }
+      ]
+    },
+    {
+      "identity_key": "p14",
+      "name": "波士顿海港步道海港区段",
+      "display_name": "波士顿海港步道海港区段",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_027"
+      ],
+      "anchor": "Seaport waterfront",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 26,
+      "description": "波士顿海港沿岸的公共步道，本条关注海港区段。",
+      "address": "Seaport waterfront",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Boston Harborwalk — Seaport segment"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_027",
+          "url": "https://www.bostonharbornow.org/what-we-do/explore/harborwalk/",
+          "quote": "A near-continuous, 43-mile linear park along Boston’s shoreline, the Harborwalk connects Boston’s waterfront neighborhoods to Boston Harbor and each other. Nearing completion, it stretches from the Neponset River in lower Dorchester to Constitution Beach in East Boston via Charlestown, the North End, Downtown, Seaport, South Boston and Dorchester."
+        }
+      ]
+    },
+    {
+      "identity_key": "p15",
+      "name": "波士顿当代艺术学院",
+      "display_name": "波士顿当代艺术学院",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_028"
+      ],
+      "anchor": "25 Harbor Shore Dr.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 27,
+      "description": "海港区滨水的当代艺术馆。",
+      "address": "25 Harbor Shore Dr.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Institute of Contemporary Art/Boston"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_028",
+          "url": "https://www.icaboston.org/visit/",
+          "quote": "Located on Boston Harbor in the city’s dynamic Seaport district"
+        }
+      ]
+    },
+    {
+      "identity_key": "p16",
+      "name": "D草坪",
+      "display_name": "D草坪",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_029"
+      ],
+      "anchor": "415 Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 28,
+      "description": "会议中心旁的户外活动空间，活动安排需另查。",
+      "address": "415 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "The Lawn on D"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_029",
+          "url": "https://www.signatureboston.com/lawn-on-d/community-activities",
+          "quote": "Please check our Event Calendar for closings and important information."
+        }
+      ]
+    },
+    {
+      "identity_key": "p17",
+      "name": "托马斯·M·梅尼诺会展中心",
+      "display_name": "托马斯·M·梅尼诺会展中心",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_030"
+      ],
+      "anchor": "415 Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 29,
+      "description": "Summer Street上的大型会展场馆，原名波士顿会展中心；按具体活动决定能否入内。",
+      "address": "415 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Thomas M. Menino Convention & Exhibition Center"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_030",
+          "url": "https://www.massconvention.com/about-us/press-release/boston-convention-exhibition-center-to-be-renamed-the-thomas-michael-menino",
+          "quote": "Boston Convention & Exhibition Center to be renamed the Thomas Michael Menino Convention and Exhibition Center"
+        }
+      ]
+    },
+    {
+      "identity_key": "p18",
+      "name": "Laugh Boston 喜剧俱乐部",
+      "display_name": "Laugh Boston 喜剧俱乐部",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_031"
+      ],
+      "anchor": "425 Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 30,
+      "description": "Summer Street上的喜剧演出场所。",
+      "address": "425 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Laugh Boston"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_031",
+          "url": "https://laughboston.com/",
+          "quote": "Boston's Best Comedy Club."
+        }
+      ]
+    },
+    {
+      "identity_key": "p19",
+      "name": "夏街阶梯",
+      "display_name": "夏街阶梯",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_032"
+      ],
+      "anchor": "400 Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 31,
+      "description": "400 Summer Street旁连接高处街道与海港方向的公共阶梯。",
+      "address": "400 Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Summer Street Steps"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_032",
+          "url": "https://www.wsdevelopment.com/our-properties/400-summer-street/",
+          "quote": "Adjacent to the Summer Street Steps, a welcoming pedestrian connection between Summer Street and Boston Harbor"
+        }
+      ]
+    },
+    {
+      "identity_key": "p20",
+      "name": "Harbor Way 绿地",
+      "display_name": "Harbor Way 绿地",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "site",
+      "entry_kind": "文化参观点",
+      "source_ids": [
+        "source_033"
+      ],
+      "anchor": "Harbor Way / Summer St.",
+      "editor_note": "Indoor access and current opening arrangements must be checked before visiting.",
+      "source_seq": 32,
+      "description": "连接Summer Street与海港岸线的步行公共空间。",
+      "address": "Harbor Way / Summer St.",
+      "specialty": "",
+      "shop_kind": "",
+      "status": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "aliases": [
+        "Harbor Way park"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_033",
+          "url": "https://www.fieldoperations.net/project/harbor-way",
+          "quote": "The one-third of a mile pedestrian promenade will change the way Seaport connects to Boston Harbor by creating a vital pedestrian link between Summer Street and the waterfront."
+        }
+      ]
+    },
+    {
+      "identity_key": "s01",
+      "name": "Primark 市中心店",
+      "display_name": "Primark 市中心店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_034"
+      ],
+      "anchor": "10 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 33,
+      "description": "位于Burnham Building的服饰及家居零售店。",
+      "address": "10 Summer St.",
+      "specialty": "位于Burnham Building的服饰及家居零售店。",
+      "shop_kind": "服饰",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Primark — Downtown Crossing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_034",
+          "url": "https://www.downtownboston.org/business/primark/",
+          "quote": "occupying the legendary Burnham Building"
+        }
+      ]
+    },
+    {
+      "identity_key": "s02",
+      "name": "梅西百货市中心店",
+      "display_name": "梅西百货市中心店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_035"
+      ],
+      "anchor": "450 Washington St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 34,
+      "description": "位于Washington Street的市中心百货店。",
+      "address": "450 Washington St.",
+      "specialty": "位于Washington Street的市中心百货店。",
+      "shop_kind": "百货",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Macy's — Downtown Crossing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_035",
+          "url": "https://www.downtownboston.org/business/macys/",
+          "quote": "BUSINESS INFO 450 Washington St., Boston, MA 02110"
+        }
+      ]
+    },
+    {
+      "identity_key": "s03",
+      "name": "Roche Bros. 超市",
+      "display_name": "Roche Bros. 超市",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_036"
+      ],
+      "anchor": "10 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 35,
+      "description": "位于10 Summer Street的超市。",
+      "address": "10 Summer St.",
+      "specialty": "位于10 Summer Street的超市。",
+      "shop_kind": "食品零售",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Roche Bros. — Downtown Crossing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_036",
+          "url": "https://www.downtownboston.org/business/roche-bros-supermarket/",
+          "quote": "Roche Bros. is the first large-scale grocery store to be built in Boston’s Downtown Crossing."
+        }
+      ]
+    },
+    {
+      "identity_key": "s04",
+      "name": "Tatte Bakery 夏街店",
+      "display_name": "Tatte Bakery 夏街店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_037"
+      ],
+      "anchor": "125 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 36,
+      "description": "位于125 Summer Street的烘焙咖啡店。",
+      "address": "125 Summer St.",
+      "specialty": "位于125 Summer Street的烘焙咖啡店。",
+      "shop_kind": "面包咖啡",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Tatte Bakery — Summer Street"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_037",
+          "url": "https://www.downtownboston.org/business/tatte-bakery-125-summer-street/",
+          "quote": "BUSINESS INFO 125 Summer St., Boston, MA 02110"
+        }
+      ]
+    },
+    {
+      "identity_key": "s05",
+      "name": "Caffè Nero 夏街店",
+      "display_name": "Caffè Nero 夏街店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_038"
+      ],
+      "anchor": "10 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 37,
+      "description": "位于10 Summer Street的咖啡店。",
+      "address": "10 Summer St.",
+      "specialty": "位于10 Summer Street的咖啡店。",
+      "shop_kind": "咖啡",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Caffè Nero — Summer Street"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_038",
+          "url": "https://www.downtownboston.org/business/caffh-nero-10-summer-st/",
+          "quote": "Caffe Nero is a European-style coffee shop chain with headquarters in London"
+        }
+      ]
+    },
+    {
+      "identity_key": "s06",
+      "name": "The Peach Cobbler Factory 夏街店",
+      "display_name": "The Peach Cobbler Factory 夏街店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_039"
+      ],
+      "anchor": "77 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 38,
+      "description": "位于77 Summer Street的甜品店。",
+      "address": "77 Summer St.",
+      "specialty": "位于77 Summer Street的甜品店。",
+      "shop_kind": "甜品",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "The Peach Cobbler Factory — Summer Street"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_039",
+          "url": "https://www.downtownboston.org/business/the-peach-cobbler-factory/",
+          "quote": "Since 2013, the Peach Cobbler Factory has been devoted to crafting delightful desserts"
+        }
+      ]
+    },
+    {
+      "identity_key": "s07",
+      "name": "Chacarero 智利三明治",
+      "display_name": "Chacarero 智利三明治",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_040"
+      ],
+      "anchor": "101 Arch St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 39,
+      "description": "Arch Street 的智利风味三明治店，由 Juan Hurtado 从手推车经营起步。",
+      "address": "101 Arch St.",
+      "specialty": "Arch Street 的智利风味三明治店，由 Juan Hurtado 从手推车经营起步。",
+      "shop_kind": "简餐",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Chacarero"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_040",
+          "url": "https://www.downtownboston.org/business/chacarero/",
+          "quote": "Chacarero - Downtown Boston Alliance Skip to content Search ... Results See all results Search ... Results See all results Plan Your Visit Live Here Work Here About DBA Contact Us Support Plan Your Visit Live Here Work Here About DBA Contact Us Support Attractions Dining Nightlife Shopping Events Attractions Dining Nightlife Shopping Events Home / Businesses / Chacarero Chacarero From Its Roots As A Pushcart Operation, Chacarero’s Has Risen To Become One Of Downtown’s Most Popular Lunch Spots Chilean native Juan Hurtado started selling his sandwiches from a pushcart in Downtown Boston. At first, the combination of green beans, grilled chicken or beef, avocado spread, sliced tomato, muenster cheese and hot sauce was a tough sell. People weren’t familiar with the soft, round bread that Hurtado bakes every morning. Then word spread that the sandwich was outstanding–and a bargain at the prices. He moved into his current location at 101 Arch Street. Hurtado started out with a lot of doubters. “People said things like ‘Am I going to like a sandwich with green beans?'” But he won them over with what he proclaims is the best sandwich in the world. On a typical weekday afternoon, the line extends out the door, as hungry passersby are lured by the scent of grilled beef and chicken. Hurtado says, “One bite and you won’t mind the wait! BUSINESS INFO 101 Arch St., Boston, MA 02110 (617) 542-0392 WEBSITE Hours Monday – Friday: 8 am – 6 pm GET DIRECTIONS HEAR IT FIRST Subscribe Now Email * Subscribe If you are human, leave this field blank. Explore Culture Dining Nightlife Shopping Events Get Around Visit Public Transit Walking Bicycling Parking & Driving Navigation Live Here Work Here About DBA Contact Us Privacy • Legal © 2024 Downtown Boston. All Rights Reserved."
+        }
+      ]
+    },
+    {
+      "identity_key": "s08",
+      "name": "Sam LaGrassa's 三明治店",
+      "display_name": "Sam LaGrassa's 三明治店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_041"
+      ],
+      "anchor": "44 Province St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 40,
+      "description": "创立于1968年的波士顿三明治店。",
+      "address": "44 Province St.",
+      "specialty": "创立于1968年的波士顿三明治店。",
+      "shop_kind": "简餐",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Sam LaGrassa's"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_041",
+          "url": "https://www.downtownboston.org/business/sam-lagrassas/",
+          "quote": "Sam LaGrassa’s was founded in 1968 by Sam LaGrassa, who was born and raised in Boston’s North End and had a passion for food and business."
+        }
+      ]
+    },
+    {
+      "identity_key": "s09",
+      "name": "George Howell Coffee 市中心店",
+      "display_name": "George Howell Coffee 市中心店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_042"
+      ],
+      "anchor": "505 Washington St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 41,
+      "description": "Washington Street 的精品咖啡店，店方介绍其以产地、气候和种植者工艺为特色的咖啡理念。",
+      "address": "505 Washington St.",
+      "specialty": "Washington Street 的精品咖啡店，店方介绍其以产地、气候和种植者工艺为特色的咖啡理念。",
+      "shop_kind": "咖啡",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "George Howell Coffee — Downtown"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_042",
+          "url": "https://www.downtownboston.org/business/george-howell-coffee/",
+          "quote": "George Howell Coffee - Downtown Boston Alliance Skip to content Search ... Results See all results Search ... Results See all results Plan Your Visit Live Here Work Here About DBA Contact Us Support Plan Your Visit Live Here Work Here About DBA Contact Us Support Attractions Dining Nightlife Shopping Events Attractions Dining Nightlife Shopping Events Home / Businesses / George Howell Coffee George Howell Coffee George Howell started George Howell Coffee with the primary focus and passion to continually identify, source and roast the highest quality coffees available. Their signature Terroir Coffee acknowledges and highlights the influence of the region and climate or terroir (pronounced tare-WAH) and the farmers craftsmanship in every bean. They understand that behind every cup of coffee there is a farm with growers who share the same drive and dedication for their craft as we do. In an effort to nurture these relationships, George, and now his daughter, Jenny, travel yearly to many of the farms they buy from as well as other coffee producing areas to develop and maintain real and lasting relationships. They are proud to work directly with these farms that share their interest in social responsibility and environmental sustainability. In an ongoing effort to genuinely recognize and demonstrate their respect for the care and costs incurred to produce outstanding quality, George Howell Coffee pays these farms top prices for green coffees, far exceeding Fair Trade pricing. BUSINESS INFO 505 Washington St., Boston, MA 02111 857-957-0217 WEBSITE Hours Monday – Wednesday 7:00 am – 3:00 pm Thursday – Sunday 8:00 am – 5:00 pm GET DIRECTIONS HEAR IT FIRST Subscribe Now Email * Subscribe If you are human, leave this field blank. Explore Culture Dining Nightlife Shopping Events Get Around Visit Public Transit Walking Bicycling Parking & Driving Navigation Live Here Work Here About DBA Contact Us Privacy • Legal © 2024 Downtown Boston. All Rights Reserved."
+        }
+      ]
+    },
+    {
+      "identity_key": "s10",
+      "name": "Brattle 二手书店",
+      "display_name": "Brattle 二手书店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_043"
+      ],
+      "anchor": "9 West St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 42,
+      "description": "West Street 的旧书与珍本书店，店方标示创立于1825年。",
+      "address": "9 West St.",
+      "specialty": "West Street 的旧书与珍本书店，店方标示创立于1825年。",
+      "shop_kind": "书店",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Brattle Book Shop"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_043",
+          "url": "https://www.brattlebookshop.com/about",
+          "quote": "The Brattle Book Shop, founded in the Cornhill section of Boston in 1825, has been in the hands of the Gloss Family since 1949."
+        }
+      ]
+    },
+    {
+      "identity_key": "s11",
+      "name": "Democracy Brewing 酿酒餐吧",
+      "display_name": "Democracy Brewing 酿酒餐吧",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_044"
+      ],
+      "anchor": "35 Temple Pl.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 43,
+      "description": "Temple Place上的员工持有制酿酒餐吧。",
+      "address": "35 Temple Pl.",
+      "specialty": "Temple Place上的员工持有制酿酒餐吧。",
+      "shop_kind": "餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Democracy Brewing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_044",
+          "url": "https://www.downtownboston.org/business/democracy-brewing/",
+          "quote": "Democracy Brewing, a worker-owned brewery and pub committed to making great beers and supporting the local community, opened its doors at 35 Temple Place"
+        }
+      ]
+    },
+    {
+      "identity_key": "s12",
+      "name": "Legal Sea Foods 市中心十字路口店",
+      "display_name": "Legal Sea Foods 市中心十字路口店",
+      "area": "Downtown Crossing",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_045"
+      ],
+      "anchor": "558 Washington St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 44,
+      "description": "Washington Street上的海鲜餐厅，按具体分店识别。",
+      "address": "558 Washington St.",
+      "specialty": "Washington Street上的海鲜餐厅，按具体分店识别。",
+      "shop_kind": "海鲜餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Legal Sea Foods — Downtown Crossing"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_045",
+          "url": "https://www.legalseafoods.com/locations/boston-downtown-crossing/",
+          "quote": "558 Washington Street, Boston, MA 02111"
+        }
+      ]
+    },
+    {
+      "identity_key": "s13",
+      "name": "High Street Place 美食广场",
+      "display_name": "High Street Place 美食广场",
+      "area": "金融区",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_046"
+      ],
+      "anchor": "100 High St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 45,
+      "description": "High Street上的多商户美食广场。",
+      "address": "100 High St.",
+      "specialty": "High Street上的多商户美食广场。",
+      "shop_kind": "美食广场",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "High Street Place Food Hall"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_046",
+          "url": "https://www.downtownboston.org/business/high-street-place-food-hall/",
+          "quote": "The vibrant food hall boasts 20 fabulous food and beverage vendors, each curated by Greater Boston’s culinary rockstars."
+        }
+      ]
+    },
+    {
+      "identity_key": "s14",
+      "name": "Flour Bakery 堡点店",
+      "display_name": "Flour Bakery 堡点店",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_047"
+      ],
+      "anchor": "12 Farnsworth St.",
+      "editor_note": "具体地址另据Signature Boston 2025海港区商户图。",
+      "source_seq": 46,
+      "description": "Farnsworth Street 的 Flour 烘焙咖啡店；2007年的街区报道记载这家由 Joanne Chang 经营的门店开业。",
+      "address": "12 Farnsworth St.",
+      "specialty": "Farnsworth Street 的 Flour 烘焙咖啡店；2007年的街区报道记载这家由 Joanne Chang 经营的门店开业。",
+      "shop_kind": "面包咖啡",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Flour Bakery + Cafe — Fort Point"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_047",
+          "url": "https://www.fortpointboston.com/2007/01/flour-bakery-open-for-business.html",
+          "quote": "Fort Point Boston Blog: Flour Bakery Open For Business! Monday, January 22, 2007 Flour Bakery Open For Business! This weekend Flour Bakery officially opened for business. For those of you who missed their open house or haven't been to their location in the South End, it's a bakery run by Joanne Chang which makes amazing scones, muffins, cookies, cakes, etc. They also have great soups and sandwiches. Head over and welcome the newest addition to Fort Point: flour bakery 12 Farnsworth St. www.flourbakery.com Hours: mon - fri 7am to 7pm saturday 8am to 6pm, sundays starting june (closed major holidays) at 10:19 AM Labels: flour , restaurants No comments: Post a Comment Note: Only a member of this blog may post a comment. Newer Post Older Post Home Subscribe to: Post Comments (Atom) Subscribe Subscribe via RSS Enter your email to receive each post in your inbox: Search Fort Point Blog Featured Post This Week: Voting, Coffee with a Cop, Volunteer @ Love Your Block, Music, Art & Shopping! Tuesday, November 3rd: MA State Election Day. Polls will be open 7am to 8pm. Fort Point and Seaport votes at One Boston Wharf Rd. View elect... Recent Comments Fort Point Links Fort Point Neighborhood Association FPNA_Boston Fort Point Arts Community Fort Point Pier Fort Point Theatre View Blog Posts By Date ► 2026 (87) ► November (2) ► October (10) ► September (6) ► August (6) ► July (12) ► June (6) ► May (8) ► April (12) ► March (12) ► February (6) ► January (7) ► 2025 (81) ► December (9) ► November (5) ► October (9) ► September (5) ► August (7) ► July (6) ► June (10) ► May (8) ► April (5) ► March (9) ► February (4) ► January (4) ► 2024 (77) ► December (8) ► November (4) ► October (8) ► September (7) ► August (7) ► July (2) ► June (7) ► May (5) ► April (10) ► March (8) ► February (8) ► January (3) ► 2023 (94) ► December (8) ► November (7) ► October (7) ► September (9) ► August (8) ► July (6) ► June (6) ► May (15) ► April (8) ► March (8) ► February (5) ► January (7) ► 2022 (74) ► Decembe"
+        }
+      ]
+    },
+    {
+      "identity_key": "s15",
+      "name": "Row 34 海港区店",
+      "display_name": "Row 34 海港区店",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_048"
+      ],
+      "anchor": "383 Congress St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 47,
+      "description": "设在旧波士顿码头公司仓库里的海鲜餐厅。",
+      "address": "383 Congress St.",
+      "specialty": "设在旧波士顿码头公司仓库里的海鲜餐厅。",
+      "shop_kind": "海鲜餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Row 34 — Seaport"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_048",
+          "url": "https://www.row34.com/location/row34-seaport/",
+          "quote": "this renovated Boston Wharf Company textile warehouse was first built in 1908 and became the original Row 34 in 2013"
+        }
+      ]
+    },
+    {
+      "identity_key": "s16",
+      "name": "Trillium 堡点店",
+      "display_name": "Trillium 堡点店",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_049"
+      ],
+      "anchor": "50 Thomson Pl.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 48,
+      "description": "Thomson Place上的精酿啤酒与餐饮场所。",
+      "address": "50 Thomson Pl.",
+      "specialty": "Thomson Place上的精酿啤酒与餐饮场所。",
+      "shop_kind": "酿酒餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Trillium — Fort Point"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_049",
+          "url": "https://trilliumbrewing.com/pages/fort-point",
+          "quote": "TRILLIUM FORT POINT Plan Your Visit FEATURES Taproom/Restaurant • Outdoor Patio • Roof Deck • Family Friendly • Event Space • Beer, Spirits, & Merch To Go"
+        }
+      ]
+    },
+    {
+      "identity_key": "s17",
+      "name": "Abigail's Tea Room",
+      "display_name": "Abigail's Tea Room",
+      "area": "Fort Point",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_023"
+      ],
+      "anchor": "306 Congress St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 49,
+      "description": "倾茶博物馆的茶室可不购博物馆门票进入，并介绍与倾茶事件有关的茶叶与历史展品。",
+      "address": "306 Congress St.",
+      "specialty": "倾茶博物馆的茶室可不购博物馆门票进入，并介绍与倾茶事件有关的茶叶与历史展品。",
+      "shop_kind": "茶室",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Abigail's Tea Room"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_023",
+          "url": "https://www.bostonteapartyship.com/faq",
+          "quote": " Museum. No museum ticket is required to visit Abigail’s Tea Room, making it a great stop for both museum guests and visitors exploring the area. Abigail’s Tea Room offers a wide assortment of food and beverage options, including a tea tasting experience where visitors can drink the 5 teas involved in the Boston Tea Party. Guests hoping to continue their learning after finishing their interactive museum tour will be thrilled to find that Abigail’s Tea Room & Terrace also holds several historical exhibits, artifacts, and text panels, as well as historic table games to play as you sip your tea. Is the museum wheelchair accessible? Yes. The museum is wheelchair accessible, including exhibit spaces and restrooms. Please note that given our unique nautical environment, movement through the site involves gangways, ramps, and some tight spaces. Our museum building includes an elevator for your convenience. While we have two ships on-site, only 1 is fully ADA- accessible. Our ship Eleanor is fully ADA accessible with ramp access to the top deck and video displays to convey content and information regarding the spaces below decks. Tours that board the Eleanor begin at either the top or bottom of the hour. For better wheelchair access and accessibility please book a tour at one of these times. Guests with accessibility needs are encouraged to contact the museum ahead of their visit for specific accommodations. share share Facebook share twitter share linkedin Go Top SIGNUP FOR SPECIALS & DISCOUNTS Sign up to receive special offers, discounts and news on upcoming events. Δ Name sign up * Zip Code * Email Address * Museum Tickets | Gift Shop | Venue Rentals | Grave Marker Program | Descendant Program Facebook Boston Tea Party Ship Instagram Boston Tea Party Ship youtube Boston Tea Party Ship Hours: Monday - Sunday: 10am - 4pm 306 Congress St. Discounted Parking Located at: Farnsworth Street Garage Atlantic Wharf Garage This website meets WCAG 2.0/2.1 AA standards set by the ADA. View our ADA Accessibility Policy . Website Terms | Privacy Policy | Refund Policy Boston Tea Party Ships & Museum®, Let It Begin Here®, and An Adventure in History!® are registered trademarks of Hi"
+        },
+        {
+          "source_id": "source_023",
+          "url": "https://www.bostonteapartyship.com/faq",
+          "quote": "Frequently Asked Questions About Boston Tea Party Museum Off-Season Hours: Tours begin at 10a, last tour 4p. Plan Visit > Tour Hours: Monday - Sunday: 10am - 4pm Search Frequently Asked Questions About Boston Tea Party Museum Connect CALL US DIRECTLY loading Chat with an agent Manage Booking Accessibility Gift Cards loading Tickets MENU Tour Hours: Monday - Sunday: 10am - 4pm Search Back Visit Tickets & Packages Abigail’s Tea Room Group Tours Planning Your Visit Parking, Map & Directions Museum FAQs Hometown Pass Translated Guides Contact Contact Us Join the Cast Media Tickets Request Travel Agent Outreach Refund Policy Learn Full Research Library Descendants Program Grave Marker Program Boston Tea Party Participants Participants Historiography Glossary of Terms Boston Tea Party History Committees of Correspondence The Tea Act Sons of Liberty Loyal Nine Samuel Adams Paul Revere King George III American Revolution Shot Heard ‘Round the World Faneuil Hall John Adams Teach Field Trips Lesson Plans About Museum Partners Press Room News Archives Boston Tea Party Webcam Museum Programs Revelry on Griffin’s Wharf Descendants Program Grave Marker Program 250th Anniversary of the Boston Tea Party Writing a Revolution: The Letters of John & Abigail Adams Travel Guide Sail Boston: Experience the Tall Ships in Boston Harbor Fun Things To Do Boston Attractions Fort Point Channel Most Scenic Views Boston Events Calendar The Tea Master’s Blog Shop Online Gift Cards Tickets Join Our Cast Shop Merchandise Venue Rentals Accessibility Tour Hours: Monday - Sunday: 10am - 4pm 306 Congress St. Discounted Parking Located at: Farnsworth Street Garage Atlantic Wharf Garage Facebook Boston Tea Party Ship Instagram Boston Tea Party Ship youtube Boston Tea Party Ship Search for: Search Close search The Boston Tea Party Ships & Museum Museum FAQs What are the museum’s hours of operation? Click here for our hours. Closed Christmas and Thanksgiving day. What is the cost of tickets? Click here to "
+        }
+      ]
+    },
+    {
+      "identity_key": "s18",
+      "name": "Coquette 餐厅",
+      "display_name": "Coquette 餐厅",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_050"
+      ],
+      "anchor": "450 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 50,
+      "description": "位于450 Summer Street的地中海风格餐厅。",
+      "address": "450 Summer St.",
+      "specialty": "位于450 Summer Street的地中海风格餐厅。",
+      "shop_kind": "餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Coquette"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_050",
+          "url": "https://www.coquetteboston.com/",
+          "quote": "Drawing inspiration from the culture and cuisine of the Mediterranean coast, Coquette offers fresh seafood, a stunning raw bar, Capri-style pizzas and a selection of sophisticated entrees"
+        }
+      ]
+    },
+    {
+      "identity_key": "s19",
+      "name": "M.J. O'Connor's 海港区店",
+      "display_name": "M.J. O'Connor's 海港区店",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_051"
+      ],
+      "anchor": "425 Summer St.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 51,
+      "description": "位于425 Summer Street的餐吧。",
+      "address": "425 Summer St.",
+      "specialty": "位于425 Summer Street的餐吧。",
+      "shop_kind": "餐吧",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "M.J. O'Connor's — Seaport"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_051",
+          "url": "https://www.mjoconnors.com/location/mj-oconnors-seaport/",
+          "quote": "At MJ O’Connor’s in South Boston’s Seaport District, you’ll find a classic Boston tavern with a modern, recently updated interior."
+        }
+      ]
+    },
+    {
+      "identity_key": "s20",
+      "name": "Harpoon 波士顿酿酒厂",
+      "display_name": "Harpoon 波士顿酿酒厂",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_052"
+      ],
+      "anchor": "306 Northern Ave.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 52,
+      "description": "Northern Avenue上的酿酒厂与啤酒厅。",
+      "address": "306 Northern Ave.",
+      "specialty": "Northern Avenue上的酿酒厂与啤酒厅。",
+      "shop_kind": "酿酒餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Harpoon Boston Brewery"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_052",
+          "url": "https://harpoonbrewery.com/boston-brewery/",
+          "quote": "306 Northern Avenue Boston, MA 02210"
+        }
+      ]
+    },
+    {
+      "identity_key": "s21",
+      "name": "Legal Sea Foods 海港店",
+      "display_name": "Legal Sea Foods 海港店",
+      "area": "海港区",
+      "parent_key": "",
+      "object_type_hint": "shop",
+      "entry_kind": "特色商铺",
+      "source_ids": [
+        "source_053"
+      ],
+      "anchor": "270 Northern Ave.",
+      "editor_note": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "source_seq": 53,
+      "description": "海港区海鲜餐厅，三楼屋顶露台可观赏波士顿港。",
+      "address": "270 Northern Ave.",
+      "specialty": "海港区海鲜餐厅，三楼屋顶露台可观赏波士顿港。",
+      "shop_kind": "海鲜餐饮",
+      "status": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "aliases": [
+        "Legal Sea Foods — Boston Harborside"
+      ],
+      "evidence": [
+        {
+          "source_id": "source_053",
+          "url": "https://www.legalseafoods.com/locations/boston-harborside/",
+          "quote": "The third-floor rooftop deck, “The Overlook,” provides 180-degree views of Boston Harbor, making it the perfect spot to enjoy the best of Boston’s seafood, cocktails, and water views from sunrise to sunset."
+        }
+      ]
+    }
+  ],
+  "pending": [],
+  "state": "独立审计完成"
+}

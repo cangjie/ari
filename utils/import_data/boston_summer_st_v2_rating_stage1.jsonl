@@ -1,0 +1,53 @@
+{"seq": 1, "object_type": "site", "peer_group": "历史步道与遗产线路", "HS": 9, "IU": 8, "VI": 7, "VA": 8, "CE": 9, "ER": 8, "evidence": "红砖步道串联16处官方历史站点，是本次走廊历史叙事的核心框架，但整条线路超出Summer Street范围。", "confidence": "high"}
+{"seq": 2, "object_type": "node", "peer_group": "历史公共公园", "HS": 7, "IU": 7, "VI": 7, "VA": 7, "CE": 7, "ER": 7, "evidence": "作为自由之路西端的历史公共公园，具有明确的城市空间和步行衔接价值，但简介未显示更具体的遗产层次。", "confidence": "medium"}
+{"seq": 3, "object_type": "node", "peer_group": "历史政府建筑", "HS": 8, "IU": 7, "VI": 6, "VA": 7, "CE": 8, "ER": 7, "evidence": "州议会大厦紧邻波士顿公园，能代表本地政治与公共历史，但当前资料对建筑本身的视觉和参观内容说明有限。", "confidence": "medium"}
+{"seq": 4, "object_type": "node", "peer_group": "历史宗教建筑", "HS": 7, "IU": 6, "VI": 6, "VA": 6, "CE": 7, "ER": 6, "evidence": "历史教堂为自由之路提供宗教与城市历史节点价值，但输入未给出足以支持更高视觉或独特性评分的细节。", "confidence": "medium"}
+{"seq": 5, "object_type": "node", "peer_group": "历史墓地", "HS": 8, "IU": 8, "VI": 6, "VA": 7, "CE": 9, "ER": 6, "evidence": "1660年建立且安葬多位重要人物，历史叙事密度很高，但墓地的现场视觉冲击通常有限。", "confidence": "high"}
+{"seq": 6, "object_type": "node", "peer_group": "历史宗教建筑", "HS": 8, "IU": 7, "VI": 7, "VA": 7, "CE": 8, "ER": 7, "evidence": "1686年创立的礼拜堂及相邻墓地集中体现早期宗教和墓葬历史，兼具建筑与场所叙事价值。", "confidence": "high"}
+{"seq": 7, "object_type": "node", "peer_group": "历史学校遗址与人物纪念物", "HS": 8, "IU": 7, "VI": 5, "VA": 7, "CE": 8, "ER": 5, "evidence": "1635年学校旧址与富兰克林雕像连接教育史和人物纪念，但现状主要是街道标记，空间展示性较弱。", "confidence": "high"}
+{"seq": 8, "object_type": "node", "peer_group": "殖民时期商业建筑", "HS": 7, "IU": 6, "VI": 6, "VA": 6, "CE": 7, "ER": 6, "evidence": "1718年历史商业建筑及其出版业关联具有明确城市文化价值，但作为外部建筑节点的体验吸引力较为有限。", "confidence": "high"}
+{"seq": 9, "object_type": "node", "peer_group": "历史公共集会建筑", "HS": 9, "IU": 8, "VI": 7, "VA": 8, "CE": 9, "ER": 8, "evidence": "与1773年波士顿倾茶事件前的群众集会相关，能以较强的事件叙事解释革命前的公共政治动员。", "confidence": "medium"}
+{"seq": 10, "object_type": "node", "peer_group": "历史政府建筑", "HS": 9, "IU": 9, "VI": 8, "VA": 8, "CE": 9, "ER": 8, "evidence": "作为波士顿现存最古老的公共建筑之一，老州议会大厦兼具城市身份、建筑现场感和重要历史叙事。", "confidence": "medium"}
+{"seq": 11, "object_type": "node", "peer_group": "革命时期事件遗址与标记", "HS": 8, "IU": 7, "VI": 4, "VA": 7, "CE": 9, "ER": 4, "evidence": "街道遗址标记对应1770年波士顿惨案，事件教育价值很高，但物理遗存和现场视觉冲击较弱。", "confidence": "medium"}
+{"seq": 12, "object_type": "node", "peer_group": "历史公共集会建筑", "HS": 8, "IU": 9, "VI": 7, "VA": 8, "CE": 9, "ER": 8, "evidence": "作为自由之路上的历史集会场所，法尼尔厅对本段城市公共生活和历史叙事具有很强的身份价值。", "confidence": "medium"}
+{"seq": 13, "object_type": "site", "peer_group": "城市商业步行街区", "HS": 4, "IU": 6, "VI": 5, "VA": 6, "CE": 3, "ER": 5, "evidence": "简介只确认其为Summer街与Washington街交汇的步行购物区，具路线锚点和城市体验价值，但未显示突出的历史遗产内容。", "confidence": "high"}
+{"seq": 14, "object_type": "node", "peer_group": "城市公共开放空间", "HS": 3, "IU": 4, "VI": 4, "VA": 5, "CE": 2, "ER": 5, "evidence": "这是市中心步行区的公共聚集空间，便于停留和观察城市生活，但现有简介未提供显著历史、艺术或教育叙事。", "confidence": "medium"}
+{"seq": 15, "object_type": "node", "peer_group": "城市演出场馆", "HS": 5, "IU": 4, "VI": 5.5, "VA": 5.5, "CE": 4.5, "ER": 5.5, "evidence": "资料仅确认其为市中心附近的演出场馆，具有一般文化体验潜力，但缺少建筑、剧院史或具体演出信息且需查票务。", "confidence": "low"}
+{"seq": 16, "object_type": "node", "peer_group": "波士顿纪念性公共空间", "HS": 7, "IU": 6, "VI": 5.5, "VA": 6, "CE": 8, "ER": 7.5, "evidence": "该公共广场明确纪念19世纪爱尔兰大饥荒及移民，叙事教育价值突出，但现有简介未说明纪念物的尺度和艺术表现。", "confidence": "medium"}
+{"seq": 17, "object_type": "node", "peer_group": "城市公共开放空间", "HS": 3.5, "IU": 4.5, "VI": 6, "VA": 6, "CE": 3.5, "ER": 6, "evidence": "这是邮政广场的公共公园，且由地面停车楼旧址转化而来，具有较好的城市空间体验但文化叙事有限。", "confidence": "medium"}
+{"seq": 18, "object_type": "site", "peer_group": "城市公共开放空间", "HS": 5, "IU": 6.5, "VI": 7, "VA": 7, "CE": 4.5, "ER": 7.5, "evidence": "绿道及Dewey Square构成南站北侧连续的滨水城市开放空间，对步行路线的景观和停留体验贡献明显，但简介未提供具体遗产叙事。", "confidence": "medium"}
+{"seq": 19, "object_type": "node", "peer_group": "历史交通建筑与枢纽", "HS": 8, "IU": 8, "VI": 7, "VA": 7, "CE": 8, "ER": 8, "evidence": "资料明确其为1899年开放的历史火车站，并兼具铁路与公共交通枢纽功能，能集中呈现波士顿交通发展和城市门户体验。", "confidence": "high"}
+{"seq": 20, "object_type": "site", "peer_group": "Fort Point工业遗产建筑与街区", "HS": 8, "IU": 8, "VI": 8, "VA": 8, "CE": 8, "ER": 8, "evidence": "官方简介确认这里集中保存旧仓库和工业建筑，外观连续性、区域辨识度及工业城市叙事均很强。", "confidence": "high"}
+{"seq": 21, "object_type": "node", "peer_group": "Fort Point工业遗产建筑与街区", "HS": 6.5, "IU": 6.5, "VI": 7, "VA": 7, "CE": 6.5, "ER": 6.5, "evidence": "该建筑及屋顶Boston Wharf Co.标牌提供了明确的码头工业遗产识别点，但地址在现址网站与市政历史资料之间存在差异。", "confidence": "medium"}
+{"seq": 22, "object_type": "node", "peer_group": "历史与主题博物馆", "HS": 8, "IU": 7.5, "VI": 7, "VA": 7.5, "CE": 8, "ER": 7.5, "evidence": "场馆以波士顿倾茶事件为核心主题并包含船舰，历史叙事和游客吸引力较强，但展览需预约购票。", "confidence": "high"}
+{"seq": 23, "object_type": "node", "peer_group": "历史与主题博物馆", "HS": 4.5, "IU": 5.5, "VI": 6, "VA": 6.5, "CE": 6.5, "ER": 6.5, "evidence": "这是堡点水道边的儿童博物馆，具有面向儿童的教育和家庭体验价值，但简介未提供具体展览或建筑特色。", "confidence": "medium"}
+{"seq": 24, "object_type": "site", "peer_group": "波士顿纪念性公共空间", "HS": 5.5, "IU": 5.5, "VI": 6.5, "VA": 6.5, "CE": 7, "ER": 7.5, "evidence": "公园明确纪念马拉松爆炸案中最年轻的遇难者，纪念叙事和情感体验较强，同时具滨水公共空间价值。", "confidence": "high"}
+{"seq": 25, "object_type": "node", "peer_group": "城市历史博物馆", "HS": 6, "IU": 7, "VI": 6, "VA": 6, "CE": 7, "ER": 7, "evidence": "旧消防站与波士顿消防史构成明确的地方历史叙事，但规模和内容深度未有更多资料支持。", "confidence": "medium"}
+{"seq": 26, "object_type": "site", "peer_group": "城市滨水公共步道", "HS": 5, "IU": 7, "VI": 8, "VA": 8, "CE": 5, "ER": 9, "evidence": "海港沿岸公共步道直接连接海港区景观，是本条走廊中体验滨水空间的核心节点。", "confidence": "high"}
+{"seq": 27, "object_type": "node", "peer_group": "当代艺术馆", "HS": 7, "IU": 8, "VI": 8, "VA": 8, "CE": 7, "ER": 8, "evidence": "海港区滨水当代艺术馆具有明确的机构身份和较强空间吸引力，是沿线主要文化场馆。", "confidence": "high"}
+{"seq": 28, "object_type": "node", "peer_group": "海港区公共开放空间", "HS": 3, "IU": 4, "VI": 6, "VA": 6, "CE": 3, "ER": 6, "evidence": "户外活动空间具有休憩和现场氛围价值，但简介未显示稳定的历史或文化叙事。", "confidence": "medium"}
+{"seq": 29, "object_type": "node", "peer_group": "会展场馆", "HS": 3, "IU": 4, "VI": 5, "VA": 3, "CE": 3, "ER": 5, "evidence": "大型会展场馆是海港区地标，但主要价值取决于具体活动，非日常参观重点。", "confidence": "high"}
+{"seq": 30, "object_type": "node", "peer_group": "现场演出场所", "HS": 3, "IU": 4, "VI": 4, "VA": 6, "CE": 4, "ER": 6, "evidence": "喜剧演出可提供即时娱乐体验，但文化价值和参观吸引力依赖具体演出及票务安排。", "confidence": "high"}
+{"seq": 31, "object_type": "node", "peer_group": "公共步行连接设施", "HS": 2, "IU": 3, "VI": 5, "VA": 5, "CE": 2, "ER": 8, "evidence": "公共阶梯对连接高处街道与海港方向很有用，但自身的历史、艺术和叙事价值有限。", "confidence": "high"}
+{"seq": 32, "object_type": "site", "peer_group": "海港区公共开放空间", "HS": 3, "IU": 5, "VI": 7, "VA": 7, "CE": 3, "ER": 8, "evidence": "连接Summer Street与岸线的公共绿地具有明显的步行衔接和滨水空间体验价值。", "confidence": "medium"}
+{"seq": 33, "object_type": "node", "peer_group": "服饰零售店", "HS": 1, "IU": 2, "VI": 3, "VA": 3, "CE": 1, "ER": 4, "evidence": "服饰及家居零售店的主要功能是商业消费，简介未提供突出的文化或遗产信息。", "confidence": "high"}
+{"seq": 34, "object_type": "node", "peer_group": "百货商店", "HS": 2, "IU": 3, "VI": 4, "VA": 4, "CE": 2, "ER": 4, "evidence": "市中心百货店具有商业地标属性，但现有简介不足以支持较高的文化参观优先级。", "confidence": "high"}
+{"seq": 35, "object_type": "node", "peer_group": "食品零售店", "HS": 1, "IU": 2, "VI": 2, "VA": 2, "CE": 1, "ER": 3, "evidence": "超市主要满足日常食品购买需求，简介未显示独立的文化、艺术或遗产价值。", "confidence": "high"}
+{"seq": 36, "object_type": "node", "peer_group": "面包咖啡店", "HS": 1, "IU": 2, "VI": 3, "VA": 4, "CE": 1, "ER": 4, "evidence": "烘焙咖啡店可提供短暂停留体验，但现有资料未显示其具有特别的文化或历史叙事。", "confidence": "high"}
+{"seq": 37, "object_type": "node", "peer_group": "咖啡店", "HS": 2, "IU": 1, "VI": 3, "VA": 3, "CE": 2, "ER": 2, "evidence": "仅知为10 Summer Street的连锁咖啡店，输入未提供其地方历史、建筑或独特文化叙事。", "confidence": "high"}
+{"seq": 38, "object_type": "node", "peer_group": "甜品店", "HS": 2, "IU": 1, "VI": 3, "VA": 3, "CE": 1, "ER": 1, "evidence": "仅有甜品店地址与名称信息，缺乏可支撑文化、历史或空间价值的具体证据。", "confidence": "high"}
+{"seq": 39, "object_type": "node", "peer_group": "特色三明治店", "HS": 4, "IU": 2, "VI": 2, "VA": 4, "CE": 4, "ER": 2, "evidence": "智利风味三明治具有一定移民饮食文化代表性，但输入未说明店铺历史或更广泛的地方影响。", "confidence": "medium"}
+{"seq": 40, "object_type": "node", "peer_group": "特色三明治店", "HS": 5, "IU": 3, "VI": 2, "VA": 4, "CE": 3, "ER": 2, "evidence": "创立于1968年使其具备一定波士顿地方商业连续性，但现有简介不足以证明更高层级的文化重要性。", "confidence": "high"}
+{"seq": 41, "object_type": "node", "peer_group": "咖啡店", "HS": 3, "IU": 2, "VI": 3, "VA": 4, "CE": 2, "ER": 2, "evidence": "可确认是精品咖啡店，但输入没有提供其历史、创始背景或独特空间信息。", "confidence": "medium"}
+{"seq": 42, "object_type": "node", "peer_group": "历史书店", "HS": 8, "IU": 7, "VI": 5, "VA": 7, "CE": 7, "ER": 5, "evidence": "店方标示创立于1825年，兼营旧书与珍本书，具有鲜明的地方文化连续性和书籍知识传播价值。", "confidence": "high"}
+{"seq": 43, "object_type": "node", "peer_group": "精酿啤酒餐饮场所", "HS": 4, "IU": 3, "VI": 3, "VA": 4, "CE": 4, "ER": 2, "evidence": "员工持有制这一经营模式提供了有限的社会叙事，但输入未显示其历史或空间遗产价值。", "confidence": "medium"}
+{"seq": 44, "object_type": "node", "peer_group": "海鲜餐厅", "HS": 3, "IU": 2, "VI": 3, "VA": 3, "CE": 2, "ER": 2, "evidence": "仅能确认是Legal Sea Foods的市中心具体分店，现有信息不足以赋予该地点较高的独特文化价值。", "confidence": "medium"}
+{"seq": 45, "object_type": "node", "peer_group": "城市美食广场", "HS": 3, "IU": 2, "VI": 4, "VA": 4, "CE": 3, "ER": 3, "evidence": "多商户美食广场具有一定城市消费空间体验，但输入未提供历史、建筑或文化叙事依据。", "confidence": "high"}
+{"seq": 46, "object_type": "node", "peer_group": "烘焙咖啡店", "HS": 4, "IU": 3, "VI": 3, "VA": 4, "CE": 3, "ER": 3, "evidence": "本地烘焙咖啡店可提供一定城市日常饮食体验，但简介未说明其历史或独特空间特征。", "confidence": "medium"}
+{"seq": 47, "object_type": "node", "peer_group": "海鲜餐厅", "HS": 5, "IU": 3, "VI": 5, "VA": 5, "CE": 4, "ER": 5, "evidence": "位于旧波士顿码头公司仓库这一空间背景增强了现场与工业遗产关联，但餐厅自身的历史价值信息有限。", "confidence": "high"}
+{"seq": 48, "object_type": "node", "peer_group": "精酿啤酒餐饮场所", "HS": 4, "IU": 4, "VI": 4, "VA": 5, "CE": 3, "ER": 3, "evidence": "精酿啤酒与餐饮提供一定当代地方消费体验，但输入没有给出其历史、建筑或更广泛文化影响。", "confidence": "medium"}
+{"seq": 49, "object_type": "node", "peer_group": "博物馆附属茶室空间", "HS": 2, "IU": 2, "VI": 4, "VA": 4, "CE": 3, "ER": 5, "evidence": "仅知为波士顿倾茶博物馆内可免票进入的茶室，文化关联来自所在场馆，茶室本身的历史与展示价值有限。", "confidence": "medium"}
+{"seq": 50, "object_type": "node", "peer_group": "海港区餐饮空间", "HS": 1, "IU": 1, "VI": 3, "VA": 2, "CE": 1, "ER": 5, "evidence": "资料仅说明其为450 Summer Street的地中海风格餐厅，缺乏遗产、艺术或教育叙事证据。", "confidence": "high"}
+{"seq": 51, "object_type": "node", "peer_group": "海港区餐饮空间", "HS": 1, "IU": 1, "VI": 2, "VA": 2, "CE": 1, "ER": 5, "evidence": "资料仅说明其为425 Summer Street的餐吧，未提供文化遗产、艺术特色或可供参观的空间信息。", "confidence": "high"}
+{"seq": 52, "object_type": "node", "peer_group": "海港区餐饮空间", "HS": 3, "IU": 2, "VI": 5, "VA": 4, "CE": 2, "ER": 5, "evidence": "酿酒厂与啤酒厅具有一定生产空间和餐饮氛围，但输入未提供其历史、遗产身份或教育展示内容。", "confidence": "medium"}
+{"seq": 53, "object_type": "node", "peer_group": "海港区餐饮空间", "HS": 1, "IU": 1, "VI": 5, "VA": 4, "CE": 1, "ER": 5, "evidence": "主要参观吸引力来自明确提供的三楼屋顶露台及波士顿港景观，而非已知的文化或遗产价值。", "confidence": "high"}

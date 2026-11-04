@@ -1,0 +1,402 @@
+{
+  "checked_on": "2026-11-03",
+  "state": "draft_not_for_publication",
+  "labels_file": "boston_summer_st_shop_labels.json",
+  "osm_file": "boston_summer_st_osm.json",
+  "transit_file": "boston_summer_st_mbta_stops.json",
+  "stations": [
+    {
+      "id": "park",
+      "name": "Park Street 站 · Boston Common 出口",
+      "lines": [
+        "Red",
+        "Green"
+      ],
+      "lines_label": "红线 / 绿线",
+      "gtfs_stop_id": "door-pktrm-tremontw",
+      "place": "place-pktrm",
+      "source": {
+        "title": "Park Street 站 · Boston Common 出口",
+        "url": "https://www.mbta.com/stops/place-pktrm"
+      },
+      "position_source": {
+        "title": "MBTA 官方 GTFS 停站和入口资料",
+        "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
+      }
+    },
+    {
+      "id": "downtown",
+      "name": "Downtown Crossing 站 · Summer Street 出口",
+      "lines": [
+        "Red",
+        "Orange"
+      ],
+      "lines_label": "红线 / 橙线",
+      "gtfs_stop_id": "door-dwnxg-summer",
+      "place": "place-dwnxg",
+      "source": {
+        "title": "Downtown Crossing 站 · Summer Street 出口",
+        "url": "https://www.mbta.com/stops/place-dwnxg"
+      },
+      "position_source": {
+        "title": "MBTA 官方 GTFS 停站和入口资料",
+        "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
+      }
+    },
+    {
+      "id": "courthouse",
+      "name": "Courthouse 站 · Seaport Boulevard 出口",
+      "lines": [
+        "Silver"
+      ],
+      "lines_label": "银线",
+      "gtfs_stop_id": "door-crtst-north",
+      "place": "place-crtst",
+      "source": {
+        "title": "Courthouse 站 · Seaport Boulevard 出口",
+        "url": "https://www.mbta.com/stops/place-crtst"
+      },
+      "position_source": {
+        "title": "MBTA 官方 GTFS 停站和入口资料",
+        "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
+      }
+    },
+    {
+      "id": "silver",
+      "name": "Silver Line Way 站",
+      "lines": [
+        "Silver"
+      ],
+      "lines_label": "银线",
+      "gtfs_stop_id": "place-conrd",
+      "place": "place-conrd",
+      "source": {
+        "title": "Silver Line Way 站",
+        "url": "https://www.mbta.com/stops/place-conrd"
+      },
+      "position_source": {
+        "title": "MBTA 官方 GTFS 停站和入口资料",
+        "url": "https://cdn.mbta.com/MBTA_GTFS.zip"
+      }
+    }
+  ],
+  "themes": [
+    {
+      "fee": "公共街道和外观游览不含入馆票；餐饮及交通自理。",
+      "access": "开放、购票、营业、过街及出入口以现场与运营方公告为准。",
+      "sources": [
+        {
+          "title": "MBTA 官方站点信息",
+          "url": "https://www.mbta.com/stops/"
+        }
+      ],
+      "id": "sightseeing",
+      "name": "纯观光路线",
+      "description": "自由之路市中心站点、南站、Fort Point 和海港滨水。",
+      "default_start": "park",
+      "start_stations": [
+        "park"
+      ],
+      "end_station": "courthouse",
+      "optional_shops": [],
+      "steps": [
+        {
+          "seq": 2,
+          "minutes": 20,
+          "note": "从公共步道看历史公园，室外活动以现场安排为准。",
+          "streets": [
+            "Tremont Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 3,
+          "minutes": 15,
+          "note": "从公共街道观看州议会大厦外观，入内须另核开放安排。",
+          "streets": [
+            "Beacon Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 4,
+          "minutes": 10,
+          "note": "在公共街道观看教堂外观，入内另核。",
+          "streets": [
+            "Tremont Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 5,
+          "minutes": 15,
+          "note": "从墓地外围或开放区域参观，开放与维护安排另核。",
+          "streets": [
+            "Tremont Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 6,
+          "minutes": 15,
+          "note": "教堂与墓地的入内安排分别核实。",
+          "streets": [
+            "Tremont Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 7,
+          "minutes": 10,
+          "note": "看旧校址标识及富兰克林雕像。",
+          "streets": [
+            "School Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 8,
+          "minutes": 10,
+          "note": "观看历史建筑外观；旧名不表示现为书店。",
+          "streets": [
+            "Washington Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 9,
+          "minutes": 15,
+          "note": "从街道识别历史会议厅，入馆购票与开放安排另核。",
+          "streets": [
+            "Washington Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 10,
+          "minutes": 15,
+          "note": "观看老州议会大厦外观，参观展览另核。",
+          "streets": [
+            "Washington Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 11,
+          "minutes": 5,
+          "note": "留意街道纪念标记，过街遵守现场信号。",
+          "streets": [
+            "State Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 12,
+          "minutes": 20,
+          "note": "看法尼尔厅外观及周边公共空间。",
+          "streets": [
+            "Congress Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 19,
+          "minutes": 10,
+          "note": "从 Summer Street 一侧看南站历史站房。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 20,
+          "minutes": 15,
+          "note": "从公共街道观察 Fort Point 旧仓库与街区肌理。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": [
+            21
+          ]
+        },
+        {
+          "seq": 22,
+          "minutes": 15,
+          "note": "在桥和公共区域观看倾茶博物馆与水道；入馆另核。",
+          "streets": [
+            "Congress Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 24,
+          "minutes": 15,
+          "note": "从公共公园与滨水步道观景。",
+          "streets": [
+            "Sleeper Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 31,
+          "minutes": 10,
+          "note": "经过 Summer Street Steps；如有封闭按现场指示绕行。",
+          "streets": [
+            "Harbor Way"
+          ],
+          "related": []
+        },
+        {
+          "seq": 32,
+          "minutes": 15,
+          "note": "沿 Harbor Way 公共步行空间前往海港。",
+          "streets": [
+            "Harbor Way"
+          ],
+          "related": []
+        },
+        {
+          "seq": 27,
+          "minutes": 20,
+          "note": "从公共滨水区域看当代艺术学院；参观展览另核。",
+          "streets": [
+            "Boston HarborWalk",
+            "Harborwalk"
+          ],
+          "related": []
+        }
+      ]
+    },
+    {
+      "fee": "公共街道和外观游览不含入馆票；餐饮及交通自理。",
+      "access": "开放、购票、营业、过街及出入口以现场与运营方公告为准。",
+      "sources": [
+        {
+          "title": "MBTA 官方站点信息",
+          "url": "https://www.mbta.com/stops/"
+        }
+      ],
+      "id": "food",
+      "name": "观光＋美食路线",
+      "description": "从市中心到海港，把历史景点与面包、海鲜、美食广场和酒厂串起来。",
+      "default_start": "downtown",
+      "start_stations": [
+        "downtown"
+      ],
+      "end_station": "silver",
+      "optional_shops": [
+        48,
+        51,
+        53
+      ],
+      "steps": [
+        {
+          "seq": 9,
+          "minutes": 15,
+          "note": "从街道识别历史会议厅，入馆购票与开放安排另核。",
+          "streets": [
+            "Washington Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 36,
+          "minutes": 10,
+          "note": "烘焙咖啡可按需选购；营业状态当日核实。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 45,
+          "minutes": 15,
+          "note": "美食广场可按需用餐；营业与档口安排当日核实。",
+          "streets": [
+            "High Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 19,
+          "minutes": 10,
+          "note": "从 Summer Street 一侧看南站历史站房。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 20,
+          "minutes": 15,
+          "note": "从公共街道观察 Fort Point 旧仓库与街区肌理。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": [
+            21
+          ]
+        },
+        {
+          "seq": 22,
+          "minutes": 15,
+          "note": "在桥和公共区域观看倾茶博物馆与水道；入馆另核。",
+          "streets": [
+            "Congress Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 46,
+          "minutes": 10,
+          "note": "Fort Point 面包咖啡店；营业状态当日核实。",
+          "streets": [
+            "Farnsworth Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 47,
+          "minutes": 10,
+          "note": "海鲜餐厅；营业与预约当日核实。",
+          "streets": [
+            "Congress Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 31,
+          "minutes": 10,
+          "note": "经过 Summer Street Steps；如有封闭按现场指示绕行。",
+          "streets": [
+            "Harbor Way"
+          ],
+          "related": []
+        },
+        {
+          "seq": 50,
+          "minutes": 10,
+          "note": "450 Summer Street 餐厅；营业与预约当日核实。",
+          "streets": [
+            "Summer Street"
+          ],
+          "related": []
+        },
+        {
+          "seq": 52,
+          "minutes": 20,
+          "note": "Harpoon 波士顿酒厂；营业、参观与年龄要求当日核实。",
+          "streets": [
+            "Northern Avenue"
+          ],
+          "related": []
+        }
+      ]
+    }
+  ],
+  "itinerary_map_brand": "波士顿 Summer Street",
+  "itinerary_exit_note": "时长未计用餐和排队。车站出口及临时封闭以现场为准。",
+  "itinerary_spread_markers": true,
+  "policy": "距离依据已保存的公开街道资料估算；出入口、过街、封路及可达性以现场为准。用餐、排队与购票时间另计。",
+  "navigation_policy": "路线提示公共街道附近而非入口。GPS 精度较低时不新增到达提醒；路径和通行条件以现场为准。"
+}

@@ -7,12 +7,45 @@ import argparse
 import hashlib
 import json
 import math
+import re
+import unicodedata
 from html import escape
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 TOUR = HERE.parents[1] / 'web_api/tour'
 COLORS = ['#916326', '#3f7063', '#8b4b42', '#385f83']
+
+
+def wrap_compact_label(value, limit):
+    def width(text):
+        return sum(2 if unicodedata.east_asian_width(char) in ('W','F') else 1 for char in text)
+    tokens=re.findall(r'[A-Za-z0-9]+(?:[ -][A-Za-z0-9]+)*|.',value)
+    result=[];current=''
+    for token in tokens:
+        if current and width(current+token)>limit:
+            result.append(current.rstrip());current=token.lstrip()
+        else:
+            current+=token
+    if current:result.append(current.rstrip())
+    return result
+
+
+def spread_pins(points, reserved, box):
+    occupied=list(reserved);result=[]
+    for x,y in points:
+        options=[(0,0)]
+        for radius in (50,75,100,125,150):
+            options.extend((radius*math.cos(math.pi*i/4),radius*math.sin(math.pi*i/4)) for i in range(8))
+        for dx,dy in options:
+            candidate=(round(x+dx,2),round(y+dy,2))
+            if (box[0]+24 <= candidate[0] <= box[0]+box[2]-24
+                    and box[1]+24 <= candidate[1] <= box[1]+box[3]-24
+                    and all(math.dist(candidate, prior)>=46 for prior in occupied)):
+                result.append(candidate);occupied.append(candidate);break
+        else:
+            raise ValueError('路线点位过密，无法清晰排版')
+    return result
 
 
 def digest(path):
@@ -27,7 +60,11 @@ def project(data, point):
 
 def render(data, theme, variant, color):
     """底图、线与参考点用同一相似投影，完整路线自动适配到图框。"""
-    width, height = 1200, 1600
+    width = 1200
+    columns = 2 if len(theme['steps']) <= 10 else 4
+    rows = math.ceil(len(theme['steps']) / columns)
+    footer = max(1470, 1156 + max(0, rows - 1) * 64 + 38)
+    height = footer + 130
     box = (45, 250, 1110, 820)
     path = variant['path']
     left, right = min(p[0] for p in path)-65, max(p[0] for p in path)+65
@@ -42,8 +79,8 @@ def render(data, theme, variant, color):
            f'<title id="title">{escape(theme["name"])} · {escape(start["name"])}出发</title>',
            '<desc id="desc">数字为游览顺序，S为地铁起点，E为地铁终点。路线沿已记录的公共道路；标点为附近街道参考点，并非检票入口。</desc>',
            '<style>text{font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;fill:#282e2b}.small{font-size:21px}.muted{fill:#65716b}.num{font-size:23px;fill:white;font-weight:700;text-anchor:middle;dominant-baseline:central}</style>',
-           '<rect width="1200" height="1600" fill="#faf8f3"/>',
-           '<text x="45" y="49" font-size="21" letter-spacing="3" class="muted">ARI TRAVEL / 北京南锣鼓巷 · 什刹海</text>',
+           f'<rect width="1200" height="{height}" fill="#faf8f3"/>',
+           f'<text x="45" y="49" font-size="21" letter-spacing="3" class="muted">ARI TRAVEL / {escape(data.get("itinerary_map_brand", "北京南锣鼓巷 · 什刹海"))}</text>',
            f'<text x="45" y="112" font-size="45" font-weight="700">{escape(theme["name"])}</text>',
            f'<text x="45" y="157" font-size="25">S {escape(start["name"])} → E {escape(end["name"])}'+('（同站往返）' if start['id']==end['id'] else '')+'</text>',
            f'<text x="45" y="198" font-size="24" class="muted">约 {variant["meters"]/1000:.1f} 公里 · 估计 {variant["total_minutes"]//60}小时{variant["total_minutes"]%60}分（停留 {variant["stay_minutes"]} + 步行 {variant["walk_minutes"]} 分钟）</text>',
@@ -76,10 +113,13 @@ def render(data, theme, variant, color):
                 out.append(f'<path d="M-9 -7 L0 0 L-9 7" transform="translate({x} {y}) rotate({angle})" fill="none" stroke="white" stroke-width="3"/>')
                 break
             sofar+=length
-    for order,step in enumerate(theme['steps'],1):
-        x,y=xy(project(data,step['point']))
-        out.append(f'<g data-order="{order}" data-seq="{step["seq"]}" data-x="{x}" data-y="{y}"><title>{order}. {escape(step["name"]["zh"])}</title><circle cx="{x}" cy="{y}" r="22" fill="{color}" stroke="white" stroke-width="3"/><text class="num" x="{x}" y="{y}">{order}</text></g>')
+    points=[xy(project(data,step['point'])) for step in theme['steps']]
     endpoints=[('S/E',path[0])] if start['id']==end['id'] else [('S',path[0]),('E',path[-1])]
+    shown=spread_pins(points,[xy(point) for _,point in endpoints],box) if data.get('itinerary_spread_markers') else points
+    for order,(step,(x,y),actual) in enumerate(zip(theme['steps'],shown,points),1):
+        if data.get('itinerary_spread_markers') and math.dist((x,y),actual)>1:
+            out.append(f'<path d="M{actual[0]} {actual[1]} L{x} {y}" fill="none" stroke="{color}" stroke-width="2"/>')
+        out.append(f'<g data-order="{order}" data-seq="{step["seq"]}" data-x="{x}" data-y="{y}"><title>{order}. {escape(step["name"]["zh"])}</title><circle cx="{x}" cy="{y}" r="22" fill="{color}" stroke="white" stroke-width="3"/><text class="num" x="{x}" y="{y}">{order}</text></g>')
     for label,point in endpoints:
         x,y=xy(point)
         out.append(f'<g data-station="{label}"><rect x="{x-29}" y="{y-23}" width="58" height="46" rx="8" fill="#283e36" stroke="white" stroke-width="3"/><text class="num" x="{x}" y="{y}" style="font-size:20px">{label}</text></g>')
@@ -92,16 +132,17 @@ def render(data, theme, variant, color):
             '<text x="1155" y="1113" text-anchor="end" class="small muted">圆点为附近街道参考点</text>']
     # 两列保留足够宽度给原始全名；最长名称分两行，不截断身份。
     for index,step in enumerate(theme['steps']):
-        x=45+(index%2)*570; y=1156+(index//2)*64
+        x=45+(index%columns)*(570 if columns==2 else 277); y=1156+(index//columns)*64
         out.append(f'<circle cx="{x+17}" cy="{y-5}" r="17" fill="{color}"/><text x="{x+17}" y="{y-5}" class="num" style="font-size:19px">{index+1}</text>')
-        name=step['name']['zh']; parts=[name[i:i+20] for i in range(0,len(name),20)]
+        name=step['name']['zh']; chunk=20 if columns==2 else 9
+        parts=wrap_compact_label(name,18) if columns==4 else [name[i:i+chunk] for i in range(0,len(name),chunk)]
         for j,part in enumerate(parts):
-            out.append(f'<text x="{x+43}" y="{y+j*25}" font-size="23">{escape(part)}</text>')
-    out += ['<path d="M45 1470 H1155" stroke="#ccd3c8"/>',
-            '<text x="45" y="1504" class="small muted">公共道路步行示意；出入口、过街设施、场所开放与预约请以现场为准。</text>',
-            '<text x="45" y="1536" class="small muted">时长未计用餐和排队。地铁出口编号据 OSM，临时封闭以现场为准。</text>',
-            '<text x="45" y="1572" font-size="19" class="muted">地图 © OpenStreetMap 贡献者 · ODbL · openstreetmap.org/copyright</text>',
-            '<text x="1155" y="1572" text-anchor="end" font-size="19" class="muted">tour.snowmeet.top</text>', '</svg>']
+            out.append(f'<text x="{x+43}" y="{y+j*25}" font-size="{23 if columns==2 else 20}">{escape(part)}</text>')
+    out += [f'<path d="M45 {footer} H1155" stroke="#ccd3c8"/>',
+            f'<text x="45" y="{footer+34}" class="small muted">公共道路步行示意；出入口、过街设施、场所开放与预约请以现场为准。</text>',
+            f'<text x="45" y="{footer+66}" class="small muted">{escape(data.get("itinerary_exit_note", "时长未计用餐和排队。地铁出口编号据 OSM，临时封闭以现场为准。"))}</text>',
+            f'<text x="45" y="{footer+102}" font-size="19" class="muted">地图 © OpenStreetMap 贡献者 · ODbL · openstreetmap.org/copyright</text>',
+            f'<text x="1155" y="{footer+102}" text-anchor="end" font-size="19" class="muted">tour.snowmeet.top</text>', '</svg>']
     return '\n'.join(out)+'\n'
 
 

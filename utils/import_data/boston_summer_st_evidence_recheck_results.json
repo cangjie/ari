@@ -1,0 +1,278 @@
+{
+  "request_sha256": "60d5e8482d691a08931128a16551631b6015b134c83a4b1a24911d5e16c5fac4",
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "items": [
+    {
+      "seq": 1,
+      "quote": "The 2.5-mile Freedom Trail is a red-bricked path on City of Boston sidewalks and leads one to the Trail’s 16 official historic sites.",
+      "source_url": "https://www.thefreedomtrail.org/visit/experience-freedom-trail-now-visitor-resource",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms the 2.5-mile trail and 16 official sites (though it calls it 'red-bricked' rather than 'red-lined'). The 16 official sites list includes USS Constitution and Bunker Hill Monument, which are located in Charlestown, while the rest are in Boston, supporting the 'Boston / Charlestown' address."
+    },
+    {
+      "seq": 2,
+      "quote": "139 Tremont St. Boston, MA 02111",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/boston-common",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address '139 Tremont St.' is directly confirmed, and the source confirms Boston Common is 'America's oldest public park' (historic public park), but neither source explicitly states that it is the 'starting point' of the Freedom Trail."
+    },
+    {
+      "seq": 3,
+      "quote": "Massachusetts State House Designed by Charles Bulfinch, the ‘new’ and current State House has served as the seat of Massachusetts government since its opening in 1798.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/massachusetts-state-house",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms it is the seat of Massachusetts government (i.e., the state capitol); address '24 Beacon St.' matches 'Beacon St.'; proximity to Boston Common (listed as 0.2 mi away) supports 'beside Boston Common.'"
+    },
+    {
+      "seq": 5,
+      "quote": "The Granary Burying Ground, located at 120 Tremont Street in downtown Boston, is the city's third oldest cemetery.",
+      "source_url": "https://www.boston.gov/cemeteries/granary-burying-ground",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Address '120 Tremont St.' is directly confirmed. The source also notes the granary that gave the site its name was moved to 'the site presently occupied by the Park Street Church' and the ground is 'Tremont Street (between Park and School Streets)', supporting its adjacency to Park Street Church."
+    },
+    {
+      "seq": 6,
+      "quote": "58 Tremont St. Boston, MA 02108",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/kings-chapel-kings-chapel-burying-ground",
+      "supported": true,
+      "address_supported": false,
+      "reason": "Source confirms King's Chapel is a church with an adjacent burying ground ('King's Chapel Burying Ground is located next to King's Chapel on Tremont Street'), supporting the description. However, the official address given is '58 Tremont St.' with no mention of School St., so the stated address 'Tremont St. & School St.' is not supported."
+    },
+    {
+      "seq": 7,
+      "quote": "A mosaic and a statue of former student Benjamin Franklin currently marks the location of the original schoolhouse.",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/boston-latin-school-sitebenjamin-franklin-statue",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms the former school site is marked by a mosaic and Benjamin Franklin statue, and the listed address '45 School St. Boston, MA 02108' matches 'School St.'"
+    },
+    {
+      "seq": 8,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The source confirms the building's history and construction date but never states that the name does not imply an operating bookstore today; this interpretive claim is not found in the source text. The address '283 Washington St.' matches the site's listed address in the Freedom Trail page."
+    },
+    {
+      "seq": 9,
+      "quote": "Samuel Adams gave the signal that started the Boston Tea Party",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/old-south-meeting-house",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source directly describes Old South Meeting House as the site of the mass meeting on December 16, 1773 where Samuel Adams gave the signal starting the Boston Tea Party, matching the description. The address '310 Washington St.' is explicitly listed on the page."
+    },
+    {
+      "seq": 10,
+      "quote": "the Old State House stands as the oldest surviving public building in Boston",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/old-state-house",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source states the Old State House is the oldest surviving public building in Boston, which supports the (slightly weaker) claim that it is 'one of' the oldest. The address '206 Washington St.' is explicitly listed on the page."
+    },
+    {
+      "seq": 11,
+      "quote": "a medallion on the Freedom Trail marks the site of the Boston Massacre",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/boston-massacre-site",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms a marker (medallion) commemorates the 1770 Boston Massacre site. It also states 'The Boston Massacre site marker is located at the intersection of State and Congress Streets in Downtown Boston,' supporting the given address 'State St. & Congress St.'"
+    },
+    {
+      "seq": 12,
+      "quote": "has served as an open forum meeting hall and marketplace for more than 270 years",
+      "source_url": "https://www.thefreedomtrail.org/trail-sites/faneuil-hall",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source describes Faneuil Hall as a historic meeting hall that is part of the Freedom Trail, supporting the description. The address '1 Faneuil Hall Sq.' is explicitly listed on the page."
+    },
+    {
+      "seq": 13,
+      "quote": "along a bustling pedestrian mall at the intersection of Summer and Washington Streets",
+      "source_url": "https://www.meetboston.com/explore/neighborhoods/downtown-crossing-financial-district/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source describes the pedestrian shopping mall located at the intersection of Summer and Washington Streets, matching both the description of a pedestrian shopping district and the given address."
+    },
+    {
+      "seq": 15,
+      "quote": "The Citizens Opera House is centrally located in Downtown Crossing.",
+      "source_url": "https://www.citizensoperahouse.com/getting-here/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms the venue is in Downtown Crossing and provides the exact address '539 Washington Street Boston MA 02111' for GPS directions; site context (Upcoming Events, Attending a Show) supports it being a performing arts venue."
+    },
+    {
+      "seq": 17,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The provided sources only contain page titles ('Hours & Information', 'History of Post Office Square') with no body text, so neither the description ('Public green space at Post Office Square in the Financial District') nor the address can be verified from the given content."
+    },
+    {
+      "seq": 18,
+      "quote": "The Rose Kennedy Greenway is a public green space in the heart of Boston where people connect with each other, with nature, and with the life of the city.",
+      "source_url": "https://www.rosekennedygreenway.org/overview/",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source confirms the Greenway is a public park in central Boston, but does not describe it as a 'linear park' or mention its 'southern end near South Station'. The only address given in the text is the Conservancy's office at 185 Kneeland Street, not 'Surface Rd. / Dewey Sq.', so the address is not supported."
+    },
+    {
+      "seq": 19,
+      "quote": "South Station 700 Atlantic Ave Boston, MA 02110",
+      "source_url": "https://bostonsouthstation.com/",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The address '700 Atlantic Ave.' is directly confirmed by the source. However, the source text (store/transit directory listing) does not mention 'Summer Street' or a 'historic headhouse', so those description details are not supported by this source."
+    },
+    {
+      "seq": 20,
+      "quote": "the Fort Point Channel area is Boston’s largest, most cohesive, and most significant collection of late 19th and early 20th century industrial loft buildings.",
+      "source_url": "https://content.boston.gov/historic-district/fort-point-channel-landmark-district",
+      "supported": true,
+      "address_supported": false,
+      "reason": "The source confirms it is a historic district of former industrial loft/warehouse buildings and that exterior alterations visible from public ways are reviewed, supporting that exterior architecture can be viewed from public streets. However, the source does not mention the specific streets 'Summer St. / A St. / Congress St.', so the address is not directly supported."
+    },
+    {
+      "seq": 21,
+      "quote": "Rising above Summer Street is the iconic red neon “Boston Wharf Co Industrial Real Estate” sign—a fixture that has guided pedestrians and commuters for generations.",
+      "source_url": "https://263summerst.com/history/",
+      "supported": true,
+      "address_supported": false,
+      "reason": "The source confirms the building is a Fort Point landmark on Summer Street with a visible rooftop sign, matching the description. The address 'Address 263 Summer St Boston, MA 02210' is confirmed, but '10 Melcher St.' is not mentioned anywhere in the source, so the full combined address is not fully supported."
+    },
+    {
+      "seq": 22,
+      "quote": "Our Retail Shop and Abigail’s Tea Room are accessible and available without purchase of a museum experience ticket.",
+      "source_url": "https://www.bostonteapartyship.com/faq",
+      "supported": false,
+      "address_supported": true,
+      "reason": "The source confirms Abigail's Tea Room and the gift shop are accessible without a museum ticket, and the address 306 Congress St. is repeatedly given, so the address is supported. However, the claim that the site is located 'on Congress Street Bridge' is not stated anywhere in the source text, so not all key facts in the description are verified."
+    },
+    {
+      "seq": 26,
+      "quote": "",
+      "source_url": "",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source describes the general Harborwalk webtool and Chapter 91 public amenities across all Boston neighborhoods, but does not state that this entry 'covers the Seaport segment only' nor give an address of 'Seaport waterfront'. No matching continuous text supports these specific claims."
+    },
+    {
+      "seq": 28,
+      "quote": "Please check our Event Calendar for closings and important information.",
+      "source_url": "https://www.signatureboston.com/lawn-on-d/community-activities",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source repeatedly instructs visitors to check the Event Calendar before visiting, supporting the description. It also states the mailing address for the Lawn on D is 415 Summer Street, Boston, MA 02210, matching the listed address, and confirms proximity to the convention center (MCEC)."
+    },
+    {
+      "seq": 30,
+      "quote": "Boston's Best Comedy Club.",
+      "source_url": "https://laughboston.com/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms Laugh Boston is a comedy club/venue, and lists its address as '425 Summer Street Boston, MA 02210', matching the given address exactly."
+    },
+    {
+      "seq": 32,
+      "quote": "Harbor Way, a linear promenade and central public park that carve pathways through the site.",
+      "source_url": "https://www.wsdevelopment.com/news/how-to-humanize-a-22-billion-neighborhood-built-from-scratch/",
+      "supported": false,
+      "address_supported": false,
+      "reason": "The source confirms Harbor Way is a pedestrian promenade/park connecting the Seaport district to the harbor, supporting part of the description, but it never mentions 'Summer Street' as a connection point, so the address 'Harbor Way / Summer St.' is not directly supported by this text."
+    },
+    {
+      "seq": 33,
+      "quote": "occupying the legendary Burnham Building",
+      "source_url": "https://www.downtownboston.org/business/primark/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "The source confirms Primark is located in the Burnham Building and sells clothing, beauty, and homeware items (fashion and home goods), and gives the business address as '10 Summer St., Boston, MA 02110', matching the listed address."
+    },
+    {
+      "seq": 47,
+      "quote": "this renovated Boston Wharf Company textile warehouse was first built in 1908 and became the original Row 34 in 2013",
+      "source_url": "https://www.row34.com/location/row34-seaport/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms it is a seafood restaurant located in a former Boston Wharf Company textile warehouse, and address 383 Congress St matches exactly."
+    },
+    {
+      "seq": 48,
+      "quote": "TRILLIUM FORT POINT Plan Your Visit FEATURES Taproom/Restaurant • Outdoor Patio • Roof Deck • Family Friendly • Event Space • Beer, Spirits, & Merch To Go",
+      "source_url": "https://trilliumbrewing.com/pages/fort-point",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Trillium Fort Point is a brewery taproom/restaurant venue located at 50 Thomson Pl., matching the description and address."
+    },
+    {
+      "seq": 49,
+      "quote": "No museum ticket is required to visit Abigail’s Tea Room, making it a great stop for both museum guests and visitors exploring the area.",
+      "source_url": "https://www.bostonteapartyship.com/faq",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Abigail's Tea Room is at the Boston Tea Party Museum and is accessible without a museum ticket; address 306 Congress St. matches."
+    },
+    {
+      "seq": 50,
+      "quote": "Drawing inspiration from the culture and cuisine of the Mediterranean coast, Coquette offers fresh seafood, a stunning raw bar, Capri-style pizzas and a selection of sophisticated entrees",
+      "source_url": "https://www.coquetteboston.com/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Coquette is a Mediterranean-inspired restaurant; address 450 Summer St, Boston, MA matches exactly."
+    },
+    {
+      "seq": 51,
+      "quote": "At MJ O’Connor’s in South Boston’s Seaport District, you’ll find a classic Boston tavern with a modern, recently updated interior.",
+      "source_url": "https://www.mjoconnors.com/location/mj-oconnors-seaport/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms M.J. O'Connor's Seaport is a restaurant/pub (tavern) located at 425 Summer St, Boston, MA, matching the description and address."
+    },
+    {
+      "seq": 53,
+      "quote": "Experience the ultimate in waterfront dining at our flagship Harborside restaurant.",
+      "source_url": "https://www.legalseafoods.com/locations/boston-harborside/",
+      "supported": true,
+      "address_supported": true,
+      "reason": "Source confirms Legal Sea Foods Boston Harborside is a seafood restaurant in the Seaport District located at 270 Northern Ave, matching the description and address."
+    }
+  ],
+  "complete": true,
+  "last_usage": {
+    "input_tokens": 1310,
+    "cache_creation_input_tokens": 22261,
+    "cache_read_input_tokens": 19346,
+    "output_tokens": 1910,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22261,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 373,
+        "cache_read_input_tokens": 19346,
+        "cache_creation_input_tokens": 2915,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2915
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

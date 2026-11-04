@@ -1,6 +1,14 @@
 """Published collection configuration for Boston Summer Street."""
 
 VIEW_MODE = "collection"
+REQUIRE_VERIFIED_EVIDENCE = True
+PACKAGE_PREFIX = 'boston_summer_st_v3'
+RATING_INVENTORY_FILE = 'boston_summer_st_revision_v3_draft.json'
+PUBLIC_REVIEW_SUMMARY = True
+MEDIA_MANIFEST = 'boston_summer_st_media_release.json'
+EXPERIENCE_MANIFEST = 'boston_summer_st_experience_release.json'
+REQUIRE_MEDIA_INTEGRITY = True
+REQUIRE_EXPERIENCE_INTEGRITY = True
 GPS_GUIDE = True
 CHECKED_ON = "2026-11-03"
 

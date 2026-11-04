@@ -1,0 +1,15 @@
+{
+  "key": "boston_summer_st",
+  "count": 53,
+  "tiers": {
+    "S": 1,
+    "A": 12,
+    "B": 10,
+    "C": 30
+  },
+  "workbook_sha256": "b3eb6e5c954bb8555369b9e3664ccaacb8df2a241451d2b5fce1466dcbc6f1af",
+  "business_database_written": false,
+  "production_questions_posted": 0,
+  "android_apk_rebuilt": false,
+  "nginx_changed": false
+}

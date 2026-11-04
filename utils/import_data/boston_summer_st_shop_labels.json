@@ -1,0 +1,152 @@
+{
+  "policy": "分类只描述经营类别，不代表餐饮口味、质量或价格。",
+  "items": [
+    {
+      "seq": 33,
+      "identity_key": "s01",
+      "category": "服饰",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 34,
+      "identity_key": "s02",
+      "category": "百货",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 35,
+      "identity_key": "s03",
+      "category": "食品零售",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 36,
+      "identity_key": "s04",
+      "category": "面包咖啡",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 37,
+      "identity_key": "s05",
+      "category": "咖啡",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 38,
+      "identity_key": "s06",
+      "category": "甜品",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 39,
+      "identity_key": "s07",
+      "category": "简餐",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 40,
+      "identity_key": "s08",
+      "category": "简餐",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 41,
+      "identity_key": "s09",
+      "category": "咖啡",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 42,
+      "identity_key": "s10",
+      "category": "书店",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 43,
+      "identity_key": "s11",
+      "category": "餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 44,
+      "identity_key": "s12",
+      "category": "海鲜餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 45,
+      "identity_key": "s13",
+      "category": "美食广场",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 46,
+      "identity_key": "s14",
+      "category": "面包咖啡",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 47,
+      "identity_key": "s15",
+      "category": "海鲜餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 48,
+      "identity_key": "s16",
+      "category": "酿酒餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 49,
+      "identity_key": "s17",
+      "category": "茶室",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 50,
+      "identity_key": "s18",
+      "category": "餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 51,
+      "identity_key": "s19",
+      "category": "餐吧",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "category": "酿酒餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    },
+    {
+      "seq": 53,
+      "identity_key": "s21",
+      "category": "海鲜餐饮",
+      "tags": [],
+      "reason": "依据该条资料中的经营类别整理；实时营业状态请另核。"
+    }
+  ]
+}

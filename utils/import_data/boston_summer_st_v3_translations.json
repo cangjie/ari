@@ -1,0 +1,1062 @@
+{
+  "input_sha256": "89ce167c42997572176a9fc78b0b81fadf4772ea63bec298c67109ebea8cd1d7",
+  "model": "bilingual editorial inventory",
+  "source": "已核双语清单",
+  "values": {
+    "自由之路": {
+      "en": "Freedom Trail",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "约2.5英里的红线历史步道，串联16处官方站点；本表另列全部站点。": {
+      "en": "A roughly 2.5-mile red-lined historic trail linking 16 official sites; all sites are indexed separately.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "跨区": {
+      "en": "跨区",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Boston / Charlestown": {
+      "en": "Boston / Charlestown",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "整条步道超出Summer Street走廊。": {
+      "en": "整条步道超出Summer Street走廊。",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "地点与简介有来源；开放、预约、收费及临时关闭未实时核实": {
+      "en": "地点与简介有来源；开放、预约、收费及临时关闭未实时核实",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "波士顿公园": {
+      "en": "Boston Common",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "老城公共绿地，也是自由之路起点。": {
+      "en": "Historic public park and the starting point of the Freedom Trail.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "市中心西端": {
+      "en": "市中心西端",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "139 Tremont St.": {
+      "en": "139 Tremont St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Indoor access and current opening arrangements must be checked before visiting.": {
+      "en": "Indoor access and current opening arrangements must be checked before visiting.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "马萨诸塞州议会大厦": {
+      "en": "Massachusetts State House",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于波士顿公园旁的州议会大厦。": {
+      "en": "State capitol beside Boston Common.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Beacon St.": {
+      "en": "Beacon St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "公园街教堂": {
+      "en": "Park Street Church",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "自由之路沿线的历史教堂。": {
+      "en": "Historic church on the Freedom Trail.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Park St. & Tremont St.": {
+      "en": "Park St. & Tremont St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "谷仓墓地": {
+      "en": "Granary Burying Ground",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "市中心历史墓地，毗邻公园街教堂。": {
+      "en": "Historic downtown burial ground beside Park Street Church.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "120 Tremont St.": {
+      "en": "120 Tremont St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "国王礼拜堂及墓地": {
+      "en": "King's Chapel & Burying Ground",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "自由之路上的教堂与相邻墓地。": {
+      "en": "Church and adjacent burial ground on the Freedom Trail.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Tremont St. & School St.": {
+      "en": "Tremont St. & School St.",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "波士顿拉丁学校旧址与富兰克林像": {
+      "en": "Boston Latin School Site / Benjamin Franklin Statue",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "旧校址以纪念标识和富兰克林雕像呈现。": {
+      "en": "Former school site marked by a memorial and Benjamin Franklin statue.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "School St.": {
+      "en": "School St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "老街角书店旧址": {
+      "en": "Old Corner Bookstore",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "自由之路上的历史建筑；名称不代表现在仍是书店。": {
+      "en": "Historic Freedom Trail building; the name does not imply an operating bookstore today.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "283 Washington St.": {
+      "en": "283 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "老南会议厅": {
+      "en": "Old South Meeting House",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "与1773年波士顿倾茶事件前的群众集会有关。": {
+      "en": "Meeting house linked to the mass meeting before the 1773 Boston Tea Party.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "310 Washington St.": {
+      "en": "310 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "老州议会大厦": {
+      "en": "Old State House",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿现存最古老的公共建筑之一。": {
+      "en": "One of Boston's oldest surviving public buildings.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "金融区": {
+      "en": "金融区",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "206 Washington St.": {
+      "en": "206 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿惨案遗址": {
+      "en": "Boston Massacre Site",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "纪念1770年波士顿惨案的街道遗址标记。": {
+      "en": "Street marker commemorating the 1770 Boston Massacre.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "State St. & Congress St.": {
+      "en": "State St. & Congress St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "法尼尔厅": {
+      "en": "Faneuil Hall",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "自由之路上的历史集会场所。": {
+      "en": "Historic meeting hall on the Freedom Trail.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1 Faneuil Hall Sq.": {
+      "en": "1 Faneuil Hall Sq.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "市中心十字路口商圈": {
+      "en": "Downtown Crossing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Summer与Washington街交汇处的步行购物区。": {
+      "en": "Pedestrian shopping district around Summer and Washington Streets.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Downtown Crossing": {
+      "en": "Downtown Crossing",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Summer St. & Washington St.": {
+      "en": "Summer St. & Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "夏街广场": {
+      "en": "Summer Street Plaza",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "市中心步行区的公共聚集空间。": {
+      "en": "Public gathering space in the Downtown Crossing pedestrian zone.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "10 Summer St.": {
+      "en": "10 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "公民歌剧院": {
+      "en": "Citizens Opera House",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "市中心十字路口附近的演出场馆。": {
+      "en": "Performing arts venue near Downtown Crossing.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "539 Washington St.": {
+      "en": "539 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "爱尔兰大饥荒纪念广场": {
+      "en": "Irish Famine Memorial Plaza",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于老南会议厅与老街角书店之间，纪念19世纪爱尔兰大饥荒及移民。": {
+      "en": "Plaza between Old South Meeting House and Old Corner Bookstore commemorating the Great Irish Famine and migration.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "10 School St.": {
+      "en": "10 School St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "诺曼·B·莱文塔尔公园": {
+      "en": "Norman B. Leventhal Park",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于邮政广场的金融区公共绿地。": {
+      "en": "Public green space at Post Office Square in the Financial District.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Post Office Square": {
+      "en": "Post Office Square",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "罗斯·肯尼迪绿道": {
+      "en": "Rose Fitzgerald Kennedy Greenway",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "贯穿市中心多个街区的线性公园，南端接近南站。": {
+      "en": "Linear park through central Boston, with its southern end near South Station.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "南站": {
+      "en": "南站",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Surface Rd. / Dewey Sq.": {
+      "en": "Surface Rd. / Dewey Sq.",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "波士顿南站": {
+      "en": "South Station",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Summer Street旁的主要铁路与地铁换乘点，历史站房可从外部观看。": {
+      "en": "Major rail and transit hub by Summer Street, with a historic headhouse visible outside.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "700 Atlantic Ave.": {
+      "en": "700 Atlantic Ave.",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "堡点水道地标区": {
+      "en": "Fort Point Channel Landmark District",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "旧仓库与工业建筑集中的历史街区，适合看建筑外观。": {
+      "en": "Historic district of former warehouses and industrial lofts; exterior architecture can be viewed from public streets.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Fort Point": {
+      "en": "Fort Point",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Summer St. / A St. / Congress St.": {
+      "en": "Summer St. / A St. / Congress St.",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "波士顿码头公司旧办公楼及屋顶标牌": {
+      "en": "Boston Wharf Company Office Building & Sign",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "Summer与Melcher街角的堡点地标；从公共街道观看建筑及屋顶标牌。": {
+      "en": "Fort Point landmark at Summer and Melcher Streets; view the building and rooftop sign from public streets.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "263 Summer St. / 10 Melcher St.": {
+      "en": "263 Summer St. / 10 Melcher St.",
+      "confidence": "official",
+      "source": "人工整理"
+    },
+    "市历史报告使用363 Summer St./10 Melcher St.；现址网站使用263 Summer St。": {
+      "en": "市历史报告使用363 Summer St./10 Melcher St.；现址网站使用263 Summer St。",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "波士顿倾茶事件船舰与博物馆": {
+      "en": "Boston Tea Party Ships & Museum",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于国会街桥的历史体验馆，另有不购票可进入的茶室与商店。": {
+      "en": "Historic experience on Congress Street Bridge; its tea room and gift shop are accessible without a museum ticket.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "306 Congress St.": {
+      "en": "306 Congress St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿儿童博物馆": {
+      "en": "Boston Children's Museum",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于堡点水道边的儿童博物馆。": {
+      "en": "Children's museum on Fort Point Channel.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "308 Congress St.": {
+      "en": "308 Congress St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "马丁公园": {
+      "en": "Martin's Park",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "儿童博物馆旁的包容性滨水游乐公园。": {
+      "en": "Inclusive waterfront play park beside Boston Children's Museum.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "64 Sleeper St.": {
+      "en": "64 Sleeper St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿消防博物馆": {
+      "en": "Boston Fire Museum",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "设在旧消防站内，展示波士顿消防史。": {
+      "en": "Museum of Boston firefighting history in a former firehouse.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "344 Congress St.": {
+      "en": "344 Congress St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿海港步道海港区段": {
+      "en": "Boston Harborwalk — Seaport segment",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "沿海港岸线连接公共空间与文化地点的步道；此条只指海港区段。": {
+      "en": "Waterfront public path linking open spaces and cultural sites; this entry covers the Seaport segment only.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "海港区": {
+      "en": "海港区",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Seaport waterfront": {
+      "en": "Seaport waterfront",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿当代艺术学院": {
+      "en": "Institute of Contemporary Art/Boston",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "海港区滨水的当代艺术馆。": {
+      "en": "Contemporary art museum on the Seaport waterfront.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "25 Harbor Shore Dr.": {
+      "en": "25 Harbor Shore Dr.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "D草坪": {
+      "en": "The Lawn on D",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "会议中心旁的户外活动空间，活动安排需另查。": {
+      "en": "Outdoor event space beside the convention center; check its calendar before visiting.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "415 Summer St.": {
+      "en": "415 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "托马斯·M·梅尼诺会展中心": {
+      "en": "Thomas M. Menino Convention & Exhibition Center",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Summer Street上的大型会展场馆，原名波士顿会展中心；按具体活动决定能否入内。": {
+      "en": "Major convention venue on Summer Street, formerly the Boston Convention & Exhibition Center; access depends on the event.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Laugh Boston 喜剧俱乐部": {
+      "en": "Laugh Boston",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Summer Street上的喜剧演出场所。": {
+      "en": "Comedy venue on Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "425 Summer St.": {
+      "en": "425 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "夏街阶梯": {
+      "en": "Summer Street Steps",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "400 Summer Street旁连接高处街道与海港方向的公共阶梯。": {
+      "en": "Public steps beside 400 Summer Street connecting the elevated street toward the harbor.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "400 Summer St.": {
+      "en": "400 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Harbor Way 绿地": {
+      "en": "Harbor Way park",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "连接Summer Street与海港岸线的步行公共空间。": {
+      "en": "Pedestrian open space linking Summer Street to the harbor edge.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Harbor Way / Summer St.": {
+      "en": "Harbor Way / Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Primark 市中心店": {
+      "en": "Primark — Downtown Crossing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于Burnham Building的服饰及家居零售店。": {
+      "en": "Fashion and home goods store in the Burnham Building.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Operating hours, admission, reservations, prices and temporary closures were not live-verified.": {
+      "en": "Operating hours, admission, reservations, prices and temporary closures were not live-verified.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实": {
+      "en": "公开网页有记录；现场营业、菜单、价格及临时停业未实时核实",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "服饰": {
+      "en": "服饰",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "梅西百货市中心店": {
+      "en": "Macy's — Downtown Crossing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于Washington Street的市中心百货店。": {
+      "en": "Downtown department store on Washington Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "450 Washington St.": {
+      "en": "450 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "百货": {
+      "en": "百货",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Roche Bros. 超市": {
+      "en": "Roche Bros. — Downtown Crossing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于10 Summer Street的超市。": {
+      "en": "Supermarket at 10 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "食品零售": {
+      "en": "食品零售",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Tatte Bakery 夏街店": {
+      "en": "Tatte Bakery — Summer Street",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于125 Summer Street的烘焙咖啡店。": {
+      "en": "Bakery and cafe at 125 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "125 Summer St.": {
+      "en": "125 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "面包咖啡": {
+      "en": "面包咖啡",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Caffè Nero 夏街店": {
+      "en": "Caffè Nero — Summer Street",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于10 Summer Street的咖啡店。": {
+      "en": "Coffee shop at 10 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "咖啡": {
+      "en": "咖啡",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "The Peach Cobbler Factory 夏街店": {
+      "en": "The Peach Cobbler Factory — Summer Street",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于77 Summer Street的甜品店。": {
+      "en": "Dessert shop at 77 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "77 Summer St.": {
+      "en": "77 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "甜品": {
+      "en": "甜品",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Chacarero 智利三明治": {
+      "en": "Chacarero",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Arch Street上的智利风味三明治店。": {
+      "en": "Chilean-style sandwich shop on Arch Street.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "101 Arch St.": {
+      "en": "101 Arch St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "简餐": {
+      "en": "简餐",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Sam LaGrassa's 三明治店": {
+      "en": "Sam LaGrassa's",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Province Street上的老牌三明治店。": {
+      "en": "Long-running sandwich shop on Province Street.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "44 Province St.": {
+      "en": "44 Province St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "George Howell Coffee 市中心店": {
+      "en": "George Howell Coffee — Downtown",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Washington Street上的精品咖啡店。": {
+      "en": "Specialty coffee shop on Washington Street.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "505 Washington St.": {
+      "en": "505 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Brattle 二手书店": {
+      "en": "Brattle Book Shop",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "West Street上的旧书与珍本书店。": {
+      "en": "Used and antiquarian bookshop on West Street.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "9 West St.": {
+      "en": "9 West St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "书店": {
+      "en": "书店",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Democracy Brewing 酿酒餐吧": {
+      "en": "Democracy Brewing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Temple Place上的员工持有制酿酒餐吧。": {
+      "en": "Worker-owned brewery and pub on Temple Place.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "35 Temple Pl.": {
+      "en": "35 Temple Pl.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "餐饮": {
+      "en": "餐饮",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Legal Sea Foods 市中心十字路口店": {
+      "en": "Legal Sea Foods — Downtown Crossing",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Washington Street上的海鲜餐厅，按具体分店识别。": {
+      "en": "Seafood restaurant on Washington Street; listed as a specific branch.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "558 Washington St.": {
+      "en": "558 Washington St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "海鲜餐饮": {
+      "en": "海鲜餐饮",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "High Street Place 美食广场": {
+      "en": "High Street Place Food Hall",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "High Street上的多商户美食广场。": {
+      "en": "Multi-vendor food hall on High Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "100 High St.": {
+      "en": "100 High St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "美食广场": {
+      "en": "美食广场",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Flour Bakery 堡点店": {
+      "en": "Flour Bakery + Cafe — Fort Point",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Farnsworth Street上的烘焙咖啡店。": {
+      "en": "Bakery and cafe on Farnsworth Street.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "12 Farnsworth St.": {
+      "en": "12 Farnsworth St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "具体地址另据Signature Boston 2025海港区商户图。": {
+      "en": "具体地址另据Signature Boston 2025海港区商户图。",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Row 34 海港区店": {
+      "en": "Row 34 — Seaport",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "设在旧波士顿码头公司仓库里的海鲜餐厅。": {
+      "en": "Seafood restaurant in a former Boston Wharf Company warehouse.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "383 Congress St.": {
+      "en": "383 Congress St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Trillium 堡点店": {
+      "en": "Trillium — Fort Point",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Thomson Place上的精酿啤酒与餐饮场所。": {
+      "en": "Craft brewery and dining venue on Thomson Place.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "50 Thomson Pl.": {
+      "en": "50 Thomson Pl.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "酿酒餐饮": {
+      "en": "酿酒餐饮",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Abigail's Tea Room": {
+      "en": "Abigail's Tea Room",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿倾茶博物馆内可不购博物馆门票进入的茶室。": {
+      "en": "Tea room at the Tea Party museum, accessible without a museum ticket.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "茶室": {
+      "en": "茶室",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Coquette 餐厅": {
+      "en": "Coquette",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于450 Summer Street的地中海风格餐厅。": {
+      "en": "Mediterranean-inspired restaurant at 450 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "450 Summer St.": {
+      "en": "450 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "M.J. O'Connor's 海港区店": {
+      "en": "M.J. O'Connor's — Seaport",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于425 Summer Street的餐吧。": {
+      "en": "Restaurant and pub at 425 Summer Street.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "餐吧": {
+      "en": "餐吧",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "Harpoon 波士顿酿酒厂": {
+      "en": "Harpoon Boston Brewery",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Northern Avenue上的酿酒厂与啤酒厅。": {
+      "en": "Brewery and beer hall on Northern Avenue.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "306 Northern Ave.": {
+      "en": "306 Northern Ave.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Legal Sea Foods 海港店": {
+      "en": "Legal Sea Foods — Boston Harborside",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Northern Avenue上的海港区海鲜餐厅。": {
+      "en": "Seaport seafood restaurant on Northern Avenue.",
+      "confidence": "editorial",
+      "source": "人工整理"
+    },
+    "270 Northern Ave.": {
+      "en": "270 Northern Ave.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "约2.5英里的红砖历史步道，连接16处官方历史站点。": {
+      "en": "A roughly 2.5-mile red-brick historic trail linking 16 official historic sites.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1634年建立的波士顿公园是美国最古老的公共公园，也是自由之路的起点。": {
+      "en": "Established in 1634, Boston Common is America’s oldest public park and the starting point of the Freedom Trail.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "查尔斯·布尔芬奇设计的州议会大厦于1798年启用，内部有多处历史厅室。": {
+      "en": "Designed by Charles Bulfinch and opened in 1798, the Massachusetts State House contains historic halls and chambers.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "建于1809年的公园街教堂，其217英尺高的尖塔曾是进入波士顿时的醒目地标。": {
+      "en": "Founded in 1809, Park Street Church has a 217-foot steeple that once served as a landmark for travelers approaching Boston.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1660年建立的历史墓地，安葬有萨缪尔·亚当斯、约翰·汉考克和保罗·里维尔等人。": {
+      "en": "Historic burying ground established in 1660; Samuel Adams, John Hancock and Paul Revere are buried here.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1686年创立的国王礼拜堂与相邻墓地，是波士顿早期宗教和墓葬历史地标。": {
+      "en": "Founded in 1686, King’s Chapel and its adjacent burying ground are early Boston religious and burial landmarks.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "58 Tremont St.": {
+      "en": "58 Tremont St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1635年创立的波士顿拉丁学校旧址，现以马赛克和富兰克林雕像标记。": {
+      "en": "The site of Boston Latin School, founded in 1635, is marked by a mosaic and a Benjamin Franklin statue.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "建于1718年的历史商业建筑，曾是19世纪出版商 Ticknor and Fields 的所在地。": {
+      "en": "Historic commercial building built in 1718 and once home to nineteenth-century publisher Ticknor and Fields.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于邮政广场的公共公园，原址曾是地面停车楼。": {
+      "en": "Public park at Post Office Square, on the site of a former above-ground parking garage.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿市中心的绿道公园；Dewey Square 公园位于南站北侧。": {
+      "en": "Downtown Boston parkland; its Dewey Square parks lie just north of South Station.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Dewey Square": {
+      "en": "Dewey Square",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "1899年开放的历史火车站，现为铁路与公共交通枢纽。": {
+      "en": "Historic railway station opened in 1899 and now a rail and public transit hub.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "2 South Station, Boston, MA 02110": {
+      "en": "2 South Station, Boston, MA 02110",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "South Boston, Boston, MA": {
+      "en": "South Boston, Boston, MA",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿码头公司建筑及屋顶标牌": {
+      "en": "Boston Wharf Company Building & Sign",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Summer Street 上的堡点历史建筑，屋顶有 Boston Wharf Co. 标牌。": {
+      "en": "Historic Fort Point building on Summer Street with a Boston Wharf Co. rooftop sign.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "263 Summer St.": {
+      "en": "263 Summer St.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "现址网站使用 263 Summer St.；屋顶标牌以现场状态为准。": {
+      "en": "The current building website uses 263 Summer St.; the rooftop sign is subject to current conditions.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿倾茶事件主题博物馆，茶室与商店可不购博物馆门票进入。": {
+      "en": "Boston Tea Party museum whose tea room and gift shop may be visited without a museum ticket.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "南波士顿滨水公园，纪念波士顿马拉松爆炸案中最年轻的遇难者 Martin W. Richard。": {
+      "en": "South Boston waterfront park honoring Martin W. Richard, the youngest victim of the Boston Marathon bombings.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "位于旧消防站的消防博物馆，展品包括1792年由保罗·里维尔学徒制造的手动水泵车。": {
+      "en": "Fire museum in a former firehouse, with exhibits including a 1792 hand pumper built by an apprentice to Paul Revere.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "波士顿海港沿岸的公共步道，本条关注海港区段。": {
+      "en": "Public waterfront walk along Boston Harbor; this entry focuses on the Seaport segment.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Arch Street 的智利风味三明治店，由 Juan Hurtado 从手推车经营起步。": {
+      "en": "Chilean-style sandwich shop on Arch Street, begun by Juan Hurtado as a pushcart operation.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "创立于1968年的波士顿三明治店。": {
+      "en": "Boston sandwich shop founded in 1968.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Washington Street 的精品咖啡店，店方介绍其以产地、气候和种植者工艺为特色的咖啡理念。": {
+      "en": "Specialty coffee shop on Washington Street highlighting coffee origin, climate and growers’ craftsmanship.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "West Street 的旧书与珍本书店，店方标示创立于1825年。": {
+      "en": "West Street used and antiquarian bookshop; the shop dates its founding to 1825.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "Farnsworth Street 的 Flour 烘焙咖啡店；2007年的街区报道记载这家由 Joanne Chang 经营的门店开业。": {
+      "en": "Flour bakery and cafe on Farnsworth Street; a 2007 neighborhood report documented the opening of this Joanne Chang-run location.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "倾茶博物馆的茶室可不购博物馆门票进入，并介绍与倾茶事件有关的茶叶与历史展品。": {
+      "en": "The Tea Party museum’s tea room is accessible without a museum ticket and offers tea and historical exhibits related to the Tea Party.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    },
+    "海港区海鲜餐厅，三楼屋顶露台可观赏波士顿港。": {
+      "en": "Seaport seafood restaurant with a third-floor rooftop deck overlooking Boston Harbor.",
+      "confidence": "editorial",
+      "source": "已核资料的双语编辑"
+    }
+  }
+}

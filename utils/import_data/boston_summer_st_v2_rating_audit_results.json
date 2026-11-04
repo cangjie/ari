@@ -1,0 +1,580 @@
+{
+  "request_sha256": "0f37e8096efc9b1dc146cdb83c36fa45ee361742bbf4cda31fde9e9e135d2106",
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "audits": [
+    {
+      "seq": 1,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 2,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介未提及波士顿公园建于1634年、是美国最古老的公共公园这一关键事实，该信息直接影响其在走廊中的历史优先级评估。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "2-0-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 3,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据称“当前资料对建筑本身的视觉和参观内容说明有限”，但来源片段实际列出了丰富的参观内容（Bulfinch Front、Doric Hall、Hall of Flags、Memorial Hall、JFK雕像、众议院、参议院等），与评价证据的说法不符，存在事实性错误。",
+      "missing": [
+        {
+          "zh": "简介未提及州议会大厦内众议院、参议院、Doric Hall、Hall of Flags等具体可参观内容，这些是该地点吸引力的关键信息。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "3-1-1800"
+          ]
+        }
+      ],
+      "error_passage_ids": [
+        "3-1-1800"
+      ]
+    },
+    {
+      "seq": 4,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据称“输入未给出足以支持更高视觉或独特性评分的细节”，但来源片段明确提到Park Street Church的217英尺尖塔曾是旅行者抵达波士顿时最先看到的地标，这是具有明显视觉独特性的细节，与评价证据的结论相矛盾。",
+      "missing": [
+        {
+          "zh": "简介未提及教堂由Peter Banner设计、建于1809年、217英尺高的尖塔曾是进入波士顿的标志性地标，这些是评估其视觉与历史价值的关键信息。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "4-0-1800"
+          ]
+        }
+      ],
+      "error_passage_ids": [
+        "4-0-1800"
+      ]
+    },
+    {
+      "seq": 5,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介仅提及萨缪尔·亚当斯、约翰·汉考克、保罗·里维尔，但未提及其他重要安葬者（如五名波士顿大屠杀遇难者、Peter Faneuil、九位马萨诸塞州州长），以及现场的25英尺方尖碑和埃及式大门等具体视觉元素，这些信息可能影响其走廊内文化参观优先级和'视觉冲击有限'的评分依据。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "5-0-1800",
+            "5-0-3600"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 6,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 7,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 8,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 9,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": [
+        {
+          "zh": "简介未提及老南会议厅是美国最早的历史博物馆之一，于1876年由“波士顿二十位女性”集资从拆除中抢救下来，这是美国首次因历史事件关联而保护公共建筑的案例，属于重要的文化保护叙事。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "9-1-1800",
+            "9-1-3600"
+          ]
+        },
+        {
+          "zh": "未提及菲莉丝·惠特利（Phillis Wheatley）作为曾被奴役的非裔美国诗人曾是该教堂会众成员，这一多元历史人物关联可能提升文化参观价值。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "9-1-1800"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 10,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": [
+        {
+          "zh": "简介未提及老州议会大厦内设有装满革命时期文物的博物馆展厅，包括约翰·汉考克的红丝绒外套、茶党遗茶等重要藏品，以及真人角色互动演出，这些是该遗址作为S级参观点的重要体验内容。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "10-1-1800"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 11,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": []
+    },
+    {
+      "seq": 12,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": [
+        {
+          "zh": "简介未提及法尼尔厅是1764年美国人首次抗议糖税法和印花税法、提出“无代表不纳税”原则的历史现场，也未提及其由国家公园管理局管理并常举行入籍宣誓仪式，这些细节强化其作为公共政治生活象征的地位。",
+          "tier_sensitive": false,
+          "passage_ids": [
+            "12-1-1800"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 13,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": [
+        {
+          "zh": "评分证据称该区域“未显示突出的历史遗产内容”，但原始来源明确指出该步行区周边即为18世纪老南会议厅等波士顿最古老的地标之一（1773年波士顿倾茶事件相关会议的举办地），这一信息与评分依据的表述存在不一致，可能影响该走廊节点的文化参观优先级判断。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "13-0-0"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 14,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": []
+    },
+    {
+      "seq": 15,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": []
+    },
+    {
+      "seq": 16,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "error_passage_ids": [],
+      "missing": [
+        {
+          "zh": "简介未提及该纪念广场建于1998年，并于2023年举行了25周年纪念活动，这些背景信息有助于理解其作为近现代纪念设施（而非殖民时期遗迹）的定位。",
+          "tier_sensitive": false,
+          "passage_ids": [
+            "16-0-0"
+          ]
+        }
+      ]
+    },
+    {
+      "seq": 17,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 18,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 19,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 20,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 21,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据声称“地址在现址网站与市政历史资料之间存在差异”，但所提供的来源片段中只有263summerst.com一个来源（地址为263 Summer St），并未提供任何市政历史资料片段来证实存在地址差异。该说法在给定材料中缺乏依据，属于无支撑的断言。",
+      "missing": [],
+      "error_passage_ids": [
+        "21-0-0"
+      ]
+    },
+    {
+      "seq": 22,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介未提及馆内最具代表性的馆藏——Robinson Tea Chest（现存唯一已知的波士顿倾茶事件茶箱），该藏品是判断展览文化价值与参观优先级的重要依据。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "22-0-9000"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 23,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 24,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 25,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据称“规模和内容深度未有更多资料支持”，但原始片段实际提供了丰富且具体的馆藏与叙事内容（1792年Paul Revere学徒制造的手动泵车、1919年糖浆大洪水展区、1942年Cocoanut Grove夜总会火灾展区、Arthur Fiedler消防头盔收藏等），评分证据与所给资料不符，低估了该馆的文化内容深度。",
+      "missing": [
+        {
+          "zh": "缺少对具体历史展品与叙事主题的说明，如1792年Paul Revere学徒制作的手动泵车、1919年糖浆大洪水展、1942年Cocoanut Grove夜总会火灾展（美国历史上第二致命建筑火灾）、Arthur Fiedler消防帽收藏等，这些内容显著提升该馆的文化参观价值，可能影响其在走廊中的优先级定位。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "25-0-0",
+            "25-0-1800"
+          ]
+        }
+      ],
+      "error_passage_ids": [
+        "25-0-0",
+        "25-0-1800"
+      ]
+    },
+    {
+      "seq": 26,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 27,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 28,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 29,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 30,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 31,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 32,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介与评分证据未提及该步行空间的设计背景：由James Corner Field Operations（纽约High Line设计团队）主导设计，总面积23英亩，是波士顿海港区22亿美元开发项目的核心公共空间，并设有逾25万磅巨石景观艺术装置，灵感来自新英格兰冰川地质。此设计与艺术背景可能提升该地点在走廊内的文化参观优先级。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "32-0-0",
+            "32-1-1800",
+            "32-1-3600"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 33,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 34,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 35,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介未提及该店铺位于历史性的Burnham Building内，且占据了标志性的Filene's Basement旧址，这一历史背景可能提升其文化/历史参观价值。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "35-0-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 36,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 37,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介未提及这是Caffè Nero在美国的首家门店（2014年开业于波士顿），这是该连锁品牌在美拓展的标志性事件。",
+          "tier_sensitive": false,
+          "passage_ids": [
+            "37-0-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 38,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 39,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据声称“输入未说明店铺历史或更广泛的地方影响”，但原始来源片段实际详细记载了创始人Juan Hurtado的移民背景、从推车摊贩起步、顾客接受过程及迁至现址的完整历史，评分证据与给出的事实不符。",
+      "missing": [],
+      "error_passage_ids": [
+        "39-0-0"
+      ]
+    },
+    {
+      "seq": 40,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 41,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据称“输入没有提供其历史、创始背景…信息”，但来源41-0-0实际详细说明了创始人George Howell的创立理念（Terroir Coffee、与原产地农场的长期合作关系、高于公平贸易价格收购等），这构成评分证据与原始来源不符的误判。",
+      "missing": [],
+      "error_passage_ids": [
+        "41-0-0"
+      ]
+    },
+    {
+      "seq": 42,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "来源42-1-0显示该店主体虽创立于1825年，但现址West Street门店实为1969年迁入（附带著名的马车游街公关活动故事），简介仅提“创立于1825年”，未区分品牌历史与现址历史，这一细节关系到游客对“现场”文化连续性的判断，属关键遗漏。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "42-1-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 43,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "来源43-0-0显示该店特意选择在2018年7月4日（美国独立日）开业，以呼应“Democracy”主题命名，这一细节未纳入简介，属于补充性但非关键的文化叙事信息。",
+          "tier_sensitive": false,
+          "passage_ids": [
+            "43-0-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 44,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 45,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 46,
+      "found_factual_error": true,
+      "error_note_zh": "评分证据称“简介未说明其历史或独特空间特征”，但来源46-1-0明确显示该店由Joanne Chang创立，2007年在Fort Point开业，并以司康、松饼、汤品等出名，评分证据与原始来源内容不一致。",
+      "missing": [],
+      "error_passage_ids": [
+        "46-1-0"
+      ]
+    },
+    {
+      "seq": 47,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 48,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 49,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "简介未提及Abigail's Tea Room内实际设有历史展品、文物与文字展板，以及可供游玩的历史主题桌游，且提供涉及倾茶事件五种茶叶的品茶体验，这些内容直接关系到其文化展示价值，而评分证据称其'历史与展示价值有限'与此有出入。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "49-0-10800"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 50,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 51,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 52,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [],
+      "error_passage_ids": []
+    },
+    {
+      "seq": 53,
+      "found_factual_error": false,
+      "error_note_zh": null,
+      "missing": [
+        {
+          "zh": "原始资料提到该餐厅步行可达海港区重要文化场所，如当代艺术学院（ICA）及波士顿会展中心，这一地理关联对走廊内文化参观路线规划具有参考价值，但简介与评分证据均未提及。",
+          "tier_sensitive": true,
+          "passage_ids": [
+            "53-0-0"
+          ]
+        }
+      ],
+      "error_passage_ids": []
+    }
+  ],
+  "complete": true,
+  "last_usage": {
+    "input_tokens": 1310,
+    "cache_creation_input_tokens": 30159,
+    "cache_read_input_tokens": 26773,
+    "output_tokens": 1869,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 30159,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 445,
+        "cache_read_input_tokens": 26773,
+        "cache_creation_input_tokens": 3386,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3386
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

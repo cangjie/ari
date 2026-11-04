@@ -1,0 +1,798 @@
+{
+  "state": "verified_for_publication",
+  "references": {
+    "2": {
+      "node": -1,
+      "point": [
+        42.3551973347408,
+        -71.06331893068335
+      ],
+      "streets": [
+        "Tremont Street"
+      ],
+      "offset_m": 55.1,
+      "reference_basis": "OSM Boston Common visitor information center (street reference only)",
+      "source_ref": {
+        "way_id": 8651512,
+        "segment": [
+          [
+            42.3551742,
+            -71.0633385
+          ],
+          [
+            42.3552313,
+            -71.0632902
+          ]
+        ],
+        "fraction": 0.4051618353972271
+      }
+    },
+    "3": {
+      "node": 1325838536,
+      "point": [
+        42.3577751,
+        -71.0630684
+      ],
+      "streets": [
+        "Beacon Street"
+      ],
+      "offset_m": 105.6,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "osm_node": 1325838536
+      }
+    },
+    "4": {
+      "node": -2,
+      "point": [
+        42.356691586858155,
+        -71.06177589207981
+      ],
+      "streets": [
+        "Tremont Street"
+      ],
+      "offset_m": 28.3,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 63104590,
+        "segment": [
+          [
+            42.3566828,
+            -71.0617859
+          ],
+          [
+            42.3567195,
+            -71.0617441
+          ]
+        ],
+        "fraction": 0.23942392794217124
+      }
+    },
+    "5": {
+      "node": -3,
+      "point": [
+        42.35696512511086,
+        -71.06148780256761
+      ],
+      "streets": [
+        "Tremont Street"
+      ],
+      "offset_m": 30.7,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 63104590,
+        "segment": [
+          [
+            42.3569852,
+            -71.0614671
+          ],
+          [
+            42.3567997,
+            -71.0616584
+          ]
+        ],
+        "fraction": 0.1082204266251341
+      }
+    },
+    "6": {
+      "node": -4,
+      "point": [
+        42.35814139505193,
+        -71.06035240072477
+      ],
+      "streets": [
+        "Tremont Street"
+      ],
+      "offset_m": 28.7,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 138827717,
+        "segment": [
+          [
+            42.3581019,
+            -71.0603787
+          ],
+          [
+            42.3581447,
+            -71.0603502
+          ]
+        ],
+        "fraction": 0.9227815871971273
+      }
+    },
+    "7": {
+      "node": -5,
+      "point": [
+        42.35778872815834,
+        -71.05970167574918
+      ],
+      "streets": [
+        "School Street"
+      ],
+      "offset_m": 3.0,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 8638252,
+        "segment": [
+          [
+            42.3577955,
+            -71.0597269
+          ],
+          [
+            42.357697,
+            -71.05936
+          ]
+        ],
+        "fraction": 0.0687496615549813
+      }
+    },
+    "8": {
+      "node": -6,
+      "point": [
+        42.35747193749401,
+        -71.05828511847095
+      ],
+      "streets": [
+        "Washington Street"
+      ],
+      "offset_m": 14.0,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 63104564,
+        "segment": [
+          [
+            42.3574198,
+            -71.0583373
+          ],
+          [
+            42.3575382,
+            -71.0582188
+          ]
+        ],
+        "fraction": 0.44035045617525215
+      }
+    },
+    "9": {
+      "node": -7,
+      "point": [
+        42.357119028785156,
+        -71.0586316721051
+      ],
+      "streets": [
+        "Washington Street"
+      ],
+      "offset_m": 25.9,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 63104562,
+        "segment": [
+          [
+            42.3570958,
+            -71.0586544
+          ],
+          [
+            42.3573555,
+            -71.0584003
+          ]
+        ],
+        "fraction": 0.089444686764849
+      }
+    },
+    "10": {
+      "node": -8,
+      "point": [
+        42.35873741601482,
+        -71.05783376455763
+      ],
+      "streets": [
+        "Washington Street"
+      ],
+      "offset_m": 30.1,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 63104564,
+        "segment": [
+          [
+            42.358616,
+            -71.057838
+          ],
+          [
+            42.358745,
+            -71.0578335
+          ]
+        ],
+        "fraction": 0.9412094171923002
+      }
+    },
+    "11": {
+      "node": -9,
+      "point": [
+        42.35885877931565,
+        -71.0571784550499
+      ],
+      "streets": [
+        "State Street"
+      ],
+      "offset_m": 8.6,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 846628946,
+        "segment": [
+          [
+            42.3588283,
+            -71.0577081
+          ],
+          [
+            42.3588625,
+            -71.0571138
+          ]
+        ],
+        "fraction": 0.8912080600846152
+      }
+    },
+    "12": {
+      "node": -10,
+      "point": [
+        42.35990826430119,
+        -71.05704574860685
+      ],
+      "streets": [
+        "Congress Street"
+      ],
+      "offset_m": 68.1,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 426487627,
+        "segment": [
+          [
+            42.3599134,
+            -71.0570472
+          ],
+          [
+            42.3598812,
+            -71.0570381
+          ]
+        ],
+        "fraction": 0.159493752027486
+      }
+    },
+    "19": {
+      "node": -11,
+      "point": [
+        42.3524329462442,
+        -71.055007543946
+      ],
+      "streets": [
+        "Summer Street"
+      ],
+      "offset_m": 9.4,
+      "reference_basis": "MBTA South Station Summer Street entrance",
+      "source_ref": {
+        "way_id": 187589422,
+        "segment": [
+          [
+            42.3524356,
+            -71.0550129
+          ],
+          [
+            42.3515937,
+            -71.0533137
+          ]
+        ],
+        "fraction": 0.0031521033336010204
+      }
+    },
+    "20": {
+      "node": -12,
+      "point": [
+        42.35037821485597,
+        -71.05058285354464
+      ],
+      "streets": [
+        "Summer Street"
+      ],
+      "offset_m": 24.8,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 1369553000,
+        "segment": [
+          [
+            42.35047,
+            -71.0507836
+          ],
+          [
+            42.3503674,
+            -71.0505592
+          ]
+        ],
+        "fraction": 0.8945920470566855
+      }
+    },
+    "21": {
+      "node": -12,
+      "point": [
+        42.35037821485597,
+        -71.05058285354464
+      ],
+      "streets": [
+        "Summer Street"
+      ],
+      "offset_m": 24.8,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 1369553000,
+        "segment": [
+          [
+            42.35047,
+            -71.0507836
+          ],
+          [
+            42.3503674,
+            -71.0505592
+          ]
+        ],
+        "fraction": 0.8945920470566855
+      }
+    },
+    "22": {
+      "node": -13,
+      "point": [
+        42.35200964551203,
+        -71.0514434859301
+      ],
+      "streets": [
+        "Congress Street"
+      ],
+      "offset_m": 24.0,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 85890998,
+        "segment": [
+          [
+            42.3519629,
+            -71.0513275
+          ],
+          [
+            42.3522611,
+            -71.0520674
+          ]
+        ],
+        "fraction": 0.15675892700395513
+      }
+    },
+    "24": {
+      "node": -14,
+      "point": [
+        42.35292802213185,
+        -71.04855360684859
+      ],
+      "streets": [
+        "Sleeper Street"
+      ],
+      "offset_m": 8.3,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 292812690,
+        "segment": [
+          [
+            42.3528276,
+            -71.0486302
+          ],
+          [
+            42.3529633,
+            -71.0485267
+          ]
+        ],
+        "fraction": 0.740030448407625
+      }
+    },
+    "27": {
+      "node": -15,
+      "point": [
+        42.35306348447634,
+        -71.0428290248785
+      ],
+      "streets": [
+        "Boston HarborWalk",
+        "Harborwalk"
+      ],
+      "offset_m": 24.7,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 117888921,
+        "segment": [
+          [
+            42.3531539,
+            -71.0430746
+          ],
+          [
+            42.352994,
+            -71.0426403
+          ]
+        ],
+        "fraction": 0.5654504294313032
+      }
+    },
+    "31": {
+      "node": -16,
+      "point": [
+        42.34898955,
+        -71.04659025000001
+      ],
+      "streets": [
+        "Harbor Way"
+      ],
+      "offset_m": 0.0,
+      "reference_basis": "OSM way 1225708372 Harbor Way steps",
+      "source_ref": {
+        "way_id": 1225708372,
+        "segment": [
+          [
+            42.3492201,
+            -71.0464638
+          ],
+          [
+            42.348759,
+            -71.0467167
+          ]
+        ],
+        "fraction": 0.5000000000039649
+      }
+    },
+    "32": {
+      "node": -17,
+      "point": [
+        42.350992250000004,
+        -71.04501425
+      ],
+      "streets": [
+        "Harbor Way"
+      ],
+      "offset_m": 0.0,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 827967422,
+        "segment": [
+          [
+            42.351272,
+            -71.0447814
+          ],
+          [
+            42.3507125,
+            -71.0452471
+          ]
+        ],
+        "fraction": 0.4999999999995817
+      }
+    },
+    "36": {
+      "node": -18,
+      "point": [
+        42.353309720377624,
+        -71.05724052222277
+      ],
+      "streets": [
+        "Summer Street"
+      ],
+      "offset_m": 11.7,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 485292830,
+        "segment": [
+          [
+            42.3533084,
+            -71.057235
+          ],
+          [
+            42.3533457,
+            -71.057391
+          ]
+        ],
+        "fraction": 0.035398863905614274
+      }
+    },
+    "45": {
+      "node": -19,
+      "point": [
+        42.354109131678605,
+        -71.05525359158067
+      ],
+      "streets": [
+        "High Street"
+      ],
+      "offset_m": 23.1,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 1000832622,
+        "segment": [
+          [
+            42.3541015,
+            -71.0552619
+          ],
+          [
+            42.3545695,
+            -71.0547524
+          ]
+        ],
+        "fraction": 0.016307005562212165
+      }
+    },
+    "46": {
+      "node": -20,
+      "point": [
+        42.35130363051163,
+        -71.04856414796143
+      ],
+      "streets": [
+        "Farnsworth Street"
+      ],
+      "offset_m": 22.9,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 8646223,
+        "segment": [
+          [
+            42.3510844,
+            -71.048734
+          ],
+          [
+            42.3513499,
+            -71.0485283
+          ]
+        ],
+        "fraction": 0.8257269741104886
+      }
+    },
+    "47": {
+      "node": -21,
+      "point": [
+        42.34967606077614,
+        -71.04738728383478
+      ],
+      "streets": [
+        "Congress Street"
+      ],
+      "offset_m": 13.1,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 426497572,
+        "segment": [
+          [
+            42.3496753,
+            -71.0473861
+          ],
+          [
+            42.3497796,
+            -71.0475484
+          ]
+        ],
+        "fraction": 0.0072941144683437995
+      }
+    },
+    "50": {
+      "node": -22,
+      "point": [
+        42.346713531875736,
+        -71.0428937832063
+      ],
+      "streets": [
+        "Summer Street"
+      ],
+      "offset_m": 39.2,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 1090206707,
+        "segment": [
+          [
+            42.3468213,
+            -71.0431043
+          ],
+          [
+            42.3465701,
+            -71.0426136
+          ]
+        ],
+        "fraction": 0.4290132335332737
+      }
+    },
+    "52": {
+      "node": -23,
+      "point": [
+        42.34641967081937,
+        -71.03474496556544
+      ],
+      "streets": [
+        "Northern Avenue"
+      ],
+      "offset_m": 97.2,
+      "reference_basis": "nominatim candidate",
+      "source_ref": {
+        "way_id": 29100200,
+        "segment": [
+          [
+            42.3461536,
+            -71.0341631
+          ],
+          [
+            42.3464875,
+            -71.0348933
+          ]
+        ],
+        "fraction": 0.7968577998476606
+      }
+    }
+  },
+  "policy": "保存的公开街道几何和候选地点身份已核；参考点并非入口，未作现场通行或定位验收。",
+  "checks": [
+    {
+      "seq": 2,
+      "identity_key": "t01",
+      "identity_source": "https://www.openstreetmap.org/way/24677646",
+      "offset_m": 55.1
+    },
+    {
+      "seq": 3,
+      "identity_key": "t02",
+      "identity_source": "https://www.openstreetmap.org/way/29718019",
+      "offset_m": 105.6
+    },
+    {
+      "seq": 4,
+      "identity_key": "t03",
+      "identity_source": "https://www.openstreetmap.org/way/240317867",
+      "offset_m": 28.3
+    },
+    {
+      "seq": 5,
+      "identity_key": "t04",
+      "identity_source": "https://www.openstreetmap.org/way/29861355",
+      "offset_m": 30.7
+    },
+    {
+      "seq": 6,
+      "identity_key": "t05",
+      "identity_source": "https://www.openstreetmap.org/way/29551954",
+      "offset_m": 28.7
+    },
+    {
+      "seq": 7,
+      "identity_key": "t06",
+      "identity_source": "https://www.openstreetmap.org/node/7613081520",
+      "offset_m": 3.0
+    },
+    {
+      "seq": 8,
+      "identity_key": "t07",
+      "identity_source": "https://www.openstreetmap.org/way/240319309",
+      "offset_m": 14.0
+    },
+    {
+      "seq": 9,
+      "identity_key": "t08",
+      "identity_source": "https://www.openstreetmap.org/node/367781324",
+      "offset_m": 25.9
+    },
+    {
+      "seq": 10,
+      "identity_key": "t09",
+      "identity_source": "https://www.openstreetmap.org/way/29608515",
+      "offset_m": 30.1
+    },
+    {
+      "seq": 11,
+      "identity_key": "t10",
+      "identity_source": "https://www.openstreetmap.org/node/632018853",
+      "offset_m": 8.6
+    },
+    {
+      "seq": 12,
+      "identity_key": "t11",
+      "identity_source": "https://www.openstreetmap.org/way/29551702",
+      "offset_m": 68.1
+    },
+    {
+      "seq": 19,
+      "identity_key": "p07",
+      "identity_source": "https://cdn.mbta.com/MBTA_GTFS.zip",
+      "offset_m": 9.4
+    },
+    {
+      "seq": 20,
+      "identity_key": "p08",
+      "identity_source": "https://www.openstreetmap.org/way/29847899",
+      "offset_m": 24.8
+    },
+    {
+      "seq": 21,
+      "identity_key": "p09",
+      "identity_source": "https://www.openstreetmap.org/way/29847899",
+      "offset_m": 24.8
+    },
+    {
+      "seq": 22,
+      "identity_key": "p10",
+      "identity_source": "https://www.openstreetmap.org/node/358275870",
+      "offset_m": 24.0
+    },
+    {
+      "seq": 24,
+      "identity_key": "p12",
+      "identity_source": "https://www.openstreetmap.org/way/292812690",
+      "offset_m": 8.3
+    },
+    {
+      "seq": 27,
+      "identity_key": "p15",
+      "identity_source": "https://www.openstreetmap.org/way/117888922",
+      "offset_m": 24.7
+    },
+    {
+      "seq": 31,
+      "identity_key": "p19",
+      "identity_source": "https://www.openstreetmap.org/way/1225708372",
+      "offset_m": 0.0
+    },
+    {
+      "seq": 32,
+      "identity_key": "p20",
+      "identity_source": "https://www.openstreetmap.org/way/827967422",
+      "offset_m": 0.0
+    },
+    {
+      "seq": 36,
+      "identity_key": "s04",
+      "identity_source": "https://www.openstreetmap.org/node/6439769970",
+      "offset_m": 11.7
+    },
+    {
+      "seq": 45,
+      "identity_key": "s13",
+      "identity_source": "https://www.openstreetmap.org/node/7644634278",
+      "offset_m": 23.1
+    },
+    {
+      "seq": 46,
+      "identity_key": "s14",
+      "identity_source": "https://www.openstreetmap.org/way/406470228",
+      "offset_m": 22.9
+    },
+    {
+      "seq": 47,
+      "identity_key": "s15",
+      "identity_source": "https://www.openstreetmap.org/node/2939948841",
+      "offset_m": 13.1
+    },
+    {
+      "seq": 50,
+      "identity_key": "s18",
+      "identity_source": "https://www.openstreetmap.org/way/856093881",
+      "offset_m": 39.2
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "identity_source": "https://www.openstreetmap.org/way/29618668",
+      "offset_m": 97.2
+    }
+  ]
+}

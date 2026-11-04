@@ -1,0 +1,93 @@
+{
+  "request_sha256": "f81acd50e4cb265e2f8566bc96cc30eb31fa4e3f1cb31b4808db92067f7e5abc",
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "items": [
+    {
+      "seq": 5,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "5-0-1200",
+        "5-0-2400"
+      ],
+      "reason": "Passage confirms establishment in 1660 and address 120 Tremont Street; another passage confirms Samuel Adams, John Hancock, and Paul Revere are buried there."
+    },
+    {
+      "seq": 6,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "6-0-1200"
+      ],
+      "reason": "Passage states King's Chapel was founded in 1686, is adjacent to Boston's oldest English burying ground, and lists address as 58 Tremont St."
+    },
+    {
+      "seq": 7,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "7-0-1200"
+      ],
+      "reason": "Passage confirms Boston Latin School founded in 1635, marked by a mosaic and statue of Benjamin Franklin, located at 45 School St."
+    },
+    {
+      "seq": 8,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "8-0-1200"
+      ],
+      "reason": "Passage confirms building constructed in 1718, home to Ticknor and Fields publishers, located at 283 Washington St."
+    },
+    {
+      "seq": 20,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "20-0-2400",
+        "20-0-3600"
+      ],
+      "reason": "Passage describes the district as a collection of late 19th/early 20th century industrial loft buildings with exterior work visible from public ways, and lists the Neighborhood as South Boston."
+    },
+    {
+      "seq": 24,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "24-0-1200"
+      ],
+      "reason": "Passage confirms Martin's Park is located at 64 Sleeper Street on the South Boston waterfront and honors Martin W. Richard, the youngest victim of the Boston Marathon bombings."
+    }
+  ],
+  "usage": {
+    "input_tokens": 1310,
+    "cache_creation_input_tokens": 34716,
+    "cache_read_input_tokens": 31530,
+    "output_tokens": 1862,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 34716,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 15,
+        "cache_read_input_tokens": 31530,
+        "cache_creation_input_tokens": 3186,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 3186
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

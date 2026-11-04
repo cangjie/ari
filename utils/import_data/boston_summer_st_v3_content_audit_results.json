@@ -1,0 +1,124 @@
+{
+  "request_sha256": "6235cabaa92831d198ace4c89b1ef3648f68ebae34946d2fa0a25f44dc2008b1",
+  "model": "claude-sonnet-5",
+  "effort": "medium",
+  "items": [
+    {
+      "seq": 2,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "2-0-0",
+        "2-2-0"
+      ],
+      "reason": "Passage 2-0-0 confirms '1634' and 'America's oldest public park'; passage 2-2-0 confirms it is the starting point of the Freedom Trail. Address 139 Tremont St. confirmed in 2-0-0/2-1-0."
+    },
+    {
+      "seq": 3,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "3-1-0",
+        "3-1-1800"
+      ],
+      "reason": "Passage 3-1-0 confirms 'Designed by Charles Bulfinch... opening in 1798'; 3-1-1800 lists historic halls/chambers (Doric Hall, Hall of Flags, Memorial Hall, House of Representatives, Senate Chamber). Address '24 Beacon St.' confirmed in 3-1-0."
+    },
+    {
+      "seq": 4,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "4-0-1800"
+      ],
+      "reason": "Passage confirms founded in 1809 and the 217 ft steeple was the first landmark travelers saw approaching Boston, and location at corner of Park and Tremont Streets."
+    },
+    {
+      "seq": 21,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "21-0-0",
+        "21-0-1800"
+      ],
+      "reason": "Passages confirm the building is in Fort Point on Summer Street and describe the iconic Boston Wharf Co. sign rising above the street. Address '263 Summer St.' confirmed in 21-0-1800."
+    },
+    {
+      "seq": 25,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "25-0-0",
+        "25-0-1800"
+      ],
+      "reason": "Passages confirm it is a museum in a historic former firehouse (built 1891) and feature a 1792 hand tub pumper built by an apprentice to Paul Revere. Address '344 Congress St.' confirmed in both passages."
+    },
+    {
+      "seq": 39,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "39-0-0"
+      ],
+      "reason": "Passage confirms Chilean native Juan Hurtado started selling sandwiches from a pushcart and moved into location at 101 Arch Street, matching description and address."
+    },
+    {
+      "seq": 41,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "41-0-0"
+      ],
+      "reason": "Passage confirms it's a coffee shop (George Howell Coffee) whose signature Terroir Coffee highlights region/climate and growers' craftsmanship; address 505 Washington St. confirmed in Business Info."
+    },
+    {
+      "seq": 46,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "46-1-0"
+      ],
+      "reason": "2007 Fort Point neighborhood blog post documents Flour Bakery (run by Joanne Chang) opening for business at 12 Farnsworth St."
+    },
+    {
+      "seq": 49,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "49-0-10800",
+        "49-0-0"
+      ],
+      "reason": "FAQ passage states Abigail's Tea Room is accessible without a museum ticket and holds historical exhibits, artifacts, and text panels related to the Tea Party; address 306 Congress St. given in business info."
+    }
+  ],
+  "complete": true,
+  "last_usage": {
+    "input_tokens": 1310,
+    "cache_creation_input_tokens": 15145,
+    "cache_read_input_tokens": 12670,
+    "output_tokens": 1534,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 15145,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 390,
+        "cache_read_input_tokens": 12670,
+        "cache_creation_input_tokens": 2475,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2475
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard"
+  }
+}

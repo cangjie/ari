@@ -1,0 +1,687 @@
+{
+  "state": "unreviewed",
+  "photos": [
+    {
+      "seq": 2,
+      "identity_key": "t01",
+      "path": "img/boston_summer_st/2.jpg",
+      "caption": {
+        "zh": "波士顿公园",
+        "en": "Boston Common"
+      },
+      "source": {
+        "title": "Boston Common November 2016 003.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Boston_Common_November_2016_003.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boston_Common_November_2016_003.jpg/1920px-Boston_Common_November_2016_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "King of Hearts",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "d1ea178bb468320431ab21af5291c80a461189e9cf283c8431e38e7bbb4f3770",
+      "photographed_on": "2016-11-12 14:48:35",
+      "width": 1800,
+      "height": 1285
+    },
+    {
+      "seq": 3,
+      "identity_key": "t02",
+      "path": "img/boston_summer_st/3.jpg",
+      "caption": {
+        "zh": "马萨诸塞州议会大厦",
+        "en": "Massachusetts State House"
+      },
+      "source": {
+        "title": "Massachusetts State House Boston November 2016.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Massachusetts_State_House_Boston_November_2016.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Massachusetts_State_House_Boston_November_2016.jpg/1920px-Massachusetts_State_House_Boston_November_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "King of Hearts",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "6c509572ba76212d019a70217eb667c6bf85683b795bcef3f1d3abefcc12b0a2",
+      "photographed_on": "2016-11-12 14:43:43",
+      "width": 1800,
+      "height": 1080
+    },
+    {
+      "seq": 5,
+      "identity_key": "t04",
+      "path": "img/boston_summer_st/5.jpg",
+      "caption": {
+        "zh": "谷仓墓地",
+        "en": "Granary Burying Ground"
+      },
+      "source": {
+        "title": "Granary Burying Ground (36122p).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Granary_Burying_Ground_(36122p).jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Granary_Burying_Ground_%2836122p%29.jpg/1920px-Granary_Burying_Ground_%2836122p%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Rhododendrites",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "663c94912fafd795d93a32354e54f4ed43931e8035bbec367a67359d746473e9",
+      "photographed_on": "2019-11-13 11:42:43",
+      "width": 1800,
+      "height": 692
+    },
+    {
+      "seq": 6,
+      "identity_key": "t05",
+      "path": "img/boston_summer_st/6.jpg",
+      "caption": {
+        "zh": "国王礼拜堂及墓地",
+        "en": "King's Chapel & Burying Ground"
+      },
+      "source": {
+        "title": "King's Chapel aerial 2024.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:King%27s_Chapel_aerial_2024.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/King%27s_Chapel_aerial_2024.jpg/1920px-King%27s_Chapel_aerial_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Seasider53",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0"
+      },
+      "sha256": "aca83cae4ed25e1c67715f22f7f3a3efb30b3a59f18ced90b9e78ba6fecff2c2",
+      "photographed_on": "2024-05-14 16:18:07",
+      "width": 1050,
+      "height": 1400
+    },
+    {
+      "seq": 7,
+      "identity_key": "t06",
+      "path": "img/boston_summer_st/7.jpg",
+      "caption": {
+        "zh": "波士顿拉丁学校旧址与富兰克林像",
+        "en": "Boston Latin School Site / Benjamin Franklin Statue"
+      },
+      "source": {
+        "title": "Benjamin Franklin statue, Old City Hall, Boston - DSC05879.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Benjamin_Franklin_statue,_Old_City_Hall,_Boston_-_DSC05879.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Benjamin_Franklin_statue%2C_Old_City_Hall%2C_Boston_-_DSC05879.jpg/1920px-Benjamin_Franklin_statue%2C_Old_City_Hall%2C_Boston_-_DSC05879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Daderot",
+        "license": "Public domain",
+        "license_url": ""
+      },
+      "sha256": "1a377febf78e2ef241befcf28f45387d568a78c174ccad7524bfb0aa3946c8e8",
+      "photographed_on": "2018-09-15 11:34:25",
+      "width": 933,
+      "height": 1400
+    },
+    {
+      "seq": 8,
+      "identity_key": "t07",
+      "path": "img/boston_summer_st/8.jpg",
+      "caption": {
+        "zh": "老街角书店旧址",
+        "en": "Old Corner Bookstore"
+      },
+      "source": {
+        "title": "Boston Old Corner Bookstore.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Boston_Old_Corner_Bookstore.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Boston_Old_Corner_Bookstore.jpg/1920px-Boston_Old_Corner_Bookstore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Miguel Hermoso Cuesta",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "8f23d3ec7ab5f17b6f8f6a51616759a668d91a17e3722926aef2db37ebebc0a3",
+      "photographed_on": "Taken on 19 July 2016, 19:00:33",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 9,
+      "identity_key": "t08",
+      "path": "img/boston_summer_st/9.jpg",
+      "caption": {
+        "zh": "老南会议厅",
+        "en": "Old South Meeting House"
+      },
+      "source": {
+        "title": "Old South Meeting House.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Old_South_Meeting_House.JPG",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Old_South_Meeting_House.JPG/1920px-Old_South_Meeting_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ranjansanjeev",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "sha256": "6b116d8b5e21409fc13951c636356b1690b0a79af80daaceacd2ecb0fdd753fd",
+      "photographed_on": "Taken on 4 September 2012, 02:12:27",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 10,
+      "identity_key": "t09",
+      "path": "img/boston_summer_st/10.jpg",
+      "caption": {
+        "zh": "老州议会大厦",
+        "en": "Old State House"
+      },
+      "source": {
+        "title": "Old State House, Boston.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Old_State_House,_Boston.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Old_State_House%2C_Boston.jpg/1920px-Old_State_House%2C_Boston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Marco Almbauer",
+        "license": "Public domain",
+        "license_url": ""
+      },
+      "sha256": "da4191658a5442ea4896e57659aa009e1acd4cb1814196d47935075f30f62a69",
+      "photographed_on": "2017-07-30 21:01:38",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 11,
+      "identity_key": "t10",
+      "path": "img/boston_summer_st/11.jpg",
+      "caption": {
+        "zh": "波士顿惨案遗址",
+        "en": "Boston Massacre Site"
+      },
+      "source": {
+        "title": "2005 BostonMassacre site 24164572.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:2005_BostonMassacre_site_24164572.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/2005_BostonMassacre_site_24164572.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Steven Isaacson from Somerville, MA, USA",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "sha256": "ad7f537e51cd7ca74ed064a92b97d4469d97c85db1160b117f0be17359129e36",
+      "photographed_on": "2005-07-05 16:41",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "seq": 12,
+      "identity_key": "t11",
+      "path": "img/boston_summer_st/12.jpg",
+      "caption": {
+        "zh": "法尼尔厅",
+        "en": "Faneuil Hall"
+      },
+      "source": {
+        "title": "Faneuil Hall Mar 2025 05.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Faneuil_Hall_Mar_2025_05.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Faneuil_Hall_Mar_2025_05.jpg/1920px-Faneuil_Hall_Mar_2025_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Epicgenius",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "8f8c3f33ed11871a40e43078e1e3ef3a60d59e3c4e45b4ec00ae30e03417832a",
+      "photographed_on": "2025-03-29 13:18:31",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "seq": 19,
+      "identity_key": "p07",
+      "path": "img/boston_summer_st/19.jpg",
+      "caption": {
+        "zh": "波士顿南站",
+        "en": "South Station"
+      },
+      "source": {
+        "title": "South Station Lit Up.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:South_Station_Lit_Up.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/South_Station_Lit_Up.jpg/1920px-South_Station_Lit_Up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Eric Kilby",
+        "license": "CC BY-SA 2.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      "sha256": "0c0a3c381c3f0f4c60789582086bbf0abd040e114cd35b5121f80b39667a5cad",
+      "photographed_on": "2013-12-05 19:14:33",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 20,
+      "identity_key": "p08",
+      "path": "img/boston_summer_st/20.jpg",
+      "caption": {
+        "zh": "堡点水道地标区",
+        "en": "Fort Point Channel Landmark District"
+      },
+      "source": {
+        "title": "A Street from Summer Street, Boston, June 2025.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:A_Street_from_Summer_Street,_Boston,_June_2025.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/A_Street_from_Summer_Street%2C_Boston%2C_June_2025.jpg/1920px-A_Street_from_Summer_Street%2C_Boston%2C_June_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Pi.1415926535",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "40e0507acd213a768f05c903eee8be90275c5b3f0d3fa0a3d779cff94d949d1b",
+      "photographed_on": "Taken on 3 June 2025",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "seq": 22,
+      "identity_key": "p10",
+      "path": "img/boston_summer_st/22.jpg",
+      "caption": {
+        "zh": "波士顿倾茶事件船舰与博物馆",
+        "en": "Boston Tea Party Ships & Museum"
+      },
+      "source": {
+        "title": "Boston Tea Party Ships & Museum (54960819933).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Boston_Tea_Party_Ships_%26_Museum_(54960819933).jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Boston_Tea_Party_Ships_%26_Museum_%2854960819933%29.jpg/1920px-Boston_Tea_Party_Ships_%26_Museum_%2854960819933%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ajay_suresh",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0"
+      },
+      "sha256": "24925784bed8cd01313a6dda39e100d7855ff75bf58821faf31684a40112d178",
+      "photographed_on": "2025-11-07 14:18",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 24,
+      "identity_key": "p12",
+      "path": "img/boston_summer_st/24.jpg",
+      "caption": {
+        "zh": "马丁公园",
+        "en": "Martin's Park"
+      },
+      "source": {
+        "title": "Martin's Park P1030201.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Martin%27s_Park_P1030201.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Martin%27s_Park_P1030201.jpg/1920px-Martin%27s_Park_P1030201.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "NewtonCourt",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "953a350b5a783975376616ec385dd89a5d0cf6a5432283fe6feccef3abe06ac5",
+      "photographed_on": "2019-09-13 15:56:07",
+      "width": 1800,
+      "height": 1200
+    },
+    {
+      "seq": 27,
+      "identity_key": "p15",
+      "path": "img/boston_summer_st/27.jpg",
+      "caption": {
+        "zh": "波士顿当代艺术学院",
+        "en": "Institute of Contemporary Art/Boston"
+      },
+      "source": {
+        "title": "2017 Institute of Contemporary Art from Boston Harbor.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg/1920px-2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Beyond My Ken",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "d7108577bbbf9462204d6e50a2b114a8bbc102711145b4554e25b9fd2a8f5a3b",
+      "photographed_on": "Taken on 16 August 2017, 15:12:49 (according to Exif data)",
+      "width": 1800,
+      "height": 764
+    },
+    {
+      "seq": 31,
+      "identity_key": "p19",
+      "path": "img/boston_summer_st/31.jpg",
+      "caption": {
+        "zh": "夏街阶梯",
+        "en": "Summer Street Steps"
+      },
+      "source": {
+        "title": "Foundation Medicine (54960820108).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Foundation_Medicine_(54960820108).jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Foundation_Medicine_%2854960820108%29.jpg/1920px-Foundation_Medicine_%2854960820108%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ajay_suresh",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0"
+      },
+      "sha256": "66b77aeae28ded88972f11a8e03be27ce9d37d52fe24a6f603c9eef208551ffa",
+      "photographed_on": "2025-11-07 13:21",
+      "width": 933,
+      "height": 1400
+    },
+    {
+      "seq": 32,
+      "identity_key": "p20",
+      "path": "img/boston_summer_st/32.jpg",
+      "caption": {
+        "zh": "Harbor Way 绿地",
+        "en": "Harbor Way park"
+      },
+      "source": {
+        "title": "111 Harbor Way, Seaport District, Boston (54960946525).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:111_Harbor_Way,_Seaport_District,_Boston_(54960946525).jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/111_Harbor_Way%2C_Seaport_District%2C_Boston_%2854960946525%29.jpg/1920px-111_Harbor_Way%2C_Seaport_District%2C_Boston_%2854960946525%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ajay_suresh",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0"
+      },
+      "sha256": "2a5516d38456a6047558a32b8b19bb464d54049cbc1726af1f259c0767f533ed",
+      "photographed_on": "2025-11-07 13:42",
+      "width": 933,
+      "height": 1400
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "path": "img/boston_summer_st/52.jpg",
+      "caption": {
+        "zh": "Harpoon 波士顿酿酒厂",
+        "en": "Harpoon Boston Brewery"
+      },
+      "source": {
+        "title": "Harpoon Brewery, Boston MA.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Harpoon_Brewery,_Boston_MA.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Harpoon_Brewery%2C_Boston_MA.jpg/1920px-Harpoon_Brewery%2C_Boston_MA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "John Phelan",
+        "license": "CC BY-SA 3.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "sha256": "a941f871a81a22558ec057a6c6e58550299de4dd0d1236171a48cbf373db39a6",
+      "photographed_on": "2012-02-25",
+      "width": 1800,
+      "height": 1350
+    },
+    {
+      "seq": 4,
+      "identity_key": "t03",
+      "path": "img/boston_summer_st/4.jpg",
+      "caption": {
+        "zh": "公园街教堂",
+        "en": "Park Street Church"
+      },
+      "source": {
+        "title": "2024 Park Street Church - Boston 01.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:2024_Park_Street_Church_-_Boston_01.jpg",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/2024_Park_Street_Church_-_Boston_01.jpg/1920px-2024_Park_Street_Church_-_Boston_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Farragutful",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "0b95fade22151f757365b714a48b599251d47f845af269e4cf7d054746c13d75",
+      "photographed_on": "Taken on 11 May 2024 13:25:31",
+      "width": 919,
+      "height": 1400
+    },
+    {
+      "seq": 21,
+      "identity_key": "p09",
+      "path": "img/boston_summer_st/21.jpg",
+      "caption": {
+        "zh": "波士顿码头公司旧办公楼及屋顶标牌",
+        "en": "Boston Wharf Company Office Building & Sign"
+      },
+      "source": {
+        "title": "Melcher Street at Summer Street, Boston, July 2013.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Melcher_Street_at_Summer_Street,_Boston,_July_2013.JPG",
+        "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Melcher_Street_at_Summer_Street%2C_Boston%2C_July_2013.JPG/1920px-Melcher_Street_at_Summer_Street%2C_Boston%2C_July_2013.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Pi.1415926535",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      "sha256": "9b7c3ca82fa6f1b5c7a6fa586e75c122255d44739ecec045dbfef84f701ee024",
+      "photographed_on": "Taken on 6 July 2013",
+      "width": 1800,
+      "height": 1350
+    }
+  ],
+  "source_capture": [
+    {
+      "seq": 2,
+      "identity_key": "t01",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Boston_Common_November_2016_003.jpg/1920px-Boston_Common_November_2016_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Boston_Common_November_2016_003.jpg",
+      "title": "Boston Common November 2016 003.jpg",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "2016-11-12 14:48:35",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "2dcd0788c6dc40c87c4bc4b368f9ebf746830d4118360d6fea8ceac31ed8fe75"
+    },
+    {
+      "seq": 3,
+      "identity_key": "t02",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Massachusetts_State_House_Boston_November_2016.jpg/1920px-Massachusetts_State_House_Boston_November_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Massachusetts_State_House_Boston_November_2016.jpg",
+      "title": "Massachusetts State House Boston November 2016.jpg",
+      "author": "King of Hearts",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "2016-11-12 14:43:43",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "28e9f1dc08b24c8a0bba0c3d2417000e9158e4096e36ca0e3c00455c234d5e63"
+    },
+    {
+      "seq": 5,
+      "identity_key": "t04",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Granary_Burying_Ground_%2836122p%29.jpg/1920px-Granary_Burying_Ground_%2836122p%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Granary_Burying_Ground_(36122p).jpg",
+      "title": "Granary Burying Ground (36122p).jpg",
+      "author": "Rhododendrites",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "2019-11-13 11:42:43",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "25f54cbe11a3c44efc925588f95304173fc052b0b7fed70b1a24f9a31c45c48a"
+    },
+    {
+      "seq": 6,
+      "identity_key": "t05",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/King%27s_Chapel_aerial_2024.jpg/1920px-King%27s_Chapel_aerial_2024.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:King%27s_Chapel_aerial_2024.jpg",
+      "title": "King's Chapel aerial 2024.jpg",
+      "author": "Seasider53",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "photographed_on": "2024-05-14 16:18:07",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "1c8af295550cc126db47e91a36e8858b4a4c09de3f505a0559429c24fdc4974f"
+    },
+    {
+      "seq": 7,
+      "identity_key": "t06",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Benjamin_Franklin_statue%2C_Old_City_Hall%2C_Boston_-_DSC05879.jpg/1920px-Benjamin_Franklin_statue%2C_Old_City_Hall%2C_Boston_-_DSC05879.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Benjamin_Franklin_statue,_Old_City_Hall,_Boston_-_DSC05879.jpg",
+      "title": "Benjamin Franklin statue, Old City Hall, Boston - DSC05879.jpg",
+      "author": "Daderot",
+      "license": "Public domain",
+      "license_url": "",
+      "photographed_on": "2018-09-15 11:34:25",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "2e78e12c7f8ec000a9ab67133660d694bd36c402f2efcdc1fa08c1f335ba4bea"
+    },
+    {
+      "seq": 8,
+      "identity_key": "t07",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Boston_Old_Corner_Bookstore.jpg/1920px-Boston_Old_Corner_Bookstore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Boston_Old_Corner_Bookstore.jpg",
+      "title": "Boston Old Corner Bookstore.jpg",
+      "author": "Miguel Hermoso Cuesta",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "Taken on 19 July 2016, 19:00:33",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "c92c0cedc50b9ab4b69e4a77f67366c6ceb9598dd47392df7537435ef0c795ec"
+    },
+    {
+      "seq": 9,
+      "identity_key": "t08",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Old_South_Meeting_House.JPG/1920px-Old_South_Meeting_House.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_South_Meeting_House.JPG",
+      "title": "Old South Meeting House.JPG",
+      "author": "Ranjansanjeev",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "photographed_on": "Taken on 4 September 2012, 02:12:27",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "ea6a8feb0fe5f04c72d293a65ca6a282c3fab0926248c2f5c22f738d747d0084"
+    },
+    {
+      "seq": 10,
+      "identity_key": "t09",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Old_State_House%2C_Boston.jpg/1920px-Old_State_House%2C_Boston.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Old_State_House,_Boston.jpg",
+      "title": "Old State House, Boston.jpg",
+      "author": "Marco Almbauer",
+      "license": "Public domain",
+      "license_url": "",
+      "photographed_on": "2017-07-30 21:01:38",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "709cdcbc085f2c0acd25282cd4ee8c57d943e7022e18d2a3df70375ce3ce3979"
+    },
+    {
+      "seq": 11,
+      "identity_key": "t10",
+      "bytes_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/2005_BostonMassacre_site_24164572.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "page": "https://commons.wikimedia.org/wiki/File:2005_BostonMassacre_site_24164572.jpg",
+      "title": "2005 BostonMassacre site 24164572.jpg",
+      "author": "Steven Isaacson from Somerville, MA, USA",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "photographed_on": "2005-07-05 16:41",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "f474f22f57525238a1c04aee9ea4f8120eae8c6e5dd81429faaed04c93b6fed5"
+    },
+    {
+      "seq": 12,
+      "identity_key": "t11",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Faneuil_Hall_Mar_2025_05.jpg/1920px-Faneuil_Hall_Mar_2025_05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Faneuil_Hall_Mar_2025_05.jpg",
+      "title": "Faneuil Hall Mar 2025 05.jpg",
+      "author": "Epicgenius",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "2025-03-29 13:18:31",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "2f78917af863f6cc0c82308cc7b2d70ef534b610e69f43cd3546e498fffeb940"
+    },
+    {
+      "seq": 19,
+      "identity_key": "p07",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/South_Station_Lit_Up.jpg/1920px-South_Station_Lit_Up.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:South_Station_Lit_Up.jpg",
+      "title": "South Station Lit Up.jpg",
+      "author": "Eric Kilby",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "photographed_on": "2013-12-05 19:14:33",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "14d62f96bc6f0b9fe6f627e27b7a9220b5a2b3961538d63521b391436561fcd3"
+    },
+    {
+      "seq": 20,
+      "identity_key": "p08",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/A_Street_from_Summer_Street%2C_Boston%2C_June_2025.jpg/1920px-A_Street_from_Summer_Street%2C_Boston%2C_June_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:A_Street_from_Summer_Street,_Boston,_June_2025.jpg",
+      "title": "A Street from Summer Street, Boston, June 2025.jpg",
+      "author": "Pi.1415926535",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "Taken on 3 June 2025",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "70261bfc26094843b4ad9b2c344d454d3a57ae56f13277bfdb54ce758b962cf2"
+    },
+    {
+      "seq": 22,
+      "identity_key": "p10",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Boston_Tea_Party_Ships_%26_Museum_%2854960819933%29.jpg/1920px-Boston_Tea_Party_Ships_%26_Museum_%2854960819933%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Boston_Tea_Party_Ships_%26_Museum_(54960819933).jpg",
+      "title": "Boston Tea Party Ships & Museum (54960819933).jpg",
+      "author": "ajay_suresh",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "photographed_on": "2025-11-07 14:18",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "880435b0f5681664b259ac109cd4b66569cba6c22203deeeb5134bf27290e70d"
+    },
+    {
+      "seq": 24,
+      "identity_key": "p12",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Martin%27s_Park_P1030201.jpg/1920px-Martin%27s_Park_P1030201.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Martin%27s_Park_P1030201.jpg",
+      "title": "Martin's Park P1030201.jpg",
+      "author": "NewtonCourt",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "2019-09-13 15:56:07",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "b3d9d21b277287e4db3f5b75afa9cc7a59f89e5a9e80aa8f4b2d5ddb5e41b891"
+    },
+    {
+      "seq": 27,
+      "identity_key": "p15",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg/1920px-2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:2017_Institute_of_Contemporary_Art_from_Boston_Harbor.jpg",
+      "title": "2017 Institute of Contemporary Art from Boston Harbor.jpg",
+      "author": "Beyond My Ken",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "Taken on 16 August 2017, 15:12:49 (according to Exif data)",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "a5ca34e1571d044e182e6890f492c9364b80ea0fca4b9bbfe68d1023d314ed81"
+    },
+    {
+      "seq": 31,
+      "identity_key": "p19",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Foundation_Medicine_%2854960820108%29.jpg/1920px-Foundation_Medicine_%2854960820108%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Foundation_Medicine_(54960820108).jpg",
+      "title": "Foundation Medicine (54960820108).jpg",
+      "author": "ajay_suresh",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "photographed_on": "2025-11-07 13:21",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "b457b7be9958cb1fa8241aaf30a6ef265f47af687d395495397095b3c0a1a0ec"
+    },
+    {
+      "seq": 32,
+      "identity_key": "p20",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/111_Harbor_Way%2C_Seaport_District%2C_Boston_%2854960946525%29.jpg/1920px-111_Harbor_Way%2C_Seaport_District%2C_Boston_%2854960946525%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:111_Harbor_Way,_Seaport_District,_Boston_(54960946525).jpg",
+      "title": "111 Harbor Way, Seaport District, Boston (54960946525).jpg",
+      "author": "ajay_suresh",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "photographed_on": "2025-11-07 13:42",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "5452f51acb9d8cbebae191282dc43783d0599c8e1789bdbbdcbb905ebf8cfcf8"
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Harpoon_Brewery%2C_Boston_MA.jpg/1920px-Harpoon_Brewery%2C_Boston_MA.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Harpoon_Brewery,_Boston_MA.jpg",
+      "title": "Harpoon Brewery, Boston MA.jpg",
+      "author": "John Phelan",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "photographed_on": "2012-02-25",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "4cfa4b69b131759ffae4b3f6790e5c8b4e2e7d8daef148da8525e764d67d5afc"
+    },
+    {
+      "seq": 4,
+      "identity_key": "t03",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/2024_Park_Street_Church_-_Boston_01.jpg/1920px-2024_Park_Street_Church_-_Boston_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:2024_Park_Street_Church_-_Boston_01.jpg",
+      "title": "2024 Park Street Church - Boston 01.jpg",
+      "author": "Farragutful",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "Taken on 11 May 2024 13:25:31",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "315124af8184a9e9d3c458caa5c92e3894ea68ee87511757e0fccbed087f4598"
+    },
+    {
+      "seq": 21,
+      "identity_key": "p09",
+      "bytes_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Melcher_Street_at_Summer_Street%2C_Boston%2C_July_2013.JPG/1920px-Melcher_Street_at_Summer_Street%2C_Boston%2C_July_2013.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "page": "https://commons.wikimedia.org/wiki/File:Melcher_Street_at_Summer_Street,_Boston,_July_2013.JPG",
+      "title": "Melcher Street at Summer Street, Boston, July 2013.JPG",
+      "author": "Pi.1415926535",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "photographed_on": "Taken on 6 July 2013",
+      "provider": "Wikimedia Commons",
+      "download_sha256": "e8d9a9eb876784dea4548af6c09e14a62fd8b5fb8b8251e0a2b862088b430cb8"
+    }
+  ]
+}

@@ -14,9 +14,35 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def verify_inventory_rating(ratings, inventory, source, translations=None):
+    """Bind a score to its actual inventory input without rewriting its hash."""
+    fields = ('id', 'zone', 'kind', 'zh', 'en', 'zh_desc', 'en_desc', 'address',
+              'relation', 'access', 'source', 'source_name', 'note')
+    rows = inventory['rows']
+    payload = [{k: row[k] for k in fields} for row in rows]
+    digest = hashlib.sha256(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+    if ratings['input_sha256'] != digest:
+        raise ValueError('评分输入与清单不一致')
+    source_rows = {row['source_seq']: row for row in source['rows']}
+    if len(source_rows) != len(rows) or set(source_rows) != set(range(1, len(rows)+1)):
+        raise ValueError('评分清单与发布资料覆盖不一致')
+    for seq, item in enumerate(rows, 1):
+        row = source_rows[seq]
+        if (row['identity_key'] != item['id'].lower() or row['name'] != item['zh']
+                or row['description'] != item['zh_desc'] or row['address'] != item['address']
+                or item['en'] not in row.get('aliases', []) or row['area'] != item['zone']):
+            raise ValueError(f'{seq}：评分清单与发布资料不一致')
+        if translations is not None:
+            values = translations['values']
+            if any(values.get(zh, {}).get('en') != en for zh, en in
+                   [(item['zh'], item['en']), (item['zh_desc'], item['en_desc'])]):
+                raise ValueError(f'{seq}：双语内容与评分清单不一致')
+
+
 def build(key, config):
+    prefix = getattr(config, 'PACKAGE_PREFIX', key)
     def path(suffix):
-        return HERE / f'{key}_{suffix}'
+        return HERE / f'{prefix}_{suffix}'
 
     def load(suffix):
         return json.loads(path(suffix).read_text('utf-8'))
@@ -28,14 +54,18 @@ def build(key, config):
     source = load('site_data.json')
     source_sha = sha(path('site_data.json'))
     if package['state'] != '独立审计完成' or any(
-        data['input_sha256'] != source_sha for data in [package, ratings, manifest, translations]
+        data['input_sha256'] != source_sha for data in [package, manifest, translations]
     ):
         raise ValueError('必须使用同一来源版本的完整已审资料包')
+    if getattr(config, 'RATING_INVENTORY_FILE', None):
+        verify_inventory_rating(ratings, json.loads((HERE / config.RATING_INVENTORY_FILE).read_text('utf-8')), source, translations)
+    elif ratings['input_sha256'] != source_sha:
+        raise ValueError('评分资料与来源不一致')
     if manifest['rating_sha256'] != sha(path('ratings.json')):
         raise ValueError('当前评分版本未经对应独立审计')
     if manifest['audit_source_sha256'] != sha(path('audit_source_data.json')):
         raise ValueError('审计原文版本已变化')
-    if ratings['grouping_sha256'] != sha(path('peer_groups.json')):
+    if ratings.get('grouping_sha256', manifest.get('rating_grouping_sha256')) != sha(path('peer_groups.json')):
         raise ValueError('当前同类组与评分不一致')
     audits_raw = [json.loads(line) for line in path('audit1_slim.jsonl').read_text('utf-8').splitlines() if line.strip()]
     audits = {r['seq']: r for r in audits_raw}
@@ -48,6 +78,15 @@ def build(key, config):
     if any(r['rating'] != scores[s] or r['audit'] != audits[s] for s, r in rows.items()):
         raise ValueError('发布资料包与当前评分或审计不一致')
     capture = {r['id']: r for r in load('source_capture.json')['sources'] if r['status'] == 'ok'}
+    if getattr(config, 'REQUIRE_VERIFIED_EVIDENCE', False):
+        for row in source['rows']:
+            for evidence in row['evidence']:
+                saved = capture.get(evidence['source_id'])
+                if (not saved or saved.get('http_status') != 200
+                        or saved.get('retrieval_method') != 'verified_HTTP_extracted_text'
+                        or not evidence.get('quote')
+                        or evidence['quote'] not in saved.get('source_text', '')):
+                    raise ValueError(f"{row['source_seq']}：来源正文缺失或引文不属于保存的正文")
 
     def bilingual(text):
         return dict(zh=text, en=translations['values'][text]['en']) if text else dict(zh='', en='')
@@ -69,6 +108,8 @@ def build(key, config):
             raise ValueError(f'{seq}：复核标记不一致')
         review_text = '\n'.join(([audit['error_note_zh']] if audit.get('error_note_zh') else [])
                                 + [m['zh'] for m in audit['missing'] if m['tier_sensitive']])
+        if review and getattr(config, 'PUBLIC_REVIEW_SUMMARY', False):
+            review_text = '评级依据还有可补充的历史或参观资料，等级待复核；请结合来源判断。'
         refs = {}
         for evidence in row['evidence'] + row.get('audit_evidence', []):
             saved = capture[evidence['source_id']]
@@ -100,7 +141,7 @@ def build(key, config):
         key=key, mode='collection', generated=dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).date().isoformat(),
         name=config.NAME, card={**config.CARD, 'cover': None}, opening=config.OPENING,
         planning=config.PLANNING, places=places, stops=stops, routes=[], default_route='none',
-        provenance=dict(package=f'{key}_final.json', package_sha256=sha(path('final.json')),
+        provenance=dict(package=f'{prefix}_final.json', package_sha256=sha(path('final.json')),
                         source_sha256=source_sha, rating_sha256=sha(path('ratings.json')),
                         audit_sha256=sha(path('audit1_slim.jsonl')), translations_sha256=sha(path('translations.json')),
                         workbook_sha256=load('verification_report.json')['workbook_sha256'],

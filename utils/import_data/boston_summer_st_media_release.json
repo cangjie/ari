@@ -1,0 +1,140 @@
+{
+  "osm_file": "boston_summer_st_osm.json",
+  "raw_file": "boston_summer_st_osm_overpass_raw.json",
+  "osm_sha256": "fe2b9f3ee2b0332075d858606ff6493aeff09ae6ec4f265086ff1a20f14864d7",
+  "water_relations": [],
+  "street_reference_file": "boston_summer_st_street_references.json",
+  "street_reference_sha256": "8514ebf0fec3842e135daaf49ae01d75caa78f0bcbd66d08359fa79cebb2d8ed",
+  "positions": [
+    {
+      "seq": 2,
+      "identity_key": "t01",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 3,
+      "identity_key": "t02",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 4,
+      "identity_key": "t03",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 5,
+      "identity_key": "t04",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 6,
+      "identity_key": "t05",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 7,
+      "identity_key": "t06",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 8,
+      "identity_key": "t07",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 9,
+      "identity_key": "t08",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 10,
+      "identity_key": "t09",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 11,
+      "identity_key": "t10",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 12,
+      "identity_key": "t11",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 19,
+      "identity_key": "p07",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 20,
+      "identity_key": "p08",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 21,
+      "identity_key": "p09",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 22,
+      "identity_key": "p10",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 24,
+      "identity_key": "p12",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 27,
+      "identity_key": "p15",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 31,
+      "identity_key": "p19",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 32,
+      "identity_key": "p20",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 36,
+      "identity_key": "s04",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 45,
+      "identity_key": "s13",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 46,
+      "identity_key": "s14",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 47,
+      "identity_key": "s15",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 50,
+      "identity_key": "s18",
+      "basis": "street-reference"
+    },
+    {
+      "seq": 52,
+      "identity_key": "s20",
+      "basis": "street-reference"
+    }
+  ],
+  "labels": [],
+  "photo_manifest": "boston_summer_st_photos.json",
+  "cover_seq": 2,
+  "state": "verified_for_publication",
+  "photo_sha256": "66c7a31061fb1b44b0707ac5ccc98d74c0ef0426a9ed9a94a795afdcdbd22fba"
+}

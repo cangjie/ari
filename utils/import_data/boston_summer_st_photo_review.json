@@ -1,0 +1,12 @@
+{
+  "status": "subject_reviewed",
+  "reviewed_on": "2026-11-03",
+  "method": "Visual inspection of downloaded candidates; authors and license metadata separately checked against Wikimedia Commons imageinfo.",
+  "accepted_subject_candidates": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 19, 20, 22, 24, 27, 52],
+  "rejected_subject_candidates": [
+    {"seq": 21, "reason": "The Melcher Street view does not show the Boston Wharf rooftop sign; it must not stand in for the sign."},
+    {"seq": 31, "reason": "The Foundation Medicine building photograph does not show Summer Street Steps."},
+    {"seq": 32, "reason": "The photograph depicts the 111 Harbor Way building, not the Harbor Way park."}
+  ],
+  "notes": "Candidate 11 shows the street marker at a distance. Candidate 20 depicts an A Street view of the wider district, not an individual building. No images are published by this review."
+}

@@ -94,13 +94,43 @@ class StreetGraph:
         return list(reversed(chain)),best[end],list(reversed(ways))
 
 
+def selected_stations(theme, stations):
+    starts = theme.get('start_stations', list(stations))
+    if (not starts or len(set(starts)) != len(starts)
+            or any(start not in stations for start in starts)
+            or theme['default_start'] not in starts):
+        raise ValueError('主题起点配置不完整或无效')
+    return [stations[start] for start in starts]
+
+
+def station_point(station, graph, transit_records):
+    if ('osm_node' in station) == ('gtfs_stop_id' in station):
+        raise ValueError('车站必须且只能指定一个来源节点')
+    if 'osm_node' in station:
+        return graph.nodes[station['osm_node']]
+    record = transit_records.get(station['gtfs_stop_id'])
+    if not record or record.get('location_type') not in ('1', '2'):
+        raise ValueError('缺少对应的官方车站或入口记录')
+    return float(record['stop_lat']), float(record['stop_lon'])
+
+
 def augment(data, config):
     filename=getattr(config,'EXPERIENCE_MANIFEST',None)
     if not filename:return
     import tour_build as base
     from tour_collection_media import sha
     manifest=json.loads((HERE/filename).read_text())
+    state = manifest.get('state')
+    if state and state != 'verified_for_publication' and not (
+            state == 'local_preview_only' and getattr(config, 'LOCAL_PREVIEW_ONLY', False)
+            and data.get('provenance', {}).get('local_preview_only') is True):
+        raise ValueError('主题路线仍为草案，不能发布')
     labels_path=HERE/manifest['labels_file']
+    if getattr(config, 'REQUIRE_EXPERIENCE_INTEGRITY', False):
+        for name, digest_key in [('labels_file','labels_sha256'),('osm_file','osm_sha256'),
+                                 ('transit_file','transit_sha256')]:
+            if not manifest.get(name) or not manifest.get(digest_key) or sha(HERE/manifest[name])!=manifest[digest_key]:
+                raise ValueError(f'主题路线来源校验失败：{name}')
     labels=json.loads(labels_path.read_text())
     for row in labels['items']:
         stop=data['stops'][str(row['seq'])]
@@ -109,14 +139,19 @@ def augment(data, config):
     data['shop_label_policy']=labels['policy']
     osm=json.loads((HERE/manifest['osm_file']).read_text())
     graph=StreetGraph(osm)
+    transit_records = {}
+    if manifest.get('transit_file'):
+        transit = json.loads((HERE/manifest['transit_file']).read_text())
+        transit_records = {r['stop_id']:r for r in transit['records']}
     stations={};connectors={}
     for station in manifest['stations']:
-        node=station['osm_node'];point=graph.nodes[node];snap=graph.nearest(point)
+        point=station_point(station, graph, transit_records);snap=graph.nearest(point)
         distance=meters(point,graph.nodes[snap])
         if distance>40:raise ValueError(f'地铁站室外接驳超过40米 {station["id"]}: {distance}')
         stations[station['id']]={**station,'point':list(point),'street_node':snap,'connector_m':round(distance,1)}
         connectors[station['id']]=distance
     places={p['stops'][0]:p for p in data['places']}
+    step_refs={}
     themes=[]
     proj=data['proj']
     def xy(point):
@@ -129,14 +164,19 @@ def augment(data, config):
             if not place.get('position'):raise ValueError(f'主题主站缺来源位置 {item["seq"]}')
             names=item.get('streets')
             if not names:raise ValueError(f'主题主站必须显式登记公共街道名称 {item["seq"]}')
-            node=graph.nearest((place['lat'],place['lon']), names)
+            previous=step_refs.get(item['seq'])
+            if previous and previous['streets'] != names:
+                raise ValueError(f'同一站在不同路线中街道依据不一致 {item["seq"]}')
+            node=previous['node'] if previous else graph.nearest((place['lat'],place['lon']), names)
+            if not previous:
+                step_refs[item['seq']]={'node':node,'streets':list(names)}
             if meters((place['lat'],place['lon']),graph.nodes[node])>260:raise ValueError('主题街道参考点离对应场所太远')
             steps.append({**item,'name':data['stops'][str(item['seq'])]['name'],
                           'street_node':node,'point':list(graph.nodes[node]),
                           'street_reference':graph.references.get(node,dict(osm_node=node)),
                           'reference_note':'路线到附近公共街道参考点；不代表场馆或商铺入口。'})
         variants=[]
-        for station in stations.values():
+        for station in selected_stations(theme, stations):
             end=stations[theme['end_station']]
             sequence=[station['street_node']]+[s['street_node'] for s in steps]+[end['street_node']]
             legs=[];points=[station['point']];all_ways=set()
@@ -154,6 +194,9 @@ def augment(data, config):
                                  way_ids=sorted(all_ways),legs=legs))
         themes.append({**theme,'steps':steps,'variants':variants})
     data.update(itineraries=themes,itinerary_stations=list(stations.values()),itinerary_policy=manifest['policy'])
+    for field in ('itinerary_map_brand', 'itinerary_exit_note', 'itinerary_spread_markers'):
+        if field in manifest:
+            data[field] = manifest[field]
     if getattr(config,'GPS_GUIDE',False):
         # 定位点独立于旧清单/轮廓中心；只取已审线路中的公共街道参考点。
         unique={}
@@ -175,5 +218,5 @@ def augment(data, config):
                       note='已收录地图资料的GPS覆盖范围，并非街区行政边界。'),
             entrance=dict(x=x,y=y,lat=origin['point'][0],lon=origin['point'][1],name=dict(zh=origin['name'],en='Default subway connection')),
             places=list(unique.values()),radius_m=25,
-            policy='选择主题线路后启用GPS当前位置、地图跟随和到附近提醒。定位点为21处已记录公共街道参考点，25米提醒半径为导览估计，不代表建筑、检票入口或可入内区域。定位精度超过30米不新增提醒；离开1.2倍半径后才重新判断。导览覆盖范围取已保存OSM资料框，不是行政边界。App沿用原生GPS判定，网络位置不触发到站。')
+            policy=manifest.get('navigation_policy', '选择主题线路后启用GPS当前位置、地图跟随和到附近提醒。定位点为21处已记录公共街道参考点，25米提醒半径为导览估计，不代表建筑、检票入口或可入内区域。定位精度超过30米不新增提醒；离开1.2倍半径后才重新判断。导览覆盖范围取已保存OSM资料框，不是行政边界。App沿用原生GPS判定，网络位置不触发到站。'))
     data['provenance'].update(experience_sha256=sha(HERE/filename),shop_labels_sha256=sha(labels_path))

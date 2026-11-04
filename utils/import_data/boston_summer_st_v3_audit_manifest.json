@@ -1,0 +1,33 @@
+{
+  "input_sha256": "89ce167c42997572176a9fc78b0b81fadf4772ea63bec298c67109ebea8cd1d7",
+  "rating_sha256": "dc1034545e5aa2095118680e77d7151118e4d35471205e26a4b9afba90159ac1",
+  "rating_grouping_sha256": "2a68cc82110f4e21706f321a9a7b98d820cd17a3a114cc85b90085b949a7312c",
+  "audit_source_sha256": "f3e7cc3bd67a66d41e94d8b23126311600704ae5fc26061ae36f4bf79cf02627",
+  "independent_results_sha256": "da834d144aed8ae8f6e3884513ad761bd47b767472326dd808d1a96ce7a82f66",
+  "resolution_sha256": "26efa1ac708b7d4b6287e7f63f17a4fd5483d77982675fbc75e6865e8de65824",
+  "model": "claude-sonnet-5 effort=medium",
+  "count": 53,
+  "review": [
+    2,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    17,
+    18,
+    19,
+    23,
+    27,
+    32,
+    33,
+    35,
+    42,
+    47,
+    49,
+    53
+  ]
+}

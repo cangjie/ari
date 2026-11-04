@@ -92,11 +92,11 @@ def fetch_sources(rows: list[dict]) -> dict:
                 parser.feed(raw.decode("utf-8", "replace"))
             extracted = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
             editor = " | ".join(f'{row["en"]}: {row["en_desc"]} Address: {row["address"]}' for row in bound)
-            if extracted:
+            if status_code == 200 and extracted:
                 method = "verified_HTTP_extracted_text"
                 source_text = extracted[:50000]
             else:
-                method = "verified_HTTP_metadata_and_editor_summary"
+                method = "http_failure_and_editor_summary"
                 source_text = (
                     f"HTTP metadata: status={status_code!r}; final_url={final_url}; "
                     f"content_type={content_type!r}; error={error!r}.\n"
@@ -104,7 +104,7 @@ def fetch_sources(rows: list[dict]) -> dict:
                 )
             return {
                 "id": source_id(index),
-                "status": "ok",
+                "status": "ok" if status_code == 200 and extracted else "unavailable",
                 "url": url,
                 "final_url": final_url,
                 "http_status": status_code,
@@ -125,6 +125,13 @@ def prepare() -> None:
     if len(rows) != 53:
         raise ValueError("Boston inventory must contain 53 rows")
     capture = fetch_sources(rows)
+    unavailable = [item["id"] for item in capture["sources"] if item["status"] != "ok"]
+    if unavailable:
+        dump(HERE / f"{KEY}_source_capture_pending.json", capture)
+        raise ValueError(f"来源未取到正文，不能生成已审资料包：{unavailable}")
+    # Inventory descriptions are editorial paraphrases, not quotations.  A reviewer
+    # must bind actual supporting passages before generating an audit package.
+    raise ValueError("须先逐条绑定来源原文及支持关系；编辑摘要不能当作原文引述")
     by_url = {row["url"]: row for row in capture["sources"]}
     ratings_path = HERE / f"{KEY}_ratings.json"
     ratings = json.loads(ratings_path.read_text("utf-8"))

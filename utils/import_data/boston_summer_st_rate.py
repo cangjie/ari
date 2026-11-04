@@ -130,11 +130,18 @@ def groups(m, items, s1):
     def valid(d):
         got = d.get("items", [])
         if sorted(x["seq"] for x in got) != seqs:
+            got_seqs = [x["seq"] for x in got]
+            print(f"同类组覆盖异常：缺 {sorted(set(seqs)-set(got_seqs))}，"
+                  f"重复 {sorted(s for s in set(got_seqs) if got_seqs.count(s)>1)}，"
+                  f"多出 {sorted(set(got_seqs)-set(seqs))}", flush=True)
             return False
         types = defaultdict(set)
         for x in got:
             types[x["peer_group"]].add(s1[x["seq"]]["object_type"])
-        return all(len(t) == 1 for t in types.values())
+        mixed = {group: sorted(kinds) for group, kinds in types.items() if len(kinds) > 1}
+        if mixed:
+            print(f"同类组跨对象类型：{mixed}", flush=True)
+        return not mixed
     answer = llm_cache.call(request, provider="openai_codex", model=MODEL, effort="medium",
                             stage="tier_peer_groups", museum_key=PREFIX, seqs=seqs,
                             scope="full Summer Street inventory", system=system, user=user,

@@ -13,6 +13,55 @@ def sha(p):
     return hashlib.sha256(p.read_bytes()).hexdigest()
 
 
+def street_reference_point(ref, elements):
+    """Reconstruct a street reference from the saved public OSM geometry."""
+    allowed = {'footway', 'pedestrian', 'path', 'steps', 'residential', 'service',
+               'tertiary', 'secondary', 'primary', 'unclassified', 'living_street'}
+
+    def public_way(e):
+        tags = e.get('tags', {})
+        return (e.get('type') == 'way' and tags.get('highway') in allowed
+                and tags.get('name') in ref['streets'] and tags.get('area') != 'yes'
+                and tags.get('access') not in ('private', 'no', 'customers')
+                and tags.get('foot') not in ('private', 'no')
+                and tags.get('tunnel') != 'yes' and tags.get('indoor') != 'yes')
+
+    def near(a, b):
+        return math.hypot((a[0]-b[0])*111320, (a[1]-b[1])*111320*math.cos(math.radians(a[0]))) < .5
+
+    def on_segment(p, a, b):
+        dy, dx = b[0]-a[0], b[1]-a[1]
+        length = dy*dy + dx*dx
+        if not length:
+            return near(p, a)
+        t = ((p[0]-a[0])*dy + (p[1]-a[1])*dx)/length
+        return 0 <= t <= 1 and near(p, (a[0]+t*dy, a[1]+t*dx))
+
+    source = ref['source_ref']
+    if 'way_id' in source:
+        e = elements.get(('way', source['way_id']), {})
+        if not public_way(e):
+            raise ValueError('街道来源不可步行或名称不符')
+        a, b = source['segment']
+        geometry = [(p['lat'], p['lon']) for p in e.get('geometry', [])]
+        if not any(on_segment(a, p, q) and on_segment(b, p, q)
+                   for p, q in zip(geometry, geometry[1:])):
+            raise ValueError('街道线段不属于保存的几何')
+        t = source['fraction']
+        if not 0 <= t <= 1:
+            raise ValueError('街道线段参数无效')
+        point = (a[0]+t*(b[0]-a[0]), a[1]+t*(b[1]-a[1]))
+    else:
+        node = source['osm_node']
+        e = elements.get(('node', node), {})
+        if not e or not any(public_way(w) and node in w.get('nodes', []) for w in elements.values()):
+            raise ValueError('街道节点缺少可步行来源')
+        point = (e['lat'], e['lon'])
+    if not near(point, ref['point']):
+        raise ValueError('街道参考点与来源几何不符')
+    return point
+
+
 def water_rings(element):
     """按outer/inner分组连接way端点；断环或缺成员时阻止发布。"""
     if element['type'] == 'way':
@@ -55,6 +104,11 @@ def augment(data, config):
         return
     manifest_path = HERE / config.MEDIA_MANIFEST
     manifest = json.loads(manifest_path.read_text('utf-8'))
+    state = manifest.get('state')
+    if state and state != 'verified_for_publication' and not (
+            state == 'local_preview_only' and getattr(config, 'LOCAL_PREVIEW_ONLY', False)
+            and data.get('provenance', {}).get('local_preview_only') is True):
+        raise ValueError('地图与照片清单仍是草案，不能发布')
     osm_path = HERE / manifest['osm_file']
     osm = json.loads(osm_path.read_text('utf-8'))
     if sha(osm_path) != manifest['osm_sha256'] or sha(HERE / manifest['raw_file']) != osm['raw_sha256']:
@@ -103,16 +157,39 @@ def augment(data, config):
                 else:
                     layers[layer].append(base.path_d(pts, close=True))
     by_seq = {p['stops'][0]: p for p in data['places']}
+    references = None
+    if manifest.get('street_reference_file'):
+        ref_path = HERE / manifest['street_reference_file']
+        if sha(ref_path) != manifest['street_reference_sha256']:
+            raise ValueError('街道参考点文件校验失败')
+        reference_data = json.loads(ref_path.read_text('utf-8'))
+        if reference_data.get('state') != 'verified_for_publication':
+            raise ValueError('街道参考点尚未完成发布核验')
+        references = reference_data['references']
     used = set()
     for entry in manifest['positions']:
         seq = entry['seq']
         if seq in used or seq not in by_seq or by_seq[seq]['id'] != entry['identity_key']:
             raise ValueError(f'地图身份错误：{seq}')
         used.add(seq)
-        e = elements[tuple(entry['osm'])]
-        if e.get('tags', {}).get('name') != entry['osm_name']:
-            raise ValueError(f'地图来源名称变化：{seq}')
-        if entry['basis'] == 'street-midpoint':
+        if entry['basis'] == 'street-reference':
+            if references is None or str(seq) not in references:
+                raise ValueError(f'缺少已核验街道参考点：{seq}')
+            reference = references[str(seq)]
+            lat, lon = street_reference_point(reference, elements)
+            source_ref = reference['source_ref']
+            osm_ref = ['way', source_ref['way_id']] if 'way_id' in source_ref else ['node', source_ref['osm_node']]
+            osm_name = ' / '.join(reference['streets'])
+            note = '附近公共街道参考点，并非景点或店铺入口；请以现场指示为准。'
+        else:
+            osm_ref = entry['osm']
+            e = elements[tuple(osm_ref)]
+            osm_name = entry['osm_name']
+            if e.get('tags', {}).get('name') != osm_name:
+                raise ValueError(f'地图来源名称变化：{seq}')
+        if entry['basis'] == 'street-reference':
+            pass
+        elif entry['basis'] == 'street-midpoint':
             g = e['geometry']
             lengths = [math.hypot((q['lat']-p['lat'])*base.M_PER_DEG_LAT,
                                  (q['lon']-p['lon'])*pr.mlon) for p, q in zip(g, g[1:])]
@@ -141,9 +218,9 @@ def augment(data, config):
         x, y = pr.xy(lat, lon)
         by_seq[seq].update(x=round(x, 2), y=round(y, 2), lat=lat, lon=lon, lp='b',
                           min_zoom=entry.get('min_zoom', 0),
-                          position=dict(basis=entry['basis'], osm=entry['osm'],
-                                        source=dict(title='OpenStreetMap · '+entry['osm_name'],
-                                                    url=f"https://www.openstreetmap.org/{e['type']}/{e['id']}"),
+                          position=dict(basis=entry['basis'], osm=osm_ref,
+                                        source=dict(title='OpenStreetMap · '+osm_name,
+                                                    url=f"https://www.openstreetmap.org/{osm_ref[0]}/{osm_ref[1]}"),
                                         note=note))
         # 无r（热区半径）：浏览地图不被原生定位解析，也不会触发到站。
     labels = []
@@ -159,6 +236,9 @@ def augment(data, config):
                 attribution=dict(zh='地图 © OpenStreetMap 贡献者 · ODbL · 位置仅供浏览',
                                  en='© OpenStreetMap contributors · ODbL · map browsing'))
     photo_path = HERE / manifest['photo_manifest']
+    if getattr(config, 'REQUIRE_MEDIA_INTEGRITY', False) and (
+            not manifest.get('photo_sha256') or sha(photo_path) != manifest['photo_sha256']):
+        raise ValueError('照片清单校验失败')
     photo_manifest = json.loads(photo_path.read_text('utf-8'))
     photos = photo_manifest['photos']
     seen = set()

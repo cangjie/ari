@@ -352,9 +352,10 @@
       '<nav class="theme-shortcuts" aria-label="选择主题">' + M.itineraries.map(function (t) { return '<button class="chip" type="button" data-theme-jump="' + esc(t.id) + '">' + esc(t.name) + '</button>'; }).join('') + '</nav>' + M.itineraries.map(function (theme) {
       var start = st.themeStarts[theme.id] || theme.default_start;
       var v = theme.variants.filter(function (r) { return r.start_station === start; })[0];
+      var starts = M.itinerary_stations.filter(function (s) { return theme.variants.some(function (r) { return r.start_station === s.id; }); });
       return '<article class="theme-card" data-theme="' + esc(theme.id) + '"><h3>' + esc(theme.name) + '</h3><p>' + esc(theme.description) + '</p>' +
-        '<label>地铁起点<select data-theme-start="' + esc(theme.id) + '">' + M.itinerary_stations.map(function (s) {
-          return '<option value="' + esc(s.id) + '"' + (s.id === start ? ' selected' : '') + '>' + esc(s.name + ' · ' + s.lines.join('/') + '号线') + '</option>';
+        '<label>地铁起点<select data-theme-start="' + esc(theme.id) + '"' + (starts.length === 1 ? ' disabled' : '') + '>' + starts.map(function (s) {
+          return '<option value="' + esc(s.id) + '"' + (s.id === start ? ' selected' : '') + '>' + esc(s.name + ' · ' + (s.lines_label || s.lines.join('/') + '号线')) + '</option>';
         }).join("") + '</select></label><p class="theme-summary">步行约 ' + (v.meters / 1000).toFixed(1) + ' 公里 · 约 ' + Math.floor(v.total_minutes / 60) + '小时' + (v.total_minutes % 60) + '分（停留 ' + v.stay_minutes + ' + 步行 ' + v.walk_minutes + ' 分钟，均为估计）</p>' +
         '<p>终点：' + esc(station(v.end_station).name) + (v.start_station === v.end_station ? '（同站往返）' : '') + '</p>' +
         '<button class="btn btn-primary" type="button" data-theme-map="' + esc(theme.id) + '">' + (M.navigation ? '开始GPS导览' : '在互动地图查看线路') + '</button>' +
@@ -373,7 +374,7 @@
     $("collection").hidden = true; $("collection-themes").hidden = false;
     $("view-list").classList.remove("on"); $("view-list").setAttribute("aria-pressed", "false");
     $("view-themes").classList.add("on"); $("view-themes").setAttribute("aria-pressed", "true");
-    $("tour-sub").textContent = "四条主题线路 · 地铁起步";
+    $("tour-sub").textContent = M.itineraries.length + "条主题线路 · 地铁起步";
     renderThemes();
   }
 
@@ -803,6 +804,15 @@
         credit = '<a href="' + esc(source.url) + '" target="_blank" rel="noopener noreferrer">图片出处：' + esc(source.title) + '</a>';
       }
     } catch (e) { /* No clickable credit for an invalid source URL. */ }
+    if (source && source.author) credit += '<br>作者：' + esc(source.author);
+    if (source && source.license) {
+      var license = esc(source.license);
+      try {
+        if (new URL(source.license_url).protocol === 'https:') license = '<a href="' + esc(source.license_url) + '" target="_blank" rel="noopener noreferrer">' + license + '</a>';
+      } catch (e) { /* Display the licence name as text if no safe URL is available. */ }
+      credit += '<br>许可：' + license;
+    }
+    if (source && source.changes) credit += ' · ' + esc(source.changes);
     return '<figure class="tour-photo">' + plate + '<figcaption>' + esc(caption) +
       ' · 资料图' + (credit ? '<br>' + credit : '') + '</figcaption></figure>';
   }
