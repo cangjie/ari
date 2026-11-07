@@ -1347,6 +1347,8 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 - 17张Wikimedia Commons图片经主体、署名与许可核对；用户同意Summer Street Steps、Harbor Way绿地、码头屋顶标牌及缺少可确认授权图片的餐饮节点暂时无图。两条线路各有SVG和1200×1600 PNG。`tour_build.py --museum boston_summer_st --check`及`tour_itinerary_maps.py --museum boston_summer_st --check`可核对数据与路线图。
 - 功能提交 `1bf3c07` 已推送并部署到服务器，两域名浏览器的清单、路线、图片署名和模拟定位验收通过。未修改APK，真机安装、现场GPS与实走尚未验收。相关Excel位于忽略目录 `utils/import_data/exports/波士顿Summer Street周边_双语V3评级.xlsx`，资料与审计详见 `docs/BOSTON_SUMMER_ST_DATA.md`。
 
+**大波士顿 `boston_area` 是与 Summer Street 独立的整理项目**：范围覆盖波士顿社区及 Cambridge、Salem、Concord、Lexington 等周边地区，按七类景点整理。候选清单只是待核实的工作底稿，不代表社区覆盖已完成；不能改动或替代已发布的 `boston_summer_st`。
+
 **19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
 
 照 MingnaCurator 小程序（本机 `~/source/MingnaCurator`，不在本仓库）的「观众互动」做，这一轮只做了文字问答。
@@ -1663,6 +1665,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/llm_guard.py` | 长任务守护：包住命令运行，本任务（provider + stage + museum）一出现失败记录就结束整棵进程树 |
 | `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
 | `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
+| `docs/superpowers/plans/2026-11-06-boston-metro-guide.md` / `docs/superpowers/specs/2026-11-06-boston-metro-guide-design.md` | 大波士顿景点整理的计划与设计范围；与已发布的Summer Street项目分开 |
+| `utils/import_data/boston_area_list.py` / `boston_area_source_capture.py` / `boston_area_v3_source_capture.json` | 大波士顿候选清单、双语审阅工作簿生成器、首轮网页来源采集脚本与状态/标题/哈希记录；报告不保存整页正文，清单尚待逐条核实，不是发布数据 |
 | `utils/import_data/fetch_dims.py` | 第 13 条的尺寸抓取：Wikidata → 本表简介 → Commons → Gemini 免费层（单独一列）。`--tier`、`--dry-run`、`--no-gemini` |
 | `utils/import_data/mfa_wikidata_dims.json` | MFA 名下 4429 个 Wikidata 条目的标签、馆藏号、作者和尺寸原值。跑别的 Tier 直接复用，`--refresh-wd` 才重新拉 |
 | `utils/import_data/dims_s.json` / `dims_a.json` / `dims_gemini_cache.jsonl` | 逐行证据（每个来源试过的结果、原始值、最终采用哪一个）与 Gemini 的缓存 |

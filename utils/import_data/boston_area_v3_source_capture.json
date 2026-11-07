@@ -1,0 +1,1042 @@
+{
+  "captured_on": "2026-11-07",
+  "inventory_file": "boston_area_list.py",
+  "inventory_ids": [
+    "boston_common",
+    "public_garden",
+    "freedom_trail",
+    "massachusetts_state_house",
+    "boston_public_library",
+    "trinity_church",
+    "boston_athenaeum",
+    "museum_of_science",
+    "mfa_boston",
+    "gardner_museum",
+    "fenway_park",
+    "back_bay_fens",
+    "arnold_arboretum",
+    "franklin_park",
+    "franklin_park_zoo",
+    "black_heritage_trail",
+    "nubian_square",
+    "sowa",
+    "castle_island",
+    "rose_kennedy_greenway",
+    "boston_harborwalk",
+    "boston_tea_party_ships",
+    "ica_boston",
+    "boston_childrens_museum",
+    "jfk_library",
+    "emk_institute",
+    "piers_park",
+    "boston_nature_center",
+    "millennium_park",
+    "chestnut_hill_reservoir",
+    "harvard_university",
+    "harvard_art_museums",
+    "harvard_peabody_museum",
+    "mit_campus",
+    "mit_museum",
+    "harvard_square",
+    "longfellow_house",
+    "mount_auburn_cemetery",
+    "pem",
+    "salem_maritime",
+    "house_of_seven_gables",
+    "salem_witch_museum",
+    "salem_willows",
+    "minute_man_nhp",
+    "north_bridge",
+    "battle_road_trail",
+    "concord_museum",
+    "orchard_house",
+    "the_wayside",
+    "walden_pond",
+    "lexington_battle_green",
+    "buckman_tavern",
+    "hancock_clarke_house",
+    "adams_nhp",
+    "union_oyster_house",
+    "mikes_pastry",
+    "regina_pizzeria_north_end",
+    "flour_bakery",
+    "oleana",
+    "turners_seafood_salem",
+    "colonial_inn_dining"
+  ],
+  "sources": [
+    {
+      "id": "source_001",
+      "status": "ok",
+      "url": "https://www.boston.gov/parks/boston-common",
+      "final_url": "https://www.boston.gov/parks/boston-common",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Boston Common | Boston.gov city_hall lock lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "759475aa2ceb383955e903a2126db09a7d5b83202b5935933459fee6ff45547c",
+      "text_sha256": "0f1214cd412e8ad72ed67cde3e736fa6b4367a8443a0fc008cf9eb056ac25002",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_common"
+      ],
+      "extracted_char_count": 4176
+    },
+    {
+      "id": "source_002",
+      "status": "ok",
+      "url": "https://www.boston.gov/parks/public-garden",
+      "final_url": "https://www.boston.gov/parks/public-garden",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Public Garden | Boston.gov city_hall lock lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "a8f87123003b3298354e13d5e4bc750bcffc7ff96d7283b2b0901b19ef5e9614",
+      "text_sha256": "f4d11155062ac2ecd5324eb68b1cf5faa8e9414efd88c37c71230ca9a774cedb",
+      "error": null,
+      "bound_inventory_ids": [
+        "public_garden"
+      ],
+      "extracted_char_count": 4726
+    },
+    {
+      "id": "source_003",
+      "status": "ok",
+      "url": "https://www.thefreedomtrail.org/trail-sites",
+      "final_url": "https://www.thefreedomtrail.org/trail-sites",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Trail Sites | The Freedom Trail",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "028281eccabf9b4db21616c1370426b7d5da7fee755289e248609726137b40e7",
+      "text_sha256": "e7de853545ccf60f0ccbd7c8741fc12afb0c37c1f36a93537bc852acf16de069",
+      "error": null,
+      "bound_inventory_ids": [
+        "freedom_trail"
+      ],
+      "extracted_char_count": 6603
+    },
+    {
+      "id": "source_004",
+      "status": "unavailable",
+      "url": "https://malegislature.gov/StateHouse/Tours",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectTimeout: timed out",
+      "bound_inventory_ids": [
+        "massachusetts_state_house"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_005",
+      "status": "unavailable",
+      "url": "https://www.bpl.org/locations/1/",
+      "final_url": "https://www.bpl.org/locations/1/",
+      "http_status": 403,
+      "content_type": "text/html",
+      "title": "403 Forbidden",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4",
+      "text_sha256": "570481825b6fa423ab84bb1581a756937d7c5080f1c868afdf3b93c8a63bb6a8",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_public_library"
+      ],
+      "extracted_char_count": 27
+    },
+    {
+      "id": "source_006",
+      "status": "ok",
+      "url": "https://trinitychurchboston.org/visit",
+      "final_url": "https://trinitychurchboston.org/visit/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Visit - Trinity Church",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "6632f82528644e844db8cdda4f50932bf2512df22d05304dc8ac5be5ebfdaa62",
+      "text_sha256": "5e93004b80a644674861bfefd224560ee666223600033c8613ecd4795a4a7442",
+      "error": null,
+      "bound_inventory_ids": [
+        "trinity_church"
+      ],
+      "extracted_char_count": 6078
+    },
+    {
+      "id": "source_007",
+      "status": "unavailable",
+      "url": "https://www.bostonathenaeum.org/visit/",
+      "final_url": "https://www.bostonathenaeum.org/visit/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "7d3cfa554d95e8dec04d17f98f20c5e43979f5d362298349a854622f09717d0a",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_athenaeum"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_008",
+      "status": "unavailable",
+      "url": "https://www.mos.org/visit",
+      "final_url": "https://www.mos.org/visit",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "71d02a58470cfb2398275df7299845804c5552dfa13a1e1a71deb8240bb423b5",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "museum_of_science"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_009",
+      "status": "unavailable",
+      "url": "https://www.mfa.org/visit",
+      "final_url": "https://www.mfa.org/visit",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "068db5e63afd5912306d1acc316aa18c1ba250de4633e86d174c6627a408a8a9",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "mfa_boston"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_010",
+      "status": "ok",
+      "url": "https://www.gardnermuseum.org/visit",
+      "final_url": "https://www.gardnermuseum.org/visit",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Prepare for Your Visit | Isabella Stewart Gardner Museum Isabella Stewart Gardner Museum",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "76166e0ac99246172bc9c3f3848c6940b7cbc3a7c1f8ed32d296d1311bd77aeb",
+      "text_sha256": "fc53a8dd3a0cbf094d91ef9e75ed18888acd54f6aefbb7873f58385d185394bc",
+      "error": null,
+      "bound_inventory_ids": [
+        "gardner_museum"
+      ],
+      "extracted_char_count": 11126
+    },
+    {
+      "id": "source_011",
+      "status": "ok",
+      "url": "https://www.mlb.com/redsox/ballpark",
+      "final_url": "https://www.mlb.com/redsox/ballpark",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Fenway Park: Home of the Red Sox | Boston Red Sox close--_R_iulf6_",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "c16e04069776d6834dcbea2db6ea4e1a61a9df8d021ebe60e9eb20483fb8ab4a",
+      "text_sha256": "8344e6d64b7a7d776d504a07a624bdcf712fad4a21ed399c7801d8ee0a029f88",
+      "error": null,
+      "bound_inventory_ids": [
+        "fenway_park"
+      ],
+      "extracted_char_count": 5740
+    },
+    {
+      "id": "source_012",
+      "status": "ok",
+      "url": "https://www.emeraldnecklace.org/park-overview/back-bay-fens/",
+      "final_url": "https://www.emeraldnecklace.org/parks/back-bay-fens",
+      "http_status": 200,
+      "content_type": "text/html",
+      "title": "Back Bay Fens - Emerald Necklace Conservancy",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "ae6769340ed4818c5892b8c7762349180f0ea59cd6c1672d271b773354a442de",
+      "text_sha256": "60d194780193db9dd84dd17f0ecfeb1f6a3344188a8f830a8e5de65835f31757",
+      "error": null,
+      "bound_inventory_ids": [
+        "back_bay_fens"
+      ],
+      "extracted_char_count": 10965
+    },
+    {
+      "id": "source_013",
+      "status": "unavailable",
+      "url": "https://arboretum.harvard.edu/visit/",
+      "final_url": "https://arboretum.harvard.edu/visit/",
+      "http_status": 403,
+      "content_type": "text/html",
+      "title": "Error 403 Forbidden",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "f261423d1da97890ff6bfccd31ff4ee0b74f69351cf75095fbe791cb16cbf5bd",
+      "text_sha256": "6fb2e71c994580125a0c78c10572e9fa61f650a9dc6e0ae644ee0aed49092d1f",
+      "error": null,
+      "bound_inventory_ids": [
+        "arnold_arboretum"
+      ],
+      "extracted_char_count": 33
+    },
+    {
+      "id": "source_014",
+      "status": "ok",
+      "url": "https://www.boston.gov/parks/franklin-park",
+      "final_url": "https://www.boston.gov/parks/franklin-park",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Franklin Park | Boston.gov city_hall lock lock Toggle Oct 16 Oct 13 Oct 11 Oct 8",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "88d241bba990bfd4b0239b77d342766e25efbc07c2330eef5c671175c3a087f2",
+      "text_sha256": "cf505ab015fbf2fe12c79bbb2eb5d09ae23dd16bf18ec8cb992f807b96bf66c3",
+      "error": null,
+      "bound_inventory_ids": [
+        "franklin_park"
+      ],
+      "extracted_char_count": 4973
+    },
+    {
+      "id": "source_015",
+      "status": "ok",
+      "url": "https://www.zoonewengland.org/franklin-park-zoo/",
+      "final_url": "https://www.zoonewengland.org/franklin-park-zoo/",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Plan a Visit to Franklin Park Zoo in Boston, MA | Zoo New England",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "59cc53fce4650c369003965c528042240caf9a788db1f9ac52754ff506958c98",
+      "text_sha256": "1b6db93adf9b3def2cda101765ba9c6ace68f5a26e54841888b77160cc74d243",
+      "error": null,
+      "bound_inventory_ids": [
+        "franklin_park_zoo"
+      ],
+      "extracted_char_count": 13399
+    },
+    {
+      "id": "source_016",
+      "status": "ok",
+      "url": "https://www.nps.gov/boaf/planyourvisit/index.htm",
+      "final_url": "https://www.nps.gov/boaf/planyourvisit/index.htm",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Plan Your Visit - Boston African American National Historic Site (U.S. National Park Service) Lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "eccf7a4462ed3fd0d887f26f13fd4f2b61085953e7be93a10c6b0e903a36444d",
+      "text_sha256": "d6494714a2b31fdbd87628756892dc07b381fb9685b29a92ec48626f51efc413",
+      "error": null,
+      "bound_inventory_ids": [
+        "black_heritage_trail"
+      ],
+      "extracted_char_count": 3831
+    },
+    {
+      "id": "source_017",
+      "status": "ok",
+      "url": "https://www.meetboston.com/explore/neighborhoods/",
+      "final_url": "https://www.meetboston.com/explore/neighborhoods/",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Boston Neighborhood & Region Guide | Authentic Boston Experiences",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "090b9967ba50824d327160f32fa64cd56bc9d0b4d6516d9f113477910a7fbdff",
+      "text_sha256": "d3231713c1aedbcc74150b33ed35f7ad343f51f79326e189260e7064c96a11a8",
+      "error": null,
+      "bound_inventory_ids": [
+        "nubian_square"
+      ],
+      "extracted_char_count": 18605
+    },
+    {
+      "id": "source_018",
+      "status": "ok",
+      "url": "https://www.sowaboston.com/",
+      "final_url": "https://www.sowaboston.com/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "SoWa Boston | Explore Your Creative Side. Explore SoWa.",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "fafd19a41f6a69b8ab44fcaf279916547f71b1d3267fe67d4550b296760424e2",
+      "text_sha256": "8ca322cf49599e7a0820d24ae7f3e57d142277513804feaf4b0cf5fb66df1061",
+      "error": null,
+      "bound_inventory_ids": [
+        "sowa"
+      ],
+      "extracted_char_count": 2891
+    },
+    {
+      "id": "source_019",
+      "status": "unavailable",
+      "url": "https://www.boston.gov/parks/castle-island",
+      "final_url": "https://www.boston.gov/parks/castle-island",
+      "http_status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "404 Not Found | Boston.gov",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "c7e073f12b3b74ea1c6b5b30ca1e247ec848a6e930cd6cbd4ad65a06b143f522",
+      "text_sha256": "f4f6e26d5f3159280962985b7c4cec0a02a661206b61259b661ab8680f3e5665",
+      "error": null,
+      "bound_inventory_ids": [
+        "castle_island"
+      ],
+      "extracted_char_count": 363
+    },
+    {
+      "id": "source_020",
+      "status": "ok",
+      "url": "https://www.rosekennedygreenway.org/overview/",
+      "final_url": "https://www.rosekennedygreenway.org/overview/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Overview - The Rose Kennedy Greenway",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "f66cf85e7f80085a3dc322c83a9759dd87326ebb54a83ef6580ff1e094dee7b5",
+      "text_sha256": "d77eede1376bf4ec20385c6f53ac0084ff0e237aabbb9a09382be0b35930ff2d",
+      "error": null,
+      "bound_inventory_ids": [
+        "rose_kennedy_greenway"
+      ],
+      "extracted_char_count": 3708
+    },
+    {
+      "id": "source_021",
+      "status": "unavailable",
+      "url": "https://www.boston.gov/departments/environment/harborwalk",
+      "final_url": "https://www.boston.gov/departments/environment/harborwalk",
+      "http_status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "404 Not Found | Boston.gov",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "cab513970b9c009256981545fe14980f4cbe76048f0560fc568e21660538734b",
+      "text_sha256": "f4f6e26d5f3159280962985b7c4cec0a02a661206b61259b661ab8680f3e5665",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_harborwalk"
+      ],
+      "extracted_char_count": 363
+    },
+    {
+      "id": "source_022",
+      "status": "ok",
+      "url": "https://www.bostonteapartyship.com/",
+      "final_url": "https://www.bostonteapartyship.com/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Boston Tea Party Ships & Museum | #1 Best Patriotic Attraction",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "9b4e976c77c4c5c94ce88ea1e773a1fd0f1f3f82b1c9ac7605b8dd9a9d14baf6",
+      "text_sha256": "dfb9b0052ed51ad6d3b06f96e1880cfc5c7e1dae1e4bae6b1050e58978d1e49d",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_tea_party_ships"
+      ],
+      "extracted_char_count": 16632
+    },
+    {
+      "id": "source_023",
+      "status": "ok",
+      "url": "https://www.icaboston.org/visit/",
+      "final_url": "https://www.icaboston.org/visit/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Plan Your Visit to ICA Boston",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "d65bfac7666defaa340b7e3c7983d2a35065ecccd361e64047f9cd9560636933",
+      "text_sha256": "98a211ad9996544444271e1a4b26cf2cfd44d2e5e239e6b5ff5e88aad1ca4ad6",
+      "error": null,
+      "bound_inventory_ids": [
+        "ica_boston"
+      ],
+      "extracted_char_count": 15917
+    },
+    {
+      "id": "source_024",
+      "status": "unavailable",
+      "url": "https://bostonchildrensmuseum.org/visit/",
+      "final_url": "https://bostonchildrensmuseum.org/visit/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "957e7d5d471060ec2ee1db96e426fe3258e9ab29f163f1c104c4733d329755d8",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_childrens_museum"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_025",
+      "status": "unavailable",
+      "url": "https://www.jfklibrary.org/visit-museum",
+      "final_url": "https://www.jfklibrary.org/visit-museum",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "379f6355f6fb305e02c91fedd4b05e9c1e4be0ae335063cb88d799d3c26760b3",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "jfk_library"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_026",
+      "status": "unavailable",
+      "url": "https://www.emkinstitute.org/visit",
+      "final_url": "https://www.emkinstitute.org/visit",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "cea2dfcb2c72319463b39899e3749bfb340c6e7bfef66ed282cae46019dcdb86",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "emk_institute"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_027",
+      "status": "unavailable",
+      "url": "https://www.pierspark.org/",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectError: [Errno 8] nodename nor servname provided, or not known",
+      "bound_inventory_ids": [
+        "piers_park"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_028",
+      "status": "unavailable",
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/boston-nature-center",
+      "final_url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/boston-nature-center",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Attention Required! | Cloudflare",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "e9d53990c54fc7787755b16e9b86bd33566eaf2cf9546636dfa522c1d99af9ff",
+      "text_sha256": "0c1ac83683611a5bc8857b4b8bba3b9fb27ee0124a0f9ca0e8e4ad7934de5721",
+      "error": null,
+      "bound_inventory_ids": [
+        "boston_nature_center"
+      ],
+      "extracted_char_count": 784
+    },
+    {
+      "id": "source_029",
+      "status": "unavailable",
+      "url": "https://www.boston.gov/parks/millennium-park",
+      "final_url": "https://www.boston.gov/parks/millennium-park",
+      "http_status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "404 Not Found | Boston.gov",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "bcbcd7e5114e03e0c723cb63a5c195d4e723c644bf2206891b19cd5e60d16699",
+      "text_sha256": "f4f6e26d5f3159280962985b7c4cec0a02a661206b61259b661ab8680f3e5665",
+      "error": null,
+      "bound_inventory_ids": [
+        "millennium_park"
+      ],
+      "extracted_char_count": 363
+    },
+    {
+      "id": "source_030",
+      "status": "unavailable",
+      "url": "https://www.mass.gov/locations/chestnut-hill-reservoir",
+      "final_url": "https://www.mass.gov/locations/chestnut-hill-reservoir",
+      "http_status": 403,
+      "content_type": "text/html",
+      "title": "Not allowed | Mass Gov",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "e7a4ed44c0fa46e2678341d540f8ae44ce404a2f73edf19d7d6c5d9910410977",
+      "text_sha256": "080a654f39beb57add83005f93c158734471b42433d79c1c012b86d3aeb85c47",
+      "error": null,
+      "bound_inventory_ids": [
+        "chestnut_hill_reservoir"
+      ],
+      "extracted_char_count": 169
+    },
+    {
+      "id": "source_031",
+      "status": "ok",
+      "url": "https://www.harvard.edu/visit/",
+      "final_url": "https://www.harvard.edu/visit/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Visit - Harvard University",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "1e583f14135aac37a742a167c6036750410e8866dd6922e77dbcc4e286c53d2a",
+      "text_sha256": "252d697a988e3b038dcc13823fd80eb712b07ce36368c9c1e0e7921f5fd23d1b",
+      "error": null,
+      "bound_inventory_ids": [
+        "harvard_university"
+      ],
+      "extracted_char_count": 9502
+    },
+    {
+      "id": "source_032",
+      "status": "ok",
+      "url": "https://harvardartmuseums.org/visit",
+      "final_url": "https://harvardartmuseums.org/visit",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Harvard Art Museums",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "8ff931643d897dfb66917543c882540ff5d8bceab0aac20cfeb6a158f8245597",
+      "text_sha256": "b90606badb6157ed28793dfba06d49bbf55433c74b1080748bd9ea30325da7e2",
+      "error": null,
+      "bound_inventory_ids": [
+        "harvard_art_museums"
+      ],
+      "extracted_char_count": 3724
+    },
+    {
+      "id": "source_033",
+      "status": "unavailable",
+      "url": "https://hmnh.harvard.edu/visit",
+      "final_url": "https://hmnh.harvard.edu/visit",
+      "http_status": 403,
+      "content_type": "text/html",
+      "title": "Access Denied",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "5953483869ac62a472f963bf60d53b108ce2d4adaeedf1760f0851015b18a85f",
+      "text_sha256": "13129b79caf786eb969a513c82c960f7e548e10d07b2afda2e65420f8f51993c",
+      "error": null,
+      "bound_inventory_ids": [
+        "harvard_peabody_museum"
+      ],
+      "extracted_char_count": 215
+    },
+    {
+      "id": "source_034",
+      "status": "unavailable",
+      "url": "https://visit.mit.edu/",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectError: [Errno 8] nodename nor servname provided, or not known",
+      "bound_inventory_ids": [
+        "mit_campus"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_035",
+      "status": "unavailable",
+      "url": "https://mitmuseum.mit.edu/visit",
+      "final_url": "https://mitmuseum.mit.edu/visit",
+      "http_status": 429,
+      "content_type": "text/html; charset=utf-8",
+      "title": "Vercel Security Checkpoint",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "7b0e6e5d0518e8bf54b6a6a72749de2d9735ddd7042ab3a6ec7dcba993c1d8e2",
+      "text_sha256": "7ffe3682ae31dcd27dbac4e9a8819a26bccc6f3b43c9899432cf9330e2fda650",
+      "error": null,
+      "bound_inventory_ids": [
+        "mit_museum"
+      ],
+      "extracted_char_count": 167
+    },
+    {
+      "id": "source_036",
+      "status": "unavailable",
+      "url": "https://cambridgeusa.org/neighborhood/harvard-square/",
+      "final_url": "https://cambridgeusa.org/neighborhood/harvard-square/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "efe53b1d64a306edfca710b99ad39f6efab433d42c80136dd33c4e5310b56d81",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "harvard_square"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_037",
+      "status": "ok",
+      "url": "https://www.nps.gov/long/planyourvisit/index.htm",
+      "final_url": "https://www.nps.gov/long/planyourvisit/index.htm",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Plan Your Visit - Longfellow House Washington's Headquarters National Historic Site (U.S. National Park Service) Lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "942fcdc13d9a85a7305744ed676881e658c78340631cc63dbc38987d66efc268",
+      "text_sha256": "2a19ae6764348f7dca072e5f2ba78993430cde350bc7df2748f1c83ae5bcaaa4",
+      "error": null,
+      "bound_inventory_ids": [
+        "longfellow_house"
+      ],
+      "extracted_char_count": 2542
+    },
+    {
+      "id": "source_038",
+      "status": "unavailable",
+      "url": "https://mountauburn.org/visit/",
+      "final_url": "https://mountauburn.org/visit/",
+      "http_status": 403,
+      "content_type": "text/html; charset=utf-8",
+      "title": "403 - Forbidden",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "589cbf23a17ae9c91b0262a1754dc17511f1d36ae9fe1fcdcdb48b6f7824c90f",
+      "text_sha256": "0b881203b9be2d070891d30437eb3aea3bbd4bed7b0d407c9146a7e4aee05803",
+      "error": null,
+      "bound_inventory_ids": [
+        "mount_auburn_cemetery"
+      ],
+      "extracted_char_count": 68
+    },
+    {
+      "id": "source_039",
+      "status": "ok",
+      "url": "https://pem.org/visit",
+      "final_url": "https://pem.org/visit",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Peabody Essex Museum Hours, Admissions, and Locations Facebook Pinterest Instagram YouTube",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "f3ac0395093e3bcb4e453bd6cfc75d6806d2df8b5d4f564f9bbdc70b3ec7c273",
+      "text_sha256": "1b995fa53642a3273e552b49f1034a4d52352a4613f90ec8b1d2a749fb3b6087",
+      "error": null,
+      "bound_inventory_ids": [
+        "pem"
+      ],
+      "extracted_char_count": 14928
+    },
+    {
+      "id": "source_040",
+      "status": "ok",
+      "url": "https://www.nps.gov/sama/planyourvisit/index.htm",
+      "final_url": "https://www.nps.gov/sama/planyourvisit/index.htm",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Plan Your Visit - Salem Maritime National Historical Park (U.S. National Park Service) Lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "a00f823839724bb7cf6656ec7b1ac11924c8a3549f86929a7d22d52730580976",
+      "text_sha256": "dea68ccb4702acbdb608a9bdcbaaa9df22c5ebfb5dc36243244ebb28fd2515ac",
+      "error": null,
+      "bound_inventory_ids": [
+        "salem_maritime"
+      ],
+      "extracted_char_count": 2424
+    },
+    {
+      "id": "source_041",
+      "status": "ok",
+      "url": "https://7gables.org/visit/",
+      "final_url": "https://7gables.org/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "The House of the Seven Gables | Salem MA Museum",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "d29f13d8d92189876b6071be704b60152295f39314664ea3397b2339ac9b8428",
+      "text_sha256": "719b4d8345a752cc92c6d234505f62ea53e234e2d4bd9aebe14bb0cb0d2455c8",
+      "error": null,
+      "bound_inventory_ids": [
+        "house_of_seven_gables"
+      ],
+      "extracted_char_count": 6036
+    },
+    {
+      "id": "source_042",
+      "status": "ok",
+      "url": "https://salemwitchmuseum.com/visit/",
+      "final_url": "https://salemwitchmuseum.com/visit-about-the-salem-witch-museum/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Visit the Salem Witch Museum | About the Museum",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "9f9d05792e584733e10d8f08fd162d0bded04c47bf2e52112f44bcf8499e7f12",
+      "text_sha256": "2d309bb67ba130c30390c88b2f4be9225d6fd7fa6151513821b772b750f839d2",
+      "error": null,
+      "bound_inventory_ids": [
+        "salem_witch_museum"
+      ],
+      "extracted_char_count": 5815
+    },
+    {
+      "id": "source_043",
+      "status": "unavailable",
+      "url": "https://www.salemma.gov/parks-rec/pages/salem-willows-park",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectTimeout: timed out",
+      "bound_inventory_ids": [
+        "salem_willows"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_044",
+      "status": "ok",
+      "url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm",
+      "final_url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Places To Go - Minute Man National Historical Park (U.S. National Park Service) Lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "95f380084ec2240559ca8af958fd9ee41fbc55a345aedfedfdf6f8806b27c7bb",
+      "text_sha256": "bbf35d94d934f5007c614c96c8b4ea5bf58b2d203bd6328117c7505fb203e39b",
+      "error": null,
+      "bound_inventory_ids": [
+        "minute_man_nhp",
+        "north_bridge",
+        "battle_road_trail",
+        "the_wayside"
+      ],
+      "extracted_char_count": 5901
+    },
+    {
+      "id": "source_045",
+      "status": "unavailable",
+      "url": "https://concordmuseum.org/visit/",
+      "final_url": "https://concordmuseum.org/visit/plan-your-visit/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "e5645794e1411a7df33f2a6fa6421ecd70369f6a1809500a6e6d1b47cc2561e9",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "concord_museum"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_046",
+      "status": "ok",
+      "url": "https://louisamayalcott.org/visit",
+      "final_url": "https://louisamayalcott.org/visit",
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "title": "Visit",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "b9acbd0c907232ad8f1ed16e6b7ef8f42f2b7130ab8a6452274bfa66474c8865",
+      "text_sha256": "66c1fc38a358999358e8979ae46eaba4c83e09edcb0c9a2ff31cf3564da2242d",
+      "error": null,
+      "bound_inventory_ids": [
+        "orchard_house"
+      ],
+      "extracted_char_count": 8929
+    },
+    {
+      "id": "source_047",
+      "status": "unavailable",
+      "url": "https://www.mass.gov/locations/walden-pond-state-reservation",
+      "final_url": "https://www.mass.gov/locations/walden-pond-state-reservation",
+      "http_status": 403,
+      "content_type": "text/html",
+      "title": "Not allowed | Mass Gov",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "606aea31010b8a34196e419db1f81b5dff859571e990887aea4c0d4e6b4fb81b",
+      "text_sha256": "77488ecd3e2869ba81d229ce8bd67cb865a8169cb13256d0a42c2fe5b9dce481",
+      "error": null,
+      "bound_inventory_ids": [
+        "walden_pond"
+      ],
+      "extracted_char_count": 169
+    },
+    {
+      "id": "source_048",
+      "status": "unavailable",
+      "url": "https://www.lexingtonma.gov/1135/Lexington-Battle-Green",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectTimeout: timed out",
+      "bound_inventory_ids": [
+        "lexington_battle_green"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_049",
+      "status": "ok",
+      "url": "https://lexingtonhistory.org/visit/",
+      "final_url": "https://www.lexingtonhistory.org/historicsites",
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "title": "Historic Sites Overview — Lexington History Museums",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "063ace5dc7366fa67e383cb2ba216d6e1ed39cf7546f1b335208b65ad01f243a",
+      "text_sha256": "3c76a3f554d577e5658d78d2b65a9e91aec187602a5bd6ddea3c3ceaf8c4709b",
+      "error": null,
+      "bound_inventory_ids": [
+        "buckman_tavern",
+        "hancock_clarke_house"
+      ],
+      "extracted_char_count": 7089
+    },
+    {
+      "id": "source_050",
+      "status": "ok",
+      "url": "https://www.nps.gov/adam/planyourvisit/index.htm",
+      "final_url": "https://www.nps.gov/adam/planyourvisit/index.htm",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "title": "Plan Your Visit - Adams National Historical Park (U.S. National Park Service) Lock",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "c8e7f9238d6652432b9c1aef36770cd3c8ece299e31319ab3b937c256446fdd2",
+      "text_sha256": "bde2c25f293ee5c19fecb3b93e542100d8a345a9390a140b72f47da2c1b8a387",
+      "error": null,
+      "bound_inventory_ids": [
+        "adams_nhp"
+      ],
+      "extracted_char_count": 2354
+    },
+    {
+      "id": "source_051",
+      "status": "unavailable",
+      "url": "https://www.unionoysterhouse.com/",
+      "final_url": null,
+      "http_status": null,
+      "content_type": null,
+      "title": null,
+      "retrieval_method": "http_request_error",
+      "raw_sha256": null,
+      "text_sha256": null,
+      "error": "ConnectTimeout: timed out",
+      "bound_inventory_ids": [
+        "union_oyster_house"
+      ],
+      "extracted_char_count": 0
+    },
+    {
+      "id": "source_052",
+      "status": "ok",
+      "url": "https://www.mikespastry.com/",
+      "final_url": "https://www.mikespastry.com/",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Mike's Pastry | Authentic Italian Pastries in Boston",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "c1518dde574df92a790275619bc9ec07577e0c9eacede0de66459b07627f63a4",
+      "text_sha256": "27b8a155aa44ad18780d30c987ae9c06a2a474ce93c095e394173f2e53b030ab",
+      "error": null,
+      "bound_inventory_ids": [
+        "mikes_pastry"
+      ],
+      "extracted_char_count": 1933
+    },
+    {
+      "id": "source_053",
+      "status": "ok",
+      "url": "https://www.reginapizzeria.com/",
+      "final_url": "https://www.reginapizzeria.com/",
+      "http_status": 200,
+      "content_type": "text/html",
+      "title": "Home | Regina Pizzeria, Boston's Brick Oven Pizza",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "2960bf1de1e9fca0f59780750257ea23dbbff70a75c849e984026152301cebbe",
+      "text_sha256": "23cdb2eaddddd8a6b284f49b2b0ca6205f066044d38364612f0427edcd89abc4",
+      "error": null,
+      "bound_inventory_ids": [
+        "regina_pizzeria_north_end"
+      ],
+      "extracted_char_count": 4989
+    },
+    {
+      "id": "source_054",
+      "status": "unavailable",
+      "url": "https://flourbakery.com/locations",
+      "final_url": "https://www.flourbakery.com/locations",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "title": "404 | Page not found",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "d16039335f4a9ae8053ddf042b76b9ee15eea0ab02266f068c48d6ab389b4b62",
+      "text_sha256": "82c0ff2ea30f38353190ca7beadc41341355c2e533eca83945f5fdee03e124fa",
+      "error": null,
+      "bound_inventory_ids": [
+        "flour_bakery"
+      ],
+      "extracted_char_count": 353
+    },
+    {
+      "id": "source_055",
+      "status": "ok",
+      "url": "https://www.oleanarestaurant.com/",
+      "final_url": "https://www.oleanarestaurant.com/",
+      "http_status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "title": "Oleana Restaurant",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "bc2f5474360f83a6cfc84e8b7ac99e0c1f679abdb4326b6f18657c5cc218ed7d",
+      "text_sha256": "41cd44c2fcce32675911c0f41edbaac3f2a3e5f8e5bff7b73f7fbea11989d8f9",
+      "error": null,
+      "bound_inventory_ids": [
+        "oleana"
+      ],
+      "extracted_char_count": 1396
+    },
+    {
+      "id": "source_056",
+      "status": "unavailable",
+      "url": "https://turners-seafood.com/",
+      "final_url": "https://turners-seafood.com/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "e815bf3ffe22d394f413faf652c190b09c4400a5d92bde1bc2f0de26e3089f81",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "turners_seafood_salem"
+      ],
+      "extracted_char_count": 16
+    },
+    {
+      "id": "source_057",
+      "status": "unavailable",
+      "url": "https://www.concordscolonialinn.com/dining/",
+      "final_url": "https://www.concordscolonialinn.com/dining/",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "retrieval_method": "http_html_text",
+      "raw_sha256": "8fff00c1c7056fc7552c4ddc68ce6ac168e6390a2f9a38c105920aa05400c7d1",
+      "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "error": null,
+      "bound_inventory_ids": [
+        "colonial_inn_dining"
+      ],
+      "extracted_char_count": 16
+    }
+  ]
+}
