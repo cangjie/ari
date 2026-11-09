@@ -1,0 +1,1056 @@
+{
+  "request_sha256": "a02ed6bbbe1dd1a36d0867a32303986957ba2acf6027dd5f10663f69348f6618",
+  "model": "claude-haiku-5-5",
+  "effort": "medium",
+  "batch": 5,
+  "items": [
+    {
+      "seq": 1,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "1-0",
+        "1-1200",
+        "1-2400",
+        "1-3600"
+      ],
+      "reason": "简介中的历史公园、市区公共绿地、可在市区散步、冬季滑冰与夏季戏水池等设施均有原文支持；“查看现场季节性设施通知”是提示语，不构成事实断言。地址“139 Tremont Street, Boston, MA 02111”与原文一致（1-3600）。",
+      "id": "boston_common"
+    },
+    {
+      "seq": 2,
+      "supported": false,
+      "address_supported": true,
+      "passage_ids": [
+        "2-1200",
+        "2-2400",
+        "2-3600"
+      ],
+      "reason": "“早期美国公共植物园”“景观步道”“纪念碑”均有原文支持（1-2200 所在段落称其为美国第一座公共植物园，2-2400 提到蜿蜒步道、纪念碑与喷泉、天鹅船）。但原文未提及“季节性景点”（seasonal attractions），天鹅船等也未被描述为季节性项目，该表述缺乏依据，建议删去“seasonal”或改为“天鹅船等景点”。地址“4 Charles Street, Boston, MA 02116”与原文一致（2-3600）。",
+      "id": "public_garden"
+    },
+    {
+      "seq": 3,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "3-0",
+        "3-1200"
+      ],
+      "reason": "原文为 Freedom Trail 的历史地点列表（如 Boston Common、State House、Old North Church 等），支持“波士顿的历史路线及沿线历史景点”。提醒各景点单独核实开放与门票的内容属于建议性文字。地址字段写明为“路线沿线，非单一地址”，原文显示各景点位于波士顿，故以城市层面的“Boston”获得支持。",
+      "id": "freedom_trail"
+    },
+    {
+      "seq": 6,
+      "supported": false,
+      "address_supported": true,
+      "passage_ids": [
+        "6-0",
+        "6-4800",
+        "6-6000"
+      ],
+      "reason": "原文支持“礼拜、音乐会、导览等活动与访问相关”“访客需维护教堂的神圣性”以及周日礼拜时间表，因此“礼拜和活动安排可能影响访客参观”成立。但原文未描述该教堂的历史（仅有 History 导航链接），“历史性教堂（Historic church）”没有直接来源支持，需删去或补充依据。地址“206 Clarendon Street, Boston, MA 02116”与原文一致（6-4800、6-6000）。",
+      "id": "trinity_church"
+    },
+    {
+      "seq": 8,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "8-0",
+        "8-3600"
+      ],
+      "reason": "原文支持这是波士顿的科学博物馆，有展厅、门票（Get Tickets）和开放时间（每日 9:00–5:00，见 8-3600）。简介中“以当前展览与票价为准”属于提示语。地址仅写“Boston（门牌待核）”，原文中没有任何街道门牌地址，只能支持城市层面的“Boston”（8-4800 的版权信息），因此完整地址未被支持，不应发布。",
+      "id": "museum_of_science"
+    },
+    {
+      "seq": 9,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "9-0",
+        "9-2400",
+        "9-3600",
+        "9-9600"
+      ],
+      "reason": "简介中的博物馆身份、票务/开放时间、展览信息均有原文支持，9-3600 的 Getting Here/Directions 支持交通指引。地址 465 Huntington Avenue, Boston, MA 02115 见于 9-9600（Huntington Ave 与 Huntington Avenue 为同一街道）。",
+      "id": "mfa_boston"
+    },
+    {
+      "seq": 10,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "10-0",
+        "10-2400",
+        "10-7200",
+        "10-10800"
+      ],
+      "reason": "简介中的 Isabella Stewart Gardner 收藏与展示见 10-0、10-7200；票务建议（提前购票、按时段入场）见 10-2400。地址 25 Evans Way, Boston 见 10-2400 与 10-10800（邮编 02115）。",
+      "id": "gardner_museum"
+    },
+    {
+      "seq": 11,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "11-0",
+        "11-3600",
+        "11-4800"
+      ],
+      "reason": "“Home of the Red Sox”与“America's Most Beloved Ballpark”见 11-0；游览、无障碍和活动场地信息见 11-3600。地址 4 Jersey Street, Boston, MA 02215 见 11-4800（Jersey St 即 Jersey Street）。",
+      "id": "fenway_park"
+    },
+    {
+      "seq": 12,
+      "supported": false,
+      "address_supported": true,
+      "passage_ids": [
+        "12-0",
+        "12-4800",
+        "12-7200"
+      ],
+      "reason": "“Emerald Necklace 内的城市公园”、步道、篮球场、玫瑰园等设施有原文支持（12-0、12-4800、12-7200）。但“查看公园公告”以及“施工”信息在所有资料中均未出现，简介未被全部支持。地址“Fenway area”不是街道地址，只是街区范围；12-0 与 12-4800 说明公园位于 Fenway 一带，可视为区域层面的支持。",
+      "id": "back_bay_fens"
+    },
+    {
+      "seq": 14,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "14-0",
+        "14-1200",
+        "14-3600",
+        "14-4800"
+      ],
+      "reason": "波士顿最大开放空间、跨越 Roxbury、Dorchester、Jamaica Plain、Mattapan、Roslindale 等社区，见 14-0 与 14-3600；步道、运动场、活动预订及市政府信息渠道见 14-1200、14-3600。地址 1 Franklin Park Road, Boston, MA 02121 见 14-0 与 14-4800。",
+      "id": "franklin_park"
+    },
+    {
+      "seq": 15,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "15-0",
+        "15-7200",
+        "15-10800"
+      ],
+      "reason": "Passages identify Franklin Park Zoo (Zoo New England) and list its address as 1 Franklin Park Rd. Boston, MA 02121 (15-10800). Seasonal habitats such as Aussie Aviary, Butterfly Hollow and Gorilla Grove are marked seasonal (15-7200), and the page notes a delayed opening and hours (15-0, 15-10800). The advice to check the operator for admission and seasonal operations is consistent with these passages.",
+      "id": "franklin_park_zoo"
+    },
+    {
+      "seq": 16,
+      "supported": false,
+      "address_supported": false,
+      "passage_ids": [
+        "16-1200",
+        "17-7200"
+      ],
+      "reason": "引用了不存在的原文片段。 16-1200 describes the Black Heritage Trail as an approximately 1.5 mile trail linking sites on the North Slope of Beacon Hill, with self-guided and ranger-guided tours and no fee. It also notes varied accessibility. 'Beacon Hill' as the address is a neighborhood-level location, supported by 16-1200. It is not a street address.",
+      "id": "black_heritage_trail"
+    },
+    {
+      "seq": 17,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "17-1200"
+      ],
+      "reason": "17-1200 places Nubian Square within the Roxbury section and describes it as a dynamic intersection of public art, retail shops, bookstores, cafes and restaurants. This supports the Roxbury location and the public-art/business context. 'Public neighborhood center' is a looser characterization. Events are not described, which matches the 'verify individually' caveat.",
+      "id": "nubian_square"
+    },
+    {
+      "seq": 18,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "18-0",
+        "18-1200"
+      ],
+      "reason": "18-0 describes SoWa as an Art + Design district in the South End with galleries, studios, shops and a Sunday open market from May to October, plus First Fridays. This supports the description, including that market and gallery access varies by schedule. 18-1200 lists the address as 530 Harrison Ave, Boston, MA 02118, matching the item address.",
+      "id": "sowa"
+    },
+    {
+      "seq": 20,
+      "supported": false,
+      "address_supported": true,
+      "passage_ids": [
+        "20-0",
+        "20-2400",
+        "20-3600"
+      ],
+      "reason": "Description is partly supported: 20-0 describes a public green space in the heart of Boston run by the Greenway Conservancy, and 20-2400 lists Public Art, Food Trucks, Fountains and a Calendar. However, no passage mentions 'markets', so that part of the description is not supported. Address 'Downtown Boston' is a general area supported by 'heart of Boston' in 20-0. 20-3600 gives only the Conservancy office address (185 Kneeland Street), not the park's route. The bracketed note that the route range is still to be confirmed is not resolved by any passage.",
+      "id": "rose_kennedy_greenway"
+    },
+    {
+      "seq": 21,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "21-7200",
+        "21-8400"
+      ],
+      "reason": "Passages describe Harborwalk as a continuous public walkway built in segments by waterfront developers, running through East Boston, Charlestown, North End, Downtown, South Boston and Dorchester. The address 'Multiple Boston waterfront segments' matches these neighborhoods. The advice to verify continuity, construction and access is guidance, not a factual claim, so it is not counted against support.",
+      "id": "boston_harborwalk"
+    },
+    {
+      "seq": 22,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "22-0",
+        "22-2400",
+        "22-1200"
+      ],
+      "reason": "The museum is described as an interactive, multi-sensory venue focused on the Boston Tea Party, and the operator's site lists tour hours and tickets. The address 306 Congress St. appears in the operator's footer text.",
+      "id": "boston_tea_party_ships"
+    },
+    {
+      "seq": 23,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "23-0",
+        "23-3600",
+        "23-15600"
+      ],
+      "reason": "The ICA is described as Boston's home for new art, located on Boston Harbor in the Seaport district, and its visitor pages list current exhibitions and policies. The address 25 Harbor Shore Drive, Boston, MA 02210 is given in the Directions section.",
+      "id": "ica_boston"
+    },
+    {
+      "seq": 28,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "28-0",
+        "28-1200"
+      ],
+      "reason": "The page is a Mass Audubon Boston Nature Center and Wildlife Sanctuary page with trails, programs and admissions information. The address 500 Walk Hill Street, Mattapan, MA 02126 is listed in the contact section.",
+      "id": "boston_nature_center"
+    },
+    {
+      "seq": 29,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "29-0",
+        "29-1200",
+        "29-2400"
+      ],
+      "reason": "Boston.gov's Parks and Recreation project page describes Millennium Park as a destination park along the Charles River in West Roxbury, with a playground, soccer fields, walking loops and a canoe launch. The page is a city project page, supporting 'City park'. The address/location 'West Roxbury' is confirmed by the page's Location field (02132).",
+      "id": "millennium_park"
+    },
+    {
+      "seq": 31,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "31-4800",
+        "31-6000"
+      ],
+      "reason": "简介中的“大学校园与历史建筑群”有依据：31-4800 称 “Tour our historic campus”（参观我们的历史校园）。“请另行核实公共区域与教学楼的开放情况”是访问建议，不是事实性陈述。地址“Campus area; address to verify”不是具体地址，资料中也没有哈佛校园的街道地址（31-4800 只提到 Visitor Center 与 Maps and directions，未给出地址），因此地址未被支持。",
+      "id": "harvard_university"
+    },
+    {
+      "seq": 32,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "32-0",
+        "32-1200",
+        "32-2400"
+      ],
+      "reason": "简介被支持：32-0 说明这是 Harvard Art Museums，免费入场并提示在 Visitor Services 登记；32-1200 含 Getting Here（交通方式）和 Happening next（活动）信息，与“参考访客页面查看入场、交通和活动”一致。地址 32 Quincy St, Cambridge 被 32-2400 的 “32 Quincy Street Cambridge, MA 02138” 直接支持。",
+      "id": "harvard_art_museums"
+    },
+    {
+      "seq": 34,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "34-0",
+        "34-1200",
+        "34-4800"
+      ],
+      "reason": "简介基本被支持：34-0 说明 MIT 位于 Cambridge，并在 Charles River 对岸；34-0 和 34-1200 说明校园参观和自助步行游等开放方式。34-4800 提到 Killian Court 与 Charles River 景观，并列出 Koch Institute Public Galleries 等公共展馆。“不同区域（户外、建筑、展览）开放方式不同”是对上述多种参观方式的概括性提示，资料不完全直接陈述，但不构成错误。地址 77 Massachusetts Ave, Cambridge 被 34-0（主入口 77 Massachusetts Avenue）和 34-6000（77 Massachusetts Avenue, Cambridge, MA）支持。",
+      "id": "mit_campus"
+    },
+    {
+      "seq": 37,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "37-0",
+        "37-1200"
+      ],
+      "reason": "简介被支持：37-0 标明这是美国国家公园管理局（U.S. National Park Service）的 Longfellow House–Washington's Headquarters National Historic Site，位于 Cambridge；37-1200 说明室内导览“seasonally”（按季节）提供。“核实预约和季节性开放”属于访问建议，资料中有季节性导览的依据。地址 105 Brattle St, Cambridge 被 37-1200 的 “105 Brattle Street Cambridge, MA 02138” 直接支持。",
+      "id": "longfellow_house"
+    },
+    {
+      "seq": 39,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "39-4800",
+        "39-7200",
+        "39-9600",
+        "39-1200"
+      ],
+      "reason": "简介被支持：39-1200 说明 PEM 有历史房屋（Historic Houses）藏品；39-7200 指出 Yin Yu Tang 参观需要 “Timed tickets required”（需要定时票）；39-9600 说明 Ropes Mansion 也需要额外定时票，并说明 PEM 的博物馆性质与展览。“查看当前展览、开放时间和交通”是访问建议。地址 161 Essex St, Salem 被 39-4800 的 “161 Essex Street, Salem, MA 01970” 直接支持。",
+      "id": "pem"
+    },
+    {
+      "seq": 40,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "40-0",
+        "40-1200"
+      ],
+      "reason": "资料称该地为美国国家公园管理局管理的、记录萨勒姆海事历史的历史地点，并提到滨水区、历史建筑和市中心游客中心，简介的事实部分有依据。“分别核实游客中心、码头和建筑开放情况”是提醒用语，不是事实陈述，资料中也未提及码头。地址“Salem waterfront”与“Salem waterfront”和邮寄地址 160 Derby Street 相符。",
+      "id": "salem_maritime"
+    },
+    {
+      "seq": 41,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "41-1200",
+        "41-4800",
+        "41-6000"
+      ],
+      "reason": "资料称其为位于萨勒姆港（Salem Harbor）边的历史住宅并已开放为博物馆，简介的历史住宅/博物馆及滨水性质有依据；“联系运营方确认导览、门票和场地开放”属于提醒。资料多处列明地址为 115 Derby St, Salem, MA 01970。",
+      "id": "house_of_seven_gables"
+    },
+    {
+      "seq": 42,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "42-0",
+        "42-1200",
+        "42-4800"
+      ],
+      "reason": "资料明确该博物馆聚焦 1692 年萨勒姆女巫审判，并提到演示场次、门票和预约等信息，简介有依据。资料称地址为 19 1/2 N Washington Square（Salem），与地址一致。",
+      "id": "salem_witch_museum"
+    },
+    {
+      "seq": 44,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "44-1200",
+        "44-2400",
+        "44-3600",
+        "44-4800"
+      ],
+      "reason": "资料提到公园涵盖康科德（Concord）、林肯（Lincoln），以及延伸到列克星顿（Lexington）的 Battle Road 步道，并列出步道、游客中心和历史建筑的不同开放时间（如 2026 年 10 月 31 日前游客中心开放，Hartwell Tavern 仅周四、周六、周日开放，Wayside 2026 年闭馆）。地址为多个园区单元，各单元地址均有资料支持，“Multiple park units”作为概括性描述可以成立。",
+      "id": "minute_man_nhp"
+    },
+    {
+      "seq": 45,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "45-1200"
+      ],
+      "reason": "资料称 Concord's Old North Bridge（即 North Bridge）是“开枪之地”，并描述为经修复的 19 世纪纪念景观，有历史桥梁的依据。资料提到停车场位于 280 Monument St, Concord；简介中“请查询国家公园管理局了解停车、步道和游客中心开放情况”为提醒用语。地址 Monument St, Concord 与停车场地址相符。",
+      "id": "north_bridge"
+    },
+    {
+      "seq": 46,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "46-2400",
+        "46-3600"
+      ],
+      "reason": "名称与简介得到支持：原文称 Battle Road Trail 为连接国家历史公园内历史遗址的约五英里步道，并提示可在游客中心获取公园地图。地址“Route 2A corridor”有依据：原文提到步道沿 Route 2A 和 Lexington Road 的停车区可达。",
+      "id": "battle_road_trail"
+    },
+    {
+      "seq": 48,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "48-0",
+        "48-2400",
+        "48-7200"
+      ],
+      "reason": "名称与简介得到支持：原文为 Louisa May Alcott's Orchard House，是与 Alcott 相关的历史住宅，室内仅限导览参观并需要预约或按时段入场。地址“399 Lexington Rd, Concord”与原文 399 Lexington Road, Concord, Massachusetts 01742 一致。",
+      "id": "orchard_house"
+    },
+    {
+      "seq": 49,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "49-3600",
+        "49-4800"
+      ],
+      "reason": "名称与简介得到支持：原文将 The Wayside: Home of Authors 列为 Minute Man National Historical Park 的景点，地址为 455 Lexington Road, Concord。原文还说明 2026 季节房屋关闭、预计 2027 年夏季重新开放，而场地每日日出至日落开放，因此“室内与场地开放安排分开”的提醒有依据。“NPS 管理”由其列于国家历史公园景点中可以支持。",
+      "id": "the_wayside"
+    },
+    {
+      "seq": 51,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "51-4800",
+        "51-6000"
+      ],
+      "reason": "名称与简介基本得到支持：原文说明 Lexington Battle Green 是 1775 年的镇公地，位于通往波士顿、康科德和贝德福德道路的交汇处，4 月 19 日早上民兵在此与英军遭遇，镇政府每日提供导览。地址“Lexington Center（待核）”没有原文支持，原文只提供了场地描述，没有街道地址或“Lexington Center”的说明，因此地址标为 false。",
+      "id": "lexington_battle_green"
+    },
+    {
+      "seq": 52,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "52-1200",
+        "52-3600"
+      ],
+      "reason": "名称与简介得到支持：原文列出 Lexington History Museums 管理的历史场所，并在花园说明中提到 Buckman Tavern；有关开放时间与门票的说明也在该页面，但原文未逐一写明 Buckman Tavern 的具体开放时间。地址“Lexington（门牌待核）”没有门牌或街道地址的原文支持，因此标为 false。",
+      "id": "buckman_tavern"
+    },
+    {
+      "seq": 53,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "53-0",
+        "53-1200",
+        "53-3600"
+      ],
+      "reason": "简介：来源称 Hancock-Clarke House 是 Lexington History Museums 管理的历史故居之一，并列出其花园与票务信息，故“由 LHM 管理的历史房屋”有支持。“请向运营方核实开放、导览与季节安排”属于建议，非事实断言。地址：来源只支持“Lexington”城市层级（LHM 位于 Lexington，其四处历史建筑均在 Lexington 相关语境中），未提供具体门牌，因此仅city-level成立，门牌仍待核。",
+      "id": "hancock_clarke_house"
+    },
+    {
+      "seq": 54,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "54-0",
+        "54-1200"
+      ],
+      "reason": "简介：来源称公园为两位总统出生地及亚当斯家族四代住所，地点在 Quincy，与“Quincy 的总统家族历史遗址”一致；“核实房屋季节开放”属于建议。地址：页面给出 135 Adams Street, Quincy, MA 02169，Quincy 得到支持。",
+      "id": "adams_nhp"
+    },
+    {
+      "seq": 55,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "55-0"
+      ],
+      "reason": "简介：来源称 Union Oyster House 位于 Freedom Trail 上、Faneuil Hall 附近，自 1826 年起供应食物，是历史餐厅，与“downtown 历史餐饮场所”一致；简介中的“仅用于地点识别、不评价食物服务价格、核实营业时间与预订”属于限定说明。地址：来源明确为 41 Union Street Boston, MA。页面中的博彩等无关广告文字不作为证据。",
+      "id": "union_oyster_house"
+    },
+    {
+      "seq": 56,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "56-0",
+        "56-1200"
+      ],
+      "reason": "简介：来源称 Mike's Pastry 是波士顿 North End 的意大利糕点店，1946 年创立，并列出 North End 门店营业时间，故“North End 糕点店”有支持；“核实具体门店、运营方信息与当前时间”属于建议，简介也未作口味或排队断言，符合要求。地址：来源仅支持 North End 街区层级（网站列出 North End 门店，并提及 Hanover Street），未提供具体门牌，具体门面仍需核实，因此仅 neighborhood-level 成立。",
+      "id": "mikes_pastry"
+    },
+    {
+      "seq": 57,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "57-0",
+        "57-2400"
+      ],
+      "reason": "简介：来源称 Regina Pizzeria 自 1926 年起在 North End 经营，门店列表中有 'North End - The Original'，并称其位于 North End 的 Little Italy 地区，故“North End 披萨店”有支持；“确认具体分店并核实营业时间、等位与预订”属于建议。地址：来源仅支持 North End 街区层级；第 57-3600/57-4800 中的 Woburn 地址为企业总部地址，不能作为门店地址使用，具体门面仍需核实。",
+      "id": "regina_pizzeria_north_end"
+    },
+    {
+      "seq": 58,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "58-0"
+      ],
+      "reason": "简介的核心信息有依据：页面自称 \"flour bakery + cafe\"、\"Boston's favorite bakery\"，并有 \"See all bakeries\"，可支持多个分店。但地址字段只是占位文字（\"Multiple locations; branch to verify\"），段落中没有任何具体分店地址，因此地址不被支持。",
+      "id": "flour_bakery"
+    },
+    {
+      "seq": 59,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "59-0"
+      ],
+      "reason": "段落明确显示 Oleana Restaurant 位于 Cambridge，并提供中东/土耳其风味的餐厅信息，支持“Cambridge 餐厅”的简介。地址字段“Cambridge”被支持，段落给出的具体地址为 134 Hampshire Street, Cambridge, MA 02139。简介中“不评价食物、服务、价格或日常运营”属于审查说明而非需要核实的事实，我未将其视为来源内容。",
+      "id": "oleana"
+    },
+    {
+      "seq": 62,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "62-0",
+        "62-2400"
+      ],
+      "reason": "市页面列出了 Hyde Park 的多个城市 Urban Wild 地块，每块都有 Boundary、OWNERSHIP、NEIGHBORHOOD（Hyde Park）等信息，支持“Hyde Park 的林地地块，页面列出边界与权属”。关于 DCR 合并入 Stony Brook Reservation 的内容见 62-2400，但原文是“DCR 已取得该地块的大部分并纳入 Stony Brook Reservation，另有一块市属地块未变”，与简介“merged one parcel”略有出入，属于表述偏差，不影响整体结论。地址“Hyde Park, Boston”被各地块的 NEIGHBORHOOD 字段支持。",
+      "id": "hyde_park_urban_wilds"
+    },
+    {
+      "seq": 63,
+      "supported": false,
+      "address_supported": true,
+      "passage_ids": [
+        "63-0"
+      ],
+      "reason": "NRHP 记录支持 Classical Revival 风格、Engineering 与 Entertainment/Recreation 的重要领域，地址 60 N. Harvard St., Boston 也有出处。但简介中的“Harvard University's stadium”（哈佛大学所有）未在段落中出现，只能从名称推断，不能当作来源。“1987 年列入 NRHP”也只能由 \"Date Published: 2/27/1987\" 推测，原文没有写明列入日期，因此简介整体不被完全支持。",
+      "id": "allston_harvard_stadium"
+    },
+    {
+      "seq": 64,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "64-0"
+      ],
+      "reason": "官网段落支持 \"capacity for 2,600 people\"、Private Events、Historical Tours、Upcoming Events 与演出信息，因此“大型表演艺术场馆，可容纳约 2,600 人，提供历史导览、私人活动和演出信息”成立。但地址 539 Washington St, Boston 在提供的段落中没有出现，官网段落也没有地址；该地址只标注来自 Boston By Foot 页面，而该页面不在本次资料中，因此地址不被支持。",
+      "id": "chinatown_citizens_opera_house"
+    },
+    {
+      "seq": 65,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "65-1200",
+        "65-2400",
+        "65-3600"
+      ],
+      "reason": "65-2400 支持：Boston By Foot 步行导览覆盖 Opera House、Majestic、Wilbur、Colonial、Paramount 剧院外观；65-1200 支持两小时剧院历史导览（含 Boch Center Wang Theatre）。地址 539 Washington St 由 65-3600 支持（集合点为 Citizens Bank Opera House 前，539 Washington Street）。",
+      "id": "chinatown_theater_district"
+    },
+    {
+      "seq": 66,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "66-0",
+        "66-1200"
+      ],
+      "reason": "66-0 显示该教区自称 Boston's Basilica，有 Mass Schedule、News、Faith Formation 等教区页面，支持简介。66-1200 页脚给出 1545 Tremont Street, Boston, MA 02120，地址被支持。",
+      "id": "mission_hill_basilica"
+    },
+    {
+      "seq": 67,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "67-0",
+        "67-3600"
+      ],
+      "reason": "67-0 支持：博物馆讲述 West End 历史，包括废奴起源（origin of abolition）、交通枢纽（major transportation hub）、最多元社区，以及“nation's greatest tragedy of urban renewal”。地址 150 Staniford St, Suite 7, Boston, MA 02114 见 67-0，67-3600 也一致。",
+      "id": "west_end_museum"
+    },
+    {
+      "seq": 68,
+      "supported": true,
+      "address_supported": false,
+      "passage_ids": [
+        "68-0",
+        "68-1200",
+        "68-2400"
+      ],
+      "reason": "简介由 68-0、68-1200 支持：NPS 管理，经 Bunker Hill Lodge 进入，可登 294 级台阶，每次限 25 人，可能因天气关闭。地址“Charlestown, Boston”没有任何段落给出纪念碑的街道地址或明确所在地；68-2400 只说博物馆位于纪念碑场地对面的旧 Charlestown Branch 图书馆建筑中，属间接推断，不足以确认地址，原字段本身也标注“待核”。",
+      "id": "charlestown_bunker_hill_monument"
+    },
+    {
+      "seq": 69,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "69-2400",
+        "69-3600",
+        "69-4800",
+        "69-1200"
+      ],
+      "reason": "69-2400 支持 1841 年建立、1847 年解散的 Brook Farm 公社；69-3600 支持现为马州 DCR 管理的州立公园及 1977 年被指定为 Boston Landmark；69-4800 支持 1990 年代的考古调查。69-1200 给出 201 Rivermoor Street, West Roxbury, MA 02132，支持 West Roxbury 地址。",
+      "id": "west_roxbury_brook_farm"
+    },
+    {
+      "seq": 70,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "70-0",
+        "70-1200",
+        "70-2400"
+      ],
+      "reason": "简介中的非营利组织、使村庄成为有吸引力目的地和社区中心的使命，见 70-0 和 70-1200（501(c)(3)，promote Roslindale Village as an appealing destination and the dynamic center of our community）。“commercial center”有 70-1200 的 commercial districts 和 70-2400 的 neighborhood business district 支持。地址：70-2400 只给出 RVMS 办公室地址 4236A Washington Street, Roslindale, MA 02131，能支持该地位于 Washington Street 沿线，但未给出村庄的边界范围，“村庄范围待核”仍需人工确认。",
+      "id": "roslindale_village"
+    },
+    {
+      "seq": 71,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "71-0"
+      ],
+      "reason": "71-0 为 NPGallery 条目，标题为 Harvard Avenue Historic District，NRIS 编号 00000415，Architectural Styles 为 LATE VICTORIAN 与 LATE 19TH AND 20TH CENTURY REVIVALS，Areas of Significance 包括 ARCHITECTURE、COMMERCE、COMMUNITY PLANNING AND DEVELOPMENT，地点为 Suffolk County Boston，相关门户为 National Register of Historic Places。简介基本被支持。“along Harvard Avenue”仅由标题推得。地址“Harvard Avenue, Boston”由标题与 Boston 地点支持，但该来源没有具体街段范围，“沿线范围待核”需人工确认。",
+      "id": "allston_harvard_avenue_district"
+    },
+    {
+      "seq": 72,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "72-0",
+        "72-1200"
+      ],
+      "reason": "72-0 支持：馆藏关于美国早期大都会供水系统之一的历史；Great Engines Hall 中有 Leavitt、Worthington、Allis 三台原装燃煤蒸汽水泵，高于 3 层楼；它们曾每天向波士顿城市供应淡水；列出了 Special Access Tour 活动。72-1200 给出地址 2450 Beacon Street, Boston, MA 02467，与地址一致。",
+      "id": "brighton_waterworks_museum"
+    },
+    {
+      "seq": 73,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "73-0"
+      ],
+      "reason": "73-0 的 Note 写明 Roughly bounded by Smith St., Worthington St., Tremont St., and Huntington Ave.，与简介和地址描述一致。Architectural Styles 为 COLONIAL REVIVAL 与 LATE VICTORIAN，Areas of Significance 为 COMMUNITY PLANNING AND DEVELOPMENT、COMMERCE、ARCHITECTURE，均与简介相符。",
+      "id": "mission_hill_triangle_historic_district"
+    }
+  ],
+  "calls": [
+    {
+      "seqs": [
+        1,
+        2,
+        3,
+        6,
+        8
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 23184,
+        "cache_read_input_tokens": 14912,
+        "output_tokens": 5295,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 23184,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 361,
+            "cache_read_input_tokens": 14912,
+            "cache_creation_input_tokens": 8272,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 8272
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        9,
+        10,
+        11,
+        12,
+        14
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 29513,
+        "cache_read_input_tokens": 24772,
+        "output_tokens": 4202,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 29513,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 522,
+            "cache_read_input_tokens": 24163,
+            "cache_creation_input_tokens": 5959,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5959
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        15,
+        16,
+        17,
+        18,
+        20
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 29307,
+        "cache_read_input_tokens": 24882,
+        "output_tokens": 4771,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 29307,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 449,
+            "cache_read_input_tokens": 24273,
+            "cache_creation_input_tokens": 5643,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5643
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        21,
+        22,
+        23,
+        28,
+        29
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 32050,
+        "cache_read_input_tokens": 29779,
+        "output_tokens": 2689,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 32050,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 521,
+            "cache_read_input_tokens": 29170,
+            "cache_creation_input_tokens": 3489,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 3489
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        31,
+        32,
+        34,
+        37,
+        39
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 25530,
+        "cache_read_input_tokens": 20371,
+        "output_tokens": 3799,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 25530,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 479,
+            "cache_read_input_tokens": 19762,
+            "cache_creation_input_tokens": 6377,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 6377
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        40,
+        41,
+        42,
+        44,
+        45
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 20208,
+        "cache_read_input_tokens": 15016,
+        "output_tokens": 3877,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20208,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 523,
+            "cache_read_input_tokens": 14407,
+            "cache_creation_input_tokens": 6410,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 6410
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        46,
+        48,
+        49,
+        51,
+        52
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 24058,
+        "cache_read_input_tokens": 19511,
+        "output_tokens": 3269,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 24058,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 395,
+            "cache_read_input_tokens": 18902,
+            "cache_creation_input_tokens": 5765,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5765
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 17443,
+        "cache_read_input_tokens": 11273,
+        "output_tokens": 4420,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17443,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 385,
+            "cache_read_input_tokens": 10664,
+            "cache_creation_input_tokens": 7388,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 7388
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        58,
+        59,
+        62,
+        63,
+        64
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 17320,
+        "cache_read_input_tokens": 10712,
+        "output_tokens": 5265,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17320,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 565,
+            "cache_read_input_tokens": 10103,
+            "cache_creation_input_tokens": 7826,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 7826
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 20740,
+        "cache_read_input_tokens": 16509,
+        "output_tokens": 3576,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 20740,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 451,
+            "cache_read_input_tokens": 15900,
+            "cache_creation_input_tokens": 5449,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5449
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        70,
+        71,
+        72,
+        73
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 10752,
+        "cache_read_input_tokens": 6618,
+        "output_tokens": 3350,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10752,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 348,
+            "cache_read_input_tokens": 6009,
+            "cache_creation_input_tokens": 5352,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5352
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  ],
+  "complete": true
+}

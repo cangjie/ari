@@ -1,0 +1,126 @@
+{
+  "state": "审计输入已生成；尚未调用任何模型",
+  "inventory_sha256": "3be51cb0ff0eab049ed4e3b000d29cebb291b73b4d3bb8fb808ee248feb221f5",
+  "capture_sha256": "51085c6e2ac2aa9da4844982691362981e75f1407bee5900faf4406dfe435cf3",
+  "request_sha256": "676a1e5dd95120547cb1d0c7524bd08aa99da3018fa6617cdc0f1ef4f3dc7b81",
+  "schema_sha256": "5f52c49428da75fc08fede69481f2f0ffe3a1dc84eb2ba27a902b699eb7e8954",
+  "rows": 73,
+  "items_in_request": 54,
+  "passages_in_request": 310,
+  "skipped": [
+    {
+      "seq": 4,
+      "id": "massachusetts_state_house",
+      "url": "https://malegislature.gov/StateHouse/Tours",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 5,
+      "id": "boston_public_library",
+      "url": "https://www.bpl.org/locations/1/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 7,
+      "id": "boston_athenaeum",
+      "url": "https://www.bostonathenaeum.org/visit/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 13,
+      "id": "arnold_arboretum",
+      "url": "https://arboretum.harvard.edu/visit/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 19,
+      "id": "castle_island",
+      "url": "https://www.mass.gov/location-details/learn-more-about-castle-island-pleasure-bay-m-street-beach-and-carson-beach",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 24,
+      "id": "boston_childrens_museum",
+      "url": "https://bostonchildrensmuseum.org/visit/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 25,
+      "id": "jfk_library",
+      "url": "https://www.jfklibrary.org/visit-museum",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 26,
+      "id": "emk_institute",
+      "url": "https://www.emkinstitute.org/visit",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 27,
+      "id": "piers_park",
+      "url": "https://www.pierspark.org/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 30,
+      "id": "chestnut_hill_reservoir",
+      "url": "https://www.mass.gov/locations/chestnut-hill-reservoir",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 33,
+      "id": "harvard_peabody_museum",
+      "url": "https://hmnh.harvard.edu/visit",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 35,
+      "id": "mit_museum",
+      "url": "https://mitmuseum.mit.edu/visit",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 36,
+      "id": "harvard_square",
+      "url": "https://cambridgeusa.org/neighborhood/harvard-square/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 38,
+      "id": "mount_auburn_cemetery",
+      "url": "https://mountauburn.org/visit/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 43,
+      "id": "salem_willows",
+      "url": "https://www.salemma.gov/parks-rec/pages/salem-willows-park",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 47,
+      "id": "concord_museum",
+      "url": "https://concordmuseum.org/visit/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 50,
+      "id": "walden_pond",
+      "url": "https://www.mass.gov/locations/walden-pond-state-reservation",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 60,
+      "id": "turners_seafood_salem",
+      "url": "https://turners-seafood.com/",
+      "reason": "来源未采集到正文，未送审"
+    },
+    {
+      "seq": 61,
+      "id": "colonial_inn_dining",
+      "url": "https://www.concordscolonialinn.com/dining/",
+      "reason": "来源未采集到正文，未送审"
+    }
+  ]
+}

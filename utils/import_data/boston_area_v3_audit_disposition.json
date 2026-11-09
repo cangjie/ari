@@ -1,0 +1,268 @@
+{
+  "state": "第 3、10 批重跑完成；引用错误已消除。地址待核按决定记为「待核」，不作为内容失败。",
+  "model": "claude-haiku-5-5 medium",
+  "results_file": "boston_area_v3_audit_results_haiku55.json",
+  "request_sha256": "676a1e5dd95120547cb1d0c7524bd08aa99da3018fa6617cdc0f1ef4f3dc7b81",
+  "items": 54,
+  "passed_both": [
+    {
+      "seq": 1,
+      "id": "boston_common"
+    },
+    {
+      "seq": 2,
+      "id": "public_garden"
+    },
+    {
+      "seq": 3,
+      "id": "freedom_trail"
+    },
+    {
+      "seq": 6,
+      "id": "trinity_church"
+    },
+    {
+      "seq": 9,
+      "id": "mfa_boston"
+    },
+    {
+      "seq": 10,
+      "id": "gardner_museum"
+    },
+    {
+      "seq": 11,
+      "id": "fenway_park"
+    },
+    {
+      "seq": 12,
+      "id": "back_bay_fens"
+    },
+    {
+      "seq": 14,
+      "id": "franklin_park"
+    },
+    {
+      "seq": 15,
+      "id": "franklin_park_zoo"
+    },
+    {
+      "seq": 16,
+      "id": "black_heritage_trail"
+    },
+    {
+      "seq": 17,
+      "id": "nubian_square"
+    },
+    {
+      "seq": 18,
+      "id": "sowa"
+    },
+    {
+      "seq": 21,
+      "id": "boston_harborwalk"
+    },
+    {
+      "seq": 22,
+      "id": "boston_tea_party_ships"
+    },
+    {
+      "seq": 23,
+      "id": "ica_boston"
+    },
+    {
+      "seq": 28,
+      "id": "boston_nature_center"
+    },
+    {
+      "seq": 29,
+      "id": "millennium_park"
+    },
+    {
+      "seq": 32,
+      "id": "harvard_art_museums"
+    },
+    {
+      "seq": 34,
+      "id": "mit_campus"
+    },
+    {
+      "seq": 37,
+      "id": "longfellow_house"
+    },
+    {
+      "seq": 39,
+      "id": "pem"
+    },
+    {
+      "seq": 40,
+      "id": "salem_maritime"
+    },
+    {
+      "seq": 41,
+      "id": "house_of_seven_gables"
+    },
+    {
+      "seq": 42,
+      "id": "salem_witch_museum"
+    },
+    {
+      "seq": 44,
+      "id": "minute_man_nhp"
+    },
+    {
+      "seq": 45,
+      "id": "north_bridge"
+    },
+    {
+      "seq": 46,
+      "id": "battle_road_trail"
+    },
+    {
+      "seq": 48,
+      "id": "orchard_house"
+    },
+    {
+      "seq": 49,
+      "id": "the_wayside"
+    },
+    {
+      "seq": 53,
+      "id": "hancock_clarke_house"
+    },
+    {
+      "seq": 54,
+      "id": "adams_nhp"
+    },
+    {
+      "seq": 55,
+      "id": "union_oyster_house"
+    },
+    {
+      "seq": 56,
+      "id": "mikes_pastry"
+    },
+    {
+      "seq": 57,
+      "id": "regina_pizzeria_north_end"
+    },
+    {
+      "seq": 59,
+      "id": "oleana"
+    },
+    {
+      "seq": 62,
+      "id": "hyde_park_urban_wilds"
+    },
+    {
+      "seq": 63,
+      "id": "allston_harvard_stadium"
+    },
+    {
+      "seq": 65,
+      "id": "chinatown_theater_district"
+    },
+    {
+      "seq": 66,
+      "id": "mission_hill_basilica"
+    },
+    {
+      "seq": 67,
+      "id": "west_end_museum"
+    },
+    {
+      "seq": 71,
+      "id": "allston_harvard_avenue_district"
+    },
+    {
+      "seq": 72,
+      "id": "brighton_waterworks_museum"
+    },
+    {
+      "seq": 73,
+      "id": "mission_hill_triangle_historic_district"
+    }
+  ],
+  "address_pending_待核": [
+    {
+      "seq": 8,
+      "id": "museum_of_science",
+      "address": "Boston（门牌待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 20,
+      "id": "rose_kennedy_greenway",
+      "address": "Downtown Boston（沿线范围待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 31,
+      "id": "harvard_university",
+      "address": "Campus area; address to verify",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 51,
+      "id": "lexington_battle_green",
+      "address": "Lexington Center（待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 52,
+      "id": "buckman_tavern",
+      "address": "Lexington（门牌待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 58,
+      "id": "flour_bakery",
+      "address": "Multiple locations; branch to verify",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 64,
+      "id": "chinatown_citizens_opera_house",
+      "address": "539 Washington St, Boston（地址出处：Boston By Foot 页面，官网未载）",
+      "marked_in_inventory": false
+    },
+    {
+      "seq": 68,
+      "id": "charlestown_bunker_hill_monument",
+      "address": "Charlestown, Boston（门牌地址以 NPS 为准，待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 69,
+      "id": "west_roxbury_brook_farm",
+      "address": "West Roxbury（场地地址待核）",
+      "marked_in_inventory": true
+    },
+    {
+      "seq": 70,
+      "id": "roslindale_village",
+      "address": "Washington Street 沿线（村庄范围待核）",
+      "marked_in_inventory": true
+    }
+  ],
+  "region_level_address_passed_by_model_but_kept_待核": [
+    {
+      "seq": 16,
+      "id": "black_heritage_trail",
+      "address": "Beacon Hill",
+      "note": "模型在本轮判定 16 的地址通过（Beacon Hill 为区域名），与 20、69 的判定不一致；按决定保留为待核。"
+    }
+  ],
+  "address_pending_not_marked_in_inventory_note": [
+    {
+      "seq": 64,
+      "id": "chinatown_citizens_opera_house",
+      "note": "地址出处为 Boston By Foot 页面，官网未载；清单暂未标记待核。"
+    }
+  ],
+  "citation_errors": [],
+  "notes": [
+    "本轮之前的 Sonnet 与 Haiku 5.5 旧结果为历史记录，不作为最终依据。",
+    "第 3、10 批重跑后，引用错误已全部消除。",
+    "清单未改动，以保持与审计输入（request_sha256）一致；16、64 的地址标记待下次修改清单时补上。"
+  ]
+}

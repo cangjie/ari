@@ -74,6 +74,7 @@ def capture_one(job: tuple[int, tuple[str, list[dict]]]) -> dict:
             "extracted_char_count": 0,
             "raw_sha256": None,
             "text_sha256": None,
+            "source_text": None,
             "error": f"{type(exc).__name__}: {exc}",
             "bound_inventory_ids": [row["id"] for row in bound_rows],
         }
@@ -96,6 +97,7 @@ def capture_one(job: tuple[int, tuple[str, list[dict]]]) -> dict:
         "extracted_char_count": len(text),
         "raw_sha256": hashlib.sha256(response.content).hexdigest(),
         "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest() if text else None,
+        "source_text": text or None,
         "error": None,
         "bound_inventory_ids": [row["id"] for row in bound_rows],
     }
