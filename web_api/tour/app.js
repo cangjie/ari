@@ -366,7 +366,7 @@
       var v = theme.variants.filter(function (r) { return r.start_station === start; })[0];
       var starts = M.itinerary_stations.filter(function (s) { return theme.variants.some(function (r) { return r.start_station === s.id; }); });
       return '<article class="theme-card" data-theme="' + esc(theme.id) + '"><h3>' + esc(theme.name) + '</h3><p>' + esc(theme.description) + '</p>' +
-        '<label>地铁起点<select data-theme-start="' + esc(theme.id) + '"' + (starts.length === 1 ? ' disabled' : '') + '>' + starts.map(function (s) {
+        '<label>' + esc(M.itinerary_start_label || "地铁起点") + '<select data-theme-start="' + esc(theme.id) + '"' + (starts.length === 1 ? ' disabled' : '') + '>' + starts.map(function (s) {
           return '<option value="' + esc(s.id) + '"' + (s.id === start ? ' selected' : '') + '>' + esc(s.name + ' · ' + (s.lines_label || s.lines.join('/') + '号线')) + '</option>';
         }).join("") + '</select></label><p class="theme-summary">步行约 ' + (v.meters / 1000).toFixed(1) + ' 公里 · 约 ' + Math.floor(v.total_minutes / 60) + '小时' + (v.total_minutes % 60) + '分（停留 ' + v.stay_minutes + ' + 步行 ' + v.walk_minutes + ' 分钟，均为估计）</p>' +
         '<p>终点：' + esc(station(v.end_station).name) + (v.start_station === v.end_station ? '（同站往返）' : '') + '</p>' +
@@ -386,7 +386,7 @@
     $("collection").hidden = true; $("collection-themes").hidden = false;
     $("view-list").classList.remove("on"); $("view-list").setAttribute("aria-pressed", "false");
     $("view-themes").classList.add("on"); $("view-themes").setAttribute("aria-pressed", "true");
-    $("tour-sub").textContent = M.itineraries.length + "条主题线路 · 地铁起步";
+    $("tour-sub").textContent = M.itineraries.length + "条主题线路 · " + (M.itinerary_start_label || "地铁起步");
     renderThemes();
   }
 
