@@ -1,0 +1,11 @@
+{
+  "state": "审计输入已生成；尚未调用任何模型",
+  "inventory_sha256": "8590f80b00c66fbd75231bb54ee3d588af0f97263efd50e17eac5169b2669815",
+  "capture_sha256": "bb6b8e8280f5dc96925d8b7533ac503fa8b9a0a8e64be488a2eedb93fee962a3",
+  "request_sha256": "65001a7da3033ac0e823208f9dd6e376fc86cbd8d8e2bfd074b3ad5a71cc5efd",
+  "schema_sha256": "5f52c49428da75fc08fede69481f2f0ffe3a1dc84eb2ba27a902b699eb7e8954",
+  "rows": 16,
+  "items_in_request": 16,
+  "passages_in_request": 95,
+  "skipped": []
+}

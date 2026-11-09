@@ -1,0 +1,66 @@
+{
+  "captured_on": "2026-11-09",
+  "note": "Commons photos for the WNE list; subject_check ok after visual check; partial is shown with a caption that names what is pictured.",
+  "photos": [
+    {
+      "stop": "wne_campus",
+      "file": "img/wne_campus/wne_campus.jpg",
+      "bytes": 232869,
+      "sha256": "e1a7317316cd64bf4645e4c625132a9b264d40fb12c5685e1b6c9673564b6cdf",
+      "width": 1000,
+      "height": 667,
+      "commons_title": "File:Western New England College campus 07.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AWestern_New_England_College_campus_07.jpg",
+      "licence": "Public domain",
+      "licence_url": "",
+      "artist": "Bpayne4001 at en.wikipedia",
+      "original_size": [
+        1000,
+        667
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "visual check 2026-11-09: campus courtyard, brick buildings"
+    },
+    {
+      "stop": "wne_golden_bear_stadium",
+      "file": "img/wne_campus/wne_golden_bear_stadium.jpg",
+      "bytes": 306515,
+      "sha256": "0fb2e09b9c80029a6ac93ca5787d72e173d9573a54854038057ee4b3312520cd",
+      "width": 1200,
+      "height": 900,
+      "commons_title": "File:WNECFootball22.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AWNECFootball22.jpg",
+      "licence": "Public domain",
+      "licence_url": "",
+      "artist": "",
+      "original_size": [
+        3264,
+        2448
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "partial",
+      "subject_check_basis": "visual check 2026-11-09: football field bleachers; cannot confirm this is the 1,500-seat stadium, so the caption says football field"
+    },
+    {
+      "stop": "wne_ahlc",
+      "file": "img/wne_campus/wne_ahlc.jpg",
+      "bytes": 267621,
+      "sha256": "4abdc87bbed78f533dad58604b62c78fa3aab5f2cf1dcad41c9521544a356b83",
+      "width": 1200,
+      "height": 800,
+      "commons_title": "File:WNECAHLC22.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File%3AWNECAHLC22.jpg",
+      "licence": "Public domain",
+      "licence_url": "",
+      "artist": "",
+      "original_size": [
+        3072,
+        2048
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "visual check 2026-11-09: indoor basketball court with GOLDEN BEARS markings"
+    }
+  ]
+}

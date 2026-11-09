@@ -1,0 +1,344 @@
+{
+  "request_sha256": "65001a7da3033ac0e823208f9dd6e376fc86cbd8d8e2bfd074b3ad5a71cc5efd",
+  "model": "claude-haiku-5-5",
+  "effort": "medium",
+  "batch": 5,
+  "items": [
+    {
+      "seq": 1,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "1-1200",
+        "1-8400"
+      ],
+      "reason": "1-1200 支持简介中的215英亩、28座主要建筑及围绕步行化中心核心的布局；1-8400 页脚显示地址为 1215 Wilbraham Road, Springfield, MA 01119。",
+      "id": "wne_campus"
+    },
+    {
+      "seq": 2,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "2-0",
+        "2-3600"
+      ],
+      "reason": "2-0 的校区地图列出 1. Kevin S. Delbridge Welcome Center 下有 Admissions (Undergraduate) 与 Visitors Center。地址为校区地址，2-3600 页脚显示 1215 Wilbraham Road, Springfield, MA 01119，但原文未列出该楼的单独地址。",
+      "id": "wne_welcome_center"
+    },
+    {
+      "seq": 3,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "3-0",
+        "3-3600"
+      ],
+      "reason": "3-0 的校区地图列出 3. Joseph J. Deliso Sr. Hall 下有 Administration、Controller’s Office 与 Marketing and External Affairs。地址为校区地址，3-3600 页脚显示 1215 Wilbraham Road, Springfield, MA 01119，但原文未列出该楼的单独地址。",
+      "id": "wne_deliso_hall"
+    },
+    {
+      "seq": 4,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "4-1200",
+        "4-3600"
+      ],
+      "reason": "4-1200 写明校园第一座建筑为今天的 Emerson Hall，于1959年开放；4-3600 页脚显示校区地址 1215 Wilbraham Road, Springfield, MA 01119。",
+      "id": "wne_emerson_hall"
+    },
+    {
+      "seq": 5,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "5-4800",
+        "5-8400"
+      ],
+      "reason": "5-4800 写明 Herman Hall 经过近期 830 万美元翻修，内有 Math and Writer Centers、Art Studio 及多间多媒体教室；5-8400 页脚显示校区地址 1215 Wilbraham Road, Springfield, MA 01119。",
+      "id": "wne_herman_hall"
+    },
+    {
+      "seq": 6,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "6-2400",
+        "6-3600",
+        "6-8400"
+      ],
+      "reason": "简介中的“$40 million”“19 laboratories”“model pharmacy”和“Center for Health and Well-Being位于二楼”均见于6-2400和6-3600。地址“1215 Wilbraham Road, Springfield, MA 01119”见于6-8400，但这是大学总部/校区地址，来源未给出该楼的单独地址，故地址仅能按校区地址支持。",
+      "id": "wne_csp"
+    },
+    {
+      "seq": 7,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "7-0",
+        "7-1200",
+        "7-2400"
+      ],
+      "reason": "简介中“research and social hub for undergraduate and graduate students”、“more than 110 databases”、“24x7 study area”和“Media Center”均见于7-0与7-1200。地址见于7-2400，同样只是大学校区地址，来源未给出图书馆单独地址。",
+      "id": "wne_damour_library"
+    },
+    {
+      "seq": 8,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "8-1200",
+        "8-2400",
+        "8-3600"
+      ],
+      "reason": "地图编号12的Blake Law Center条目列出“School of Law”“Law Library”“Common Law Clinics”和“Moot Courtroom”，见于8-1200与8-2400。地址见于8-3600，为大学校区地址，来源未给出该楼单独地址。",
+      "id": "wne_blake_law_center"
+    },
+    {
+      "seq": 9,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "9-4800",
+        "9-8400"
+      ],
+      "reason": "9-4800称Churchill Hall为College of Business所在地，以第一任校长Dr. John D. Churchill命名，并包含Cohen Trading Room and Technology Center。地址见于9-8400，为大学校区地址，来源未给出该楼单独地址。",
+      "id": "wne_churchill_hall"
+    },
+    {
+      "seq": 10,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "10-0",
+        "10-1200",
+        "10-2400"
+      ],
+      "reason": "10-0与10-1200说明画廊位于St. Germain Campus Center，举办solo和curated group shows及gallery talks，并且gallery space免费提供（at no charge）。地址见于10-2400，为大学校区地址，来源未给出该建筑单独地址。",
+      "id": "wne_art_gallery"
+    },
+    {
+      "seq": 11,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "11-2400",
+        "11-8400"
+      ],
+      "reason": "11-2400 支持简介：2018年开放，含 Starbucks 咖啡厅、grille、便利店、两层住宿餐厅。11-8400 包含地址 1215 Wilbraham Road, Springfield, MA 01119。",
+      "id": "wne_university_commons"
+    },
+    {
+      "seq": 12,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "12-1200",
+        "12-3600",
+        "12-8400"
+      ],
+      "reason": "12-1200 支持30个工程实验室及仿医院环境的生物医学工程套间；12-3600 支持“工程创新中心”及 $12.8 million 改造扩建。12-8400 包含校区地址。",
+      "id": "wne_sleith_hall"
+    },
+    {
+      "seq": 13,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "13-3600",
+        "13-8400"
+      ],
+      "reason": "13-3600 支持 Wood Hall Auditorium 用于校园内的讲座、演示和表演。地址为校区地址，13-8400 包含 1215 Wilbraham Road, Springfield, MA 01119，但原文未给出该礼堂的独立地址。",
+      "id": "wne_wood_auditorium"
+    },
+    {
+      "seq": 14,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "14-2400",
+        "14-3600"
+      ],
+      "reason": "14-2400 地图编号 11 为 Rivers Memorial Hall，内有 Radio Station、Student Publication Offices、Theatre/Music Programs（另列有 Human Resources，简介未提及，不影响支持结论）。14-3600 包含校区地址。地址为校区地址，原文未给出该楼独立地址。",
+      "id": "wne_rivers_memorial_hall"
+    },
+    {
+      "seq": 15,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "15-6000",
+        "15-8400"
+      ],
+      "reason": "15-6000 支持 1,500 座 Golden Bear Stadium 是户外体育综合区的核心，学生从 “The Cave” 加油。15-8400 包含校区地址。地址为校区地址，原文未给出该体育场的独立地址。",
+      "id": "wne_golden_bear_stadium"
+    },
+    {
+      "seq": 16,
+      "supported": true,
+      "address_supported": true,
+      "passage_ids": [
+        "16-3600",
+        "16-4800"
+      ],
+      "reason": "Passage 16-3600 lists 'Anthony S. Caprio Alumni Healthful Living Center' under 'On Campus Facilities' with the teams Men's Basketball, Women's Basketball, Women's Volleyball, Men's Wrestling and Women's Wrestling, which matches the description's team list and 'campus athletic facilities' wording. The same passage gives the campus address '1215 Wilbraham Road, Springfield, MA, 01119', and the footer in 16-4800 repeats it. The address is the campus address, as the record's '(校区地址)' label says, and the sources do not give a separate building-level address, so the address is supported only at campus level.",
+      "id": "wne_ahlc"
+    }
+  ],
+  "calls": [
+    {
+      "seqs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 4185,
+        "cache_read_input_tokens": 33110,
+        "output_tokens": 2695,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4185,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 428,
+            "cache_read_input_tokens": 16555,
+            "cache_creation_input_tokens": 4185,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 4185
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 4572,
+        "cache_read_input_tokens": 29604,
+        "output_tokens": 2859,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 4572,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 521,
+            "cache_read_input_tokens": 14802,
+            "cache_creation_input_tokens": 4572,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 4572
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 24143,
+        "cache_read_input_tokens": 21189,
+        "output_tokens": 2516,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 24143,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 452,
+            "cache_read_input_tokens": 20580,
+            "cache_creation_input_tokens": 4172,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 4172
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    },
+    {
+      "seqs": [
+        16
+      ],
+      "usage": {
+        "input_tokens": 1311,
+        "cache_creation_input_tokens": 2379,
+        "cache_read_input_tokens": 8502,
+        "output_tokens": 1193,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 2379,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "global",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 147,
+            "cache_read_input_tokens": 4251,
+            "cache_creation_input_tokens": 2379,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 2379
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      }
+    }
+  ],
+  "complete": true
+}
