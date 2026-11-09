@@ -1,0 +1,4107 @@
+{
+  "key": "boston_area",
+  "mode": "collection",
+  "generated": "2026-11-09",
+  "name": {
+    "zh": "大波士顿",
+    "en": "Greater Boston"
+  },
+  "card": {
+    "city": {
+      "zh": "波士顿",
+      "en": "Boston"
+    },
+    "district": {
+      "zh": "波士顿及周边",
+      "en": "Boston area"
+    },
+    "type": {
+      "zh": "文化参观 · 餐厅",
+      "en": "Culture and dining"
+    },
+    "short": {
+      "zh": "大波士顿",
+      "en": "Greater Boston"
+    },
+    "desc": {
+      "zh": "收录已通过原文审计的44个地点，覆盖波士顿市区、剑桥与萨勒姆，附参考路线；暂未公布评级。",
+      "en": "44 sourced places across Boston, Cambridge and Salem, with reference routes; ratings not yet published."
+    },
+    "hours": "各场所开放及餐厅营业时间请出行前核实",
+    "hours_note": {
+      "zh": "查看介绍与来源",
+      "en": "Browse introductions and sources"
+    },
+    "cover": "img/boston_area/boston_common.jpg"
+  },
+  "opening": {
+    "zh": "各场所开放、预约、收费及餐厅营业时间请出行前核实；资料来自抓取时的官方页面，不代表今日状态。",
+    "en": "Check access, reservations, admission and restaurant hours before visiting; sources are snapshots, not live information."
+  },
+  "planning": {
+    "zh": "本页为清单模式，收录已通过原文审计的地点，不构成路线。参考路线（停留时间为估计，步行时间按OSM道路估计）：四日：波士顿、剑桥与塞勒姆（含餐厅）：第一天：市中心、北端与美食；第二天：后湾与芬威博物馆区；第三天：剑桥；第四天：塞勒姆 两日：市中心、海港与北端（含餐厅）：第一天：市中心与自由之路；第二天：海港与北端 两日：南端、唐人街与罗克斯伯里（不含餐厅）：第一天：南端、剧院区与米申山；第二天：罗克斯伯里与富兰克林公园 本页暂未公布评级，待评分与独立审计完成后另行发布。",
+    "en": "List mode: places whose captured sources passed the passage audit; not a route. Three reference routes are described in the Chinese text. Ratings are not yet published."
+  },
+  "places": [
+    {
+      "id": "boston_common",
+      "name": {
+        "zh": "波士顿公园",
+        "en": "Boston Common"
+      },
+      "stops": [
+        1
+      ],
+      "photo": "img/boston_area/boston_common.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿公园（资料图）",
+          "en": "Boston Common (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Boston_Common_November_2016_002.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "374954792be698eeb8b9e778c85e1a87126cefa6ef87abf1b70f3d17e32600a9",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      }
+    },
+    {
+      "id": "public_garden",
+      "name": {
+        "zh": "波士顿公共花园",
+        "en": "Boston Public Garden"
+      },
+      "stops": [
+        2
+      ],
+      "photo": "img/boston_area/public_garden.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿公共花园（资料图）",
+          "en": "Boston Public Garden (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Boston_Public_Garden_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f7675b05dee287fb4258e6b4af3cb4c6392c443010831573c1249b9abb8b26e8",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      }
+    },
+    {
+      "id": "freedom_trail",
+      "name": {
+        "zh": "自由之路",
+        "en": "Freedom Trail"
+      },
+      "stops": [
+        3
+      ],
+      "photo": "img/boston_area/freedom_trail.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "自由之路（资料图）",
+          "en": "Freedom Trail (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Freedom_Trail_Sign_Boston_1974.jpg",
+          "author": "Michael Holley en:User:Swtpc6800 User:Swtpc6800",
+          "license": "Public domain",
+          "license_url": "",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "78ca1e5c6eccb6e370e3deb2782ebf02649dbab162f7483044f86225ac6cb7f9",
+        "photographed_on": null,
+        "width": 810,
+        "height": 1200
+      }
+    },
+    {
+      "id": "trinity_church",
+      "name": {
+        "zh": "三一教堂",
+        "en": "Trinity Church"
+      },
+      "stops": [
+        6
+      ],
+      "photo": "img/boston_area/trinity_church.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "三一教堂（资料图）",
+          "en": "Trinity Church (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Outside_Trinity_Church_in_Copley_Square,_Boston.jpg",
+          "author": "Swativ28",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "37351c551dbefaec451bfd1484f4081e4ab74d1d7c895d86f574498a54d42e44",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 675
+      }
+    },
+    {
+      "id": "mfa_boston",
+      "name": {
+        "zh": "波士顿美术博物馆",
+        "en": "Museum of Fine Arts, Boston"
+      },
+      "stops": [
+        9
+      ],
+      "photo": "img/boston_area/mfa_boston.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿美术博物馆（资料图）",
+          "en": "Museum of Fine Arts, Boston (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Museum_of_Fine_Arts,_Boston_in_November_2021.jpg",
+          "author": "Sdkb",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "acba2b3aff950e1aba687e414d9a62f4d9efe9a33a6f0dfcbf557949fc6f4a3e",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "gardner_museum",
+      "name": {
+        "zh": "伊莎贝拉·斯图尔特·加德纳博物馆",
+        "en": "Isabella Stewart Gardner Museum"
+      },
+      "stops": [
+        10
+      ],
+      "photo": "img/boston_area/gardner_museum.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "伊莎贝拉·斯图尔特·加德纳博物馆（资料图）",
+          "en": "Isabella Stewart Gardner Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Isabella_Stewart_Gardner_Museum_Boston_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "295ea91cc4e6e616bed135e508785741436ebb3f0d4f5cf8e4c8255aee3427a2",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      }
+    },
+    {
+      "id": "fenway_park",
+      "name": {
+        "zh": "芬威球场",
+        "en": "Fenway Park"
+      },
+      "stops": [
+        11
+      ],
+      "photo": "img/boston_area/fenway_park.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "芬威球场（资料图）",
+          "en": "Fenway Park (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Fenway_Park01.jpg",
+          "author": "Bernard Gagnon",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "87d86720811adb4c4a46978432bcf166ec3652d71e256fa9e0aab1847c081f23",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 850
+      }
+    },
+    {
+      "id": "back_bay_fens",
+      "name": {
+        "zh": "芬威公园地带",
+        "en": "Back Bay Fens"
+      },
+      "stops": [
+        12
+      ],
+      "photo": "img/boston_area/back_bay_fens.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "芬威公园地带（资料图）",
+          "en": "Back Bay Fens (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Back_Bay_Fens_Boston_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f2e7e1632b5f77f821b7e5b04ac8e838109795564a90765beee160fb268f8b09",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      }
+    },
+    {
+      "id": "franklin_park",
+      "name": {
+        "zh": "富兰克林公园",
+        "en": "Franklin Park"
+      },
+      "stops": [
+        14
+      ],
+      "photo": "img/boston_area/franklin_park.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "富兰克林公园（资料图）",
+          "en": "Franklin Park (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Path_and_tree_in_Franklin_Park,_October_2013.jpg",
+          "author": "Sarah Nichols from Boston, MA, USA",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f82ff6fd22a343fe3e9c2eb05d2f684dfbde21dfbd328d5cba9631d3d5236ae5",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 797
+      }
+    },
+    {
+      "id": "franklin_park_zoo",
+      "name": {
+        "zh": "富兰克林公园动物园",
+        "en": "Franklin Park Zoo"
+      },
+      "stops": [
+        15
+      ],
+      "photo": "img/boston_area/franklin_park_zoo.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "富兰克林公园动物园（资料图）",
+          "en": "Franklin Park Zoo (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Franklin_Farm,_Franklin_Park_Zoo,_Dorchester_MA.jpg",
+          "author": "John Phelan",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "72852cfe07ab411f6bd79e913a1bfc038b10473e36c27f581316b693d629f354",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "black_heritage_trail",
+      "name": {
+        "zh": "波士顿黑人遗产步道",
+        "en": "Black Heritage Trail"
+      },
+      "stops": [
+        16
+      ],
+      "photo": "img/boston_area/black_heritage_trail.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿黑人遗产步道（资料图）",
+          "en": "Black Heritage Trail (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_African_Meeting_House_(0e4c6a56-d24f-4bb5-89eb-a6bd6d997c38).JPG",
+          "author": "NPS Photo",
+          "license": "Public domain",
+          "license_url": "",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "d03ab9b8baba136d7e0428c80233fcc2f9c1918726827b5d741767cf458e37d7",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      }
+    },
+    {
+      "id": "nubian_square",
+      "name": {
+        "zh": "努比亚广场",
+        "en": "Nubian Square"
+      },
+      "stops": [
+        17
+      ],
+      "photo": null
+    },
+    {
+      "id": "sowa",
+      "name": {
+        "zh": "SoWa艺术与设计区",
+        "en": "SoWa Art + Design District"
+      },
+      "stops": [
+        18
+      ],
+      "photo": "img/boston_area/sowa.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "SoWa艺术与设计区（资料图）",
+          "en": "SoWa Art + Design District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:2009_HarrisonAve_Boston_3388079514.jpg",
+          "author": "SoWa Sundays",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "06de1e80debd73b85788ef67e2337cd0028ac6137e63b9b2d9517e57997c8414",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "boston_harborwalk",
+      "name": {
+        "zh": "波士顿海港步道",
+        "en": "Boston Harborwalk"
+      },
+      "stops": [
+        21
+      ],
+      "photo": null
+    },
+    {
+      "id": "boston_tea_party_ships",
+      "name": {
+        "zh": "波士顿倾茶船与博物馆",
+        "en": "Boston Tea Party Ships & Museum"
+      },
+      "stops": [
+        22
+      ],
+      "photo": "img/boston_area/boston_tea_party_ships.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿倾茶船与博物馆（资料图）",
+          "en": "Boston Tea Party Ships & Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Tea_Wharf_at_the_Boston_Tea_Party_Ships_&_Museum.jpg",
+          "author": "DiscoA340",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "6562618d458560e9a7012901cf22498310ebfef8ba0db03ffc205caa5134ee84",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "ica_boston",
+      "name": {
+        "zh": "波士顿当代艺术学院",
+        "en": "Institute of Contemporary Art / Boston"
+      },
+      "stops": [
+        23
+      ],
+      "photo": "img/boston_area/ica_boston.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿当代艺术学院（资料图）",
+          "en": "Institute of Contemporary Art / Boston (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Institute_of_Contemporary_Art,_Boston,_and_Harborwalk.JPG",
+          "author": "NewtonCourt",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "df8212e3d1559bda86d75fce9104c26b984ed484fc5cd9098fcfcc43db620de9",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      }
+    },
+    {
+      "id": "boston_nature_center",
+      "name": {
+        "zh": "波士顿自然中心与野生动物保护区",
+        "en": "Boston Nature Center & Wildlife Sanctuary"
+      },
+      "stops": [
+        28
+      ],
+      "photo": null
+    },
+    {
+      "id": "millennium_park",
+      "name": {
+        "zh": "千禧公园",
+        "en": "Millennium Park"
+      },
+      "stops": [
+        29
+      ],
+      "photo": null
+    },
+    {
+      "id": "harvard_art_museums",
+      "name": {
+        "zh": "哈佛艺术博物馆",
+        "en": "Harvard Art Museums"
+      },
+      "stops": [
+        32
+      ],
+      "photo": "img/boston_area/harvard_art_museums.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "哈佛艺术博物馆（资料图）",
+          "en": "Harvard Art Museums (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Harvard_Art_Museums,_February_2022.jpg",
+          "author": "Sdkb",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "74a8c796ecafd687cf1b7cf1229676dd3650dcdb50bddee2f4f53d36723e04cf",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 600
+      }
+    },
+    {
+      "id": "mit_campus",
+      "name": {
+        "zh": "麻省理工学院校园",
+        "en": "Massachusetts Institute of Technology campus"
+      },
+      "stops": [
+        34
+      ],
+      "photo": "img/boston_area/mit_campus.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "麻省理工学院校园（资料图）",
+          "en": "Massachusetts Institute of Technology campus (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:MIT_Dome_night1_Edit.jpg",
+          "author": "Fcb981, this edited version by Thermos",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "547bc1da702793deb41cc85731ed68cb3c7484e958dfb02634b1a3bbb1307583",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 730
+      }
+    },
+    {
+      "id": "longfellow_house",
+      "name": {
+        "zh": "朗费罗故居—华盛顿总部国家历史遗址",
+        "en": "Longfellow House–Washington's Headquarters National Historic Site"
+      },
+      "stops": [
+        37
+      ],
+      "photo": "img/boston_area/longfellow_house.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "朗费罗故居—华盛顿总部国家历史遗址（资料图）",
+          "en": "Longfellow House–Washington's Headquarters National Historic Site (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Cambridge_-_Longfellow_House–Washington's_Headquarters_National_Historic_Site_-_20170911105734.jpg",
+          "author": "Riis2602",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "fd1e5e46548b1b43e1af2c89f0c785b9ab3e57b7008e595d9db1e675f8f671f0",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "pem",
+      "name": {
+        "zh": "皮博迪·埃塞克斯博物馆",
+        "en": "Peabody Essex Museum"
+      },
+      "stops": [
+        39
+      ],
+      "photo": "img/boston_area/pem.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "皮博迪·埃塞克斯博物馆（资料图）",
+          "en": "Peabody Essex Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Peabody_Essex_Museum.JPG",
+          "author": "Fletcher6",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "00bbfa4a29a003ab56fc4d84fdefd7560ec78fdb510989feb7dd6fbf1ac48c90",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 822
+      }
+    },
+    {
+      "id": "salem_maritime",
+      "name": {
+        "zh": "塞勒姆海事国家历史遗址",
+        "en": "Salem Maritime National Historic Site"
+      },
+      "stops": [
+        40
+      ],
+      "photo": "img/boston_area/salem_maritime.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "塞勒姆海事国家历史遗址（资料图）",
+          "en": "Salem Maritime National Historic Site (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Salem_Maritime_National_Historic_Site.JPG",
+          "author": "Ranjansanjeev",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "65290e7cb4525079956386d91486776034af7cb6fa3669fff8d25275407e5c58",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      }
+    },
+    {
+      "id": "house_of_seven_gables",
+      "name": {
+        "zh": "七角楼",
+        "en": "The House of the Seven Gables"
+      },
+      "stops": [
+        41
+      ],
+      "photo": "img/boston_area/house_of_seven_gables.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "七角楼（资料图）",
+          "en": "The House of the Seven Gables (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:House_of_the_Seven_Gables_(front_angle)_-_Salem,_Massachusetts.jpg",
+          "author": "",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "fe37d15bd6446efef775cf9b5254b2c97dd28f5584c5b581d539b7c088ceb2cb",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "salem_witch_museum",
+      "name": {
+        "zh": "塞勒姆女巫博物馆",
+        "en": "Salem Witch Museum"
+      },
+      "stops": [
+        42
+      ],
+      "photo": "img/boston_area/salem_witch_museum.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "塞勒姆女巫博物馆（资料图）",
+          "en": "Salem Witch Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Salem_Witch_Museum_1.jpg",
+          "author": "Upstateherd",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "228433fb988857e9e2072e89f93307371b0e084d9b65c8f7947c6bd56c726912",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "minute_man_nhp",
+      "name": {
+        "zh": "米努特曼国家历史公园",
+        "en": "Minute Man National Historical Park"
+      },
+      "stops": [
+        44
+      ],
+      "photo": null
+    },
+    {
+      "id": "north_bridge",
+      "name": {
+        "zh": "北桥",
+        "en": "North Bridge"
+      },
+      "stops": [
+        45
+      ],
+      "photo": null
+    },
+    {
+      "id": "battle_road_trail",
+      "name": {
+        "zh": "战役路步道",
+        "en": "Battle Road Trail"
+      },
+      "stops": [
+        46
+      ],
+      "photo": null
+    },
+    {
+      "id": "orchard_house",
+      "name": {
+        "zh": "果园之家",
+        "en": "Orchard House"
+      },
+      "stops": [
+        48
+      ],
+      "photo": null
+    },
+    {
+      "id": "the_wayside",
+      "name": {
+        "zh": "路边故居：作家之家",
+        "en": "The Wayside: Home of Authors"
+      },
+      "stops": [
+        49
+      ],
+      "photo": null
+    },
+    {
+      "id": "hancock_clarke_house",
+      "name": {
+        "zh": "汉考克—克拉克故居",
+        "en": "Hancock-Clarke House"
+      },
+      "stops": [
+        53
+      ],
+      "photo": null
+    },
+    {
+      "id": "adams_nhp",
+      "name": {
+        "zh": "亚当斯国家历史公园",
+        "en": "Adams National Historical Park"
+      },
+      "stops": [
+        54
+      ],
+      "photo": null
+    },
+    {
+      "id": "union_oyster_house",
+      "name": {
+        "zh": "联合牡蛎屋",
+        "en": "Union Oyster House"
+      },
+      "stops": [
+        55
+      ],
+      "photo": "img/boston_area/union_oyster_house.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "联合牡蛎屋（资料图）",
+          "en": "Union Oyster House (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Union-oyster-house-1.jpg",
+          "author": "Schneidz",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "421b379f6811087f5db664363f24b888e1c486047f0855555a5d3a432dd0ce9a",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "mikes_pastry",
+      "name": {
+        "zh": "Mike's Pastry（北端店）",
+        "en": "Mike's Pastry (North End)"
+      },
+      "stops": [
+        56
+      ],
+      "photo": null
+    },
+    {
+      "id": "regina_pizzeria_north_end",
+      "name": {
+        "zh": "雷吉娜披萨（北端店）",
+        "en": "Regina Pizzeria (North End)"
+      },
+      "stops": [
+        57
+      ],
+      "photo": "img/boston_area/regina_pizzeria_north_end.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "雷吉娜披萨（北端店）（资料图）",
+          "en": "Regina Pizzeria (North End) (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Pizzeria_Regina,_Boston_MA.jpg",
+          "author": "John Phelan",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "9d664e1ec7c72a999d1c2f651caf5348ecbc7330c27b4c0dc020221d4a04f573",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      }
+    },
+    {
+      "id": "oleana",
+      "name": {
+        "zh": "Oleana",
+        "en": "Oleana"
+      },
+      "stops": [
+        59
+      ],
+      "photo": null
+    },
+    {
+      "id": "hyde_park_urban_wilds",
+      "name": {
+        "zh": "海德公园城市荒野",
+        "en": "Urban Wilds: Hyde Park"
+      },
+      "stops": [
+        62
+      ],
+      "photo": null
+    },
+    {
+      "id": "allston_harvard_stadium",
+      "name": {
+        "zh": "哈佛体育场",
+        "en": "Harvard Stadium"
+      },
+      "stops": [
+        63
+      ],
+      "photo": null
+    },
+    {
+      "id": "chinatown_theater_district",
+      "name": {
+        "zh": "波士顿剧院区",
+        "en": "Boston Theater District"
+      },
+      "stops": [
+        65
+      ],
+      "photo": "img/boston_area/chinatown_theater_district.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿剧院区（资料图）",
+          "en": "Boston Theater District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Washington_Street,_Boston_(53828903528).jpg",
+          "author": "Ethan Long",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "b2d57989cbda344b50551d564237919ccc987a5301fa85083714648856588113",
+        "photographed_on": null,
+        "width": 798,
+        "height": 1200
+      }
+    },
+    {
+      "id": "mission_hill_basilica",
+      "name": {
+        "zh": "波士顿大殿（米申教堂）",
+        "en": "Boston's Basilica (The Mission Church)"
+      },
+      "stops": [
+        66
+      ],
+      "photo": null
+    },
+    {
+      "id": "west_end_museum",
+      "name": {
+        "zh": "西端博物馆",
+        "en": "The West End Museum"
+      },
+      "stops": [
+        67
+      ],
+      "photo": null
+    },
+    {
+      "id": "allston_harvard_avenue_district",
+      "name": {
+        "zh": "哈佛大道历史街区",
+        "en": "Harvard Avenue Historic District"
+      },
+      "stops": [
+        71
+      ],
+      "photo": null
+    },
+    {
+      "id": "brighton_waterworks_museum",
+      "name": {
+        "zh": "大都会水厂博物馆",
+        "en": "Metropolitan Waterworks Museum"
+      },
+      "stops": [
+        72
+      ],
+      "photo": null
+    },
+    {
+      "id": "mission_hill_triangle_historic_district",
+      "name": {
+        "zh": "米申三角历史街区",
+        "en": "Mission Hill Triangle Historic District"
+      },
+      "stops": [
+        73
+      ],
+      "photo": "img/boston_area/mission_hill_triangle_historic_district.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "米申三角历史街区（资料图）",
+          "en": "Mission Hill Triangle Historic District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Mission_Hill_Boston_entrance.jpg",
+          "author": "Tim Pierce",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "d837152e9d6efe9a2114eee5518b3f8a9f16a15cfe0c649c54920842405a6224",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 798
+      }
+    }
+  ],
+  "stops": {
+    "1": {
+      "seq": 1,
+      "place": "boston_common",
+      "name": {
+        "zh": "波士顿公园",
+        "en": "Boston Common"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "波士顿公园区",
+        "en": "Boston Common"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿历史公园，适合作为市中心步行游览的公共绿地；季节性设施以现场公告为准。"
+      ],
+      "intro_en": "Historic Boston park and public green space for a downtown walk; check on-site notices for seasonal facilities.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "City of Boston",
+          "url": "https://www.boston.gov/parks/boston-common"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室外公共空间；设施开放情况另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "139 Tremont Street, Boston, MA 02111（市政府页面所列地址）",
+        "en": "139 Tremont Street, Boston, MA 02111（市政府页面所列地址）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/boston_common.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿公园（资料图）",
+          "en": "Boston Common (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Boston_Common_November_2016_002.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "374954792be698eeb8b9e778c85e1a87126cefa6ef87abf1b70f3d17e32600a9",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      },
+      "objects": [],
+      "review": null
+    },
+    "2": {
+      "seq": 2,
+      "place": "public_garden",
+      "name": {
+        "zh": "波士顿公共花园",
+        "en": "Boston Public Garden"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "后湾",
+        "en": "Back Bay"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "美国早期公共植物园之一，园内有花园景观、纪念碑、喷泉与天鹅船；运营时间须另核。"
+      ],
+      "intro_en": "An early American public botanical garden with landscaped paths, monuments, fountains and Swan Boats; check current operations.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "City of Boston",
+          "url": "https://www.boston.gov/parks/public-garden"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共花园；天鹅船等设施另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "4 Charles Street, Boston, MA 02116（市政府页面所列地址）",
+        "en": "4 Charles Street, Boston, MA 02116（市政府页面所列地址）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/public_garden.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿公共花园（资料图）",
+          "en": "Boston Public Garden (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Boston_Public_Garden_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f7675b05dee287fb4258e6b4af3cb4c6392c443010831573c1249b9abb8b26e8",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      },
+      "objects": [],
+      "review": null
+    },
+    "3": {
+      "seq": 3,
+      "place": "freedom_trail",
+      "name": {
+        "zh": "自由之路",
+        "en": "Freedom Trail"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "市中心·北端·查尔斯敦",
+        "en": "Downtown / North End / Charlestown"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "城市历史步行路线，串联多处历史遗址；各站点的室内开放、门票与路线状况分别核对。"
+      ],
+      "intro_en": "An urban history route through Boston with historic sites; verify indoor access, tickets and conditions separately at each site.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Freedom Trail Foundation",
+          "url": "https://www.thefreedomtrail.org/trail-sites"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共街道步行；沿线场馆另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Boston（路线沿线，非单一地址）",
+        "en": "Boston（路线沿线，非单一地址）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/freedom_trail.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "自由之路（资料图）",
+          "en": "Freedom Trail (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Freedom_Trail_Sign_Boston_1974.jpg",
+          "author": "Michael Holley en:User:Swtpc6800 User:Swtpc6800",
+          "license": "Public domain",
+          "license_url": "",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "78ca1e5c6eccb6e370e3deb2782ebf02649dbab162f7483044f86225ac6cb7f9",
+        "photographed_on": null,
+        "width": 810,
+        "height": 1200
+      },
+      "objects": [],
+      "review": null
+    },
+    "6": {
+      "seq": 6,
+      "place": "trinity_church",
+      "name": {
+        "zh": "三一教堂",
+        "en": "Trinity Church"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "后湾",
+        "en": "Back Bay"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿的教堂建筑；礼拜、活动与游客参观安排可能影响入内。"
+      ],
+      "intro_en": "Church in Boston; worship and event schedules may affect visitor access.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Trinity Church in the City of Boston",
+          "url": "https://trinitychurchboston.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：外观可见；入内按教堂访客规定",
+        "en": ""
+      },
+      "address": {
+        "zh": "206 Clarendon Street, Boston, MA 02116",
+        "en": "206 Clarendon Street, Boston, MA 02116"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/trinity_church.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "三一教堂（资料图）",
+          "en": "Trinity Church (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Outside_Trinity_Church_in_Copley_Square,_Boston.jpg",
+          "author": "Swativ28",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "37351c551dbefaec451bfd1484f4081e4ab74d1d7c895d86f574498a54d42e44",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 675
+      },
+      "objects": [],
+      "review": null
+    },
+    "9": {
+      "seq": 9,
+      "place": "mfa_boston",
+      "name": {
+        "zh": "波士顿美术博物馆",
+        "en": "Museum of Fine Arts, Boston"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "芬威—肯莫尔",
+        "en": "Fenway–Kenmore"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿主要艺术博物馆之一；入馆、展览和交通信息以馆方最新访客页面为准。"
+      ],
+      "intro_en": "Major Boston art museum; consult the museum's current visitor information for admission, exhibitions and transit.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Museum of Fine Arts, Boston",
+          "url": "https://www.mfa.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：入馆、票务及开放时间另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "465 Huntington Ave, Boston",
+        "en": "465 Huntington Ave, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/mfa_boston.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿美术博物馆（资料图）",
+          "en": "Museum of Fine Arts, Boston (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Museum_of_Fine_Arts,_Boston_in_November_2021.jpg",
+          "author": "Sdkb",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "acba2b3aff950e1aba687e414d9a62f4d9efe9a33a6f0dfcbf557949fc6f4a3e",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "10": {
+      "seq": 10,
+      "place": "gardner_museum",
+      "name": {
+        "zh": "伊莎贝拉·斯图尔特·加德纳博物馆",
+        "en": "Isabella Stewart Gardner Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "芬威—肯莫尔",
+        "en": "Fenway–Kenmore"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "以伊莎贝拉·斯图尔特·加德纳的收藏与陈列为核心的艺术博物馆；建议按馆方要求提前安排门票。"
+      ],
+      "intro_en": "Art museum centered on Isabella Stewart Gardner's collection and displays; follow the museum's ticketing guidance.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Isabella Stewart Gardner Museum",
+          "url": "https://www.gardnermuseum.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：需购票；可能需提前预订",
+        "en": ""
+      },
+      "address": {
+        "zh": "25 Evans Way, Boston",
+        "en": "25 Evans Way, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/gardner_museum.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "伊莎贝拉·斯图尔特·加德纳博物馆（资料图）",
+          "en": "Isabella Stewart Gardner Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Isabella_Stewart_Gardner_Museum_Boston_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "295ea91cc4e6e616bed135e508785741436ebb3f0d4f5cf8e4c8255aee3427a2",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      },
+      "objects": [],
+      "review": null
+    },
+    "11": {
+      "seq": 11,
+      "place": "fenway_park",
+      "name": {
+        "zh": "芬威球场",
+        "en": "Fenway Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "芬威—肯莫尔",
+        "en": "Fenway–Kenmore"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿红袜队主场与城市体育地标；参观、比赛和场馆导览分别按运营方信息安排。"
+      ],
+      "intro_en": "Home of the Boston Red Sox and a city sports landmark; check the operator for games, tours and venue access.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Boston Red Sox",
+          "url": "https://www.mlb.com/redsox/ballpark"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：比赛需票；导览与场馆开放另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "4 Jersey St, Boston",
+        "en": "4 Jersey St, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/fenway_park.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "芬威球场（资料图）",
+          "en": "Fenway Park (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Fenway_Park01.jpg",
+          "author": "Bernard Gagnon",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "87d86720811adb4c4a46978432bcf166ec3652d71e256fa9e0aab1847c081f23",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 850
+      },
+      "objects": [],
+      "review": null
+    },
+    "12": {
+      "seq": 12,
+      "place": "back_bay_fens",
+      "name": {
+        "zh": "芬威公园地带",
+        "en": "Back Bay Fens"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "芬威—肯莫尔",
+        "en": "Fenway–Kenmore"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "翡翠项链公园系统中的城市公园地带；具体路径、设施和施工状况以公园公告为准。"
+      ],
+      "intro_en": "Urban parkland within the Emerald Necklace; check park notices for paths, facilities and construction.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Emerald Necklace Conservancy",
+          "url": "https://www.emeraldnecklace.org/park-overview/back-bay-fens/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室外公共空间；路径与设施另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "芬威一带",
+        "en": "芬威一带"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/back_bay_fens.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "芬威公园地带（资料图）",
+          "en": "Back Bay Fens (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Back_Bay_Fens_Boston_November_2016_001.jpg",
+          "author": "King of Hearts",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f2e7e1632b5f77f821b7e5b04ac8e838109795564a90765beee160fb268f8b09",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 801
+      },
+      "objects": [],
+      "review": null
+    },
+    "14": {
+      "seq": 14,
+      "place": "franklin_park",
+      "name": {
+        "zh": "富兰克林公园",
+        "en": "Franklin Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "罗克斯伯里·多切斯特·牙买加平原",
+        "en": "Roxbury / Dorchester / Jamaica Plain"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿大型公园之一，横跨多个社区；公园路径、设施和活动须按城市信息核对。"
+      ],
+      "intro_en": "One of Boston's major parks spanning several neighborhoods; check city information for paths, facilities and events.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "City of Boston",
+          "url": "https://www.boston.gov/parks/franklin-park"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共公园；园内设施及动物园另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "1 Franklin Park Road, Boston, MA 02121（市政府页面所列地址）",
+        "en": "1 Franklin Park Road, Boston, MA 02121（市政府页面所列地址）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/franklin_park.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "富兰克林公园（资料图）",
+          "en": "Franklin Park (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Path_and_tree_in_Franklin_Park,_October_2013.jpg",
+          "author": "Sarah Nichols from Boston, MA, USA",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "f82ff6fd22a343fe3e9c2eb05d2f684dfbde21dfbd328d5cba9631d3d5236ae5",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 797
+      },
+      "objects": [],
+      "review": null
+    },
+    "15": {
+      "seq": 15,
+      "place": "franklin_park_zoo",
+      "name": {
+        "zh": "富兰克林公园动物园",
+        "en": "Franklin Park Zoo"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "罗克斯伯里·多切斯特",
+        "en": "Roxbury / Dorchester"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿的动物园；票务与季节运营须查运营方信息。"
+      ],
+      "intro_en": "Zoo in Boston; check the operator for admission and seasonal operations.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Zoo New England",
+          "url": "https://www.zoonewengland.org/franklin-park-zoo/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：需按运营方信息购票并核实开放",
+        "en": ""
+      },
+      "address": {
+        "zh": "1 Franklin Park Rd, Boston",
+        "en": "1 Franklin Park Rd, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/franklin_park_zoo.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "富兰克林公园动物园（资料图）",
+          "en": "Franklin Park Zoo (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Franklin_Farm,_Franklin_Park_Zoo,_Dorchester_MA.jpg",
+          "author": "John Phelan",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "72852cfe07ab411f6bd79e913a1bfc038b10473e36c27f581316b693d629f354",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "16": {
+      "seq": 16,
+      "place": "black_heritage_trail",
+      "name": {
+        "zh": "波士顿黑人遗产步道",
+        "en": "Black Heritage Trail"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "灯塔山",
+        "en": "Beacon Hill"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "串联灯塔山黑人历史相关地点的步行路线；路线站点可外观浏览，导览及建筑入内另核。"
+      ],
+      "intro_en": "Walking route connecting Black history sites on Beacon Hill; verify guided tours and interior access separately.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/boaf/planyourvisit/index.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共街道步行；室内场馆另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Beacon Hill",
+        "en": "Beacon Hill"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/black_heritage_trail.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿黑人遗产步道（资料图）",
+          "en": "Black Heritage Trail (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_African_Meeting_House_(0e4c6a56-d24f-4bb5-89eb-a6bd6d997c38).JPG",
+          "author": "NPS Photo",
+          "license": "Public domain",
+          "license_url": "",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "d03ab9b8baba136d7e0428c80233fcc2f9c1918726827b5d741767cf458e37d7",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      },
+      "objects": [],
+      "review": null
+    },
+    "17": {
+      "seq": 17,
+      "place": "nubian_square",
+      "name": {
+        "zh": "努比亚广场",
+        "en": "Nubian Square"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "罗克斯伯里",
+        "en": "Roxbury"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "罗克斯伯里社区的公共街区节点；周边公共艺术、商铺和活动须逐项核实。"
+      ],
+      "intro_en": "Public neighborhood center in Roxbury; verify nearby public art, businesses and events individually.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Meet Boston",
+          "url": "https://www.meetboston.com/explore/neighborhoods/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共街道；商铺与活动状态另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "罗克斯伯里努比亚广场",
+        "en": "罗克斯伯里努比亚广场"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "18": {
+      "seq": 18,
+      "place": "sowa",
+      "name": {
+        "zh": "SoWa艺术与设计区",
+        "en": "SoWa Art + Design District"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "南端",
+        "en": "South End"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "南端的艺术、设计与市场区域；市场及画廊开放可能随日期变化。"
+      ],
+      "intro_en": "Arts, design and market area in the South End; market and gallery access may vary by date.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "SoWa Boston",
+          "url": "https://www.sowaboston.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：街道公共区域；商户营业和市场日期另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "530 Harrison Ave, Boston, MA 02118（官网所列地址）",
+        "en": "530 Harrison Ave, Boston, MA 02118（官网所列地址）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/sowa.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "SoWa艺术与设计区（资料图）",
+          "en": "SoWa Art + Design District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:2009_HarrisonAve_Boston_3388079514.jpg",
+          "author": "SoWa Sundays",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "06de1e80debd73b85788ef67e2337cd0028ac6137e63b9b2d9517e57997c8414",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "21": {
+      "seq": 21,
+      "place": "boston_harborwalk",
+      "name": {
+        "zh": "波士顿海港步道",
+        "en": "Boston Harborwalk"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "海滨·海港·东波士顿",
+        "en": "Waterfront / Seaport / East Boston"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "沿波士顿海滨分段连接公共空间的步行系统；各段连续性、施工和开放情况须现场复核。"
+      ],
+      "intro_en": "Segmented public waterfront walkway; verify continuity, construction and access for each segment.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Boston Planning & Development Agency",
+          "url": "https://www.bostonplans.org/planning-zoning/planning-initiatives/harborwalk"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共步道分段；不等同完整连续路线",
+        "en": ""
+      },
+      "address": {
+        "zh": "Multiple Boston waterfront segments",
+        "en": "Multiple Boston waterfront segments"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "22": {
+      "seq": 22,
+      "place": "boston_tea_party_ships",
+      "name": {
+        "zh": "波士顿倾茶船与博物馆",
+        "en": "Boston Tea Party Ships & Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "海港区",
+        "en": "Seaport"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "以波士顿倾茶事件为主题的互动场馆；参观时段、票务和无障碍安排按运营方页面核对。"
+      ],
+      "intro_en": "Interactive venue focused on the Boston Tea Party; check the operator for tour times, tickets and accessibility.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Boston Tea Party Ships & Museum",
+          "url": "https://www.bostonteapartyship.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：需购票或预约；时段另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "306 Congress St, Boston",
+        "en": "306 Congress St, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/boston_tea_party_ships.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿倾茶船与博物馆（资料图）",
+          "en": "Boston Tea Party Ships & Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Tea_Wharf_at_the_Boston_Tea_Party_Ships_&_Museum.jpg",
+          "author": "DiscoA340",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "6562618d458560e9a7012901cf22498310ebfef8ba0db03ffc205caa5134ee84",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "23": {
+      "seq": 23,
+      "place": "ica_boston",
+      "name": {
+        "zh": "波士顿当代艺术学院",
+        "en": "Institute of Contemporary Art / Boston"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "海港区",
+        "en": "Seaport"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "海港区的当代艺术机构；展览和访客政策以馆方当前访客页面为准。"
+      ],
+      "intro_en": "Contemporary art institution in the Seaport; consult current visitor information for exhibitions and policies.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Institute of Contemporary Art / Boston",
+          "url": "https://www.icaboston.org/visit/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：入馆、票务和活动另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "25 Harbor Shore Dr, Boston",
+        "en": "25 Harbor Shore Dr, Boston"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/ica_boston.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿当代艺术学院（资料图）",
+          "en": "Institute of Contemporary Art / Boston (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Institute_of_Contemporary_Art,_Boston,_and_Harborwalk.JPG",
+          "author": "NewtonCourt",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "df8212e3d1559bda86d75fce9104c26b984ed484fc5cd9098fcfcc43db620de9",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      },
+      "objects": [],
+      "review": null
+    },
+    "28": {
+      "seq": 28,
+      "place": "boston_nature_center",
+      "name": {
+        "zh": "波士顿自然中心与野生动物保护区",
+        "en": "Boston Nature Center & Wildlife Sanctuary"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "马塔潘",
+        "en": "Mattapan"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "马萨诸塞州奥杜邦协会管理的自然保护区；步道、活动及访客开放须按保护区信息核对。"
+      ],
+      "intro_en": "Mass Audubon nature sanctuary; check its visitor information for trails, programs and access.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Mass Audubon",
+          "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/boston-nature-center"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：自然保护区；步道及设施开放另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "500 Walk Hill St, Mattapan",
+        "en": "500 Walk Hill St, Mattapan"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "29": {
+      "seq": 29,
+      "place": "millennium_park",
+      "name": {
+        "zh": "千禧公园",
+        "en": "Millennium Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "西罗克斯伯里",
+        "en": "West Roxbury"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "西罗克斯伯里的城市公园；入口、停车、路径和设施以波士顿市公园信息为准。"
+      ],
+      "intro_en": "City park in West Roxbury; check Boston Parks for entrances, parking, paths and facilities.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "City of Boston",
+          "url": "https://www.boston.gov/departments/parks-and-recreation/project/millennium-park-improvements"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共户外空间；设施开放另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "West Roxbury",
+        "en": "West Roxbury"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "32": {
+      "seq": 32,
+      "place": "harvard_art_museums",
+      "name": {
+        "zh": "哈佛艺术博物馆",
+        "en": "Harvard Art Museums"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "剑桥",
+        "en": "Harvard Square / Cambridge"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "哈佛大学艺术博物馆群；馆方访客页面提供入馆、交通与活动信息，出行前须再次确认。"
+      ],
+      "intro_en": "Harvard University's art museums; consult the visitor page for admission, transit and events before visiting.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Harvard Art Museums",
+          "url": "https://harvardartmuseums.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：馆方访客政策与活动另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "32 Quincy St, Cambridge",
+        "en": "32 Quincy St, Cambridge"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/harvard_art_museums.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "哈佛艺术博物馆（资料图）",
+          "en": "Harvard Art Museums (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Harvard_Art_Museums,_February_2022.jpg",
+          "author": "Sdkb",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "74a8c796ecafd687cf1b7cf1229676dd3650dcdb50bddee2f4f53d36723e04cf",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 600
+      },
+      "objects": [],
+      "review": null
+    },
+    "34": {
+      "seq": 34,
+      "place": "mit_campus",
+      "name": {
+        "zh": "麻省理工学院校园",
+        "en": "Massachusetts Institute of Technology campus"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "剑桥",
+        "en": "Kendall Square / Cambridge"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "剑桥的大学校园，跨查尔斯河与波士顿相望；公开导览与展览安排以校方信息为准。"
+      ],
+      "intro_en": "University campus in Cambridge across the Charles River from Boston; check the university for public tours and exhibitions.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Massachusetts Institute of Technology",
+          "url": "https://www.mit.edu/visit/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：不保证教学建筑开放；须遵守校方规定",
+        "en": ""
+      },
+      "address": {
+        "zh": "77 Massachusetts Ave, Cambridge",
+        "en": "77 Massachusetts Ave, Cambridge"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/mit_campus.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "麻省理工学院校园（资料图）",
+          "en": "Massachusetts Institute of Technology campus (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:MIT_Dome_night1_Edit.jpg",
+          "author": "Fcb981, this edited version by Thermos",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "547bc1da702793deb41cc85731ed68cb3c7484e958dfb02634b1a3bbb1307583",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 730
+      },
+      "objects": [],
+      "review": null
+    },
+    "37": {
+      "seq": 37,
+      "place": "longfellow_house",
+      "name": {
+        "zh": "朗费罗故居—华盛顿总部国家历史遗址",
+        "en": "Longfellow House–Washington's Headquarters National Historic Site"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "剑桥",
+        "en": "Cambridge"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "由美国国家公园管理局管理的剑桥历史遗址；建筑内部开放按预约与季节安排核实。"
+      ],
+      "intro_en": "Cambridge historic site managed by the National Park Service; verify reservations and seasonal access for the house interior.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/long/planyourvisit/index.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室外场地与室内参观开放安排不同",
+        "en": ""
+      },
+      "address": {
+        "zh": "105 Brattle St, Cambridge",
+        "en": "105 Brattle St, Cambridge"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/longfellow_house.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "朗费罗故居—华盛顿总部国家历史遗址（资料图）",
+          "en": "Longfellow House–Washington's Headquarters National Historic Site (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Cambridge_-_Longfellow_House–Washington's_Headquarters_National_Historic_Site_-_20170911105734.jpg",
+          "author": "Riis2602",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "fd1e5e46548b1b43e1af2c89f0c785b9ab3e57b7008e595d9db1e675f8f671f0",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "39": {
+      "seq": 39,
+      "place": "pem",
+      "name": {
+        "zh": "皮博迪·埃塞克斯博物馆",
+        "en": "Peabody Essex Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "萨勒姆",
+        "en": "Salem"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "塞勒姆的艺术与文化博物馆；部分历史住宅另需定时票，展览、开放和交通须按当日馆方信息核实。"
+      ],
+      "intro_en": "Art and culture museum in Salem; some historic houses require timed tickets, so check current exhibitions, hours and transit.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Peabody Essex Museum",
+          "url": "https://pem.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：入馆按馆方票务；部分场馆需定时票",
+        "en": ""
+      },
+      "address": {
+        "zh": "161 Essex St, Salem",
+        "en": "161 Essex St, Salem"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/pem.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "皮博迪·埃塞克斯博物馆（资料图）",
+          "en": "Peabody Essex Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Peabody_Essex_Museum.JPG",
+          "author": "Fletcher6",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "00bbfa4a29a003ab56fc4d84fdefd7560ec78fdb510989feb7dd6fbf1ac48c90",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 822
+      },
+      "objects": [],
+      "review": null
+    },
+    "40": {
+      "seq": 40,
+      "place": "salem_maritime",
+      "name": {
+        "zh": "塞勒姆海事国家历史遗址",
+        "en": "Salem Maritime National Historic Site"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "萨勒姆",
+        "en": "Salem"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "美国国家公园管理局管理的海事历史遗址；游客中心和建筑开放安排分项核实。"
+      ],
+      "intro_en": "Maritime historic site managed by the National Park Service; verify visitor center and building access separately.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/sama/planyourvisit/index.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：户外遗址公共区域；建筑开放时间另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "塞勒姆海滨（门牌待核）",
+        "en": "塞勒姆海滨（门牌待核）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/salem_maritime.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "塞勒姆海事国家历史遗址（资料图）",
+          "en": "Salem Maritime National Historic Site (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Salem_Maritime_National_Historic_Site.JPG",
+          "author": "Ranjansanjeev",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "65290e7cb4525079956386d91486776034af7cb6fa3669fff8d25275407e5c58",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 800
+      },
+      "objects": [],
+      "review": null
+    },
+    "41": {
+      "seq": 41,
+      "place": "house_of_seven_gables",
+      "name": {
+        "zh": "七角楼",
+        "en": "The House of the Seven Gables"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "萨勒姆",
+        "en": "Salem"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "塞勒姆海滨的历史建筑与博物馆；导览、门票和场地开放按运营方最新信息安排。"
+      ],
+      "intro_en": "Historic house and museum on Salem's waterfront; check the operator for tours, admission and site access.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "The House of the Seven Gables",
+          "url": "https://7gables.org/visit/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：导览和入内需按运营方安排",
+        "en": ""
+      },
+      "address": {
+        "zh": "115 Derby St, Salem",
+        "en": "115 Derby St, Salem"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/house_of_seven_gables.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "七角楼（资料图）",
+          "en": "The House of the Seven Gables (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:House_of_the_Seven_Gables_(front_angle)_-_Salem,_Massachusetts.jpg",
+          "author": "",
+          "license": "CC BY-SA 3.0",
+          "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "fe37d15bd6446efef775cf9b5254b2c97dd28f5584c5b581d539b7c088ceb2cb",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "42": {
+      "seq": 42,
+      "place": "salem_witch_museum",
+      "name": {
+        "zh": "塞勒姆女巫博物馆",
+        "en": "Salem Witch Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "萨勒姆",
+        "en": "Salem"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "以1692年塞勒姆审巫事件为主题的博物馆；场次、预约和票务以博物馆信息为准。"
+      ],
+      "intro_en": "Museum focused on the 1692 Salem witch trials; check the museum for showtimes, reservations and tickets.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Salem Witch Museum",
+          "url": "https://salemwitchmuseum.com/visit/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：入馆时段与票务另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "19 1/2 N Washington Sq, Salem",
+        "en": "19 1/2 N Washington Sq, Salem"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/salem_witch_museum.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "塞勒姆女巫博物馆（资料图）",
+          "en": "Salem Witch Museum (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Salem_Witch_Museum_1.jpg",
+          "author": "Upstateherd",
+          "license": "CC BY-SA 4.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "228433fb988857e9e2072e89f93307371b0e084d9b65c8f7947c6bd56c726912",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "44": {
+      "seq": 44,
+      "place": "minute_man_nhp",
+      "name": {
+        "zh": "米努特曼国家历史公园",
+        "en": "Minute Man National Historical Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "莱克星顿·康科德",
+        "en": "Lexington / Lincoln / Concord"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "横跨莱克星顿、林肯和康科德的历史公园；步道、游客中心与历史建筑的季节开放各不相同。"
+      ],
+      "intro_en": "Historic park spanning Lexington, Lincoln and Concord; trails, visitor centers and historic buildings have different seasonal schedules.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共步道；建筑及游客中心按季节开放",
+        "en": ""
+      },
+      "address": {
+        "zh": "Multiple park units",
+        "en": "Multiple park units"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "45": {
+      "seq": 45,
+      "place": "north_bridge",
+      "name": {
+        "zh": "北桥",
+        "en": "North Bridge"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "康科德",
+        "en": "Concord"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "康科德的历史桥梁与纪念景观；停车、步道和游客中心开放情况须按国家公园公告核对。"
+      ],
+      "intro_en": "Historic bridge and commemorative landscape in Concord; check the National Park Service for parking, trails and visitor center access.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：户外纪念地；游客中心季节开放",
+        "en": ""
+      },
+      "address": {
+        "zh": "Monument St, Concord",
+        "en": "Monument St, Concord"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "46": {
+      "seq": 46,
+      "place": "battle_road_trail",
+      "name": {
+        "zh": "战役路步道",
+        "en": "Battle Road Trail"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "莱克星顿·康科德",
+        "en": "Lexington / Lincoln / Concord"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "国家历史公园内连接多个历史地点的步道；公园地图可在游客中心取得。"
+      ],
+      "intro_en": "Trail connecting historic sites in the national historical park; a park map is available at the visitor center.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共步道；路段和季节条件另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Route 2A corridor",
+        "en": "Route 2A corridor"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "48": {
+      "seq": 48,
+      "place": "orchard_house",
+      "name": {
+        "zh": "果园之家",
+        "en": "Orchard House"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "康科德",
+        "en": "Concord"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "与路易莎·梅·奥尔科特及其家庭相关的历史故居；室内参观须按运营方导览和预约安排。"
+      ],
+      "intro_en": "Historic home associated with Louisa May Alcott and her family; interior visits follow operator tour and reservation arrangements.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Louisa May Alcott's Orchard House",
+          "url": "https://louisamayalcott.org/visit"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室内仅按导览与预约开放",
+        "en": ""
+      },
+      "address": {
+        "zh": "399 Lexington Rd, Concord",
+        "en": "399 Lexington Rd, Concord"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "49": {
+      "seq": 49,
+      "place": "the_wayside",
+      "name": {
+        "zh": "路边故居：作家之家",
+        "en": "The Wayside: Home of Authors"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "康科德",
+        "en": "Concord"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "国家公园管理局管理的康科德历史住宅；室外场地与住宅内部有不同开放安排，须核对季节公告。"
+      ],
+      "intro_en": "Historic Concord house managed by the National Park Service; verify separate seasonal access for grounds and interior.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/mima/planyourvisit/placestogo.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室外场地与室内开放分开核实",
+        "en": ""
+      },
+      "address": {
+        "zh": "455 Lexington Rd, Concord",
+        "en": "455 Lexington Rd, Concord"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "53": {
+      "seq": 53,
+      "place": "hancock_clarke_house",
+      "name": {
+        "zh": "汉考克—克拉克故居",
+        "en": "Hancock-Clarke House"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "莱克星顿",
+        "en": "Lexington"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "莱克星顿历史博物馆群管理的历史住宅；是否开放、导览和季节安排须查运营方信息。"
+      ],
+      "intro_en": "Historic house managed by Lexington History Museums; check the operator for access, tours and seasonal schedule.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Lexington History Museums",
+          "url": "https://lexingtonhistory.org/visit/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：室内开放及导览另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Lexington（门牌待核）",
+        "en": "Lexington（门牌待核）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "54": {
+      "seq": 54,
+      "place": "adams_nhp",
+      "name": {
+        "zh": "亚当斯国家历史公园",
+        "en": "Adams National Historical Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "昆西",
+        "en": "Quincy"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "昆西的总统家族历史遗址；住宅开放按国家公园季节安排核对。"
+      ],
+      "intro_en": "Presidential family historic sites in Quincy; verify seasonal access for the houses.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service",
+          "url": "https://www.nps.gov/adam/planyourvisit/index.htm"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：部分场地需导览；开放另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Quincy",
+        "en": "Quincy"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "55": {
+      "seq": 55,
+      "place": "union_oyster_house",
+      "name": {
+        "zh": "联合牡蛎屋",
+        "en": "Union Oyster House"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "北端·市中心",
+        "en": "North End / Downtown"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "弗尼尔大厅附近自由之路沿线的历史餐饮地点，1826 年起营业；仅用于地点识别，不评价食物、服务或价格。"
+      ],
+      "intro_en": "Historic dining venue near Faneuil Hall on the Freedom Trail, operating since 1826; listed for place identification only, not for food, service or price evaluation.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Union Oyster House",
+          "url": "https://www.unionoysterhouse.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：餐厅营业、预约和无障碍情况另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "41 Union Street, Boston（官网页面）",
+        "en": "41 Union Street, Boston（官网页面）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/union_oyster_house.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "联合牡蛎屋（资料图）",
+          "en": "Union Oyster House (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Union-oyster-house-1.jpg",
+          "author": "Schneidz",
+          "license": "CC BY-SA 3.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "421b379f6811087f5db664363f24b888e1c486047f0855555a5d3a432dd0ce9a",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "56": {
+      "seq": 56,
+      "place": "mikes_pastry",
+      "name": {
+        "zh": "Mike's Pastry（北端店）",
+        "en": "Mike's Pastry (North End)"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "北端",
+        "en": "North End"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "北端甜品店候选；须核实此具体门店、经营者资料和当日营业状态，不作口味或排队时长承诺。"
+      ],
+      "intro_en": "Candidate North End pastry shop; verify this specific location, operator information and current hours. No claims about taste or queue time.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Mike's Pastry",
+          "url": "https://www.mikespastry.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：营业及门店位置须以经营者最新信息为准",
+        "en": ""
+      },
+      "address": {
+        "zh": "北端 Hanover Street（门牌以官网为准，待核）",
+        "en": "北端 Hanover Street（门牌以官网为准，待核）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "57": {
+      "seq": 57,
+      "place": "regina_pizzeria_north_end",
+      "name": {
+        "zh": "雷吉娜披萨（北端店）",
+        "en": "Regina Pizzeria (North End)"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "北端",
+        "en": "North End"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "北端披萨店候选；按具体分店识别，营业、候位和预订以经营者信息为准。"
+      ],
+      "intro_en": "Candidate North End pizzeria; identify the specific branch and check operator information for hours, waits and reservations.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Regina Pizzeria",
+          "url": "https://www.reginapizzeria.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：营业及分店地址须以经营者最新信息为准",
+        "en": ""
+      },
+      "address": {
+        "zh": "北端店（门牌以官网为准，待核）",
+        "en": "北端店（门牌以官网为准，待核）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/regina_pizzeria_north_end.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "雷吉娜披萨（北端店）（资料图）",
+          "en": "Regina Pizzeria (North End) (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Pizzeria_Regina,_Boston_MA.jpg",
+          "author": "John Phelan",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "9d664e1ec7c72a999d1c2f651caf5348ecbc7330c27b4c0dc020221d4a04f573",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 900
+      },
+      "objects": [],
+      "review": null
+    },
+    "59": {
+      "seq": 59,
+      "place": "oleana",
+      "name": {
+        "zh": "Oleana",
+        "en": "Oleana"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "剑桥",
+        "en": "Cambridge"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "剑桥餐厅候选；以经营者资料确认地点和餐厅身份，不评价菜品、服务、价格或当日营业。"
+      ],
+      "intro_en": "Candidate Cambridge restaurant; use operator information to confirm location and identity, without rating food, service, prices or daily operations.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Oleana Restaurant",
+          "url": "https://www.oleanarestaurant.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：须核实地址、预约与当日营业",
+        "en": ""
+      },
+      "address": {
+        "zh": "134 Hampshire Street, Cambridge（官网页面）",
+        "en": "134 Hampshire Street, Cambridge（官网页面）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "62": {
+      "seq": 62,
+      "place": "hyde_park_urban_wilds",
+      "name": {
+        "zh": "海德公园城市荒野",
+        "en": "Urban Wilds: Hyde Park"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "海德公园",
+        "en": "Hyde Park"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿城市荒野计划在海德公园的林地片区；市政页面载有各片的界线与所有权，其中有地块已由 DCR 并入 Stony Brook Reservation。"
+      ],
+      "intro_en": "Boston Urban Wilds woodland parcels in Hyde Park; the city page lists each parcel's boundary and ownership, and notes that DCR has merged one parcel into Stony Brook Reservation.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "City of Boston",
+          "url": "https://www.boston.gov/departments/parks-and-recreation/urban-wilds-hyde-park"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共林地；步道与入口按各片现场情况另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Hyde Park, Boston（各片位置见市页面）",
+        "en": "Hyde Park, Boston（各片位置见市页面）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "63": {
+      "seq": 63,
+      "place": "allston_harvard_stadium",
+      "name": {
+        "zh": "哈佛体育场",
+        "en": "Harvard Stadium"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "奥尔斯顿",
+        "en": "Allston"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿的体育场；美国国家史迹名录档案发布于 1987 年 2 月 27 日，记载其建筑风格为古典复兴，重要性在工程与娱乐方面。"
+      ],
+      "intro_en": "Stadium in Boston; its National Register of Historic Places record is dated February 27, 1987 and gives a Classical Revival style, with significance in engineering and entertainment.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service（国家史迹名录）",
+          "url": "https://npgallery.nps.gov/AssetDetail/NRIS/87000757"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：场馆；入内与参观以运营方安排为准",
+        "en": ""
+      },
+      "address": {
+        "zh": "60 N. Harvard St（依 NRHP 记录）",
+        "en": "60 N. Harvard St（依 NRHP 记录）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "65": {
+      "seq": 65,
+      "place": "chinatown_theater_district",
+      "name": {
+        "zh": "波士顿剧院区",
+        "en": "Boston Theater District"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "唐人街·剧院区",
+        "en": "Chinatown / Theatre District"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "Boston By Foot 的剧院区步行导览，沿歌剧院、Majestic、Wilbur、Colonial、Paramount 等剧院外观行走，讲述波士顿剧院的历史；另与 Boch Center Wang Theatre 合办两小时剧院史导览。"
+      ],
+      "intro_en": "Boston By Foot walking tour of the Theater District, covering the exteriors of the Opera House, Majestic, Wilbur, Colonial and Paramount theaters; a two-hour theater history tour with the Boch Center Wang Theatre is also offered.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Boston By Foot（非营利导览机构）",
+          "url": "https://bostonbyfoot.org/tours/theater-district/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：以外观步行为主；导览时段与票价以 Boston By Foot 为准，会员有折扣",
+        "en": ""
+      },
+      "address": {
+        "zh": "华盛顿街剧院区",
+        "en": "华盛顿街剧院区"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/chinatown_theater_district.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "波士顿剧院区（资料图）",
+          "en": "Boston Theater District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Washington_Street,_Boston_(53828903528).jpg",
+          "author": "Ethan Long",
+          "license": "CC BY-SA 2.0",
+          "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "b2d57989cbda344b50551d564237919ccc987a5301fa85083714648856588113",
+        "photographed_on": null,
+        "width": 798,
+        "height": 1200
+      },
+      "objects": [],
+      "review": null
+    },
+    "66": {
+      "seq": 66,
+      "place": "mission_hill_basilica",
+      "name": {
+        "zh": "波士顿大殿（米申教堂）",
+        "en": "Boston's Basilica (The Mission Church)"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "米申山",
+        "en": "Mission Hill"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "天主教教区教堂，自称 Boston's Basilica；弥撒时间、教堂活动与新闻以教区官网为准。"
+      ],
+      "intro_en": "Catholic parish church that calls itself Boston's Basilica; Mass times, parish activities and news are on the parish website.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Boston's Basilica（教区官网）",
+          "url": "https://www.bostonsbasilica.com/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：宗教场所；参观与弥撒以教区规定为准",
+        "en": ""
+      },
+      "address": {
+        "zh": "1545 Tremont Street, Boston, MA 02120（依教区官网页面）",
+        "en": "1545 Tremont Street, Boston, MA 02120（依教区官网页面）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "67": {
+      "seq": 67,
+      "place": "west_end_museum",
+      "name": {
+        "zh": "西端博物馆",
+        "en": "The West End Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "西端",
+        "en": "West End"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "记录波士顿西端社区历史的社区博物馆，展览涵盖废奴运动的起源、交通枢纽地位、城市多元化，以及城市更新带来的历史创伤。"
+      ],
+      "intro_en": "A neighborhood museum that collects and presents the history of Boston's West End, including the origins of abolition, its role as a transportation hub, its diversity, and the urban renewal that the museum describes as a major tragedy.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "The West End Museum",
+          "url": "https://thewestendmuseum.org/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：开放时间以官网为准；讲座与私人导览另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "150 Staniford St, Suite 7, Boston, MA 02114",
+        "en": "150 Staniford St, Suite 7, Boston, MA 02114"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "71": {
+      "seq": 71,
+      "place": "allston_harvard_avenue_district",
+      "name": {
+        "zh": "哈佛大道历史街区",
+        "en": "Harvard Avenue Historic District"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "奥尔斯顿",
+        "en": "Allston"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "波士顿哈佛大道沿线的历史街区，列入美国国家史迹名录；记录的建筑风格包括晚维多利亚与 19 至 20 世纪的复兴式样，意义涉及建筑、商业与社区规划。"
+      ],
+      "intro_en": "Historic district along Harvard Avenue in Boston, listed on the National Register of Historic Places; the record lists Late Victorian and late 19th–20th century revival styles, with significance in architecture, commerce and community planning.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service（国家史迹名录）",
+          "url": "https://npgallery.nps.gov/AssetDetail/NRIS/00000415"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：公共街道；建筑内部与店铺另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Harvard Avenue, Boston（沿线范围待核）",
+        "en": "Harvard Avenue, Boston（沿线范围待核）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "72": {
+      "seq": 72,
+      "place": "brighton_waterworks_museum",
+      "name": {
+        "zh": "大都会水厂博物馆",
+        "en": "Metropolitan Waterworks Museum"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "布莱顿",
+        "en": "Brighton"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "展示波士顿供水历史的博物馆；大机房陈列三台原装燃煤蒸汽泵（Leavitt、Worthington、Allis），据馆方介绍它们高过三层楼，曾每日向波士顿城输送淡水；另有特别导览时段。"
+      ],
+      "intro_en": "Museum of Boston's water-supply history; the Great Engines Hall holds three original coal-fired steam pumps (Leavitt, Worthington and Allis), more than three stories tall, which the museum says pumped fresh water into the city each day; special access tours are scheduled.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "Metropolitan Waterworks Museum",
+          "url": "https://waterworksmuseum.org/"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：开放时段与特别导览以馆方页面为准，页面显示为动态信息",
+        "en": ""
+      },
+      "address": {
+        "zh": "2450 Beacon Street, Boston, MA 02467（依馆方页面）",
+        "en": "2450 Beacon Street, Boston, MA 02467（依馆方页面）"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": null,
+      "photo_info": null,
+      "objects": [],
+      "review": null
+    },
+    "73": {
+      "seq": 73,
+      "place": "mission_hill_triangle_historic_district",
+      "name": {
+        "zh": "米申三角历史街区",
+        "en": "Mission Hill Triangle Historic District"
+      },
+      "aliases": [],
+      "tier": "",
+      "core": null,
+      "kind": "culture",
+      "area": {
+        "zh": "米申山",
+        "en": "Mission Hill"
+      },
+      "related": null,
+      "dwell": null,
+      "status": {
+        "zh": "以现场为准",
+        "en": "Check on site"
+      },
+      "intro": [
+        "以 Smith、Worthington、Tremont 与 Huntington 街为界的历史街区；国家史迹名录记录其建筑风格为殖民复兴与晚维多利亚式，意义涉及社区规划、商业与建筑。"
+      ],
+      "intro_en": "Historic district roughly bounded by Smith, Worthington, Tremont and Huntington streets; the National Register record lists Colonial Revival and Late Victorian styles, with significance in community planning, commerce and architecture.",
+      "source": {
+        "zh": "依据来源机构页面整理（AI整理），逐条出处见下方",
+        "en": "Summarised from the source organisation's page; sources below"
+      },
+      "sources": [
+        {
+          "title": "National Park Service（国家史迹名录）",
+          "url": "https://npgallery.nps.gov/AssetDetail/NRIS/89001747"
+        }
+      ],
+      "borrowed": {
+        "zh": "访问：街区为公共街道；建筑内部开放与否未核实，另核",
+        "en": ""
+      },
+      "address": {
+        "zh": "Smith St、Worthington St、Tremont St 与 Huntington Ave 之间",
+        "en": "Smith St、Worthington St、Tremont St 与 Huntington Ave 之间"
+      },
+      "specialty": {
+        "zh": "",
+        "en": ""
+      },
+      "shop_kind": {
+        "zh": "",
+        "en": ""
+      },
+      "platform": {
+        "zh": "",
+        "en": ""
+      },
+      "photo": "img/boston_area/mission_hill_triangle_historic_district.jpg",
+      "photo_info": {
+        "caption": {
+          "zh": "米申三角历史街区（资料图）",
+          "en": "Mission Hill Triangle Historic District (reference photo)"
+        },
+        "source": {
+          "title": "Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:Mission_Hill_Boston_entrance.jpg",
+          "author": "Tim Pierce",
+          "license": "CC BY 3.0",
+          "license_url": "https://creativecommons.org/licenses/by/3.0",
+          "changes": "已缩放为1200像素以内的JPEG，未作其他修改"
+        },
+        "sha256": "d837152e9d6efe9a2114eee5518b3f8a9f16a15cfe0c649c54920842405a6224",
+        "photographed_on": null,
+        "width": 1200,
+        "height": 798
+      },
+      "objects": [],
+      "review": null
+    }
+  },
+  "routes": [],
+  "default_route": "none",
+  "provenance": {
+    "inventory": "boston_area_list.py",
+    "inventory_sha256": "3be51cb0ff0eab049ed4e3b000d29cebb291b73b4d3bb8fb808ee248feb221f5",
+    "audit": "boston_area_v3_audit_results_haiku55.json",
+    "audit_sha256": "8d2b3917a47a263b011906c3aa3f4b17becc3801f7f9408f0b8895d931b30371",
+    "capture": "boston_area_v3_source_capture.json",
+    "capture_sha256": "51085c6e2ac2aa9da4844982691362981e75f1407bee5900faf4406dfe435cf3",
+    "routes": "boston_area_routes.json",
+    "routes_sha256": "edbce2de2d49d72871ec096bacd35d199a95f3f19f7e41a85b80935a4529b561",
+    "photos": "boston_area_photo_manifest.json",
+    "photos_sha256": "6b082f2f6fc91d9f10ce1656818b3652f04df6466434e7e6e7f7aa98f5aededc",
+    "rating": "not published",
+    "checked_on": "2026-11-09",
+    "business_database_written": false
+  },
+  "map_mode": "none",
+  "canvas": {
+    "w": 1000,
+    "h": 1000,
+    "north": 0,
+    "px_per_m": 1
+  },
+  "proj": {
+    "lat0": 42.36,
+    "lon0": -71.06,
+    "mlat": 111000,
+    "mlon": 82000,
+    "a": 1,
+    "b": 0,
+    "c": 0,
+    "d": 1,
+    "tx": 0,
+    "ty": 0
+  },
+  "map": {
+    "roads": [],
+    "paths": [],
+    "water": [],
+    "woods": [],
+    "walls": [],
+    "track": [],
+    "blocks": []
+  },
+  "labels": [],
+  "entrance": {
+    "x": 500,
+    "y": 500,
+    "name": {
+      "zh": "波士顿",
+      "en": "Boston"
+    }
+  },
+  "attribution": {
+    "zh": "无底图（清单模式）",
+    "en": "No base map (list mode)"
+  },
+  "shop_label_policy": "分类只描述经营类别，不代表餐饮口味、质量或价格。"
+}

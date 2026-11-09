@@ -1,0 +1,407 @@
+{
+  "captured_on": "2026-11-09",
+  "provider": "OpenStreetMap Nominatim (search, limit 1)",
+  "note": "Coordinate estimates for walking-time calculation; not entrances; verify against the inventory row.",
+  "items": {
+    "boston_common": {
+      "query": "Boston Common, Boston, MA",
+      "result": {
+        "lat": 42.35504,
+        "lon": -71.066071,
+        "display_name": "Boston Common, Beacon Hill, Boston, Suffolk County, Massachusetts, United States",
+        "osm_type": "relation",
+        "osm_id": 17995454,
+        "osm_class": null,
+        "osm_category": "park"
+      }
+    },
+    "public_garden": {
+      "query": "Boston Public Garden, Boston, MA",
+      "result": {
+        "lat": 42.3540901,
+        "lon": -71.0700402,
+        "display_name": "Boston Public Garden, 4, Beacon Hill, Boston, Suffolk County, Massachusetts, 02116, United States",
+        "osm_type": "way",
+        "osm_id": 23787885,
+        "osm_class": null,
+        "osm_category": "park"
+      }
+    },
+    "massachusetts_state_house": {
+      "query": "Massachusetts State House, 24 Beacon St, Boston, MA",
+      "result": {
+        "lat": 42.358602,
+        "lon": -71.0638751,
+        "display_name": "Massachusetts State House, 24, Beacon Street, Beacon Hill, Boston, Suffolk County, Massachusetts, 02108, United States",
+        "osm_type": "way",
+        "osm_id": 29718019,
+        "osm_class": null,
+        "osm_category": "government"
+      }
+    },
+    "freedom_trail": {
+      "query": "Faneuil Hall, Boston, MA",
+      "result": {
+        "lat": 42.3600335,
+        "lon": -71.0562341,
+        "display_name": "Faneuil Hall, 1, Faneuil Hall Square, Government Center/Faneuil Hall, Downtown, Boston, Suffolk County, Massachusetts, 02109, United States",
+        "osm_type": "way",
+        "osm_id": 29551702,
+        "osm_class": null,
+        "osm_category": "public"
+      }
+    },
+    "black_heritage_trail": {
+      "query": "African Meeting House, Smith Court, Boston, MA",
+      "result": {
+        "lat": 42.3599558,
+        "lon": -71.0654712,
+        "display_name": "African Meeting House, 8, Smith Court, Beacon Hill, Boston, Suffolk County, Massachusetts, 02114, United States",
+        "osm_type": "way",
+        "osm_id": 405880946,
+        "osm_class": null,
+        "osm_category": "building"
+      }
+    },
+    "union_oyster_house": {
+      "query": "41 Union Street, Boston, MA",
+      "result": {
+        "lat": 42.3612749,
+        "lon": -71.0569532,
+        "display_name": "Union Oyster House, 41, Union Street, Government Center/Faneuil Hall, Downtown, Boston, Suffolk County, Massachusetts, 02108, United States",
+        "osm_type": "node",
+        "osm_id": 1532195818,
+        "osm_class": null,
+        "osm_category": "restaurant"
+      }
+    },
+    "mikes_pastry": {
+      "query": "Mike's Pastry, Hanover Street, Boston, MA",
+      "result": {
+        "lat": 42.3641884,
+        "lon": -71.0542414,
+        "display_name": "Mike's Pastry, 300, Hanover Street, North End, Boston, Suffolk County, Massachusetts, 02113, United States",
+        "osm_type": "node",
+        "osm_id": 2430572068,
+        "osm_class": null,
+        "osm_category": "pastry"
+      }
+    },
+    "regina_pizzeria_north_end": {
+      "query": "Regina Pizzeria, North End, Boston, MA",
+      "result": {
+        "lat": 42.3655021,
+        "lon": -71.0566767,
+        "display_name": "Regina Pizzeria Square, North End, Boston, Suffolk County, Massachusetts, 02113, United States",
+        "osm_type": "node",
+        "osm_id": 14304500442,
+        "osm_class": null,
+        "osm_category": "square"
+      }
+    },
+    "rose_kennedy_greenway": {
+      "query": "Rose Kennedy Greenway, Boston, MA",
+      "result": {
+        "lat": 42.3543421,
+        "lon": -71.0529246,
+        "display_name": "Rose Kennedy Greenway, Downtown, Boston, Suffolk County, Massachusetts, United States",
+        "osm_type": "way",
+        "osm_id": 94482756,
+        "osm_class": null,
+        "osm_category": "grass"
+      }
+    },
+    "boston_tea_party_ships": {
+      "query": "306 Congress Street, Boston, MA",
+      "result": {
+        "lat": 42.3521988,
+        "lon": -71.0513039,
+        "display_name": "Boston Tea Party - Ships and Museum, 306, Congress Street, Seaport, Boston, Suffolk County, Massachusetts, 02210, United States",
+        "osm_type": "node",
+        "osm_id": 358275870,
+        "osm_class": null,
+        "osm_category": "museum"
+      }
+    },
+    "boston_harborwalk": {
+      "query": "Harborwalk, Seaport District, Boston, MA",
+      "result": null
+    },
+    "ica_boston": {
+      "query": "25 Harbor Shore Drive, Boston, MA",
+      "result": {
+        "lat": 42.3528651,
+        "lon": -71.0429628,
+        "display_name": "The Institute of Contemporary Art, 25, Harbor Shore Drive, Seaport, Boston, Suffolk County, Massachusetts, 02210, United States",
+        "osm_type": "way",
+        "osm_id": 117888922,
+        "osm_class": null,
+        "osm_category": "museum"
+      }
+    },
+    "sowa": {
+      "query": "530 Harrison Avenue, Boston, MA",
+      "result": {
+        "lat": 42.3413421,
+        "lon": -71.0672475,
+        "display_name": "530, Harrison Avenue, South End, Boston, Suffolk County, Massachusetts, 02118, United States",
+        "osm_type": "way",
+        "osm_id": 8650870,
+        "osm_class": null,
+        "osm_category": "house"
+      }
+    },
+    "chinatown_theater_district": {
+      "query": "Paramount Center, Washington Street, Boston, MA",
+      "result": {
+        "lat": 42.3537152,
+        "lon": -71.062501,
+        "display_name": "Paramount Theatre, 549, Washington Street, Downtown Crossing, Downtown, Boston, Suffolk County, Massachusetts, 02111, United States",
+        "osm_type": "node",
+        "osm_id": 7618780582,
+        "osm_class": null,
+        "osm_category": "theatre"
+      }
+    },
+    "mission_hill_basilica": {
+      "query": "1545 Tremont Street, Boston, MA",
+      "result": {
+        "lat": 42.3330567,
+        "lon": -71.0999452,
+        "display_name": "Basilica of Our Lady of Perpetual Hope, 1545, Tremont Street, Mission Hill, Boston, Suffolk County, Massachusetts, 02120, United States",
+        "osm_type": "way",
+        "osm_id": 29680119,
+        "osm_class": null,
+        "osm_category": "place_of_worship"
+      }
+    },
+    "mission_hill_triangle_historic_district": {
+      "query": "Smith Street, Mission Hill, Boston, MA",
+      "result": {
+        "lat": 42.3336308,
+        "lon": -71.0983912,
+        "display_name": "Smith Street, Mission Main, Mission Hill, Boston, Suffolk County, Massachusetts, 02120, United States",
+        "osm_type": "way",
+        "osm_id": 89535467,
+        "osm_class": null,
+        "osm_category": "residential"
+      }
+    },
+    "trinity_church": {
+      "query": "206 Clarendon Street, Boston, MA",
+      "result": {
+        "lat": 42.3500677,
+        "lon": -71.0754254,
+        "display_name": "Trinity Church, 206, Clarendon Street, Back Bay, Boston, Suffolk County, Massachusetts, 02116, United States",
+        "osm_type": "relation",
+        "osm_id": 64066,
+        "osm_class": null,
+        "osm_category": "place_of_worship"
+      }
+    },
+    "mfa_boston": {
+      "query": "465 Huntington Avenue, Boston, MA",
+      "result": {
+        "lat": 42.339049,
+        "lon": -71.09266,
+        "display_name": "465, Huntington Avenue, Landsdown, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, 02115, United States",
+        "osm_type": "way",
+        "osm_id": 798289594,
+        "osm_class": null,
+        "osm_category": "house"
+      }
+    },
+    "gardner_museum": {
+      "query": "25 Evans Way, Boston, MA",
+      "result": {
+        "lat": 42.338245,
+        "lon": -71.0991538,
+        "display_name": "Isabella Stewart Gardner Museum, 25, Evans Way, Longwood, Boston, Suffolk County, Massachusetts, 02115, United States",
+        "osm_type": "way",
+        "osm_id": 29650851,
+        "osm_class": null,
+        "osm_category": "museum"
+      }
+    },
+    "back_bay_fens": {
+      "query": "Back Bay Fens, Boston, MA",
+      "result": {
+        "lat": 42.3410452,
+        "lon": -71.0954214,
+        "display_name": "Back Bay Fens, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, United States",
+        "osm_type": "relation",
+        "osm_id": 17488385,
+        "osm_class": null,
+        "osm_category": "park"
+      }
+    },
+    "fenway_park": {
+      "query": "4 Jersey Street, Boston, MA",
+      "result": {
+        "lat": 42.3464614,
+        "lon": -71.0970999,
+        "display_name": "Fenway Park, 4, Jersey Street, Landsdown, Fenway-Kenmore, Boston, Suffolk County, Massachusetts, 02115, United States",
+        "osm_type": "relation",
+        "osm_id": 11188464,
+        "osm_class": null,
+        "osm_category": "stadium"
+      }
+    },
+    "harvard_square": {
+      "query": "Harvard Square, Cambridge, MA",
+      "result": {
+        "lat": 42.3734734,
+        "lon": -71.1189431,
+        "display_name": "Harvard Square, Mid-Cambridge, Cambridge, Middlesex County, Massachusetts, 02318, United States",
+        "osm_type": "node",
+        "osm_id": 2448023622,
+        "osm_class": null,
+        "osm_category": "square"
+      }
+    },
+    "harvard_university": {
+      "query": "Harvard Yard, Cambridge, MA",
+      "result": {
+        "lat": 42.3740899,
+        "lon": -71.1167159,
+        "display_name": "Harvard Yard, 2, Mid-Cambridge, Cambridge, Middlesex County, Massachusetts, 02138, United States",
+        "osm_type": "relation",
+        "osm_id": 17336107,
+        "osm_class": null,
+        "osm_category": "neighbourhood"
+      }
+    },
+    "harvard_art_museums": {
+      "query": "32 Quincy Street, Cambridge, MA",
+      "result": {
+        "lat": 42.3742178,
+        "lon": -71.1145269,
+        "display_name": "32, Quincy Street, Mid-Cambridge, Cambridge, Middlesex County, Massachusetts, 02138, United States",
+        "osm_type": "way",
+        "osm_id": 8614740,
+        "osm_class": null,
+        "osm_category": "house"
+      }
+    },
+    "longfellow_house": {
+      "query": "105 Brattle Street, Cambridge, MA",
+      "result": {
+        "lat": 42.3769727,
+        "lon": -71.1263979,
+        "display_name": "Longfellow Home, 105, Brattle Street, Old Cambridge, West Cambridge, Cambridge, Middlesex County, Massachusetts, 02138, United States",
+        "osm_type": "way",
+        "osm_id": 29515316,
+        "osm_class": null,
+        "osm_category": "yes"
+      }
+    },
+    "mit_campus": {
+      "query": "77 Massachusetts Avenue, Cambridge, MA",
+      "result": {
+        "lat": 42.3592593,
+        "lon": -71.0933625,
+        "display_name": "School of Architecture and Planning, 77, Massachusetts Avenue, MIT, Cambridge, Middlesex County, Massachusetts, 02139, United States",
+        "osm_type": "node",
+        "osm_id": 11623747407,
+        "osm_class": null,
+        "osm_category": "educational_institution"
+      }
+    },
+    "oleana": {
+      "query": "134 Hampshire Street, Cambridge, MA",
+      "result": {
+        "lat": 42.3705673,
+        "lon": -71.0971787,
+        "display_name": "Oleana, 134, Hampshire Street, Inman Square, The Port, Cambridge, Middlesex County, Massachusetts, 02139, United States",
+        "osm_type": "node",
+        "osm_id": 3577716497,
+        "osm_class": null,
+        "osm_category": "restaurant"
+      }
+    },
+    "pem": {
+      "query": "161 Essex Street, Salem, MA",
+      "result": {
+        "lat": 42.5215925,
+        "lon": -70.8921931,
+        "display_name": "Peabody Essex Museum, 161, Essex Street, Downtown Salem District, North Salem, Salem, Essex County, Massachusetts, 01970, United States",
+        "osm_type": "way",
+        "osm_id": 215901152,
+        "osm_class": null,
+        "osm_category": "museum"
+      }
+    },
+    "house_of_seven_gables": {
+      "query": "115 Derby Street, Salem, MA",
+      "result": {
+        "lat": 42.5218159,
+        "lon": -70.8838227,
+        "display_name": "House of the Seven Gables, 115, Derby Street, Salem, Essex County, Massachusetts, 01970, United States",
+        "osm_type": "way",
+        "osm_id": 100079180,
+        "osm_class": null,
+        "osm_category": "museum"
+      }
+    },
+    "salem_maritime": {
+      "query": "Salem Maritime National Historic Site, Salem, MA",
+      "result": {
+        "lat": 42.5190589,
+        "lon": -70.8855837,
+        "display_name": "Salem Maritime National Historical Park, 160, Derby Street, Charter Street Historic District, Salem, Essex County, Massachusetts, 01970, United States",
+        "osm_type": "relation",
+        "osm_id": 20273373,
+        "osm_class": null,
+        "osm_category": "park"
+      }
+    },
+    "salem_witch_museum": {
+      "query": "19 1/2 North Washington Square, Salem, MA",
+      "result": {
+        "lat": 42.5243148,
+        "lon": -70.8901385,
+        "display_name": "Washington Square North, Charter Street Historic District, Salem, Essex County, Massachusetts, 01970, United States",
+        "osm_type": "way",
+        "osm_id": 190660045,
+        "osm_class": null,
+        "osm_category": "secondary"
+      }
+    },
+    "nubian_square": {
+      "query": "Nubian Square, Roxbury, Boston, MA",
+      "result": {
+        "lat": 42.3288927,
+        "lon": -71.0850642,
+        "display_name": "Nubian Square, Roxbury, Boston, Suffolk County, Massachusetts, 02119, United States",
+        "osm_type": "node",
+        "osm_id": 7596234231,
+        "osm_class": null,
+        "osm_category": "neighbourhood"
+      }
+    },
+    "franklin_park": {
+      "query": "1 Franklin Park Road, Boston, MA",
+      "result": {
+        "lat": 42.3028346,
+        "lon": -71.0876281,
+        "display_name": "Community Resource Center, 1, Franklin Park Road, Roxbury, Boston, Suffolk County, Massachusetts, 02121, United States",
+        "osm_type": "way",
+        "osm_id": 29621594,
+        "osm_class": null,
+        "osm_category": "office"
+      }
+    },
+    "franklin_park_zoo": {
+      "query": "Franklin Park Zoo, Boston, MA",
+      "result": {
+        "lat": 42.3051612,
+        "lon": -71.0888892,
+        "display_name": "Franklin Park Zoo, Elm Hill Avenue, Roxbury, Boston, Suffolk County, Massachusetts, 02121, United States",
+        "osm_type": "way",
+        "osm_id": 504956903,
+        "osm_class": null,
+        "osm_category": "zoo"
+      }
+    }
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "captured_on": "2026-11-09",
+  "note": "Downloaded Commons photos; subject_check ok = visual check against stop name. mikes_pastry omitted: interior photo could not be tied to the North End shop. Entries for stops removed from the routes after the audit were dropped.",
+  "photos": [
+    {
+      "stop": "boston_common",
+      "file": "img/boston_area/boston_common.jpg",
+      "bytes": 362372,
+      "sha256": "374954792be698eeb8b9e778c85e1a87126cefa6ef87abf1b70f3d17e32600a9",
+      "commons_title": "File:Boston Common November 2016 002.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Boston_Common_November_2016_002.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "King of Hearts",
+      "original_size": [
+        6000,
+        4000
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "public_garden",
+      "file": "img/boston_area/public_garden.jpg",
+      "bytes": 287168,
+      "sha256": "f7675b05dee287fb4258e6b4af3cb4c6392c443010831573c1249b9abb8b26e8",
+      "commons_title": "File:Boston Public Garden November 2016 001.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Boston_Public_Garden_November_2016_001.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "King of Hearts",
+      "original_size": [
+        6016,
+        4016
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "freedom_trail",
+      "file": "img/boston_area/freedom_trail.jpg",
+      "bytes": 159909,
+      "sha256": "78ca1e5c6eccb6e370e3deb2782ebf02649dbab162f7483044f86225ac6cb7f9",
+      "commons_title": "File:Freedom Trail Sign Boston 1974.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Freedom_Trail_Sign_Boston_1974.jpg",
+      "licence": "Public domain",
+      "licence_url": "",
+      "artist": "Michael Holley en:User:Swtpc6800 User:Swtpc6800",
+      "original_size": [
+        2047,
+        3032
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "black_heritage_trail",
+      "file": "img/boston_area/black_heritage_trail.jpg",
+      "bytes": 278649,
+      "sha256": "d03ab9b8baba136d7e0428c80233fcc2f9c1918726827b5d741767cf458e37d7",
+      "commons_title": "File:Exterior of the African Meeting House (0e4c6a56-d24f-4bb5-89eb-a6bd6d997c38).JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_African_Meeting_House_(0e4c6a56-d24f-4bb5-89eb-a6bd6d997c38).JPG",
+      "licence": "Public domain",
+      "licence_url": "",
+      "artist": "NPS Photo",
+      "original_size": [
+        4272,
+        2848
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "union_oyster_house",
+      "file": "img/boston_area/union_oyster_house.jpg",
+      "bytes": 191209,
+      "sha256": "421b379f6811087f5db664363f24b888e1c486047f0855555a5d3a432dd0ce9a",
+      "commons_title": "File:Union-oyster-house-1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Union-oyster-house-1.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Schneidz",
+      "original_size": [
+        3264,
+        2448
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "regina_pizzeria_north_end",
+      "file": "img/boston_area/regina_pizzeria_north_end.jpg",
+      "bytes": 233543,
+      "sha256": "9d664e1ec7c72a999d1c2f651caf5348ecbc7330c27b4c0dc020221d4a04f573",
+      "commons_title": "File:Pizzeria Regina, Boston MA.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Pizzeria_Regina,_Boston_MA.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "John Phelan",
+      "original_size": [
+        2816,
+        2112
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "boston_tea_party_ships",
+      "file": "img/boston_area/boston_tea_party_ships.jpg",
+      "bytes": 244549,
+      "sha256": "6562618d458560e9a7012901cf22498310ebfef8ba0db03ffc205caa5134ee84",
+      "commons_title": "File:Tea Wharf at the Boston Tea Party Ships & Museum.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Tea_Wharf_at_the_Boston_Tea_Party_Ships_&_Museum.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "DiscoA340",
+      "original_size": [
+        4000,
+        3000
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "ica_boston",
+      "file": "img/boston_area/ica_boston.jpg",
+      "bytes": 195271,
+      "sha256": "df8212e3d1559bda86d75fce9104c26b984ed484fc5cd9098fcfcc43db620de9",
+      "commons_title": "File:Institute of Contemporary Art, Boston, and Harborwalk.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Institute_of_Contemporary_Art,_Boston,_and_Harborwalk.JPG",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "NewtonCourt",
+      "original_size": [
+        5472,
+        3648
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "sowa",
+      "file": "img/boston_area/sowa.jpg",
+      "bytes": 265700,
+      "sha256": "06de1e80debd73b85788ef67e2337cd0028ac6137e63b9b2d9517e57997c8414",
+      "commons_title": "File:2009 HarrisonAve Boston 3388079514.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:2009_HarrisonAve_Boston_3388079514.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "SoWa Sundays",
+      "original_size": [
+        2048,
+        1536
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "chinatown_theater_district",
+      "file": "img/boston_area/chinatown_theater_district.jpg",
+      "bytes": 282907,
+      "sha256": "b2d57989cbda344b50551d564237919ccc987a5301fa85083714648856588113",
+      "commons_title": "File:Washington Street, Boston (53828903528).jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Washington_Street,_Boston_(53828903528).jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "Ethan Long",
+      "original_size": [
+        2000,
+        3008
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "mission_hill_triangle_historic_district",
+      "file": "img/boston_area/mission_hill_triangle_historic_district.jpg",
+      "bytes": 243194,
+      "sha256": "d837152e9d6efe9a2114eee5518b3f8a9f16a15cfe0c649c54920842405a6224",
+      "commons_title": "File:Mission Hill Boston entrance.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Mission_Hill_Boston_entrance.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "Tim Pierce",
+      "original_size": [
+        3008,
+        2000
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "trinity_church",
+      "file": "img/boston_area/trinity_church.jpg",
+      "bytes": 216009,
+      "sha256": "37351c551dbefaec451bfd1484f4081e4ab74d1d7c895d86f574498a54d42e44",
+      "commons_title": "File:Outside Trinity Church in Copley Square, Boston.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Outside_Trinity_Church_in_Copley_Square,_Boston.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Swativ28",
+      "original_size": [
+        5312,
+        2988
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "mfa_boston",
+      "file": "img/boston_area/mfa_boston.jpg",
+      "bytes": 209500,
+      "sha256": "acba2b3aff950e1aba687e414d9a62f4d9efe9a33a6f0dfcbf557949fc6f4a3e",
+      "commons_title": "File:Museum of Fine Arts, Boston in November 2021.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Museum_of_Fine_Arts,_Boston_in_November_2021.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Sdkb",
+      "original_size": [
+        4608,
+        3456
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "gardner_museum",
+      "file": "img/boston_area/gardner_museum.jpg",
+      "bytes": 402230,
+      "sha256": "295ea91cc4e6e616bed135e508785741436ebb3f0d4f5cf8e4c8255aee3427a2",
+      "commons_title": "File:Isabella Stewart Gardner Museum Boston November 2016 001.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Isabella_Stewart_Gardner_Museum_Boston_November_2016_001.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "King of Hearts",
+      "original_size": [
+        6016,
+        4016
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "back_bay_fens",
+      "file": "img/boston_area/back_bay_fens.jpg",
+      "bytes": 292561,
+      "sha256": "f2e7e1632b5f77f821b7e5b04ac8e838109795564a90765beee160fb268f8b09",
+      "commons_title": "File:Back Bay Fens Boston November 2016 001.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Back_Bay_Fens_Boston_November_2016_001.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "King of Hearts",
+      "original_size": [
+        6016,
+        4016
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "fenway_park",
+      "file": "img/boston_area/fenway_park.jpg",
+      "bytes": 440665,
+      "sha256": "87d86720811adb4c4a46978432bcf166ec3652d71e256fa9e0aab1847c081f23",
+      "commons_title": "File:Fenway Park01.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Fenway_Park01.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Bernard Gagnon",
+      "original_size": [
+        2563,
+        1817
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "harvard_art_museums",
+      "file": "img/boston_area/harvard_art_museums.jpg",
+      "bytes": 173099,
+      "sha256": "74a8c796ecafd687cf1b7cf1229676dd3650dcdb50bddee2f4f53d36723e04cf",
+      "commons_title": "File:Harvard Art Museums, February 2022.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Harvard_Art_Museums,_February_2022.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Sdkb",
+      "original_size": [
+        8704,
+        4352
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "longfellow_house",
+      "file": "img/boston_area/longfellow_house.jpg",
+      "bytes": 280506,
+      "sha256": "fd1e5e46548b1b43e1af2c89f0c785b9ab3e57b7008e595d9db1e675f8f671f0",
+      "commons_title": "File:Cambridge - Longfellow House–Washington's Headquarters National Historic Site - 20170911105734.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Cambridge_-_Longfellow_House–Washington's_Headquarters_National_Historic_Site_-_20170911105734.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Riis2602",
+      "original_size": [
+        4608,
+        3456
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "mit_campus",
+      "file": "img/boston_area/mit_campus.jpg",
+      "bytes": 169110,
+      "sha256": "547bc1da702793deb41cc85731ed68cb3c7484e958dfb02634b1a3bbb1307583",
+      "commons_title": "File:MIT Dome night1 Edit.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:MIT_Dome_night1_Edit.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "artist": "Fcb981, this edited version by Thermos",
+      "original_size": [
+        2644,
+        1610
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "pem",
+      "file": "img/boston_area/pem.jpg",
+      "bytes": 201655,
+      "sha256": "00bbfa4a29a003ab56fc4d84fdefd7560ec78fdb510989feb7dd6fbf1ac48c90",
+      "commons_title": "File:Peabody Essex Museum.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Peabody_Essex_Museum.JPG",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Fletcher6",
+      "original_size": [
+        2856,
+        1956
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "house_of_seven_gables",
+      "file": "img/boston_area/house_of_seven_gables.jpg",
+      "bytes": 430460,
+      "sha256": "fe37d15bd6446efef775cf9b5254b2c97dd28f5584c5b581d539b7c088ceb2cb",
+      "commons_title": "File:House of the Seven Gables (front angle) - Salem, Massachusetts.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:House_of_the_Seven_Gables_(front_angle)_-_Salem,_Massachusetts.jpg",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+      "artist": "",
+      "original_size": [
+        2560,
+        1920
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "salem_maritime",
+      "file": "img/boston_area/salem_maritime.jpg",
+      "bytes": 292621,
+      "sha256": "65290e7cb4525079956386d91486776034af7cb6fa3669fff8d25275407e5c58",
+      "commons_title": "File:Salem Maritime National Historic Site.JPG",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Salem_Maritime_National_Historic_Site.JPG",
+      "licence": "CC BY-SA 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "artist": "Ranjansanjeev",
+      "original_size": [
+        5184,
+        3456
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "salem_witch_museum",
+      "file": "img/boston_area/salem_witch_museum.jpg",
+      "bytes": 333963,
+      "sha256": "228433fb988857e9e2072e89f93307371b0e084d9b65c8f7947c6bd56c726912",
+      "commons_title": "File:Salem Witch Museum 1.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Salem_Witch_Museum_1.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "artist": "Upstateherd",
+      "original_size": [
+        4000,
+        3000
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "franklin_park",
+      "file": "img/boston_area/franklin_park.jpg",
+      "bytes": 473022,
+      "sha256": "f82ff6fd22a343fe3e9c2eb05d2f684dfbde21dfbd328d5cba9631d3d5236ae5",
+      "commons_title": "File:Path and tree in Franklin Park, October 2013.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Path_and_tree_in_Franklin_Park,_October_2013.jpg",
+      "licence": "CC BY-SA 2.0",
+      "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "artist": "Sarah Nichols from Boston, MA, USA",
+      "original_size": [
+        4288,
+        2848
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    },
+    {
+      "stop": "franklin_park_zoo",
+      "file": "img/boston_area/franklin_park_zoo.jpg",
+      "bytes": 257075,
+      "sha256": "72852cfe07ab411f6bd79e913a1bfc038b10473e36c27f581316b693d629f354",
+      "commons_title": "File:Franklin Farm, Franklin Park Zoo, Dorchester MA.jpg",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Franklin_Farm,_Franklin_Park_Zoo,_Dorchester_MA.jpg",
+      "licence": "CC BY 3.0",
+      "licence_url": "https://creativecommons.org/licenses/by/3.0",
+      "artist": "John Phelan",
+      "original_size": [
+        2816,
+        2112
+      ],
+      "retrieved_on": "2026-11-09",
+      "subject_check": "ok",
+      "subject_check_basis": "contact sheet visual check 2026-11-09"
+    }
+  ]
+}

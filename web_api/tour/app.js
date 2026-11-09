@@ -293,7 +293,7 @@
       var s = M.stops[p.stops[0]], intro = s.intro.join(" ");
       return '<button class="card collection-item" type="button" data-place="' + esc(p.id) + '">' +
         (p.photo ? '<img class="collection-thumb" loading="lazy" src="' + esc(p.photo) + '" alt="' + esc(p.photo_info.caption.zh) + '">' : '') +
-        '<div class="stop-meta"><span class="tag tag-outline">' + esc(s.tier) + ' 级</span><span>' +
+        '<div class="stop-meta">' + (s.tier ? '<span class="tag tag-outline">' + esc(s.tier) + ' 级</span>' : '<span class="tag tag-outline">未评级</span>') + '<span>' +
         esc(s.area.zh + " · " + (s.kind === "shop" ? "特色商铺" : "文化参观点")) + '</span></div>' +
         '<strong>' + esc(s.seq + ". " + s.name.zh) + '</strong><span class="collection-alias">' + esc(s.name.en) + '</span>' +
         shopTags(s) +
@@ -308,6 +308,18 @@
     $("collection-note").textContent = M.planning.zh;
     $("collection-themes").hidden = true;
     $("view-themes").hidden = !(M.itineraries && M.itineraries.length);
+    // 未评级的清单不显示评级筛选，避免筛出空结果。
+    var rated = M.places.some(function (p) { return !!M.stops[p.stops[0]].tier; });
+    var tierFilter = $("collection-tier").closest("label");
+    if (tierFilter) tierFilter.hidden = !rated;
+    // 没有特色商铺的清单不显示商铺相关的筛选。
+    var hasShops = M.places.some(function (p) { return M.stops[p.stops[0]].kind === "shop"; });
+    ["collection-shop-category", "collection-shop-tag"].forEach(function (id) {
+      var shopFilter = $(id).closest("label");
+      if (shopFilter) shopFilter.hidden = !hasShops;
+    });
+    var shopKind = $("collection-kind").querySelector('option[value="shop"]');
+    if (shopKind) shopKind.hidden = !hasShops;
     ["collection-search", "collection-kind", "collection-tier"].forEach(function (id) {
       $(id).value = id === "collection-search" ? "" : "all";
     });
@@ -820,7 +832,7 @@
   function stopHtml(s, place, r) {
     var solo = s.name.zh === place.name.zh;       // 这一站就是地点本身，标题已经写过了
     var ord = r ? r.stops.indexOf(s.seq) + 1 : 0;
-    var meta = ['<span class="tag tag-outline">' + esc(s.tier) + " 级</span>"];
+    var meta = [s.tier ? '<span class="tag tag-outline">' + esc(s.tier) + " 级</span>" : '<span class="tag tag-outline">未评级</span>'];
     if (isCollection() && Number.isFinite(s.core)) meta.push('<span>Core ' + s.core.toFixed(4) + '</span>');
     if (s.included_in) meta.push('<span>随「' + esc(M.stops[s.included_in].name.zh) + '」参观，时间已计入整体</span>');
     else if (Number.isFinite(s.dwell)) meta.push("<span>建议停留约 " + s.dwell + " 分钟</span>");
