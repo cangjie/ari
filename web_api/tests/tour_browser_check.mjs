@@ -198,6 +198,19 @@ class Page {
 }
 
 const SCENES = {
+  async wne_route(p) {
+    await p.geo('denied');
+    await p.open('/#wne_campus');
+    await p.click('#view-themes');
+    check(await p.eval("document.querySelector('[data-theme=classic]').innerText.includes('停车场') && document.querySelector('[data-theme=classic]').innerText.includes('G-26')"), '校园路线显示停车和楼内房号');
+    check(await p.eval("Array.from(document.querySelectorAll('[data-theme=classic] ol > li .theme-stop')).slice(0,14).map(e=>e.dataset.place).join(',') === 'wne_welcome_center,wne_deliso_hall,wne_emerson_hall,wne_herman_hall,wne_csp,wne_damour_library,wne_churchill_hall,wne_art_gallery,wne_university_commons,wne_sleith_hall,wne_rivers_memorial_hall,wne_blake_law_center,wne_golden_bear_stadium,wne_ahlc'"), '路线各站链接与建筑一致');
+    await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_sleith_hall]').click();true");
+    check(await p.eval("document.getElementById('sheet-body').innerText.includes('ATRANS') && document.getElementById('sheet-body').innerText.includes('212')"), '工程楼介绍显示已核实的研究中心房号');
+    await p.click('#sheet [data-close]');
+    await p.click('[data-theme-map=classic]');
+    check(await p.eval("!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && Array.from(document.querySelectorAll('.spot')).filter(e=>!e.hidden).length===14"), '校园路线地图显示路线及14个站点');
+    check(await p.eval("Array.from(document.querySelectorAll('.spot')).filter(e=>!e.hidden).map(e=>+e.querySelector('.spot-num').textContent).sort((a,b)=>a-b).join(',') === Array.from({length:14},(_,i)=>i+1).join(',')"), '地图标记按路线顺序编号');
+  },
   async catalog(p) {
     if (!LOCAL) return;
     const script = await p.send('Page.addScriptToEvaluateOnNewDocument', {source: `

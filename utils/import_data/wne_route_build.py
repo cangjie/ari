@@ -30,6 +30,8 @@ import sys
 from datetime import date
 from pathlib import Path
 
+from wne_visitor_details import apply as apply_visitor_details
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 DATA = ROOT / "web_api" / "tour" / "data" / "wne_campus.json"
@@ -419,6 +421,7 @@ def main() -> None:
         "osm_snapshot_sha256": raw_sha,
         "route_checked_on": date.today().isoformat(),
     })
+    apply_visitor_details(data)
     DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", "utf-8")
     print(DATA)
 

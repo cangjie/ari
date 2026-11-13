@@ -430,9 +430,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园地图第 1 号，内有本科招生办公室与访客中心。"
+        "校园地图第 1 号，内有本科招生办公室与访客中心。",
+        "驾车可导航至 1215 Wilbraham Road，停在访客中心停车场后步行至访客中心。车位和许可证请按标识并向学校确认；地图起点是访客中心，并非停车位的实测位置。"
       ],
-      "intro_en": "Map location 1: houses Undergraduate Admissions and the Visitors Center.",
+      "intro_en": "Map location 1: houses Undergraduate Admissions and the Visitors Center. Navigate to 1215 Wilbraham Road and walk from the Welcome Center parking lot to the Welcome Center. Check parking signs and permit requirements with the university. The map starts at the building, not a surveyed parking space.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -441,6 +442,14 @@
         {
           "title": "Western New England University（校园地图）",
           "url": "https://wne.edu/become-a-student/visit/campus-map"
+        },
+        {
+          "title": "Western New England University · 驾车指引",
+          "url": "https://wne.edu/become-a-student/visit/directions-to-campus.cfm"
+        },
+        {
+          "title": "Western New England University · 停车规定",
+          "url": "https://wne.edu/public-safety/parking-and-traffic.cfm"
         }
       ],
       "borrowed": {
@@ -465,7 +474,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "驾车可导航至 1215 Wilbraham Road，停在访客中心停车场后步行至访客中心。车位和许可证请按标识并向学校确认；地图起点是访客中心，并非停车位的实测位置。",
+        "en": "Navigate to 1215 Wilbraham Road and walk from the Welcome Center parking lot to the Welcome Center. Check parking signs and permit requirements with the university. The map starts at the building, not a surveyed parking space."
+      }
     },
     "3": {
       "seq": 3,
@@ -489,9 +502,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园地图第 3 号，内有行政办公室，包括总务办公室、市场与对外事务部门。"
+        "校园地图第 3 号，内有行政办公室，包括总务办公室、市场与对外事务部门。",
+        "行政、财务及市场与对外事务办公室；性别包容卫生间：一楼 102D、二楼 219。部分卫生间位于办公室内，开放时间可能不同。"
       ],
-      "intro_en": "Map location 3: houses administrative offices, including the Controller's Office and Marketing and External Affairs.",
+      "intro_en": "Map location 3: houses administrative offices, including the Controller's Office and Marketing and External Affairs. Administrative, controller, marketing and external affairs offices. Gender-inclusive restrooms: first floor room 102D and second floor room 219. Some restrooms are inside offices and may close earlier.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -500,6 +514,10 @@
         {
           "title": "Western New England University（校园地图）",
           "url": "https://wne.edu/become-a-student/visit/campus-map"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -524,7 +542,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "行政、财务及市场与对外事务办公室；性别包容卫生间：一楼 102D、二楼 219。部分卫生间位于办公室内，开放时间可能不同。",
+        "en": "Administrative, controller, marketing and external affairs offices. Gender-inclusive restrooms: first floor room 102D and second floor room 219. Some restrooms are inside offices and may close earlier."
+      }
     },
     "4": {
       "seq": 4,
@@ -548,9 +570,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "1959 年启用，是校园第一座建筑，现为文理学院多个专业的教学楼。"
+        "1959 年启用，是校园第一座建筑，现为文理学院多个专业的教学楼。",
+        "校园早期教学楼，设文理学院教室及教师办公室；具体教室请看楼内标识。"
       ],
-      "intro_en": "Opened in 1959 as the first building on campus, today's Emerson Hall.",
+      "intro_en": "Opened in 1959 as the first building on campus, today's Emerson Hall. An early campus academic building with Arts and Sciences classrooms and faculty offices; consult indoor signs for individual rooms.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -559,6 +582,10 @@
         {
           "title": "Western New England University（校史）",
           "url": "https://wne.edu/about/history"
+        },
+        {
+          "title": "Western New England University · 校园介绍",
+          "url": "https://wne.edu/become-a-student/why-wne/campus.cfm"
         }
       ],
       "borrowed": {
@@ -583,7 +610,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "校园早期教学楼，设文理学院教室及教师办公室；具体教室请看楼内标识。",
+        "en": "An early campus academic building with Arts and Sciences classrooms and faculty offices; consult indoor signs for individual rooms."
+      }
     },
     "5": {
       "seq": 5,
@@ -607,9 +638,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "设有数学与写作中心、艺术工作室和多媒体教室，经过 830 万美元的翻修。"
+        "设有数学与写作中心、艺术工作室和多媒体教室，经过 830 万美元的翻修。",
+        "文理学院、数学中心、写作中心、艺术工作室和教室所在；学校政策列学生无障碍服务办公室在 105 室。"
       ],
-      "intro_en": "Houses the Math and Writer Centers, an Art Studio and multimedia classrooms; underwent an $8.3 million renovation.",
+      "intro_en": "Houses the Math and Writer Centers, an Art Studio and multimedia classrooms; underwent an $8.3 million renovation. College of Arts and Sciences, Math and Writing Centers, art studio and classrooms. University policy lists Student Accessibility Services in room 105.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -618,6 +650,14 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 校园介绍",
+          "url": "https://wne.edu/become-a-student/why-wne/campus.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍服务政策",
+          "url": "https://wne.edu/human-resources/policies/americans-with-disabilities-act.cfm"
         }
       ],
       "borrowed": {
@@ -642,7 +682,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "文理学院、数学中心、写作中心、艺术工作室和教室所在；学校政策列学生无障碍服务办公室在 105 室。",
+        "en": "College of Arts and Sciences, Math and Writing Centers, art studio and classrooms. University policy lists Student Accessibility Services in room 105."
+      }
     },
     "6": {
       "seq": 6,
@@ -666,9 +710,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "耗资 4000 万美元的高科技楼，设 19 间科学实验室、模型药房，二层设有健康与福祉中心。"
+        "耗资 4000 万美元的高科技楼，设 19 间科学实验室、模型药房，二层设有健康与福祉中心。",
+        "药学、科学和心理学教室及实验室；二楼 235 室为健康与福祉中心，服务对象以学校规定为准。性别包容卫生间在二楼健康服务区 230A、230B，可能受办公室开放时间限制。"
       ],
-      "intro_en": "A $40 million building with 19 laboratories and a model pharmacy; the Center for Health and Well-Being is on the second floor.",
+      "intro_en": "A $40 million building with 19 laboratories and a model pharmacy; the Center for Health and Well-Being is on the second floor. Pharmacy, science and psychology classrooms and labs. The Center for Health and Well-Being is on the second floor in room 235; eligibility is set by the university. Gender-inclusive restrooms are in Health Services rooms 230A and 230B, subject to office access.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -677,6 +722,18 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 校园地图",
+          "url": "https://wne.edu/become-a-student/visit/campus-map.cfm"
+        },
+        {
+          "title": "Western New England University · 健康中心",
+          "url": "https://wne.edu/center-for-health-and-wellness/medical/index.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -701,7 +758,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "药学、科学和心理学教室及实验室；二楼 235 室为健康与福祉中心，服务对象以学校规定为准。性别包容卫生间在二楼健康服务区 230A、230B，可能受办公室开放时间限制。",
+        "en": "Pharmacy, science and psychology classrooms and labs. The Center for Health and Well-Being is on the second floor in room 235; eligibility is set by the university. Gender-inclusive restrooms are in Health Services rooms 230A and 230B, subject to office access."
+      }
     },
     "7": {
       "seq": 7,
@@ -725,9 +786,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园研究与社交中心，有 110 多个数据库、24 小时自习区和媒体中心。"
+        "校园研究与社交中心，有 110 多个数据库、24 小时自习区和媒体中心。",
+        "图书馆 G 层 G-9 是教育技术办公室，旁边是电视演播室，对面 G-26 是计算机教室；学校 2025 年报道 XR Lab 位于 219 室。教室及实验室是否开放请现场确认。"
       ],
-      "intro_en": "A research and social hub for students, with access to more than 110 databases, a 24x7 study area and a Media Center.",
+      "intro_en": "A research and social hub for students, with access to more than 110 databases, a 24x7 study area and a Media Center. On the ground floor, Educational Technology is in G-9 beside the TV studio and opposite computer classroom G-26. A 2025 university report places the XR Lab in room 219. Check access on site.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -736,6 +798,14 @@
         {
           "title": "Western New England University（图书馆）",
           "url": "https://wne.edu/libraries/index"
+        },
+        {
+          "title": "Western New England University · 教育技术办公室",
+          "url": "https://wne.edu/information-technology/teaching-learning/contact-educational-technology.cfm"
+        },
+        {
+          "title": "Western New England University · XR Lab 报道",
+          "url": "https://wne.edu/news/2025/01/xr-lab-grand-opening"
         }
       ],
       "borrowed": {
@@ -760,7 +830,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "图书馆 G 层 G-9 是教育技术办公室，旁边是电视演播室，对面 G-26 是计算机教室；学校 2025 年报道 XR Lab 位于 219 室。教室及实验室是否开放请现场确认。",
+        "en": "On the ground floor, Educational Technology is in G-9 beside the TV studio and opposite computer classroom G-26. A 2025 university report places the XR Lab in room 219. Check access on site."
+      }
     },
     "8": {
       "seq": 8,
@@ -784,9 +858,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园地图第 12 号，为法学院所在地，内有法学图书馆、普通法诊所与模拟法庭（Moot Courtroom）。"
+        "校园地图第 12 号，为法学院所在地，内有法学图书馆、普通法诊所与模拟法庭（Moot Courtroom）。",
+        "法学院、法律图书馆、法律诊所、模拟法庭和职业治疗系；性别包容卫生间位于一楼院长办公室套间、二楼 220 室及三楼休息区，办公室内卫生间可能提前关闭。"
       ],
-      "intro_en": "Map location 12: home of the School of Law, with the Law Library, the Common Law Clinics and a Moot Courtroom.",
+      "intro_en": "Map location 12: home of the School of Law, with the Law Library, the Common Law Clinics and a Moot Courtroom. School of Law, law library and clinics, moot courtroom and Occupational Therapy department. Gender-inclusive restrooms are in the first-floor Dean’s Suite, room 220 on the second floor and the third-floor lounge. Office restrooms may close early.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -795,6 +870,14 @@
         {
           "title": "Western New England University（校园地图）",
           "url": "https://wne.edu/become-a-student/visit/campus-map"
+        },
+        {
+          "title": "Western New England University · 校园地图",
+          "url": "https://wne.edu/become-a-student/visit/campus-map.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -819,7 +902,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "法学院、法律图书馆、法律诊所、模拟法庭和职业治疗系；性别包容卫生间位于一楼院长办公室套间、二楼 220 室及三楼休息区，办公室内卫生间可能提前关闭。",
+        "en": "School of Law, law library and clinics, moot courtroom and Occupational Therapy department. Gender-inclusive restrooms are in the first-floor Dean’s Suite, room 220 on the second floor and the third-floor lounge. Office restrooms may close early."
+      }
     },
     "9": {
       "seq": 9,
@@ -843,9 +930,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "商学院所在地，以首任校长 John D. Churchill 命名，内设 Cohen 交易室与技术中心。"
+        "商学院所在地，以首任校长 John D. Churchill 命名，内设 Cohen 交易室与技术中心。",
+        "商学院教室、Cohen Trading Room 和技术中心；学校研究生资料称主计算机实验室位于三楼，具体房号与开放情况请确认。"
       ],
-      "intro_en": "Home of the College of Business, named for the university's first president, Dr. John D. Churchill; features the Cohen Trading Room and Technology Center.",
+      "intro_en": "Home of the College of Business, named for the university's first president, Dr. John D. Churchill; features the Cohen Trading Room and Technology Center. College of Business classrooms, Cohen Trading Room and technology center. University graduate resources place the main computer lab on the third floor; confirm its room and access.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -854,6 +942,14 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 研究生资源",
+          "url": "https://wne.edu/admissions/graduate/student-resources"
+        },
+        {
+          "title": "Western New England University · 校园介绍",
+          "url": "https://wne.edu/become-a-student/why-wne/campus.cfm"
         }
       ],
       "borrowed": {
@@ -878,7 +974,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "商学院教室、Cohen Trading Room 和技术中心；学校研究生资料称主计算机实验室位于三楼，具体房号与开放情况请确认。",
+        "en": "College of Business classrooms, Cohen Trading Room and technology center. University graduate resources place the main computer lab on the third floor; confirm its room and access."
+      }
     },
     "10": {
       "seq": 10,
@@ -902,9 +1002,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "位于 St. Germain 校园中心，为校园艺术家提供免费展示场地，定期举办个人与群展及艺术家讲座。"
+        "位于 St. Germain 校园中心，为校园艺术家提供免费展示场地，定期举办个人与群展及艺术家讲座。",
+        "St. Germain 校园中心内有艺术画廊、书店和学生服务；性别包容卫生间在一楼，房号未列出。"
       ],
-      "intro_en": "Located in the St. Germain Campus Center, the gallery hosts solo and curated group shows and gallery talks; gallery space is offered at no charge.",
+      "intro_en": "Located in the St. Germain Campus Center, the gallery hosts solo and curated group shows and gallery talks; gallery space is offered at no charge. St. Germain Campus Center has an art gallery, bookstore and student services. A gender-inclusive restroom is on the first floor; no room number is listed.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -913,6 +1014,14 @@
         {
           "title": "Western New England University（艺术画廊）",
           "url": "https://wne.edu/art-gallery/index"
+        },
+        {
+          "title": "Western New England University · 校园地图",
+          "url": "https://wne.edu/become-a-student/visit/campus-map.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -937,7 +1046,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "St. Germain 校园中心内有艺术画廊、书店和学生服务；性别包容卫生间在一楼，房号未列出。",
+        "en": "St. Germain Campus Center has an art gallery, bookstore and student services. A gender-inclusive restroom is on the first floor; no room number is listed."
+      }
     },
     "11": {
       "seq": 11,
@@ -961,9 +1074,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "2018 年启用的餐饮与社交中心，设星巴克咖啡馆、餐台、便利店与两层的住校餐厅。"
+        "2018 年启用的餐饮与社交中心，设星巴克咖啡馆、餐台、便利店与两层的住校餐厅。",
+        "餐饮、便利店和会议室；学校无障碍地图列每层有性别包容卫生间。营业和访客用餐安排以学校为准。"
       ],
-      "intro_en": "Opened in 2018 as a dining and social hub, with a Starbucks café, a grille, a convenience store and a two-story residential dining hall.",
+      "intro_en": "Opened in 2018 as a dining and social hub, with a Starbucks café, a grille, a convenience store and a two-story residential dining hall. Dining, convenience store and meeting rooms. The accessibility map lists a gender-inclusive restroom on each floor. Check dining hours and visitor access with the university.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -972,6 +1086,14 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 校园地图",
+          "url": "https://wne.edu/become-a-student/visit/campus-map.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -996,7 +1118,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "餐饮、便利店和会议室；学校无障碍地图列每层有性别包容卫生间。营业和访客用餐安排以学校为准。",
+        "en": "Dining, convenience store and meeting rooms. The accessibility map lists a gender-inclusive restroom on each floor. Check dining hours and visitor access with the university."
+      }
     },
     "12": {
       "seq": 12,
@@ -1020,9 +1146,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "工程创新中心，有约 30 间工程实验室，其中生物医学工程套间模拟医院病房；经 1280 万美元翻修扩建。"
+        "工程创新中心，有约 30 间工程实验室，其中生物医学工程套间模拟医院病房；经 1280 万美元翻修扩建。",
+        "工程学院有生理学湿实验室、仪器实验室和模拟病房；学校未在介绍页列出这些实验室房号。ATRANS 交通研究中心位于 212 室，进入实验室须经学校安排。"
       ],
-      "intro_en": "A hub of engineering innovation, with 30 engineering laboratories, including a biomedical engineering suite that replicates a hospital setting; a $12.8 million renovation and expansion.",
+      "intro_en": "A hub of engineering innovation, with 30 engineering laboratories, including a biomedical engineering suite that replicates a hospital setting; a $12.8 million renovation and expansion. Engineering facilities include physiology, instrumentation and hospital simulation labs; their room numbers are not listed on the department page. The ATRANS transport research center is in room 212. Laboratory access requires university arrangements.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -1031,6 +1158,14 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 生物医学工程实验室",
+          "url": "https://wne.edu/engineering/departments/biomedical-engineering/labs-and-facilities.cfm"
+        },
+        {
+          "title": "Western New England University · ATRANS 研究中心",
+          "url": "https://wne.edu/engineering/departments/industrial-engineering-and-engineering-management/atrans.cfm"
         }
       ],
       "borrowed": {
@@ -1055,7 +1190,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "工程学院有生理学湿实验室、仪器实验室和模拟病房；学校未在介绍页列出这些实验室房号。ATRANS 交通研究中心位于 212 室，进入实验室须经学校安排。",
+        "en": "Engineering facilities include physiology, instrumentation and hospital simulation labs; their room numbers are not listed on the department page. The ATRANS transport research center is in room 212. Laboratory access requires university arrangements."
+      }
     },
     "13": {
       "seq": 13,
@@ -1138,9 +1277,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园地图第 11 号，内有校园广播电台、学生出版物办公室，以及戏剧与音乐项目。"
+        "校园地图第 11 号，内有校园广播电台、学生出版物办公室，以及戏剧与音乐项目。",
+        "校园广播、学生出版物及戏剧音乐项目所在；性别包容卫生间在一楼 112、113、114、123、124、125 室。"
       ],
-      "intro_en": "Map location 11: houses the Radio Station, student publication offices, and Theatre and Music programs.",
+      "intro_en": "Map location 11: houses the Radio Station, student publication offices, and Theatre and Music programs. Home to campus radio, student publications and theatre/music programs. Gender-inclusive restrooms: first-floor rooms 112, 113, 114, 123, 124 and 125.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -1149,6 +1289,14 @@
         {
           "title": "Western New England University（校园地图）",
           "url": "https://wne.edu/become-a-student/visit/campus-map"
+        },
+        {
+          "title": "Western New England University · 校园地图",
+          "url": "https://wne.edu/become-a-student/visit/campus-map.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -1173,7 +1321,11 @@
       },
       "photo": null,
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "校园广播、学生出版物及戏剧音乐项目所在；性别包容卫生间在一楼 112、113、114、123、124、125 室。",
+        "en": "Home to campus radio, student publications and theatre/music programs. Gender-inclusive restrooms: first-floor rooms 112, 113, 114, 123, 124 and 125."
+      }
     },
     "15": {
       "seq": 15,
@@ -1197,9 +1349,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "可容纳 1,500 人的体育场，是户外体育区的核心，学生在“The Cave”一侧为同学加油。"
+        "可容纳 1,500 人的体育场，是户外体育区的核心，学生在“The Cave”一侧为同学加油。",
+        "户外体育场；比赛和设施开放时间请以学校安排为准。"
       ],
-      "intro_en": "A 1,500-seat stadium and the centerpiece of the outdoor sports complex; students cheer from \"The Cave\".",
+      "intro_en": "A 1,500-seat stadium and the centerpiece of the outdoor sports complex; students cheer from \"The Cave\". Outdoor stadium; check the university’s event and facility access arrangements.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -1208,6 +1361,10 @@
         {
           "title": "Western New England University（校园介绍）",
           "url": "https://wne.edu/become-a-student/why-wne/campus"
+        },
+        {
+          "title": "Western New England University · 学校体育设施",
+          "url": "https://wnegoldenbears.com/facilities"
         }
       ],
       "borrowed": {
@@ -1250,7 +1407,11 @@
         "height": 900
       },
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "户外体育场；比赛和设施开放时间请以学校安排为准。",
+        "en": "Outdoor stadium; check the university’s event and facility access arrangements."
+      }
     },
     "16": {
       "seq": 16,
@@ -1274,9 +1435,10 @@
         "en": "Check on site"
       },
       "intro": [
-        "校园体育设施之一，用于男女篮球、女子排球及男女摔跤等项目。"
+        "校园体育设施之一，用于男女篮球、女子排球及男女摔跤等项目。",
+        "体育设施用于篮球、排球及摔跤等；性别包容卫生间位于二楼 Downes Hall of Fame，开放以学校安排为准。"
       ],
-      "intro_en": "One of the campus athletic facilities, used by men's and women's basketball, women's volleyball, and men's and women's wrestling.",
+      "intro_en": "One of the campus athletic facilities, used by men's and women's basketball, women's volleyball, and men's and women's wrestling. Athletics facility used for basketball, volleyball and wrestling. Gender-inclusive restrooms are on the second floor in the Downes Hall of Fame; access is subject to university arrangements.",
       "source": {
         "zh": "依据学校官方页面整理（AI整理），逐条出处见下方",
         "en": "Summarised from the university's official pages; sources below"
@@ -1285,6 +1447,10 @@
         {
           "title": "Western New England University Athletics（体育设施）",
           "url": "https://wnegoldenbears.com/facilities"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "borrowed": {
@@ -1327,7 +1493,11 @@
         "height": 800
       },
       "objects": [],
-      "review": null
+      "review": null,
+      "visitor_detail": {
+        "zh": "体育设施用于篮球、排球及摔跤等；性别包容卫生间位于二楼 Downes Hall of Fame，开放以学校安排为准。",
+        "en": "Athletics facility used for basketball, volleyball and wrestling. Gender-inclusive restrooms are on the second floor in the Downes Hall of Fame; access is subject to university arrangements."
+      }
     }
   },
   "routes": [],
@@ -1393,12 +1563,12 @@
   "itineraries": [
     {
       "id": "classic",
-      "name": "经典校园路线",
+      "name": "停车场出发：校园建筑参观路线",
       "default_start": "welcome",
       "end_station": "welcome",
-      "description": "从访客中心出发，依次经过教学楼、图书馆、艺术画廊、大学公共中心、工程学院与体育设施，回到访客中心。",
+      "description": "停在访客中心停车场，步行至访客中心后依次参观教学楼、图书馆、工程楼和体育设施，最后返回。地图上的起终点是访客中心，停车场至中心的距离未计入。",
       "fee": "校园步道与外观免费；礼堂、画廊、图书馆与体育场的开放及活动，以学校公告为准。",
-      "access": "步行约 4.4 公里；停留时间为估计。雨雪天请注意路况，部分室内场所需按学校安排入内。",
+      "access": "步行及停留时间为估计，未实地核对入口和道路。教室、办公室及实验室开放以学校安排为准；卫生间可能在办公区内。",
       "sources": [
         {
           "title": "Western New England University · 校园地图",
@@ -1419,14 +1589,26 @@
         {
           "title": "Western New England University Athletics · 体育设施",
           "url": "https://wnegoldenbears.com/facilities"
+        },
+        {
+          "title": "Western New England University · 驾车指引",
+          "url": "https://wne.edu/become-a-student/visit/directions-to-campus.cfm"
+        },
+        {
+          "title": "Western New England University · 停车规定",
+          "url": "https://wne.edu/public-safety/parking-and-traffic.cfm"
+        },
+        {
+          "title": "Western New England University · 无障碍地图及卫生间",
+          "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
         }
       ],
       "optional_shops": [],
       "steps": [
         {
-          "seq": 1,
+          "seq": 2,
           "minutes": 5,
-          "note": "从访客中心出发，招生与访客信息都在此。",
+          "note": "驾车可导航至 1215 Wilbraham Road，停在访客中心停车场后步行至访客中心。车位和许可证请按标识并向学校确认；地图起点是访客中心，并非停车位的实测位置。",
           "name": {
             "zh": "访客中心",
             "en": "Welcome Center"
@@ -1440,9 +1622,9 @@
           "related": []
         },
         {
-          "seq": 2,
+          "seq": 3,
           "minutes": 5,
-          "note": "行政办公楼，主要在外观上经过。",
+          "note": "行政、财务及市场与对外事务办公室；性别包容卫生间：一楼 102D、二楼 219。部分卫生间位于办公室内，开放时间可能不同。",
           "name": {
             "zh": "Deliso 楼",
             "en": "Joseph J. Deliso Sr. Hall"
@@ -1456,9 +1638,9 @@
           "related": []
         },
         {
-          "seq": 3,
+          "seq": 4,
           "minutes": 10,
-          "note": "1959 年启用的校园第一座建筑，文理学院的教学楼。",
+          "note": "校园早期教学楼，设文理学院教室及教师办公室；具体教室请看楼内标识。",
           "name": {
             "zh": "埃默森楼",
             "en": "Emerson Hall"
@@ -1472,9 +1654,9 @@
           "related": []
         },
         {
-          "seq": 4,
+          "seq": 5,
           "minutes": 10,
-          "note": "数学与写作中心、艺术工作室与多媒体教室所在。",
+          "note": "文理学院、数学中心、写作中心、艺术工作室和教室所在；学校政策列学生无障碍服务办公室在 105 室。",
           "name": {
             "zh": "赫尔曼楼",
             "en": "Herman Hall"
@@ -1488,9 +1670,9 @@
           "related": []
         },
         {
-          "seq": 5,
+          "seq": 6,
           "minutes": 15,
-          "note": "19 间科学实验室与模型药房；二层为健康与福祉中心。",
+          "note": "药学、科学和心理学教室及实验室；二楼 235 室为健康与福祉中心，服务对象以学校规定为准。性别包容卫生间在二楼健康服务区 230A、230B，可能受办公室开放时间限制。",
           "name": {
             "zh": "科学与药学中心",
             "en": "Center for the Sciences and Pharmacy"
@@ -1504,9 +1686,9 @@
           "related": []
         },
         {
-          "seq": 6,
+          "seq": 7,
           "minutes": 20,
-          "note": "研究与社交中心，设 110 多个数据库与 24 小时自习区。",
+          "note": "图书馆 G 层 G-9 是教育技术办公室，旁边是电视演播室，对面 G-26 是计算机教室；学校 2025 年报道 XR Lab 位于 219 室。教室及实验室是否开放请现场确认。",
           "name": {
             "zh": "D'Amour 图书馆",
             "en": "D'Amour Library"
@@ -1520,9 +1702,9 @@
           "related": []
         },
         {
-          "seq": 7,
+          "seq": 9,
           "minutes": 15,
-          "note": "商学院所在，内有 Cohen 交易室。",
+          "note": "商学院教室、Cohen Trading Room 和技术中心；学校研究生资料称主计算机实验室位于三楼，具体房号与开放情况请确认。",
           "name": {
             "zh": "丘吉尔楼",
             "en": "Churchill Hall"
@@ -1536,9 +1718,9 @@
           "related": []
         },
         {
-          "seq": 8,
+          "seq": 10,
           "minutes": 15,
-          "note": "校园艺术画廊，展览与讲座时间以学校公告为准。",
+          "note": "St. Germain 校园中心内有艺术画廊、书店和学生服务；性别包容卫生间在一楼，房号未列出。",
           "name": {
             "zh": "St. Germain 校园中心（艺术画廊所在）",
             "en": "St. Germain Campus Center (Art Gallery)"
@@ -1552,9 +1734,9 @@
           "related": []
         },
         {
-          "seq": 9,
+          "seq": 11,
           "minutes": 20,
-          "note": "2018 年启用的餐饮与社交中心，可在此用餐休息（不评价口味）。",
+          "note": "餐饮、便利店和会议室；学校无障碍地图列每层有性别包容卫生间。营业和访客用餐安排以学校为准。",
           "name": {
             "zh": "大学公共中心",
             "en": "University Commons"
@@ -1568,9 +1750,9 @@
           "related": []
         },
         {
-          "seq": 10,
+          "seq": 12,
           "minutes": 15,
-          "note": "工程学院实验楼，生物医学工程套间模拟医院病房。",
+          "note": "工程学院有生理学湿实验室、仪器实验室和模拟病房；学校未在介绍页列出这些实验室房号。ATRANS 交通研究中心位于 212 室，进入实验室须经学校安排。",
           "name": {
             "zh": "Sleith 楼",
             "en": "Sleith Hall"
@@ -1584,9 +1766,9 @@
           "related": []
         },
         {
-          "seq": 11,
+          "seq": 14,
           "minutes": 5,
-          "note": "广播电台与戏剧、音乐项目所在，主要在外观上经过。",
+          "note": "校园广播、学生出版物及戏剧音乐项目所在；性别包容卫生间在一楼 112、113、114、123、124、125 室。",
           "name": {
             "zh": "Rivers 纪念楼",
             "en": "Rivers Memorial Hall"
@@ -1600,9 +1782,9 @@
           "related": []
         },
         {
-          "seq": 12,
+          "seq": 8,
           "minutes": 15,
-          "note": "法学院所在，法学图书馆与模拟法庭。",
+          "note": "法学院、法律图书馆、法律诊所、模拟法庭和职业治疗系；性别包容卫生间位于一楼院长办公室套间、二楼 220 室及三楼休息区，办公室内卫生间可能提前关闭。",
           "name": {
             "zh": "Blake 法学中心",
             "en": "Blake Law Center (Law Library)"
@@ -1616,9 +1798,9 @@
           "related": []
         },
         {
-          "seq": 13,
+          "seq": 15,
           "minutes": 10,
-          "note": "1,500 座体育场，学生在 The Cave 一侧为同学加油。",
+          "note": "户外体育场；比赛和设施开放时间请以学校安排为准。",
           "name": {
             "zh": "金熊体育场",
             "en": "Golden Bear Stadium"
@@ -1632,9 +1814,9 @@
           "related": []
         },
         {
-          "seq": 14,
+          "seq": 16,
           "minutes": 10,
-          "note": "校友健康生活中心，男女篮球等项目使用。",
+          "note": "体育设施用于篮球、排球及摔跤等；性别包容卫生间位于二楼 Downes Hall of Fame，开放以学校安排为准。",
           "name": {
             "zh": "Caprio 校友健康生活中心",
             "en": "Caprio Alumni Healthful Living Center"
@@ -4640,7 +4822,7 @@
   "itinerary_stations": [
     {
       "id": "welcome",
-      "name": "访客中心（Welcome Center）",
+      "name": "访客中心（停车场附近；地图起点）",
       "lines": [],
       "lines_label": "校园起点",
       "osm_node": null,
@@ -4660,8 +4842,8 @@
       "connector_m": 0
     }
   ],
-  "itinerary_policy": "路线沿校园步道与道路计算，停留与步行时间为估计；起点即访客中心，不设地铁接驳。",
-  "itinerary_exit_note": "停留时间未计排队与用餐；室内开放以学校公告为准。",
+  "itinerary_policy": "停在访客中心停车场后步行到访客中心，依地图依次前往各楼，最后返回。地图起点为建筑中心，不是停车位或入口；停车场至中心一段未计距离。路线依据 OSM 步道估算，未经现场验证。",
+  "itinerary_exit_note": "步行和停留为估计，不含停车场至访客中心、排队及用餐；室内开放以学校安排为准。",
   "itinerary_spread_markers": false,
   "itinerary_start_label": "校园起点",
   "navigation": {

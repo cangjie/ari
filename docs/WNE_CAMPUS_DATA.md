@@ -21,6 +21,7 @@
 - 地图：OpenStreetMap 校园快照（`wne_route_build.py`），建筑、步道、道路、水体、林地。快照文件不入库。
 - 路线：访客中心出发，按学校校园地图的编号顺序经过 14 处可定位的地点，沿校园步道回到访客中心，约 4.4 公里。步行时间按 60 米/分估计（约 73 分钟），停留时间为人工估计（170 分钟）。
 - 导览：GPS 在靠近建筑中心约 20 米时提示“到附近”，不代表已到门口。模拟游览已验证到访客中心的到站提示。
+- 访客停车与室内资料：路线说明以学校驾车指引的 Welcome Center 停车场为出发建议，地图起点仍是访客中心建筑中心，停车场位置和停车场至建筑的路程未实测、未计入。各站补充学校公开的用途、部分房号及性别包容卫生间；实验室、卫生间和办公室开放情况需现场确认，公开无依据的房号不猜测。每站附对应学校来源，2021年数学中心旧房号未采用。路线站点 `seq` 指向清单中对应的实际条目，地图上的数字仍是游览顺序。
 - 未能在 OSM 中定位的地点：校园整体（无单独建筑）、Lyman and Leslie Wood 礼堂（在 Sleith 楼内，不单独定位）。它们只在清单中出现。
 
 ## 重新生成
@@ -30,7 +31,9 @@ cd utils/import_data
 python3 wne_source_capture.py     # 重新抓取（可选）
 python3 wne_audit_build.py        # 生成审计输入
 python3 wne_build.py --check      # 只检查，不写文件
-python3 wne_build.py              # 写 web_api/tour/data/wne_campus.json 并登记 catalog
+python3 wne_build.py              # 生成清单，会覆盖现有地图与路线；必须接着执行下一步
+python3 wne_route_build.py --raw /路径/wne_osm_raw.json  # 重建地图路线并补充访客资料；需原 OSM 快照
+python3 wne_visitor_details.py    # 仅更新已有路线的访客资料，无需原始快照
 ```
 
 ## 待办
