@@ -9,6 +9,7 @@ import json
 from pathlib import Path
 
 from wne_rooms import apply_rooms
+from wne_official_photo_refs import apply_photo_refs
 
 DATA = Path(__file__).resolve().parents[2] / 'web_api/tour/data/wne_campus.json'
 MAP = 'https://wne.edu/become-a-student/visit/campus-map.cfm'
@@ -66,7 +67,7 @@ def apply(data):
     data['itinerary_stations'][0]['name'] = '访客中心（停车场附近；地图起点）'
     data['itinerary_policy'] = '停在访客中心停车场后步行到访客中心，依地图依次前往各楼，最后返回。地图起点为建筑中心，不是停车位或入口；停车场至中心一段未计距离。路线依据 OSM 步道估算，未经现场验证。'
     data['itinerary_exit_note'] = '步行和停留为估计，不含停车场至访客中心、排队及用餐；室内开放以学校安排为准。'
-    return apply_rooms(data)
+    return apply_photo_refs(apply_rooms(data))
 
 
 def main():

@@ -207,6 +207,7 @@ const SCENES = {
     await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_sleith_hall]').click();true");
     check(await p.eval("document.getElementById('sheet-body').innerText.includes('ATRANS') && document.getElementById('sheet-body').innerText.includes('212')"), '工程楼介绍显示已核实的研究中心房号');
     check(await p.eval("Array.from(document.querySelectorAll('#sheet-body .room-details li')).some(e => e.innerText.includes('212') && e.innerText.includes('ATRANS') && e.querySelector('a[href*=atrans]'))"), '房间资料显示用途和直接出处');
+    check(await p.eval("document.querySelector('#sheet-body .official-photo-pages a[href*=biomedical-engineering]') && document.querySelector('#sheet-body .official-photo-pages').innerText.includes('并非特定房间')"), '建筑介绍可跳转到学校官网设施照片，并标明图片范围');
     await p.click('#sheet [data-close]');
     await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_herman_hall]').click();true");
     check(await p.eval("Array.from(document.querySelectorAll('#sheet-body .room-details li')).some(e => e.innerText.includes('303') && e.innerText.includes('2021') && e.innerText.includes('待确认'))"), '旧房间资料标注时间和待核状态');

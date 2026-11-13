@@ -852,6 +852,9 @@
     if (s.address && s.address.zh) html += '<p><strong>地址（来源记载）：</strong>' + esc(s.address.zh) + '</p>';
     if (s.platform && s.platform.zh) html += '<p><strong>平台参考：</strong>' + esc(s.platform.zh) + '</p>';
     html += s.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+    if (s.official_photo_pages && s.official_photo_pages.length) {
+      html += '<div class="official-photo-pages"><p><strong>学校官网图片：</strong>以下链接展示建筑或设施，并非特定房间的照片。</p>' + sourceLinks(s.official_photo_pages) + '</div>';
+    }
     if (s.room_details && s.room_details.length) {
       html += '<section class="room-details"><h5>楼内房间与设施</h5><p class="note">资料来自学校公开记录；部分为历史用途，是否开放请向学校确认。</p><ul>' +
         s.room_details.map(function (room) {
