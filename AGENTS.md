@@ -134,6 +134,8 @@ beihai 2026-10-11 从库里查）—— 七个馆跑完（jlpm 只评有介绍�
 
 **波士顿 Summer Street `boston_summer_st` 同为独立本地包，不计入上述业务库统计。** 2026-11-04上线53条（含21条商铺）、两条路线和17张有署名许可的图片；V3为S1/A12/B10/C30，其中21条评级待结合补充资料复核。未登记生产馆、写业务metadata或重灌资料。详情见第18条和 `docs/BOSTON_SUMMER_ST_DATA.md`。
 
+**大波士顿 `boston_area` 与西新英格兰大学 `wne_campus` 也是独立导览资料，不计入上述业务库统计。** 11-09 前者上线44条未评级清单；后者上线16条未评级校园资料、校园地图与路线，11-13补充停车、房间与学校官网图片。详情见第18条、`docs/BOSTON_AREA_DATA.md`、`docs/WNE_CAMPUS_DATA.md`。
+
 **⚠ 同一个馆里现在混着两套判据的审计结果，靠 `audited_by` 分辨**：
 `claude-sonnet-5 (claude-cli)` 是 2026-09-10 的新判据（S/A 共 700 件，**档位不可考**，
 见第 9 条 `--effort`），`claude-sonnet-5 effort=medium (claude-cli)` 是 2026-09-23
@@ -1246,7 +1248,7 @@ Excel 不另加游客提示，游客端由应用按复核标记处理（用户 0
 
 **导览站**（`web_api/tour/`，线上 `https://tour.snowmeet.top/`，部署与验收见 `docs/TOUR_WEB.md`）照原型 AriTour 做：
 目的地列表 → 导游地图，选路线、走进热区推送讲解。原型在 claude.ai/design（链接要登录，AI 读不了），
-导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城，10-23/24新增南锣鼓巷及什刹海，11-04新增波士顿Summer Street。发布时服务器清单为 `wmhg`、`wanping`、`nanluo_shichahai`、`boston_summer_st`，实际以上线服务器catalog为准。
+导出包当时在 `~/Downloads/AriTour 北京公园导游.zip`，**不在仓库里**。首次只实现伪满皇宫，2026-10-15新增宛平城，10-23/24新增南锣鼓巷及什刹海，11-04新增波士顿Summer Street，11-09新增大波士顿及西新英格兰大学。用户11-13要求大学排第一；目前依次为 `wne_campus`、`wmhg`、`wanping`、`nanluo_shichahai`、`boston_summer_st`、`boston_area`，实际以上线服务器catalog为准。
 
     tour_osm_fetch.py → <馆>_osm_data.json ───────┐
     库 + <馆>_route_data.py + route_plan.Planner ──┼─ tour_build.py → web_api/tour/data/<馆>.json → 页面
@@ -1347,7 +1349,13 @@ node web_api/tests/tour_browser_check.mjs                   # 无头 Chrome 模�
 - 17张Wikimedia Commons图片经主体、署名与许可核对；用户同意Summer Street Steps、Harbor Way绿地、码头屋顶标牌及缺少可确认授权图片的餐饮节点暂时无图。两条线路各有SVG和1200×1600 PNG。`tour_build.py --museum boston_summer_st --check`及`tour_itinerary_maps.py --museum boston_summer_st --check`可核对数据与路线图。
 - 功能提交 `1bf3c07` 已推送并部署到服务器，两域名浏览器的清单、路线、图片署名和模拟定位验收通过。未修改APK，真机安装、现场GPS与实走尚未验收。相关Excel位于忽略目录 `utils/import_data/exports/波士顿Summer Street周边_双语V3评级.xlsx`，资料与审计详见 `docs/BOSTON_SUMMER_ST_DATA.md`。
 
-**大波士顿 `boston_area` 是与 Summer Street 独立的整理项目**：范围覆盖波士顿社区及 Cambridge、Salem、Concord、Lexington 等周边地区，按七类景点整理。候选清单只是待核实的工作底稿，不代表社区覆盖已完成；不能改动或替代已发布的 `boston_summer_st`。
+**大波士顿 `boston_area` 是与 Summer Street 独立的项目**：11-09从73条候选中发布44条通过来源和地址审计的清单，目前25条有图，未发布评级、互动地图或GPS；三条路线只在说明文字中。评分与评分后的独立审计、未过审地点补源仍待做；不能改动或替代 `boston_summer_st`。详情见 `docs/BOSTON_AREA_DATA.md`。
+
+**西新英格兰大学 `wne_campus`（11-09上线，11-13补充并排首位）**：16条未评级，14处有地图参考点，一条约4.4公里校园环线；两端是 Welcome Center 的 OSM 建筑中心，游客可按学校指引停访客中心停车场，但车位坐标和停车场到中心路程未测、不在地图连线内。路线GPS半径20米为近邻提示，**不是入口或室内定位**；距离、时间为估计，未做实地路线/真机GPS验收。`steps[].seq` 必须指向对应 `stops` 的清单序号，画图序号按路线顺序，不能混用。
+
+- 11-13在六栋楼补充33条有来源的房间记录，含用户提供清单的26个不同房号和科学中心300套间；历史手册、一次性活动明确标年份或待核，不能将活动场地推断为固定职能。房间附中英描述与官网出处，访问权限以学校为准，非独立GPS点。
+- 图片：原3张Commons图保留，11-13用户在会话中确认已获学校授权，未提供书面授权文件和条件；另用10张学校官网图片覆盖9个条目（含1张Sleith实验室补图），共12/16条有图。图注说明主体与出处，不把建筑图当作特定房间；具体授权范围以学校授权原文为准。照片来源/原件及发布哈希见 `wne_official_photo_manifest.json`，原图在本机忽略目录 `utils/import_data/exports/wne_official_originals/`。
+- `wne_build.py` 重生成清单会**覆盖地图路线**，随后须用 `wne_route_build.py --raw <原OSM快照>`；原快照路径指向历史临时目录且不入库，不能假设其他机器存在。只改现有路线资料可运行 `wne_visitor_details.py`，它附房间、图片来源、图片并校验哈希；`wne_official_photos.py` 需原件与Pillow。11-13本地/公网WNE浏览器场景、其他景区清单回归通过；未改APK、业务库或Nginx。详见 `docs/WNE_CAMPUS_DATA.md`。
 
 **19. 导览站的「游客互动」（AI 问答）：匿名、公开、每问都花钱，所以上限放在库里（2026-10-12 上线）。**
 
@@ -1666,6 +1674,8 @@ end-work(<工具名>): <一句话概括本次工作>
 | `utils/import_data/dedupe_*.py` | 第 12 条的去重流程：`lib`（判据）、`facts`、`extract`、`recall`、`group`、`apply`、`llm`（统一型号 + 本地缓存）。`dedupe_confirm.py` 是被取代的逐对版本，已不再使用 |
 | `utils/import_data/dedupe_llm_cache.jsonl` | 去重已付费调用的原始答案。**入库、不要删**，重跑时直接命中 |
 | `docs/superpowers/plans/2026-11-06-boston-metro-guide.md` / `docs/superpowers/specs/2026-11-06-boston-metro-guide-design.md` | 大波士顿景点整理的计划与设计范围；与已发布的Summer Street项目分开 |
+| `docs/BOSTON_AREA_DATA.md` / `docs/WNE_CAMPUS_DATA.md` | 大波士顿与西新英格兰大学导览的来源、发布状态、生成及待办；两者独立于业务馆库 |
+| `utils/import_data/wne_route_build.py` / `wne_visitor_details.py` / `wne_rooms.py` / `wne_official_photos.py` / `wne_official_photo_manifest.json` | 校园OSM路线、停车说明、逐室资料、学校图片生成与逐图出处/哈希；资料重建限制见第18条 |
 | `utils/import_data/boston_area_list.py` / `boston_area_source_capture.py` / `boston_area_v3_source_capture.json` | 大波士顿候选清单、双语审阅工作簿生成器、首轮网页来源采集脚本与状态/标题/哈希记录；报告不保存整页正文，清单尚待逐条核实，不是发布数据 |
 | `utils/import_data/fetch_dims.py` | 第 13 条的尺寸抓取：Wikidata → 本表简介 → Commons → Gemini 免费层（单独一列）。`--tier`、`--dry-run`、`--no-gemini` |
 | `utils/import_data/mfa_wikidata_dims.json` | MFA 名下 4429 个 Wikidata 条目的标签、馆藏号、作者和尺寸原值。跑别的 Tier 直接复用，`--refresh-wd` 才重新拉 |
