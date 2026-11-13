@@ -1,7 +1,7 @@
-"""Links to WNE pages with identifiable photos, not permission to reproduce them.
+"""Links to WNE pages with identifiable building or facility photos.
 
 The linked photos illustrate the building or facility, not the numbered rooms.
-Keep separate from self-hosted licensed image assets until reuse permission is established.
+The selected, locally hosted images and authorization record are tracked separately.
 """
 PHOTO_PAGES = {
     'wne_welcome_center': [('访客中心外观（2021）', 'https://wne.edu/news/2021/02/ug-open-house-03-06.cfm')],

@@ -14,7 +14,8 @@
 
 - 3 张，来自 Wikimedia Commons，许可为公有领域（Public domain），记录见 `wne_photo_manifest.json`。
 - 足球场看台照片只能确认是校园足球场，无法确认是 1,500 座的 Golden Bear Stadium，说明文字已如实标注。
-- **其余 13 个地点没有可用的授权图片。** Commons 中没有 WNE 各建筑的照片；学校数字档案馆的照片页面没有写明使用许可。需要学校提供授权或由学校自行提供照片。
+- 用户于 2026-11-13 在会话中确认已取得学校授权，未提供书面授权文件及条件。以此为依据补入 WNE 官网十张照片：九个楼宇或设施条目各一张，以及 Sleith 生物医学工程实验室补图；图注限定到来源可确认的主体，未将照片冒充具体房号。仍有地点或房间未找到可对应的照片，保持无图。
+- 学校官网图片的页面及原图链接、原件和发布版哈希见 `utils/import_data/wne_official_photo_manifest.json`。原件保存在忽略目录 `utils/import_data/exports/wne_official_originals/`；`wne_official_photos.py` 使用 Pillow 将其缩放并转为本地 JPEG，`wne_visitor_details.py` 在生成时校验哈希并绑定条目。具体授权范围与条件以学校授权原文为准。
 - `wne_official_photo_refs.py` 收录学校官网上的建筑或设施图片页面链接，供访客跳转浏览，未复制图片，也不将建筑图冒充具体房间的照片。图片页面本身并不证明第三方有转载权限。
 
 ## 地图与经典路线

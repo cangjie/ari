@@ -201,11 +201,13 @@ const SCENES = {
   async wne_route(p) {
     await p.geo('denied');
     await p.open('/#wne_campus');
+    check(await p.eval("(async()=>{const d=await (await fetch('data/wne_campus.json')).json();const urls=d.places.map(p=>p.photo).filter(x=>x&&x.includes('official_wne_'));await Promise.all(urls.map(u=>{const img=new Image();img.src=u;return img.decode()}));return urls.length===9;})()"), '九处楼宇的官网图片全部加载');
     await p.click('#view-themes');
     check(await p.eval("document.querySelector('[data-theme=classic]').innerText.includes('停车场') && document.querySelector('[data-theme=classic]').innerText.includes('G-26')"), '校园路线显示停车和楼内房号');
     check(await p.eval("Array.from(document.querySelectorAll('[data-theme=classic] ol > li .theme-stop')).slice(0,14).map(e=>e.dataset.place).join(',') === 'wne_welcome_center,wne_deliso_hall,wne_emerson_hall,wne_herman_hall,wne_csp,wne_damour_library,wne_churchill_hall,wne_art_gallery,wne_university_commons,wne_sleith_hall,wne_rivers_memorial_hall,wne_blake_law_center,wne_golden_bear_stadium,wne_ahlc'"), '路线各站链接与建筑一致');
     await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_sleith_hall]').click();true");
     check(await p.eval("document.getElementById('sheet-body').innerText.includes('ATRANS') && document.getElementById('sheet-body').innerText.includes('212')"), '工程楼介绍显示已核实的研究中心房号');
+    check(await p.eval("(async()=>{const imgs=[...document.querySelectorAll('#sheet-body .tour-photo img')];await Promise.all(imgs.map(i=>i.decode()));return imgs.length===2 && imgs.every(i=>i.naturalWidth>0) && document.getElementById('sheet-body').innerText.includes('未标明具体房号')})()"), '学校建筑和实验室图片可解码，并标明房间身份');
     check(await p.eval("Array.from(document.querySelectorAll('#sheet-body .room-details li')).some(e => e.innerText.includes('212') && e.innerText.includes('ATRANS') && e.querySelector('a[href*=atrans]'))"), '房间资料显示用途和直接出处');
     check(await p.eval("document.querySelector('#sheet-body .official-photo-pages a[href*=biomedical-engineering]') && document.querySelector('#sheet-body .official-photo-pages').innerText.includes('并非特定房间')"), '建筑介绍可跳转到学校官网设施照片，并标明图片范围');
     await p.click('#sheet [data-close]');

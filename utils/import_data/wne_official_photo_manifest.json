@@ -1,0 +1,165 @@
+{
+  "authorization": "用户于 2026-11-13 确认已取得学校授权；未提供授权文件及条件",
+  "photos": [
+    {
+      "id": "wne_welcome_center",
+      "place": "wne_welcome_center",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_welcome_center.jpg",
+      "original_url": "https://wne.edu/images/news/z-delbridge-welcome-center_tn.jpg",
+      "source_page": "https://wne.edu/news/2021/02/ug-open-house-03-06.cfm",
+      "original_sha256": "58e8643d357c45b3cc691a418ec5a351e8c2b72ae2ea3f31310f03d51b0efd23",
+      "sha256": "4f499a5385b4ea9be1445cd2c79ba95bd6e5de867d97f5897c3d6e443a8a3a1b",
+      "width": 725,
+      "height": 300,
+      "caption": {
+        "zh": "访客中心外观，学校 2021 年报道配图",
+        "en": "Welcome Center exterior, from a 2021 university report"
+      }
+    },
+    {
+      "id": "wne_deliso_hall",
+      "place": "wne_deliso_hall",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_deliso_hall.jpg",
+      "original_url": "https://wne.edu/images/news/z-spring-2023_tn.png",
+      "source_page": "https://wne.edu/news/2023/05/2023-incoming-class.cfm",
+      "original_sha256": "b5aed1368985d9fc7bd05519346b1715e48fd65b066259a92d90ff69ecaf8c33",
+      "sha256": "5e6b6809e1eac35d7c331a64e34f70babbdcc6e2cc44eb90d29986da3f71b79c",
+      "width": 725,
+      "height": 300,
+      "caption": {
+        "zh": "Deliso Hall 外观，学校 2023 年报道配图",
+        "en": "Deliso Hall exterior, from a 2023 university report"
+      }
+    },
+    {
+      "id": "wne_herman_hall",
+      "place": "wne_herman_hall",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_herman_hall.jpg",
+      "original_url": "https://wne.edu/news/2024/04/z-herman-hall-door-2_ss.png",
+      "source_page": "https://wne.edu/news/2024/04/arts-and-sciences-senior-awards-2024.cfm",
+      "original_sha256": "cf3ff3ff4d745d13a23b6b5b06fff3f910225431ad8a66d0dd85427c4742c2ef",
+      "sha256": "b3a932410aaf8edd6342d9d5a0142806bbc0b1173abffea6093aa59aa7f9a805",
+      "width": 1000,
+      "height": 600,
+      "caption": {
+        "zh": "Herman Hall 入口，学校 2024 年报道配图",
+        "en": "Herman Hall entrance, from a 2024 university report"
+      }
+    },
+    {
+      "id": "wne_sleith_hall",
+      "place": "wne_sleith_hall",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_sleith_hall.jpg",
+      "original_url": "https://wne.edu/images/news/z-sleith_tn.png",
+      "source_page": "https://wne.edu/news/2020/10/coe-senior-awards.cfm",
+      "original_sha256": "3a0a504e47053f13bc93de8108f513c847b9d55a93a3b81f9937349456ae88ba",
+      "sha256": "840f5e98c0fb1085ccbbf49c6173d2394727d7912b3e3425056d83d999c19839",
+      "width": 449,
+      "height": 300,
+      "caption": {
+        "zh": "Sleith Hall 外观，学校 2020 年报道配图",
+        "en": "Sleith Hall exterior, from a 2020 university report"
+      }
+    },
+    {
+      "id": "wne_csp",
+      "place": "wne_csp",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_csp.jpg",
+      "original_url": "https://wne.edu/pharmacy-and-health-sciences/become-a-student/img/plan-a-visit-tn.png",
+      "source_page": "https://wne.edu/pharmacy-and-health-sciences/become-a-student/index.cfm",
+      "original_sha256": "96b3e8bbaeb2b973b63bd8ce43b69bf018518a2b3a3ff193b86c7e9b0147cd33",
+      "sha256": "ea043946224c4db2fdc86196970bce30a1da2201789b4b9681a4773c0c87b632",
+      "width": 900,
+      "height": 600,
+      "caption": {
+        "zh": "科学与药学中心外观",
+        "en": "Center for the Sciences and Pharmacy exterior"
+      }
+    },
+    {
+      "id": "wne_art_gallery",
+      "place": "wne_art_gallery",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_art_gallery.jpg",
+      "original_url": "https://wne.edu/art-gallery/img/art-gallery-header.png",
+      "source_page": "https://wne.edu/art-gallery/index.cfm",
+      "original_sha256": "efa754c96ba3cc1c987d24e7caacd5dae198fae3c29f177068658ad34a7ee164",
+      "sha256": "d44452e7c328460655b83e68e153d274948e2f15816e3354fc4143efb18fa230",
+      "width": 1200,
+      "height": 266,
+      "caption": {
+        "zh": "学校艺术画廊页面的作品局部配图",
+        "en": "Artwork detail on the university art gallery page"
+      }
+    },
+    {
+      "id": "wne_damour_library",
+      "place": "wne_damour_library",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_damour_library.jpg",
+      "original_url": "https://wne.edu/libraries/img/damour-library-tn.png",
+      "source_page": "https://wne.edu/libraries/index.cfm",
+      "original_sha256": "37e2c73c2800ad71241057b0a84e3345c4b6f2be7a3e832f757cc6785f7337bf",
+      "sha256": "fc06c06abb9e68122ee78f6dc4f1f3677e03ac9054cb0efa039674d3aad42529",
+      "width": 900,
+      "height": 600,
+      "caption": {
+        "zh": "学校 D’Amour 图书馆介绍页配图",
+        "en": "Image accompanying the university D’Amour Library description"
+      }
+    },
+    {
+      "id": "wne_blake_law_center",
+      "place": "wne_blake_law_center",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_blake_law_center.jpg",
+      "original_url": "https://wne.edu/libraries/img/law-library-tn.png",
+      "source_page": "https://wne.edu/libraries/index.cfm",
+      "original_sha256": "87c83302cc802680989761099c097eb751c03140fdbdd3a7bf8388dc18432065",
+      "sha256": "69cb3c793efeb3ee367eecfc45f844bf15d46a18b5f2d5062e3ee900006c1640",
+      "width": 900,
+      "height": 600,
+      "caption": {
+        "zh": "学校法学图书馆介绍页配图；并非整栋楼外观",
+        "en": "Image accompanying the university Law Library description; not an exterior view"
+      }
+    },
+    {
+      "id": "wne_university_commons",
+      "place": "wne_university_commons",
+      "role": "cover",
+      "file": "img/wne_campus/official_wne_university_commons.jpg",
+      "original_url": "https://wne.edu/become-a-student/why-wne/img/dining.png",
+      "source_page": "https://wne.edu/become-a-student/why-wne/campus.cfm",
+      "original_sha256": "ff818730f86d6ef0e2e2871711d7eaf113b5ad2ca479a0540d03eb3d06e0f2c3",
+      "sha256": "04c5239c62a475582bcc6d145e2cca4a7e3ca37208757e112f9c15a1f790f48c",
+      "width": 900,
+      "height": 760,
+      "caption": {
+        "zh": "学校校园介绍页的餐饮区配图",
+        "en": "Dining area image on the university campus page"
+      }
+    },
+    {
+      "id": "wne_sleith_bio",
+      "place": "wne_sleith_hall",
+      "role": "supplement",
+      "file": "img/wne_campus/official_wne_sleith_bio.jpg",
+      "original_url": "https://wne.edu/engineering/departments/biomedical-engineering/img/Students_in_lab.jpg",
+      "source_page": "https://wne.edu/engineering/departments/biomedical-engineering/labs-and-facilities.cfm",
+      "original_sha256": "feb532fe8dae3b9c21d81705be287de5bef3c16b3fa42d304a5e1704f3c3918f",
+      "sha256": "541f8f35115da611afe18891400554998e4a66b7c9bcb8131d1ae80d9704e23a",
+      "width": 724,
+      "height": 697,
+      "caption": {
+        "zh": "学校生物医学工程实验室页面配图；未标明具体房号",
+        "en": "Image on the university biomedical engineering lab page; room number not identified"
+      }
+    }
+  ]
+}
