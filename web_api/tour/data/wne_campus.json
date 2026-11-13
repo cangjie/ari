@@ -611,6 +611,96 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "108A",
+          "description": {
+            "zh": "2024 年学校报道记录曾在此举办职业交流活动；房间固定用途未核实。",
+            "en": "A 2024 university report records a career networking event here; permanent use is unverified."
+          },
+          "source": {
+            "title": "2024 年学校活动报道",
+            "url": "https://wne.edu/news/2024/02/cob-future-of-work-week-johnson"
+          }
+        },
+        {
+          "room": "201",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录",
+            "url": "https://events.wne.edu/events/eujlvEGPF36N8KrKILPv/PJLPA0IRHLNwyMGYJdRP11"
+          }
+        },
+        {
+          "room": "203",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录",
+            "url": "https://events.wne.edu/events/eujlvEGPF36N8KrKILPv/PJLPA0IRHLNwyMGYJdRP11"
+          }
+        },
+        {
+          "room": "206",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录",
+            "url": "https://events.wne.edu/events/eujlvEGPF36N8KrKILPv/PJLPA0IRHLNwyMGYJdRP11"
+          }
+        },
+        {
+          "room": "207",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录",
+            "url": "https://events.wne.edu/events/eujlvEGPF36N8KrKILPv/PJLPA0IRHLNwyMGYJdRP11"
+          }
+        },
+        {
+          "room": "208",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录",
+            "url": "https://events.wne.edu/events/eujlvEGPF36N8KrKILPv/PJLPA0IRHLNwyMGYJdRP11"
+          }
+        },
+        {
+          "room": "209",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队会议；不能据此确定房间专属用途。",
+            "en": "Used for football meetings in a 2026 university event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队会议记录（209 室）",
+            "url": "https://events.wne.edu/events/UUFV50QgxaVwE5zGbRCT/ZUGy8uPDPRFatEqwVGAS6"
+          }
+        },
+        {
+          "room": "G100C",
+          "description": {
+            "zh": "2018 年教育专业手册列为提交项目申请的联系地点；现况待确认。",
+            "en": "A 2018 education handbook identifies this as an application submission contact location; confirm current use."
+          },
+          "source": {
+            "title": "2018 年教育专业手册",
+            "url": "https://wne.edu/arts-and-sciences/departments/education/doc/elementaryhandbook-oct2018--dp-final.pdf"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "校园早期教学楼，设文理学院教室及教师办公室；具体教室请看楼内标识。",
         "en": "An early campus academic building with Arts and Sciences classrooms and faculty offices; consult indoor signs for individual rooms."
@@ -683,6 +773,85 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "103",
+          "description": {
+            "zh": "2026 年学校活动记录显示曾用于橄榄球队学习活动；不能据此确定专属用途。",
+            "en": "Used for football study sessions in a 2026 event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队学习活动记录",
+            "url": "https://events.wne.edu/events/moswkb9BlJVStGx9s4bS/m7Bza42ol3pIa01IxNns3"
+          }
+        },
+        {
+          "room": "105",
+          "description": {
+            "zh": "学生无障碍服务办公室；按学校政策提供学生无障碍支持。",
+            "en": "Student Accessibility Services, as listed in the university accessibility policy."
+          },
+          "source": {
+            "title": "学校无障碍服务政策",
+            "url": "https://wne.edu/human-resources/policies/americans-with-disabilities-act.cfm"
+          }
+        },
+        {
+          "room": "203",
+          "description": {
+            "zh": "2026 年艺术社曾在此开会；不代表艺术系办公室。",
+            "en": "The Art Club held meetings here in 2026; this does not establish it as an art department office."
+          },
+          "source": {
+            "title": "2026 年艺术社活动记录",
+            "url": "https://events.wne.edu/events/X5VobC8RvzpC1wnKKz0P/KAbQmIIHfgJOYDVMwDLH7"
+          }
+        },
+        {
+          "room": "205",
+          "description": {
+            "zh": "学校 2023 年表格列作文理学院院长办公室；现况请确认。",
+            "en": "Listed as the College of Arts and Sciences Dean’s Office in a 2023 university form; confirm current use."
+          },
+          "source": {
+            "title": "学校 2023 年院系表格",
+            "url": "https://wne.edu/enrollment-services/registrar/doc/Request-for-Reactivation-Form%209-23.pdf"
+          }
+        },
+        {
+          "room": "303",
+          "description": {
+            "zh": "2021 年手册列为数学中心，提供数学学习辅导；房间现况待确认。",
+            "en": "Listed as the Math Center, offering mathematics tutoring, in a 2021 handbook; confirm the current location."
+          },
+          "source": {
+            "title": "2021 年信息技术手册",
+            "url": "https://wne.edu/information-technology/doc/OIT_Handbook.pdf"
+          }
+        },
+        {
+          "room": "304",
+          "description": {
+            "zh": "2026 年活动记录显示曾用于橄榄球队学习活动；不能据此确定专属用途。",
+            "en": "Used for football study sessions in a 2026 event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队学习活动记录",
+            "url": "https://events.wne.edu/events/moswkb9BlJVStGx9s4bS/m7Bza42ol3pIa01IxNns3"
+          }
+        },
+        {
+          "room": "306",
+          "description": {
+            "zh": "2026 年活动记录显示曾用于橄榄球队学习活动；不能据此确定专属用途。",
+            "en": "Used for football study sessions in a 2026 event record; permanent use is unverified."
+          },
+          "source": {
+            "title": "2026 年球队学习活动记录",
+            "url": "https://events.wne.edu/events/moswkb9BlJVStGx9s4bS/m7Bza42ol3pIa01IxNns3"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "文理学院、数学中心、写作中心、艺术工作室和教室所在；学校政策列学生无障碍服务办公室在 105 室。",
         "en": "College of Arts and Sciences, Math and Writing Centers, art studio and classrooms. University policy lists Student Accessibility Services in room 105."
@@ -759,6 +928,140 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "200",
+          "description": {
+            "zh": "2024–2025 学生手册列为 80 座讲堂，可用于课程或活动；开放情况请确认。",
+            "en": "Listed as an 80-seat lecture hall in the 2024–2025 student handbook; check access."
+          },
+          "source": {
+            "title": "药学院 2024–2025 学生手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/current/2024-2025-WNE-COPHS-Student-Handbook-10-25-24.pdf"
+          }
+        },
+        {
+          "room": "216",
+          "description": {
+            "zh": "学校 2023 年表格列为药学与健康科学学院院长办公室；现况请确认。",
+            "en": "Listed as the College of Pharmacy and Health Sciences Dean’s Office in a 2023 form; confirm current use."
+          },
+          "source": {
+            "title": "学校 2023 年院系表格",
+            "url": "https://wne.edu/enrollment-services/registrar/doc/Request-for-Reactivation-Form%209-23.pdf"
+          }
+        },
+        {
+          "room": "230A",
+          "description": {
+            "zh": "无障碍地图列为健康服务区内的性别包容卫生间；办公室可能提前关闭。",
+            "en": "Gender-inclusive restroom in Health Services on the accessibility map; office access may be restricted."
+          },
+          "source": {
+            "title": "校园无障碍地图",
+            "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
+          }
+        },
+        {
+          "room": "230B",
+          "description": {
+            "zh": "无障碍地图列为健康服务区内的性别包容卫生间；办公室可能提前关闭。",
+            "en": "Gender-inclusive restroom in Health Services on the accessibility map; office access may be restricted."
+          },
+          "source": {
+            "title": "校园无障碍地图",
+            "url": "https://wne.edu/become-a-student/visit/doc/Accessibility-map.pdf"
+          }
+        },
+        {
+          "room": "235",
+          "description": {
+            "zh": "健康与福祉中心；医疗服务面向学校社区，资格和开放安排以学校规定为准。",
+            "en": "Center for Health and Well-Being; eligibility and access follow university rules."
+          },
+          "source": {
+            "title": "健康与福祉中心",
+            "url": "https://wne.edu/center-for-health-and-wellness/medical/index.cfm"
+          }
+        },
+        {
+          "room": "300",
+          "description": {
+            "zh": "2024–2025 学生手册列为 80 座讲堂，可用于课程或活动；开放情况请确认。",
+            "en": "Listed as an 80-seat lecture hall in the 2024–2025 student handbook; check access."
+          },
+          "source": {
+            "title": "药学院 2024–2025 学生手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/current/2024-2025-WNE-COPHS-Student-Handbook-10-25-24.pdf"
+          }
+        },
+        {
+          "room": "300 套间",
+          "description": {
+            "zh": "旧药学系手册提到该套间后部有存放办公用品的储物柜；手册年份未明，现况待确认。",
+            "en": "An older pharmacy department manual mentions an office-supply closet at the back of the 300 suite; its date and current use are unverified."
+          },
+          "source": {
+            "title": "药学系旧部门手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/faculty-staff/doc/bernier_docs/pharmadminsci_policy_and_procedure_manual.pdf"
+          }
+        },
+        {
+          "room": "332",
+          "description": {
+            "zh": "学校旧药学系手册列为会议室；文档年份未明，房间现况待确认。",
+            "en": "Listed as a conference room in an older pharmacy department manual of undetermined date; confirm current use."
+          },
+          "source": {
+            "title": "药学系旧部门手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/faculty-staff/doc/bernier_docs/pharmadminsci_policy_and_procedure_manual.pdf"
+          }
+        },
+        {
+          "room": "400",
+          "description": {
+            "zh": "2024–2025 学生手册列为 80 座讲堂，可用于课程或活动；开放情况请确认。",
+            "en": "Listed as an 80-seat lecture hall in the 2024–2025 student handbook; check access."
+          },
+          "source": {
+            "title": "药学院 2024–2025 学生手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/current/2024-2025-WNE-COPHS-Student-Handbook-10-25-24.pdf"
+          }
+        },
+        {
+          "room": "408",
+          "description": {
+            "zh": "学校旧药学系手册列为会议室；文档年份未明，房间现况待确认。",
+            "en": "Listed as a conference room in an older pharmacy department manual of undetermined date; confirm current use."
+          },
+          "source": {
+            "title": "药学系旧部门手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/faculty-staff/doc/bernier_docs/pharmadminsci_policy_and_procedure_manual.pdf"
+          }
+        },
+        {
+          "room": "414",
+          "description": {
+            "zh": "2024–2025 学生手册列为药学图书室，药学学生使用门禁卡进入；访客权限请确认。",
+            "en": "The 2024–2025 handbook identifies the pharmacy library here, with card access for pharmacy students; visitor access is unverified."
+          },
+          "source": {
+            "title": "药学院 2024–2025 学生手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/current/2024-2025-WNE-COPHS-Student-Handbook-10-25-24.pdf"
+          }
+        },
+        {
+          "room": "432",
+          "description": {
+            "zh": "学校旧药学系手册列为会议室；文档年份未明，房间现况待确认。",
+            "en": "Listed as a conference room in an older pharmacy department manual of undetermined date; confirm current use."
+          },
+          "source": {
+            "title": "药学系旧部门手册",
+            "url": "https://wne.edu/pharmacy-and-health-sciences/faculty-staff/doc/bernier_docs/pharmadminsci_policy_and_procedure_manual.pdf"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "药学、科学和心理学教室及实验室；二楼 235 室为健康与福祉中心，服务对象以学校规定为准。性别包容卫生间在二楼健康服务区 230A、230B，可能受办公室开放时间限制。",
         "en": "Pharmacy, science and psychology classrooms and labs. The Center for Health and Well-Being is on the second floor in room 235; eligibility is set by the university. Gender-inclusive restrooms are in Health Services rooms 230A and 230B, subject to office access."
@@ -831,6 +1134,41 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "219",
+          "description": {
+            "zh": "学校 2025 年报道列为 XR Lab，探索虚拟、增强及混合现实；访客参观需确认。",
+            "en": "The university’s 2025 report identifies the XR Lab here for virtual, augmented and mixed reality; confirm visitor access."
+          },
+          "source": {
+            "title": "2025 年 XR 实验室报道",
+            "url": "https://wne.edu/news/2025/01/xr-lab-grand-opening"
+          }
+        },
+        {
+          "room": "G-26",
+          "description": {
+            "zh": "G 层计算机教室，在教育技术办公室对面。",
+            "en": "Ground-floor computer classroom across from Educational Technology."
+          },
+          "source": {
+            "title": "教育技术办公室",
+            "url": "https://wne.edu/information-technology/teaching-learning/contact-educational-technology.cfm"
+          }
+        },
+        {
+          "room": "G-9",
+          "description": {
+            "zh": "教育技术办公室，位于 G 层、电视演播室旁。",
+            "en": "Educational Technology office on the ground floor beside the TV studio."
+          },
+          "source": {
+            "title": "教育技术办公室",
+            "url": "https://wne.edu/information-technology/teaching-learning/contact-educational-technology.cfm"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "图书馆 G 层 G-9 是教育技术办公室，旁边是电视演播室，对面 G-26 是计算机教室；学校 2025 年报道 XR Lab 位于 219 室。教室及实验室是否开放请现场确认。",
         "en": "On the ground floor, Educational Technology is in G-9 beside the TV studio and opposite computer classroom G-26. A 2025 university report places the XR Lab in room 219. Check access on site."
@@ -975,6 +1313,19 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "214",
+          "description": {
+            "zh": "学校 2023 年表格列为商学院院长办公室；现况请确认。",
+            "en": "Listed as the College of Business Dean’s Office in a 2023 university form; confirm current use."
+          },
+          "source": {
+            "title": "学校 2023 年院系表格",
+            "url": "https://wne.edu/enrollment-services/registrar/doc/Request-for-Reactivation-Form%209-23.pdf"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "商学院教室、Cohen Trading Room 和技术中心；学校研究生资料称主计算机实验室位于三楼，具体房号与开放情况请确认。",
         "en": "College of Business classrooms, Cohen Trading Room and technology center. University graduate resources place the main computer lab on the third floor; confirm its room and access."
@@ -1191,6 +1542,30 @@
       "photo": null,
       "objects": [],
       "review": null,
+      "room_details": [
+        {
+          "room": "101",
+          "description": {
+            "zh": "学校 2023 年表格列为工程学院院长办公室；现况请确认。",
+            "en": "Listed as the College of Engineering Dean’s Office in a 2023 form; confirm current use."
+          },
+          "source": {
+            "title": "学校 2023 年院系表格",
+            "url": "https://wne.edu/enrollment-services/registrar/doc/Request-for-Reactivation-Form%209-23.pdf"
+          }
+        },
+        {
+          "room": "212",
+          "description": {
+            "zh": "ATRANS 研究中心，研究交通安全、驾驶行为及相关人因问题；入内请按学校安排。",
+            "en": "ATRANS research center studies traffic safety, driving behavior and related human factors; access is subject to university arrangements."
+          },
+          "source": {
+            "title": "ATRANS 研究中心",
+            "url": "https://wne.edu/engineering/departments/industrial-engineering-and-engineering-management/atrans.cfm"
+          }
+        }
+      ],
       "visitor_detail": {
         "zh": "工程学院有生理学湿实验室、仪器实验室和模拟病房；学校未在介绍页列出这些实验室房号。ATRANS 交通研究中心位于 212 室，进入实验室须经学校安排。",
         "en": "Engineering facilities include physiology, instrumentation and hospital simulation labs; their room numbers are not listed on the department page. The ATRANS transport research center is in room 212. Laboratory access requires university arrangements."

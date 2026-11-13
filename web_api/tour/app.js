@@ -852,6 +852,12 @@
     if (s.address && s.address.zh) html += '<p><strong>地址（来源记载）：</strong>' + esc(s.address.zh) + '</p>';
     if (s.platform && s.platform.zh) html += '<p><strong>平台参考：</strong>' + esc(s.platform.zh) + '</p>';
     html += s.intro.map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
+    if (s.room_details && s.room_details.length) {
+      html += '<section class="room-details"><h5>楼内房间与设施</h5><p class="note">资料来自学校公开记录；部分为历史用途，是否开放请向学校确认。</p><ul>' +
+        s.room_details.map(function (room) {
+          return '<li><strong>房间 ' + esc(room.room) + '</strong>：' + esc(room.description.zh) + sourceLinks([room.source]) + '</li>';
+        }).join('') + '</ul></section>';
+    }
     if (s.objects.length) {
       html += '<div class="objects"><h5>本展在展藏品</h5><ul>' + s.objects.map(function (o) {
         return "<li><span>" + esc(o.name.zh) + (o.review ? "（待复核：" + esc(o.review) + "）" : "") +

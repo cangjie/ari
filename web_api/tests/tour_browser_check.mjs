@@ -206,6 +206,10 @@ const SCENES = {
     check(await p.eval("Array.from(document.querySelectorAll('[data-theme=classic] ol > li .theme-stop')).slice(0,14).map(e=>e.dataset.place).join(',') === 'wne_welcome_center,wne_deliso_hall,wne_emerson_hall,wne_herman_hall,wne_csp,wne_damour_library,wne_churchill_hall,wne_art_gallery,wne_university_commons,wne_sleith_hall,wne_rivers_memorial_hall,wne_blake_law_center,wne_golden_bear_stadium,wne_ahlc'"), '路线各站链接与建筑一致');
     await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_sleith_hall]').click();true");
     check(await p.eval("document.getElementById('sheet-body').innerText.includes('ATRANS') && document.getElementById('sheet-body').innerText.includes('212')"), '工程楼介绍显示已核实的研究中心房号');
+    check(await p.eval("Array.from(document.querySelectorAll('#sheet-body .room-details li')).some(e => e.innerText.includes('212') && e.innerText.includes('ATRANS') && e.querySelector('a[href*=atrans]'))"), '房间资料显示用途和直接出处');
+    await p.click('#sheet [data-close]');
+    await p.eval("document.querySelector('[data-theme=classic] [data-place=wne_herman_hall]').click();true");
+    check(await p.eval("Array.from(document.querySelectorAll('#sheet-body .room-details li')).some(e => e.innerText.includes('303') && e.innerText.includes('2021') && e.innerText.includes('待确认'))"), '旧房间资料标注时间和待核状态');
     await p.click('#sheet [data-close]');
     await p.click('[data-theme-map=classic]');
     check(await p.eval("!document.getElementById('mapwrap').hidden && document.getElementById('ly-route').getAttribute('d').length>500 && Array.from(document.querySelectorAll('.spot')).filter(e=>!e.hidden).length===14"), '校园路线地图显示路线及14个站点');

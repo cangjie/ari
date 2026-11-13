@@ -411,6 +411,11 @@ button { font: inherit; color: inherit; }
 .tour-photo figcaption { margin-top: 7px; font-size: 11.5px; line-height: 1.6; color: var(--color-neutral-600); }
 .tour-photo figcaption a { color: var(--color-accent-700); text-underline-offset: 2px; }
 .objects { margin-top: 12px; }
+.room-details { margin-top: 16px; }
+.room-details h5 { font-family: var(--font-body); font-size: 15px; margin: 0 0 6px; }
+.room-details ul { list-style: none; margin: 0; padding: 0; }
+.room-details li { padding: 9px 0; border-bottom: 1px solid var(--color-divider); font-size: 14px; line-height: 1.6; }
+.room-details li .source { margin-top: 2px; }
 .objects h5 { margin: 0 0 4px; font-family: var(--font-body); font-weight: 400; font-size: 10.5px; letter-spacing: .14em; color: var(--color-accent-700); }
 .objects ul { margin: 0; padding: 0; list-style: none; }
 .objects li { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--color-divider); font-size: 13.5px; }
